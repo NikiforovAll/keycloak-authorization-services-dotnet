@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "88c82730-2020-40fa-9237-61b4033c9b99",
+		"name": "Authorization - Workspaces",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Protection API",
+			"item": [
+				{
+					"name": "List resources",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/auth/realms/{{realm}}/authz/protection/resource_set",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"{{realm}}",
+								"authz",
+								"protection",
+								"resource_set"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/auth/realms/{{realm}}/authz/protection/resource_set/{{resource_id}}",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"{{realm}}",
+								"authz",
+								"protection",
+								"resource_set",
+								"{{resource_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create resource",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"name\":\"test project\",\n     \"type\":\"urn:api:resource:project\",\n     \"resource_scopes\":[\n         \"delete\"\n      ],\n      \"attributes\": {\n          \"projectlead\":\"bob\"\n      }\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/auth/realms/{{realm}}/authz/protection/resource_set/",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"realms",
+								"{{realm}}",
+								"authz",
+								"protection",
+								"resource_set",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "oauth2",
+				"oauth2": [
+					{
+						"key": "clientSecret",
+						"value": "bdfcee34-64e0-4516-b20d-a25ed2b66346",
+						"type": "string"
+					},
+					{
+						"key": "clientId",
+						"value": "workspace-authz",
+						"type": "string"
+					},
+					{
+						"key": "accessTokenUrl",
+						"value": "http://{{host}}/auth/realms/{{realm}}/protocol/openid-connect/token",
+						"type": "string"
+					},
+					{
+						"key": "scope",
+						"value": "",
+						"type": "string"
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "string"
+					},
+					{
+						"key": "challengeAlgorithm",
+						"value": "S256",
+						"type": "string"
+					},
+					{
+						"key": "redirect_uri",
+						"value": "http://app.mindkey.local:8000/oidc.html",
+						"type": "string"
+					},
+					{
+						"key": "authUrl",
+						"value": "https://login-dev.mindkey.com/connect/authorize",
+						"type": "string"
+					},
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "client_authentication",
+						"value": "header",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Obtain Permissions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:uma-ticket",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "{{audience}}",
+							"type": "text"
+						},
+						{
+							"key": "response_mode",
+							"value": "permissions",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/auth/realms/{{realm}}/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{realm}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtain Decision",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:uma-ticket",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "{{audience}}",
+							"type": "text"
+						},
+						{
+							"key": "response_mode",
+							"value": "decision",
+							"type": "text"
+						},
+						{
+							"key": "permission",
+							"value": "customers#read",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/auth/realms/{{realm}}/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{realm}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtain RPT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:uma-ticket",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "{{audience}}",
+							"type": "text"
+						},
+						{
+							"key": "response_mode",
+							"value": "permissions",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{host}}/auth/realms/{{realm}}/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{realm}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientId",
+				"value": "frontend",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "http://localhost:8080/auth/realms/{{realm}}/protocol/openid-connect/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "http://localhost:8080/auth/realms/{{realm}}/protocol/openid-connect/auth",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "app://postman/callback",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "openid",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code_with_pkce",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8088"
+		},
+		{
+			"key": "realm",
+			"value": "authz"
+		},
+		{
+			"key": "audience",
+			"value": "workspace-authz"
+		},
+		{
+			"value": "",
+			"disabled": true
+		}
+	]
+}

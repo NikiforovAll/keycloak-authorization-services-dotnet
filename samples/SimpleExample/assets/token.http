@@ -1,0 +1,31 @@
+@keycloakUrl={{$dotenv KEYCLOAK_URL}}
+
+@client=workspace-authz
+@password=bdfcee34-64e0-4516-b20d-a25ed2b66346
+@realm=authz
+@token={{$dotenv ACCESS_TOKEN}}
+###
+
+# @name tokenRequestClientCredentials
+curl --data "grant_type=client_credentials&client_id={{client}}&client_secret={{password}}" \
+    {{keycloakUrl}}/auth/realms/{{realm}}/protocol/openid-connect/token
+
+@token={{tokenRequestOffilineCredentials.response.body.$.access_token}}
+
+###
+
+@user=test
+@pass=test
+
+# @name tokenRequestOffilineCredentials
+curl --data "grant_type=password&client_id={{client}}&username={{user}}&password={{pass}}&client_secret={{password}}" \
+    {{keycloakUrl}}/auth/realms/{{realm}}/protocol/openid-connect/token
+
+@token={{tokenRequestOffilineCredentials.response.body.$.access_token}}
+
+###
+
+
+GET {{keycloakUrl}}/auth/admin/realms/{{realm}}
+Authorization: bearer {{token}}
+Accept: application/json

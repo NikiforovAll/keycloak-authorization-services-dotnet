@@ -2,7 +2,7 @@ namespace Api;
 
 using Api.Data;
 
-public static class SeedDatabase
+public static class DatabaseUtils
 {
     public static void Run(ApplicationDbContext context)
     {
@@ -33,5 +33,12 @@ public static class SeedDatabase
         });
 
         context.SaveChanges();
+    }
+
+    public static void MigrateDatabase(ServiceProvider serviceProvider)
+    {
+        using var scope = serviceProvider.CreateScope();
+        var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+        DatabaseUtils.Run(context);
     }
 }

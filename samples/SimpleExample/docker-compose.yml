@@ -22,7 +22,7 @@ services:
       DB_PASSWORD: postgres
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
-      KEYCLOAK_IMPORT: /tmp/keycloak/webinar-realm.json
+      # KEYCLOAK_IMPORT: /tmp/keycloak/realm-authz.json
     volumes:
       - ./keycloak:/tmp/keycloak
     command:

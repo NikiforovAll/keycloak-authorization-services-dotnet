@@ -1,0 +1,12 @@
+﻿{
+  "realm": "authz",
+  "auth-server-url": "http://localhost:8088/auth/",
+  "ssl-required": "external",
+  "resource": "workspace-authz",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": "bdfcee34-64e0-4516-b20d-a25ed2b66346"
+  },
+  "confidential-port": 0,
+  "policy-enforcer": {}
+}

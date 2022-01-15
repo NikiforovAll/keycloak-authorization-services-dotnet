@@ -23,4 +23,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj" />
+  </ItemGroup>
+
 </Project>

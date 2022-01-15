@@ -1,37 +1,48 @@
 using Api;
-using Api.Data;
-using Serilog;
-using Serilog.Events;
+using Keycloak.AuthServices.Authentication;
+using Microsoft.AspNetCore.Authorization;
+
 
 var builder = WebApplication.CreateBuilder(args);
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console(
-        outputTemplate: "[{Level:u4}] |{SourceContext,30}| {Message:lj}{NewLine}{Exception}",
-        restrictedToMinimumLevel: LogEventLevel.Debug)
-    .CreateBootstrapLogger();
+
 var services = builder.Services;
+var configuration = builder.Configuration;
+var host = builder.Host;
 
-builder.Host.UseSerilog();
-// Add services to the container.
-services.AddInfrastructure(builder.Configuration);
+host.ConfigureLogger();
+host.ConfigureKeycloakConfigurationSource("keycloak.json");
 
-using (var scope = services.BuildServiceProvider().CreateScope())
+services.AddInfrastructure(configuration);
+
+DatabaseUtils.MigrateDatabase(services.BuildServiceProvider());
+
+services
+    .AddApplication()
+    .AddSwagger();
+
+services.AddKeycloakAuthentication(configuration, o =>
 {
-    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    SeedDatabase.Run(context);
-}
-services.AddApplication();
-services.AddControllers();
-services.AddSwagger();
+    o.RequireHttpsMetadata = false;
+});
 
+services.AddAuthorization(o =>
+{
+    o.FallbackPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
+
+services.AddControllers();
 
 var app = builder.Build();
 
-app.UseSwagger();
-app.UseSwaggerUI();
-
-app.UseAuthorization();
+app
+    .UseSwagger()
+    .UseSwaggerUI()
+    .UseAuthentication()
+    .UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+

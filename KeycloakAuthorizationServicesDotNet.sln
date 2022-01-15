@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Authentication", "src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj", "{F0E53AED-46D8-4665-9222-2E8CE0F2253C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExample", "samples\SimpleExample\SimpleExample.csproj", "{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E53AED-46D8-4665-9222-2E8CE0F2253C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E53AED-46D8-4665-9222-2E8CE0F2253C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E53AED-46D8-4665-9222-2E8CE0F2253C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E53AED-46D8-4665-9222-2E8CE0F2253C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F0E53AED-46D8-4665-9222-2E8CE0F2253C} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
+		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
+	EndGlobalSection
+EndGlobal

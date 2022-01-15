@@ -1,9 +1,10 @@
-@baseUrl={{$dotenv BASEURL}}
-@accessToken=
+@baseUrl={{$dotenv BASE_URL}}
+@accessToken={{$dotenv ACCESS_TOKEN}}
 ###
 
 # @name getWorkspaces
 GET {{baseUrl}}/api/workspaces
+authorization: bearer {{accessToken}}
 
 @workspaceId = {{getWorkspaces.response.body.$.[0].id}}
 
