@@ -1,0 +1,32 @@
+@baseUrl={{$dotenv BASEURL}}
+@accessToken=
+###
+
+# @name getWorkspaces
+GET {{baseUrl}}/api/workspaces
+
+@workspaceId = {{getWorkspaces.response.body.$.[0].id}}
+
+###
+
+# @name getWorkspaceById
+GET {{baseUrl}}/api/workspaces/{{workspaceId}}
+
+###
+
+@projectName=New Project
+
+POST {{baseUrl}}/api/workspaces
+content-type: application/json
+
+
+{
+    "Name": "{{projectName}}",
+    "Projects": []
+}
+
+###
+DELETE {{baseUrl}}/api/workspaces/{{workspaceId}}
+
+###
+DELETE {{baseUrl}}/api/workspaces

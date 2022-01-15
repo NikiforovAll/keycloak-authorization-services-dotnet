@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:14.0
+    hostname: postgres
+    volumes:
+      - postgresdata-authz:/var/lib/postgresql/data
+      - ./assets/docker_postgres_init.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  keycloak:
+    image: jboss/keycloak:12.0.4 # unable to update jboss image to latest version due to issues with flowable-ui
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak-authz
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_IMPORT: /tmp/keycloak/webinar-realm.json
+    volumes:
+      - ./keycloak:/tmp/keycloak
+    command:
+      [
+        '-b',
+        '0.0.0.0',
+        "-Djboss.http.port=8088",
+        '-Dkeycloak.profile.feature.upload_scripts=enabled',
+        # '-Dkeycloak.migration.action=none',
+        # '-Dkeycloak.migration.provider=dir',
+        # '-Dkeycloak.migration.dir=/opt/jboss/keycloak/realm-config',
+        # '-Dkeycloak.migration.strategy=IGNORE_EXISTING ',
+      ]
+    ports:
+      - 8088:8088
+    depends_on:
+      - postgres
+
+volumes:
+  postgresdata-authz:
+    driver: local
