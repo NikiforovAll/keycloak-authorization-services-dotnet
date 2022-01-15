@@ -34,3 +34,15 @@ For more details see an example - [Program.cs](../../samples/SimpleExample/Progr
 "workspace-authz" is a "confidential client".
 
 ![install-keycloak](../../assets/install-keycloak.png)
+
+Here is how non-confidential client installation configuration look like:
+```csharp
+{
+  "realm": "authz",
+  "auth-server-url": "http://localhost:8088/auth/",
+  "ssl-required": "external",
+  "resource": "frontend",
+  "public-client": true,
+  "confidential-port": 0
+}
+```

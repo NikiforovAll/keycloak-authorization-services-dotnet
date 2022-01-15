@@ -1,11 +1,12 @@
 namespace Keycloak.AuthServices.Authentication.Configuration;
 
+using System.Globalization;
 using System.Text;
+using Common;
 using Microsoft.Extensions.Configuration.Json;
 
 public class KeycloakConfigurationProvider : JsonConfigurationProvider
 {
-    internal const string ConfigurationPrefix = "Keycloak";
     private const char KeycloakPropertyDelimiter = '-';
     private const char NestedConfigurationDelimiter = ':';
     private const int Utf8LowerCaseDistant = 32;
@@ -38,7 +39,8 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
     /// <returns></returns>
     private string NormalizeKey(string key)
     {
-        foreach (var section in key.ToUpper().Split(NestedConfigurationDelimiter))
+        var sections = key.ToUpper(CultureInfo.InvariantCulture).Split(NestedConfigurationDelimiter);
+        foreach (var section in sections)
         {
             if (this.stringBuilder.Length != 0)
             {
@@ -62,7 +64,7 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
             }
         }
 
-        var result = ConfigurationPrefix + NestedConfigurationDelimiter + this.stringBuilder.ToString();
+        var result = ConfigurationConstants.ConfigurationPrefix + NestedConfigurationDelimiter + this.stringBuilder.ToString();
         this.stringBuilder.Clear();
         return result;
     }

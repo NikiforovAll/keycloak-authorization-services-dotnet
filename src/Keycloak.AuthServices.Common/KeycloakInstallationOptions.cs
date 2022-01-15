@@ -1,8 +1,11 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+﻿namespace Keycloak.AuthServices.Common;
 
 /// <summary>
-/// <seealso cref="/.well-known/openid-configuration"/>
+/// Installation options provided by Keycloak
 /// </summary>
+/// <remarks>
+/// <seealso cref="/.well-known/openid-configuration"/>
+/// </remarks>
 public class KeycloakInstallationOptions
 {
     public string AuthServerUrl { get; set; } = string.Empty;
@@ -13,7 +16,7 @@ public class KeycloakInstallationOptions
 
     public bool VerifyTokenAudience { get; set; }
 
-    public KeycloakClientInstallationCredentials? Credentials { get; set; } = new();
+    public KeycloakClientInstallationCredentials Credentials { get; set; } = new();
 
     /// <summary>
     ///     Optional
@@ -36,4 +39,9 @@ public class KeycloakInstallationOptions
 public class KeycloakClientInstallationCredentials
 {
     public string Secret { get; set; } = string.Empty;
+}
+
+public static class ConfigurationConstants
+{
+    public const string ConfigurationPrefix = "Keycloak";
 }

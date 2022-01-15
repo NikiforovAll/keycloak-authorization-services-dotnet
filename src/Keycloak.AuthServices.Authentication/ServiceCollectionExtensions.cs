@@ -1,5 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
+using Claims;
+using Common;
 using Configuration;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -24,7 +26,7 @@ public static class ServiceCollectionExtensions
         Action<JwtBearerOptions>? configureOptions = default)
     {
         var options = configuration
-            .GetSection(KeycloakConfigurationProvider.ConfigurationPrefix)
+            .GetSection(ConfigurationConstants.ConfigurationPrefix)
             .Get<KeycloakInstallationOptions>();
 
         services.AddOptions<KeycloakInstallationOptions>()
@@ -32,12 +34,19 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton(options);
 
+        const string roleClaimType = "role";
         var validationParameters = new TokenValidationParameters
         {
             ClockSkew = options.TokenClockSkew,
             ValidateAudience = options.VerifyTokenAudience,
             ValidateIssuer = true,
+            NameClaimType = "preferred_username",
+            RoleClaimType = roleClaimType, // TODO: clarify how keycloak writes roles
         };
+
+        // options.Resource == Audience
+        services.AddTransient<IClaimsTransformation>(_ =>
+            new KeycloakRolesClaimsTransformation(roleClaimType, options.Resource));
 
         return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opts =>

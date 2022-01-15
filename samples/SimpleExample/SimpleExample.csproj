@@ -24,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj" />
   </ItemGroup>
 

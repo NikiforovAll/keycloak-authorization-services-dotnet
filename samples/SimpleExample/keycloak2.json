@@ -1,0 +1,8 @@
+﻿{
+  "realm": "authz",
+  "auth-server-url": "http://localhost:8088/auth/",
+  "ssl-required": "external",
+  "resource": "frontend",
+  "public-client": true,
+  "confidential-port": 0
+}

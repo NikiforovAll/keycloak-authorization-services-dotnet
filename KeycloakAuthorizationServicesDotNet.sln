@@ -11,6 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{AEBE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExample", "samples\SimpleExample\SimpleExample.csproj", "{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Sdk", "src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj", "{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Authorization", "src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj", "{41E4ECE0-479A-4B33-8E72-30C2B7572B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Common", "src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj", "{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +34,24 @@ Global
 		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41E4ECE0-479A-4B33-8E72-30C2B7572B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41E4ECE0-479A-4B33-8E72-30C2B7572B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41E4ECE0-479A-4B33-8E72-30C2B7572B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41E4ECE0-479A-4B33-8E72-30C2B7572B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F0E53AED-46D8-4665-9222-2E8CE0F2253C} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
 		{86FF2CC9-8F13-4A9F-9411-B82D3A40A968} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
+		{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
+		{41E4ECE0-479A-4B33-8E72-30C2B7572B74} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
+		{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
 	EndGlobalSection
 EndGlobal

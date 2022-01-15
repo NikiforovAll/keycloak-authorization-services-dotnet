@@ -1,7 +1,5 @@
 namespace Api.Controllers;
 
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Api.Application.Commands;
 using Api.Application.Queries;
 using Api.Data;
@@ -14,7 +12,7 @@ public class WorkspacesController : ApiControllerBase
     public async Task<IEnumerable<Workspace>> Get() =>
         await this.Mediator.Send(new GetWorkspacesQuery());
 
-    [HttpGet("{id}")]
+    [HttpGet("{id:guid}")]
     public async Task<Workspace> GetById(Guid id) =>
         await this.Mediator.Send(new GetWorkspaceByIdQuery(id));
 
@@ -35,7 +33,7 @@ public class WorkspacesController : ApiControllerBase
     public async Task Create(CreateWorkspaceCommand command) =>
         await this.Mediator.Send(command);
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:guid}")]
     public async Task Delete(Guid id) =>
         await this.Mediator.Send(new DeleteWorkspaceCommand(id));
 

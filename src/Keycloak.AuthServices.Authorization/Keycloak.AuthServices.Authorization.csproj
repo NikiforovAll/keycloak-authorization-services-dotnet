@@ -4,18 +4,18 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Keycloak.AuthServices.Authentication</RootNamespace>
+    <RootNamespace>Keycloak.AuthServices.Authorization</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1"/>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.1"/>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj"/>
+    <ProjectReference Include="..\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj"/>
   </ItemGroup>
 
 </Project>

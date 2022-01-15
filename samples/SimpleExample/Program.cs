@@ -1,5 +1,7 @@
 using Api;
 using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Sdk.Admin;
 using Microsoft.AspNetCore.Authorization;
 
 
@@ -30,9 +32,11 @@ services.AddAuthorization(o =>
     o.FallbackPolicy = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
         .Build();
-});
+}).AddKeycloakAuthorization(configuration);
 
 services.AddControllers();
+
+services.AddKeycloakAdminHttpClient(configuration);
 
 var app = builder.Build();
 

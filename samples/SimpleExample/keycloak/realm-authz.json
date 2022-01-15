@@ -5,8 +5,8 @@
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
   "accessTokenLifespan": 300,
-  "accessTokenLifespanForImplicitFlow": 900,
-  "ssoSessionIdleTimeout": 1800,
+  "accessTokenLifespanForImplicitFlow": 36000,
+  "ssoSessionIdleTimeout": 36000,
   "ssoSessionMaxLifespan": 36000,
   "ssoSessionIdleTimeoutRememberMe": 0,
   "ssoSessionMaxLifespanRememberMe": 0,
@@ -885,6 +885,20 @@
       "nodeReRegistrationTimeout": -1,
       "protocolMappers": [
         {
+          "id": "c8fe5a8a-60c4-476c-a848-279520106de3",
+          "name": "Role",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "jsonType.label": "String",
+            "multivalued": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
           "id": "5f605ed3-20db-4d6b-96d0-40f06837c785",
           "name": "Client ID",
           "protocol": "openid-connect",
@@ -965,6 +979,28 @@
             "uris": [
               "/*"
             ]
+          },
+          {
+            "name": "workspaces",
+            "type": "urn:workspace-authz:resource:workspaces",
+            "ownerManagedAccess": false,
+            "displayName": "workspaces",
+            "attributes": {},
+            "_id": "569ae7be-270f-42ad-beca-bafb73ed7cf6",
+            "uris": [
+              "workspaces"
+            ],
+            "scopes": [
+              {
+                "name": "workspaces:create"
+              },
+              {
+                "name": "workspaces:delete"
+              },
+              {
+                "name": "workspaces:read"
+              }
+            ]
           }
         ],
         "policies": [
@@ -990,9 +1026,52 @@
               "defaultResourceType": "urn:workspace-authz:resources:default",
               "applyPolicies": "[\"Default Policy\"]"
             }
+          },
+          {
+            "id": "dacb259b-d3ed-4a60-9448-4a1b5efcfcaf",
+            "name": "Access Workspaces",
+            "type": "resource",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "defaultResourceType": "urn:workspace-authz:resource:workspaces",
+              "resources": "[\"workspaces\"]",
+              "applyPolicies": "[\"Default Policy\"]"
+            }
           }
         ],
-        "scopes": [],
+        "scopes": [
+          {
+            "id": "5d0c86b3-f57b-43d3-a5b8-ef46c05a0447",
+            "name": "workspaces:read",
+            "displayName": "workspaces:read"
+          },
+          {
+            "id": "ac2eb59e-d9f6-46d4-8b1b-28be6d634cd1",
+            "name": "read",
+            "displayName": "read"
+          },
+          {
+            "id": "f79fdb78-ad4f-497b-97a9-0d6155a3030c",
+            "name": "delete",
+            "displayName": "delete"
+          },
+          {
+            "id": "8ebd479c-f68e-4055-b903-119dddbeecac",
+            "name": "create",
+            "displayName": "create"
+          },
+          {
+            "id": "9823109b-c2f7-4357-96a4-d60934582841",
+            "name": "workspaces:create",
+            "displayName": "workspaces:create"
+          },
+          {
+            "id": "31ac2698-a0f6-4828-bf52-2e20094f3e0b",
+            "name": "workspaces:delete",
+            "displayName": "workspaces:delete"
+          }
+        ],
         "decisionStrategy": "UNANIMOUS"
       }
     }
@@ -2303,7 +2382,12 @@
   "resetCredentialsFlow": "reset credentials",
   "clientAuthenticationFlow": "clients",
   "dockerAuthenticationFlow": "docker auth",
-  "attributes": {},
+  "attributes": {
+    "clientOfflineSessionMaxLifespan": "0",
+    "clientSessionIdleTimeout": "0",
+    "clientSessionMaxLifespan": "0",
+    "clientOfflineSessionIdleTimeout": "0"
+  },
   "keycloakVersion": "12.0.4",
   "userManagedAccessAllowed": false
 }

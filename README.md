@@ -1,5 +1,8 @@
 # AuthZ
 
+## TODO:
+
+Show auth based on auto-registered policy, old-fashioned asp.net core roles, custom policy attribute AOP, custom protected resource attribute AOP
 
 ## Reference
 
