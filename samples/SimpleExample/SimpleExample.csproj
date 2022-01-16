@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Api</RootNamespace>
-    <AssemblyName>Api</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +26,10 @@
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Authorization.Abstractions\Impl" />
   </ItemGroup>
 
 </Project>

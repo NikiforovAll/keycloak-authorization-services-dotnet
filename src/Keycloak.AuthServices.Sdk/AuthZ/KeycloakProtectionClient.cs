@@ -17,7 +17,7 @@ public class KeycloakProtectionClient : IKeycloakProtectionClient
 
     public async Task<bool> VerifyAccessToResource(string resource, string scope, CancellationToken cancellationToken)
     {
-        var audience = installationOptions.Resource;
+        var audience = this.installationOptions.Resource;
 
         var data = new Dictionary<string, string>
         {

@@ -12,6 +12,7 @@ authorization: bearer {{accessToken}}
 
 # @name getWorkspaceById
 GET {{baseUrl}}/api/workspaces/{{workspaceId}}
+authorization: bearer {{accessToken}}
 
 ###
 
@@ -19,7 +20,7 @@ GET {{baseUrl}}/api/workspaces/{{workspaceId}}
 
 POST {{baseUrl}}/api/workspaces
 content-type: application/json
-
+authorization: bearer {{accessToken}}
 
 {
     "Name": "{{projectName}}",
@@ -28,6 +29,8 @@ content-type: application/json
 
 ###
 DELETE {{baseUrl}}/api/workspaces/{{workspaceId}}
+authorization: bearer {{accessToken}}
 
 ###
 DELETE {{baseUrl}}/api/workspaces
+authorization: bearer {{accessToken}}

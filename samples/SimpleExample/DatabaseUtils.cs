@@ -1,6 +1,6 @@
 namespace Api;
 
-using Api.Data;
+using Data;
 
 public static class DatabaseUtils
 {
@@ -39,6 +39,6 @@ public static class DatabaseUtils
     {
         using var scope = serviceProvider.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-        DatabaseUtils.Run(context);
+        Run(context);
     }
 }

@@ -2,10 +2,13 @@ namespace Api.Application.Queries;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Api.Data;
+using Data;
+using Authorization;
+using Keycloak.AuthServices.Authorization;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
+[AuthorizeProtectedResource("workspaces", "workspaces:read")]
 public record GetWorkspacesQuery : IRequest<IEnumerable<Workspace>>;
 
 public class GetWorkspacesQueryHandler : IRequestHandler<GetWorkspacesQuery, IEnumerable<Workspace>>

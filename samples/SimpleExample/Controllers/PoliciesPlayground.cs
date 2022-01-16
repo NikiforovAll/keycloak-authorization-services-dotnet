@@ -29,6 +29,7 @@ public class PoliciesPlayground : ApiControllerBase
     /// Policies used by custom authorize attributes should be resolved.
     /// Create attribute derived from <see cref="AuthorizeAttribute"/>
     /// </summary>
+    [ProtectedResourceAttribute("workspaces", "workspaces:read")]
     [HttpGet("custom-policy-attribute")]
     public void CustomPolicyFromAttribute() => this.Ok();
 
@@ -53,5 +54,14 @@ public class PoliciesPlayground : ApiControllerBase
             .AuthorizeAsync(this.User, null, requirement);
 
         return !accessed.Succeeded ? this.Forbid() : this.Ok();
+    }
+
+
+    private class ProtectedResourceAttribute : AuthorizeAttribute
+    {
+        public ProtectedResourceAttribute(string resource, string scope)
+        {
+            this.Policy = ProtectedResourcePolicy.From(resource, scope);
+        }
     }
 }

@@ -1,8 +1,8 @@
 namespace Api.Controllers;
 
-using Api.Application.Commands;
-using Api.Application.Queries;
-using Api.Data;
+using Application.Commands;
+using Application.Queries;
+using Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,4 +1,5 @@
 using Api;
+using Api.Filters;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Authorization.Handlers;
@@ -34,15 +35,16 @@ services.AddAuthorization(o =>
         .RequireAuthenticatedUser()
         .Build();
 
-    o.AddPolicy(PolicyConstants.MyCustomPolicy, builder =>
+    o.AddPolicy(PolicyConstants.MyCustomPolicy, b =>
     {
-        builder.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
+        b.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
     });
 }).AddKeycloakAuthorization(configuration);
 
 services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
 
-services.AddControllers();
+services.AddControllers(options =>
+    options.Filters.Add<ApiExceptionFilterAttribute>());
 
 services.AddKeycloakAdminHttpClient(configuration);
 

@@ -12,4 +12,11 @@ public class DecisionRequirement : IAuthorizationRequirement
         this.Resource = resource;
         this.Scope = scope;
     }
+
+    public DecisionRequirement(string resource, string id, string scope)
+        : this($"{resource}/{id}", scope)
+    {
+    }
+
+    public override string ToString() => $"{this.Resource}#{this.Scope}";
 }

@@ -1,7 +1,10 @@
 namespace Api;
 
 using System.Reflection;
-using Api.Data;
+using Data;
+using Application.Authorization;
+using Application.Authorization.Abstractions;
+using Application.Authorization.Abstractions.Impl;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,11 +24,14 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IApplicationDbContext, ApplicationDbContext>
             (sp => sp.GetRequiredService<ApplicationDbContext>());
 
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
+        services.AddScoped<IIdentityService, IdentityService>();
         return services;
     }
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         services.AddMediatR(Assembly.GetExecutingAssembly());
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
         // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehavior<,>));
         // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         // services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));

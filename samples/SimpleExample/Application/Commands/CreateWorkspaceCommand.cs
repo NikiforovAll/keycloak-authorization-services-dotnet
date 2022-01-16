@@ -2,9 +2,13 @@ namespace Api.Application.Commands;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Api.Data;
+using Data;
+using Authorization;
+using Keycloak.AuthServices.Authorization;
 using MediatR;
 
+[Authorize(Roles = "Manager")]
+[AuthorizeProtectedResource("workspaces", "workspaces:create")]
 public record CreateWorkspaceCommand(string Name, IList<Project>? Projects = default) : IRequest;
 
 public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceCommand>
@@ -17,11 +21,10 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
         CreateWorkspaceCommand request,
         CancellationToken cancellationToken)
     {
-        this.db.Workspaces.Add(new Workspace
-        {
-            Name = request.Name,
-            Projects = request.Projects ?? new List<Project>(),
-        });
+        var (name, projects) = request;
+
+        this.db.Workspaces.Add(
+            new Workspace {Name = name, Projects = projects ?? new List<Project>(),});
         await this.db.SaveChangesAsync(cancellationToken);
 
         return Unit.Value;

@@ -14,12 +14,12 @@ public class ProtectedResourcePolicyProvider
     public override async Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
     {
         var registeredPolicy = await base.GetPolicyAsync(policyName);
-        if (!policyName.Contains('#') || registeredPolicy is not null)
+        if (!ProtectedResourcePolicy.Match(policyName) || registeredPolicy is not null)
         {
             return registeredPolicy;
         }
 
-        // TODO: policy should be cached and managed properly not production ready
+        // TODO: policy should be cached and managed properly, not production ready
         // https://0xnf.github.io/posts/oauthserver/15/#dynamically-handling-policies
         var builder = new AuthorizationPolicyBuilder();
         var tokens = policyName.Split('#');
