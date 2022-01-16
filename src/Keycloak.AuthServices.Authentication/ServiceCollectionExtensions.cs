@@ -13,7 +13,43 @@ using Microsoft.IdentityModel.Tokens;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Adds keycloak authentication services, configuration is automatically wired from keycloak.json file.
+    /// Adds keycloak authentication services.
+    /// </summary>
+    public static AuthenticationBuilder AddKeycloakAuthentication(
+        this IServiceCollection services,
+        KeycloakInstallationOptions keycloakOptions,
+        Action<JwtBearerOptions>? configureOptions = default)
+    {
+        services.AddSingleton(keycloakOptions);
+
+        const string roleClaimType = "role";
+        var validationParameters = new TokenValidationParameters
+        {
+            ClockSkew = keycloakOptions.TokenClockSkew,
+            ValidateAudience = keycloakOptions.VerifyTokenAudience,
+            ValidateIssuer = true,
+            NameClaimType = "preferred_username",
+            RoleClaimType = roleClaimType, // TODO: clarify how keycloak writes roles
+        };
+
+        // options.Resource == Audience
+        services.AddTransient<IClaimsTransformation>(_ =>
+            new KeycloakRolesClaimsTransformation(roleClaimType, keycloakOptions.Resource));
+
+        return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(opts =>
+            {
+                opts.Authority = keycloakOptions.KeycloakUrlRealm;
+                opts.Audience = keycloakOptions.Resource;
+                opts.TokenValidationParameters = validationParameters;
+                opts.RequireHttpsMetadata = true;
+                opts.SaveToken = true;
+                configureOptions?.Invoke(opts);
+            });
+    }
+
+    /// <summary>
+    /// Adds keycloak authentication services. Configuration is automatically wired from keycloak.json file.
     /// </summary>
     /// <param name="services">Source service collection</param>
     /// <param name="configuration">Configuration source,
@@ -32,43 +68,39 @@ public static class ServiceCollectionExtensions
         services.AddOptions<KeycloakInstallationOptions>()
             .Bind(configuration);
 
-        services.AddSingleton(options);
+        return services.AddKeycloakAuthentication(options, configureOptions);
+    }
 
-        const string roleClaimType = "role";
-        var validationParameters = new TokenValidationParameters
-        {
-            ClockSkew = options.TokenClockSkew,
-            ValidateAudience = options.VerifyTokenAudience,
-            ValidateIssuer = true,
-            NameClaimType = "preferred_username",
-            RoleClaimType = roleClaimType, // TODO: clarify how keycloak writes roles
-        };
+    /// <summary>
+    /// Adds keycloak authentication services from configuration located in specified section <paramref name="keycloakClientSectionName"/>.
+    /// </summary>
+    /// <param name="services">Source service collection</param>
+    /// <param name="configuration">Configuration source,
+    /// make sure the <see cref="ConfigureKeycloakConfigurationSource"/> is configured</param>
+    /// <param name="keycloakClientSectionName"></param>
+    /// <param name="configureOptions">Configure overrides</param>
+    /// <returns></returns>
+    public static AuthenticationBuilder AddKeycloakAuthentication(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        string keycloakClientSectionName,
+        Action<JwtBearerOptions>? configureOptions = default)
+    {
+        var options = configuration
+            .GetSection(keycloakClientSectionName)
+            .Get<KeycloakInstallationOptions>();
 
-        // options.Resource == Audience
-        services.AddTransient<IClaimsTransformation>(_ =>
-            new KeycloakRolesClaimsTransformation(roleClaimType, options.Resource));
+        services.AddOptions<KeycloakInstallationOptions>()
+            .Bind(configuration);
 
-        return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(opts =>
-            {
-                opts.Authority = options.KeycloakUrlRealm;
-                opts.Audience = options.Resource;
-                opts.TokenValidationParameters = validationParameters;
-                opts.RequireHttpsMetadata = true;
-                opts.SaveToken = true;
-                configureOptions?.Invoke(opts);
-            });
+        return services.AddKeycloakAuthentication(options, configureOptions);
     }
 
     public static IHostBuilder ConfigureKeycloakConfigurationSource(
         this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
-            hostBuilder.ConfigureAppConfiguration((_, builder) =>
-            {
-                var source = new KeycloakConfigurationSource
-                {
-                    Path = fileName,
-                    Optional = false
-                };
-                builder.Sources.Insert(0, source);
-            });
+        hostBuilder.ConfigureAppConfiguration((_, builder) =>
+        {
+            var source = new KeycloakConfigurationSource {Path = fileName, Optional = false};
+            builder.Sources.Insert(0, source);
+        });
 }

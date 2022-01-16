@@ -39,7 +39,10 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
     /// <returns></returns>
     private string NormalizeKey(string key)
     {
-        var sections = key.ToUpper(CultureInfo.InvariantCulture).Split(NestedConfigurationDelimiter);
+        var sections = key
+            .ToUpper(CultureInfo.InvariantCulture)
+            .Split(NestedConfigurationDelimiter);
+
         foreach (var section in sections)
         {
             if (this.stringBuilder.Length != 0)
@@ -64,7 +67,8 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
             }
         }
 
-        var result = ConfigurationConstants.ConfigurationPrefix + NestedConfigurationDelimiter + this.stringBuilder.ToString();
+        var result = ConfigurationConstants.ConfigurationPrefix + NestedConfigurationDelimiter +
+                     this.stringBuilder.ToString();
         this.stringBuilder.Clear();
         return result;
     }

@@ -2,7 +2,7 @@ namespace Api.Controllers;
 
 using Data;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Authorization.Handlers;
+using Keycloak.AuthServices.Authorization.Requirements;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,12 +29,12 @@ public class PoliciesPlayground : ApiControllerBase
     /// Policies used by custom authorize attributes should be resolved.
     /// Create attribute derived from <see cref="AuthorizeAttribute"/>
     /// </summary>
-    [ProtectedResourceAttribute("workspaces", "workspaces:read")]
+    [ProtectedResource("workspaces", "workspaces:read")]
     [HttpGet("custom-policy-attribute")]
     public void CustomPolicyFromAttribute() => this.Ok();
 
     /// <summary>
-    /// Automatically registers policies based on <see cref="ProtectedResourcePolicyProvider"/>
+    /// Based on automatically registered policies by <see cref="ProtectedResourcePolicyProvider"/>
     /// </summary>
     [Authorize(Policy = "workspaces#workspaces:read")]
     [HttpGet("auto-registered-policy")]

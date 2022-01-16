@@ -1,15 +1,29 @@
-namespace Keycloak.AuthServices.Authorization.Handlers;
+namespace Keycloak.AuthServices.Authorization.Requirements;
 
 using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 
+public class RptRequirement : IAuthorizationRequirement
+{
+    public string Resource { get; }
+    public string Scope { get; }
+
+    public RptRequirement(string resource, string scope)
+    {
+        this.Resource = resource;
+        this.Scope = scope;
+    }
+
+    public override string ToString() => $"{nameof(RptRequirement)}: {this.Resource}#{this.Scope}";
+}
+
 public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 {
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RptRequirement requirement)
     {
-        // the client application responsible for acquiring of the token
-        // should request special RPT access_token
+        // the client application is responsible for acquiring of the token
+        // should request special RPT access_token that contains this section
         var authorizationClaim = context.User.FindFirstValue("authorization");
         if (String.IsNullOrWhiteSpace(authorizationClaim))
         {

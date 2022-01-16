@@ -2,7 +2,7 @@ using Api;
 using Api.Filters;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Authorization.Handlers;
+using Keycloak.AuthServices.Authorization.Requirements;
 using Keycloak.AuthServices.Sdk.Admin;
 using Microsoft.AspNetCore.Authorization;
 
@@ -24,6 +24,7 @@ services
     .AddApplication()
     .AddSwagger();
 
+// adds client resource claims transformation
 services.AddKeycloakAuthentication(configuration, o =>
 {
     o.RequireHttpsMetadata = false;
@@ -37,7 +38,18 @@ services.AddAuthorization(o =>
 
     o.AddPolicy(PolicyConstants.MyCustomPolicy, b =>
     {
-        b.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
+        // b.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
+        b.RequireProtectedResource("workspaces", "workspaces:read");
+    });
+
+    o.AddPolicy(PolicyConstants.CanDeleteAllWorkspaces, b =>
+    {
+        b.RequireRealmRoles("SuperManager");
+    });
+
+    o.AddPolicy(PolicyConstants.AccessManagement, b =>
+    {
+        b.RequireResourceRoles("Manager");
     });
 }).AddKeycloakAuthorization(configuration);
 
@@ -59,4 +71,3 @@ app
 app.MapControllers();
 
 app.Run();
-

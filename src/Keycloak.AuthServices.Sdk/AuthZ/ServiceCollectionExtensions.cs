@@ -2,7 +2,7 @@ namespace Keycloak.AuthServices.Sdk.AuthZ;
 
 using Admin;
 using Common;
-using HttpMidleware;
+using HttpMiddleware;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceCollectionExtensions
@@ -11,9 +11,8 @@ public static class ServiceCollectionExtensions
     /// Adds keycloak confidential client and underlying token management
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="configuration"></param>
+    /// <param name="keycloakOptions"></param>
     /// <param name="configureClient"></param>
-    /// <param name="keycloakClientSectionName"></param>
     /// <returns></returns>
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,

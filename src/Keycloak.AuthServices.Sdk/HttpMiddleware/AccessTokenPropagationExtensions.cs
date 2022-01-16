@@ -1,10 +1,7 @@
-﻿namespace Keycloak.AuthServices.Sdk.HttpMidleware;
+﻿namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
 
-using HttpMiddleware;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 public static class AccessTokenPropagationExtensions
 {

@@ -1,4 +1,6 @@
-﻿namespace Keycloak.AuthServices.Authorization.Handlers;
+﻿namespace Keycloak.AuthServices.Authorization;
+
+using Requirements;
 
 public static class ProtectedResourcePolicy
 {

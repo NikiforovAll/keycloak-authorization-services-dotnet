@@ -1,6 +1,7 @@
 ﻿namespace Api.Application.Authorization;
 
-using Keycloak.AuthServices.Authorization.Handlers;
+using Keycloak.AuthServices.Authorization;
+
 /// <summary>
 /// Specifies the class this attribute is applied to requires authorization.
 /// </summary>

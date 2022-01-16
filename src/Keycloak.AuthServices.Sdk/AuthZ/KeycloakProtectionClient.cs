@@ -1,8 +1,6 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+﻿namespace Keycloak.AuthServices.Sdk.AuthZ;
 
 using Common;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Options;
 
 public class KeycloakProtectionClient : IKeycloakProtectionClient
 {

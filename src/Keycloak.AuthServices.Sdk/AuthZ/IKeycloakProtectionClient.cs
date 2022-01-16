@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+﻿namespace Keycloak.AuthServices.Sdk.AuthZ;
 
 public interface IKeycloakProtectionClient
 {

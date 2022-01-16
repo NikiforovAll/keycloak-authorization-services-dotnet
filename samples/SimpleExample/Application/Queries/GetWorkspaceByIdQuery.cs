@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Data;
 using Authorization;
 using Authorization.Abstractions;
-using Keycloak.AuthServices.Authorization.Handlers;
+using Keycloak.AuthServices.Authorization;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

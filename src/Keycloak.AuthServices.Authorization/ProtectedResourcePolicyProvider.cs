@@ -1,13 +1,14 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
-using Handlers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
+using Requirements;
 
 public class ProtectedResourcePolicyProvider
     : DefaultAuthorizationPolicyProvider
 {
-    public ProtectedResourcePolicyProvider(IOptions<AuthorizationOptions> options) : base(options)
+    public ProtectedResourcePolicyProvider(
+        IOptions<AuthorizationOptions> options) : base(options)
     {
     }
 
@@ -26,9 +27,11 @@ public class ProtectedResourcePolicyProvider
 
         if (tokens is not {Length: 2})
         {
-            return default; //exit
+            return default;
         }
-        builder.AddRequirements(new DecisionRequirement(tokens[0], tokens[1]));
+
+        var authorizationRequirement = new DecisionRequirement(tokens[0], tokens[1]);
+        builder.AddRequirements(authorizationRequirement);
 
         return builder.Build();
     }

@@ -7,7 +7,6 @@ using Authorization;
 using Keycloak.AuthServices.Authorization;
 using MediatR;
 
-[Authorize(Roles = "Manager")]
 [AuthorizeProtectedResource("workspaces", "workspaces:create")]
 public record CreateWorkspaceCommand(string Name, IList<Project>? Projects = default) : IRequest;
 
