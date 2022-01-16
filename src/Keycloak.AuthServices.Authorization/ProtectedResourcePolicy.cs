@@ -5,10 +5,10 @@ using Requirements;
 public static class ProtectedResourcePolicy
 {
     public static string From(string resource, string id, string scope) =>
-        new DecisionRequirement(resource, id, scope).ToString();
+        $"{resource}/{id}#{scope}";
 
     public static string From(string resource, string scope) =>
-        new DecisionRequirement(resource, scope).ToString();
+        $"{resource}#{scope}";
 
     public static bool Match(string policy) => policy.Contains('#');
 }

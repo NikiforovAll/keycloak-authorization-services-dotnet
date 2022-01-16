@@ -31,7 +31,7 @@ public static class ServiceCollectionExtensions
                 new ClientCredentialsTokenRequest
                 {
                     RequestUri = new Uri(
-                        $"{keycloakOptions.KeycloakUrlRealm}{KeycloakConstants.TokenEndpointPath}"),
+                        $"{keycloakOptions.KeycloakUrlRealm}/{KeycloakConstants.TokenEndpointPath}"),
                     ClientId = keycloakOptions.Resource,
                     ClientSecret = keycloakOptions.Credentials.Secret,
                 }));

@@ -8,10 +8,22 @@
 /// </remarks>
 public class KeycloakInstallationOptions
 {
+    /// <summary>
+    /// Authorization server URL
+    /// </summary>
+    /// <example>
+    /// "auth-server-url": "http://localhost:8088/auth/"
+    /// </example>
     public string AuthServerUrl { get; set; } = string.Empty;
 
     public string Realm { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Resource as client id
+    /// </summary>
+    /// <example>
+    /// "resource": "client-id"
+    /// </example>
     public string Resource { get; set; } = string.Empty;
 
     public bool VerifyTokenAudience { get; set; }
@@ -26,6 +38,9 @@ public class KeycloakInstallationOptions
     /// </remarks>
     public TimeSpan TokenClockSkew { get; set; } = TimeSpan.Zero;
 
+    /// <summary>
+    /// Realm URL
+    /// </summary>
     public string KeycloakUrlRealm => $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm.ToLowerInvariant()}";
 
     private static string NormalizeUrl(string url)
