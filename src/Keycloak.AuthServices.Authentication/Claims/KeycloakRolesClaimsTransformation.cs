@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication;
 
 /// <summary>
 /// Transforms keycloak roles in the resource_access claim to jwt role claims.
+/// Note, realm roles are not mapped atm.
 /// </summary>
 /// <example>
 /// Example of keycloack resource_access claim

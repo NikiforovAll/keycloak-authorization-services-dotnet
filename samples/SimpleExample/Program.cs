@@ -1,6 +1,7 @@
 using Api;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Authorization.Handlers;
 using Keycloak.AuthServices.Sdk.Admin;
 using Microsoft.AspNetCore.Authorization;
 
@@ -32,7 +33,14 @@ services.AddAuthorization(o =>
     o.FallbackPolicy = new AuthorizationPolicyBuilder()
         .RequireAuthenticatedUser()
         .Build();
+
+    o.AddPolicy(PolicyConstants.MyCustomPolicy, builder =>
+    {
+        builder.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
+    });
 }).AddKeycloakAuthorization(configuration);
+
+services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
 
 services.AddControllers();
 
