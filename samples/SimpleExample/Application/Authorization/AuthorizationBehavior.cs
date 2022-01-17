@@ -44,19 +44,21 @@ public class AuthorizationBehavior<TRequest, TResponse>
     {
         // Policy-based authorization
         var authorizeAttributesWithPolicies = authorizeAttributes
-            .Where(a => !string.IsNullOrWhiteSpace(a.Policy));
+            .Where(a => !string.IsNullOrWhiteSpace(a.Policy))
+            .ToList();
 
         if (!authorizeAttributesWithPolicies.Any())
         {
             return;
         }
 
-        var requiredPolicies = authorizeAttributesWithPolicies.Select(a => a.Policy);
+        var requiredPolicies = authorizeAttributesWithPolicies
+            .Select(a => a.Policy);
 
         foreach (var policy in requiredPolicies)
         {
             var authorized = await this.identityService
-                .AuthorizeAsync(this.identityService.Principal, policy);
+                .AuthorizeAsync(this.identityService.Principal!, policy!);
 
             if (authorized)
             {
@@ -72,7 +74,8 @@ public class AuthorizationBehavior<TRequest, TResponse>
     {
         // Role-based authorization
         var authorizeAttributesWithRoles = authorizeAttributes
-            .Where(a => !string.IsNullOrWhiteSpace(a.Roles));
+            .Where(a => !string.IsNullOrWhiteSpace(a.Roles))
+            .ToList();
 
         if (!authorizeAttributesWithRoles.Any())
         {
@@ -80,10 +83,12 @@ public class AuthorizationBehavior<TRequest, TResponse>
         }
 
         var requiredRoles = authorizeAttributesWithRoles
-            .Select(a => a.Roles.Split(','));
+            .Where(a => !string.IsNullOrWhiteSpace(a.Roles))
+            .Select(a => a.Roles!.Split(','));
 
         if (requiredRoles
-            .Select(roles => roles.Any(role => this.identityService.IsInRoleAsync(role.Trim())))
+            .Select(roles => roles.Any(
+                role => this.identityService.IsInRoleAsync(role.Trim())))
             .Any(authorized => !authorized))
         {
             this.logger.LogDebug("Failed role authorization");

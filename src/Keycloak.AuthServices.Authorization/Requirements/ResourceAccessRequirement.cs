@@ -54,7 +54,7 @@ public class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAcc
 
         this.logger.LogDebug(
             "[{Requirement}] Access outcome {Outcome} for user {UserName}",
-            requirement.ToString(), success, context.User.Identity.Name);
+            requirement.ToString(), success, context.User.Identity?.Name);
 
         return Task.CompletedTask;
     }

@@ -17,7 +17,9 @@ host.ConfigureKeycloakConfigurationSource("keycloak.json");
 
 services.AddInfrastructure(configuration);
 
+#pragma warning disable ASP0000
 DatabaseUtils.MigrateDatabase(services.BuildServiceProvider());
+#pragma warning restore ASP0000
 
 services
     .AddApplication()

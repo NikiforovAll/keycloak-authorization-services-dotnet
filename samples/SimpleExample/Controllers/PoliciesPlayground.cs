@@ -47,7 +47,8 @@ public class PoliciesPlayground : ApiControllerBase
     {
         // var workspace = new Workspace() {Id = id ?? Guid.Parse("1d654851-ff72-42b6-bd4a-468f95f61c7a")};
         // var requirement = new DecisionRequirement($"workspaces/{workspace.Id}", "read");
-        var requirement = new DecisionRequirement(resource, scope);
+        var requirement = new DecisionRequirement(
+            resource ?? "workspaces", scope ?? "workspaces:read");
 
         var accessed = await authorizationService
             .AuthorizeAsync(this.User, null, requirement);

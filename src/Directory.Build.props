@@ -1,0 +1,17 @@
+<Project>
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Oleksii Nikiforov (@nikiforovall)</Authors>
+    <Company></Company>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageTags>Keycloak, OICD, Authentication, Authorization, JWT</PackageTags>
+    <Version>0.1.0</Version>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(IsTestProject)' == 'true' ">
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+</Project>

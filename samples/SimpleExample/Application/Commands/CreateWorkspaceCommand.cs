@@ -23,9 +23,9 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
         IKeycloakProtectedResourceClient resourceClient,
         IIdentityService identityService)
     {
-        this.db = db;
-        this.resourceClient = resourceClient;
-        this.identityService = identityService;
+        this.db = db ?? throw new ArgumentNullException(nameof(db));
+        this.resourceClient = resourceClient ?? throw new ArgumentNullException(nameof(resourceClient));
+        this.identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
     }
 
     public async Task<Unit> Handle(
@@ -38,10 +38,12 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
         this.db.Workspaces.Add(workspace);
         await this.db.SaveChangesAsync(cancellationToken);
 
-        await resourceClient.CreateResource("authz",
+        var userName = this.identityService?.UserName
+            ?? throw new InvalidOperationException();
+        await this.resourceClient.CreateResource("authz",
             new Resource($"workspaces/{workspace.Id}", new[] {"workspaces:read", "workspaces:delete"})
             {
-                Attributes = {[identityService.UserName] = "Owner"},
+                Attributes = {[userName] = "Owner"},
                 Type = "urn:workspace-authz:resource:workspaces",
             });
         return Unit.Value;

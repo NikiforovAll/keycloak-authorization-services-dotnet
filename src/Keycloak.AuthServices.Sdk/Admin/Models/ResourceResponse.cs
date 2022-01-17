@@ -1,4 +1,5 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin.Models;
+﻿#pragma warning disable CS8618
+namespace Keycloak.AuthServices.Sdk.Admin.Models;
 
 using System.Text.Json.Serialization;
 

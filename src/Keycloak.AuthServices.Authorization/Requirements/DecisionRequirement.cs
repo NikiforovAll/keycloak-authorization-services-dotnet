@@ -44,7 +44,7 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
 
         this.logger.LogDebug(
             "[{Requirement}] Access outcome {Outcome} for user {UserName}",
-            requirement.ToString(), success, context.User.Identity.Name);
+            requirement.ToString(), success, context.User.Identity?.Name);
         if (success)
         {
             context.Succeed(requirement);

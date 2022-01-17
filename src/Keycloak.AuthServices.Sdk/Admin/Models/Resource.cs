@@ -12,7 +12,7 @@ public class Resource
 
     public string Name { get; }
 
-    public string DisplayName { get; init; }
+    public string? DisplayName { get; init; }
     public string? Type { get; init; }
 
     [JsonPropertyName("resource_scopes")] public string[] Scopes { get; }
