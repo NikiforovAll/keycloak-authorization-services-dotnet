@@ -1,5 +1,24 @@
 # AuthZ
 
+## Keycloak.AuthServices.Authentication
+
+[Keycloak.AuthServices.Authentication](src/Keycloak.AuthServices.Authentication/Keycloak.AuthServices.Authentication.csproj)
+
+// TODO: example
+
+## Keycloak.AuthServices.Authorization
+
+[Keycloak.AuthServices.Authorization](src/Keycloak.AuthServices.Authorization/Keycloak.AuthServices.Authorization.csproj)
+
+// TODO: example
+
+## Keycloak.AuthServices.Sdk
+
+[Keycloak.AuthServices.Sdk](src/Keycloak.AuthServices.Sdk/Keycloak.AuthServices.Sdk.csproj)
+
+Adds typed `HttpClient` to integrate with keycloak API.
+
+// TODO: example
 
 ## Reference
 
