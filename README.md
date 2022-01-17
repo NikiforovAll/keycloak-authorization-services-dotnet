@@ -7,7 +7,6 @@ Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
 [Keycloak.AuthServices.Authentication](src/Keycloak.AuthServices.Authentication/Keycloak.AuthServices.Authentication.csproj)
 
 Add OpenID Connect + JWT Bearer token authentication.
-Client roles are automatically transformed into user role claims [KeycloakRolesClaimsTransformation](./src/Keycloak.AuthServices.Authentication/Claims/KeycloakRolesClaimsTransformation.cs).
 
 ```csharp
 // add configuration from keycloak file
@@ -19,11 +18,13 @@ services.AddKeycloakAuthentication(configuration, o =>
 });
 ```
 
+Client roles are automatically transformed into user role claims [KeycloakRolesClaimsTransformation](./src/Keycloak.AuthServices.Authentication/Claims/KeycloakRolesClaimsTransformation.cs).
+
 See [Keycloak.AuthServices.Authentication - README.md](src/Keycloak.AuthServices.Authentication/README.md)
 
 Keycloak installation file:
 
-```json
+```jsonc
 // confidential client
 {
   "realm": "<realm>",
