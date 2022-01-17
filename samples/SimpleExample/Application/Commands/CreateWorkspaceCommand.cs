@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Data;
 using Authorization;
 using Authorization.Abstractions;
-using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
 using MediatR;
@@ -42,7 +41,7 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
         await resourceClient.CreateResource("authz",
             new Resource($"workspaces/{workspace.Id}", new[] {"workspaces:read", "workspaces:delete"})
             {
-                Attributes = {[identityService.UserName] = "Owner, Operations"},
+                Attributes = {[identityService.UserName] = "Owner"},
                 Type = "urn:workspace-authz:resource:workspaces",
             });
         return Unit.Value;

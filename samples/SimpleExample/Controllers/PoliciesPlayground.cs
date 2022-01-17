@@ -1,6 +1,5 @@
 namespace Api.Controllers;
 
-using Data;
 using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Authorization.Requirements;
 using Microsoft.AspNetCore.Authorization;

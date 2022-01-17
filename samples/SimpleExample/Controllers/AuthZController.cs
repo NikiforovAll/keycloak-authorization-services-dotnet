@@ -1,6 +1,5 @@
 namespace Api.Controllers;
 
-using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.AuthZ;
 using Microsoft.AspNetCore.Mvc;
 

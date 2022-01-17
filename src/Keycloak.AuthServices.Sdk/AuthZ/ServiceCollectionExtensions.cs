@@ -1,6 +1,5 @@
 namespace Keycloak.AuthServices.Sdk.AuthZ;
 
-using Admin;
 using Common;
 using HttpMiddleware;
 using Microsoft.Extensions.DependencyInjection;

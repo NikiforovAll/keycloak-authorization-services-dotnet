@@ -1,6 +1,5 @@
 namespace Api.Controllers;
 
-using Application.Commands;
 using Application.Queries;
 using Data;
 using Microsoft.AspNetCore.Authorization;

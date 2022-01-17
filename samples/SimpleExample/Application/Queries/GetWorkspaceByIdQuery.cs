@@ -28,7 +28,7 @@ public class GetWorkspaceByIdQueryHandler : IRequestHandler<GetWorkspaceByIdQuer
         CancellationToken cancellationToken)
     {
         var authorized = await this.identityService.AuthorizeAsync(
-            ProtectedResourcePolicy.From("workspaces", request.Id.ToString(), "read"));
+            ProtectedResourcePolicy.From("workspaces", request.Id.ToString(), "workspaces:read"));
 
         if (!authorized)
         {

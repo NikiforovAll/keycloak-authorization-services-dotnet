@@ -27,9 +27,6 @@
           "name": "workspaces:create"
         },
         {
-          "name": "workspaces:delete"
-        },
-        {
           "name": "workspaces:read"
         }
       ]
@@ -45,6 +42,36 @@
       "decisionStrategy": "AFFIRMATIVE",
       "config": {
         "code": "// by default, grants any permission associated with this policy\n$evaluation.grant();\n"
+      }
+    },
+    {
+      "id": "3e61729f-a5de-4b18-8364-03773d620c2a",
+      "name": "Workspace has Owner through access group",
+      "type": "js",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "code": "var resource = $evaluation.getPermission().getResource();\r\n\r\nif (resource.type == \"urn:workspace-authz:resource:workspaces\"\r\n    && resource.name != \"workspaces\") {\r\n    var identity = $evaluation.context.getIdentity();\r\n    var username = identity.getAttributes()\r\n        .getValue(\"preferred_username\").asString(0);\r\n\r\n    var accessGroup = resource\r\n        .getAttribute(username);\r\n\r\n    print(accessGroup);\r\n    if (accessGroup && accessGroup.contains(\"Owner\")) {\r\n        $evaluation.grant();\r\n    }\r\n    // var accessGroup = resource.getAttribute(username);\r\n\r\n    // if (accessGroup && accessGroup[0] == \"Owner\") {\r\n    //     $evaluation.grant();\r\n    // }\r\n}"
+      }
+    },
+    {
+      "id": "74778dbe-8994-4117-9b44-771a727a21d0",
+      "name": "Require Manager role",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"workspace-authz/Manager\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "5a83be20-2b8a-48b3-b650-ce989a193f21",
+      "name": "Bypass resource ownership",
+      "type": "js",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "code": "var resource = $evaluation.getPermission().getResource();\r\n\r\nif (resource.type == \"urn:workspace-authz:resource:workspaces\"\r\n    && resource.name == \"workspaces\") {\r\n        $evaluation.grant();\r\n}"
       }
     },
     {
@@ -64,11 +91,32 @@
       "name": "Access Workspaces",
       "type": "resource",
       "logic": "POSITIVE",
-      "decisionStrategy": "UNANIMOUS",
+      "decisionStrategy": "AFFIRMATIVE",
       "config": {
         "defaultResourceType": "urn:workspace-authz:resource:workspaces",
-        "resources": "[\"workspaces\"]",
-        "applyPolicies": "[\"Default Policy\"]"
+        "applyPolicies": "[\"Workspace has Owner through access group\",\"Bypass resource ownership\"]"
+      }
+    },
+    {
+      "id": "ec29520a-0fa2-48aa-9b79-87e173ad6c84",
+      "name": "Create workspaces",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "scopes": "[\"workspaces:create\"]",
+        "applyPolicies": "[\"Require Manager role\"]"
+      }
+    },
+    {
+      "id": "f555eba2-d2e6-4aff-a6ae-d12c15255685",
+      "name": "Delete workspaces",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "scopes": "[\"workspaces:delete\"]",
+        "applyPolicies": "[\"Require Manager role\",\"Workspace has Owner through access group\"]"
       }
     }
   ],

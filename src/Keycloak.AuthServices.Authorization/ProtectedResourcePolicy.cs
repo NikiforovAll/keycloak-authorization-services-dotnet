@@ -1,7 +1,5 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
-using Requirements;
-
 public static class ProtectedResourcePolicy
 {
     public static string From(string resource, string id, string scope) =>

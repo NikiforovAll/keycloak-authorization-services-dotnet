@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Authorization.Requirements;
 
 using Common;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 public class RealmAccessRequirement : IAuthorizationRequirement
 {
@@ -10,24 +11,34 @@ public class RealmAccessRequirement : IAuthorizationRequirement
     public RealmAccessRequirement(params string[] roles) => this.Roles = roles;
 
     public override string ToString() =>
-        $"{nameof(RealmAccessRequirement)}: Roles are one of the following values: ({string.Join("|", this.Roles)}).";
+        $"{nameof(RealmAccessRequirement)}: Roles are one of the following values: ({string.Join("|", this.Roles)})";
 }
 
 public class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessRequirement>
 {
+    private readonly ILogger<RealmAccessRequirementHandler> logger;
+
+    public RealmAccessRequirementHandler(ILogger<RealmAccessRequirementHandler> logger)
+    {
+        this.logger = logger;
+    }
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         RealmAccessRequirement requirement)
     {
-        if (!context.User.Claims.TryGetRealmResource(out var resourceAccess))
+        var success = false;
+        if (context.User.Claims.TryGetRealmResource(out var resourceAccess))
         {
-            return Task.CompletedTask;
-        }
+            success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
 
-        if (resourceAccess.Roles.Intersect(requirement.Roles).Any())
-        {
-            context.Succeed(requirement);
+            if (success)
+            {
+                context.Succeed(requirement);
+            }
         }
+        this.logger.LogDebug(
+            "[{Requirement}] Access outcome {Outcome} for user {UserName}",
+            requirement.ToString(), success, context.User.Identity.Name);
 
         return Task.CompletedTask;
     }

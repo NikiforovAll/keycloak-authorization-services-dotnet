@@ -1,6 +1,7 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 using Sdk.AuthZ;
 
 public class DecisionRequirement : IAuthorizationRequirement
@@ -25,10 +26,13 @@ public class DecisionRequirement : IAuthorizationRequirement
 public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
 {
     private readonly IKeycloakProtectionClient client;
+    private readonly ILogger<DecisionRequirementHandler> logger;
 
-    public DecisionRequirementHandler(IKeycloakProtectionClient client)
+    public DecisionRequirementHandler(IKeycloakProtectionClient client,
+        ILogger<DecisionRequirementHandler> logger)
     {
         this.client = client ?? throw new ArgumentNullException(nameof(client));
+        this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     protected override async Task HandleRequirementAsync(
@@ -38,6 +42,9 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
         var success = await this.client.VerifyAccessToResource(
             requirement.Resource, requirement.Scope, CancellationToken.None);
 
+        this.logger.LogDebug(
+            "[{Requirement}] Access outcome {Outcome} for user {UserName}",
+            requirement.ToString(), success, context.User.Identity.Name);
         if (success)
         {
             context.Succeed(requirement);
