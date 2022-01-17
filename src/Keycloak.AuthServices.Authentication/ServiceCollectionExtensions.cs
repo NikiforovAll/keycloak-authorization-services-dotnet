@@ -39,10 +39,14 @@ public static class ServiceCollectionExtensions
         return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opts =>
             {
+                var sslRequired = string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
+                    || keycloakOptions.SslRequired
+                        .Equals("external", StringComparison.OrdinalIgnoreCase);
+
                 opts.Authority = keycloakOptions.KeycloakUrlRealm;
                 opts.Audience = keycloakOptions.Resource;
                 opts.TokenValidationParameters = validationParameters;
-                opts.RequireHttpsMetadata = true;
+                opts.RequireHttpsMetadata = sslRequired;
                 opts.SaveToken = true;
                 configureOptions?.Invoke(opts);
             });
@@ -100,7 +104,7 @@ public static class ServiceCollectionExtensions
         this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
         hostBuilder.ConfigureAppConfiguration((_, builder) =>
         {
-            var source = new KeycloakConfigurationSource {Path = fileName, Optional = false};
+            var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
             builder.Sources.Insert(0, source);
         });
 }

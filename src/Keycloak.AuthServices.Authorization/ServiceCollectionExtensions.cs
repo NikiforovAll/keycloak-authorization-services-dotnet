@@ -18,6 +18,7 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         KeycloakInstallationOptions keycloakOptions)
     {
+        services.AddSingleton(keycloakOptions);
         services.AddKeycloakProtectionHttpClient(keycloakOptions);
 
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();

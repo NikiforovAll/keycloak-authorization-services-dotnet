@@ -1,24 +1,89 @@
-# AuthZ
+# Keycloak.AuthServices
+
+Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
 
 ## Keycloak.AuthServices.Authentication
 
 [Keycloak.AuthServices.Authentication](src/Keycloak.AuthServices.Authentication/Keycloak.AuthServices.Authentication.csproj)
 
-// TODO: example
+Add OpenID Connect + JWT Bearer token authentication.
+Client roles are automatically transformed into user role claims [KeycloakRolesClaimsTransformation](./src/Keycloak.AuthServices.Authentication/Claims/KeycloakRolesClaimsTransformation.cs).
+
+```csharp
+// add configuration from keycloak file
+host.ConfigureKeycloakConfigurationSource("keycloak.json");
+// add authentication services, OICD JwtBearerDefaults.AuthenticationScheme
+services.AddKeycloakAuthentication(configuration, o =>
+{
+    o.RequireHttpsMetadata = false;
+});
+```
+
+See [Keycloak.AuthServices.Authentication - README.md](src/Keycloak.AuthServices.Authentication/README.md)
+
+Keycloak installation file:
+
+```json
+// confidential client
+{
+  "realm": "<realm>",
+  "auth-server-url": "http://localhost:8088/auth/",
+  "ssl-required": "external", // external | none
+  "resource": "<clientId>",
+  "verify-token-audience": true,
+  "credentials": {
+    "secret": ""
+  }
+}
+// public client
+{
+  "realm": "<realm>",
+  "auth-server-url": "http://localhost:8088/auth/",
+  "ssl-required": "external",
+  "resource": "<clientId>",
+  "public-client": true,
+  "confidential-port": 0
+}
+```
 
 ## Keycloak.AuthServices.Authorization
 
 [Keycloak.AuthServices.Authorization](src/Keycloak.AuthServices.Authorization/Keycloak.AuthServices.Authorization.csproj)
 
-// TODO: example
+```csharp
+services.AddAuthorization(authOptions =>
+{
+    authOptions.AddPolicy("<policyName>", policyBuilder =>
+    {
+        // configure policies here
+    });
+}).AddKeycloakAuthorization(configuration);
+```
+
+See [Keycloak.AuthServices.Authorization - README.md](src/Keycloak.AuthServices.Authorization/README.md)
 
 ## Keycloak.AuthServices.Sdk
 
 [Keycloak.AuthServices.Sdk](src/Keycloak.AuthServices.Sdk/Keycloak.AuthServices.Sdk.csproj)
 
-Adds typed `HttpClient` to integrate with keycloak API.
+Keycloak API clients.
 
-// TODO: example
+| Service                          | Description                                                                  |
+|----------------------------------|------------------------------------------------------------------------------|
+| IKeycloakClient                  | Unified HTTP client - IKeycloakRealmClient, IKeycloakProtectedResourceClient |
+| IKeycloakRealmClient             | Keycloak realm API                                                           |
+| IKeycloakProtectedResourceClient | Protected resource API                                                       |
+| IKeycloakProtectionClient        | Authorization server API, used by `AddKeycloakAuthorization`                 |
+
+```csharp
+// requires confidential client
+services.AddKeycloakAdminHttpClient(keycloakOptions);
+
+// based on token forwarding HttpClient middleware and IHttpContextAccessor
+services.AddKeycloakProtectionHttpClient(keycloakOptions);
+```
+
+See [Keycloak.AuthServices.Sdk - README.md](src/Keycloak.AuthServices.Sdk/README.md)
 
 ## Reference
 
@@ -27,3 +92,4 @@ Adds typed `HttpClient` to integrate with keycloak API.
 * <https://github.com/elmankross/Jboss.AspNetCore.Authentication.Keycloak/>
 * <https://github.com/mikemir/AspNetCore.KeycloakAuthentication/>
 * <https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-authorization-uma-authz-process.adoc>
+* <https://www.keycloak.org/docs/latest/authorization_services/index.html>

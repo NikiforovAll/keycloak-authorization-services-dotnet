@@ -38,6 +38,8 @@ public class KeycloakInstallationOptions
     /// </remarks>
     public TimeSpan TokenClockSkew { get; set; } = TimeSpan.Zero;
 
+    public string SslRequired { get; set; } = "external";
+
     /// <summary>
     /// Realm URL
     /// </summary>

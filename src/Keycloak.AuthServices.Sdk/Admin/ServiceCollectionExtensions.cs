@@ -10,22 +10,17 @@ public static class ServiceCollectionExtensions
 {
     /// <summary>
     /// Adds keycloak confidential client and underlying token management
+    /// Configuration is based on conventional configuration registration.
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="configuration"></param>
+    /// <param name="keycloakOptions"></param>
     /// <param name="configureClient"></param>
-    /// <param name="keycloakClientSectionName"></param>
     /// <returns></returns>
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
-        IConfiguration configuration,
-        Action<HttpClient>? configureClient = default,
-        string? keycloakClientSectionName = default)
+        KeycloakInstallationOptions keycloakOptions,
+        Action<HttpClient>? configureClient = default)
     {
-        var keycloakOptions = configuration
-            .GetSection(keycloakClientSectionName ?? ConfigurationConstants.ConfigurationPrefix)
-            .Get<KeycloakInstallationOptions>();
-
         services.AddAccessTokenManagement(o =>
             o.Client.Clients.Add("keycloak_admin_api",
                 new ClientCredentialsTokenRequest
@@ -49,5 +44,28 @@ public static class ServiceCollectionExtensions
                 configureClient?.Invoke(client);
             })
             .AddClientAccessTokenHandler("keycloak_admin_api");
+    }
+
+    /// <summary>
+    /// Adds keycloak confidential client and underlying token management
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <param name="configureClient"></param>
+    /// <param name="keycloakClientSectionName"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddKeycloakAdminHttpClient(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string? keycloakClientSectionName = default)
+    {
+        var sectionName = keycloakClientSectionName
+            ?? ConfigurationConstants.ConfigurationPrefix;
+        var keycloakOptions = configuration
+            .GetSection(sectionName)
+            .Get<KeycloakInstallationOptions>();
+
+        return services.AddKeycloakAdminHttpClient(keycloakOptions, configureClient);
     }
 }
