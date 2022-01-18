@@ -7,9 +7,19 @@
     <PackageProjectUrl></PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
     <PackageTags>Keycloak, OICD, Authentication, Authorization, JWT</PackageTags>
-    <Version>0.1.0</Version>
+    <Version>1.0.0</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
+    </ItemGroup>
+  </Target>
 
   <PropertyGroup Condition=" '$(IsTestProject)' == 'true' ">
     <IsPackable>false</IsPackable>

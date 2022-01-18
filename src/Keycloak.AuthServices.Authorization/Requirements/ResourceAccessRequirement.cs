@@ -19,7 +19,7 @@ public class ResourceAccessRequirement : IAuthorizationRequirement
         $"{nameof(ResourceAccessRequirement)}: Roles are one of the following values: ({string.Join("|", this.Roles)}) for client '{this.Resource}'";
 }
 
-public class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAccessRequirement>
+public partial class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAccessRequirement>
 {
     private readonly KeycloakInstallationOptions keycloakOptions;
     private readonly ILogger<ResourceAccessRequirementHandler> logger;
@@ -31,6 +31,10 @@ public class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAcc
         this.keycloakOptions = keycloakOptions;
         this.logger = logger;
     }
+
+    [LoggerMessage(101, LogLevel.Debug,
+        "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
+    partial void ResourceAuthorizationResult(string requirement, bool outcome, string? userName);
 
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
@@ -52,8 +56,7 @@ public class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAcc
             }
         }
 
-        this.logger.LogDebug(
-            "[{Requirement}] Access outcome {Outcome} for user {UserName}",
+        this.ResourceAuthorizationResult(
             requirement.ToString(), success, context.User.Identity?.Name);
 
         return Task.CompletedTask;

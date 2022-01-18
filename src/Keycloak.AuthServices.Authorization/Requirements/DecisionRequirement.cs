@@ -23,7 +23,7 @@ public class DecisionRequirement : IAuthorizationRequirement
     public override string ToString() => $"{nameof(DecisionRequirement)}: {this.Resource}#{this.Scope}";
 }
 
-public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
+public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
 {
     private readonly IKeycloakProtectionClient client;
     private readonly ILogger<DecisionRequirementHandler> logger;
@@ -35,6 +35,10 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
+    [LoggerMessage(103, LogLevel.Debug,
+        "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
+    partial void RealmAuthorizationResult(string requirement, bool outcome, string? userName);
+
     protected override async Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         DecisionRequirement requirement)
@@ -42,9 +46,9 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
         var success = await this.client.VerifyAccessToResource(
             requirement.Resource, requirement.Scope, CancellationToken.None);
 
-        this.logger.LogDebug(
-            "[{Requirement}] Access outcome {Outcome} for user {UserName}",
+        this.RealmAuthorizationResult(
             requirement.ToString(), success, context.User.Identity?.Name);
+
         if (success)
         {
             context.Succeed(requirement);

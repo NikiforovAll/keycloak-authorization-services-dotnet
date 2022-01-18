@@ -5,7 +5,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Keycloak.AuthServices.Common</RootNamespace>
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
 </Project>

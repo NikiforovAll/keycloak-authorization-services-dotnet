@@ -1,0 +1,6 @@
+@baseUrl={{$dotenv BASE_URL}}
+@accessToken={{$dotenv ACCESS_TOKEN}}
+###
+
+GET {{baseUrl}}/workspaces
+authorization: bearer {{accessToken}}

@@ -10,7 +10,7 @@ public static class ApplicationLogger
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Verbose()
             .WriteTo.Console(
-                outputTemplate: "[{Level:u4}] |{SourceContext,30}| {Message:lj}{NewLine}{Exception}",
+                outputTemplate: "[{Level:u4}] |{SourceContext,30}({EventId})| {Message:lj}{NewLine}{Exception}",
                 restrictedToMinimumLevel: LogEventLevel.Debug)
             .CreateBootstrapLogger();
 

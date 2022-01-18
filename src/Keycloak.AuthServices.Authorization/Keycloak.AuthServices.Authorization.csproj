@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
-    <ProjectReference Include="..\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
+    <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" PrivateAssets="All"/>
+    <ProjectReference Include="..\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" PrivateAssets="All"/>
   </ItemGroup>
 
 </Project>

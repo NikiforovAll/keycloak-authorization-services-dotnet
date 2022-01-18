@@ -86,11 +86,18 @@ services.AddKeycloakProtectionHttpClient(keycloakOptions);
 
 See [Keycloak.AuthServices.Sdk - README.md](src/Keycloak.AuthServices.Sdk/README.md)
 
+## Build and Development
+
+`dotnet cake --target build`
+
+`dotnet pack -o ./Artefacts`
+
 ## Reference
 
 * <https://github.com/thinktecture-labs/webinar-keycloak>
 * <https://github.com/thinktecture-labs/webinar-keycloak-authorization>
 * <https://github.com/elmankross/Jboss.AspNetCore.Authentication.Keycloak/>
 * <https://github.com/mikemir/AspNetCore.KeycloakAuthentication/>
+* <https://github.com/lvermeulen/Keycloak.Net>
 * <https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-authorization-uma-authz-process.adoc>
 * <https://www.keycloak.org/docs/latest/authorization_services/index.html>

@@ -28,7 +28,11 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        DotNetBuild(".");
+        DotNetBuild(".", new DotNetBuildSettings
+        {
+            Configuration = configuration,
+            OutputDirectory = artefactsDirectory,
+        });
     });
 
 Task("Test")
@@ -55,16 +59,18 @@ Task("Test")
 
 Task("Pack")
     .Description("Creates NuGet packages and outputs them to the artefacts directory.")
-    .DoesForEach(GetFiles("./src/**/*.csproj"), project =>
+    .Does(() =>
     {
-        var buildSettings = new DotNetMSBuildSettings();
+        var buildSettings = new DotNetMSBuildSettings()
+        {
+        };
         if (!BuildSystem.IsLocalBuild)
         {
             buildSettings.WithProperty("ContinuousIntegrationBuild", "true");
         }
 
         DotNetPack(
-            project.ToString(),
+            ".",
             new DotNetPackSettings()
             {
                 Configuration = configuration,
@@ -74,7 +80,7 @@ Task("Pack")
                 NoRestore = false,
                 OutputDirectory = artefactsDirectory,
             });
-    });
+    }).IsDependentOn("Build");
 
 Task("Default")
     .Description("Cleans, restores NuGet packages, builds the solution, runs unit tests and then creates NuGet packages.")
