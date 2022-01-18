@@ -34,13 +34,15 @@ public class AuthorizationBehavior<TRequest, TResponse>
 
         this.EnsureAuthorizedRoles(authorizeAttributes);
 
-        await this.EnsureAuthorizedPolicies(authorizeAttributes);
+        await this.EnsureAuthorizedPolicies(request, authorizeAttributes);
 
         // User is authorized / authorization not required
         return await next();
     }
 
-    private async Task EnsureAuthorizedPolicies(IEnumerable<AuthorizeAttribute> authorizeAttributes)
+    private async Task EnsureAuthorizedPolicies(
+        TRequest request,
+        IEnumerable<AuthorizeAttribute> authorizeAttributes)
     {
         // Policy-based authorization
         var authorizeAttributesWithPolicies = authorizeAttributes
@@ -53,7 +55,15 @@ public class AuthorizationBehavior<TRequest, TResponse>
         }
 
         var requiredPolicies = authorizeAttributesWithPolicies
-            .Select(a => a.Policy);
+            .Select(a =>
+            {
+                if (a is AuthorizeProtectedResourceAttribute resourceAttribute
+                    && request is IRequestWithResourceId requestWithResourceId)
+                {
+                    resourceAttribute.ResourceId = requestWithResourceId.ResourceId;
+                }
+                return a.Policy;
+            });
 
         foreach (var policy in requiredPolicies)
         {

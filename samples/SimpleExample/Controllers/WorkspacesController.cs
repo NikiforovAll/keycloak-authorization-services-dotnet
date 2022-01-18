@@ -37,6 +37,10 @@ public class WorkspacesController : ApiControllerBase
     public async Task Delete(Guid id) =>
         await this.Mediator.Send(new DeleteWorkspaceCommand(id));
 
+    [HttpDelete("{id:guid}/v2")]
+    public async Task DeleteAOP(Guid id) =>
+        await this.Mediator.Send(new DeleteWorkspaceCommandAOP(id));
+
     [HttpDelete("")]
     public async Task DeleteAll([FromServices] ApplicationDbContext db) =>
         await db.Database.ExecuteSqlRawAsync("TRUNCATE public.\"Workspaces\" CASCADE");
