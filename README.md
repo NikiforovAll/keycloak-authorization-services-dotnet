@@ -1,4 +1,14 @@
-# Keycloak.AuthServices
+# Keycloak.AuthServices 
+
+[![Build](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/build.yml)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikiforovall/copy-paster/blob/main/LICENSE)
+[![contributionswelcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/nikiforovall/copy-paster)
+
+Package                                | Version                                                                                                                                  | Description
+---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------
+`Keycloak.AuthServices.Authentication` | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authentication.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authentication)                         | Keycloak Authentication JWT + OICD
+`Keycloak.AuthServices.Authorization`  | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authorization.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authorization) | Authorization Services. Use Keycloak as authorization server
+`Keycloak.AuthServices.Sdk`            | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Sdk.svg)](https://nuget.org/packages/Keycloak.AuthServices.Sdk)     | HTTP API integration with Keycloak
 
 Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
 
