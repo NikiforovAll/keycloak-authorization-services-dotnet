@@ -15,7 +15,9 @@ services.AddAuthorization(options =>
     {
         options.AddPolicy("RequireWorkspaces", builder =>
         {
-            builder.RequireProtectedResource("workspaces", "workspaces:read");
+            builder.RequireProtectedResource("workspaces", "workspaces:read")
+                .RequireRealmRoles("User")
+                .RequireResourceRoles("Admin");
         });
     })
     .AddKeycloakAuthorization(configuration);
