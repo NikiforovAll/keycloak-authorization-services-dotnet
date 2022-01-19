@@ -233,7 +233,6 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 /NDependOut
-/Epam.MentorHub.Api.ndproj
 
 artifacts
 Artefacts
