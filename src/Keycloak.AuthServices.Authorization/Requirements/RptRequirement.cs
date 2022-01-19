@@ -4,28 +4,50 @@ using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
 
+/// <summary>
+/// Requesting Party Token (RPT) requirement
+/// </summary>
 public class RptRequirement : IAuthorizationRequirement
 {
+    /// <summary>
+    /// Resource name
+    /// </summary>
     public string Resource { get; }
+
+    /// <summary>
+    /// Resource scope
+    /// </summary>
     public string Scope { get; }
 
+    /// <summary>
+    /// </summary>
+    /// <param name="resource"></param>
+    /// <param name="scope"></param>
     public RptRequirement(string resource, string scope)
     {
         this.Resource = resource;
         this.Scope = scope;
     }
 
+    /// <inheritdoc />
     public override string ToString() => $"{nameof(RptRequirement)}: {this.Resource}#{this.Scope}";
 }
 
+/// <summary>
+/// </summary>
 public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 {
+    /// <summary>
+    /// </summary>
+    /// <param name="context"></param>
+    /// <param name="requirement"></param>
+    /// <returns></returns>
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RptRequirement requirement)
     {
         // the client application is responsible for acquiring of the token
         // should request special RPT access_token that contains this section
         var authorizationClaim = context.User.FindFirstValue("authorization");
-        if (String.IsNullOrWhiteSpace(authorizationClaim))
+        if (string.IsNullOrWhiteSpace(authorizationClaim))
         {
             return Task.CompletedTask;
         }

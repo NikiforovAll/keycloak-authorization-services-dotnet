@@ -7,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Requirements;
 using Sdk.AuthZ;
 
+/// <summary>
+/// Add Keycloak authorization services
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>

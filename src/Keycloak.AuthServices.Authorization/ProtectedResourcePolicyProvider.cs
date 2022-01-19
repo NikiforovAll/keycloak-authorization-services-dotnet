@@ -4,14 +4,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 using Requirements;
 
+/// <summary>
+/// </summary>
 public class ProtectedResourcePolicyProvider
     : DefaultAuthorizationPolicyProvider
 {
+    /// <summary>
+    /// </summary>
+    /// <param name="options"></param>
     public ProtectedResourcePolicyProvider(
         IOptions<AuthorizationOptions> options) : base(options)
     {
     }
 
+    /// <inheritdoc />
     public override async Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
     {
         var registeredPolicy = await base.GetPolicyAsync(policyName);
