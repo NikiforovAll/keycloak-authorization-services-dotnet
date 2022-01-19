@@ -1,3 +1,4 @@
+Console.Write("hello world");
 // using Keycloak.AuthServices.Authentication;
 // using Keycloak.AuthServices.Authorization;
 
