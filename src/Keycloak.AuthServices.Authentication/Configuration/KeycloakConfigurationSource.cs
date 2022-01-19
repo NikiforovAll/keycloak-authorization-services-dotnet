@@ -3,6 +3,9 @@ namespace Keycloak.AuthServices.Authentication.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 
+/// <summary>
+/// Keycloak configuration provider
+/// </summary>
 public class KeycloakConfigurationSource : JsonConfigurationSource
 {
     /// <summary>

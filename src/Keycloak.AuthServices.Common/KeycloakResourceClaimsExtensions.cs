@@ -4,10 +4,19 @@ using System.Diagnostics.CodeAnalysis;
 using System.Security.Claims;
 using System.Text.Json;
 
+/// <summary>
+/// Utils
+/// </summary>
 public static class KeycloakResourceClaimsExtensions
 {
     private const string ClaimValueType = "JSON";
 
+    /// <summary>
+    ///  Try get claim from JWT
+    /// </summary>
+    /// <param name="claims"></param>
+    /// <param name="resourceAccessCollection"></param>
+    /// <returns></returns>
     public static bool TryGetResourceCollection(
         this IEnumerable<Claim> claims,
         [MaybeNullWhen(false)] out ResourceAccessCollection resourceAccessCollection)
@@ -28,6 +37,12 @@ public static class KeycloakResourceClaimsExtensions
         return true;
     }
 
+    /// <summary>
+    /// Try get Claim from JWT
+    /// </summary>
+    /// <param name="claims"></param>
+    /// <param name="resourcesAccess"></param>
+    /// <returns></returns>
     public static bool TryGetRealmResource(
         this IEnumerable<Claim> claims,
         [MaybeNullWhen(false)] out ResourceAccess resourcesAccess)

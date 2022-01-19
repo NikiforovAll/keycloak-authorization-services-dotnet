@@ -6,15 +6,23 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 
+/// <summary>
+/// Delegating handler to propagate headers
+/// </summary>
 public class AccessTokenPropagationHandler : DelegatingHandler
 {
     private readonly IHttpContextAccessor contextAccessor;
 
+    /// <summary>
+    /// Constructs
+    /// </summary>
+    /// <param name="contextAccessor"></param>
     public AccessTokenPropagationHandler(IHttpContextAccessor contextAccessor)
     {
         this.contextAccessor = contextAccessor;
     }
 
+    /// <inheritdoc/>
     protected override async Task<HttpResponseMessage> SendAsync(
         HttpRequestMessage request, CancellationToken cancellationToken)
     {

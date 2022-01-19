@@ -4,7 +4,7 @@
 /// Installation options provided by Keycloak
 /// </summary>
 /// <remarks>
-/// <seealso cref="/.well-known/openid-configuration"/>
+/// See "/.well-known/openid-configuration"
 /// </remarks>
 public class KeycloakInstallationOptions
 {
@@ -16,6 +16,9 @@ public class KeycloakInstallationOptions
     /// </example>
     public string AuthServerUrl { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Keycloak Realm
+    /// </summary>
     public string Realm { get; set; } = string.Empty;
 
     /// <summary>
@@ -26,8 +29,14 @@ public class KeycloakInstallationOptions
     /// </example>
     public string Resource { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Audience verification
+    /// </summary>
     public bool VerifyTokenAudience { get; set; }
 
+    /// <summary>
+    /// Credentials, defined for private client
+    /// </summary>
     public KeycloakClientInstallationCredentials Credentials { get; set; } = new();
 
     /// <summary>
@@ -38,6 +47,9 @@ public class KeycloakInstallationOptions
     /// </remarks>
     public TimeSpan TokenClockSkew { get; set; } = TimeSpan.Zero;
 
+    /// <summary>
+    /// Require HTTPS
+    /// </summary>
     public string SslRequired { get; set; } = "external";
 
     /// <summary>
@@ -53,12 +65,24 @@ public class KeycloakInstallationOptions
     }
 }
 
+/// <summary>
+/// Keycloak client credentials
+/// </summary>
 public class KeycloakClientInstallationCredentials
 {
+    /// <summary>
+    /// Secret
+    /// </summary>
     public string Secret { get; set; } = string.Empty;
 }
 
+/// <summary>
+/// Configuration constant, used internally
+/// </summary>
 public static class ConfigurationConstants
 {
+    /// <summary>
+    /// Configuration prefix
+    /// </summary>
     public const string ConfigurationPrefix = "Keycloak";
 }

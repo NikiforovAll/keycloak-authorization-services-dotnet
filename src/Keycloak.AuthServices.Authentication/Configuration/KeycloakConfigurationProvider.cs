@@ -5,6 +5,9 @@ using System.Text;
 using Common;
 using Microsoft.Extensions.Configuration.Json;
 
+/// <summary>
+/// Keycloak file configuration provider
+/// </summary>
 public class KeycloakConfigurationProvider : JsonConfigurationProvider
 {
     private const char KeycloakPropertyDelimiter = '-';

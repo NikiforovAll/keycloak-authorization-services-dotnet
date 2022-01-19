@@ -2,17 +2,25 @@
 
 using Common;
 
+/// <inheritdoc />
 public class KeycloakProtectionClient : IKeycloakProtectionClient
 {
     private readonly HttpClient httpClient;
     private readonly KeycloakInstallationOptions installationOptions;
 
+    /// <summary>
+    /// Constructs KeycloakProtectionClient
+    /// </summary>
+    /// <param name="httpClient"></param>
+    /// <param name="installationOptions"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     public KeycloakProtectionClient(HttpClient httpClient, KeycloakInstallationOptions installationOptions)
     {
         this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         this.installationOptions = installationOptions;
     }
 
+    /// <inheritdoc />
     public async Task<bool> VerifyAccessToResource(string resource, string scope, CancellationToken cancellationToken)
     {
         var audience = this.installationOptions.Resource;

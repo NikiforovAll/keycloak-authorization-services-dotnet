@@ -4,6 +4,9 @@ using Common;
 using HttpMiddleware;
 using Microsoft.Extensions.DependencyInjection;
 
+/// <summary>
+/// Registers HTTP Client SDKs for integration with Keycloak
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>

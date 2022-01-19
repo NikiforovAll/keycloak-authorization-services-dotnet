@@ -7,6 +7,12 @@
     <RootNamespace>Keycloak.AuthServices.Sdk</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Label="Package">
+    <Product>Keycloak.AuthServices.Sdk</Product>
+    <Description>HttpClient integration with Keyclaok. HTTP Client SDK</Description>
+    <PackageTags>Keycloak;authserver;http-sdk</PackageTags>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
   </ItemGroup>

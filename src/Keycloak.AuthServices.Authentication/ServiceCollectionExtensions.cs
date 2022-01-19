@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
+/// <summary>
+/// Configures Authentication via Keycloak
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>
@@ -100,6 +103,12 @@ public static class ServiceCollectionExtensions
         return services.AddKeycloakAuthentication(options, configureOptions);
     }
 
+    /// <summary>
+    /// Adds configuration source based on keycloak.json
+    /// </summary>
+    /// <param name="hostBuilder"></param>
+    /// <param name="fileName"></param>
+    /// <returns></returns>
     public static IHostBuilder ConfigureKeycloakConfigurationSource(
         this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
         hostBuilder.ConfigureAppConfiguration((_, builder) =>

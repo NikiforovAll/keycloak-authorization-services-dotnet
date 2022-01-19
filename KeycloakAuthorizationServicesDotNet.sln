@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Authentication", "src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj", "{F0E53AED-46D8-4665-9222-2E8CE0F2253C}"
 EndProject
@@ -27,6 +30,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{A04EE911-0BE4-49FB-A92C-6CBD4CDF8005}"
 	ProjectSection(SolutionItems) = preProject
 		build.cake = build.cake
+		.github\workflows\build.yml = .github\workflows\build.yml
 	EndProjectSection
 EndProject
 Global

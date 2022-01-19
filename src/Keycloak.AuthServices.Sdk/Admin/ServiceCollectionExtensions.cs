@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
+/// <summary>
+/// Adds HTTP Client SDK
+/// </summary>
 public static class ServiceCollectionExtensions
 {
     /// <summary>

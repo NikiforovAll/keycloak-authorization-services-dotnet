@@ -43,7 +43,7 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     /// Note: this will be run on each AuthenticateAsync call, so its safer to
     /// return a new ClaimsPrincipal if your transformation is not idempotent.
     /// </summary>
-    /// <param name="principal">The <see cref="T:System.Security.Claims.ClaimsPrincipal" /> to transform.</param>
+    /// <param name="principal">The <see cref="ClaimsPrincipal" /> to transform.</param>
     /// <returns>
     /// The transformed principal.
     /// </returns>

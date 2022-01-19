@@ -1,15 +1,29 @@
 <Project>
 
   <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Oleksii Nikiforov (@nikiforovall)</Authors>
-    <Company></Company>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl></RepositoryUrl>
-    <PackageTags>Keycloak, OICD, Authentication, Authorization, JWT</PackageTags>
+    <PackageProjectUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</RepositoryUrl>
     <Version>1.0.0</Version>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
+
+  <PropertyGroup Label="Build">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Source Link">
+    <!-- Optional: Declare that the Repository URL can be published to NuSpec -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <!-- Optional: Embed source files that are not tracked by the source control manager to the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <!-- Optional: Include PDB in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="1.1.1"/>
+  </ItemGroup>
 
   <PropertyGroup>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
@@ -17,7 +31,7 @@
 
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
     <ItemGroup>
-      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))"/>
     </ItemGroup>
   </Target>
 
