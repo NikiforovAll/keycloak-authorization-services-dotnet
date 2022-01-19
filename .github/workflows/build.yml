@@ -61,7 +61,7 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.event_name == 'release'
     environment:
       name: "GitHub Packages"
-      url: https://github.com/nikiforovall/Serilog.Exceptions/packages
+      url: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/packages/
     permissions:
       packages: write
     runs-on: windows-latest
@@ -83,7 +83,7 @@ jobs:
     if: github.event_name == 'release'
     environment:
       name: "NuGet"
-      url: https://www.nuget.org/packages?q=Keycloak.AuthServices.Authentication
+      url: https://www.nuget.org/packages?q=Keycloak.AuthServices
     runs-on: windows-latest
     steps:
       - name: "Download Artefact"
