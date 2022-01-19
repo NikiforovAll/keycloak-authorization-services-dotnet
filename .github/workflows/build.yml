@@ -37,8 +37,7 @@ jobs:
         uses: actions/setup-dotnet@v1.9.0
         with:
           dotnet-version: |
-            3.1.x
-            5.0.x
+            6.0.x
       - name: "Install .NET Core SDK"
         uses: actions/setup-dotnet@v1.9.0
       - name: "Dotnet Tool Restore"
