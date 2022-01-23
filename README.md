@@ -1,9 +1,11 @@
 # Keycloak.AuthServices
 
 [![Build](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/build.yml)
+[![CodeQL](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/codeql-analysis.yml)
 [![NuGet](https://img.shields.io/nuget/dt/Keycloak.AuthServices.Authentication.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authentication)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikiforovall/copy-paster/blob/main/LICENSE)
-[![contributionswelcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/nikiforovall/copy-paster)
+[![contributionswelcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/nikiforovall/keycloak-authorization-services-dotnet)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikiforovall/keycloak-authorization-services-dotnet/blob/main/LICENSE.md)
 
 Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
 
