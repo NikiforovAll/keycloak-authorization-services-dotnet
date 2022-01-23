@@ -4,7 +4,7 @@
     <Authors>Oleksii Nikiforov (@nikiforovall)</Authors>
     <PackageProjectUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</RepositoryUrl>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
