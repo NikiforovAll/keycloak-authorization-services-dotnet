@@ -6,6 +6,7 @@
     <RepositoryUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</RepositoryUrl>
     <Version>1.0.2</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +28,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Package References">
-    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="1.1.1"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
   </ItemGroup>
 
   <PropertyGroup>
