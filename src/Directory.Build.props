@@ -4,12 +4,17 @@
     <Authors>Oleksii Nikiforov (@nikiforovall)</Authors>
     <PackageProjectUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</RepositoryUrl>
-    <Version>1.0.2</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
+  <PropertyGroup Label="MinVer">
+    <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
+    <MinVerVerbosity>normal</MinVerVerbosity>
+  </PropertyGroup>
+
   <ItemGroup>
+    <!-- Include README.md to NuGet package -->
     <None Include="../../README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
@@ -29,17 +34,22 @@
 
   <ItemGroup Label="Package References">
     <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+    <PackageReference Include="MinVer">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
-  <PropertyGroup>
-    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
-  </PropertyGroup>
-
+  <!-- Include dependent packages, see PrivateAssets="All" -->
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
     <ItemGroup>
       <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))"/>
     </ItemGroup>
   </Target>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
 
   <PropertyGroup Condition=" '$(IsTestProject)' == 'true' ">
     <IsPackable>false</IsPackable>

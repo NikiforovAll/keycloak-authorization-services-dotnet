@@ -12,7 +12,8 @@
     <PackageVersion Include="Refit" Version="6.1.15"/>
   </ItemGroup>
 
-  <ItemGroup Label="NuGet Release">
+  <ItemGroup Label="Release">
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1"/>
+    <PackageVersion Include="MinVer" Version="2.5.0"/>
   </ItemGroup>
 </Project>
