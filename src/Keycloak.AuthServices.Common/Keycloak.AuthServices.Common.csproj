@@ -7,4 +7,9 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Label="Package">
+    <Product>Keycloak.AuthServices.Common</Product>
+    <Description>Utils for Keycloak.AuthServices</Description>
+  </PropertyGroup>
+
 </Project>
