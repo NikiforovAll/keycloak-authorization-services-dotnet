@@ -67,7 +67,7 @@ public static class ServiceCollectionExtensions
             ?? ConfigurationConstants.ConfigurationPrefix;
         var keycloakOptions = configuration
             .GetSection(sectionName)
-            .Get<KeycloakInstallationOptions>();
+            .Get<KeycloakInstallationOptions>() ?? new KeycloakInstallationOptions();
 
         return services.AddKeycloakAdminHttpClient(keycloakOptions, configureClient);
     }
