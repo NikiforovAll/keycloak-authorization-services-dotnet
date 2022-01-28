@@ -70,10 +70,7 @@ public static class ServiceCollectionExtensions
     {
         var options = configuration
             .GetSection(ConfigurationConstants.ConfigurationPrefix)
-            .Get<KeycloakInstallationOptions>();
-
-        services.AddOptions<KeycloakInstallationOptions>()
-            .Bind(configuration);
+            .Get<KeycloakInstallationOptions>() ?? new KeycloakInstallationOptions();
 
         return services.AddKeycloakAuthentication(options, configureOptions);
     }
