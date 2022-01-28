@@ -55,13 +55,14 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Realm URL
     /// </summary>
-    public string KeycloakUrlRealm => $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm.ToLowerInvariant()}";
+    public string KeycloakUrlRealm => $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}";
 
     private static string NormalizeUrl(string url)
     {
         var urlNormalized = !url.EndsWith('/') ? url : url.TrimEnd('/');
 
-        return urlNormalized.ToLowerInvariant();
+        // return urlNormalized.ToLowerInvariant();
+        return urlNormalized;
     }
 }
 
