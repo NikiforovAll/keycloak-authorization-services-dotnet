@@ -9,7 +9,7 @@ using Requirements;
 public static class PoliciesBuilderExtensions
 {
     /// <summary>
-    /// Add resource role requirement to builder
+    /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="roles"></param>
@@ -21,7 +21,7 @@ public static class PoliciesBuilderExtensions
             .AddRequirements(new ResourceAccessRequirement(default, roles));
 
     /// <summary>
-    /// Add realm role requirement to builder
+    /// Adds realm role requirement to builder. Ensures that at least one realm role is present in realm claims.
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="roles"></param>
@@ -33,7 +33,7 @@ public static class PoliciesBuilderExtensions
             .AddRequirements(new RealmAccessRequirement(roles));
 
     /// <summary>
-    /// Add protected resource requirement to builder
+    /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="resource"></param>
