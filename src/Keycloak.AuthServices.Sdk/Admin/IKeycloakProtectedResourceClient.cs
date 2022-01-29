@@ -37,4 +37,18 @@ public interface IKeycloakProtectedResourceClient
     [Post(KeycloakClientApiConstants.CreateResource)]
     [Headers("Accept: application/json", "Content-Type: application/json")]
     Task<ResourceResponse> CreateResource(string realm, [Body] Resource resource);
+
+    /// <summary>
+    /// Updates resource
+    /// </summary>
+    /// <remarks>
+    ///     Docs: https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-protection-resources-api-papi.adoc#updating-resources
+    /// </remarks>
+    /// <param name="realm"></param>
+    /// <param name="resource"></param>
+    /// <returns></returns>
+    [Post(KeycloakClientApiConstants.PutResource)]
+    [Headers("Accept: application/json", "Content-Type: application/json")]
+    Task<ResourceResponse> UpdateResource(
+        string realm, string id, [Body] Resource resource);
 }

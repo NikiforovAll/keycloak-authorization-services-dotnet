@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Keycloak.AuthServices.Authentication" Version="1.0.0"/>
-    <PackageReference Include="Keycloak.AuthServices.Authorization" Version="1.0.0"/>
-    <PackageReference Include="Keycloak.AuthServices.Sdk" Version="1.0.0"/>
+    <PackageReference Include="Keycloak.AuthServices.Authentication" Version="1.0.4" />
+    <PackageReference Include="Keycloak.AuthServices.Authorization" Version="1.0.0" />
+    <PackageReference Include="Keycloak.AuthServices.Sdk" Version="1.0.4" />
   </ItemGroup>
 
 </Project>

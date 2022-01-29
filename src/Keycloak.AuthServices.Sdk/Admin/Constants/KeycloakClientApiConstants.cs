@@ -20,5 +20,7 @@ internal static class KeycloakClientApiConstants
 
     internal const string CreateResource = $"{GetResources}";
 
+    internal const string PutResource = $"{GetResource}";
+
     #endregion
 }
