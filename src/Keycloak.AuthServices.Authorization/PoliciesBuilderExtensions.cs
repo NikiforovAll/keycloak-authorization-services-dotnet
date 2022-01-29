@@ -29,7 +29,7 @@ public static class PoliciesBuilderExtensions
     public static AuthorizationPolicyBuilder RequireRealmRoles(
         this AuthorizationPolicyBuilder builder, params string[] roles) =>
         builder
-            .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
+            .RequireClaim(KeycloakConstants.RealmAccessClaimType)
             .AddRequirements(new RealmAccessRequirement(roles));
 
     /// <summary>
