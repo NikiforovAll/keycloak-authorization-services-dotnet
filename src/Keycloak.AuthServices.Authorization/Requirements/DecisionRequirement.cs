@@ -67,7 +67,7 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
 
     [LoggerMessage(103, LogLevel.Debug,
         "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
-    partial void RealmAuthorizationResult(string requirement, bool outcome, string? userName);
+    partial void DecisionAuthorizationResult(string requirement, bool outcome, string? userName);
 
     /// <inheritdoc/>
     protected override async Task HandleRequirementAsync(
@@ -77,7 +77,7 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         var success = await this.client.VerifyAccessToResource(
             requirement.Resource, requirement.Scope, CancellationToken.None);
 
-        this.RealmAuthorizationResult(
+        this.DecisionAuthorizationResult(
             requirement.ToString(), success, context.User.Identity?.Name);
 
         if (success)

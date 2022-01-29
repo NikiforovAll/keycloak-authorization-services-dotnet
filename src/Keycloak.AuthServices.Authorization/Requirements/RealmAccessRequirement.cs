@@ -41,7 +41,7 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
 
     [LoggerMessage(100, LogLevel.Debug,
         "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
-    partial void DecisionAuthorizationResult(string requirement, bool outcome, string? userName);
+    partial void RealmAuthorizationResult(string requirement, bool outcome, string? userName);
 
     /// <inheritdoc />
     protected override Task HandleRequirementAsync(
@@ -59,7 +59,7 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
             }
         }
 
-        this.DecisionAuthorizationResult(
+        this.RealmAuthorizationResult(
             requirement.ToString(), success, context.User.Identity?.Name);
 
         return Task.CompletedTask;
