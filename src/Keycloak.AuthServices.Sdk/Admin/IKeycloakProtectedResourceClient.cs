@@ -39,7 +39,7 @@ public interface IKeycloakProtectedResourceClient
     /// <returns></returns>
     [Get(KeycloakClientApiConstants.GetResourceByExactName)]
     [Headers("Accept: application/json")]
-    Task<ResourceResponse> GetResourceByName(string realm, [Query] string name);
+    Task<string[]> SearchResourcesByName(string realm, [Query] string name);
 
     /// <summary>
     /// Creates resource
