@@ -58,6 +58,7 @@ public interface IKeycloakProtectedResourceClient
     ///     Docs: https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-protection-resources-api-papi.adoc#updating-resources
     /// </remarks>
     /// <param name="realm"></param>
+    /// <param name="id"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
     [Put(KeycloakClientApiConstants.PutResource)]
