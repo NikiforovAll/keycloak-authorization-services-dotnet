@@ -32,7 +32,7 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Audience verification
     /// </summary>
-    public bool VerifyTokenAudience { get; set; }
+    public bool VerifyTokenAudience { get; set; } = true;
 
     /// <summary>
     /// Credentials, defined for private client

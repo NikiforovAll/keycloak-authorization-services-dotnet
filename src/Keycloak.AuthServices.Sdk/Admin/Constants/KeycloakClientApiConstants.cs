@@ -22,5 +22,7 @@ internal static class KeycloakClientApiConstants
 
     internal const string PutResource = $"{GetResource}";
 
+    internal const string GetResourceByExactName = "/realms/{realm}/authz/protection/resource_set?&exactName=true";
+
     #endregion
 }
