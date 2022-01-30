@@ -60,7 +60,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="realm"></param>
     /// <param name="resource"></param>
     /// <returns></returns>
-    [Post(KeycloakClientApiConstants.PutResource)]
+    [Put(KeycloakClientApiConstants.PutResource)]
     [Headers("Accept: application/json", "Content-Type: application/json")]
     Task<ResourceResponse> UpdateResource(
         string realm, string id, [Body] Resource resource);
