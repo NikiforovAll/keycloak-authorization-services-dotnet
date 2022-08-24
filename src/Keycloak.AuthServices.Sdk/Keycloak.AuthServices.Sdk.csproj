@@ -14,16 +14,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj"/>
+    <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityModel.AspNetCore"/>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"/>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions"/>
-    <PackageReference Include="Refit"/>
-    <PackageReference Include="Refit.HttpClientFactory"/>
+    <PackageReference Include="IdentityModel.AspNetCore" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Refit" />
+    <PackageReference Include="Refit.HttpClientFactory" />
   </ItemGroup>
 
 </Project>

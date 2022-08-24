@@ -1,7 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
 using Claims;
-using Common;
 using Configuration;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,11 +19,9 @@ public static class ServiceCollectionExtensions
     /// </summary>
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
-        KeycloakInstallationOptions keycloakOptions,
+        KeycloakAuthenticationOptions keycloakOptions,
         Action<JwtBearerOptions>? configureOptions = default)
     {
-        services.AddSingleton(keycloakOptions);
-
         const string roleClaimType = "role";
         var validationParameters = new TokenValidationParameters
         {
@@ -55,12 +52,12 @@ public static class ServiceCollectionExtensions
             });
     }
 
+
     /// <summary>
-    /// Adds keycloak authentication services. Configuration is automatically wired from keycloak.json file.
+    /// Adds keycloak authentication services from configuration located in specified default section.
     /// </summary>
     /// <param name="services">Source service collection</param>
-    /// <param name="configuration">Configuration source,
-    /// make sure the <see cref="ConfigureKeycloakConfigurationSource"/> is configured</param>
+    /// <param name="configuration">Configuration source</param>
     /// <param name="configureOptions">Configure overrides</param>
     /// <returns></returns>
     public static AuthenticationBuilder AddKeycloakAuthentication(
@@ -68,37 +65,40 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration,
         Action<JwtBearerOptions>? configureOptions = default)
     {
-        var options = configuration
-            .GetSection(ConfigurationConstants.ConfigurationPrefix)
-            .Get<KeycloakInstallationOptions>() ?? new KeycloakInstallationOptions();
+        KeycloakAuthenticationOptions options = new();
+
+        configuration
+            .GetSection(KeycloakAuthenticationOptions.Section)
+            .Bind(options);
 
         return services.AddKeycloakAuthentication(options, configureOptions);
     }
 
     /// <summary>
-    /// Adds keycloak authentication services from configuration located in specified section <paramref name="keycloakClientSectionName"/>.
+    /// Adds keycloak authentication services from section
     /// </summary>
-    /// <param name="services">Source service collection</param>
-    /// <param name="configuration">Configuration source,
-    /// make sure the <see cref="ConfigureKeycloakConfigurationSource"/> is configured</param>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
     /// <param name="keycloakClientSectionName"></param>
-    /// <param name="configureOptions">Configure overrides</param>
+    /// <param name="configureOptions"></param>
     /// <returns></returns>
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
-        string keycloakClientSectionName,
+        string? keycloakClientSectionName,
         Action<JwtBearerOptions>? configureOptions = default)
     {
-        var options = configuration
-            .GetSection(keycloakClientSectionName)
-            .Get<KeycloakInstallationOptions>() ?? new KeycloakInstallationOptions();
+        KeycloakAuthenticationOptions options = new();
+
+        configuration
+            .GetSection(keycloakClientSectionName ?? KeycloakAuthenticationOptions.Section)
+            .Bind(options);
 
         return services.AddKeycloakAuthentication(options, configureOptions);
     }
 
     /// <summary>
-    /// Adds configuration source based on keycloak.json
+    /// Adds configuration source based on adapter config.
     /// </summary>
     /// <param name="hostBuilder"></param>
     /// <param name="fileName"></param>
@@ -107,7 +107,7 @@ public static class ServiceCollectionExtensions
         this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
         hostBuilder.ConfigureAppConfiguration((_, builder) =>
         {
-            var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
+            var source = new KeycloakConfigurationSource {Path = fileName, Optional = false};
             builder.Sources.Insert(0, source);
         });
 }
