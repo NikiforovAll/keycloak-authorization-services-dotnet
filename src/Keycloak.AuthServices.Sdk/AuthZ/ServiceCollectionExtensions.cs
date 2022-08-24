@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Sdk.AuthZ;
 
+using Authorization;
 using Common;
 using HttpMiddleware;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,9 +19,10 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
-        KeycloakInstallationOptions keycloakOptions,
+        KeycloakProtectionClientOptions keycloakOptions,
         Action<HttpClient>? configureClient = default)
     {
+        services.AddSingleton(keycloakOptions);
         services.AddHttpContextAccessor();
 
         return services.AddHttpClient<IKeycloakProtectionClient, KeycloakProtectionClient>()

@@ -1,29 +1,32 @@
 ﻿namespace Keycloak.AuthServices.Sdk.AuthZ;
 
+using Authorization;
 using Common;
 
 /// <inheritdoc />
 public class KeycloakProtectionClient : IKeycloakProtectionClient
 {
     private readonly HttpClient httpClient;
-    private readonly KeycloakInstallationOptions installationOptions;
+    private readonly KeycloakProtectionClientOptions clientOptions;
 
     /// <summary>
     /// Constructs KeycloakProtectionClient
     /// </summary>
     /// <param name="httpClient"></param>
-    /// <param name="installationOptions"></param>
+    /// <param name="clientOptions"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public KeycloakProtectionClient(HttpClient httpClient, KeycloakInstallationOptions installationOptions)
+    public KeycloakProtectionClient(
+        HttpClient httpClient, KeycloakProtectionClientOptions clientOptions)
     {
         this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
-        this.installationOptions = installationOptions;
+        this.clientOptions = clientOptions;
     }
 
     /// <inheritdoc />
-    public async Task<bool> VerifyAccessToResource(string resource, string scope, CancellationToken cancellationToken)
+    public async Task<bool> VerifyAccessToResource(
+        string resource, string scope, CancellationToken cancellationToken)
     {
-        var audience = this.installationOptions.Resource;
+        var audience = this.clientOptions.Resource;
 
         var data = new Dictionary<string, string>
         {

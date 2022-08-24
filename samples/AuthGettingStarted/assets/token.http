@@ -1,0 +1,6 @@
+# @name tokenRequestOffilineCredentials
+curl --data "grant_type=password&client_id=test-client&username=test&password=test&client_secret=Tgx4lvbyhho7oNFmiIupDRVA8ioQY7PW&scope=roles" \
+    localhost:8080/realms/Test/protocol/openid-connect/token
+
+@token={{tokenRequestOffilineCredentials.response.body.$.access_token}}
+

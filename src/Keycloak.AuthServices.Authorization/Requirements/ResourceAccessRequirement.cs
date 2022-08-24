@@ -39,7 +39,7 @@ public class ResourceAccessRequirement : IAuthorizationRequirement
 /// </summary>
 public partial class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAccessRequirement>
 {
-    private readonly KeycloakInstallationOptions keycloakOptions;
+    private readonly KeycloakProtectionClientOptions keycloakOptions;
     private readonly ILogger<ResourceAccessRequirementHandler> logger;
 
     /// <summary>
@@ -47,7 +47,7 @@ public partial class ResourceAccessRequirementHandler : AuthorizationHandler<Res
     /// <param name="keycloakOptions"></param>
     /// <param name="logger"></param>
     public ResourceAccessRequirementHandler(
-        KeycloakInstallationOptions keycloakOptions,
+        KeycloakProtectionClientOptions keycloakOptions,
         ILogger<ResourceAccessRequirementHandler> logger)
     {
         this.keycloakOptions = keycloakOptions;

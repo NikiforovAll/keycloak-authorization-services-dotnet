@@ -1,5 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Common;
 
+using Microsoft.Extensions.Configuration;
+
 /// <summary>
 /// Installation options provided by Keycloak
 /// </summary>
@@ -14,6 +16,7 @@ public class KeycloakInstallationOptions
     /// <example>
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
+    [ConfigurationKeyName("auth-server-url")]
     public string AuthServerUrl { get; set; } = string.Empty;
 
     /// <summary>
@@ -32,6 +35,7 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Audience verification
     /// </summary>
+    [ConfigurationKeyName("verify-token-audience")]
     public bool VerifyTokenAudience { get; set; } = true;
 
     /// <summary>
@@ -50,6 +54,7 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Require HTTPS
     /// </summary>
+    [ConfigurationKeyName("ssl-required")]
     public string SslRequired { get; set; } = "external";
 
     /// <summary>

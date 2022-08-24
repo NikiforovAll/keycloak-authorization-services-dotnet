@@ -19,9 +19,8 @@ public static class ServiceCollectionExtensions
     /// <param name="keycloakOptions"></param>
     public static IServiceCollection AddKeycloakAuthorization(
         this IServiceCollection services,
-        KeycloakInstallationOptions keycloakOptions)
+        KeycloakProtectionClientOptions keycloakOptions)
     {
-        services.AddSingleton(keycloakOptions);
         services.AddKeycloakProtectionHttpClient(keycloakOptions);
 
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
@@ -45,11 +44,13 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration,
         string? keycloakClientSectionName = default)
     {
-        var keycloakOptions = configuration
-            .GetSection(keycloakClientSectionName ?? ConfigurationConstants.ConfigurationPrefix)
-            .Get<KeycloakInstallationOptions>();
+        KeycloakProtectionClientOptions options = new();
 
-        services.AddKeycloakAuthorization(keycloakOptions);
+        configuration
+            .GetSection(keycloakClientSectionName ?? KeycloakProtectionClientOptions.Section)
+            .Bind(options);
+
+        services.AddKeycloakAuthorization(options);
         return services;
     }
 }

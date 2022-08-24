@@ -18,10 +18,10 @@ public static class ServiceCollectionExtensions
     /// <param name="services"></param>
     /// <param name="keycloakOptions"></param>
     /// <param name="configureClient"></param>
-    /// <returns></returns>
+    /// <returns></returns>v
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
-        KeycloakInstallationOptions keycloakOptions,
+        KeycloakAdminClientOptions keycloakOptions,
         Action<HttpClient>? configureClient = default)
     {
         services.AddAccessTokenManagement(o =>
@@ -63,12 +63,12 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default,
         string? keycloakClientSectionName = default)
     {
-        var sectionName = keycloakClientSectionName
-            ?? ConfigurationConstants.ConfigurationPrefix;
-        var keycloakOptions = configuration
-            .GetSection(sectionName)
-            .Get<KeycloakInstallationOptions>() ?? new KeycloakInstallationOptions();
+        KeycloakAdminClientOptions options = new();
 
-        return services.AddKeycloakAdminHttpClient(keycloakOptions, configureClient);
+        configuration
+            .GetSection(keycloakClientSectionName ?? KeycloakAdminClientOptions.Section)
+            .Bind(options);
+
+        return services.AddKeycloakAdminHttpClient(options, configureClient);
     }
 }
