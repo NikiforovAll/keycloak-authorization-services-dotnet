@@ -26,7 +26,7 @@ public static class ServiceCollectionExtensions
         var validationParameters = new TokenValidationParameters
         {
             ClockSkew = keycloakOptions.TokenClockSkew,
-            ValidateAudience = keycloakOptions.VerifyTokenAudience,
+            ValidateAudience = keycloakOptions.VerifyTokenAudience ?? true,
             ValidateIssuer = true,
             NameClaimType = "preferred_username",
             RoleClaimType = roleClaimType, // TODO: clarify how keycloak writes roles
@@ -69,7 +69,7 @@ public static class ServiceCollectionExtensions
 
         configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options);
+            .Bind(options, opt => opt.BindNonPublicProperties = true);
 
         return services.AddKeycloakAuthentication(options, configureOptions);
     }
@@ -92,7 +92,7 @@ public static class ServiceCollectionExtensions
 
         configuration
             .GetSection(keycloakClientSectionName ?? KeycloakAuthenticationOptions.Section)
-            .Bind(options);
+            .Bind(options, opt => opt.BindNonPublicProperties = true);
 
         return services.AddKeycloakAuthentication(options, configureOptions);
     }

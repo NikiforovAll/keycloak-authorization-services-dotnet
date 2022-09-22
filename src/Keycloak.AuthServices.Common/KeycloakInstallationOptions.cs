@@ -10,6 +10,11 @@ using Microsoft.Extensions.Configuration;
 /// </remarks>
 public class KeycloakInstallationOptions
 {
+    private string? authServerUrl;
+    private bool? verifyTokenAudience;
+    private TimeSpan? tokenClockSkew;
+    private string? sslRequired;
+
     /// <summary>
     /// Authorization server URL
     /// </summary>
@@ -17,7 +22,14 @@ public class KeycloakInstallationOptions
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
     [ConfigurationKeyName("auth-server-url")]
-    public string AuthServerUrl { get; set; } = string.Empty;
+    public string AuthServerUrl
+    {
+        get => this.authServerUrl ?? this.AuthServerUrl2;
+        set => this.authServerUrl = value;
+    }
+
+    [ConfigurationKeyName("AuthServerUrl")]
+    private string AuthServerUrl2 { get; set; } = default!;
 
     /// <summary>
     /// Keycloak Realm
@@ -36,7 +48,13 @@ public class KeycloakInstallationOptions
     /// Audience verification
     /// </summary>
     [ConfigurationKeyName("verify-token-audience")]
-    public bool VerifyTokenAudience { get; set; } = true;
+    public bool? VerifyTokenAudience
+    {
+        get => this.verifyTokenAudience ?? this.VerifyTokenAudience2;
+        set => this.verifyTokenAudience = value;
+    }
+    [ConfigurationKeyName("VerifyTokenAudience")]
+    private bool? VerifyTokenAudience2 { get; set; }
 
     /// <summary>
     /// Credentials, defined for private client
@@ -49,13 +67,26 @@ public class KeycloakInstallationOptions
     /// <remarks>
     ///     - Default: 0 seconds
     /// </remarks>
-    public TimeSpan TokenClockSkew { get; set; } = TimeSpan.Zero;
+    [ConfigurationKeyName("token-clock-skew")]
+    public TimeSpan TokenClockSkew
+    {
+        get => this.tokenClockSkew ?? this.TokenClockSkew2 ?? TimeSpan.Zero;
+        set => this.tokenClockSkew = value;
+    }
+    [ConfigurationKeyName("TokenClockSkew")]
+    private TimeSpan? TokenClockSkew2 { get; set; }
 
     /// <summary>
     /// Require HTTPS
     /// </summary>
     [ConfigurationKeyName("ssl-required")]
-    public string SslRequired { get; set; } = "external";
+    public string SslRequired
+    {
+        get => this.sslRequired ?? this.SslRequired2;
+        set => this.sslRequired = value;
+    }
+    [ConfigurationKeyName("SslRequired")]
+    private string SslRequired2 { get; set; } = default!;
 
     /// <summary>
     /// Realm URL

@@ -48,7 +48,7 @@ public static class ServiceCollectionExtensions
 
         configuration
             .GetSection(keycloakClientSectionName ?? KeycloakProtectionClientOptions.Section)
-            .Bind(options);
+            .Bind(options, opt => opt.BindNonPublicProperties = true);
 
         services.AddKeycloakAuthorization(options);
         return services;
