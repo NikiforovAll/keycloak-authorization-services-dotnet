@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Product>Keycloak.AuthServices.Sdk</Product>
+    <Product>Keycloak.AuthServices.Authorization</Product>
     <Description>OICD + JWT Authentication provider. JWT Bearer Authentication for Keycloak</Description>
     <PackageTags>Keycloak;Authentication;Authrorization;authserver;JWT;OICD;jwt-authentication</PackageTags>
   </PropertyGroup>

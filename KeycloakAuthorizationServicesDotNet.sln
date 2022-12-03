@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32519.111
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,24 +9,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9D5C5B8-993
 		src\Directory.Packages.props = src\Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Authentication", "src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj", "{F0E53AED-46D8-4665-9222-2E8CE0F2253C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.AuthServices.Authentication", "src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj", "{F0E53AED-46D8-4665-9222-2E8CE0F2253C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExample", "samples\SimpleExample\SimpleExample.csproj", "{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationAndCleanArchitecture", "samples\AuthorizationAndCleanArchitecture\AuthorizationAndCleanArchitecture.csproj", "{86FF2CC9-8F13-4A9F-9411-B82D3A40A968}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Sdk", "src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj", "{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.AuthServices.Sdk", "src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj", "{D2FFBD58-E77B-4B27-A1E3-2294BCAEC04A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Authorization", "src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj", "{41E4ECE0-479A-4B33-8E72-30C2B7572B74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.AuthServices.Authorization", "src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj", "{41E4ECE0-479A-4B33-8E72-30C2B7572B74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Common", "src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj", "{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Keycloak.AuthServices.Common", "src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj", "{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{048F1701-D246-4C4B-92A7-5A1BE54F6EB4}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalApiDependsOnNuGetSource", "samples\MinimalApiDependsOnNuGetSource\MinimalApiDependsOnNuGetSource.csproj", "{3D55B10E-18AA-4A57-B421-EF514BFAD00A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalApiDependsOnNuGetSource", "samples\MinimalApiDependsOnNuGetSource\MinimalApiDependsOnNuGetSource.csproj", "{3D55B10E-18AA-4A57-B421-EF514BFAD00A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{A04EE911-0BE4-49FB-A92C-6CBD4CDF8005}"
 	ProjectSection(SolutionItems) = preProject
@@ -36,15 +36,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{A04EE911
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthGettingStarted", "samples\AuthGettingStarted\AuthGettingStarted.csproj", "{A1BA9E54-A596-4A89-A686-325A719C6827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthGettingStarted", "samples\AuthGettingStarted\AuthGettingStarted.csproj", "{A1BA9E54-A596-4A89-A686-325A719C6827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWASM", "BlazorWASM", "{C0EADAAF-E21C-4C90-9E78-45545006AADB}"
+	ProjectSection(SolutionItems) = preProject
+		samples\Blazor\docker-compose.yml = samples\Blazor\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Server", "samples\Blazor\Server\Blazor.Server.csproj", "{E64494A4-EE3E-47C8-BC12-795B6CD846AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Client", "samples\Blazor\Client\Blazor.Client.csproj", "{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Shared", "samples\Blazor\Shared\Blazor.Shared.csproj", "{FA611377-9C42-461F-8767-911CA6C6DC83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F0E53AED-46D8-4665-9222-2E8CE0F2253C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -75,6 +83,21 @@ Global
 		{A1BA9E54-A596-4A89-A686-325A719C6827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1BA9E54-A596-4A89-A686-325A719C6827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1BA9E54-A596-4A89-A686-325A719C6827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64494A4-EE3E-47C8-BC12-795B6CD846AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64494A4-EE3E-47C8-BC12-795B6CD846AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64494A4-EE3E-47C8-BC12-795B6CD846AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64494A4-EE3E-47C8-BC12-795B6CD846AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA611377-9C42-461F-8767-911CA6C6DC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA611377-9C42-461F-8767-911CA6C6DC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA611377-9C42-461F-8767-911CA6C6DC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA611377-9C42-461F-8767-911CA6C6DC83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F0E53AED-46D8-4665-9222-2E8CE0F2253C} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
@@ -84,5 +107,12 @@ Global
 		{C388D1B4-E37B-49B6-9EE0-7B2E32EE3B60} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
 		{3D55B10E-18AA-4A57-B421-EF514BFAD00A} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
 		{A1BA9E54-A596-4A89-A686-325A719C6827} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
+		{C0EADAAF-E21C-4C90-9E78-45545006AADB} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
+		{E64494A4-EE3E-47C8-BC12-795B6CD846AB} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
+		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
+		{FA611377-9C42-461F-8767-911CA6C6DC83} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1907BFD-C144-4B48-AA40-972F499D4E08}
 	EndGlobalSection
 EndGlobal

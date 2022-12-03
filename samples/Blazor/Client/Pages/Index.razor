@@ -1,0 +1,40 @@
+@page "/"
+
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using System.Security.Claims
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<PageTitle>Index</PageTitle>
+
+<h1>BlazorWASM Keycloak Authentication</h1>
+
+This application demonstrates how to integrate with Keycloak from BlazorWASM application.
+
+@if (claims.Count() > 0)
+{
+    <h2>User Claims:</h2>
+    <ul>
+        @foreach (var claim in claims)
+        {
+            <li>@claim.Type: @claim.Value</li>
+        }
+    </ul>
+}
+
+@code {
+    private IEnumerable<Claim> claims = Enumerable.Empty<Claim>();
+
+    protected override Task OnInitializedAsync() => GetClaimsPrincipalData();
+
+    private async Task GetClaimsPrincipalData()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        if (user.Identity?.IsAuthenticated ?? false)
+        {
+            claims = user.Claims;
+        }
+    }
+}
