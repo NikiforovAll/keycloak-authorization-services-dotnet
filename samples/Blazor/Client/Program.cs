@@ -17,7 +17,7 @@ builder.Services.AddOidcAuthentication(options =>
     options.ProviderOptions.Authority = "http://localhost:8080/realms/Test";
     options.ProviderOptions.ClientId = "test-client";
     options.ProviderOptions.ResponseType = "id_token token";
-    options.ProviderOptions.DefaultScopes.Add("Audience");
+    //options.ProviderOptions.DefaultScopes.Add("Audience");
 
     options.UserOptions.NameClaim = "preferred_username";
     // resource_access.${client_id}.roles was replaced to support ASP.NET Core 
