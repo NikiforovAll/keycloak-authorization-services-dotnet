@@ -29,7 +29,7 @@ services.AddKeycloakAuthentication(configuration, o =>
 
 ## Installation
 
-For more details see an example - [Program.cs](../../samples/SimpleExample/Program.cs).
+For more details see an example - [Program.cs](../../samples/AuthorizationAndCleanArchitecture/Program.cs).
 
 "workspace-authz" is a "confidential client".
 

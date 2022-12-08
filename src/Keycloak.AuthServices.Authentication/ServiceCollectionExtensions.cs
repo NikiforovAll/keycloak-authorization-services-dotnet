@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+namespace Keycloak.AuthServices.Authentication;
 
 using Claims;
 using Configuration;
@@ -107,7 +107,7 @@ public static class ServiceCollectionExtensions
         this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
         hostBuilder.ConfigureAppConfiguration((_, builder) =>
         {
-            var source = new KeycloakConfigurationSource {Path = fileName, Optional = false};
+            var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
             builder.Sources.Insert(0, source);
         });
 }
