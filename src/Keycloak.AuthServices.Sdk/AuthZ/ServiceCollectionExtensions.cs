@@ -1,8 +1,7 @@
-namespace Keycloak.AuthServices.Sdk.AuthZ;
+namespace Keycloak.AuthServices.Authorization;
 
-using Authorization;
-using Common;
-using HttpMiddleware;
+using Keycloak.AuthServices.Sdk.AuthZ;
+using Keycloak.AuthServices.Sdk.HttpMiddleware;
 using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>

@@ -1,11 +1,9 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
-using Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Requirements;
-using Sdk.AuthZ;
 
 /// <summary>
 /// Add Keycloak authorization services

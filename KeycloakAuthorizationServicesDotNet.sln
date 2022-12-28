@@ -43,11 +43,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWASM", "BlazorWASM", 
 		samples\Blazor\docker-compose.yml = samples\Blazor\docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Server", "samples\Blazor\Server\Blazor.Server.csproj", "{E64494A4-EE3E-47C8-BC12-795B6CD846AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Server", "samples\Blazor\Server\Blazor.Server.csproj", "{E64494A4-EE3E-47C8-BC12-795B6CD846AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Client", "samples\Blazor\Client\Blazor.Client.csproj", "{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Client", "samples\Blazor\Client\Blazor.Client.csproj", "{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Shared", "samples\Blazor\Shared\Blazor.Shared.csproj", "{FA611377-9C42-461F-8767-911CA6C6DC83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Shared", "samples\Blazor\Shared\Blazor.Shared.csproj", "{FA611377-9C42-461F-8767-911CA6C6DC83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthZGettingStarted", "samples\AuthZGettingStarted\AuthZGettingStarted.csproj", "{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{FA611377-9C42-461F-8767-911CA6C6DC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA611377-9C42-461F-8767-911CA6C6DC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA611377-9C42-461F-8767-911CA6C6DC83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,6 +117,7 @@ Global
 		{E64494A4-EE3E-47C8-BC12-795B6CD846AB} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
 		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
 		{FA611377-9C42-461F-8767-911CA6C6DC83} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
+		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1907BFD-C144-4B48-AA40-972F499D4E08}
