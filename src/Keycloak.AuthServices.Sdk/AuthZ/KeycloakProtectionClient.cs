@@ -1,6 +1,7 @@
-namespace Keycloak.AuthServices.Authorization;
+namespace Keycloak.AuthServices.Sdk.AuthZ;
 
-using Common;
+using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Common;
 
 /// <inheritdoc />
 public class KeycloakProtectionClient : IKeycloakProtectionClient
