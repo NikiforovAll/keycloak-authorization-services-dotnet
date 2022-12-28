@@ -74,19 +74,27 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         AuthorizationHandlerContext context,
         DecisionRequirement requirement)
     {
-        var success = await this.client.VerifyAccessToResource(
+        if (context.User.Identity?.IsAuthenticated ?? false)
+        {
+            var success = await this.client.VerifyAccessToResource(
             requirement.Resource, requirement.Scope, CancellationToken.None);
 
-        this.DecisionAuthorizationResult(
-            requirement.ToString(), success, context.User.Identity?.Name);
+            this.DecisionAuthorizationResult(
+                requirement.ToString(), success, context.User.Identity?.Name);
 
-        if (success)
-        {
-            context.Succeed(requirement);
+            if (success)
+            {
+                context.Succeed(requirement);
+            }
+            else
+            {
+                context.Fail();
+            }
         }
         else
         {
-            context.Fail();
+            this.DecisionAuthorizationResult(
+                requirement.ToString(), false, context.User.Identity?.Name);
         }
     }
 }

@@ -29,12 +29,15 @@ public static class ServiceCollectionExtensions
             ValidateAudience = keycloakOptions.VerifyTokenAudience ?? true,
             ValidateIssuer = true,
             NameClaimType = "preferred_username",
-            RoleClaimType = roleClaimType, // TODO: clarify how keycloak writes roles
+            RoleClaimType = roleClaimType,
         };
 
         // options.Resource == Audience
         services.AddTransient<IClaimsTransformation>(_ =>
-            new KeycloakRolesClaimsTransformation(roleClaimType, keycloakOptions.Resource));
+            new KeycloakRolesClaimsTransformation(
+                roleClaimType,
+                keycloakOptions.RolesSource,
+                keycloakOptions.Resource));
 
         return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opts =>

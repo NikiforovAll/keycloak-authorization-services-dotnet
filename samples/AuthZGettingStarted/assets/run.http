@@ -1,0 +1,18 @@
+@baseUrl=https://localhost:7248
+@token=
+
+###
+GET {{baseUrl}}/endpoint1
+Authorization: Bearer {{token}}
+
+###
+GET {{baseUrl}}/endpoint2
+Authorization: Bearer {{token}}
+
+###
+GET {{baseUrl}}/endpoint3
+Authorization: Bearer {{token}}
+
+###
+GET {{baseUrl}}/endpoint4
+Authorization: Bearer {{token}}

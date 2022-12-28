@@ -21,12 +21,14 @@ public static partial class ServiceCollectionExtensions
                 builder => builder.RequireRealmRoles(Roles.RealmRole));
 
             options.AddPolicy(
-                Policies.RequireRealmRole,
+                Policies.RequireClientRole,
                 builder => builder.RequireResourceRoles(Roles.ClientRole));
 
             options.AddPolicy(
                 Policies.RequireToBeInKeycloakGroupAsReader,
-                builder => builder.RequireProtectedResource("workspace", "workspace:read"));
+                builder => builder
+                    .RequireAuthenticatedUser()
+                    .RequireProtectedResource("workspace", "workspaces:read"));
 
         }).AddKeycloakAuthorization(configuration);
 
@@ -38,11 +40,11 @@ public static class AuthorizationConstants
 {
     public static class Roles
     {
-        public const string AspNetCoreRole = nameof(AspNetCoreRole);
+        public const string AspNetCoreRole = "realm-role";
 
-        public const string RealmRole = nameof(RealmRole);
+        public const string RealmRole = "realm-role";
 
-        public const string ClientRole = nameof(ClientRole);
+        public const string ClientRole = "client-role";
     }
 
     public static class Policies

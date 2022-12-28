@@ -9,10 +9,14 @@ public static partial class ServiceCollectionExtensions
     public static WebApplicationBuilder AddSerilog(this WebApplicationBuilder builder)
     {
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
+            .MinimumLevel.Information()
+            .MinimumLevel.Override("Microsoft.AspNetCore.DataProtection.KeyManagement", LogEventLevel.Warning)
+            .MinimumLevel.Override("Microsoft.AspNetCore.Authorization", LogEventLevel.Verbose)
+            .MinimumLevel.Override("System.Net.Http", LogEventLevel.Debug)
+            .MinimumLevel.Override("Keycloak.AuthServices", LogEventLevel.Verbose)
             .WriteTo.SpectreConsole(
-                "{Timestamp:HH:mm:ss} [{Level:u4}] {Message:lj}{NewLine}{Exception}",
-                LogEventLevel.Information)
+                "{SourceContext}{NewLine}{Timestamp:HH:mm:ss} [{Level:u4}] {Message:lj}{NewLine}{Exception}",
+                LogEventLevel.Verbose)
             .CreateLogger();
 
         builder.Host.UseSerilog();

@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Common;
+namespace Keycloak.AuthServices.Common;
 
 using Microsoft.Extensions.Configuration;
 
@@ -97,9 +97,24 @@ public class KeycloakInstallationOptions
     {
         var urlNormalized = !url.EndsWith('/') ? url : url.TrimEnd('/');
 
-        // return urlNormalized.ToLowerInvariant();
         return urlNormalized;
     }
+
+    /// <summary>
+    /// RolesClaimTransformationSource
+    /// </summary>
+    [ConfigurationKeyName("RolesSource")]
+    public RolesClaimTransformationSource RolesSource { get; set; } = RolesClaimTransformationSource.ResourceAccess;
+}
+
+/// <summary>
+/// RolesClaimTransformationSource
+/// </summary>
+public enum RolesClaimTransformationSource
+{
+    None,
+    Realm,
+    ResourceAccess
 }
 
 /// <summary>

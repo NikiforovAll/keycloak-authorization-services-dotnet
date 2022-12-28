@@ -1,6 +1,5 @@
-﻿namespace Keycloak.AuthServices.Sdk.AuthZ;
+namespace Keycloak.AuthServices.Authorization;
 
-using Authorization;
 using Common;
 
 /// <inheritdoc />
