@@ -30,7 +30,7 @@ internal static class KeycloakClientApiConstants
 
     internal const string GetUsers = $"{GetRealm}/users";
 
-    internal const string CreateUser = $"{GetUsers}";
+    internal const string CreateUser = $"{GetRealm}/users";
 
     #endregion
 }
