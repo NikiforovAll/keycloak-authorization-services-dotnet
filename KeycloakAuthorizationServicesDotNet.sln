@@ -51,6 +51,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Shared", "samples\Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthZGettingStarted", "samples\AuthZGettingStarted\AuthZGettingStarted.csproj", "{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{96857509-627A-4FD2-AC82-34387619A7B1}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Sdk.Tests", "test\Keycloak.AuthServices.Sdk.Tests\Keycloak.AuthServices.Sdk.Tests.csproj", "{A85B6B1E-2030-47BE-9B9F-F645B08E501D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +108,10 @@ Global
 		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A85B6B1E-2030-47BE-9B9F-F645B08E501D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85B6B1E-2030-47BE-9B9F-F645B08E501D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85B6B1E-2030-47BE-9B9F-F645B08E501D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85B6B1E-2030-47BE-9B9F-F645B08E501D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +129,7 @@ Global
 		{0BBF12D1-6ABA-48EE-848D-AB70A089ABEB} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
 		{FA611377-9C42-461F-8767-911CA6C6DC83} = {C0EADAAF-E21C-4C90-9E78-45545006AADB}
 		{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
+		{A85B6B1E-2030-47BE-9B9F-F645B08E501D} = {96857509-627A-4FD2-AC82-34387619A7B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1907BFD-C144-4B48-AA40-972F499D4E08}
