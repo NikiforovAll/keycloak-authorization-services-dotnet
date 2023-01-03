@@ -33,11 +33,11 @@ public class KeycloakRealmClientTests
     [Fact]
     public async Task GetRealmShouldThrowNotFoundApiExceptionWhenRealmDoesNotExist()
     {
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/inexistent")
+        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/nonexistent")
             .Respond(HttpStatusCode.NotFound);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
-            async () => await this.keycloakRealmClient.GetRealm("inexistent"));
+            () => this.keycloakRealmClient.GetRealm("nonexistent"));
 
         Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
         this.handler.VerifyNoOutstandingExpectation();

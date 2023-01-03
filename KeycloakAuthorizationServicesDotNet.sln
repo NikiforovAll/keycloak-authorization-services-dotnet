@@ -51,12 +51,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.Shared", "samples\Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthZGettingStarted", "samples\AuthZGettingStarted\AuthZGettingStarted.csproj", "{A7C96E1A-8CD6-4BFA-8128-9875B607BEF5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{96857509-627A-4FD2-AC82-34387619A7B1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{96857509-627A-4FD2-AC82-34387619A7B1}"
 	ProjectSection(SolutionItems) = preProject
-		test\Directory.Build.props = test\Directory.Build.props
+		tests\Directory.Build.props = tests\Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Sdk.Tests", "test\Keycloak.AuthServices.Sdk.Tests\Keycloak.AuthServices.Sdk.Tests.csproj", "{A85B6B1E-2030-47BE-9B9F-F645B08E501D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Sdk.Tests", "tests\Keycloak.AuthServices.Sdk.Tests\Keycloak.AuthServices.Sdk.Tests.csproj", "{A85B6B1E-2030-47BE-9B9F-F645B08E501D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

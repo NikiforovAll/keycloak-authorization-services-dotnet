@@ -39,7 +39,7 @@ public class KeycloakUserClientTests
             .Respond(HttpStatusCode.BadRequest);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
-            async () => await this.keycloakUserClient.CreateUser("master", new User()));
+            () => this.keycloakUserClient.CreateUser("master", new User()));
 
         Assert.Equal(HttpStatusCode.BadRequest, exception.StatusCode);
         this.handler.VerifyNoOutstandingExpectation();
