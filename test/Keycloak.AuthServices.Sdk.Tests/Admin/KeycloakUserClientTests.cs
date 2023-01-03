@@ -8,7 +8,7 @@ using Sdk.Admin.Models;
 
 public class KeycloakUserClientTests
 {
-    private const string BaseAddress = "http://localhost:8080/auth";
+    private const string BaseAddress = "http://localhost:8080";
 
     private readonly MockHttpMessageHandler handler = new();
     private readonly IKeycloakUserClient keycloakUserClient;
@@ -35,12 +35,13 @@ public class KeycloakUserClientTests
     [Fact]
     public async Task CreateUserShouldThrowBadRequestApiExceptionWhenRequestIsInvalid()
     {
-        this.handler.When(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
+        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
             .Respond(HttpStatusCode.BadRequest);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
             async () => await this.keycloakUserClient.CreateUser("master", new User()));
 
         Assert.Equal(HttpStatusCode.BadRequest, exception.StatusCode);
+        this.handler.VerifyNoOutstandingExpectation();
     }
 }
