@@ -2,12 +2,13 @@
 
 Keycloak API clients. Adds typed `HttpClient` to integrate with keycloak API.
 
-| Service                          | Description                                                                  |
-|----------------------------------|------------------------------------------------------------------------------|
-| IKeycloakClient                  | Unified HTTP client - IKeycloakRealmClient, IKeycloakProtectedResourceClient |
-| IKeycloakRealmClient             | Keycloak realm API                                                           |
-| IKeycloakProtectedResourceClient | Protected resource API                                                       |
-| IKeycloakProtectionClient        | Authorization server API, used by `AddKeycloakAuthorization`                 |
+| Service                          | Description                                                                                       |
+|----------------------------------|---------------------------------------------------------------------------------------------------|
+| IKeycloakClient                  | Unified HTTP client - IKeycloakRealmClient, IKeycloakProtectedResourceClient, IKeycloakUserClient |
+| IKeycloakRealmClient             | Keycloak realm API                                                                                |
+| IKeycloakProtectedResourceClient | Protected resource API                                                                            |
+| IKeycloakUserClient              | Keycloak user API                                                                                 |
+| IKeycloakProtectionClient        | Authorization server API, used by `AddKeycloakAuthorization`                                      |
 
 ```csharp
 // requires confidential client

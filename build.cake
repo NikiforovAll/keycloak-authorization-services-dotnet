@@ -50,8 +50,8 @@ Task("Test")
                     $"trx;LogFileName={project.GetFilenameWithoutExtension()}.trx",
                     $"html;LogFileName={project.GetFilenameWithoutExtension()}.html",
                 },
-                NoBuild = true,
-                NoRestore = true,
+                NoBuild = false,
+                NoRestore = false,
                 ResultsDirectory = artefactsDirectory,
                 ArgumentCustomization = x => x.Append("--blame"),
             });

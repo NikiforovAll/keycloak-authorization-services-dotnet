@@ -25,4 +25,12 @@ internal static class KeycloakClientApiConstants
     internal const string GetResourceByExactName = "/realms/{realm}/authz/protection/resource_set?&exactName=true";
 
     #endregion
+
+    #region User API
+
+    internal const string GetUsers = $"{GetRealm}/users";
+
+    internal const string CreateUser = $"{GetRealm}/users";
+
+    #endregion
 }
