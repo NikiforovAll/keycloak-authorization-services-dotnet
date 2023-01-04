@@ -27,7 +27,10 @@ public class KeycloakUserClientTests
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
             .Respond(HttpStatusCode.Created);
 
-        await this.keycloakUserClient.CreateUser("master", new User {Username = "email@example.com"});
+        await this.keycloakUserClient.CreateUser("master", new()
+        {
+            Username = "email@example.com"
+        });
 
         this.handler.VerifyNoOutstandingExpectation();
     }
@@ -35,7 +38,7 @@ public class KeycloakUserClientTests
     [Fact]
     public async Task CreateUserShouldThrowBadRequestApiExceptionWhenRequestIsInvalid()
     {
-        const string errorMessage = "{\"errorMessage\":\"User name is missing\"}";
+        const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
