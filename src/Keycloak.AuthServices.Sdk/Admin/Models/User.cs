@@ -17,7 +17,7 @@ public class User
     public string? Email { get; init; }
     public bool? EmailVerified { get; init; }
     public bool? Enabled { get; init; }
-    public FederatedIdentity? FederatedIdentities { get; init; }
+    public FederatedIdentity[]? FederatedIdentities { get; init; }
     public string? FederationLink { get; init; }
     public string? FirstName { get; init; }
     public string[]? Groups { get; init; }
@@ -25,8 +25,8 @@ public class User
     public string? LastName { get; init; }
     public int? NotBefore { get; init; }
     public string? Origin { get; init; }
-    public Dictionary<string, string>? RealmRoles { get; init; }
-    public Dictionary<string, string>? RequiredActions { get; init; }
+    public string[]? RealmRoles { get; init; }
+    public string[]? RequiredActions { get; init; }
     public string? Self { get; init; }
     public string? ServiceAccountClientId { get; init; }
     public string? Username { get; init; }
@@ -55,7 +55,7 @@ public class UserConsent
 {
     public string? ClientId { get; init; }
     public long? CreatedDate { get; init; }
-    public string? LastUpdatedDate { get; init; }
+    public long? LastUpdatedDate { get; init; }
     public string[]? GrantedClientScopes { get; init; }
 }
 
