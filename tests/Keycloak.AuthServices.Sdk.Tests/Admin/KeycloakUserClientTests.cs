@@ -22,7 +22,7 @@ public class KeycloakUserClientTests
     }
 
     [Fact]
-    public async Task CreateUserShouldCallUserEndpoint()
+    public async Task CreateUserShouldCallCorrectEndpoint()
     {
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
             .Respond(HttpStatusCode.Created);
@@ -47,6 +47,52 @@ public class KeycloakUserClientTests
             () => this.keycloakUserClient.CreateUser("master", new User()));
 
         Assert.Equal(HttpStatusCode.BadRequest, exception.StatusCode);
+        Assert.Equal(errorMessage, exception.Content);
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task SendVerifyEmailShouldCallCorrectEndpoint()
+    {
+        var userId = Guid.NewGuid();
+
+        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email")
+            .Respond(HttpStatusCode.NoContent);
+
+        await this.keycloakUserClient.SendVerifyEmail("master", userId.ToString());
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task SendVerifyEmailShouldCallCorrectEndpointWithOptionalQueryParameters()
+    {
+        var userId = Guid.NewGuid();
+        const string clientId = "client-id";
+        const string redirectUri = "https://localhost:5001";
+
+        var url = $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email?client_id={clientId}&redirect_uri={redirectUri}";
+        this.handler.Expect(HttpMethod.Put, url).Respond(HttpStatusCode.NoContent);
+
+        await this.keycloakUserClient.SendVerifyEmail("master", userId.ToString(), clientId, redirectUri);
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task SendVerifyEmailShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
+    {
+        var userId = Guid.NewGuid();
+        const string errorMessage = /*lang=json,strict*/ "{\"error\":\"User not found\"}";
+
+        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email")
+            .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
+
+        var exception = await Assert.ThrowsAsync<ApiException>(
+            () => this.keycloakUserClient.SendVerifyEmail("master", userId.ToString()));
+
+        Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
         Assert.Equal(errorMessage, exception.Content);
 
         this.handler.VerifyNoOutstandingExpectation();
