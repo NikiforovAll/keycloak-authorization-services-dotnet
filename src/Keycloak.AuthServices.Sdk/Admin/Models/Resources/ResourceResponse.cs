@@ -1,5 +1,4 @@
-﻿#pragma warning disable CS1591
-#pragma warning disable CS8618
+﻿#pragma warning disable CS1591, CS8618
 namespace Keycloak.AuthServices.Sdk.Admin.Models;
 
 using System.Text.Json.Serialization;
@@ -36,4 +35,3 @@ public class Scope
 {
     public string Name { get; set; }
 }
-
