@@ -9,7 +9,7 @@
 
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.Authorization</Product>
-    <Description>Keycloak Authorization Server integration. Decision + Rpt </Description>
+    <Description>Keycloak Authorization Server integration. Decision + Rpt</Description>
     <PackageTags>Keycloak;Authentication;Authrorization;authserver;JWT;OICD;jwt-authentication</PackageTags>
   </PropertyGroup>
 

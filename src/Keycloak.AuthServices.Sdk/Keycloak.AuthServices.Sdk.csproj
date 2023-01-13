@@ -9,7 +9,7 @@
 
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.Sdk</Product>
-    <Description>HttpClient integration with Keyclaok. HTTP Client SDK</Description>
+    <Description>HttpClient integration with Keycloak. HTTP Client SDK</Description>
     <PackageTags>Keycloak;authserver;http-sdk</PackageTags>
   </PropertyGroup>
 
@@ -24,6 +24,12 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="Refit" />
     <PackageReference Include="Refit.HttpClientFactory" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Keycloak.AuthServices.Sdk.Tests</_Parameter1>
+    </AssemblyAttribute>
   </ItemGroup>
 
 </Project>
