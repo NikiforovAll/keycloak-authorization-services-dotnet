@@ -1,6 +1,8 @@
 namespace Keycloak.AuthServices.Sdk.Tests.Admin;
 
 using System.Net;
+using Extensions;
+using FluentAssertions;
 using Microsoft.AspNetCore.Http.Extensions;
 using Refit;
 using RichardSzalay.MockHttp;
@@ -31,15 +33,12 @@ public class KeycloakUserClientTests
         var userRepresentation = GetUserRepresentation(userId);
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users/{userId}")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", userRepresentation);
 
         var user = await this.keycloakUserClient.GetUser("master", userId.ToString());
 
-        Assert.Equal(userId.ToString(), user.Id);
+        user.Id.Should().Be(userId.ToString());
         this.handler.VerifyNoOutstandingExpectation();
     }
 
@@ -50,17 +49,14 @@ public class KeycloakUserClientTests
         const string errorMessage = /*lang=json,strict*/ "{\"error\":\"User not found\"}";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users/{userId}")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
             () => this.keycloakUserClient.GetUser("master", userId.ToString()));
 
-        Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
-        Assert.Equal(errorMessage, exception.Content);
+        exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        exception.Content.Should().Be(errorMessage);
         this.handler.VerifyNoOutstandingExpectation();
     }
 
@@ -70,25 +66,18 @@ public class KeycloakUserClientTests
         var users = Enumerable.Range(0, 3).Select(_ =>
         {
             var id = Guid.NewGuid();
-            return (Id: id, Representation: GetUserRepresentation(id));
+            return (Id: id.ToString(), Representation: GetUserRepresentation(id));
         }).ToArray();
 
         var response = $"[{string.Join(",", users.Select(u => u.Representation))}]";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", response);
 
         var result = await this.keycloakUserClient.GetUsers("master");
 
-        Assert.Collection(result,
-            user => Assert.Equal(users[0].Id.ToString(), user.Id),
-            user => Assert.Equal(users[1].Id.ToString(), user.Id),
-            user => Assert.Equal(users[2].Id.ToString(), user.Id));
-
+        result.Select(u => u.Id).Should().BeEquivalentTo(users.Select(u => u.Id));
         this.handler.VerifyNoOutstandingExpectation();
     }
 
@@ -113,8 +102,6 @@ public class KeycloakUserClientTests
             Username = "username"
         };
 
-        var response = $"[{GetUserRepresentation(Guid.NewGuid())}]";
-
         var url = $"{BaseAddress}/admin/realms/master/users";
         var queryBuilder = new QueryBuilder
         {
@@ -134,11 +121,10 @@ public class KeycloakUserClientTests
             {"username", "username"}
         };
 
+        var response = $"[{GetUserRepresentation(Guid.NewGuid())}]";
+
         this.handler.Expect(HttpMethod.Get, url + queryBuilder.ToQueryString())
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", response);
 
         _ = await this.keycloakUserClient.GetUsers("master", getUsersRequestParameters);
@@ -150,11 +136,7 @@ public class KeycloakUserClientTests
     public async Task CreateUserShouldCallCorrectEndpoint()
     {
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json"
-            })
+            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.Created);
 
         await this.keycloakUserClient.CreateUser("master", new()
@@ -171,17 +153,14 @@ public class KeycloakUserClientTests
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json"
-            })
+            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
 
         var response = await this.keycloakUserClient.CreateUser("master", new User());
 
-        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
-        Assert.Equal(errorMessage, await response.Content.ReadAsStringAsync());
+        var content = await response.Content.ReadAsStringAsync();
+        content.Should().Be(errorMessage);
+        response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         this.handler.VerifyNoOutstandingExpectation();
     }
 
@@ -191,11 +170,7 @@ public class KeycloakUserClientTests
         var userId = Guid.NewGuid();
 
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json"
-            })
+            .WithAcceptAndContentTypeHeaders()
             .WithContent(/*lang=json,strict*/ "{\"firstName\":\"FirstName\"}")
             .Respond(HttpStatusCode.NoContent);
 
@@ -214,18 +189,14 @@ public class KeycloakUserClientTests
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json"
-            })
+            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(() =>
             this.keycloakUserClient.UpdateUser("master", userId.ToString(), new User()));
 
-        Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
-        Assert.Equal(errorMessage, exception.Content);
+        exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        exception.Content.Should().Be(errorMessage);
         this.handler.VerifyNoOutstandingExpectation();
     }
 
@@ -235,10 +206,7 @@ public class KeycloakUserClientTests
         var userId = Guid.NewGuid();
 
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.NoContent);
 
         await this.keycloakUserClient.SendVerifyEmail("master", userId.ToString());
@@ -253,13 +221,12 @@ public class KeycloakUserClientTests
         const string clientId = "client-id";
         const string redirectUri = "https://localhost:5001";
 
-        var url = $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email?client_id={clientId}&redirect_uri={redirectUri}";
+        var url = $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email"
+                  + $"?client_id={clientId}"
+                  + $"&redirect_uri={redirectUri}";
 
         this.handler.Expect(HttpMethod.Put, url)
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.NoContent);
 
         await this.keycloakUserClient.SendVerifyEmail("master", userId.ToString(), clientId, redirectUri);
@@ -274,17 +241,14 @@ public class KeycloakUserClientTests
         const string errorMessage = /*lang=json,strict*/ "{\"error\":\"User not found\"}";
 
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email")
-            .WithHeaders(new Dictionary<string, string>
-            {
-                ["Accept"] = "application/json"
-            })
+            .WithAcceptHeader()
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
             () => this.keycloakUserClient.SendVerifyEmail("master", userId.ToString()));
 
-        Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
-        Assert.Equal(errorMessage, exception.Content);
+        exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        exception.Content.Should().Be(errorMessage);
         this.handler.VerifyNoOutstandingExpectation();
     }
 
