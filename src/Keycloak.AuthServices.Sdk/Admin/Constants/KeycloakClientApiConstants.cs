@@ -30,9 +30,13 @@ internal static class KeycloakClientApiConstants
 
     internal const string GetUsers = $"{GetRealm}/users";
 
+    internal const string GetUser = $"{GetRealm}/users/{{id}}";
+
     internal const string CreateUser = $"{GetRealm}/users";
 
-    internal const string SendVerifyEmail = $"{GetRealm}/users/{{userId}}/send-verify-email";
+    internal const string UpdateUser = $"{GetRealm}/users/{{id}}";
+
+    internal const string SendVerifyEmail = $"{GetRealm}/users/{{id}}/send-verify-email";
 
     #endregion
 }

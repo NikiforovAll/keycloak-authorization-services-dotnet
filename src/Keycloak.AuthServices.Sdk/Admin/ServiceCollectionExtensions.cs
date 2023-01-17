@@ -1,5 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Admin;
 
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Common;
 using IdentityModel.Client;
 using Microsoft.Extensions.Configuration;
@@ -41,7 +43,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IKeycloakUserClient>(
             sp => sp.GetRequiredService<IKeycloakClient>());
 
-        return services.AddRefitClient<IKeycloakClient>()
+        return services.AddRefitClient<IKeycloakClient>(GetKeycloakClientRefitSettings())
             .ConfigureHttpClient(client =>
             {
                 var baseUrl = new Uri(keycloakOptions.AuthServerUrl.TrimEnd('/'));
@@ -73,4 +75,13 @@ public static class ServiceCollectionExtensions
 
         return services.AddKeycloakAdminHttpClient(options, configureClient);
     }
+
+    internal static RefitSettings GetKeycloakClientRefitSettings() =>
+        new RefitSettings
+        {
+            ContentSerializer = new SystemTextJsonContentSerializer(new JsonSerializerOptions(JsonSerializerDefaults.Web)
+            {
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+            })
+        };
 }

@@ -3,12 +3,32 @@
 using Constants;
 using Models;
 using Refit;
+using Requests.Users;
 
 /// <summary>
 /// User management
 /// </summary>
+[Headers("Accept: application/json")]
 public interface IKeycloakUserClient
 {
+    /// <summary>
+    /// Get a stream of users on the realm.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    [Get(KeycloakClientApiConstants.GetUsers)]
+    Task<IEnumerable<User>> GetUsers(string realm, [Query] GetUsersRequestParameters? parameters = default);
+
+    /// <summary>
+    /// Get representation of a user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <returns>The user representation.</returns>
+    [Get(KeycloakClientApiConstants.GetUser)]
+    Task<User> GetUser(string realm, [AliasAs("id")] string userId);
+
     /// <summary>
     /// Create a new user.
     /// </summary>
@@ -19,8 +39,19 @@ public interface IKeycloakUserClient
     /// <param name="user">User representation.</param>
     /// <returns></returns>
     [Post(KeycloakClientApiConstants.CreateUser)]
-    [Headers("Accept: application/json", "Content-Type: application/json")]
-    Task CreateUser(string realm, [Body] User user);
+    [Headers("Content-Type: application/json")]
+    Task<HttpResponseMessage> CreateUser(string realm, [Body] User user);
+
+    /// <summary>
+    /// Update the user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="user">User representation.</param>
+    /// <returns></returns>
+    [Put(KeycloakClientApiConstants.UpdateUser)]
+    [Headers("Content-Type: application/json")]
+    Task UpdateUser(string realm, [AliasAs("id")] string userId, [Body] User user);
 
     /// <summary>
     /// Send an email-verification email to the user.
@@ -32,10 +63,8 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID.</param>
     /// <param name="clientId">Client ID.</param>
     /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
-    /// <returns></returns>
     [Put(KeycloakClientApiConstants.SendVerifyEmail)]
-    [Headers("Accept: application/json", "Content-Type: application/json")]
-    Task SendVerifyEmail(string realm, string userId,
+    Task SendVerifyEmail(string realm, [AliasAs("id")] string userId,
         [Query][AliasAs("client_id")] string? clientId = default,
         [Query][AliasAs("redirect_uri")] string? redirectUri = default);
 }
