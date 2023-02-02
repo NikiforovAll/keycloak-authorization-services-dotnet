@@ -17,9 +17,75 @@ Package                                | Version                                
 
 [![GitHub Actions Build History](https://buildstats.info/github/chart/nikiforovall/keycloak-authorization-services-dotnet?branch=main&includeBuildsFromPullRequest=false)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions)
 
-## Example
+## Getting Started
 
-Demonstrates how to add JWT-based authentication and custom authorization policy.
+```csharp
+// Program.cs
+var builder = WebApplication.CreateBuilder(args);
+
+var host = builder.Host;
+var configuration = builder.Configuration;
+var services = builder.Services;
+
+services.AddKeycloakAuthentication(configuration);
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+```
+
+In this example, configuration is based on `appsettings.json`.
+
+```jsonc
+//appsettings.json
+{
+    "Keycloak": {
+        "realm": "Test",
+        "auth-server-url": "http://localhost:8080/",
+        "ssl-required": "none",
+        "resource": "test-client",
+        "verify-token-audience": false,
+        "credentials": {
+        "secret": ""
+        },
+        "confidential-port": 0
+    }
+}
+```
+
+It's fetched based on well-known section "Keycloak". `AddKeycloakAuthentication` uses `KeycloakAuthenticationOptions.Section` under the hood.
+
+You can always fetch the corresponding authentication options like this:
+
+```csharp
+var authenticationOptions = configuration
+    .GetSection(KeycloakAuthenticationOptions.Section)
+    .Get<KeycloakAuthenticationOptions>();
+
+services.AddKeycloakAuthentication(authenticationOptions);
+```
+
+`AddKeycloakAuthentication` method has several overloads. It allows to override some conventions, for example:
+
+```csharp
+public static AuthenticationBuilder AddKeycloakAuthentication(
+    this IServiceCollection services,
+    IConfiguration configuration,
+    string? keycloakClientSectionName,
+    Action<JwtBearerOptions>? configureOptions = default)
+{
+    /* implementation */
+}
+```
+
+## Example. Authentication + Authorization
+
+Here is how to add JWT-based authentication and custom authorization policy.
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -45,8 +111,8 @@ services.AddAuthorization(options =>
 
 var app = builder.Build();
 
-app.UseAuthentication()
-    .UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/workspaces", () => "[]")
     .RequireAuthorization("RequireWorkspaces");
@@ -56,9 +122,13 @@ app.Run();
 
 ## Keycloak.AuthServices.Authentication
 
-[Keycloak.AuthServices.Authentication](src/Keycloak.AuthServices.Authentication/Keycloak.AuthServices.Authentication.csproj)
-
 Add OpenID Connect + JWT Bearer token authentication.
+
+For example, see [Getting Started](#getting-started)
+
+### Adapter File. Optional
+
+Using `appsettings.json` is a recommended and it is an idiomatic approach for .NET, but if you want a standalone "adapter" (installation) file - `keycloak.json`. You can use `ConfigureKeycloakConfigurationSource`. It adds dedicated configuration source.
 
 ```csharp
 // add configuration from keycloak file
@@ -101,8 +171,6 @@ Keycloak installation file:
 
 ## Keycloak.AuthServices.Authorization
 
-[Keycloak.AuthServices.Authorization](src/Keycloak.AuthServices.Authorization/Keycloak.AuthServices.Authorization.csproj)
-
 ```csharp
 services.AddAuthorization(authOptions =>
 {
@@ -116,8 +184,6 @@ services.AddAuthorization(authOptions =>
 See [Keycloak.AuthServices.Authorization - README.md](src/Keycloak.AuthServices.Authorization/README.md)
 
 ## Keycloak.AuthServices.Sdk
-
-[Keycloak.AuthServices.Sdk](src/Keycloak.AuthServices.Sdk/Keycloak.AuthServices.Sdk.csproj)
 
 Keycloak API clients.
 
@@ -147,7 +213,7 @@ See [Keycloak.AuthServices.Sdk - README.md](src/Keycloak.AuthServices.Sdk/README
 
 ## Blog Posts
 
-* <https://nikiforovall.github.io/tags.html#keycloak-ref>
+For more information and real world examples, please see my blog posts related to Keycloak and .NET <https://nikiforovall.github.io/tags.html#keycloak-ref>
 
 ## Reference
 
