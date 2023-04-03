@@ -33,6 +33,7 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     /// Initializes a new instance of the <see cref="KeycloakRolesClaimsTransformation"/> class.
     /// </summary>
     /// <param name="roleClaimType">Type of the role claim.</param>
+    /// <param name="roleSource"><see cref="RolesClaimTransformationSource"/></param>
     /// <param name="audience">The audience.</param>
     public KeycloakRolesClaimsTransformation(
         string roleClaimType,
@@ -84,7 +85,12 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
             foreach (var role in clientRoles.EnumerateArray())
             {
                 var value = role.GetString();
-                if (!string.IsNullOrWhiteSpace(value))
+
+                var matchingClaim = identity.Claims.FirstOrDefault(claim => 
+                    claim.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase) && 
+                    claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)); 
+
+                if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
                 {
                     identity.AddClaim(new Claim(this.roleClaimType, value));
                 }
@@ -92,7 +98,8 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
 
             return Task.FromResult(result);
         }
-        else if (this.roleSource == RolesClaimTransformationSource.Realm)
+
+        if (this.roleSource == RolesClaimTransformationSource.Realm)
         {
             var realmAccessValue = principal.FindFirst("realm_access")?.Value;
             if (string.IsNullOrWhiteSpace(realmAccessValue))
@@ -111,7 +118,12 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                 foreach (var role in rolesElement.EnumerateArray())
                 {
                     var value = role.GetString();
-                    if (!string.IsNullOrWhiteSpace(value))
+
+                    var matchingClaim = identity.Claims.FirstOrDefault(claim => 
+                        claim.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase) && 
+                        claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase));
+
+                    if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
                     {
                         identity.AddClaim(new Claim(this.roleClaimType, value));
                     }
