@@ -41,4 +41,46 @@ internal static class KeycloakClientApiConstants
     internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
 
     #endregion
+
+    #region Group API
+
+    internal const string GetGroups = $"{GetRealm}/groups";
+
+    internal const string GetGroup = $"{GetRealm}/groups/{{id}}";
+
+    internal const string CreateGroup = $"{GetGroups}";
+
+    internal const string UpdateGroup = $"{GetGroup}";
+
+    internal const string DeleteGroup = $"{GetGroup}";
+
+    internal const string CreateChildGroup = $"{GetGroups}/children";
+
+    #endregion
+
+    #region Permission Ticket API
+
+    internal const string GetPermissionTickets = "/realms/{realm}/authz/protection/permission/ticket";
+
+    internal const string CreatePermissionTicket = $"{GetPermissionTickets}";
+
+    internal const string UpdatePermissionTicket = $"{GetPermissionTickets}";
+
+    internal const string DeletePermissionTicket = $"{GetPermissionTickets}/{{id}}";
+
+    #endregion
+
+    #region Policy API
+
+    internal const string GetPolicies = $"{GetRealm}/authz/protection/uma-policy";
+
+    internal const string GetPolicy = $"{GetPolicies}/{{id}}";
+
+    internal const string CreatePolicy = $"{GetPolicies}";
+
+    internal const string UpdatePolicy = $"{GetPolicy}";
+
+    internal const string DeletePolicy = $"{GetPolicy}";
+
+    #endregion
 }

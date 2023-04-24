@@ -42,6 +42,8 @@ public static class ServiceCollectionExtensions
             sp => sp.GetRequiredService<IKeycloakClient>());
         services.AddTransient<IKeycloakUserClient>(
             sp => sp.GetRequiredService<IKeycloakClient>());
+        services.AddTransient<IKeycloakGroupClient>(
+            sp => sp.GetRequiredService<IKeycloakClient>());
 
         return services.AddRefitClient<IKeycloakClient>(GetKeycloakClientRefitSettings())
             .ConfigureHttpClient(client =>
