@@ -37,9 +37,9 @@ public class KeycloakGroupClientTests
             .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", groupRepresentation);
 
-        var user = await this.keycloakGroupClient.GetGroup("master", groupId.ToString());
+        var group = await this.keycloakGroupClient.GetGroup("master", groupId.ToString());
 
-        user.Id.Should().Be(groupId.ToString());
+        group.Id.Should().Be(groupId.ToString());
         this.handler.VerifyNoOutstandingExpectation();
     }
 
@@ -47,7 +47,7 @@ public class KeycloakGroupClientTests
     public async Task GetGroupShouldThrowNotFoundApiExceptionWhenGroupDoesNotExist()
     {
         var groupId = Guid.NewGuid();
-        const string errorMessage = "{\"error\":\"User not found\"}";
+        const string errorMessage = "{\"error\":\"Group not found\"}";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/groups/{groupId}")
             .WithAcceptHeader()
@@ -117,7 +117,6 @@ public class KeycloakGroupClientTests
     public async Task CreateGroupShouldCallCorrectEndpoint()
     {
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/groups")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.Created);
 
         await this.keycloakGroupClient.CreateGroup("master", new()
@@ -134,7 +133,6 @@ public class KeycloakGroupClientTests
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"Group name is missing\"}";
 
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/groups")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
 
         var response = await this.keycloakGroupClient.CreateGroup("master", new Group());
@@ -151,7 +149,6 @@ public class KeycloakGroupClientTests
         var groupId = Guid.NewGuid();
 
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/groups/{groupId}")
-            .WithAcceptAndContentTypeHeaders()
             .WithContent(/*lang=json,strict*/ "{\"name\":\"GroupName\"}")
             .Respond(HttpStatusCode.NoContent);
 
@@ -170,7 +167,6 @@ public class KeycloakGroupClientTests
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"Group name is missing\"}";
 
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/groups/{groupId}")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(() =>
@@ -187,7 +183,6 @@ public class KeycloakGroupClientTests
         var groupId = Guid.NewGuid();
 
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/groups/children")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.Created);
 
         await this.keycloakGroupClient.CreateChildGroup("master", groupId.ToString(), new()
@@ -204,11 +199,27 @@ public class KeycloakGroupClientTests
         var groupId = Guid.NewGuid();
 
         this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/groups/{groupId}")
-            .WithAcceptAndContentTypeHeaders()
-            .Respond(HttpStatusCode.Created);
+            .Respond(HttpStatusCode.OK);
 
         await this.keycloakGroupClient.DeleteGroup("master", groupId.ToString());
 
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task DeleteGroupShouldThrowApiNotFoundExceptionWhenGroupDoesNotExist()
+    {
+        var groupId = Guid.NewGuid();
+        const string errorMessage = "{\"error\":\"Group not found\"}";
+
+        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/groups/{groupId}")
+            .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
+
+        var exception = await Assert.ThrowsAsync<ApiException>(
+            () => this.keycloakGroupClient.DeleteGroup("master", groupId.ToString()));
+
+        exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        exception.Content.Should().Be(errorMessage);
         this.handler.VerifyNoOutstandingExpectation();
     }
 

@@ -10,7 +10,6 @@ using Refit;
 /// <summary>
 /// Must be used by the owner of the resource for whom the policy is being created.
 /// </summary>
-[Headers("Accept: application/json")]
 public interface IKeycloakPolicyClient
 {
     // Note that this is a representation of endpoints that are in a different documentation zone (i.e.: not the REST API docs directly):
@@ -64,6 +63,5 @@ public interface IKeycloakPolicyClient
     /// <param name="policyId">Policy ID.</param> 
     /// <returns></returns>
     [Delete(KeycloakClientApiConstants.DeletePolicy)]
-    [Headers("Content-Type: application/json")]
-    Task DeleteGroup(string realm, [AliasAs("id")] string policyId);
+    Task DeletePolicy(string realm, [AliasAs("id")] string policyId);
 }

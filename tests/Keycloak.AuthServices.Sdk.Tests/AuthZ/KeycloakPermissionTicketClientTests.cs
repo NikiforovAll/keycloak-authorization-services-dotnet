@@ -6,7 +6,6 @@ using System.Net;
 using System.Threading.Tasks;
 using Extensions;
 using FluentAssertions;
-using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 using Microsoft.AspNetCore.Http.Extensions;
 using Refit;
 using RichardSzalay.MockHttp;
@@ -14,7 +13,6 @@ using Sdk.Admin;
 using Sdk.Admin.Models;
 using Sdk.Admin.Models.PermissionTickets;
 using Sdk.Admin.Requests.Permissions;
-using Sdk.Admin.Requests.Policy;
 using Sdk.AuthZ;
 
 public class KeycloakPermissionTicketClientTests
@@ -98,7 +96,6 @@ public class KeycloakPermissionTicketClientTests
     public async Task CreatePermissionTicketShouldCallCorrectEndpoint()
     {
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/realms/master/authz/protection/permission/ticket")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.Created);
 
         _ = await this.keycloakPermissionTicketClient.CreatePermissionTicket("master", GetPermissionTicket());
@@ -112,7 +109,6 @@ public class KeycloakPermissionTicketClientTests
         const string errorMessage = "{\"errorMessage\":\"Requester is missing\"}";
 
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/realms/master/authz/protection/permission/ticket")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
 
         var response =
@@ -129,7 +125,6 @@ public class KeycloakPermissionTicketClientTests
     public async Task UpdatePermissionTicketShouldCallCorrectEndpoint()
     {
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/realms/master/authz/protection/permission/ticket")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.Created);
 
         await this.keycloakPermissionTicketClient.UpdatePermissionTicket("master", GetPermissionTicket());
@@ -142,7 +137,6 @@ public class KeycloakPermissionTicketClientTests
     {
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"Resource does not exist\"}";
         this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/realms/master/authz/protection/permission/ticket")
-            .WithAcceptAndContentTypeHeaders()
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(() =>
@@ -158,8 +152,7 @@ public class KeycloakPermissionTicketClientTests
     {
         var ticketId = Guid.NewGuid();
         this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/realms/master/authz/protection/permission/ticket/{ticketId}")
-            .WithAcceptAndContentTypeHeaders()
-            .Respond(HttpStatusCode.Created);
+            .Respond(HttpStatusCode.OK);
 
         await this.keycloakPermissionTicketClient.DeletePermissionTicket("master", ticketId.ToString());
 

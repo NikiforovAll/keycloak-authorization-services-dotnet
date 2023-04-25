@@ -9,7 +9,6 @@ using Refit;
 /// <summary>
 /// Must be used by the owner of the resource for whom the ticket is being created.
 /// </summary>
-[Headers("Accept: application/json")] 
 public interface IKeycloakPermissionTicketClient
 {
     // Note that this is a representation of endpoints that are in a different documentation zone (i.e.: not the REST API docs directly):
@@ -52,6 +51,5 @@ public interface IKeycloakPermissionTicketClient
     /// <param name="permissionTicketId">Permission Ticket Id</param>
     /// <returns></returns>
     [Delete(KeycloakClientApiConstants.DeletePermissionTicket)]
-    [Headers("Content-Type: application/json")]
     Task DeletePermissionTicket(string realm, [AliasAs("id")] string permissionTicketId);
 }

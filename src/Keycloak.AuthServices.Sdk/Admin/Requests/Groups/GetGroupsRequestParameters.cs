@@ -4,7 +4,7 @@ using Models;
 using Refit;
 
 /// <summary>
-/// Only name and ids are returned.
+/// Optional parameters for the <see cref="IKeycloakGroupClient.GetGroups"/> endpoint.
 /// </summary>
 public class GetGroupsRequestParameters
 {
