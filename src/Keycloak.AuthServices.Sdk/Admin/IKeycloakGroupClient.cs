@@ -8,7 +8,6 @@ using Requests.Groups;
 /// <summary>
 /// Group management
 /// </summary>
-[Headers("Accept: application/json")]
 public interface IKeycloakGroupClient
 {
     /// <summary>
@@ -18,6 +17,7 @@ public interface IKeycloakGroupClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetGroups)]
+    [Headers("Accept: application/json")]
     Task<IEnumerable<Group>> GetGroups(string realm, [Query] GetGroupsRequestParameters? parameters = default);
 
     /// <summary>
@@ -27,6 +27,7 @@ public interface IKeycloakGroupClient
     /// <param name="groupId">Group ID.</param>
     /// <returns>The group representation.</returns>
     [Get(KeycloakClientApiConstants.GetGroup)]
+    [Headers("Accept: application/json")]
     Task<Group> GetGroup(string realm, [AliasAs("id")] string groupId);
 
     /// <summary>
@@ -74,6 +75,5 @@ public interface IKeycloakGroupClient
     /// <param name="groupId">Group ID.</param> 
     /// <returns></returns>
     [Delete(KeycloakClientApiConstants.DeleteGroup)]
-    [Headers("Content-Type: application/json")]
     Task DeleteGroup(string realm, [AliasAs("id")] string groupId);
 }
