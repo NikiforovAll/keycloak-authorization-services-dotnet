@@ -40,6 +40,8 @@ internal static class KeycloakClientApiConstants
 
     internal const string SendVerifyEmail = $"{GetRealm}/users/{{id}}/send-verify-email";
 
+    internal const string UserGroupUpdate = $"{UpdateUser}/groups/{{group_id}}";
+
     #endregion
 
     #region Group API
@@ -54,7 +56,7 @@ internal static class KeycloakClientApiConstants
 
     internal const string DeleteGroup = $"{GetGroup}";
 
-    internal const string CreateChildGroup = $"{GetGroups}/children";
+    internal const string CreateChildGroup = $"{GetGroup}/children";
 
     #endregion
 
@@ -72,11 +74,11 @@ internal static class KeycloakClientApiConstants
 
     #region Policy API
 
-    internal const string GetPolicies = $"{GetRealm}/authz/protection/uma-policy";
+    internal const string GetPolicies = "/realms/{realm}/authz/protection/uma-policy";
 
     internal const string GetPolicy = $"{GetPolicies}/{{id}}";
 
-    internal const string CreatePolicy = $"{GetPolicies}";
+    internal const string CreatePolicy = $"{GetPolicy}";
 
     internal const string UpdatePolicy = $"{GetPolicy}";
 

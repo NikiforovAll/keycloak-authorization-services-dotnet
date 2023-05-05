@@ -1,7 +1,7 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+namespace Keycloak.AuthServices.Sdk.Admin;
 
 using Constants;
-using Models;
+using Models.Users;
 using Refit;
 using Requests.Users;
 
@@ -67,4 +67,27 @@ public interface IKeycloakUserClient
     Task SendVerifyEmail(string realm, [AliasAs("id")] string userId,
         [Query][AliasAs("client_id")] string? clientId = default,
         [Query][AliasAs("redirect_uri")] string? redirectUri = default);
+
+
+    /// <summary>
+    /// Add the given user to the given group.
+    /// </summary>
+    /// <param name="realm"></param>
+    /// <param name="userId"></param>
+    /// <param name="groupId"></param>
+    /// <returns></returns>
+    [Put(KeycloakClientApiConstants.UserGroupUpdate)]
+    [Headers("Content-Type: application/json")]
+    Task JoinGroup(string realm, [AliasAs("id")] string userId, [AliasAs("group_id")] string groupId);
+
+    /// <summary>
+    /// Add the given user to the given group.
+    /// </summary>
+    /// <param name="realm"></param>
+    /// <param name="userId"></param>
+    /// <param name="groupId"></param>
+    /// <returns></returns>
+    [Delete(KeycloakClientApiConstants.UserGroupUpdate)]
+    [Headers("Content-Type: application/json")]
+    Task LeaveGroup(string realm, [AliasAs("id")] string userId, [AliasAs("group_id")] string groupId);
 }

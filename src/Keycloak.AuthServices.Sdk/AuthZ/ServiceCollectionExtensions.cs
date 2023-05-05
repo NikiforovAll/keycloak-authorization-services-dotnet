@@ -1,10 +1,11 @@
-namespace Keycloak.AuthServices.Authorization;
+namespace Keycloak.AuthServices.Sdk.AuthZ;
 
-using Sdk.AuthZ;
-using Sdk.HttpMiddleware;
+using Admin;
+using HttpMiddleware;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
-using AdminServiceCollectionExtensions = Sdk.Admin.ServiceCollectionExtensions;
+using AdminServiceCollectionExtensions = Admin.ServiceCollectionExtensions;
 
 /// <summary>
 /// Registers HTTP Client SDKs for integration with Keycloak
@@ -36,6 +37,29 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
+    /// Adds keycloak confidential client and underlying token management
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <param name="configureClient"></param>
+    /// <param name="keycloakClientSectionName"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string? keycloakClientSectionName = default)
+    {
+        KeycloakProtectionClientOptions options = new();
+
+        configuration
+            .GetSection(keycloakClientSectionName ?? KeycloakAdminClientOptions.Section)
+            .Bind(options);
+
+        return services.AddKeycloakProtectionHttpClient(options, configureClient);
+    }
+
+    /// <summary>
     /// Adds keycloak confidential policy client and underlying token management
     /// </summary>
     /// <param name="services"></param>
@@ -56,32 +80,29 @@ public static class ServiceCollectionExtensions
                 var baseUrl = new Uri(keycloakOptions.AuthServerUrl.TrimEnd('/'));
                 client.BaseAddress = baseUrl;
                 configureClient?.Invoke(client);
-            })
-            .AddClientAccessTokenHandler("keycloak_policy_api");
+            }).AddHeaderPropagation();
     }
 
     /// <summary>
-    /// Adds keycloak confidential permission ticket client and underlying token management
+    /// Adds keycloak confidential policy client and underlying token management
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="keycloakOptions"></param>
+    /// <param name="configuration"></param>
     /// <param name="configureClient"></param>
+    /// <param name="keycloakClientSectionName"></param>
     /// <returns></returns>
-    public static IHttpClientBuilder AddKeycloakPermissionTicketHttpClient(
+    public static IHttpClientBuilder AddKeycloakPolicyHttpClient(
         this IServiceCollection services,
-        KeycloakProtectionClientOptions keycloakOptions,
-        Action<HttpClient>? configureClient = default)
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string? keycloakClientSectionName = default)
     {
-        services.AddSingleton(keycloakOptions);
-        services.AddHttpContextAccessor();
+        KeycloakProtectionClientOptions options = new();
 
-        return services.AddRefitClient<IKeycloakPermissionTicketClient>(AdminServiceCollectionExtensions.GetKeycloakClientRefitSettings())
-            .ConfigureHttpClient(client =>
-            {
-                var baseUrl = new Uri(keycloakOptions.AuthServerUrl.TrimEnd('/'));
-                client.BaseAddress = baseUrl;
-                configureClient?.Invoke(client);
-            })
-            .AddClientAccessTokenHandler("keycloak_uma_api");
+        configuration
+            .GetSection(keycloakClientSectionName ?? KeycloakAdminClientOptions.Section)
+            .Bind(options);
+
+        return services.AddKeycloakPolicyHttpClient(options, configureClient);
     }
 }

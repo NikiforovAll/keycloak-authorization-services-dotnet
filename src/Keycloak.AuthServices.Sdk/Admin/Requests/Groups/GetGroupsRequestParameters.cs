@@ -1,6 +1,5 @@
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 
-using Models;
 using Refit;
 
 /// <summary>
@@ -28,7 +27,7 @@ public class GetGroupsRequestParameters
     public int? Max { get; init; }
 
     /// <summary>
-    /// Search for a string contained in <see cref="Group.Name"/> or <see cref="Group.Path"/>.
+    /// Search for a string contained in <see cref="Models.Groups.Group.Name"/> or <see cref="Models.Groups.Group.Path"/>.
     /// </summary>
     [AliasAs("search")]
     public string? Search { get; init; }

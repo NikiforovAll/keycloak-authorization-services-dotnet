@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Admin;
 
+using Models.Groups;
 using Constants;
-using Models;
 using Refit;
 using Requests.Groups;
 

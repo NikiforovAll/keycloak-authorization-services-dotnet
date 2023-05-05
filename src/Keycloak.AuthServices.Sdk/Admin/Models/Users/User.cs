@@ -1,5 +1,5 @@
 #pragma warning disable CS1591, CS8618
-namespace Keycloak.AuthServices.Sdk.Admin.Models;
+namespace Keycloak.AuthServices.Sdk.Admin.Models.Users;
 
 /// <summary>
 /// User representation.
@@ -19,7 +19,7 @@ public class User
     public FederatedIdentity[]? FederatedIdentities { get; init; }
     public string? FederationLink { get; init; }
     public string? FirstName { get; init; }
-    public string[]? Groups { get; init; }
+    public string[]? Groups { get; set; }
     public string? Id { get; init; }
     public string? LastName { get; init; }
     public int? NotBefore { get; init; }

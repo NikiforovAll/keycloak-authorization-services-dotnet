@@ -10,6 +10,7 @@ using RichardSzalay.MockHttp;
 using Sdk.Admin;
 using Sdk.Admin.Requests.Groups;
 using Keycloak.AuthServices.Sdk.Admin.Models;
+using Sdk.Admin.Models.Groups;
 
 public class KeycloakGroupClientTests
 {
@@ -182,7 +183,7 @@ public class KeycloakGroupClientTests
     {
         var groupId = Guid.NewGuid();
 
-        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/groups/children")
+        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/groups/{groupId}/children")
             .Respond(HttpStatusCode.Created);
 
         await this.keycloakGroupClient.CreateChildGroup("master", groupId.ToString(), new()

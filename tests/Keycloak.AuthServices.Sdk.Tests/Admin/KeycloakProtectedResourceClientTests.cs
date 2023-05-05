@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Refit;
 using RichardSzalay.MockHttp;
 using Sdk.Admin;
+using Sdk.Admin.Models.Resources;
 using Sdk.Admin.Requests.Resources;
 
 public class KeycloakProtectedResourceClientTests

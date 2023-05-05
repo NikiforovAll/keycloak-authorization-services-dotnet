@@ -10,13 +10,14 @@ using Keycloak.AuthServices.Sdk.Admin.Requests.Policy;
 using Microsoft.AspNetCore.Http.Extensions;
 using Refit;
 using RichardSzalay.MockHttp;
-using Sdk.Admin;
 using Sdk.Admin.Models.Policies;
 using Sdk.AuthZ;
+using ServiceCollectionExtensions = Sdk.Admin.ServiceCollectionExtensions;
 
 public class KeycloakPolicyClientTests
 {
     private const string BaseAddress = "http://localhost:8080";
+    private const string CurrentRealm = "master";
 
     private readonly MockHttpMessageHandler handler = new();
     private readonly IKeycloakPolicyClient keycloakPolicyClient;
@@ -42,11 +43,11 @@ public class KeycloakPolicyClientTests
 
         var response = $"[{string.Join(",", permissionTickets.Select(u => u.Response))}]";
 
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy")
+        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy")
             .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", response);
 
-        var result = await this.keycloakPolicyClient.GetPolicies("master");
+        var result = await this.keycloakPolicyClient.GetPolicies(CurrentRealm);
 
         result.Select(u => u.Id).Should().BeEquivalentTo(permissionTickets.Select(u => u.Id));
         this.handler.VerifyNoOutstandingExpectation();
@@ -64,7 +65,7 @@ public class KeycloakPolicyClientTests
             Scope = "my_scope"
         };
 
-        var url = $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy";
+        var url = $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy";
         var queryBuilder = new QueryBuilder
         {
             {"name", "my_permission_name"},
@@ -80,7 +81,7 @@ public class KeycloakPolicyClientTests
             .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", response);
 
-        _ = await this.keycloakPolicyClient.GetPolicies("master", getPoliciesRequestParameters);
+        _ = await this.keycloakPolicyClient.GetPolicies(CurrentRealm, getPoliciesRequestParameters);
 
         this.handler.VerifyNoOutstandingExpectation();
     }
@@ -91,11 +92,11 @@ public class KeycloakPolicyClientTests
         var policyId = Guid.NewGuid();
         var response = GetPolicyResponse(policyId.ToString(), policyId.ToString());
 
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy/{policyId}")
+        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{policyId}")
             .WithAcceptHeader()
             .Respond(HttpStatusCode.OK, "application/json", response);
 
-        var result = await this.keycloakPolicyClient.GetPolicy("master", policyId.ToString());
+        var result = await this.keycloakPolicyClient.GetPolicy(CurrentRealm, policyId.ToString());
 
         result.Id.Should().BeEquivalentTo(policyId.ToString());
         this.handler.VerifyNoOutstandingExpectation();
@@ -104,10 +105,12 @@ public class KeycloakPolicyClientTests
     [Fact]
     public async Task CreatePolicyShouldCallCorrectEndpoint()
     {
-        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy")
+        var resourceId = Guid.NewGuid().ToString();
+
+        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{resourceId}")
             .Respond(HttpStatusCode.Created);
 
-        await this.keycloakPolicyClient.CreatePolicy("master", new()
+        await this.keycloakPolicyClient.CreatePolicy(CurrentRealm, resourceId, new()
         {
             Name = "PolicyName"
         });
@@ -119,11 +122,12 @@ public class KeycloakPolicyClientTests
     public async Task CreatePolicyShouldReturnBadRequestWhenRequestIsInvalid()
     {
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"Policy name is missing\"}";
+        var resourceId = Guid.NewGuid().ToString();
 
-        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy")
+        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{resourceId}")
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
 
-        var response = await this.keycloakPolicyClient.CreatePolicy("master", new Policy());
+        var response = await this.keycloakPolicyClient.CreatePolicy(CurrentRealm, resourceId, new Policy());
 
         var content = await response.Content.ReadAsStringAsync();
         content.Should().Be(errorMessage);
@@ -136,10 +140,10 @@ public class KeycloakPolicyClientTests
     {
         var policyId = Guid.NewGuid();
 
-        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy/{policyId}")
+        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{policyId}")
             .Respond(HttpStatusCode.Created);
 
-        await this.keycloakPolicyClient.UpdatePolicy("master", policyId.ToString(), new()
+        await this.keycloakPolicyClient.UpdatePolicy(CurrentRealm, policyId.ToString(), new()
         {
             Name = "PolicyName"
         });
@@ -153,11 +157,11 @@ public class KeycloakPolicyClientTests
         var policyId = Guid.NewGuid();
         const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"Policy name is missing\"}";
 
-        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy/{policyId}")
+        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{policyId}")
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(() =>
-            this.keycloakPolicyClient.UpdatePolicy("master", policyId.ToString(), new Policy()));
+            this.keycloakPolicyClient.UpdatePolicy(CurrentRealm, policyId.ToString(), new Policy()));
 
         exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
         exception.Content.Should().Be(errorMessage);
@@ -169,10 +173,10 @@ public class KeycloakPolicyClientTests
     {
         var policyId = Guid.NewGuid();
 
-        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy/{policyId}")
+        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{policyId}")
             .Respond(HttpStatusCode.OK);
 
-        await this.keycloakPolicyClient.DeletePolicy("master", policyId.ToString());
+        await this.keycloakPolicyClient.DeletePolicy(CurrentRealm, policyId.ToString());
 
         this.handler.VerifyNoOutstandingExpectation();
     }
@@ -183,11 +187,11 @@ public class KeycloakPolicyClientTests
         var policyId = Guid.NewGuid();
         const string errorMessage = "{\"error\":\"Policy not found\"}";
 
-        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/authz/protection/uma-policy/{policyId}")
+        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/realms/{CurrentRealm}/authz/protection/uma-policy/{policyId}")
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
-            () => this.keycloakPolicyClient.DeletePolicy("master", policyId.ToString()));
+            () => this.keycloakPolicyClient.DeletePolicy(CurrentRealm, policyId.ToString()));
 
         exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
         exception.Content.Should().Be(errorMessage);

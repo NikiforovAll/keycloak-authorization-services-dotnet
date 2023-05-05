@@ -14,6 +14,7 @@ using Sdk.Admin.Models;
 using Sdk.Admin.Models.PermissionTickets;
 using Sdk.Admin.Requests.Permissions;
 using Sdk.AuthZ;
+using ServiceCollectionExtensions = Sdk.Admin.ServiceCollectionExtensions;
 
 public class KeycloakPermissionTicketClientTests
 {
