@@ -1,6 +1,4 @@
-namespace Keycloak.AuthServices.Sdk.Admin.Models;
-
-using System.Collections.Generic;
+namespace Keycloak.AuthServices.Sdk.Admin.Models.Groups;
 
 /// <summary>
 /// Group representation
@@ -14,5 +12,5 @@ public class Group
     public string? Name { get; init; }
     public string? Path { get; init; }
     public string[]? RealmRoles { get; init; }
-    public Group[]? SubGroups { get; init; }
+    public Group[]? SubGroups { get; set; }
 }

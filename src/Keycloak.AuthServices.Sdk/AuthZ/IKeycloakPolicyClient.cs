@@ -39,11 +39,12 @@ public interface IKeycloakPolicyClient
     /// Create a policy
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="resourceId">The resource ID to create the policy for.</param>
     /// <param name="policy">Policy representation</param>
     /// <returns></returns>
     [Post(KeycloakClientApiConstants.CreatePolicy)]
     [Headers("Content-Type: application/json")]
-    Task<HttpResponseMessage> CreatePolicy(string realm, [Body] Policy policy);
+    Task<HttpResponseMessage> CreatePolicy(string realm, [AliasAs("id")] string resourceId, [Body] Policy policy);
 
     /// <summary>
     /// Update a policy

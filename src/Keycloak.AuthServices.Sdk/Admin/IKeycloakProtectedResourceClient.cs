@@ -2,7 +2,7 @@ namespace Keycloak.AuthServices.Sdk.Admin;
 
 using Constants;
 using Requests.Resources;
-using Models;
+using Models.Resources;
 using Refit;
 
 /// <summary>

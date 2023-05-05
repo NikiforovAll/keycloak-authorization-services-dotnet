@@ -8,6 +8,7 @@ using Refit;
 using RichardSzalay.MockHttp;
 using Sdk.Admin;
 using Sdk.Admin.Models;
+using Sdk.Admin.Models.Users;
 using Sdk.Admin.Requests.Users;
 
 public class KeycloakUserClientTests
