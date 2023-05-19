@@ -67,4 +67,21 @@ public interface IKeycloakUserClient
     Task SendVerifyEmail(string realm, [AliasAs("id")] string userId,
         [Query][AliasAs("client_id")] string? clientId = default,
         [Query][AliasAs("redirect_uri")] string? redirectUri = default);
+
+    /// <summary>
+    /// Execute actions email for the user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="clientId">Client ID.</param>
+    /// <param name="lifespan">Number of seconds after which the generated token expires</param>
+    /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
+    /// <param name="actions">Actions</param>
+    [Put(KeycloakClientApiConstants.ExecuteActionsEmail)]
+    [Headers("Content-Type: application/json")]
+    Task ExecuteActionsEmail(string realm, [AliasAs("id")] string userId,
+        [Query][AliasAs("client_id")] string? clientId = default,
+        [Query] int? lifespan = default,
+        [Query][AliasAs("redirect_uri")] string? redirectUri = default,
+        [Body] List<string>? actions = default);
 }
