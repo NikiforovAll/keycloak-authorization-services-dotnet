@@ -19,7 +19,7 @@ public class KeycloakRolesClaimsTransformationTests
         var claimsPrincipal = GetClaimsPrincipal();
 
         // This should work many times
-        foreach (var _ in Enumerable.Range(1, 3))
+        for(var testCount = 0; testCount < 3; testCount++)
         {
             claimsPrincipal = await target.TransformAsync(claimsPrincipal);
             claimsPrincipal.HasClaim(ClaimTypes.Role, MyFirstClaim).Should().BeTrue();
@@ -30,11 +30,11 @@ public class KeycloakRolesClaimsTransformationTests
 
     // The resource_access claim type
     private const string MyResourceClaimType = "resource_access";
-    private const string MyResourceClaimValue = $"{{\u0022{MyAudience}\u0022:{{\u0022roles\u0022:[\u0022{MyFirstClaim}\u0022,\u0022{MySecondClaim}\u0022]}}}}";
+    private const string MyResourceClaimValue = @$"{{""{MyAudience}"":{{""roles"":[""{MyFirstClaim}"",""{MySecondClaim}""]}}}}";
 
     // The realm_access claim type
     private const string MyRealmClaimType = "realm_access";
-    private const string MyRealmClaimValue = $"{{\u0022roles\u0022:[\u0022{MyFirstClaim}\u0022,\u0022{MySecondClaim}\u0022]}}";
+    private const string MyRealmClaimValue = @$"{{""roles"":[""{MyFirstClaim}"",""{MySecondClaim}""]}}";
 
     // Fake claim values
     private const string MyFirstClaim = "my_client_app_role_user";
