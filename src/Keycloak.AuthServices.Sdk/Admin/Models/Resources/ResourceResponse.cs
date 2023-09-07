@@ -1,5 +1,5 @@
-﻿#pragma warning disable CS1591, CS8618
-namespace Keycloak.AuthServices.Sdk.Admin.Models;
+#pragma warning disable CS1591, CS8618
+namespace Keycloak.AuthServices.Sdk.Admin.Models.Resources;
 
 using System.Text.Json.Serialization;
 
@@ -19,19 +19,4 @@ public class ResourceResponse
     [JsonPropertyName("resource_scopes")]
     public List<ResourceScope> ResourceScopes { get; set; }
     public List<Scope> Scopes { get; set; }
-}
-
-public class Owner
-{
-    public string Id { get; set; }
-}
-
-public class ResourceScope
-{
-    public string Name { get; set; }
-}
-
-public class Scope
-{
-    public string Name { get; set; }
 }

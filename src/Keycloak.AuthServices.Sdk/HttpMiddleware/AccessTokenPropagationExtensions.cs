@@ -15,9 +15,9 @@ public static class AccessTokenPropagationExtensions
     /// <returns></returns>
     public static IHttpClientBuilder AddHeaderPropagation(this IHttpClientBuilder builder)
     {
-        builder.AddHttpMessageHandler((sp) =>
+        builder.AddHttpMessageHandler(serviceProvider =>
         {
-            var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+            var contextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
 
             return new AccessTokenPropagationHandler(contextAccessor);
         });

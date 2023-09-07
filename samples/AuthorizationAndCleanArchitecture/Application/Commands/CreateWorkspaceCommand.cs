@@ -7,6 +7,7 @@ using Authorization;
 using Authorization.Abstractions;
 using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Admin.Models.Resources;
 using MediatR;
 
 [AuthorizeProtectedResource("workspaces", "workspaces:create")]

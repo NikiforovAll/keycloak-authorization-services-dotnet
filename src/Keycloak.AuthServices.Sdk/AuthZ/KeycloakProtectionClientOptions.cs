@@ -1,4 +1,4 @@
-namespace Keycloak.AuthServices.Authorization;
+namespace Keycloak.AuthServices.Sdk.AuthZ;
 
 using Common;
 

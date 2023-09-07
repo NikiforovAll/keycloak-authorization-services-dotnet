@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
+namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
 
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
@@ -32,8 +32,31 @@ public class AccessTokenPropagationHandler : DelegatingHandler
         }
 
         var httpContext = this.contextAccessor.HttpContext;
-        var token = await httpContext
-            .GetTokenAsync(JwtBearerDefaults.AuthenticationScheme, "access_token");
+
+        string? token = default;
+
+        try
+        {
+            token = await httpContext.GetTokenAsync(JwtBearerDefaults.AuthenticationScheme, "access_token");
+        }
+        catch
+        {
+            // The token may be available without the scheme when using Blazor server
+
+            try
+            {
+                token = await httpContext.GetTokenAsync("access_token");
+            }
+            catch
+            {
+                // ignored in favor of original exception
+            }
+
+            if (StringValues.IsNullOrEmpty(token))
+            {
+                throw;
+            }
+        }
 
         if (!StringValues.IsNullOrEmpty(token))
         {

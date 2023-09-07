@@ -22,7 +22,9 @@ internal static class KeycloakClientApiConstants
 
     internal const string PutResource = $"{GetResource}";
 
-    internal const string GetResourceByExactName = "/realms/{realm}/authz/protection/resource_set?&exactName=true";
+    internal const string DeleteResource = $"{GetResource}";
+
+    internal const string GetResourceByExactName = $"{GetResources}?&exactName=true";
 
     #endregion
 
@@ -30,15 +32,49 @@ internal static class KeycloakClientApiConstants
 
     internal const string GetUsers = $"{GetRealm}/users";
 
-    internal const string GetUser = $"{GetRealm}/users/{{id}}";
+    internal const string GetUser = $"{GetUsers}/{{id}}";
 
-    internal const string CreateUser = $"{GetRealm}/users";
+    internal const string CreateUser = $"{GetUsers}";
 
-    internal const string UpdateUser = $"{GetRealm}/users/{{id}}";
+    internal const string UpdateUser = $"{GetUser}";
 
-    internal const string SendVerifyEmail = $"{GetRealm}/users/{{id}}/send-verify-email";
+    internal const string SendVerifyEmail = $"{GetUser}/send-verify-email";
 
-    internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
+    internal const string ExecuteActionsEmail = $"{GetUser}/execute-actions-email";
+
+    internal const string GetUserGroups = $"{GetUser}/groups";
+
+    internal const string UserGroupUpdate = $"{GetUserGroups}/{{group_id}}";
+
+    #endregion
+
+    #region Group API
+
+    internal const string GetGroups = $"{GetRealm}/groups";
+
+    internal const string GetGroup = $"{GetGroups}/{{id}}";
+
+    internal const string CreateGroup = $"{GetGroups}";
+
+    internal const string UpdateGroup = $"{GetGroup}";
+
+    internal const string DeleteGroup = $"{GetGroup}";
+
+    internal const string CreateChildGroup = $"{GetGroup}/children";
+
+    #endregion
+
+    #region Policy API
+
+    internal const string GetPolicies = "/realms/{realm}/authz/protection/uma-policy";
+
+    internal const string GetPolicy = $"{GetPolicies}/{{id}}";
+
+    internal const string CreatePolicy = $"{GetPolicy}";
+
+    internal const string UpdatePolicy = $"{GetPolicy}";
+
+    internal const string DeletePolicy = $"{GetPolicy}";
 
     #endregion
 }

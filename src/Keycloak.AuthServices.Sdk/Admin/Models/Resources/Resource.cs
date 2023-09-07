@@ -1,4 +1,4 @@
-namespace Keycloak.AuthServices.Sdk.Admin.Models;
+namespace Keycloak.AuthServices.Sdk.Admin.Models.Resources;
 
 using System.Text.Json.Serialization;
 
@@ -42,4 +42,14 @@ public class Resource
     /// Resource attributes
     /// </summary>
     public Dictionary<string, string> Attributes { get; init; } = new Dictionary<string, string>();
+     
+    /// <summary> 
+    /// When set, will be used to enforce ownership at the time of the request 
+    /// </summary> 
+    public string? Owner { get; set; } 
+ 
+    /// <summary> 
+    /// When set, will enforce owner-managed-access. 
+    /// </summary> 
+    public bool? OwnerManagedAccess { get; set; } 
 }

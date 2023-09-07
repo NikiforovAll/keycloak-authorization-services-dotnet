@@ -20,4 +20,8 @@ public static class KeycloakConstants
     /// </summary>
     public const string RealmAccessClaimType = "realm_access";
 
+    /// <summary>
+    /// JWT Token Claim - Authorization
+    /// </summary>
+    public const string AuthorizationClaimType = "authorization";
 }

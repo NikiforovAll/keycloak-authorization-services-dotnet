@@ -2,6 +2,7 @@ namespace Api.Controllers;
 
 using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Admin.Models.Resources;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/keycloak-api")]

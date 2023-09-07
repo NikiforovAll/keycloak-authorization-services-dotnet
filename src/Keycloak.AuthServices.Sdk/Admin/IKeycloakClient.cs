@@ -7,6 +7,6 @@ namespace Keycloak.AuthServices.Sdk.Admin;
 /// Aggregates multiple clients. <see cref="IKeycloakRealmClient"/> and <see cref="IKeycloakProtectedResourceClient"/>
 /// </remarks>
 public interface IKeycloakClient
-    : IKeycloakRealmClient, IKeycloakProtectedResourceClient, IKeycloakUserClient
+    : IKeycloakRealmClient, IKeycloakProtectedResourceClient, IKeycloakUserClient, IKeycloakGroupClient
 {
 }
