@@ -1,3 +1,5 @@
+using Keycloak.AuthServices.Sdk.Admin.Models.Groups;
+ 
 namespace Keycloak.AuthServices.Sdk.Admin;
 
 using Constants;
@@ -108,4 +110,13 @@ public interface IKeycloakUserClient
     [Delete(KeycloakClientApiConstants.UserGroupUpdate)]
     [Headers("Content-Type: application/json")]
     Task LeaveGroup(string realm, [AliasAs("id")] string userId, [AliasAs("group_id")] string groupId);
+
+    /// <summary>
+    /// Get all the groups the user belongs to.
+    /// </summary>
+    /// <param name="realm"></param>
+    /// <param name="userId"></param>
+    /// <returns></returns>
+    [Get(KeycloakClientApiConstants.GetUserGroups)]
+    Task<IEnumerable<Group>> GetUserGroups(string realm, [AliasAs("id")] string userId);
 }

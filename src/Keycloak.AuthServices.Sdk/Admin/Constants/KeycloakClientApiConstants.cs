@@ -42,6 +42,8 @@ internal static class KeycloakClientApiConstants
 
     internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
 
+    internal const string GetUserGroups = $"{UpdateUser}/groups";
+
     internal const string UserGroupUpdate = $"{UpdateUser}/groups/{{group_id}}";
 
     #endregion
