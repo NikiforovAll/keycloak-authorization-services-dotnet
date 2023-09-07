@@ -1,6 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.AuthZ;
 
 using Admin.Models.Tokens;
+using Common;
 
 /// <summary>
 /// Keycloak Protection API
@@ -23,4 +24,12 @@ public interface IKeycloakProtectionClient
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     Task<TokenResponse?> GetTokenForResource(string resource, CancellationToken cancellationToken);
+    
+    /// <summary>
+    /// Obtain a list of all resources available to the current user based on the given <see cref="scope"/>.
+    /// </summary>
+    /// <param name="scope">The scope to evaluate.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<IEnumerable<ResourcePermission>?> GetResourcePermissions(string scope, CancellationToken cancellationToken);
 }

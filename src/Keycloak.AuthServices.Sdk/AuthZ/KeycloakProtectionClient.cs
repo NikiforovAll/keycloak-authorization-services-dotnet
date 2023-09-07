@@ -66,4 +66,26 @@ public class KeycloakProtectionClient : IKeycloakProtectionClient
 
         return await response.Content.ReadFromJsonAsync<TokenResponse>(cancellationToken: cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<IEnumerable<ResourcePermission>?> GetResourcePermissions(string scope, CancellationToken cancellationToken)
+    {
+        var audience = this.clientOptions.Resource;
+
+        var data = new Dictionary<string, string>
+        {
+            {"grant_type", UmaTicketGrantType},
+            {"response_include_resource_name", "true"},
+            {"audience", audience},
+            {"permission", $"#{scope}"},       // Use an empty resource for the query
+            {"response_mode", "permissions"}   // Ensure the response is providing a list of permissions
+        };
+
+        var response = await this.httpClient.PostAsync(
+            KeycloakConstants.TokenEndpointPath, new FormUrlEncodedContent(data), cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<IEnumerable<ResourcePermission>>(cancellationToken: cancellationToken);
+    }
 }

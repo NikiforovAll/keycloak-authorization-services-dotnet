@@ -1,8 +1,8 @@
 namespace Keycloak.AuthServices.Authentication.Claims;
 
+using Common;
 using System.Security.Claims;
 using System.Text.Json;
-using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 
 /// <summary>

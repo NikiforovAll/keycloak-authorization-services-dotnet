@@ -1,6 +1,6 @@
-using System.Text.Json.Serialization;
-
 namespace Keycloak.AuthServices.Sdk.Admin.Models.Resources;
+
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// </summary>

@@ -24,7 +24,7 @@ internal static class KeycloakClientApiConstants
 
     internal const string DeleteResource = $"{GetResource}";
 
-    internal const string GetResourceByExactName = "/realms/{realm}/authz/protection/resource_set?&exactName=true";
+    internal const string GetResourceByExactName = $"{GetResources}?&exactName=true";
 
     #endregion
 
@@ -32,15 +32,15 @@ internal static class KeycloakClientApiConstants
 
     internal const string GetUsers = $"{GetRealm}/users";
 
-    internal const string GetUser = $"{GetRealm}/users/{{id}}";
+    internal const string GetUser = $"{GetUsers}/{{id}}";
 
-    internal const string CreateUser = $"{GetRealm}/users";
+    internal const string CreateUser = $"{GetUsers}";
 
-    internal const string UpdateUser = $"{GetRealm}/users/{{id}}";
+    internal const string UpdateUser = $"{GetUser}";
 
-    internal const string SendVerifyEmail = $"{GetRealm}/users/{{id}}/send-verify-email";
+    internal const string SendVerifyEmail = $"{GetUser}/send-verify-email";
 
-    internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
+    internal const string ExecuteActionsEmail = $"{GetUser}/execute-actions-email";
 
     internal const string GetUserGroups = $"{UpdateUser}/groups";
 
@@ -52,7 +52,7 @@ internal static class KeycloakClientApiConstants
 
     internal const string GetGroups = $"{GetRealm}/groups";
 
-    internal const string GetGroup = $"{GetRealm}/groups/{{id}}";
+    internal const string GetGroup = $"{GetGroups}/{{id}}";
 
     internal const string CreateGroup = $"{GetGroups}";
 
@@ -61,18 +61,6 @@ internal static class KeycloakClientApiConstants
     internal const string DeleteGroup = $"{GetGroup}";
 
     internal const string CreateChildGroup = $"{GetGroup}/children";
-
-    #endregion
-
-    #region Permission Ticket API
-
-    internal const string GetPermissionTickets = "/realms/{realm}/authz/protection/permission/ticket";
-
-    internal const string CreatePermissionTicket = $"{GetPermissionTickets}";
-
-    internal const string UpdatePermissionTicket = $"{GetPermissionTickets}";
-
-    internal const string DeletePermissionTicket = $"{GetPermissionTickets}/{{id}}";
 
     #endregion
 

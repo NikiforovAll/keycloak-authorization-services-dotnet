@@ -1,6 +1,6 @@
-﻿using System.Text.Json.Serialization;
-
 namespace Keycloak.AuthServices.Sdk.Admin.Models.Tokens;
+
+using System.Text.Json.Serialization;
 
 /// <summary>
 /// A token response 

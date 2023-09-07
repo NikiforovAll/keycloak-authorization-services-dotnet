@@ -21,6 +21,16 @@ public interface IKeycloakProtectedResourceClient
     Task<List<string>> GetResources(string realm, [Query] GetResourcesRequestParameters? getResourcesRequestParameters = default);
 
     /// <summary>
+    /// Searches for resources. NOTE: you must set the <see cref="GetResourcesRequestParameters.Deep"/> property to true
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="getResourcesDeepRequestParameters">Query parameters</param>
+    /// <returns></returns>
+    [Get(KeycloakClientApiConstants.GetResources)]
+    [Headers("Accept: application/json")]
+    Task<List<ResourceResponse>> GetResourcesDeep(string realm, [Query] GetResourcesDeepRequestParameters getResourcesDeepRequestParameters);
+
+    /// <summary>
     /// Gets resource by Id
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
@@ -34,7 +44,7 @@ public interface IKeycloakProtectedResourceClient
     /// Gets resource by Name
     /// </summary>
     /// <remarks>
-    ///     https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-protection-resources-api-papi.adoc#querying-resources
+    ///     https://github.com/keycloak/keycloak/blob/main/docs/documentation/authorization_services/topics/service-protection-resources-api-papi.adoc#querying-resources
     /// </remarks>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="name"></param>

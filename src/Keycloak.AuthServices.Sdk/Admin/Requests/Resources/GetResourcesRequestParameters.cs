@@ -47,4 +47,10 @@ public class GetResourcesRequestParameters
     /// </summary>
     [AliasAs("scope")]
     public string? Scope { get; set; }
+    
+    /// <summary>
+    /// When set to true, the response will include all available data for the resource.
+    /// </summary>
+    [AliasAs("deep")]
+    public bool? Deep { get; set; }
 }
