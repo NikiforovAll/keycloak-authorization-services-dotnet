@@ -14,7 +14,7 @@ public class Policy
     public string? Owner { get; init; } // The SID of the owner
     public string? Condition { get; init; } // Typically not used or recommended
     public string[]? Scopes { get; init; }
-    public string[]? Groups { get; init; }
+    public string[]? Groups { get; set; }
     public string[]? Roles { get; init; }
     public string[]? Clients { get; init; }
 }

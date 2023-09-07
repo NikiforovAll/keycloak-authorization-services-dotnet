@@ -19,6 +19,11 @@ public class GetGroupsRequestParameters
     [AliasAs("first")]
     public int? First { get; init; }
 
+    /// <summary>
+    /// Whether to match the search exactly or not
+    /// </summary>
+    [AliasAs("exact")]
+    public bool? Exact { get; init; }
     
     /// <summary>
     /// Maximum results size. Default is 100.

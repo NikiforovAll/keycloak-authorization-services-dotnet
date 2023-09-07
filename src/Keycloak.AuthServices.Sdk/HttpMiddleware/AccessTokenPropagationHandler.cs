@@ -41,7 +41,7 @@ public class AccessTokenPropagationHandler : DelegatingHandler
         }
         catch
         {
-            // Then token may be available without the scheme when using Blazor server
+            // The token may be available without the scheme when using Blazor server
 
             try
             {

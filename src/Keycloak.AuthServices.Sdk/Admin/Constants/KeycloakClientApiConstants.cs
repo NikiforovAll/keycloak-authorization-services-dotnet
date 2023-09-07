@@ -42,9 +42,9 @@ internal static class KeycloakClientApiConstants
 
     internal const string ExecuteActionsEmail = $"{GetUser}/execute-actions-email";
 
-    internal const string GetUserGroups = $"{UpdateUser}/groups";
+    internal const string GetUserGroups = $"{GetUser}/groups";
 
-    internal const string UserGroupUpdate = $"{UpdateUser}/groups/{{group_id}}";
+    internal const string UserGroupUpdate = $"{GetUserGroups}/{{group_id}}";
 
     #endregion
 
