@@ -29,6 +29,6 @@ public interface IKeycloakGroupClient
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="groupId">group ID.</param>
     /// <returns>The group representation.</returns>
-    [Get(KeycloakClientApiConstants.GetGroups)]
-    Task<Group> GetGroups(string realm, [AliasAs("id")] string groupId);
+    [Get(KeycloakClientApiConstants.GetGroup)]
+    Task<Group> GetGroup(string realm, [AliasAs("id")] string groupId);
 }
