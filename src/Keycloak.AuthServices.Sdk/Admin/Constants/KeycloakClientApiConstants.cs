@@ -40,5 +40,11 @@ internal static class KeycloakClientApiConstants
 
     internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
 
+
+
+    internal const string GetGroups = $"{GetRealm}/groups";
+
+    internal const string GetGroup = $"{GetRealm}/groups/{{id}}";
+
     #endregion
 }
