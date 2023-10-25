@@ -3,6 +3,7 @@
 using Constants;
 using Models;
 using Refit;
+using Requests.Groups;
 using Requests.Users;
 
 /// <summary>
@@ -84,4 +85,14 @@ public interface IKeycloakUserClient
         [Query] int? lifespan = default,
         [Query][AliasAs("redirect_uri")] string? redirectUri = default,
         [Body] List<string>? actions = default);
+
+    /// <summary>
+    /// Get a users's groups.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    [Get(KeycloakClientApiConstants.GetUserGroups)]
+    Task<IEnumerable<Group>> GetUserGroups(string realm,  [AliasAs("id")] string userId, [Query] GetGroupRequestParameters? parameters = default);
 }
