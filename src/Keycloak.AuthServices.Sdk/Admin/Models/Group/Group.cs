@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// </summary>
 public class Group
 {
-    public string? Id { get; init; }
+    public string Id { get; init; } = default!;
     public string? Name { get; init; }
     public string? Path { get; init; }
     public Dictionary<string, string>? ClientRoles { get; init; }
