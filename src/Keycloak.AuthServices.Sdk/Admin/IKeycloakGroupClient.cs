@@ -17,7 +17,7 @@ public interface IKeycloakGroupClient
     /// <summary>
     /// Get a stream of groups on the realm.
     /// </summary>
-    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="realm">Realm name.</param>
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetGroups)]
@@ -26,7 +26,7 @@ public interface IKeycloakGroupClient
     /// <summary>
     /// Get representation of a group.
     /// </summary>
-    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="realm">Realm name.</param>
     /// <param name="groupId">group ID.</param>
     /// <returns>The group representation.</returns>
     [Get(KeycloakClientApiConstants.GetGroup)]
