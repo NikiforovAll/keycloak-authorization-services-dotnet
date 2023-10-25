@@ -3,6 +3,7 @@
 using Constants;
 using Models;
 using Refit;
+using Requests.Groups;
 using Requests.Users;
 
 /// <summary>
@@ -93,5 +94,5 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetUserGroups)]
-    Task<IEnumerable<Group>> GetUserGroups(string realm,  [AliasAs("id")] string userId, [Query] GetUsersRequestParameters? parameters = default);
+    Task<IEnumerable<Group>> GetUserGroups(string realm,  [AliasAs("id")] string userId, [Query] GetGroupRequestParameters? parameters = default);
 }

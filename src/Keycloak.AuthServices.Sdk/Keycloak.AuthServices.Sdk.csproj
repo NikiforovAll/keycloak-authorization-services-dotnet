@@ -32,8 +32,4 @@
     </AssemblyAttribute>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Admin\Requests\Groups\" />
-  </ItemGroup>
-
 </Project>

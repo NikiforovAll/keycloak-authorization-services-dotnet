@@ -1,11 +1,10 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
-using System.Collections;
 using System.Threading.Tasks;
 using Constants;
 using Models;
 using Refit;
-using Requests.Users;
+using Requests.Groups;
 
 /// <summary>
 /// Group management
@@ -21,7 +20,7 @@ public interface IKeycloakGroupClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetGroups)]
-    Task<IEnumerable<Group>> GetGroups(string realm, [Query] GetUsersRequestParameters? parameters = default);
+    Task<IEnumerable<Group>> GetGroups(string realm, [Query] GetGroupRequestParameters? parameters = default);
 
     /// <summary>
     /// Get representation of a group.
