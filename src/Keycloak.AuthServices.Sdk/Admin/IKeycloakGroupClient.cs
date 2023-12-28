@@ -30,4 +30,28 @@ public interface IKeycloakGroupClient
     /// <returns>The group representation.</returns>
     [Get(KeycloakClientApiConstants.GetGroup)]
     Task<Group> GetGroup(string realm, [AliasAs("id")] string groupId);
+
+    /// <summary>
+    /// Create a new group.
+    /// </summary>
+    /// <remarks>
+    /// Group name must be unique.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="group">Group representation.</param>
+    /// <returns></returns>
+    [Post(KeycloakClientApiConstants.CreateGroup)]
+    [Headers("Content-Type: application/json")]
+    Task<HttpResponseMessage> CreateGroup(string realm, [Body] Group group);
+
+    /// <summary>
+    /// Update the group.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="group">Group representation.</param>
+    /// <returns></returns>
+    [Put(KeycloakClientApiConstants.UpdateGroup)]
+    [Headers("Content-Type: application/json")]
+    Task<HttpResponseMessage> UpdateGroup(string realm, [AliasAs("id")] string groupId, [Body] Group group);
+
 }
