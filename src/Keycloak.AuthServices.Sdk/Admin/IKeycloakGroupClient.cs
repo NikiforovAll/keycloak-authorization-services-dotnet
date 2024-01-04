@@ -48,6 +48,7 @@ public interface IKeycloakGroupClient
     /// Update the group.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">group ID.</param>
     /// <param name="group">Group representation.</param>
     /// <returns></returns>
     [Put(KeycloakClientApiConstants.UpdateGroup)]
