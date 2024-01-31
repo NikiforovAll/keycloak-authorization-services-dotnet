@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Authorization;
+namespace Keycloak.AuthServices.Authorization;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
@@ -31,7 +31,7 @@ public class ProtectedResourcePolicyProvider
         var builder = new AuthorizationPolicyBuilder();
         var tokens = policyName.Split('#');
 
-        if (tokens is not {Length: 2})
+        if (tokens is not { Length: 2 })
         {
             return default;
         }

@@ -19,7 +19,7 @@ public class KeycloakRolesClaimsTransformationTests
         var claimsPrincipal = GetClaimsPrincipal();
 
         // This should work many times
-        for(var testCount = 0; testCount < 3; testCount++)
+        for (var testCount = 0; testCount < 3; testCount++)
         {
             claimsPrincipal = await target.TransformAsync(claimsPrincipal);
             claimsPrincipal.HasClaim(ClaimTypes.Role, MyFirstClaim).Should().BeTrue();

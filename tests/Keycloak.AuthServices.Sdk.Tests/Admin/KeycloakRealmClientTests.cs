@@ -5,7 +5,7 @@ using Refit;
 using RichardSzalay.MockHttp;
 using Sdk.Admin;
 
-public class KeycloakRealmClientTests
+public class KeycloakRealmClientTests : IDisposable
 {
     private const string BaseAddress = "http://localhost:8080";
 
@@ -41,5 +41,19 @@ public class KeycloakRealmClientTests
 
         Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
         this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    public void Dispose()
+    {
+        this.Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            this.handler.Dispose();
+        }
     }
 }

@@ -112,8 +112,17 @@ public class KeycloakInstallationOptions
 /// </summary>
 public enum RolesClaimTransformationSource
 {
+    /// <summary>
+    /// None
+    /// </summary>
     None,
+    /// <summary>
+    /// Realm
+    /// </summary>
     Realm,
+    /// <summary>
+    /// ResourceAccess
+    /// </summary>
     ResourceAccess
 }
 
