@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
+namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
 
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;
@@ -17,10 +17,7 @@ public class AccessTokenPropagationHandler : DelegatingHandler
     /// Constructs
     /// </summary>
     /// <param name="contextAccessor"></param>
-    public AccessTokenPropagationHandler(IHttpContextAccessor contextAccessor)
-    {
-        this.contextAccessor = contextAccessor;
-    }
+    public AccessTokenPropagationHandler(IHttpContextAccessor contextAccessor) => this.contextAccessor = contextAccessor;
 
     /// <inheritdoc/>
     protected override async Task<HttpResponseMessage> SendAsync(

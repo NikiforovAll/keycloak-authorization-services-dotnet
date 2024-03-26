@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="MinVer">
-    <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
+    <MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
     <MinVerVerbosity>normal</MinVerVerbosity>
   </PropertyGroup>
 

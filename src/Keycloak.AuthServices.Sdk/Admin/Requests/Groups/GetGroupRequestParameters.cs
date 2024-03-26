@@ -4,7 +4,7 @@ using Keycloak.AuthServices.Sdk.Admin.Models;
 using Refit;
 
 /// <summary>
-/// Optional request parameters for the <see cref="IKeycloakGoupClient.GetGroups"/> endpoint.
+/// Optional request parameters for the <see cref="IKeycloakGroupClient.GetGroups"/> endpoint.
 /// It can be called in three different ways.
 /// <list type="number">
 ///     <item>

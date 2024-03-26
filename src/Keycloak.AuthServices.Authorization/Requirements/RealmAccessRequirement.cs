@@ -34,10 +34,7 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
     /// <summary>
     /// </summary>
     /// <param name="logger"></param>
-    public RealmAccessRequirementHandler(ILogger<RealmAccessRequirementHandler> logger)
-    {
-        this.logger = logger;
-    }
+    public RealmAccessRequirementHandler(ILogger<RealmAccessRequirementHandler> logger) => this.logger = logger;
 
     [LoggerMessage(100, LogLevel.Debug,
         "[{Requirement}] Access outcome {Outcome} for user {UserName}")]

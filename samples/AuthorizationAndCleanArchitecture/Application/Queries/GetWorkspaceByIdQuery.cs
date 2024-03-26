@@ -2,9 +2,9 @@ namespace Api.Application.Queries;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Data;
 using Authorization;
 using Authorization.Abstractions;
+using Data;
 using Keycloak.AuthServices.Authorization;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -38,7 +38,7 @@ public class GetWorkspaceByIdQueryHandler : IRequestHandler<GetWorkspaceByIdQuer
         var workspace = await this.db
             .Workspaces
             .Include(w => w.Projects)
-            .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+            .FirstAsync(x => x.Id == request.Id, cancellationToken);
 
         return workspace;
     }

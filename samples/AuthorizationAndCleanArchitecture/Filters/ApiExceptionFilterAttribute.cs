@@ -1,4 +1,4 @@
-﻿namespace Api.Filters
+namespace Api.Filters
 {
     using Application.Authorization;
     using Microsoft.AspNetCore.Mvc;
@@ -30,7 +30,7 @@
 
         private void HandleException(ExceptionContext context)
         {
-            Type type = context.Exception.GetType();
+            var type = context.Exception.GetType();
             if (this.exceptionHandlers.ContainsKey(type))
             {
                 this.exceptionHandlers[type].Invoke(context);
