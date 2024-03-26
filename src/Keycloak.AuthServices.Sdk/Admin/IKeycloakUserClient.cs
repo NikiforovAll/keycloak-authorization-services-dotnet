@@ -54,6 +54,16 @@ public interface IKeycloakUserClient
     Task UpdateUser(string realm, [AliasAs("id")] string userId, [Body] User user);
 
     /// <summary>
+    /// Delete the given user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <returns></returns>
+    [Delete(KeycloakClientApiConstants.DeleteUser)]
+    [Headers("Content-Type: application/json")]
+    Task DeleteUser(string realm, [AliasAs("id")] string userId);
+
+    /// <summary>
     /// Send an email-verification email to the user.
     /// </summary>
     /// <remarks>
