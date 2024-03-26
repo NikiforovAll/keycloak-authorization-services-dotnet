@@ -44,8 +44,10 @@ internal static class KeycloakClientApiConstants
 
 
     internal const string GetGroups = $"{GetRealm}/groups";
+    internal const string CreateGroup = $"{GetRealm}/groups";
 
     internal const string GetGroup = $"{GetRealm}/groups/{{id}}";
+    internal const string UpdateGroup = $"{GetRealm}/groups/{{id}}";
 
     #endregion
 }
