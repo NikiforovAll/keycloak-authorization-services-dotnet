@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Keycloak.AuthServices.Authentication" VersionOverride="1.0.4" />
-    <PackageReference Include="Keycloak.AuthServices.Authorization" VersionOverride="1.0.0" />
-    <PackageReference Include="Keycloak.AuthServices.Sdk" VersionOverride="1.0.4" />
+    <PackageReference Include="Keycloak.AuthServices.Authentication" Version="1.0.4" />
+    <PackageReference Include="Keycloak.AuthServices.Authorization" Version="1.0.0" />
+    <PackageReference Include="Keycloak.AuthServices.Sdk" Version="1.0.4" />
   </ItemGroup>
 
 </Project>
