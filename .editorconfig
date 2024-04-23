@@ -1,3 +1,4 @@
+
 ##########################################
 # Common Settings
 ##########################################
@@ -75,7 +76,7 @@ dotnet_analyzer_diagnostic.severity = warning
 # Motivation https://github.com/dotnet/roslyn/blob/9f87b444da9c48a4d492b19f8337339056bf2b95/src/Analyzers/Core/Analyzers/EnforceOnBuildValues.cs
 ##########################################
 # IDE0055 Fix formatting
-dotnet_diagnostic.IDE0055.severity = error
+dotnet_diagnostic.IDE0055.severity = suggestion
 # IDE005_gen: Remove unnecessary usings in generated code
 dotnet_diagnostic.IDE0005.severity = error
 # IDE0065: Using directives must be placed outside of a namespace declaration
@@ -226,7 +227,6 @@ csharp_using_directive_placement = inside_namespace:warning
 csharp_prefer_static_local_function = true:warning
 csharp_prefer_simple_using_statement = true:suggestion
 dotnet_diagnostic.IDE0063.severity = suggestion
-
 ##########################################
 # .NET Formatting Conventions
 # https://docs.microsoft.com/visualstudio/ide/editorconfig-code-style-settings-reference#formatting-conventions

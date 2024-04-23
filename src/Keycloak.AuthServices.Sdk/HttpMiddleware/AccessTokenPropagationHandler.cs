@@ -17,14 +17,14 @@ public class AccessTokenPropagationHandler : DelegatingHandler
     /// Constructs
     /// </summary>
     /// <param name="contextAccessor"></param>
-    public AccessTokenPropagationHandler(IHttpContextAccessor contextAccessor)
-    {
+    public AccessTokenPropagationHandler(IHttpContextAccessor contextAccessor) =>
         this.contextAccessor = contextAccessor;
-    }
 
     /// <inheritdoc/>
     protected override async Task<HttpResponseMessage> SendAsync(
-        HttpRequestMessage request, CancellationToken cancellationToken)
+        HttpRequestMessage request,
+        CancellationToken cancellationToken
+    )
     {
         if (this.contextAccessor.HttpContext == null)
         {
@@ -32,8 +32,10 @@ public class AccessTokenPropagationHandler : DelegatingHandler
         }
 
         var httpContext = this.contextAccessor.HttpContext;
-        var token = await httpContext
-            .GetTokenAsync(JwtBearerDefaults.AuthenticationScheme, "access_token");
+        var token = await httpContext.GetTokenAsync(
+            JwtBearerDefaults.AuthenticationScheme,
+            "access_token"
+        );
 
         if (!StringValues.IsNullOrEmpty(token))
         {
@@ -42,7 +44,6 @@ public class AccessTokenPropagationHandler : DelegatingHandler
 
         return await Continue();
 
-        Task<HttpResponseMessage> Continue() =>
-            base.SendAsync(request, cancellationToken);
+        Task<HttpResponseMessage> Continue() => base.SendAsync(request, cancellationToken);
     }
 }

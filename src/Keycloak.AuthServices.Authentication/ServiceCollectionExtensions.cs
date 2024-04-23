@@ -20,7 +20,8 @@ public static class ServiceCollectionExtensions
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         KeycloakAuthenticationOptions keycloakOptions,
-        Action<JwtBearerOptions>? configureOptions = default)
+        Action<JwtBearerOptions>? configureOptions = default
+    )
     {
         const string roleClaimType = "role";
         var validationParameters = new TokenValidationParameters
@@ -33,18 +34,22 @@ public static class ServiceCollectionExtensions
         };
 
         // options.Resource == Audience
-        services.AddTransient<IClaimsTransformation>(_ =>
-            new KeycloakRolesClaimsTransformation(
-                roleClaimType,
-                keycloakOptions.RolesSource,
-                keycloakOptions.Resource));
+        services.AddTransient<IClaimsTransformation>(_ => new KeycloakRolesClaimsTransformation(
+            roleClaimType,
+            keycloakOptions.RolesSource,
+            keycloakOptions.Resource
+        ));
 
-        return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        return services
+            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opts =>
             {
-                var sslRequired = string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
-                    || keycloakOptions.SslRequired
-                        .Equals("external", StringComparison.OrdinalIgnoreCase);
+                var sslRequired =
+                    string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
+                    || keycloakOptions.SslRequired.Equals(
+                        "external",
+                        StringComparison.OrdinalIgnoreCase
+                    );
 
                 opts.Authority = keycloakOptions.KeycloakUrlRealm;
                 opts.Audience = keycloakOptions.Resource;
@@ -54,7 +59,6 @@ public static class ServiceCollectionExtensions
                 configureOptions?.Invoke(opts);
             });
     }
-
 
     /// <summary>
     /// Adds keycloak authentication services from configuration located in specified default section.
@@ -66,15 +70,14 @@ public static class ServiceCollectionExtensions
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<JwtBearerOptions>? configureOptions = default)
+        Action<JwtBearerOptions>? configureOptions = default
+    )
     {
-        KeycloakAuthenticationOptions options = new();
-
-        configuration
+        var authenticationOptions = configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
+            .Get<KeycloakAuthenticationOptions>(options => options.BindNonPublicProperties = true);
 
-        return services.AddKeycloakAuthentication(options, configureOptions);
+        return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
 
     /// <summary>
@@ -88,16 +91,15 @@ public static class ServiceCollectionExtensions
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
-        string? keycloakClientSectionName,
-        Action<JwtBearerOptions>? configureOptions = default)
+        string keycloakClientSectionName,
+        Action<JwtBearerOptions>? configureOptions = default
+    )
     {
-        KeycloakAuthenticationOptions options = new();
+        var authenticationOptions = configuration
+            .GetSection(keycloakClientSectionName)
+            .Get<KeycloakAuthenticationOptions>(options => options.BindNonPublicProperties = true);
 
-        configuration
-            .GetSection(keycloakClientSectionName ?? KeycloakAuthenticationOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
-
-        return services.AddKeycloakAuthentication(options, configureOptions);
+        return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
 
     /// <summary>
@@ -107,10 +109,14 @@ public static class ServiceCollectionExtensions
     /// <param name="fileName"></param>
     /// <returns></returns>
     public static IHostBuilder ConfigureKeycloakConfigurationSource(
-        this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
-        hostBuilder.ConfigureAppConfiguration((_, builder) =>
-        {
-            var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
-            builder.Sources.Insert(0, source);
-        });
+        this IHostBuilder hostBuilder,
+        string fileName = "keycloak.json"
+    ) =>
+        hostBuilder.ConfigureAppConfiguration(
+            (_, builder) =>
+            {
+                var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
+                builder.Sources.Insert(0, source);
+            }
+        );
 }

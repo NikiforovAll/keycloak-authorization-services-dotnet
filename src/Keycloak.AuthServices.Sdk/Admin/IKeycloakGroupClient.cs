@@ -12,7 +12,6 @@ using Requests.Groups;
 [Headers("Accept: application/json")]
 public interface IKeycloakGroupClient
 {
-
     /// <summary>
     /// Get a stream of groups on the realm.
     /// </summary>
@@ -20,7 +19,10 @@ public interface IKeycloakGroupClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetGroups)]
-    Task<IEnumerable<Group>> GetGroups(string realm, [Query] GetGroupRequestParameters? parameters = default);
+    Task<IEnumerable<Group>> GetGroups(
+        string realm,
+        [Query] GetGroupRequestParameters? parameters = default
+    );
 
     /// <summary>
     /// Get representation of a group.
@@ -53,6 +55,9 @@ public interface IKeycloakGroupClient
     /// <returns></returns>
     [Put(KeycloakClientApiConstants.UpdateGroup)]
     [Headers("Content-Type: application/json")]
-    Task<HttpResponseMessage> UpdateGroup(string realm, [AliasAs("id")] string groupId, [Body] Group group);
-
+    Task<HttpResponseMessage> UpdateGroup(
+        string realm,
+        [AliasAs("id")] string groupId,
+        [Body] Group group
+    );
 }

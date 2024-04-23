@@ -12,5 +12,9 @@ public interface IKeycloakProtectionClient
     /// <param name="scope"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<bool> VerifyAccessToResource(string resource, string scope, CancellationToken cancellationToken);
+    Task<bool> VerifyAccessToResource(
+        string resource,
+        string scope,
+        CancellationToken cancellationToken
+    );
 }

@@ -19,7 +19,10 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetUsers)]
-    Task<IEnumerable<User>> GetUsers(string realm, [Query] GetUsersRequestParameters? parameters = default);
+    Task<IEnumerable<User>> GetUsers(
+        string realm,
+        [Query] GetUsersRequestParameters? parameters = default
+    );
 
     /// <summary>
     /// Get representation of a user.
@@ -75,9 +78,12 @@ public interface IKeycloakUserClient
     /// <param name="clientId">Client ID.</param>
     /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
     [Put(KeycloakClientApiConstants.SendVerifyEmail)]
-    Task SendVerifyEmail(string realm, [AliasAs("id")] string userId,
-        [Query][AliasAs("client_id")] string? clientId = default,
-        [Query][AliasAs("redirect_uri")] string? redirectUri = default);
+    Task SendVerifyEmail(
+        string realm,
+        [AliasAs("id")] string userId,
+        [Query] [AliasAs("client_id")] string? clientId = default,
+        [Query] [AliasAs("redirect_uri")] string? redirectUri = default
+    );
 
     /// <summary>
     /// Execute actions email for the user.
@@ -90,11 +96,14 @@ public interface IKeycloakUserClient
     /// <param name="actions">Actions</param>
     [Put(KeycloakClientApiConstants.ExecuteActionsEmail)]
     [Headers("Content-Type: application/json")]
-    Task ExecuteActionsEmail(string realm, [AliasAs("id")] string userId,
-        [Query][AliasAs("client_id")] string? clientId = default,
+    Task ExecuteActionsEmail(
+        string realm,
+        [AliasAs("id")] string userId,
+        [Query] [AliasAs("client_id")] string? clientId = default,
         [Query] int? lifespan = default,
-        [Query][AliasAs("redirect_uri")] string? redirectUri = default,
-        [Body] List<string>? actions = default);
+        [Query] [AliasAs("redirect_uri")] string? redirectUri = default,
+        [Body] List<string>? actions = default
+    );
 
     /// <summary>
     /// Get a users's groups.
@@ -104,5 +113,9 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
     [Get(KeycloakClientApiConstants.GetUserGroups)]
-    Task<IEnumerable<Group>> GetUserGroups(string realm,  [AliasAs("id")] string userId, [Query] GetGroupRequestParameters? parameters = default);
+    Task<IEnumerable<Group>> GetUserGroups(
+        string realm,
+        [AliasAs("id")] string userId,
+        [Query] GetGroupRequestParameters? parameters = default
+    );
 }

@@ -11,7 +11,6 @@ internal static class KeycloakClientApiConstants
 
     internal const string GetRealm = $"{AdminApiBase}/{Realms}/{{realm}}";
 
-
     #region Resource API
 
     internal const string GetResources = "/realms/{realm}/authz/protection/resource_set";
@@ -22,7 +21,8 @@ internal static class KeycloakClientApiConstants
 
     internal const string PutResource = $"{GetResource}";
 
-    internal const string GetResourceByExactName = "/realms/{realm}/authz/protection/resource_set?&exactName=true";
+    internal const string GetResourceByExactName =
+        "/realms/{realm}/authz/protection/resource_set?&exactName=true";
 
     #endregion
 
@@ -42,8 +42,6 @@ internal static class KeycloakClientApiConstants
 
     internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
     internal const string GetUserGroups = $"{GetRealm}/users/{{id}}/groups";
-
-
 
     internal const string GetGroups = $"{GetRealm}/groups";
     internal const string CreateGroup = $"{GetRealm}/groups";
