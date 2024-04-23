@@ -14,6 +14,7 @@
     <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0"/>
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0"/>
   </ItemGroup>
+
   <ItemGroup Label="Release">
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0"/>
     <PackageVersion Include="MinVer" Version="5.0.0"/>

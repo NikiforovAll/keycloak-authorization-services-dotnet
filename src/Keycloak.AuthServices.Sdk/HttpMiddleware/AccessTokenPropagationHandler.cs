@@ -1,4 +1,4 @@
-namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
+﻿namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
 
 using IdentityModel.Client;
 using Microsoft.AspNetCore.Authentication;

@@ -86,9 +86,9 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
             {
                 var value = role.GetString();
 
-                var matchingClaim = identity.Claims.FirstOrDefault(claim =>
-                    claim.Type.Equals(this.roleClaimType, StringComparison.OrdinalIgnoreCase) &&
-                    claim.Value.Equals(value, StringComparison.OrdinalIgnoreCase));
+                var matchingClaim = identity.Claims.FirstOrDefault(claim => 
+                    claim.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase) && 
+                    claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)); 
 
                 if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
                 {
@@ -119,9 +119,9 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                 {
                     var value = role.GetString();
 
-                    var matchingClaim = identity.Claims.FirstOrDefault(claim =>
-                        claim.Type.Equals(this.roleClaimType, StringComparison.OrdinalIgnoreCase) &&
-                        claim.Value.Equals(value, StringComparison.OrdinalIgnoreCase));
+                    var matchingClaim = identity.Claims.FirstOrDefault(claim => 
+                        claim.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase) && 
+                        claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase));
 
                     if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
                     {
