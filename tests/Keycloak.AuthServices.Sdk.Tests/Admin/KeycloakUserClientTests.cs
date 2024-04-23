@@ -10,7 +10,7 @@ using Sdk.Admin;
 using Sdk.Admin.Models;
 using Sdk.Admin.Requests.Users;
 
-public class KeycloakUserClientTests : IDisposable
+public class KeycloakUserClientTests
 {
     private const string BaseAddress = "http://localhost:8080";
 
@@ -307,18 +307,4 @@ public class KeycloakUserClientTests : IDisposable
                 ""manage"": true
             }}
         }}";
-
-    public void Dispose()
-    {
-        this.Dispose(true);
-        GC.SuppressFinalize(this);
-    }
-
-    protected virtual void Dispose(bool disposing)
-    {
-        if (disposing)
-        {
-            this.handler.Dispose();
-        }
-    }
 }
