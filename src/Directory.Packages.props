@@ -1,16 +1,21 @@
 <Project>
   <ItemGroup Label="Core">
-    <PackageVersion Include="IdentityModel.AspNetCore" Version="4.3.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.26" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="6.0.1" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
-    <PackageVersion Include="Refit.HttpClientFactory" Version="7.0.0" />
-    <PackageVersion Include="Refit" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0"/>
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0"/>
+
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.29"/>
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1"/>
+
+    <PackageVersion Include="IdentityModel.AspNetCore" Version="4.3.0"/>
+    <PackageVersion Include="Refit.HttpClientFactory" Version="7.0.0"/>
+    <PackageVersion Include="Refit" Version="7.0.0"/>
+
+    <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="6.0.1"/>
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0"/>
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0"/>
   </ItemGroup>
   <ItemGroup Label="Release">
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageVersion Include="MinVer" Version="4.3.0" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0"/>
+    <PackageVersion Include="MinVer" Version="5.0.0"/>
   </ItemGroup>
 </Project>

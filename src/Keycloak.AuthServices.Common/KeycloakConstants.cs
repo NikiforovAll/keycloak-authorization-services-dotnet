@@ -11,12 +11,12 @@ public static class KeycloakConstants
     public const string TokenEndpointPath = "protocol/openid-connect/token";
 
     /// <summary>
-    /// JWT Token Claim - Resource Access
+    /// Token Claim - Resource Access
     /// </summary>
     public const string ResourceAccessClaimType = "resource_access";
 
     /// <summary>
-    /// JWT Token Claim - Realm Access
+    /// Token Claim - Realm Access
     /// </summary>
     public const string RealmAccessClaimType = "realm_access";
 

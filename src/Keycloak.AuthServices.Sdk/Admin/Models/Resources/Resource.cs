@@ -36,7 +36,8 @@ public class Resource
     /// <summary>
     /// Resource scopes
     /// </summary>
-    [JsonPropertyName("resource_scopes")] public string[] Scopes { get; }
+    [JsonPropertyName("resource_scopes")]
+    public string[] Scopes { get; }
 
     /// <summary>
     /// Resource attributes

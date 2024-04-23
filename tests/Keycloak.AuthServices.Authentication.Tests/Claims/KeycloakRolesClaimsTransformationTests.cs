@@ -30,11 +30,13 @@ public class KeycloakRolesClaimsTransformationTests
 
     // The resource_access claim type
     private const string MyResourceClaimType = "resource_access";
-    private const string MyResourceClaimValue = @$"{{""{MyAudience}"":{{""roles"":[""{MyFirstClaim}"",""{MySecondClaim}""]}}}}";
+    private const string MyResourceClaimValue =
+        @$"{{""{MyAudience}"":{{""roles"":[""{MyFirstClaim}"",""{MySecondClaim}""]}}}}";
 
     // The realm_access claim type
     private const string MyRealmClaimType = "realm_access";
-    private const string MyRealmClaimValue = @$"{{""roles"":[""{MyFirstClaim}"",""{MySecondClaim}""]}}";
+    private const string MyRealmClaimValue =
+        @$"{{""roles"":[""{MyFirstClaim}"",""{MySecondClaim}""]}}";
 
     // Fake claim values
     private const string MyFirstClaim = "my_client_app_role_user";
@@ -51,10 +53,13 @@ public class KeycloakRolesClaimsTransformationTests
 
     // Get a claims principal that has all the appropriate claim details required for testing
     private static ClaimsPrincipal GetClaimsPrincipal() =>
-        new(new ClaimsIdentity(new[]
-        {
-            new Claim(MyResourceClaimType, MyResourceClaimValue, MyValueType, MyUrl, MyUrl),
-            new Claim(MyRealmClaimType, MyRealmClaimValue, MyValueType, MyUrl, MyUrl),
-        }));
-
+        new(
+            new ClaimsIdentity(
+                new[]
+                {
+                    new Claim(MyResourceClaimType, MyResourceClaimValue, MyValueType, MyUrl, MyUrl),
+                    new Claim(MyRealmClaimType, MyRealmClaimValue, MyValueType, MyUrl, MyUrl),
+                }
+            )
+        );
 }

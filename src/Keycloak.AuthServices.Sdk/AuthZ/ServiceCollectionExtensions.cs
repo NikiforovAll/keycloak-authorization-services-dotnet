@@ -19,17 +19,20 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         KeycloakProtectionClientOptions keycloakOptions,
-        Action<HttpClient>? configureClient = default)
+        Action<HttpClient>? configureClient = default
+    )
     {
         services.AddSingleton(keycloakOptions);
         services.AddHttpContextAccessor();
 
-        return services.AddHttpClient<IKeycloakProtectionClient, KeycloakProtectionClient>()
+        return services
+            .AddHttpClient<IKeycloakProtectionClient, KeycloakProtectionClient>()
             .ConfigureHttpClient(client =>
             {
                 var baseUrl = new Uri(keycloakOptions.KeycloakUrlRealm.TrimEnd('/') + "/");
                 client.BaseAddress = baseUrl;
                 configureClient?.Invoke(client);
-            }).AddHeaderPropagation();
+            })
+            .AddHeaderPropagation();
     }
 }

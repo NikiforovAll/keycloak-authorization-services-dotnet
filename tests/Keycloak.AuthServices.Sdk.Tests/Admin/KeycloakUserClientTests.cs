@@ -201,6 +201,39 @@ public class KeycloakUserClientTests : IDisposable
     }
 
     [Fact]
+    public async Task DeleteUserShouldCallCorrectEndpoint()
+    {
+        var userId = Guid.NewGuid();
+
+        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/users/{userId}")
+            .WithAcceptAndContentTypeHeaders()
+            .WithContent(string.Empty)
+            .Respond(HttpStatusCode.NoContent);
+
+        await this.keycloakUserClient.DeleteUser("master", userId.ToString());
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task DeleteUserShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
+    {
+        var userId = Guid.NewGuid();
+        const string errorMessage = /*lang=json,strict*/ "{\"errorMessage\":\"User name is missing\"}";
+
+        this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/users/{userId.ToString()}")
+            .WithAcceptAndContentTypeHeaders()
+            .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
+
+        var exception = await Assert.ThrowsAsync<ApiException>(() =>
+            this.keycloakUserClient.DeleteUser("master", userId.ToString()));
+
+        exception.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+        exception.Content.Should().Be(errorMessage);
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
     public async Task SendVerifyEmailShouldCallCorrectEndpoint()
     {
         var userId = Guid.NewGuid();

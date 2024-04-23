@@ -21,14 +21,14 @@ public class KeycloakInstallationOptions
     /// <example>
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
-    [ConfigurationKeyName("auth-server-url")]
+    [ConfigurationKeyName("AuthServerUrl")]
     public string AuthServerUrl
     {
         get => this.authServerUrl ?? this.AuthServerUrl2;
         set => this.authServerUrl = value;
     }
 
-    [ConfigurationKeyName("AuthServerUrl")]
+    [ConfigurationKeyName("auth-server-url")]
     private string AuthServerUrl2 { get; set; } = default!;
 
     /// <summary>
@@ -47,13 +47,14 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Audience verification
     /// </summary>
-    [ConfigurationKeyName("verify-token-audience")]
+    [ConfigurationKeyName("VerifyTokenAudience")]
     public bool? VerifyTokenAudience
     {
         get => this.verifyTokenAudience ?? this.VerifyTokenAudience2;
         set => this.verifyTokenAudience = value;
     }
-    [ConfigurationKeyName("VerifyTokenAudience")]
+
+    [ConfigurationKeyName("verify-token-audience")]
     private bool? VerifyTokenAudience2 { get; set; }
 
     /// <summary>
@@ -67,25 +68,27 @@ public class KeycloakInstallationOptions
     /// <remarks>
     ///     - Default: 0 seconds
     /// </remarks>
-    [ConfigurationKeyName("token-clock-skew")]
+    [ConfigurationKeyName("TokenClockSkew")]
     public TimeSpan TokenClockSkew
     {
         get => this.tokenClockSkew ?? this.TokenClockSkew2 ?? TimeSpan.Zero;
         set => this.tokenClockSkew = value;
     }
-    [ConfigurationKeyName("TokenClockSkew")]
+
+    [ConfigurationKeyName("token-clock-skew")]
     private TimeSpan? TokenClockSkew2 { get; set; }
 
     /// <summary>
     /// Require HTTPS
     /// </summary>
-    [ConfigurationKeyName("ssl-required")]
+    [ConfigurationKeyName("SslRequired")]
     public string SslRequired
     {
         get => this.sslRequired ?? this.SslRequired2;
         set => this.sslRequired = value;
     }
-    [ConfigurationKeyName("SslRequired")]
+
+    [ConfigurationKeyName("ssl-required")]
     private string SslRequired2 { get; set; } = default!;
 
     /// <summary>
@@ -104,7 +107,16 @@ public class KeycloakInstallationOptions
     /// RolesClaimTransformationSource
     /// </summary>
     [ConfigurationKeyName("RolesSource")]
-    public RolesClaimTransformationSource RolesSource { get; set; } = RolesClaimTransformationSource.ResourceAccess;
+    public RolesClaimTransformationSource RolesSource { get; set; } =
+        RolesClaimTransformationSource.ResourceAccess;
+
+    /// <summary>
+    /// Default binder required to handle kebab-case configuration format used by Keycloak
+    /// </summary>
+#pragma warning disable CA2211 // Non-constant fields should not be visible
+    public static Action<BinderOptions> KeycloakFormatBinder = options =>
+        options.BindNonPublicProperties = true;
+#pragma warning restore CA2211 // Non-constant fields should not be visible
 }
 
 /// <summary>
@@ -113,15 +125,17 @@ public class KeycloakInstallationOptions
 public enum RolesClaimTransformationSource
 {
     /// <summary>
-    /// None
+    /// Specifies that no transformation should be applied from the source.
     /// </summary>
     None,
+
     /// <summary>
-    /// Realm
+    /// Specifies that transformation should be applied to the realm.
     /// </summary>
     Realm,
+
     /// <summary>
-    /// ResourceAccess
+    /// Specifies that transformation should be applied to the resource access.
     /// </summary>
     ResourceAccess
 }
