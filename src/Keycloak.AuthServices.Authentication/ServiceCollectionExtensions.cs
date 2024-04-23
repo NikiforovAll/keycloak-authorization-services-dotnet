@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Authentication;
 
 using Claims;
 using Configuration;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -75,7 +76,7 @@ public static class ServiceCollectionExtensions
     {
         var authenticationOptions = configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(options => options.BindNonPublicProperties = true);
+            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
@@ -97,7 +98,7 @@ public static class ServiceCollectionExtensions
     {
         var authenticationOptions = configuration
             .GetSection(keycloakClientSectionName)
-            .Get<KeycloakAuthenticationOptions>(options => options.BindNonPublicProperties = true);
+            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }

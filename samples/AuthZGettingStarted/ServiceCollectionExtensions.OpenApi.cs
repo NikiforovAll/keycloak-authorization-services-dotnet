@@ -1,19 +1,21 @@
 namespace Microsoft.Extensions.DependencyInjection;
 
 using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
 public static partial class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddApplicationSwagger(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddApplicationSwagger(
+        this IServiceCollection services,
+        IConfiguration configuration
+    )
     {
-        KeycloakAuthenticationOptions options = new();
-
-        configuration
+        var options = configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
+            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder);
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
@@ -31,28 +33,34 @@ public static partial class ServiceCollectionExtensions
                 {
                     Implicit = new OpenApiOAuthFlow
                     {
-                        AuthorizationUrl = new Uri($"{options.KeycloakUrlRealm}/protocol/openid-connect/auth"),
-                        TokenUrl = new Uri($"{options.KeycloakUrlRealm}/protocol/openid-connect/token"),
+                        AuthorizationUrl = new Uri(
+                            $"{options.KeycloakUrlRealm}/protocol/openid-connect/auth"
+                        ),
+                        TokenUrl = new Uri(
+                            $"{options.KeycloakUrlRealm}/protocol/openid-connect/token"
+                        ),
                         Scopes = new Dictionary<string, string>(),
                     }
                 }
             };
             c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement
-            {
-                {securityScheme, Array.Empty<string>()}
-            });
+            c.AddSecurityRequirement(
+                new OpenApiSecurityRequirement { { securityScheme, Array.Empty<string>() } }
+            );
         });
         return services;
     }
 
-    public static IApplicationBuilder UseApplicationSwagger(this IApplicationBuilder app, IConfiguration configuration)
+    public static IApplicationBuilder UseApplicationSwagger(
+        this IApplicationBuilder app,
+        IConfiguration configuration
+    )
     {
         KeycloakAuthenticationOptions options = new();
 
         configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
+            .Bind(options, KeycloakInstallationOptions.KeycloakFormatBinder);
 
         app.UseSwagger();
         app.UseSwaggerUI(s => s.OAuthClientId(options.Resource));

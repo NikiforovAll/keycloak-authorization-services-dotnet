@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 public class KeycloakInstallationOptionsTests
 {
-    private static readonly KeycloakInstallationOptions _expected =
+    private static readonly KeycloakInstallationOptions Expected =
         new()
         {
             Realm = "Test",
@@ -23,9 +23,9 @@ public class KeycloakInstallationOptionsTests
 
         var authenticationOptions = configuration
             .GetSection("Keycloak1")
-            .Get<KeycloakInstallationOptions>(options => options.BindNonPublicProperties = true);
+            .Get<KeycloakInstallationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder);
 
-        authenticationOptions.Should().BeEquivalentTo(_expected);
+        authenticationOptions.Should().BeEquivalentTo(Expected);
     }
 
     [Fact]
@@ -37,6 +37,6 @@ public class KeycloakInstallationOptionsTests
             .GetSection("Keycloak2")
             .Get<KeycloakInstallationOptions>();
 
-        authenticationOptions.Should().BeEquivalentTo(_expected);
+        authenticationOptions.Should().BeEquivalentTo(Expected);
     }
 }
