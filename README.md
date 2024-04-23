@@ -65,7 +65,7 @@ You can always fetch the corresponding authentication options like this:
 ```csharp
 var authenticationOptions = configuration
     .GetSection(KeycloakAuthenticationOptions.Section)
-    .Get<KeycloakAuthenticationOptions>();
+    .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder);
 
 services.AddKeycloakAuthentication(authenticationOptions);
 ```
@@ -217,10 +217,5 @@ For more information and real world examples, please see my blog posts related t
 
 ## Reference
 
-* <https://github.com/thinktecture-labs/webinar-keycloak>
-* <https://github.com/thinktecture-labs/webinar-keycloak-authorization>
-* <https://github.com/elmankross/Jboss.AspNetCore.Authentication.Keycloak/>
-* <https://github.com/mikemir/AspNetCore.KeycloakAuthentication/>
-* <https://github.com/lvermeulen/Keycloak.Net>
 * <https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-authorization-uma-authz-process.adoc>
 * <https://www.keycloak.org/docs/latest/authorization_services/index.html>
