@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,7 +18,8 @@ public static class ServiceCollectionExtensions
     /// <param name="keycloakOptions"></param>
     public static IServiceCollection AddKeycloakAuthorization(
         this IServiceCollection services,
-        KeycloakProtectionClientOptions keycloakOptions)
+        KeycloakProtectionClientOptions keycloakOptions
+    )
     {
         services.AddKeycloakProtectionHttpClient(keycloakOptions);
 
@@ -40,13 +42,12 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddKeycloakAuthorization(
         this IServiceCollection services,
         IConfiguration configuration,
-        string? keycloakClientSectionName = default)
+        string? keycloakClientSectionName = default
+    )
     {
-        KeycloakProtectionClientOptions options = new();
-
-        configuration
+        var options = configuration
             .GetSection(keycloakClientSectionName ?? KeycloakProtectionClientOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
+            .Get<KeycloakProtectionClientOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
 
         services.AddKeycloakAuthorization(options);
         return services;

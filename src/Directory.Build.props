@@ -1,6 +1,12 @@
 <Project>
 
   <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Authors>Oleksii Nikiforov (@nikiforovall)</Authors>
     <PackageProjectUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</RepositoryUrl>
@@ -9,8 +15,8 @@
   </PropertyGroup>
 
   <PropertyGroup Label="MinVer">
-    <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
     <MinVerVerbosity>normal</MinVerVerbosity>
+    <MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
   </PropertyGroup>
 
   <ItemGroup>

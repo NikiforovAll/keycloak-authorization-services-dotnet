@@ -1,0 +1,2 @@
+[*.cs]
+dotnet_diagnostic.CA1309.severity = none

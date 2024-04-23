@@ -15,12 +15,14 @@ public static class AccessTokenPropagationExtensions
     /// <returns></returns>
     public static IHttpClientBuilder AddHeaderPropagation(this IHttpClientBuilder builder)
     {
-        builder.AddHttpMessageHandler((sp) =>
-        {
-            var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+        builder.AddHttpMessageHandler(
+            (sp) =>
+            {
+                var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
 
-            return new AccessTokenPropagationHandler(contextAccessor);
-        });
+                return new AccessTokenPropagationHandler(contextAccessor);
+            }
+        );
 
         return builder;
     }

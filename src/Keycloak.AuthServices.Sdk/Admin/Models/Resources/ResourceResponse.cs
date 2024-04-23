@@ -16,6 +16,7 @@ public class ResourceResponse
     public string DisplayName { get; set; }
     public Dictionary<string, List<string>> Attributes { get; set; }
     public List<string> Uris { get; set; }
+
     [JsonPropertyName("resource_scopes")]
     public List<ResourceScope> ResourceScopes { get; set; }
     public List<Scope> Scopes { get; set; }

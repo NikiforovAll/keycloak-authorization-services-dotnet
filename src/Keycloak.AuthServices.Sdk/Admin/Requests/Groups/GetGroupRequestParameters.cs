@@ -1,10 +1,9 @@
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 
-using Keycloak.AuthServices.Sdk.Admin.Models;
 using Refit;
 
 /// <summary>
-/// Optional request parameters for the <see cref="IKeycloakGoupClient.GetGroups"/> endpoint.
+/// Optional request parameters for the GetGroups endpoint.
 /// It can be called in three different ways.
 /// <list type="number">
 ///     <item>
@@ -14,17 +13,17 @@ using Refit;
 ///     </item>
 ///     <item>
 ///         <description>
-///             If <see cref="Search"/> is specified, other criteria such as <see cref="LastName"/>
+///             If <see cref="Search"/> is specified, other criteria such as LastName
 ///             will be ignored even though you may set them. The <see cref="Search"/> string will be matched against
-///             the <see cref="User.FirstName"/>, <see cref="User.LastName"/>, <see cref="User.Username"/>
-///             and the <see cref="User.Email"/> of a <see cref="User"/>.
+///             the User.FirstName, User.LastName, User.Username
+///             and the User.Email of a User/>.
 ///         </description>
 ///     </item>
 ///     <item>
 ///         <description>
-///             If <see cref="Search"/> is unspecified but any of <see cref="LastName"/>, <see cref="FirstName"/>,
-///             <see cref="Email"/> or <see cref="Username"/> are specified, then those criteria are matched against
-///             their respective fields on a <see cref="User"/> entity. Combined with a logical <c>AND</c>.
+///             If <see cref="Search"/> is unspecified but any of LastName, FirstName,
+///             Email or Username are specified, then those criteria are matched against
+///             their respective fields on a User entity. Combined with a logical <c>AND</c>.
 ///         </description>
 ///     </item>
 /// </list>
@@ -38,8 +37,8 @@ public class GetGroupRequestParameters
     public bool? BriefRepresentation { get; init; }
 
     /// <summary>
-    /// Defines whether the params <see cref="LastName"/>, <see cref="FirstName"/>,
-    /// <see cref="Email"/> and <see cref="Username"/> must match exactly
+    /// Defines whether the params LastName, FirstName,
+    /// Email and Username must match exactly
     /// </summary>
     [AliasAs("exact")]
     public bool? Exact { get; init; }
@@ -63,8 +62,8 @@ public class GetGroupRequestParameters
     public string? Query { get; init; }
 
     /// <summary>
-    /// Search for a string contained in <see cref="Username"/>, <see cref="FirstName"/>,
-    /// <see cref="LastName"/> or <see cref="Email"/>.
+    /// Search for a string contained in Username, FirstName,
+    /// LastName or Email.
     /// </summary>
     [AliasAs("search")]
     public string? Search { get; init; }
