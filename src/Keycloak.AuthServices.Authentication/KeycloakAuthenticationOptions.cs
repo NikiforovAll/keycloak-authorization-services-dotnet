@@ -26,4 +26,10 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
     /// Gets or sets the claim type used for the name.
     /// </summary>
     public string NameClaimType { get; set; } = "preferred_username";
+
+    /// <summary>
+    /// RolesClaimTransformationSource
+    /// </summary>
+    public RolesClaimTransformationSource RolesSource { get; set; } =
+        RolesClaimTransformationSource.ResourceAccess;
 }

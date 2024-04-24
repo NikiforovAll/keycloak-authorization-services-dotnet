@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 /// </summary>
 public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBuilder
 {
+    private readonly Action<JwtBearerOptions>? configureJwtBearerOptions;
+
     /// <summary>
     /// Constructor.
     /// </summary>
@@ -22,15 +24,15 @@ public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBui
     internal KeycloakWebApiAuthenticationBuilder(
         IServiceCollection services,
         string jwtBearerAuthenticationScheme,
-        Action<JwtBearerOptions> configureJwtBearerOptions,
+        Action<JwtBearerOptions>? configureJwtBearerOptions,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
         IConfigurationSection? configurationSection
     )
         : base(services, configurationSection)
     {
         this.JwtBearerAuthenticationScheme = jwtBearerAuthenticationScheme;
-
-        ArgumentNullException.ThrowIfNull(configureJwtBearerOptions);
+        this.configureJwtBearerOptions = configureJwtBearerOptions;
+        ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
         this.Services.Configure(jwtBearerAuthenticationScheme, configureKeycloakOptions);
     }
 

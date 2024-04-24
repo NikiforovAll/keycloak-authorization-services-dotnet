@@ -1,11 +1,13 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
+using Keycloak.AuthServices.Authentication.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 /// <summary>
 /// Extensions for the <see cref="AuthenticationBuilder"/> for startup initialization.
@@ -29,7 +31,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         IConfiguration configuration,
         string configSectionName = KeycloakAuthenticationOptions.Section,
         string openIdConnectScheme = OpenIdConnectDefaults.AuthenticationScheme,
-        string? cookieScheme = CookieAuthenticationDefaults.AuthenticationScheme,
+        string cookieScheme = CookieAuthenticationDefaults.AuthenticationScheme,
         string? displayName = null
     )
     {
@@ -44,6 +46,8 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
 
         return builder.AddKeycloakWebApp(
             configurationSection,
+            null,
+            null,
             openIdConnectScheme,
             cookieScheme,
             displayName
@@ -56,6 +60,8 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configurationSection">The configuration section from which to get the options.</param>
+    /// <param name="configureCookieAuthenticationOptions"></param>
+    /// <param name="configureOpenIdConnectOptions"></param>
     /// <param name="openIdConnectScheme">The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".</param>
     /// <param name="cookieScheme">The cookie-based scheme name to be used. By default it uses "Cookies".</param>
     /// <param name="displayName">A display name for the authentication handler.</param>
@@ -63,6 +69,8 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(
         this AuthenticationBuilder builder,
         IConfigurationSection configurationSection,
+        Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions = null,
+        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions = null,
         string openIdConnectScheme = OpenIdConnectDefaults.AuthenticationScheme,
         string? cookieScheme = CookieAuthenticationDefaults.AuthenticationScheme,
         string? displayName = null
@@ -73,7 +81,8 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
 
         return builder.AddKeycloakWebAppWithConfiguration(
             configureKeycloakOptions: options => configurationSection.Bind(options),
-            configureCookieAuthenticationOptions: null,
+            configureCookieAuthenticationOptions: configureCookieAuthenticationOptions,
+            configureOpenIdConnectOptions: configureOpenIdConnectOptions,
             openIdConnectScheme: openIdConnectScheme,
             cookieScheme: cookieScheme,
             displayName: displayName,
@@ -87,6 +96,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureKeycloakOptions">The action to configure <see cref="KeycloakAuthenticationOptions"/>.</param>
     /// <param name="configureCookieAuthenticationOptions">The action to configure <see cref="CookieAuthenticationOptions"/>.</param>
+    /// <param name="configureOpenIdConnectOptions"></param>
     /// <param name="openIdConnectScheme">The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".</param>
     /// <param name="cookieScheme">The cookie-based scheme name to be used. By default it uses "Cookies".</param>
     /// <param name="displayName">A display name for the authentication handler.</param>
@@ -95,6 +105,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         this AuthenticationBuilder builder,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
         Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions = null,
+        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions = null,
         string openIdConnectScheme = OpenIdConnectDefaults.AuthenticationScheme,
         string? cookieScheme = CookieAuthenticationDefaults.AuthenticationScheme,
         string? displayName = null
@@ -105,6 +116,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         return builder.AddKeycloakWebAppWithoutConfiguration(
             configureKeycloakOptions,
             configureCookieAuthenticationOptions,
+            configureOpenIdConnectOptions,
             openIdConnectScheme,
             cookieScheme,
             displayName
@@ -126,6 +138,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         this AuthenticationBuilder builder,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
         Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions,
+        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions,
         string openIdConnectScheme,
         string? cookieScheme,
         string? displayName,
@@ -135,6 +148,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         AddKeycloakWebAppInternal(
             builder,
             configureKeycloakOptions,
+            configureOpenIdConnectOptions,
             configureCookieAuthenticationOptions,
             openIdConnectScheme,
             cookieScheme,
@@ -144,6 +158,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         return new KeycloakWebAppAuthenticationBuilder(
             builder.Services,
             openIdConnectScheme,
+            configureOpenIdConnectOptions,
             configureKeycloakOptions,
             configurationSection
         );
@@ -155,6 +170,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureKeycloakOptions">The action to configure <see cref="KeycloakAuthenticationOptions"/>.</param>
     /// <param name="configureCookieAuthenticationOptions">The action to configure <see cref="CookieAuthenticationOptions"/>.</param>
+    /// <param name="configureOpenIdConnectOptions"></param>
     /// <param name="openIdConnectScheme">The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".</param>
     /// <param name="cookieScheme">The cookie-based scheme name to be used. By default it uses "Cookies".</param>
     /// <param name="displayName">A display name for the authentication handler.</param>
@@ -163,6 +179,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         this AuthenticationBuilder builder,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
         Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions,
+        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions,
         string openIdConnectScheme,
         string? cookieScheme,
         string? displayName
@@ -171,6 +188,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         AddKeycloakWebAppInternal(
             builder,
             configureKeycloakOptions,
+            configureOpenIdConnectOptions,
             configureCookieAuthenticationOptions,
             openIdConnectScheme,
             cookieScheme,
@@ -180,6 +198,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         return new KeycloakWebAppAuthenticationBuilder(
             builder.Services,
             openIdConnectScheme,
+            configureOpenIdConnectOptions,
             configureKeycloakOptions,
             null
         );
@@ -188,6 +207,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     private static void AddKeycloakWebAppInternal(
         AuthenticationBuilder builder,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
+        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions,
         Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions,
         string openIdConnectScheme,
         string? cookieScheme,
@@ -196,6 +216,19 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     {
         ArgumentNullException.ThrowIfNull(builder);
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
+
+        builder.Services.AddTransient<IClaimsTransformation>(sp =>
+        {
+            var keycloakOptions = sp.GetRequiredService<
+                IOptions<KeycloakAuthenticationOptions>
+            >().Value;
+
+            return new KeycloakRolesClaimsTransformation(
+                keycloakOptions.RoleClaimType,
+                keycloakOptions.RolesSource,
+                keycloakOptions.Resource
+            );
+        });
 
         builder.Services.Configure(openIdConnectScheme, configureKeycloakOptions);
 
@@ -210,14 +243,44 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         }
         else
         {
-            builder.AddOpenIdConnect(openIdConnectScheme, options => { });
+            builder.AddOpenIdConnect(openIdConnectScheme, _ => { });
         }
 
         builder
             .Services.AddOptions<OpenIdConnectOptions>(openIdConnectScheme)
-            .Configure<IServiceProvider, IOptions<KeycloakAuthenticationOptions>>(
-                (options, serviceProvider, keycloakOptions) => {
-                    // TODO:
+            .Configure<IServiceProvider, IOptionsMonitor<KeycloakAuthenticationOptions>>(
+                (options, serviceProvider, keycloakOptionsMonitor) =>
+                {
+                    var keycloakOptions = keycloakOptionsMonitor.Get(openIdConnectScheme);
+
+                    if (!string.IsNullOrWhiteSpace(keycloakOptions.KeycloakUrlRealm))
+                    {
+                        options.Authority = keycloakOptions.KeycloakUrlRealm;
+                    }
+
+                    if (!string.IsNullOrEmpty(cookieScheme))
+                    {
+                        options.SignInScheme = cookieScheme;
+                    }
+
+                    var sslRequired =
+                        string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
+                        || keycloakOptions.SslRequired.Equals(
+                            "external",
+                            StringComparison.OrdinalIgnoreCase
+                        );
+                    options.RequireHttpsMetadata = sslRequired;
+                    options.ClientId = keycloakOptions.Resource;
+                    options.ClientSecret = keycloakOptions.Credentials?.Secret;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ClockSkew = keycloakOptions.TokenClockSkew,
+                        ValidateIssuer = true,
+                        NameClaimType = keycloakOptions.NameClaimType,
+                        RoleClaimType = keycloakOptions.RoleClaimType,
+                    };
+
+                    configureOpenIdConnectOptions?.Invoke(options);
                 }
             );
     }

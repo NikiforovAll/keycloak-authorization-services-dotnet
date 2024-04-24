@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
+using Keycloak.AuthServices.Authentication.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -104,6 +105,19 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme
     )
     {
+        builder.Services.AddTransient<IClaimsTransformation>(sp =>
+        {
+            var keycloakOptions = sp.GetRequiredService<
+                IOptions<KeycloakAuthenticationOptions>
+            >().Value;
+
+            return new KeycloakRolesClaimsTransformation(
+                keycloakOptions.RoleClaimType,
+                keycloakOptions.RolesSource,
+                keycloakOptions.Resource
+            );
+        });
+
         builder.AddJwtBearer(jwtBearerScheme, _ => { });
 
         builder
@@ -113,7 +127,6 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                 {
                     var keycloakOptions = keycloakOptionsMonitor.Get(jwtBearerScheme);
 
-                    // Ensure a well-formed authority was provided
                     if (!string.IsNullOrWhiteSpace(keycloakOptions.KeycloakUrlRealm))
                     {
                         options.Authority = keycloakOptions.KeycloakUrlRealm;
@@ -127,7 +140,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                         );
                     options.RequireHttpsMetadata = sslRequired;
 
-                    var validationParameters = new TokenValidationParameters
+                    options.Audience = keycloakOptions.Audience ?? keycloakOptions.Resource;
+                    options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ClockSkew = keycloakOptions.TokenClockSkew,
                         ValidateAudience = keycloakOptions.VerifyTokenAudience ?? true,
@@ -135,8 +149,6 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                         NameClaimType = keycloakOptions.NameClaimType,
                         RoleClaimType = keycloakOptions.RoleClaimType,
                     };
-                    options.Audience = keycloakOptions.Audience ?? keycloakOptions.Resource;
-                    options.TokenValidationParameters = validationParameters;
                     options.SaveToken = true;
 
                     options.Events ??= new JwtBearerEvents();

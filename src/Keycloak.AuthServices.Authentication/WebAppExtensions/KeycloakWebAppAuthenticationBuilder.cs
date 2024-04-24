@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,28 +9,29 @@ using Microsoft.Extensions.DependencyInjection;
 /// </summary>
 public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBuilder
 {
+    private readonly Action<OpenIdConnectOptions>? configureOpenIdConnectOptions;
+
     /// <summary>
     ///  Constructor.
     /// </summary>
     /// <param name="services"> The services being configured.</param>
     /// <param name="openIdConnectScheme">Default scheme used for OpenIdConnect.</param>
+    /// <param name="configureOpenIdConnectOptions"></param>
     /// <param name="configureKeycloakOptions">Action called to configure
     /// the <see cref="KeycloakAuthenticationOptions"/>Microsoft identity options.</param>
     /// <param name="configurationSection">Optional configuration section.</param>
     internal KeycloakWebAppAuthenticationBuilder(
         IServiceCollection services,
         string openIdConnectScheme,
+        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
         IConfigurationSection? configurationSection
     )
         : base(services, configurationSection)
     {
-        ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
-
         this.OpenIdConnectScheme = openIdConnectScheme;
-
+        this.configureOpenIdConnectOptions = configureOpenIdConnectOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
-
         this.Services.Configure(openIdConnectScheme, configureKeycloakOptions);
     }
 
