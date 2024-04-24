@@ -36,7 +36,7 @@ jobs:
       - name: "Install .NET SDK"
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.100
+          dotnet-version: 8.0.204
       - name: "Dotnet Tool Restore"
         run: dotnet tool restore
         shell: pwsh

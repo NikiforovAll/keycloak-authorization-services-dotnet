@@ -113,10 +113,8 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Default binder required to handle kebab-case configuration format used by Keycloak
     /// </summary>
-#pragma warning disable CA2211 // Non-constant fields should not be visible
-    public static Action<BinderOptions> KeycloakFormatBinder = options =>
+    public static Action<BinderOptions> KeycloakFormatBinder => options =>
         options.BindNonPublicProperties = true;
-#pragma warning restore CA2211 // Non-constant fields should not be visible
 }
 
 /// <summary>
