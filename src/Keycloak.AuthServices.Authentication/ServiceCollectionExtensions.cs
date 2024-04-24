@@ -1,18 +1,17 @@
 namespace Keycloak.AuthServices.Authentication;
 
 using Claims;
-using Configuration;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
 /// <summary>
 /// Configures Authentication via Keycloak
 /// </summary>
+[Obsolete("This class will be removed")]
 public static class ServiceCollectionExtensions
 {
     /// <summary>
@@ -106,21 +105,4 @@ public static class ServiceCollectionExtensions
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
 
-    /// <summary>
-    /// Adds configuration source based on adapter config.
-    /// </summary>
-    /// <param name="hostBuilder"></param>
-    /// <param name="fileName"></param>
-    /// <returns></returns>
-    public static IHostBuilder ConfigureKeycloakConfigurationSource(
-        this IHostBuilder hostBuilder,
-        string fileName = "keycloak.json"
-    ) =>
-        hostBuilder.ConfigureAppConfiguration(
-            (_, builder) =>
-            {
-                var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
-                builder.Sources.Insert(0, source);
-            }
-        );
 }
