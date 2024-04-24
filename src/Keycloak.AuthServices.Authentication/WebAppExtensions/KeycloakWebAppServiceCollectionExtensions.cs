@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Authentication.WebAppExtensions;
+﻿namespace Keycloak.AuthServices.Authentication;
 
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -11,8 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 public static partial class KeycloakWebAppServiceCollectionExtensions
 {
     /// <summary>
-    /// Add authentication with Microsoft identity platform.
-    /// This method expects the configuration file will have a section, (by default named "AzureAd"), with the necessary settings to
+    /// Add authentication with Keycloak
+    /// This method expects the configuration file will have a section, (by default named "Keycloak"), with the necessary settings to
     /// initialize the authentication options.
     /// </summary>
     /// <param name="services">Service collection to which to add authentication.</param>

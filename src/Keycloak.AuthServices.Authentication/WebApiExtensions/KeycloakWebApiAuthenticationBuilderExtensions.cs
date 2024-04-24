@@ -1,6 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
 using Keycloak.AuthServices.Authentication.Claims;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -56,15 +57,27 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
         AddKeycloakWebApiImplementation(
             builder,
-            options => configurationSection.Bind(options),
+            options =>
+                configurationSection.Bind(
+                    options,
+                    KeycloakInstallationOptions.KeycloakFormatBinder
+                ),
             jwtBearerScheme
         );
 
         return new KeycloakWebApiAuthenticationBuilder(
             builder.Services,
             jwtBearerScheme,
-            options => configurationSection.Bind(options),
-            options => configurationSection.Bind(options),
+            options =>
+                configurationSection.Bind(
+                    options,
+                    KeycloakInstallationOptions.KeycloakFormatBinder
+                ),
+            options =>
+                configurationSection.Bind(
+                    options,
+                    KeycloakInstallationOptions.KeycloakFormatBinder
+                ),
             configurationSection
         );
     }
@@ -79,8 +92,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
     /// <returns>The authentication builder to chain.</returns>
     public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
         this AuthenticationBuilder builder,
-        Action<JwtBearerOptions> configureJwtBearerOptions,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
+        Action<JwtBearerOptions> configureJwtBearerOptions,
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {

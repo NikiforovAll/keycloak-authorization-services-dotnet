@@ -47,7 +47,7 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-services.AddKeycloakAuthentication(configuration);
+services.AddKeycloakWebApiAuthentication(configuration);
 
 var app = builder.Build();
 

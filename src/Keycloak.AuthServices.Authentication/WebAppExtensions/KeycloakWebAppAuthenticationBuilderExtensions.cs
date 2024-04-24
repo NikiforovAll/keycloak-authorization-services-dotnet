@@ -1,6 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
 using Keycloak.AuthServices.Authentication.Claims;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -80,7 +81,11 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
 
         return builder.AddKeycloakWebAppWithConfiguration(
-            configureKeycloakOptions: options => configurationSection.Bind(options),
+            configureKeycloakOptions: options =>
+                configurationSection.Bind(
+                    options,
+                    KeycloakInstallationOptions.KeycloakFormatBinder
+                ),
             configureCookieAuthenticationOptions: configureCookieAuthenticationOptions,
             configureOpenIdConnectOptions: configureOpenIdConnectOptions,
             openIdConnectScheme: openIdConnectScheme,

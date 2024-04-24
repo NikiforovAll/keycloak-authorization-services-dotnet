@@ -26,7 +26,7 @@ services
     .AddSwagger();
 
 // adds client resource claims transformation
-services.AddKeycloakAuthentication(configuration, o =>
+services.AddKeycloakWebApiAuthentication(configuration, o =>
 {
     o.RequireHttpsMetadata = false;
 });
