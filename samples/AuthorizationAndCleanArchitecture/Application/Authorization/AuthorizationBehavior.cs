@@ -1,4 +1,4 @@
-﻿namespace Api.Application.Authorization;
+namespace Api.Application.Authorization;
 
 using Abstractions;
 using MediatR;
@@ -17,8 +17,8 @@ public class AuthorizationBehavior<TRequest, TResponse>
 
     public async Task<TResponse> Handle(
         TRequest request,
-        CancellationToken cancellationToken,
-        RequestHandlerDelegate<TResponse> next)
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
         // TODO: consider reflection performance impact
         var authorizeAttributes = request

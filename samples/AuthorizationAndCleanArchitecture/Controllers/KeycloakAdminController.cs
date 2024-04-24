@@ -40,9 +40,10 @@ public class KeycloakAdminController : ApiControllerBase
     [HttpPost("resources")]
     public async Task<IActionResult> CreateResource()
     {
-        var resource = new Resource($"workspaces/{Guid.NewGuid()}", new[] {"workspaces:read", "workspaces:delete"})
+        var resource = new Resource($"workspaces/{Guid.NewGuid()}", new[] { "workspaces:read", "workspaces:delete" })
         {
-            Attributes = {["test"] = "Owner, Operations"}, Type = "urn:workspace-authz:resource:workspaces",
+            Attributes = { ["test"] = "Owner, Operations" },
+            Type = "urn:workspace-authz:resource:workspaces",
         };
         return this.Ok(await this.protectedResourceClient.CreateResource(DefaultRealm, resource));
     }
