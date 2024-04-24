@@ -18,6 +18,7 @@ public static class ServiceCollectionExtensions
     /// <summary>
     /// Adds keycloak authentication services.
     /// </summary>
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         KeycloakAuthenticationOptions keycloakOptions,
@@ -68,6 +69,7 @@ public static class ServiceCollectionExtensions
     /// <param name="configuration">Configuration source</param>
     /// <param name="configureOptions">Configure overrides</param>
     /// <returns></returns>
+    [Obsolete("This method is obsolete and will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -89,6 +91,7 @@ public static class ServiceCollectionExtensions
     /// <param name="keycloakClientSectionName"></param>
     /// <param name="configureOptions"></param>
     /// <returns></returns>
+    [Obsolete("This method is obsolete and will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
