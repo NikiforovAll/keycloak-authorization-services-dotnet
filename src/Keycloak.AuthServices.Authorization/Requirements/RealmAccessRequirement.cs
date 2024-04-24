@@ -1,6 +1,6 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
-using Common;
+using Keycloak.AuthServices.Common.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 

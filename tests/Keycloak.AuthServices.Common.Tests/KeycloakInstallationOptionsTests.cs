@@ -1,6 +1,5 @@
 ﻿namespace Keycloak.AuthServices.Common.Tests;
 
-using FluentAssertions;
 using Microsoft.Extensions.Configuration;
 
 public class KeycloakInstallationOptionsTests
@@ -12,7 +11,7 @@ public class KeycloakInstallationOptionsTests
             AuthServerUrl = "http://localhost:8080/",
             SslRequired = "none",
             Resource = "test-client",
-            VerifyTokenAudience = false,
+            VerifyTokenAudience = true,
             Credentials = new() { Secret = "secret" },
         };
 

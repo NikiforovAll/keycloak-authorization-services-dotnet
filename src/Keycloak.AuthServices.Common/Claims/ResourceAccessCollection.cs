@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Common;
+﻿namespace Keycloak.AuthServices.Common.Claims;
 
 using System.Text.Json.Serialization;
 
