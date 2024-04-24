@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 /// <summary>
 /// Extensions for <see cref="AuthenticationBuilder"/> for startup initialization of web APIs.
@@ -18,8 +20,6 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
     /// <param name="configuration">The configuration instance.</param>
     /// <param name="configSectionName">The configuration section with the necessary settings to initialize authentication options.</param>
     /// <param name="jwtBearerScheme">The JWT bearer scheme name to be used. By default it uses "Bearer".</param>
-    /// Set to true if you want to debug, or just understand the JWT bearer events.
-    /// </param>
     /// <returns>The authentication builder to chain.</returns>
     public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
         this AuthenticationBuilder builder,
@@ -37,14 +37,12 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
     }
 
     /// <summary>
-    /// Protects the web API with Microsoft identity platform (formerly Azure AD v2.0).
+    /// Protects the web API with Keycloak
     /// This method expects the configuration file will have a section, named "AzureAd" as default, with the necessary settings to initialize authentication options.
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configurationSection">The configuration second from which to fill-in the options.</param>
     /// <param name="jwtBearerScheme">The JWT bearer scheme name to be used. By default it uses "Bearer".</param>
-    /// Set to true if you want to debug, or just understand the JWT bearer events.
-    /// </param>
     /// <returns>The authentication builder to chain.</returns>
     public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
         this AuthenticationBuilder builder,
@@ -71,13 +69,12 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
     }
 
     /// <summary>
-    /// Protects the web API with Microsoft identity platform (formerly Azure AD v2.0).
+    /// Protects the web API with Keycloak
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureJwtBearerOptions">The action to configure <see cref="JwtBearerOptions"/>.</param>
     /// <param name="configureKeycloakOptions">The action to configure the <see cref="KeycloakAuthenticationOptions"/>.</param>
     /// <param name="jwtBearerScheme">The JWT bearer scheme name to be used. By default it uses "Bearer".</param>
-    /// Set to true if you want to debug, or just understand the JWT bearer events.</param>
     /// <returns>The authentication builder to chain.</returns>
     public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
         this AuthenticationBuilder builder,
@@ -107,8 +104,45 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme
     )
     {
-        // TODO: add merging logic
+        builder.AddJwtBearer(jwtBearerScheme, _ => { });
 
-        builder.AddJwtBearer(jwtBearerScheme, configureJwtBearerOptions);
+        builder
+            .Services.AddOptions<JwtBearerOptions>(jwtBearerScheme)
+            .Configure<IServiceProvider, IOptionsMonitor<KeycloakAuthenticationOptions>>(
+                (options, serviceProvider, keycloakOptionsMonitor) =>
+                {
+                    var keycloakOptions = keycloakOptionsMonitor.Get(jwtBearerScheme);
+
+                    // Ensure a well-formed authority was provided
+                    if (!string.IsNullOrWhiteSpace(keycloakOptions.KeycloakUrlRealm))
+                    {
+                        options.Authority = keycloakOptions.KeycloakUrlRealm;
+                    }
+
+                    var sslRequired =
+                        string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
+                        || keycloakOptions.SslRequired.Equals(
+                            "external",
+                            StringComparison.OrdinalIgnoreCase
+                        );
+                    options.RequireHttpsMetadata = sslRequired;
+
+                    var validationParameters = new TokenValidationParameters
+                    {
+                        ClockSkew = keycloakOptions.TokenClockSkew,
+                        ValidateAudience = keycloakOptions.VerifyTokenAudience ?? true,
+                        ValidateIssuer = true,
+                        NameClaimType = keycloakOptions.NameClaimType,
+                        RoleClaimType = keycloakOptions.RoleClaimType,
+                    };
+                    options.Audience = keycloakOptions.Audience ?? keycloakOptions.Resource;
+                    options.TokenValidationParameters = validationParameters;
+                    options.SaveToken = true;
+
+                    options.Events ??= new JwtBearerEvents();
+
+                    configureJwtBearerOptions?.Invoke(options);
+                }
+            );
     }
 }

@@ -51,7 +51,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     }
 
     /// <summary>
-    /// Add authentication with Microsoft identity platform.
+    /// Add authentication with Keycloak
     /// This method expects the configuration file will have a section, named "AzureAd" as default, with the necessary settings to initialize authentication options.
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
@@ -82,7 +82,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     }
 
     /// <summary>
-    /// Add authentication with Microsoft identity platform.
+    /// Add authentication with Keycloak
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureKeycloakOptions">The action to configure <see cref="KeycloakAuthenticationOptions"/>.</param>
@@ -112,7 +112,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     }
 
     /// <summary>
-    /// Add authentication with Microsoft identity platform.
+    /// Add authentication with Keycloak
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureKeycloakOptions">The action to configure <see cref="KeycloakAuthenticationOptions"/>.</param>
@@ -150,7 +150,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     }
 
     /// <summary>
-    /// Add authentication with Microsoft identity platform.
+    /// Add authentication with Keycloak
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureKeycloakOptions">The action to configure <see cref="KeycloakAuthenticationOptions"/>.</param>
@@ -201,13 +201,12 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
 
         if (!string.IsNullOrEmpty(cookieScheme))
         {
-            Action<CookieAuthenticationOptions> emptyOption = option => { };
-            builder.AddCookie(cookieScheme, configureCookieAuthenticationOptions ?? emptyOption);
+            builder.AddCookie(cookieScheme, configureCookieAuthenticationOptions ?? (_ => { }));
         }
 
         if (!string.IsNullOrEmpty(displayName))
         {
-            builder.AddOpenIdConnect(openIdConnectScheme, displayName: displayName, options => { });
+            builder.AddOpenIdConnect(openIdConnectScheme, displayName: displayName, _ => { });
         }
         else
         {
