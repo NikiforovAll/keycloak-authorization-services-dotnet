@@ -69,18 +69,6 @@ In this example, configuration is based on `appsettings.json`.
 }
 ```
 
-You can always fetch the corresponding authentication options like this:
-
-```csharp
-var authenticationOptions = configuration
-    .GetSection(KeycloakAuthenticationOptions.Section)
-    .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance);
-
-services.AddKeycloakAuthentication(authenticationOptions);
-```
-
-Note, the default case convention for `KeycloakAuthenticationOptions` configuration is PascalCase, but you can change it by specifying `KeycloakFormatBinder.Instance` binding options to retrieve it based on original kebab-case. See [changes in 2.0.0](https://nikiforovall.github.io/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0)
-
 ## Example Authorization
 
 With `Keycloak.AuthServices.Authorization`, you can implement role-based authorization in your application. This package allows you to define policies based on roles. Also, you can use Keycloak as Authorization Server. It is a powerful way to organize and apply authorization polices centrally.
