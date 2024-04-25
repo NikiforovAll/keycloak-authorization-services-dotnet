@@ -131,6 +131,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configureKeycloakOptions">The action to configure <see cref="KeycloakAuthenticationOptions"/>.</param>
     /// <param name="configureCookieAuthenticationOptions">The action to configure <see cref="CookieAuthenticationOptions"/>.</param>
+    /// <param name="configureOpenIdConnectOptions"></param>
     /// <param name="openIdConnectScheme">The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".</param>
     /// <param name="cookieScheme">The cookie-based scheme name to be used. By default it uses "Cookies".</param>
     /// <param name="displayName">A display name for the authentication handler.</param>

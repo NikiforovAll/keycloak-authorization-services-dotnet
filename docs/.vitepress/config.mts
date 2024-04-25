@@ -9,8 +9,9 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: 'Home', link: '/' },
-            { text: 'Getting Started', link: '/getting-started' },
-            { text: 'Examples', link: 'examples/authentication-getting-started' }
+            { text: 'Getting Started', link: '/introduction' },
+            { text: 'Migration', link: '/migration' },
+            { text: 'Examples', link: 'examples/auth-getting-started' }
         ],
 
         sidebar: {
@@ -25,9 +26,11 @@ export default defineConfig({
                 },
                 {
                     text: 'Configuration',
-                    collapsed: true,
+                    collapsed: false,
                     items: [
-
+                        { text: 'Authentication', link: '/configuration/configuration-authentication' },
+                        { text: 'Authorization', link: '/configuration/configuration-authorization' },
+                        { text: 'Keycloak', link: '/configuration/configuration-keycloak' },
                     ]
                 }
                 ,
@@ -35,10 +38,10 @@ export default defineConfig({
                     text: 'Examples',
                     collapsed: false,
                     items: [
-                        { text: 'Authentication Web API', link: '/examples/authentication-getting-started' },
-                        { text: 'Authentication Web App', link: '/examples/authentication-getting-started' },
-                        { text: 'Authorization Roles', link: '/examples/authorization-getting-started' },
-                        { text: 'Authorization Server', link: '/examples/authorization-getting-started' }
+                        { text: 'Auth Web API Getting Started', link: '/examples/auth-getting-started' },
+                        { text: 'Authorization', link: '/examples/authorization-getting-started' },
+                        { text: 'Auth Clean Architecture', link: '/examples/auth-clean-arch' },
+                        { text: 'Auth Web API + Blazor', link: '/examples/web-api-blazor' }
                     ]
                 }
             ]

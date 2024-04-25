@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Common;
 
+using System.ComponentModel.DataAnnotations;
 using Microsoft.Extensions.Configuration;
 
 /// <summary>
@@ -22,6 +23,7 @@ public class KeycloakInstallationOptions
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
     [ConfigurationKeyName("AuthServerUrl")]
+    [Required]
     public string AuthServerUrl
     {
         get => this.authServerUrl ?? this.AuthServerUrl2;
@@ -34,6 +36,7 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Keycloak Realm
     /// </summary>
+    [Required]
     public string Realm { get; set; } = string.Empty;
 
     /// <summary>
@@ -94,10 +97,26 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Realm URL
     /// </summary>
-    public string KeycloakUrlRealm => $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}";
-
-    private static string NormalizeUrl(string url)
+    public string KeycloakUrlRealm
     {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(this.AuthServerUrl))
+            {
+                return default!;
+            }
+
+            return $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}";
+        }
+    }
+
+    private static string? NormalizeUrl(string? url)
+    {
+        if (url is null)
+        {
+            return url;
+        }
+
         var urlNormalized = !url.EndsWith('/') ? url : url.TrimEnd('/');
 
         return urlNormalized;

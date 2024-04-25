@@ -62,6 +62,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependsOnNuGetSource", "sam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationGettingStarted", "samples\AuthorizationGettingStarted\AuthorizationGettingStarted.csproj", "{D64B4098-165B-48AA-BE07-B9E9963E0CB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStarted", "samples\GettingStarted\GettingStarted.csproj", "{671BA3B1-DBF2-4161-97B5-433B91A3730E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -124,6 +126,10 @@ Global
 		{D64B4098-165B-48AA-BE07-B9E9963E0CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D64B4098-165B-48AA-BE07-B9E9963E0CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D64B4098-165B-48AA-BE07-B9E9963E0CB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{671BA3B1-DBF2-4161-97B5-433B91A3730E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671BA3B1-DBF2-4161-97B5-433B91A3730E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671BA3B1-DBF2-4161-97B5-433B91A3730E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671BA3B1-DBF2-4161-97B5-433B91A3730E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +150,7 @@ Global
 		{8F9E1322-568B-4F02-A1DD-4222C8457A42} = {96857509-627A-4FD2-AC82-34387619A7B1}
 		{82DB0FDE-316D-4741-B335-8B7B36DBE962} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
 		{D64B4098-165B-48AA-BE07-B9E9963E0CB5} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
+		{671BA3B1-DBF2-4161-97B5-433B91A3730E} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1907BFD-C144-4B48-AA40-972F499D4E08}
