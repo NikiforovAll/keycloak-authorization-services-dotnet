@@ -57,27 +57,15 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
         AddKeycloakWebApiImplementation(
             builder,
-            options =>
-                configurationSection.Bind(
-                    options,
-                    KeycloakInstallationOptions.KeycloakFormatBinder
-                ),
+            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
             jwtBearerScheme
         );
 
         return new KeycloakWebApiAuthenticationBuilder(
             builder.Services,
             jwtBearerScheme,
-            options =>
-                configurationSection.Bind(
-                    options,
-                    KeycloakInstallationOptions.KeycloakFormatBinder
-                ),
-            options =>
-                configurationSection.Bind(
-                    options,
-                    KeycloakInstallationOptions.KeycloakFormatBinder
-                ),
+            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
             configurationSection
         );
     }

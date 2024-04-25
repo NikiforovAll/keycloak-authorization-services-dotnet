@@ -77,7 +77,7 @@ public static class ServiceCollectionExtensions
     {
         var authenticationOptions = configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
+            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
@@ -100,9 +100,8 @@ public static class ServiceCollectionExtensions
     {
         var authenticationOptions = configuration
             .GetSection(keycloakClientSectionName)
-            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
+            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
-
 }

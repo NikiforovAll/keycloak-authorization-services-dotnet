@@ -15,7 +15,7 @@ public static partial class ServiceCollectionExtensions
     {
         var options = configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder);
+            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance);
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
@@ -60,7 +60,7 @@ public static partial class ServiceCollectionExtensions
 
         configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options, KeycloakInstallationOptions.KeycloakFormatBinder);
+            .Bind(options, KeycloakFormatBinder.Instance);
 
         app.UseSwagger();
         app.UseSwaggerUI(s => s.OAuthClientId(options.Resource));

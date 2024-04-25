@@ -82,10 +82,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
 
         return builder.AddKeycloakWebAppWithConfiguration(
             configureKeycloakOptions: options =>
-                configurationSection.Bind(
-                    options,
-                    KeycloakInstallationOptions.KeycloakFormatBinder
-                ),
+                configurationSection.Bind(options, KeycloakFormatBinder.Instance),
             configureCookieAuthenticationOptions: configureCookieAuthenticationOptions,
             configureOpenIdConnectOptions: configureOpenIdConnectOptions,
             openIdConnectScheme: openIdConnectScheme,

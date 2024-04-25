@@ -22,7 +22,7 @@ public class KeycloakInstallationOptionsTests
 
         var authenticationOptions = configuration
             .GetSection("Keycloak1")
-            .Get<KeycloakInstallationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder);
+            .Get<KeycloakInstallationOptions>(KeycloakFormatBinder.Instance);
 
         authenticationOptions.Should().BeEquivalentTo(Expected);
     }
