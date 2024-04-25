@@ -1,6 +1,7 @@
 using Api;
 using Api.Filters;
 using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.Authentication.Configuration;
 using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Sdk.Admin;
 using Microsoft.AspNetCore.Authorization;
@@ -26,7 +27,7 @@ services
     .AddSwagger();
 
 // adds client resource claims transformation
-services.AddKeycloakAuthentication(configuration, o =>
+services.AddKeycloakWebApiAuthentication(configuration, o =>
 {
     o.RequireHttpsMetadata = false;
 });

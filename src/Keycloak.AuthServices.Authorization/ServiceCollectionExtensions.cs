@@ -47,9 +47,9 @@ public static class ServiceCollectionExtensions
     {
         var options = configuration
             .GetSection(keycloakClientSectionName ?? KeycloakProtectionClientOptions.Section)
-            .Get<KeycloakProtectionClientOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
+            .Get<KeycloakProtectionClientOptions>(KeycloakFormatBinder.Instance)!;
 
-        services.AddKeycloakAuthorization(options);
+        services.AddKeycloakAuthorization(options ?? new());
         return services;
     }
 }

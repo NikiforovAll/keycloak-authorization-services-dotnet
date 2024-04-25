@@ -102,19 +102,6 @@ public class KeycloakInstallationOptions
 
         return urlNormalized;
     }
-
-    /// <summary>
-    /// RolesClaimTransformationSource
-    /// </summary>
-    [ConfigurationKeyName("RolesSource")]
-    public RolesClaimTransformationSource RolesSource { get; set; } =
-        RolesClaimTransformationSource.ResourceAccess;
-
-    /// <summary>
-    /// Default binder required to handle kebab-case configuration format used by Keycloak
-    /// </summary>
-    public static Action<BinderOptions> KeycloakFormatBinder => options =>
-        options.BindNonPublicProperties = true;
 }
 
 /// <summary>

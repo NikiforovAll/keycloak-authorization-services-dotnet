@@ -1,23 +1,23 @@
 namespace Keycloak.AuthServices.Authentication;
 
 using Claims;
-using Configuration;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
 /// <summary>
 /// Configures Authentication via Keycloak
 /// </summary>
+[Obsolete("This class will be removed")]
 public static class ServiceCollectionExtensions
 {
     /// <summary>
     /// Adds keycloak authentication services.
     /// </summary>
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         KeycloakAuthenticationOptions keycloakOptions,
@@ -68,6 +68,7 @@ public static class ServiceCollectionExtensions
     /// <param name="configuration">Configuration source</param>
     /// <param name="configureOptions">Configure overrides</param>
     /// <returns></returns>
+    [Obsolete("This method is obsolete and will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -76,7 +77,7 @@ public static class ServiceCollectionExtensions
     {
         var authenticationOptions = configuration
             .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
+            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
@@ -89,6 +90,7 @@ public static class ServiceCollectionExtensions
     /// <param name="keycloakClientSectionName"></param>
     /// <param name="configureOptions"></param>
     /// <returns></returns>
+    [Obsolete("This method is obsolete and will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -98,26 +100,8 @@ public static class ServiceCollectionExtensions
     {
         var authenticationOptions = configuration
             .GetSection(keycloakClientSectionName)
-            .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder)!;
+            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
-
-    /// <summary>
-    /// Adds configuration source based on adapter config.
-    /// </summary>
-    /// <param name="hostBuilder"></param>
-    /// <param name="fileName"></param>
-    /// <returns></returns>
-    public static IHostBuilder ConfigureKeycloakConfigurationSource(
-        this IHostBuilder hostBuilder,
-        string fileName = "keycloak.json"
-    ) =>
-        hostBuilder.ConfigureAppConfiguration(
-            (_, builder) =>
-            {
-                var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
-                builder.Sources.Insert(0, source);
-            }
-        );
 }
