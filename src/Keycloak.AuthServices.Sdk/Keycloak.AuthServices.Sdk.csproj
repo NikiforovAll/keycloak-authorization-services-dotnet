@@ -7,7 +7,7 @@
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.Sdk</Product>
     <Description>HttpClient integration with Keycloak. HTTP Client SDK</Description>
-    <PackageTags>Keycloak;authserver;http-sdk</PackageTags>
+    <PackageTags>Keycloak;http-sdk</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,12 +15,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityModel.AspNetCore" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-    <PackageReference Include="Refit" />
-    <PackageReference Include="Refit.HttpClientFactory" />
+
+    <PackageReference Include="Microsoft.Kiota.Abstractions" />
+    <PackageReference Include="Microsoft.Kiota.Authentication.Azure" />
+    <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Form" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Json" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Multipart" />
+    <PackageReference Include="Microsoft.Kiota.Serialization.Text" />
   </ItemGroup>
 
   <ItemGroup>
