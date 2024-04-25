@@ -30,7 +30,8 @@ services
             }
         )
     )
-    .AddKeycloakAuthorization(configuration);
+    .AddKeycloakAuthorization()
+    .AddAuthorizationServer(configuration);
 
 services.AddKeycloakAdminHttpClient(configuration);
 
@@ -41,7 +42,7 @@ app.UseSwagger().UseSwaggerUI();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/", (ClaimsPrincipal user) => app.Logger.LogInformation("{@User}", user.Identity.Name))
+app.MapGet("/", (ClaimsPrincipal user) => app.Logger.LogInformation("{@User}", user.Identity!.Name))
     .RequireAuthorization("IsAdmin");
 
 app.Run();

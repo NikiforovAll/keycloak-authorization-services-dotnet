@@ -1,4 +1,4 @@
-namespace Keycloak.AuthServices.Sdk.AuthZ;
+namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
 /// <summary>
 /// Keycloak Protection API

@@ -18,8 +18,7 @@ public static class ProtectedResourcePolicy
     /// <param name="resource"></param>
     /// <param name="scope"></param>
     /// <returns></returns>
-    public static string From(string resource, string scope) =>
-        $"{resource}#{scope}";
+    public static string From(string resource, string scope) => $"{resource}#{scope}";
 
     /// <summary>
     /// </summary>

@@ -1,9 +1,11 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Requirements;
 
 /// <summary>
@@ -15,15 +17,20 @@ public static class ServiceCollectionExtensions
     /// Adds keycloak authorization services
     /// </summary>
     /// <param name="services"></param>
-    /// <param name="keycloakOptions"></param>
+    /// <param name="configuration"></param>
+    /// <param name="keycloakClientSectionName"></param>
+    /// <returns></returns>
+    [Obsolete(
+        "Method overload will be removed in future versions. Use AddKeycloakAuthorization together with AddAuthorizationServer instead"
+    )]
     public static IServiceCollection AddKeycloakAuthorization(
         this IServiceCollection services,
-        KeycloakProtectionClientOptions keycloakOptions
+        IConfiguration configuration,
+        string keycloakClientSectionName = KeycloakProtectionClientOptions.Section
     )
     {
-        services.AddKeycloakProtectionHttpClient(keycloakOptions);
+        services.AddAuthorizationServer(configuration, keycloakClientSectionName);
 
-        services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, RptRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
@@ -32,24 +39,96 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Adds keycloak authorization services from predefined configuration provided by keycloak.json
-    /// Alternatively, you can create custom section in appsettings.json and provide section name
-    /// by adding <paramref name="keycloakClientSectionName"/>
+    /// Adds keycloak authorization services
     /// </summary>
-    /// <param name="services">Source service collection</param>
-    /// <param name="configuration">Configuration source</param>
-    /// <param name="keycloakClientSectionName"></param>
-    public static IServiceCollection AddKeycloakAuthorization(
+    /// <param name="services"></param>
+    public static IServiceCollection AddKeycloakAuthorization(this IServiceCollection services)
+    {
+        services.AddSingleton<IAuthorizationHandler, RptRequirementHandler>();
+        services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
+        services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
+
+        return services;
+    }
+
+    /// <summary>
+    /// Adds Keycloak Protection client and auto header propagation
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <param name="configSectionName"></param>
+    /// <param name="configureClient"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddAuthorizationServer(
         this IServiceCollection services,
         IConfiguration configuration,
-        string? keycloakClientSectionName = default
+        string configSectionName = KeycloakProtectionClientOptions.Section,
+        Action<HttpClient>? configureClient = default
     )
     {
-        var options = configuration
-            .GetSection(keycloakClientSectionName ?? KeycloakProtectionClientOptions.Section)
-            .Get<KeycloakProtectionClientOptions>(KeycloakFormatBinder.Instance)!;
+        var configurationSection = configuration.GetSection(configSectionName);
 
-        services.AddKeycloakAuthorization(options ?? new());
-        return services;
+        return services.AddAuthorizationServer(configurationSection, configureClient);
+    }
+
+    /// <summary>
+    /// Adds Keycloak Protection client and auto header propagation
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configurationSection"></param>
+    /// <param name="configureClient"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddAuthorizationServer(
+        this IServiceCollection services,
+        IConfigurationSection configurationSection,
+        Action<HttpClient>? configureClient = default
+    ) =>
+        services.AddAuthorizationServer(
+            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            configureClient
+        );
+
+    /// <summary>
+    /// Adds Keycloak Protection client and auto header propagation
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configureKeycloakOptions"></param>
+    /// <param name="configureClient"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddAuthorizationServer(
+        this IServiceCollection services,
+        Action<KeycloakProtectionClientOptions> configureKeycloakOptions,
+        Action<HttpClient>? configureClient = default
+    )
+    {
+        services.AddHttpContextAccessor();
+
+        services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
+
+        var keycloakOptions = new KeycloakProtectionClientOptions();
+        configureKeycloakOptions.Invoke(keycloakOptions);
+
+        if (keycloakOptions.UseProtectedResourcePolicyProvider)
+        {
+            services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
+        }
+
+        services.AddOptions<KeycloakProtectionClientOptions>().Configure(configureKeycloakOptions);
+
+        return services
+            .AddHttpClient<IKeycloakProtectionClient, KeycloakProtectionClient>()
+            .ConfigureHttpClient(
+                (serviceProvider, client) =>
+                {
+                    var keycloakOptions = serviceProvider
+                        .GetRequiredService<IOptions<KeycloakProtectionClientOptions>>()
+                        .Value;
+
+                    client.BaseAddress = new Uri(keycloakOptions.KeycloakUrlRealm);
+
+                    configureClient?.Invoke(client);
+                }
+            )
+            .AddHeaderPropagation();
     }
 }

@@ -1,8 +1,10 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.Common.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 /// <summary>
 /// Resource requirement
@@ -37,9 +39,10 @@ public class ResourceAccessRequirement : IAuthorizationRequirement
 
 /// <summary>
 /// </summary>
-public partial class ResourceAccessRequirementHandler : AuthorizationHandler<ResourceAccessRequirement>
+public partial class ResourceAccessRequirementHandler
+    : AuthorizationHandler<ResourceAccessRequirement>
 {
-    private readonly KeycloakProtectionClientOptions keycloakOptions;
+    private readonly IOptions<KeycloakInstallationOptions> keycloakOptions;
     private readonly ILogger<ResourceAccessRequirementHandler> logger;
 
     /// <summary>
@@ -47,29 +50,36 @@ public partial class ResourceAccessRequirementHandler : AuthorizationHandler<Res
     /// <param name="keycloakOptions"></param>
     /// <param name="logger"></param>
     public ResourceAccessRequirementHandler(
-        KeycloakProtectionClientOptions keycloakOptions,
-        ILogger<ResourceAccessRequirementHandler> logger)
+        IOptions<KeycloakInstallationOptions> keycloakOptions,
+        ILogger<ResourceAccessRequirementHandler> logger
+    )
     {
         this.keycloakOptions = keycloakOptions;
         this.logger = logger;
     }
 
-    [LoggerMessage(101, LogLevel.Debug,
-        "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
+    [LoggerMessage(
+        101,
+        LogLevel.Debug,
+        "[{Requirement}] Access outcome {Outcome} for user {UserName}"
+    )]
     partial void ResourceAuthorizationResult(string requirement, bool outcome, string? userName);
 
     /// <inheritdoc />
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
-        ResourceAccessRequirement requirement)
+        ResourceAccessRequirement requirement
+    )
     {
-        var clientId = requirement.Resource ?? this.keycloakOptions.Resource;
+        var clientId = requirement.Resource ?? this.keycloakOptions.Value.Resource;
         requirement.Resource = clientId;
 
         var success = false;
 
-        if (context.User.Claims.TryGetResourceCollection(out var resourcesAccess) &&
-            resourcesAccess.TryGetValue(clientId, out var resourceAccess))
+        if (
+            context.User.Claims.TryGetResourceCollection(out var resourcesAccess)
+            && resourcesAccess.TryGetValue(clientId, out var resourceAccess)
+        )
         {
             success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
 
@@ -80,7 +90,10 @@ public partial class ResourceAccessRequirementHandler : AuthorizationHandler<Res
         }
 
         this.ResourceAuthorizationResult(
-            requirement.ToString(), success, context.User.Identity?.Name);
+            requirement.ToString(),
+            success,
+            context.User.Identity?.Name
+        );
 
         return Task.CompletedTask;
     }

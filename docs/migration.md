@@ -2,6 +2,16 @@
 
 ## Key Changes in 2.0.0
 
+* Moved `IKeycloakProtectionClient` to `Keycloak.AuthServices.Authorization`. Removed `AddKeycloakProtectionHttpClient`, added `AddAuthorizationServer` instead.
+
+```csharp
+// Before
+.AddKeycloakAuthorization(configuration)
+// After
+.AddKeycloakAuthorization().AddAuthorizationServer(configuration)
+```
+
+* Dropped namespace `Keycloak.AuthServices.Sdk.AuthZ`
 * `AddKeycloakAuthentication` has been deprecated in favor of `AddKeycloakWebApiAuthentication`.
 * Breaking change 💥: Changed default Configuration format from kebab-case to PascalCase:
 

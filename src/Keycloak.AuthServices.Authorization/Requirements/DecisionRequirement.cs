@@ -1,6 +1,6 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
-using Keycloak.AuthServices.Sdk.AuthZ;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
 
@@ -13,7 +13,6 @@ public class DecisionRequirement : IAuthorizationRequirement
     /// Resource name
     /// </summary>
     public string Resource { get; }
-
 
     /// <summary>
     /// Resource scope
@@ -38,12 +37,11 @@ public class DecisionRequirement : IAuthorizationRequirement
     /// <param name="id"></param>
     /// <param name="scope"></param>
     public DecisionRequirement(string resource, string id, string scope)
-        : this($"{resource}/{id}", scope)
-    {
-    }
+        : this($"{resource}/{id}", scope) { }
 
     /// <inheritdoc />
-    public override string ToString() => $"{nameof(DecisionRequirement)}: {this.Resource}#{this.Scope}";
+    public override string ToString() =>
+        $"{nameof(DecisionRequirement)}: {this.Resource}#{this.Scope}";
 }
 
 /// <summary>
@@ -58,29 +56,41 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
     /// <param name="client"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public DecisionRequirementHandler(IKeycloakProtectionClient client,
-        ILogger<DecisionRequirementHandler> logger)
+    public DecisionRequirementHandler(
+        IKeycloakProtectionClient client,
+        ILogger<DecisionRequirementHandler> logger
+    )
     {
         this.client = client ?? throw new ArgumentNullException(nameof(client));
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    [LoggerMessage(103, LogLevel.Debug,
-        "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
+    [LoggerMessage(
+        103,
+        LogLevel.Debug,
+        "[{Requirement}] Access outcome {Outcome} for user {UserName}"
+    )]
     partial void DecisionAuthorizationResult(string requirement, bool outcome, string? userName);
 
     /// <inheritdoc/>
     protected override async Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
-        DecisionRequirement requirement)
+        DecisionRequirement requirement
+    )
     {
         if (context.User.Identity?.IsAuthenticated ?? false)
         {
             var success = await this.client.VerifyAccessToResource(
-            requirement.Resource, requirement.Scope, CancellationToken.None);
+                requirement.Resource,
+                requirement.Scope,
+                CancellationToken.None
+            );
 
             this.DecisionAuthorizationResult(
-                requirement.ToString(), success, context.User.Identity?.Name);
+                requirement.ToString(),
+                success,
+                context.User.Identity?.Name
+            );
 
             if (success)
             {
@@ -94,7 +104,10 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         else
         {
             this.DecisionAuthorizationResult(
-                requirement.ToString(), false, context.User.Identity?.Name);
+                requirement.ToString(),
+                false,
+                context.User.Identity?.Name
+            );
         }
     }
 }

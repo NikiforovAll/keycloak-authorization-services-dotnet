@@ -7,6 +7,9 @@
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.29" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1"/>
 
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.0" />
+
+
     <PackageVersion Include="IdentityModel.AspNetCore" Version="4.3.0"/>
     <PackageVersion Include="Refit.HttpClientFactory" Version="7.0.0"/>
     <PackageVersion Include="Refit" Version="7.0.0"/>

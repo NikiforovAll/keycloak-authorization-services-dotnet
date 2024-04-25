@@ -71,7 +71,7 @@ public static class ServiceCollectionExtensions
 
         configuration
             .GetSection(keycloakClientSectionName ?? KeycloakAdminClientOptions.Section)
-            .Bind(options);
+            .Bind(options, KeycloakFormatBinder.Instance);
 
         return services.AddKeycloakAdminHttpClient(options, configureClient);
     }

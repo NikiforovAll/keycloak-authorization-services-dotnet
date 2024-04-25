@@ -5,7 +5,9 @@ using Refit;
 using RichardSzalay.MockHttp;
 using Sdk.Admin;
 
+#pragma warning disable CA1001 // Types that own disposable fields should be disposable
 public class KeycloakRealmClientTests
+#pragma warning restore CA1001 // Types that own disposable fields should be disposable
 {
     private const string BaseAddress = "http://localhost:8080";
 

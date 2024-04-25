@@ -1,7 +1,8 @@
-﻿namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
+﻿namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 /// <summary>
 /// Token propagation middleware
@@ -19,8 +20,9 @@ public static class AccessTokenPropagationExtensions
             (sp) =>
             {
                 var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+                var options = sp.GetRequiredService<IOptions<KeycloakProtectionClientOptions>>();
 
-                return new AccessTokenPropagationHandler(contextAccessor);
+                return new AccessTokenPropagationHandler(contextAccessor, options);
             }
         );
 

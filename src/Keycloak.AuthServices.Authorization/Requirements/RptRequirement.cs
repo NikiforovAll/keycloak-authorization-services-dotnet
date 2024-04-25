@@ -42,7 +42,10 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
     /// <param name="context"></param>
     /// <param name="requirement"></param>
     /// <returns></returns>
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RptRequirement requirement)
+    protected override Task HandleRequirementAsync(
+        AuthorizationHandlerContext context,
+        RptRequirement requirement
+    )
     {
         // the client application is responsible for acquiring of the token
         // should request special RPT access_token that contains this section
@@ -77,9 +80,12 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
                 continue;
             }
 
-            if (permission.GetProperty("scopes")
-                .EnumerateArray()
-                .All(scope => scope.GetString() != requirement.Scope))
+            if (
+                permission
+                    .GetProperty("scopes")
+                    .EnumerateArray()
+                    .All(scope => scope.GetString() != requirement.Scope)
+            )
             {
                 continue;
             }

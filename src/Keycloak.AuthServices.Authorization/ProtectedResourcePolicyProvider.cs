@@ -6,16 +6,13 @@ using Requirements;
 
 /// <summary>
 /// </summary>
-public class ProtectedResourcePolicyProvider
-    : DefaultAuthorizationPolicyProvider
+public class ProtectedResourcePolicyProvider : DefaultAuthorizationPolicyProvider
 {
     /// <summary>
     /// </summary>
     /// <param name="options"></param>
-    public ProtectedResourcePolicyProvider(
-        IOptions<AuthorizationOptions> options) : base(options)
-    {
-    }
+    public ProtectedResourcePolicyProvider(IOptions<AuthorizationOptions> options)
+        : base(options) { }
 
     /// <inheritdoc />
     public override async Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
@@ -31,7 +28,7 @@ public class ProtectedResourcePolicyProvider
         var builder = new AuthorizationPolicyBuilder();
         var tokens = policyName.Split('#');
 
-        if (tokens is not {Length: 2})
+        if (tokens is not { Length: 2 })
         {
             return default;
         }
