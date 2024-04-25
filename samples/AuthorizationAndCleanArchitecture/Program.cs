@@ -3,7 +3,6 @@ using Api.Filters;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authentication.Configuration;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Sdk.Admin;
 using Microsoft.AspNetCore.Authorization;
 
 
@@ -53,14 +52,13 @@ services.AddAuthorization(o =>
     {
         b.RequireResourceRoles("Manager");
     });
-}).AddKeycloakAuthorization(configuration);
+}).AddKeycloakAuthorization()
+.AddAuthorizationServer(configuration);
 
 services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
 
 services.AddControllers(options =>
     options.Filters.Add<ApiExceptionFilterAttribute>());
-
-services.AddKeycloakAdminHttpClient(configuration);
 
 var app = builder.Build();
 

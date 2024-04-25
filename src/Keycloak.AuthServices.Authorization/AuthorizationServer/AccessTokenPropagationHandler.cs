@@ -1,24 +1,32 @@
-﻿namespace Keycloak.AuthServices.Sdk.HttpMiddleware;
+﻿namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
-using IdentityModel.Client;
+using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Primitives;
+using Microsoft.Extensions.Options;
 
 /// <summary>
 /// Delegating handler to propagate headers
 /// </summary>
+
 public class AccessTokenPropagationHandler : DelegatingHandler
 {
     private readonly IHttpContextAccessor contextAccessor;
+    private readonly KeycloakProtectionClientOptions options;
 
     /// <summary>
-    /// Constructs
+    /// Initializes a new instance of the <see cref="AccessTokenPropagationHandler"/> class.
     /// </summary>
-    /// <param name="contextAccessor"></param>
-    public AccessTokenPropagationHandler(IHttpContextAccessor contextAccessor) =>
+    /// <param name="contextAccessor">The HTTP context accessor.</param>
+    /// <param name="options">The Keycloak protection client options.</param>
+    public AccessTokenPropagationHandler(
+        IHttpContextAccessor contextAccessor,
+        IOptions<KeycloakProtectionClientOptions> options
+    )
+    {
         this.contextAccessor = contextAccessor;
+        this.options = options.Value;
+    }
 
     /// <inheritdoc/>
     protected override async Task<HttpResponseMessage> SendAsync(
@@ -32,14 +40,18 @@ public class AccessTokenPropagationHandler : DelegatingHandler
         }
 
         var httpContext = this.contextAccessor.HttpContext;
+
         var token = await httpContext.GetTokenAsync(
-            JwtBearerDefaults.AuthenticationScheme,
+            this.options.SourceAuthenticationScheme,
             "access_token"
         );
 
-        if (!StringValues.IsNullOrEmpty(token))
+        if (!string.IsNullOrEmpty(token))
         {
-            request.SetToken(JwtBearerDefaults.AuthenticationScheme, token);
+            request.Headers.Authorization = new AuthenticationHeaderValue(
+                this.options.SourceAuthenticationScheme,
+                token
+            );
         }
 
         return await Continue();

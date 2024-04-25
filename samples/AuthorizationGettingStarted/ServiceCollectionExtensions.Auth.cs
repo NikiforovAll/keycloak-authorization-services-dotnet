@@ -30,7 +30,7 @@ public static partial class ServiceCollectionExtensions
                     .RequireAuthenticatedUser()
                     .RequireProtectedResource("workspace", "workspaces:read"));
 
-        }).AddKeycloakAuthorization(configuration);
+        }).AddKeycloakAuthorization().AddAuthorizationServer(configuration);
 
         return services;
     }

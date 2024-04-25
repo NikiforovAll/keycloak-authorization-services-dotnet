@@ -1,13 +1,13 @@
-namespace Keycloak.AuthServices.Sdk.AuthZ;
+namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
-using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Common;
+using Microsoft.Extensions.Options;
 
 /// <inheritdoc />
 public class KeycloakProtectionClient : IKeycloakProtectionClient
 {
     private readonly HttpClient httpClient;
-    private readonly KeycloakProtectionClientOptions clientOptions;
+    private readonly IOptions<KeycloakProtectionClientOptions> clientOptions;
 
     /// <summary>
     /// Constructs KeycloakProtectionClient
@@ -17,7 +17,7 @@ public class KeycloakProtectionClient : IKeycloakProtectionClient
     /// <exception cref="ArgumentNullException"></exception>
     public KeycloakProtectionClient(
         HttpClient httpClient,
-        KeycloakProtectionClientOptions clientOptions
+        IOptions<KeycloakProtectionClientOptions> clientOptions
     )
     {
         this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
@@ -31,7 +31,7 @@ public class KeycloakProtectionClient : IKeycloakProtectionClient
         CancellationToken cancellationToken
     )
     {
-        var audience = this.clientOptions.Resource;
+        var audience = this.clientOptions.Value.Resource;
 
         var data = new Dictionary<string, string>
         {

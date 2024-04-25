@@ -1,6 +1,6 @@
 namespace Api.Controllers;
 
-using Keycloak.AuthServices.Sdk.AuthZ;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/authz")]

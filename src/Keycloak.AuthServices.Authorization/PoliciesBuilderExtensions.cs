@@ -1,8 +1,8 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
-using Common;
+using Keycloak.AuthServices.Authorization.Requirements;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authorization;
-using Requirements;
 
 /// <summary>
 /// </summary>
@@ -15,7 +15,9 @@ public static class PoliciesBuilderExtensions
     /// <param name="roles"></param>
     /// <returns></returns>
     public static AuthorizationPolicyBuilder RequireResourceRoles(
-        this AuthorizationPolicyBuilder builder, params string[] roles) =>
+        this AuthorizationPolicyBuilder builder,
+        params string[] roles
+    ) =>
         builder
             .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
             .AddRequirements(new ResourceAccessRequirement(default, roles));
@@ -27,7 +29,9 @@ public static class PoliciesBuilderExtensions
     /// <param name="roles"></param>
     /// <returns></returns>
     public static AuthorizationPolicyBuilder RequireRealmRoles(
-        this AuthorizationPolicyBuilder builder, params string[] roles) =>
+        this AuthorizationPolicyBuilder builder,
+        params string[] roles
+    ) =>
         builder
             .RequireClaim(KeycloakConstants.RealmAccessClaimType)
             .AddRequirements(new RealmAccessRequirement(roles));
@@ -40,7 +44,8 @@ public static class PoliciesBuilderExtensions
     /// <param name="scope"></param>
     /// <returns></returns>
     public static AuthorizationPolicyBuilder RequireProtectedResource(
-        this AuthorizationPolicyBuilder builder, string resource, string scope) =>
-        builder
-            .AddRequirements(new DecisionRequirement(resource, scope));
+        this AuthorizationPolicyBuilder builder,
+        string resource,
+        string scope
+    ) => builder.AddRequirements(new DecisionRequirement(resource, scope));
 }

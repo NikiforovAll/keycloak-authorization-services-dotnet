@@ -10,7 +10,9 @@ using Sdk.Admin;
 using Sdk.Admin.Models;
 using Sdk.Admin.Requests.Users;
 
+#pragma warning disable CA1001 // Types that own disposable fields should be disposable
 public class KeycloakUserClientTests
+#pragma warning restore CA1001 // Types that own disposable fields should be disposable
 {
     private const string BaseAddress = "http://localhost:8080";
 
