@@ -8,19 +8,19 @@ hero:
   actions:
     - theme: brand
       text: Getting Started
-      link: /getting-started
+      link: /introduction
     - theme: alt
       text: Configuration
-      link: /configuration
-    - theme: alt
-      text: Authentication
-      link: /authentication
-    - theme: alt
-      text: Authorization
-      link: /authorization
-    - theme: alt
-      text: Admin REST HTTP API
-      link: /admin-rest-api
+      link: /configuration/configuration-keycloak
+    # - theme: alt
+    #   text: Authentication
+    #   link: /authentication
+    # - theme: alt
+    #   text: Authorization
+    #   link: /authorization
+    # - theme: alt
+    #   text: Admin REST HTTP API
+    #   link: /admin-rest-api
 
 features:
   - title: 🔒Authentication

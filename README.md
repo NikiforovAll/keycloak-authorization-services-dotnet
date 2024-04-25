@@ -9,32 +9,45 @@
 
 Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
 
-Package                                | Version                                                                                                                                  | Description
----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------
-`Keycloak.AuthServices.Authentication` | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authentication.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authentication)                         | Keycloak Authentication JWT + OICD
-`Keycloak.AuthServices.Authorization`  | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authorization.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authorization) | Authorization Services. Use Keycloak as authorization server
-`Keycloak.AuthServices.Sdk`            | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Sdk.svg)](https://nuget.org/packages/Keycloak.AuthServices.Sdk)     | HTTP API integration with Keycloak
+| Package                                | Version                                                                                                                                              | Description                                                  |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `Keycloak.AuthServices.Authentication` | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authentication.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authentication) | Keycloak Authentication JWT + OICD                           |
+| `Keycloak.AuthServices.Authorization`  | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authorization.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authorization)   | Authorization Services. Use Keycloak as authorization server |
+| `Keycloak.AuthServices.Sdk`            | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Sdk.svg)](https://nuget.org/packages/Keycloak.AuthServices.Sdk)                       | HTTP API integration with Keycloak                           |
 
 [![GitHub Actions Build History](https://buildstats.info/github/chart/nikiforovall/keycloak-authorization-services-dotnet?branch=main&includeBuildsFromPullRequest=false)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions)
 
+## Documentation
+
+See the docs: <https://nikiforovall.github.io/keycloak-authorization-services-dotnet/>.
+
+## Installation
+
+```bash
+dotnet add package Keycloak.AuthServices.Authentication
+dotnet add package Keycloak.AuthServices.Authorization
+dotnet add package Keycloak.AuthServices.Sdk
+```
+
 ## Getting Started
+
+See the docs: <https://nikiforovall.github.io/keycloak-authorization-services-dotnet/>.
 
 ```csharp
 // Program.cs
+using Keycloak.AuthServices.Authentication; 
+
 var builder = WebApplication.CreateBuilder(args);
 
-var host = builder.Host;
-var configuration = builder.Configuration;
-var services = builder.Services;
-
-services.AddKeycloakAuthentication(configuration);
+builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration); 
+builder.Services.AddAuthorization(); 
 
 var app = builder.Build();
 
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthentication(); 
+app.UseAuthorization(); 
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello World!").RequireAuthorization(); 
 
 app.Run();
 ```
@@ -58,34 +71,21 @@ In this example, configuration is based on `appsettings.json`.
 }
 ```
 
-It's fetched based on well-known section "Keycloak". `AddKeycloakAuthentication` uses `KeycloakAuthenticationOptions.Section` under the hood.
-
 You can always fetch the corresponding authentication options like this:
 
 ```csharp
 var authenticationOptions = configuration
     .GetSection(KeycloakAuthenticationOptions.Section)
-    .Get<KeycloakAuthenticationOptions>(KeycloakInstallationOptions.KeycloakFormatBinder);
+    .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance);
 
 services.AddKeycloakAuthentication(authenticationOptions);
 ```
 
-`AddKeycloakAuthentication` method has several overloads. It allows to override some conventions, for example:
+Note, the default case convention for `KeycloakAuthenticationOptions` configuration is PascalCase, but you can change it by specifying `KeycloakFormatBinder.Instance` binding options to retrieve it based on original kebab-case. See [changes in 2.0.0](https://nikiforovall.github.io/keycloak-authorization-services-dotnet/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0)
 
-```csharp
-public static AuthenticationBuilder AddKeycloakAuthentication(
-    this IServiceCollection services,
-    IConfiguration configuration,
-    string? keycloakClientSectionName,
-    Action<JwtBearerOptions>? configureOptions = default)
-{
-    /* implementation */
-}
-```
+## Example Authorization
 
-## Example. Authentication + Authorization
-
-Here is how to add JWT-based authentication and custom authorization policy.
+With `Keycloak.AuthServices.Authorization`, you can implement role-based authorization in your application. This package allows you to define policies based on roles. Also, you can use Keycloak as Authorization Server. It is a powerful way to organize and apply authorization polices centrally.
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -94,15 +94,13 @@ var host = builder.Host;
 var configuration = builder.Configuration;
 var services = builder.Services;
 
-host.ConfigureKeycloakConfigurationSource();
-// conventional registration from keycloak.json
-services.AddKeycloakAuthentication(configuration);
+services.AddKeycloakWebApiAuthentication(configuration);
 
 services.AddAuthorization(options =>
     {
-        options.AddPolicy("RequireWorkspaces", builder =>
+        options.AddPolicy("AdminAndUser", builder =>
         {
-            builder.RequireProtectedResource("workspaces", "workspaces:read") // HTTP request to Keycloak to check protected resource
+            builder
                 .RequireRealmRoles("User") // Realm role is fetched from token
                 .RequireResourceRoles("Admin"); // Resource/Client role is fetched from token
         });
@@ -114,96 +112,11 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/workspaces", () => "[]")
-    .RequireAuthorization("RequireWorkspaces");
+app.MapGet("/hello", () => "[]")
+    .RequireAuthorization("AdminAndUser");
 
 app.Run();
 ```
-
-## Keycloak.AuthServices.Authentication
-
-Add OpenID Connect + JWT Bearer token authentication.
-
-For example, see [Getting Started](#getting-started)
-
-### Adapter File. Optional
-
-Using `appsettings.json` is a recommended and it is an idiomatic approach for .NET, but if you want a standalone "adapter" (installation) file - `keycloak.json`. You can use `ConfigureKeycloakConfigurationSource`. It adds dedicated configuration source.
-
-```csharp
-// add configuration from keycloak file
-host.ConfigureKeycloakConfigurationSource("keycloak.json");
-// add authentication services, OICD JwtBearerDefaults.AuthenticationScheme
-services.AddKeycloakAuthentication(configuration, o =>
-{
-    o.RequireHttpsMetadata = false;
-});
-```
-
-Client roles are automatically transformed into user role claims [KeycloakRolesClaimsTransformation](./src/Keycloak.AuthServices.Authentication/Claims/KeycloakRolesClaimsTransformation.cs).
-
-See [Keycloak.AuthServices.Authentication - README.md](src/Keycloak.AuthServices.Authentication/README.md)
-
-Keycloak installation file:
-
-```jsonc
-// confidential client
-{
-  "realm": "<realm>",
-  "auth-server-url": "http://localhost:8088/auth/",
-  "ssl-required": "external", // external | none
-  "resource": "<clientId>",
-  "verify-token-audience": true,
-  "credentials": {
-    "secret": ""
-  }
-}
-// public client
-{
-  "realm": "<realm>",
-  "auth-server-url": "http://localhost:8088/auth/",
-  "ssl-required": "external",
-  "resource": "<clientId>",
-  "public-client": true,
-  "confidential-port": 0
-}
-```
-
-## Keycloak.AuthServices.Authorization
-
-```csharp
-services.AddAuthorization(authOptions =>
-{
-    authOptions.AddPolicy("<policyName>", policyBuilder =>
-    {
-        // configure policies here
-    });
-}).AddKeycloakAuthorization(configuration);
-```
-
-See [Keycloak.AuthServices.Authorization - README.md](src/Keycloak.AuthServices.Authorization/README.md)
-
-## Keycloak.AuthServices.Sdk
-
-Keycloak API clients.
-
-| Service                          | Description                                                                  |
-|----------------------------------|------------------------------------------------------------------------------|
-| IKeycloakClient                  | Unified HTTP client - IKeycloakRealmClient, IKeycloakProtectedResourceClient |
-| IKeycloakRealmClient             | Keycloak realm API                                                           |
-| IKeycloakProtectedResourceClient | Protected resource API                                                       |
-| IKeycloakUserClient              | Keycloak user API                                                            |
-| IKeycloakProtectionClient        | Authorization server API, used by `AddKeycloakAuthorization`                 |
-
-```csharp
-// requires confidential client
-services.AddKeycloakAdminHttpClient(keycloakOptions);
-
-// based on token forwarding HttpClient middleware and IHttpContextAccessor
-services.AddKeycloakProtectionHttpClient(keycloakOptions);
-```
-
-See [Keycloak.AuthServices.Sdk - README.md](src/Keycloak.AuthServices.Sdk/README.md)
 
 ## Build and Development
 
@@ -214,6 +127,10 @@ See [Keycloak.AuthServices.Sdk - README.md](src/Keycloak.AuthServices.Sdk/README
 ## Blog Posts
 
 For more information and real world examples, please see my blog posts related to Keycloak and .NET <https://nikiforovall.github.io/tags.html#keycloak-ref>
+
+* <https://nikiforovall.github.io/aspnetcore/dotnet/2022/08/24/dotnet-keycloak-auth.html>
+* <https://nikiforovall.github.io/dotnet/keycloak/2022/12/28/keycloak-authorization-server.html>
+* <https://nikiforovall.github.io/blazor/dotnet/2022/12/08/dotnet-keycloak-blazorwasm-auth.html>
 
 ## Reference
 

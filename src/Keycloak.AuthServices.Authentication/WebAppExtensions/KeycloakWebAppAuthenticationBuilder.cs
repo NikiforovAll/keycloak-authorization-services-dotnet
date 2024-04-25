@@ -32,7 +32,11 @@ public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBui
         this.OpenIdConnectScheme = openIdConnectScheme;
         this.configureOpenIdConnectOptions = configureOpenIdConnectOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
-        this.Services.Configure(openIdConnectScheme, configureKeycloakOptions);
+
+        this.Services.AddOptions<KeycloakAuthenticationOptions>(openIdConnectScheme)
+            .Configure(configureKeycloakOptions)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
     }
 
     /// <summary>

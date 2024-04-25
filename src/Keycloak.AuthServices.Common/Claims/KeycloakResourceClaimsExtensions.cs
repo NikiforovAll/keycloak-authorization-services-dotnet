@@ -11,6 +11,9 @@ using static Keycloak.AuthServices.Common.KeycloakConstants;
 /// </summary>
 public static class KeycloakClaimsExtensions
 {
+    /// <summary>
+    /// JsonClaimValueType
+    /// </summary>
     public const string JsonClaimValueType = "JSON";
 
     /// <summary>

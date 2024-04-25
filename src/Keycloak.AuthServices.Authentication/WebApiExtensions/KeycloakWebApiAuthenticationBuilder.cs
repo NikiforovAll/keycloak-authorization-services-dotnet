@@ -33,7 +33,11 @@ public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBui
         this.JwtBearerAuthenticationScheme = jwtBearerAuthenticationScheme;
         this.configureJwtBearerOptions = configureJwtBearerOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
-        this.Services.Configure(jwtBearerAuthenticationScheme, configureKeycloakOptions);
+
+        this.Services.AddOptions<KeycloakAuthenticationOptions>(jwtBearerAuthenticationScheme)
+            .Configure(configureKeycloakOptions)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
     }
 
     /// <summary>
