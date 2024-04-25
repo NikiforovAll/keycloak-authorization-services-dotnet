@@ -81,7 +81,7 @@ var authenticationOptions = configuration
 services.AddKeycloakAuthentication(authenticationOptions);
 ```
 
-Note, the default case convention for `KeycloakAuthenticationOptions` configuration is PascalCase, but you can change it by specifying `KeycloakFormatBinder.Instance` binding options to retrieve it based on original kebab-case. See [changes in 2.0.0](https://nikiforovall.github.io/keycloak-authorization-services-dotnet/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0)
+Note, the default case convention for `KeycloakAuthenticationOptions` configuration is PascalCase, but you can change it by specifying `KeycloakFormatBinder.Instance` binding options to retrieve it based on original kebab-case. See [changes in 2.0.0](https://nikiforovall.github.io/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0)
 
 ## Example Authorization
 
