@@ -2,13 +2,8 @@
 
 This section contains a general instruction of how to configure Keyclaok to be used for .NET applications.
 
-- [Configure Keycloak](#configure-keycloak)
-  - [Create Realm](#create-realm)
-  - [Create User](#create-user)
-  - [Set Password](#set-password)
-  - [Create Client](#create-client)
-  - [Add Audience Mapper](#add-audience-mapper)
-  - [Download Adapter Config](#download-adapter-config)
+*Table of Contents*:
+[[toc]]
 
 ## Create Realm
 

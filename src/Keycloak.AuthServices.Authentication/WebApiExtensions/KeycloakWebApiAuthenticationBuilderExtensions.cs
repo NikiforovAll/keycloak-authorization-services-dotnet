@@ -55,18 +55,23 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
         ArgumentNullException.ThrowIfNull(builder);
 
+#pragma warning disable IDE0039 // Use local function
+        Action<JwtBearerOptions> configureJwtBearerOptions = _ => { };
+#pragma warning restore IDE0039 // Use local function
+
         AddKeycloakWebApiImplementation(
-            builder,
-            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            builder: builder,
+            configureJwtBearerOptions: configureJwtBearerOptions,
             jwtBearerScheme
         );
 
         return new KeycloakWebApiAuthenticationBuilder(
-            builder.Services,
-            jwtBearerScheme,
-            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
-            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
-            configurationSection
+            services: builder.Services,
+            jwtBearerAuthenticationScheme: jwtBearerScheme,
+            configureJwtBearerOptions: configureJwtBearerOptions,
+            configureKeycloakOptions: options =>
+                configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            configurationSection: configurationSection
         );
     }
 
@@ -81,12 +86,12 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
     public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
         this AuthenticationBuilder builder,
         Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
-        Action<JwtBearerOptions> configureJwtBearerOptions,
+        Action<JwtBearerOptions>? configureJwtBearerOptions = default,
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
+        configureJwtBearerOptions ??= _ => { };
         ArgumentNullException.ThrowIfNull(builder);
-        ArgumentNullException.ThrowIfNull(configureJwtBearerOptions);
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
         AddKeycloakWebApiImplementation(builder, configureJwtBearerOptions, jwtBearerScheme);
@@ -103,7 +108,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
     private static void AddKeycloakWebApiImplementation(
         AuthenticationBuilder builder,
         Action<JwtBearerOptions> configureJwtBearerOptions,
-        string jwtBearerScheme
+        string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
         builder.Services.AddTransient<IClaimsTransformation>(sp =>
@@ -115,7 +120,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             return new KeycloakRolesClaimsTransformation(
                 keycloakOptions.RoleClaimType,
                 keycloakOptions.RolesSource,
-                keycloakOptions.Resource
+                keycloakOptions.RolesResource ?? keycloakOptions.Resource
             );
         });
 

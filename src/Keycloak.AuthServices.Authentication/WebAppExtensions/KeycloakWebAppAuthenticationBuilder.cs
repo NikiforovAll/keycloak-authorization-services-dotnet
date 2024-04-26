@@ -34,9 +34,7 @@ public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBui
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
         this.Services.AddOptions<KeycloakAuthenticationOptions>(openIdConnectScheme)
-            .Configure(configureKeycloakOptions)
-            .ValidateDataAnnotations()
-            .ValidateOnStart();
+            .Configure(configureKeycloakOptions);
     }
 
     /// <summary>

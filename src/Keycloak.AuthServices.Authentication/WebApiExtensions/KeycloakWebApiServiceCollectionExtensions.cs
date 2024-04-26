@@ -36,6 +36,25 @@ public static partial class KeycloakWebApiServiceCollectionExtensions
     /// This method expects the configuration file will have a section, named "Keycloak" as default, with the necessary settings to initialize authentication options.
     /// </summary>
     /// <param name="services">The service collection to which to add authentication.</param>
+    /// <param name="configurationSection">The Configuration section object.</param>
+    /// <param name="jwtBearerScheme">The JwtBearer scheme name to be used. Default value is "JwtBearerDefaults.AuthenticationScheme".</param>
+    /// <returns>The authentication builder to chain extension methods.</returns>
+    public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApiAuthentication(
+        this IServiceCollection services,
+        IConfigurationSection configurationSection,
+        string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
+    )
+    {
+        var builder = services.AddAuthentication(jwtBearerScheme);
+
+        return builder.AddKeycloakWebApi(configurationSection, jwtBearerScheme);
+    }
+
+    /// <summary>
+    /// Protects the web API with Keycloak.
+    /// This method expects the configuration file will have a section, named "Keycloak" as default, with the necessary settings to initialize authentication options.
+    /// </summary>
+    /// <param name="services">The service collection to which to add authentication.</param>
     /// <param name="configuration">The Configuration object.</param>
     /// <param name="configureJwtBearerOptions">A delegate to configure the JwtBearerOptions.</param>
     /// <param name="configSectionName">The configuration section with the necessary settings to initialize authentication options. Default value is "KeycloakAuthenticationOptions.Section".</param>

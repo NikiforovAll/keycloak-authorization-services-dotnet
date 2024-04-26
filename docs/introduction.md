@@ -6,13 +6,14 @@ Welcome to the **Keycloak.AuthServices** documentation!
 
 [Keycloak](https://www.keycloak.org/) is an open-source identity and access management solution. It provides features like single sign-on, user authentication, and authorization for web applications and services. Keycloak allows you to secure your applications by managing user identities, roles, and permissions. It supports various authentication mechanisms, including username/password, social logins, and multi-factor authentication. Additionally, Keycloak provides integration with popular identity providers like Google, Facebook, and LDAP directories. It is widely used in enterprise applications to ensure secure and seamless user authentication and authorization.
 
+> [!NOTE]
 > Keycloak is a Cloud Native Computing Foundation incubation project
 
 Here is good [getting-started](https://www.keycloak.org/getting-started/getting-started-docker) from the Keycloak's official [documentation](https://www.keycloak.org/documentation) website.
 
-## What is Keycloak.AuthService?
+## What is Keycloak.AuthServices?
 
-Keycloak.AuthService is a [family of packages](https://www.nuget.org/packages?q=Keycloak.AuthServices) that provides you everything you need to integrate and use Keycloak. From Single-Sign On and OpenId Connect (OIDC) to Keycloak Admin REST API integration.
+Keycloak.AuthServices is a [family of packages](https://www.nuget.org/packages?q=Keycloak.AuthServices) that provides you everything you need to integrate and use Keycloak. From Single-Sign On and OpenId Connect (OIDC) to Keycloak Admin REST API integration.
 
 ## Packages
 

@@ -28,8 +28,13 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
     public string NameClaimType { get; set; } = "preferred_username";
 
     /// <summary>
-    /// RolesClaimTransformationSource
+    /// Determines the source for roles
     /// </summary>
     public RolesClaimTransformationSource RolesSource { get; set; } =
-        RolesClaimTransformationSource.ResourceAccess;
+        RolesClaimTransformationSource.None;
+
+    /// <summary>
+    /// The name of the resource to be used. Only relevant for RolesSource = RolesClaimTransformationSource.ResourceAccess
+    /// </summary>
+    public string? RolesResource { get; set; }
 }

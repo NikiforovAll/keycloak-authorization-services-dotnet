@@ -10,17 +10,14 @@ hero:
       text: Getting Started
       link: /introduction
     - theme: alt
-      text: Configuration
-      link: /configuration/configuration-keycloak
-    # - theme: alt
-    #   text: Authentication
-    #   link: /authentication
-    # - theme: alt
-    #   text: Authorization
-    #   link: /authorization
-    # - theme: alt
-    #   text: Admin REST HTTP API
-    #   link: /admin-rest-api
+      text: Authentication
+      link: /configuration/configuration-authentication
+    - theme: alt
+      text: Authorization
+      link: /configuration/configuration-authorization
+    - theme: alt
+      text: HTTP REST Admin API
+      link: /admin-rest-api
 
 features:
   - title: 🔒Authentication

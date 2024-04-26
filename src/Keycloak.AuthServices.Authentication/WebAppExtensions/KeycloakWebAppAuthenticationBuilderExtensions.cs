@@ -229,15 +229,17 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
             return new KeycloakRolesClaimsTransformation(
                 keycloakOptions.RoleClaimType,
                 keycloakOptions.RolesSource,
-                keycloakOptions.Resource
+                keycloakOptions.RolesResource ?? keycloakOptions.Resource
             );
         });
 
-        builder.Services.Configure(openIdConnectScheme, configureKeycloakOptions);
+        configureCookieAuthenticationOptions ??= _ => { };
+
+        builder.Services.Configure(openIdConnectScheme, configureCookieAuthenticationOptions);
 
         if (!string.IsNullOrEmpty(cookieScheme))
         {
-            builder.AddCookie(cookieScheme, configureCookieAuthenticationOptions ?? (_ => { }));
+            builder.AddCookie(cookieScheme, configureCookieAuthenticationOptions);
         }
 
         if (!string.IsNullOrEmpty(displayName))
