@@ -5,7 +5,7 @@ using Testcontainers.Keycloak;
 public class KeycloakFixture : IAsyncLifetime
 {
     public KeycloakContainer Keycloak { get; } = new KeycloakBuilder()
-        .WithImage("docker.io/quay.io/keycloak/keycloak:24.0.3")
+        .WithImage("quay.io/keycloak/keycloak:24.0.3")
         .Build();
 
     public string BaseAddress => this.Keycloak.GetBaseAddress();
