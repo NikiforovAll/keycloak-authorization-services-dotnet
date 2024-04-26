@@ -34,15 +34,16 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     /// </summary>
     /// <param name="roleClaimType">Type of the role claim.</param>
     /// <param name="roleSource"><see cref="RolesClaimTransformationSource"/></param>
-    /// <param name="audience">The audience.</param>
+    /// <param name="resource">The audience.</param>
     public KeycloakRolesClaimsTransformation(
         string roleClaimType,
         RolesClaimTransformationSource roleSource,
-        string audience)
+        string resource
+    )
     {
         this.roleClaimType = roleClaimType;
         this.roleSource = roleSource;
-        this.audience = audience;
+        this.audience = resource;
     }
 
     /// <summary>
@@ -57,6 +58,12 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     public Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
     {
         var result = principal.Clone();
+
+        if (this.roleSource == RolesClaimTransformationSource.None)
+        {
+            return Task.FromResult(result);
+        }
+
         if (result.Identity is not ClaimsIdentity identity)
         {
             return Task.FromResult(result);
@@ -71,9 +78,10 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
             }
 
             using var resourceAccess = JsonDocument.Parse(resourceAccessValue);
-            var containsAudienceRoles = resourceAccess
-                .RootElement
-                .TryGetProperty(this.audience, out var rolesElement);
+            var containsAudienceRoles = resourceAccess.RootElement.TryGetProperty(
+                this.audience,
+                out var rolesElement
+            );
 
             if (!containsAudienceRoles)
             {
@@ -86,9 +94,12 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
             {
                 var value = role.GetString();
 
-                var matchingClaim = identity.Claims.FirstOrDefault(claim => 
-                    claim.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase) && 
-                    claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)); 
+                var matchingClaim = identity.Claims.FirstOrDefault(claim =>
+                    claim.Type.Equals(
+                        this.roleClaimType,
+                        StringComparison.InvariantCultureIgnoreCase
+                    ) && claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)
+                );
 
                 if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
                 {
@@ -109,9 +120,10 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
 
             using var realmAccess = JsonDocument.Parse(realmAccessValue);
 
-            var containsRoles = realmAccess
-                .RootElement
-                .TryGetProperty("roles", out var rolesElement);
+            var containsRoles = realmAccess.RootElement.TryGetProperty(
+                "roles",
+                out var rolesElement
+            );
 
             if (containsRoles)
             {
@@ -119,9 +131,12 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                 {
                     var value = role.GetString();
 
-                    var matchingClaim = identity.Claims.FirstOrDefault(claim => 
-                        claim.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase) && 
-                        claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase));
+                    var matchingClaim = identity.Claims.FirstOrDefault(claim =>
+                        claim.Type.Equals(
+                            this.roleClaimType,
+                            StringComparison.InvariantCultureIgnoreCase
+                        ) && claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)
+                    );
 
                     if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
                     {

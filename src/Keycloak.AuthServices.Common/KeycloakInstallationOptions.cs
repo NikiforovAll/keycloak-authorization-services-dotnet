@@ -1,6 +1,5 @@
 namespace Keycloak.AuthServices.Common;
 
-using System.ComponentModel.DataAnnotations;
 using Microsoft.Extensions.Configuration;
 
 /// <summary>
@@ -23,7 +22,6 @@ public class KeycloakInstallationOptions
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
     [ConfigurationKeyName("AuthServerUrl")]
-    [Required]
     public string AuthServerUrl
     {
         get => this.authServerUrl ?? this.AuthServerUrl2;
@@ -36,7 +34,6 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Keycloak Realm
     /// </summary>
-    [Required]
     public string Realm { get; set; } = string.Empty;
 
     /// <summary>

@@ -17,7 +17,7 @@ public static class ServiceCollectionExtensions
     /// <summary>
     /// Adds keycloak authentication services.
     /// </summary>
-    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication. Furthermore, the way KeycloakAuthenticationOptions is changed and you need to specify KeycloakFormatBinder.Instance to correctly bind the instance. See for more details https://nikiforovall.github.io/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         KeycloakAuthenticationOptions keycloakOptions,
@@ -38,7 +38,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IClaimsTransformation>(_ => new KeycloakRolesClaimsTransformation(
             roleClaimType,
             keycloakOptions.RolesSource,
-            keycloakOptions.Resource
+            keycloakOptions.RolesResource ?? keycloakOptions.Resource
         ));
 
         return services
@@ -68,7 +68,7 @@ public static class ServiceCollectionExtensions
     /// <param name="configuration">Configuration source</param>
     /// <param name="configureOptions">Configure overrides</param>
     /// <returns></returns>
-    [Obsolete("This method is obsolete and will be removed. Use AddKeycloakWebApiAuthentication")]
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -90,7 +90,7 @@ public static class ServiceCollectionExtensions
     /// <param name="keycloakClientSectionName"></param>
     /// <param name="configureOptions"></param>
     /// <returns></returns>
-    [Obsolete("This method is obsolete and will be removed. Use AddKeycloakWebApiAuthentication")]
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,

@@ -35,9 +35,7 @@ public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBui
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
         this.Services.AddOptions<KeycloakAuthenticationOptions>(jwtBearerAuthenticationScheme)
-            .Configure(configureKeycloakOptions)
-            .ValidateDataAnnotations()
-            .ValidateOnStart();
+            .Configure(configureKeycloakOptions);
     }
 
     /// <summary>

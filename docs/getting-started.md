@@ -16,6 +16,7 @@ Install **Keycloak.AuthServices.Authentication** by running:
 
 ```bash
 dotnet add package Keycloak.AuthServices.Authentication
+dotnet add package Keycloak.AuthServices.Common
 ```
 
 Replace the content of **Program.cs** with:
@@ -37,6 +38,9 @@ app.MapGet("/", () => "Hello World!").RequireAuthorization(); // [!code focus]
 
 app.Run();
 ```
+
+> [!TIP]
+> 💡 For more detailed explanation of how to configure *Authentication* visit [Configuration/Authentication](/configuration/configuration-authentication)
 
 ## Configure Keycloak
 
@@ -64,11 +68,12 @@ Here is high level overview of what we need to do to configure Keycloak for our 
    1. Name: **test-client**
    2. Configure Client authentication - **On** (We will need it in the future to get access token via username:password)
 6. [Configure the Audience Mapper](/configuration/configuration-keycloak#add-audience-mapper)
-   1. ❗This is important, by default **Keycloak.AuthServices.Authentication** assume that the name of resource is the intended Audience / client. Otherwise, you will get **401** status code.
+   1. ❗This is important, by default **Keycloak.AuthServices.Authentication** assume that the name of resource is the intended Audience / client. Otherwise, you will get **401** status code. 
+   2. Alternatively, you can specify `KeycloakAuthenticationOptions.VerifyTokenAudience=false`.
 
 ## Configure API
 
-[Download the adapter](/configuration/configuration-keycloak#download-adapter-config) config so we can use it for seamless integration with Keycloak. All you need to do is to add the content of Adapter Config to the **appsettings.Development.json** "Keycloak" section like this:
+[Download adapter config](/configuration/configuration-keycloak#download-adapter-config) so we can use it for seamless integration with Keycloak. All you need to do is to add the content of Adapter Config to the **appsettings.Development.json** "Keycloak" section like this:
 
 ```jsonc
 {
