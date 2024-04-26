@@ -9,6 +9,11 @@ using Microsoft.Extensions.Configuration.Json;
 public class KeycloakConfigurationSource : JsonConfigurationSource
 {
     /// <summary>
+    /// Configuration prefix for source.
+    /// </summary>
+    public string ConfigurationPrefix { get; set; } = default!;
+
+    /// <summary>
     /// Builds the <see cref="JsonConfigurationProvider"/> for this source.
     /// </summary>
     /// <param name="builder">The <see cref="IConfigurationBuilder"/>.</param>
@@ -16,6 +21,7 @@ public class KeycloakConfigurationSource : JsonConfigurationSource
     public override IConfigurationProvider Build(IConfigurationBuilder builder)
     {
         this.EnsureDefaults(builder);
-        return new KeycloakConfigurationProvider(this);
+
+        return new KeycloakConfigurationProvider(this, this.ConfigurationPrefix);
     }
 }
