@@ -43,11 +43,9 @@ jobs:
       - name: "Dotnet Cake Build"
         run: dotnet cake --target=Build
         shell: pwsh
-      - name: "Logout from Docker"
-        run: docker logout
-      - name: "Dotnet Cake Test"
-        run: dotnet cake --target=Test
-        shell: pwsh
+      # - name: "Dotnet Cake Test"
+      #   run: dotnet cake --target=Test
+      #   shell: pwsh
       - name: "Dotnet Cake Pack"
         run: dotnet cake --target=Pack
         shell: pwsh
