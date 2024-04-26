@@ -76,7 +76,7 @@ OpenID Connect (OIDC) is a protocol that allows web applications to authenticate
 
 Here is what library does for you:
 
-* Adds and configures `AddJwtBearer` based on provided configuration.
+* Adds and configures `OpenIdConnect` based on provided configuration.
 * Registers `IOptions<KeycloakAuthenticationOptions>`, `IOptions<OpenIdConnectOptions>`, and `IOptions<CookieAuthenticationOptions>`.
 * Registers `KeycloakRolesClaimsTransformation` so special Keycloak role claims are added to `ClaimsPrincipal`. See [Keycloak Claims Transformation](#keycloak-claims-transformation)
 
