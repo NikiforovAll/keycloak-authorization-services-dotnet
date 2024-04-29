@@ -21,15 +21,14 @@ Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
 
 See the docs: <https://nikiforovall.github.io/keycloak-authorization-services-dotnet>
 
-## Installation
+## Getting Started
+
+Install packages:
 
 ```bash
 dotnet add package Keycloak.AuthServices.Authentication
-dotnet add package Keycloak.AuthServices.Authorization
-dotnet add package Keycloak.AuthServices.Sdk
+dotnet add package Keycloak.AuthServices.Common
 ```
-
-## Getting Started
 
 ```csharp
 // Program.cs
