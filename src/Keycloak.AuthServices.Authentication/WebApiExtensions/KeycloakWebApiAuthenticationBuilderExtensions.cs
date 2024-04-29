@@ -114,8 +114,9 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         builder.Services.AddTransient<IClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<
-                IOptions<KeycloakAuthenticationOptions>
-            >().Value;
+                IOptionsMonitor<KeycloakAuthenticationOptions>
+            >()
+                .Get(jwtBearerScheme);
 
             return new KeycloakRolesClaimsTransformation(
                 keycloakOptions.RoleClaimType,

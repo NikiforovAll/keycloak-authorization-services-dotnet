@@ -9,11 +9,7 @@ public static class ConfigurationUtils
         this IWebHostBuilder hostBuilder,
         string fileName
     ) =>
-        hostBuilder.UseConfiguration(
-            new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile(fileName)
-                .AddEnvironmentVariables()
-                .Build()
+        hostBuilder.ConfigureAppConfiguration(x =>
+            x.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), fileName), optional: false)
         );
 }

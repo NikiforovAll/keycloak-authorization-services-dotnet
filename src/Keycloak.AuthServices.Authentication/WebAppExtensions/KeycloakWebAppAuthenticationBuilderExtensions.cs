@@ -223,8 +223,9 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         builder.Services.AddTransient<IClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<
-                IOptions<KeycloakAuthenticationOptions>
-            >().Value;
+                IOptionsMonitor<KeycloakAuthenticationOptions>
+            >()
+                .Get(openIdConnectScheme);
 
             return new KeycloakRolesClaimsTransformation(
                 keycloakOptions.RoleClaimType,

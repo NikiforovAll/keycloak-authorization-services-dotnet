@@ -35,38 +35,74 @@ The **Keycloak.AuthServices.Authentication** library will automatically retrieve
 
 Simply add:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfiguration
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfiguration
 
 This default assumption of the "Keycloak" section allows you to easily configure the library without explicitly specifying the section name every time. However, if you have a different section name or want to customize the configuration retrieval process, the library provides additional methods and options to handle that.
 
 ::: code-group
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationSection [specify configuration section]
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationSection [specify configuration section]
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfiguration2 [specify section name]
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfiguration2 [specify section name]
 
 :::
 
 Not everything you want to do can be configured with `KeycloakAuthenticationOptions`, for more fine-grained configuration use next method overload that takes `Action<JwtBearerOptions>`:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithOverrides
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides
+
+Typically, ASP.NET Core expects to find these (default) options under the `Authentication:Schemes:{SchemeName}`. See [Configuring Authentication **Strategies**](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/security?view=aspnetcore-8.0#configuring-authentication-strategy) for more details. Here is how to configure [JwtBearerOptions](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.jwtbeareroptions):
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithOverrides
+
+```json
+{
+  "Keycloak": {
+    "ssl-required": "internal",
+    "resource": "test-client",
+    "verify-token-audience": true,
+    "credentials": {
+      "secret": "Tgx4lvbyhho7oNFmiIupDRVA8ioQY7PW"
+    },
+    "confidential-port": 0
+  },
+  "Authentication": {
+    "DefaultScheme": "Bearer",
+    "Schemes": {
+      "Bearer": {
+        "ValidAudiences": [
+          "default-test-client-new"
+        ],
+        "RequireHttpsMetadata": true,
+        "Authority": "http://localhost:8080/realms/DefaultTest",
+        "TokenValidationParameters": {
+          "ValidateAudience": false
+        }
+      }
+    }
+  }
+}
+```
+
+> [!NOTE]
+> `KeycloakAuthenticationOptions` ("Keycloak") takes precedence over `Authentication:Schemes:{SchemeName}` ("Bearer") in the case of default configuration
 
 ### AuthenticationBuilder Extensions
 
 For situations when you want to override *Authentication Scheme* or you just prefer more verbose way of defining your project's *Authentication* you can use `AuthenticationBuilder` extension methods:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromConfiguration
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromConfiguration
 
 Use `IConfigurationSection`:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationSection
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationSection
 
 Inline declaration:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromInline
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromInline
 
 Inline declaration with `JwtBearerOptions` overrides:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromInline2
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromInline2
 
 ## Web App
 
@@ -162,6 +198,16 @@ Here is an example of **keycloak.json** adapter file:
 ## Keycloak Claims Transformation
 
 Keycloak roles can be automatically transformed to [AspNetCore Roles](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles). This feature is disabled by default.
+
+Specify `KeycloakAuthenticationOptions.RolesSource` to enable it. E.g.:
+
+```json
+{
+  "Keycloak": {
+    "RolesSource": "Realm"
+  }
+}
+```
 
 There are three options to determine a source for the roles:
 
