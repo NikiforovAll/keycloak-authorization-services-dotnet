@@ -1,4 +1,4 @@
-namespace Keycloak.AuthServices.IntegrationTests.ConfigurationTests;
+namespace Keycloak.AuthServices.IntegrationTests;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
