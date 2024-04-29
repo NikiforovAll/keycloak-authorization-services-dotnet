@@ -6,7 +6,6 @@ using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 
 public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
 {
@@ -21,9 +20,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
             x.UseConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
-                {
-                    AddKeycloakWebApi_FromConfiguration_Setup(services, context.Configuration);
-                }
+                    AddKeycloakWebApi_FromConfiguration_Setup(services, context.Configuration)
             );
         });
 
@@ -119,9 +116,6 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
             x.UseConfiguration(AppSettings);
             x.ConfigureServices(AddKeycloakWebApi_FromInline2_Setup);
         });
-
-        var bearerOptionsM = host.Services.GetService<IOptionsMonitor<JwtBearerOptions>>();
-        var bearerOptions = bearerOptionsM?.Get(JwtBearerDefaults.AuthenticationScheme);
 
         await host.Scenario(_ =>
         {

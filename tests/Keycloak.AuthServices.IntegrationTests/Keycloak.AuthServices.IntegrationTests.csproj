@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Alba" Version="7.4.1" />
+    <PackageReference Include="Meziantou.Extensions.Logging.Xunit" Version="1.0.7" />
     <PackageReference Include="Testcontainers" Version="3.8.0" />
     <PackageReference Include="Testcontainers.Keycloak" Version="3.8.0" />
   </ItemGroup>
@@ -16,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.*">
+    <None Update="*.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

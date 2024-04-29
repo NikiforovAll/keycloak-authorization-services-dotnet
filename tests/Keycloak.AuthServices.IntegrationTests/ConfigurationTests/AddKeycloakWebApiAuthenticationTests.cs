@@ -3,6 +3,7 @@ namespace Keycloak.AuthServices.IntegrationTests.ConfigurationTests;
 using System.Net;
 using Alba;
 using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.IntegrationTests;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
