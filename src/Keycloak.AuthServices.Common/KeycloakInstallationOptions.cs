@@ -34,7 +34,7 @@ public class KeycloakInstallationOptions
     /// <summary>
     /// Keycloak Realm
     /// </summary>
-    public string Realm { get; set; } = string.Empty;
+    public string Realm { get; set; } = default!;
 
     /// <summary>
     /// Resource as client id
@@ -42,7 +42,7 @@ public class KeycloakInstallationOptions
     /// <example>
     /// "resource": "client-id"
     /// </example>
-    public string Resource { get; set; } = string.Empty;
+    public string Resource { get; set; } = default!;
 
     /// <summary>
     /// Audience verification

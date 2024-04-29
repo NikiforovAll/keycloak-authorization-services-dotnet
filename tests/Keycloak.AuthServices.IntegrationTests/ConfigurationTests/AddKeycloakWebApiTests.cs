@@ -1,4 +1,4 @@
-namespace Keycloak.AuthServices.IntegrationTests;
+namespace Keycloak.AuthServices.IntegrationTests.ConfigurationTests;
 
 using System.Net;
 using Alba;
@@ -6,8 +6,9 @@ using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
-public class AddKeycloakWebApiTests(KeycloakFixture fixture) : AuthenticationScenario(fixture)
+public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
 {
     private const string Endpoint1 = "/endpoints/1";
     private static readonly string AppSettings = "appsettings.json";
@@ -20,7 +21,9 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture) : AuthenticationSce
             x.UseConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
-                    AddKeycloakWebApi_FromConfiguration_Setup(services, context.Configuration)
+                {
+                    AddKeycloakWebApi_FromConfiguration_Setup(services, context.Configuration);
+                }
             );
         });
 
@@ -116,6 +119,9 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture) : AuthenticationSce
             x.UseConfiguration(AppSettings);
             x.ConfigureServices(AddKeycloakWebApi_FromInline2_Setup);
         });
+
+        var bearerOptionsM = host.Services.GetService<IOptionsMonitor<JwtBearerOptions>>();
+        var bearerOptions = bearerOptionsM?.Get(JwtBearerDefaults.AuthenticationScheme);
 
         await host.Scenario(_ =>
         {

@@ -4,9 +4,8 @@ using Testcontainers.Keycloak;
 
 public class KeycloakFixture : IAsyncLifetime
 {
-    public KeycloakContainer Keycloak { get; } = new KeycloakBuilder()
-        .WithImage("quay.io/keycloak/keycloak:24.0.3")
-        .Build();
+    public KeycloakContainer Keycloak { get; } =
+        new KeycloakBuilder().WithImage("quay.io/keycloak/keycloak:24.0.3").Build();
 
     public string BaseAddress => this.Keycloak.GetBaseAddress();
     public string ContainerId => $"{this.Keycloak.Id}";
@@ -24,3 +23,9 @@ public abstract class AuthenticationScenario(KeycloakFixture fixture)
 {
     public KeycloakContainer Keycloak { get; } = fixture.Keycloak;
 }
+
+[CollectionDefinition(nameof(AuthenticationCollectionNoKeycloak))]
+public class AuthenticationCollectionNoKeycloak;
+
+[Collection(nameof(AuthenticationCollectionNoKeycloak))]
+public abstract class AuthenticationScenarioNoKeycloak;
