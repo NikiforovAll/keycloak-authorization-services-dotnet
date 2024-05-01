@@ -1,6 +1,5 @@
 namespace Keycloak.AuthServices.Authentication;
 
-using Claims;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -17,29 +16,23 @@ public static class ServiceCollectionExtensions
     /// <summary>
     /// Adds keycloak authentication services.
     /// </summary>
-    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication. Furthermore, the way KeycloakAuthenticationOptions is changed and you need to specify KeycloakFormatBinder.Instance to correctly bind the instance. See for more details https://nikiforovall.github.io/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0")]
+    [Obsolete(
+        "This method will be removed. Use AddKeycloakWebApiAuthentication. Furthermore, the way KeycloakAuthenticationOptions is changed and you need to specify KeycloakFormatBinder.Instance to correctly bind the instance. See for more details https://nikiforovall.github.io/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0"
+    )]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         KeycloakAuthenticationOptions keycloakOptions,
         Action<JwtBearerOptions>? configureOptions = default
     )
     {
-        const string roleClaimType = "role";
         var validationParameters = new TokenValidationParameters
         {
             ClockSkew = keycloakOptions.TokenClockSkew,
             ValidateAudience = keycloakOptions.VerifyTokenAudience ?? true,
             ValidateIssuer = true,
-            NameClaimType = "preferred_username",
-            RoleClaimType = roleClaimType,
+            NameClaimType = keycloakOptions.NameClaimType,
+            RoleClaimType = keycloakOptions.RoleClaimType,
         };
-
-        // options.Resource == Audience
-        services.AddTransient<IClaimsTransformation>(_ => new KeycloakRolesClaimsTransformation(
-            roleClaimType,
-            keycloakOptions.RolesSource,
-            keycloakOptions.RolesResource ?? keycloakOptions.Resource
-        ));
 
         return services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

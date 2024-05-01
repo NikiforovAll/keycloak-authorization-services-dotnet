@@ -1,6 +1,5 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
-using Keycloak.AuthServices.Authentication.Claims;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -219,20 +218,6 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     {
         ArgumentNullException.ThrowIfNull(builder);
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
-
-        builder.Services.AddTransient<IClaimsTransformation>(sp =>
-        {
-            var keycloakOptions = sp.GetRequiredService<
-                IOptionsMonitor<KeycloakAuthenticationOptions>
-            >()
-                .Get(openIdConnectScheme);
-
-            return new KeycloakRolesClaimsTransformation(
-                keycloakOptions.RoleClaimType,
-                keycloakOptions.RolesSource,
-                keycloakOptions.RolesResource ?? keycloakOptions.Resource
-            );
-        });
 
         configureCookieAuthenticationOptions ??= _ => { };
 

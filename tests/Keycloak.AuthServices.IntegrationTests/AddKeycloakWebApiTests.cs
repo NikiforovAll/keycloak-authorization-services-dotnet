@@ -29,6 +29,39 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper t
                         services
                             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                             .AddKeycloakWebApi(
+                                context.Configuration,
+                                options => options.WithKeycloakFixture(this.Keycloak)
+                            )
+                );
+            },
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+        );
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(Endpoint1);
+            _.UserAndPasswordIs(
+                TestUsersRegistry.Tester.UserName,
+                TestUsersRegistry.Tester.Password
+            );
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+    }
+
+    [Fact]
+    public async Task AddKeycloakWebApi_FromConfigurationSection_Ok()
+    {
+        await using var host = await AlbaHost.For<Program>(
+            x =>
+            {
+                x.WithLogging(testOutputHelper);
+                x.UseConfiguration(AppSettings);
+
+                x.ConfigureServices(
+                    (context, services) =>
+                        services
+                            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddKeycloakWebApi(
                                 context.Configuration.GetSection(
                                     KeycloakAuthenticationOptions.Section
                                 ),
@@ -42,7 +75,10 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper t
         await host.Scenario(_ =>
         {
             _.Get.Url(Endpoint1);
-            _.UserAndPasswordIs(DefaultUserName, DefaultPassword);
+            _.UserAndPasswordIs(
+                TestUsersRegistry.Tester.UserName,
+                TestUsersRegistry.Tester.Password
+            );
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }

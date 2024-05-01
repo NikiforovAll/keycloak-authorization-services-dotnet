@@ -2,7 +2,7 @@
 
 ## Key Changes in 2.0.0
 
-* `RolesClaimTransformationSource` change to `None` from `ResourceAccess` meaning we no longer map to `AspNetCore` roles by default.
+* `RolesClaimTransformationSource` changed to `None` from `ResourceAccess` meaning we no longer map to `AspNetCore` roles by default. Renamed to `EnableRolesMapping`. Moved to `Keycloak.AuthServices.Authorization`.
 * Moved `IKeycloakProtectionClient` to `Keycloak.AuthServices.Authorization`. Removed `AddKeycloakProtectionHttpClient`, added `AddAuthorizationServer` instead.
 
 ```csharp

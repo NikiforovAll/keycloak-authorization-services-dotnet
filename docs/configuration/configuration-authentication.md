@@ -50,6 +50,10 @@ Not everything you want to do can be configured with `KeycloakAuthenticationOpti
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides
 
+Here is a trick to bind options from configuration an override directly in the same code:
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2{3-5}
+
 Typically, ASP.NET Core expects to find these (default) options under the `Authentication:Schemes:{SchemeName}`. See [Configuring Authentication **Strategies**](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/security?view=aspnetcore-8.0#configuring-authentication-strategy) for more details. Here is how to configure [JwtBearerOptions](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.jwtbeareroptions):
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithOverrides
@@ -195,95 +199,3 @@ Here is an example of **keycloak.json** adapter file:
 
 ```
 
-## Keycloak Claims Transformation
-
-Keycloak roles can be automatically transformed to [AspNetCore Roles](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles). This feature is disabled by default.
-
-Specify `KeycloakAuthenticationOptions.RolesSource` to enable it. E.g.:
-
-```json
-{
-  "Keycloak": {
-    "RolesSource": "Realm"
-  }
-}
-```
-
-There are three options to determine a source for the roles:
-
-```csharp
-public enum RolesClaimTransformationSource
-{
-    /// <summary>
-    /// No Transformation. Default
-    /// </summary>
-    None,
-
-    /// <summary>
-    /// Use realm roles as source
-    /// </summary>
-    Realm,
-
-    /// <summary>
-    /// Use client roles as source
-    /// </summary>
-    ResourceAccess
-}
-```
-
-Here is an example of decoded JWT token:
-
-```json
-{
-  "exp": 1714057504,
-  "iat": 1714057204,
-  "jti": "7250d2a9-e5a1-442f-9e76-5e6b78bb2760",
-  "iss": "http://localhost:8080/realms/Test",
-  "aud": [
-    "test-client",
-    "account"
-  ],
-  "sub": "bf0b3371-ccdc-44f6-8861-ce25cbfcac39",
-  "typ": "Bearer",
-  "azp": "test-client",
-  "session_state": "563332d2-111a-4ef2-b6a0-ebc1d3ae9a1e",
-  "acr": "1",
-  "allowed-origins": [
-    "/*"
-  ],
-  "realm_access": {
-    "roles": [
-      "default-roles-test",
-      "offline_access",
-      "uma_authorization"
-    ]
-  },
-  "resource_access": {
-    "account": {
-      "roles": [
-        "manage-account",
-        "manage-account-links",
-        "view-profile"
-      ]
-    }
-  },
-  "scope": "profile email",
-  "sid": "563332d2-111a-4ef2-b6a0-ebc1d3ae9a1e",
-  "email_verified": false,
-  "name": "Test Test",
-  "preferred_username": "test",
-  "given_name": "Test",
-  "family_name": "Test",
-  "email": "test@test.com"
-}
-```
-
-If we specify `KeycloakAuthenticationOptions.RolesSource = RolesClaimTransformationSource.Realm` the roles are taken from $token.realm_access.roles.
-
-Result = ["default-roles-test","offline_access","uma_authorization"]
-
-If we specify `KeycloakAuthenticationOptions.RolesSource = RolesClaimTransformationSource.ResourceAccess` and `KeycloakAuthenticationOptions.RolesResource="account"` the roles are taken from $token.realm_access.account.roles.
-
-Result = ["manage-account","manage-account-links","view-profile"]
-
-The target claim can be configured `KeycloakAuthenticationOptions.RoleClaimType`, the default value is "role".

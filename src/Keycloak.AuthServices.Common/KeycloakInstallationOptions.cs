@@ -121,27 +121,6 @@ public class KeycloakInstallationOptions
 }
 
 /// <summary>
-/// RolesClaimTransformationSource
-/// </summary>
-public enum RolesClaimTransformationSource
-{
-    /// <summary>
-    /// Specifies that no transformation should be applied from the source.
-    /// </summary>
-    None,
-
-    /// <summary>
-    /// Specifies that transformation should be applied to the realm.
-    /// </summary>
-    Realm,
-
-    /// <summary>
-    /// Specifies that transformation should be applied to the resource access.
-    /// </summary>
-    ResourceAccess
-}
-
-/// <summary>
 /// Keycloak client credentials
 /// </summary>
 public class KeycloakClientInstallationCredentials
@@ -150,15 +129,4 @@ public class KeycloakClientInstallationCredentials
     /// Secret
     /// </summary>
     public string Secret { get; set; } = string.Empty;
-}
-
-/// <summary>
-/// Configuration constant, used internally
-/// </summary>
-public static class ConfigurationConstants
-{
-    /// <summary>
-    /// Configuration prefix
-    /// </summary>
-    public const string ConfigurationPrefix = "Keycloak";
 }

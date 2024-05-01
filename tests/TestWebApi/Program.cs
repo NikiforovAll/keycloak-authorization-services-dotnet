@@ -1,25 +1,40 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthorization();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
+app.UseStatusCodePages();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-var endpoints = app
-    .MapGroup("/endpoints")
-    .RequireAuthorization();
+var endpoints = app.MapGroup("/endpoints").RequireAuthorization();
 
-endpoints.MapGet("1", Run);
-endpoints.MapGet("2", Run).RequireAuthorization("Policy1");
-endpoints.MapGet("3", Run).RequireAuthorization("Policy2");
-endpoints.MapGet("4", Run).RequireAuthorization("Policy2");
+endpoints.MapGet("1", () => new { Success = true });
+endpoints.MapGet("RunPolicyBuyName", AuthorizeAsync);
 
 app.Run();
 
-static Response Run() => new(true);
+static async Task<IResult> AuthorizeAsync(
+    string policy,
+    ClaimsPrincipal claimsPrincipal,
+    IAuthorizationService authorizationService
+)
+{
+    var result = await authorizationService.AuthorizeAsync(claimsPrincipal, policy);
+
+    if (!result.Succeeded)
+    {
+        return TypedResults.Forbid();
+    }
+
+    return TypedResults.Ok(new { Success = result.Succeeded });
+}
 
 public partial class Program { }
-
-public record Response(bool Success);

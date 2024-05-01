@@ -3,6 +3,7 @@ namespace Keycloak.AuthServices.IntegrationTests.ConfigurationTests;
 using System.Net;
 using Alba;
 using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.IntegrationTests;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +22,6 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
             Audience = "test-client",
             RequireHttpsMetadata = false,
             TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
-            MetadataAddress = "http://localhost:8080/realms/Test/.well-known/openid-configuration",
         };
 
     private static readonly string AppSettingsWithOverrides = "appsettings.with-overrides.json";
@@ -181,6 +181,48 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
             }
         );
         // #endregion AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides
+    }
+
+    [Fact]
+    public async Task AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2_Unauthorized()
+    {
+        await using var host = await AlbaHost.For<Program>(x =>
+        {
+            x.UseConfiguration(AppSettings);
+            x.ConfigureServices(
+                (context, services) =>
+                    AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2_Setup(
+                        services,
+                        context.Configuration
+                    )
+            );
+        });
+
+        host.Services.EnsureConfiguredJwtOptions(ExpectedAppSettingsJwtBearerOptions);
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(Endpoint1);
+            _.StatusCodeShouldBe(HttpStatusCode.Unauthorized);
+        });
+    }
+
+    private static void AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2_Setup(
+        IServiceCollection services,
+        IConfiguration configuration
+    )
+    {
+        // #region AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2
+        services.AddKeycloakWebApiAuthentication(options =>
+        {
+            configuration
+                .GetSection(KeycloakAuthenticationOptions.Section)
+                .Bind(options, KeycloakFormatBinder.Instance);
+
+            options.SslRequired = "none";
+            options.Audience = "test-client";
+        });
+        // #endregion AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2
     }
 
     [Fact]

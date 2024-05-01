@@ -23,6 +23,22 @@ public static class PoliciesBuilderExtensions
             .AddRequirements(new ResourceAccessRequirement(default, roles));
 
     /// <summary>
+    /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="rolesSource"></param>
+    /// <param name="roles"></param>
+    /// <returns></returns>
+    public static AuthorizationPolicyBuilder RequireResourceRolesWithSource(
+        this AuthorizationPolicyBuilder builder,
+        string rolesSource,
+        string[] roles
+    ) =>
+        builder
+            .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
+            .AddRequirements(new ResourceAccessRequirement(rolesSource, roles));
+
+    /// <summary>
     /// Adds realm role requirement to builder. Ensures that at least one realm role is present in realm claims.
     /// </summary>
     /// <param name="builder"></param>

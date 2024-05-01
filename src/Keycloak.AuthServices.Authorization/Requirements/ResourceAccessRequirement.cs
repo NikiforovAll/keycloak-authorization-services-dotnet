@@ -42,7 +42,7 @@ public class ResourceAccessRequirement : IAuthorizationRequirement
 public partial class ResourceAccessRequirementHandler
     : AuthorizationHandler<ResourceAccessRequirement>
 {
-    private readonly IOptions<KeycloakInstallationOptions> keycloakOptions;
+    private readonly IOptions<KeycloakAuthorizationOptions> keycloakOptions;
     private readonly ILogger<ResourceAccessRequirementHandler> logger;
 
     /// <summary>
@@ -50,7 +50,7 @@ public partial class ResourceAccessRequirementHandler
     /// <param name="keycloakOptions"></param>
     /// <param name="logger"></param>
     public ResourceAccessRequirementHandler(
-        IOptions<KeycloakInstallationOptions> keycloakOptions,
+        IOptions<KeycloakAuthorizationOptions> keycloakOptions,
         ILogger<ResourceAccessRequirementHandler> logger
     )
     {
@@ -71,10 +71,20 @@ public partial class ResourceAccessRequirementHandler
         ResourceAccessRequirement requirement
     )
     {
-        var clientId = requirement.Resource ?? this.keycloakOptions.Value.Resource;
+        var clientId =
+            requirement.Resource
+            ?? this.keycloakOptions.Value.RolesResource
+            ?? this.keycloakOptions.Value.Resource;
         requirement.Resource = clientId;
 
         var success = false;
+
+        if (string.IsNullOrWhiteSpace(clientId))
+        {
+            throw new KeycloakException(
+                $"Unable to resolve Resource for Role Validation - please make sure {nameof(KeycloakAuthorizationOptions)} are configured."
+            );
+        }
 
         if (
             context.User.Claims.TryGetResourceCollection(out var resourcesAccess)

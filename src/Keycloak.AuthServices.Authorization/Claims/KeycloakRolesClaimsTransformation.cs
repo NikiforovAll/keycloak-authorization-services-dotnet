@@ -1,8 +1,7 @@
-namespace Keycloak.AuthServices.Authentication.Claims;
+namespace Keycloak.AuthServices.Authorization.Claims;
 
 using System.Security.Claims;
 using System.Text.Json;
-using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 
 /// <summary>
@@ -10,7 +9,7 @@ using Microsoft.AspNetCore.Authentication;
 /// Note, realm roles are not mapped atm.
 /// </summary>
 /// <example>
-/// Example of keycloack resource_access claim
+/// Example of Keycloak resource_access claim
 /// "resource_access": {
 ///     "api": {
 ///         "roles": [ "role1", "role2" ]
@@ -57,17 +56,17 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     /// </returns>
     public Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
     {
-        var result = principal.Clone();
-
         if (this.roleSource == RolesClaimTransformationSource.None)
         {
-            return Task.FromResult(result);
+            return Task.FromResult(principal);
         }
 
-        if (result.Identity is not ClaimsIdentity identity)
+        if (principal.Identity is not ClaimsIdentity identity)
         {
-            return Task.FromResult(result);
+            return Task.FromResult(principal);
         }
+
+        var result = principal.Clone();
 
         if (this.roleSource == RolesClaimTransformationSource.ResourceAccess)
         {
