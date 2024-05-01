@@ -68,6 +68,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Integ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApi", "tests\TestWebApi\TestWebApi.csproj", "{0F40EFE2-8D17-46B2-A91B-EC4BCB93E77C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Authorization.Tests", "tests\Keycloak.AuthServices.Authorization.Tests\Keycloak.AuthServices.Authorization.Tests.csproj", "{331F4EF5-9CFE-4060-B903-69CCE9062BFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -142,6 +144,10 @@ Global
 		{0F40EFE2-8D17-46B2-A91B-EC4BCB93E77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F40EFE2-8D17-46B2-A91B-EC4BCB93E77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F40EFE2-8D17-46B2-A91B-EC4BCB93E77C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{331F4EF5-9CFE-4060-B903-69CCE9062BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331F4EF5-9CFE-4060-B903-69CCE9062BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331F4EF5-9CFE-4060-B903-69CCE9062BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331F4EF5-9CFE-4060-B903-69CCE9062BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{671BA3B1-DBF2-4161-97B5-433B91A3730E} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
 		{7499F9F0-1132-46B4-AAA2-D60D9F113293} = {96857509-627A-4FD2-AC82-34387619A7B1}
 		{0F40EFE2-8D17-46B2-A91B-EC4BCB93E77C} = {96857509-627A-4FD2-AC82-34387619A7B1}
+		{331F4EF5-9CFE-4060-B903-69CCE9062BFD} = {96857509-627A-4FD2-AC82-34387619A7B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1907BFD-C144-4B48-AA40-972F499D4E08}

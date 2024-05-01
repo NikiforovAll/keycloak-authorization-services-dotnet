@@ -14,9 +14,6 @@ using Xunit.Abstractions;
 
 public static class Utils
 {
-    public const string DefaultUserName = "test";
-    public const string DefaultPassword = "test";
-
     public static IWebHostBuilder UseConfiguration(
         this IWebHostBuilder hostBuilder,
         string fileName
@@ -34,7 +31,15 @@ public static class Utils
             builder.SetMinimumLevel(LogLevel.Debug);
 
             builder.Services.AddSingleton<ILoggerProvider>(
-                new XUnitLoggerProvider(testOutputHelper, appendScope: true)
+                new XUnitLoggerProvider(
+                    testOutputHelper,
+                    new XUnitLoggerOptions
+                    {
+                        IncludeScopes = true,
+                        IncludeCategory = true,
+                        IncludeLogLevel = true
+                    }
+                )
             );
         });
 
@@ -69,7 +74,7 @@ public static class Utils
         {
             ClientId = keycloakAuthenticationOptions.Resource,
             ClientSecret = keycloakAuthenticationOptions.Credentials.Secret,
-            UserName = DefaultUserName,
-            Password = DefaultPassword,
+            UserName = TestUsersRegistry.Tester.UserName,
+            Password = TestUsersRegistry.Tester.Password,
         };
 }

@@ -20,4 +20,13 @@ public static class KeycloakConstants
     /// </summary>
     public const string RealmAccessClaimType = "realm_access";
 
+    /// <summary>
+    /// Role Claim
+    /// </summary>
+    public const string RoleClaimType = "role";
+
+    /// <summary>
+    /// Name Claim
+    /// </summary>
+    public const string NameClaimType = "preferred_username";
 }

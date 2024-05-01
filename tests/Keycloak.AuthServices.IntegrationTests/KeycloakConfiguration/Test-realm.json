@@ -60,6 +60,14 @@
       "containerId" : "9cd957ff-1bf3-44b6-afca-76e016bdf44c",
       "attributes" : { }
     }, {
+      "id" : "d2a8bad2-db39-459a-a806-70e147af0ad4",
+      "name" : "Reader",
+      "description" : "",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "9cd957ff-1bf3-44b6-afca-76e016bdf44c",
+      "attributes" : { }
+    }, {
       "id" : "d920d815-4b91-456a-aa76-1a1b7a11203d",
       "name" : "offline_access",
       "description" : "${role_offline-access}",
@@ -71,6 +79,14 @@
       "id" : "7e89c5ef-c641-45a3-a379-aa3fe4347c97",
       "name" : "uma_authorization",
       "description" : "${role_uma_authorization}",
+      "composite" : false,
+      "clientRole" : false,
+      "containerId" : "9cd957ff-1bf3-44b6-afca-76e016bdf44c",
+      "attributes" : { }
+    }, {
+      "id" : "3a8ff451-e237-4df8-92c8-4fc4185d4a46",
+      "name" : "Admin",
+      "description" : "",
       "composite" : false,
       "clientRole" : false,
       "containerId" : "9cd957ff-1bf3-44b6-afca-76e016bdf44c",
@@ -247,7 +263,15 @@
       } ],
       "security-admin-console" : [ ],
       "admin-cli" : [ ],
-      "test-client" : [ ],
+      "test-client" : [ {
+        "id" : "2eedf79d-cc99-4ef4-885a-0dd67ace5c22",
+        "name" : "TestClientRole",
+        "description" : "",
+        "composite" : false,
+        "clientRole" : true,
+        "containerId" : "0751463c-5267-483b-84b5-2ea45013838c",
+        "attributes" : { }
+      } ],
       "account-console" : [ ],
       "broker" : [ {
         "id" : "21fe17cd-cdc9-419b-93ad-020bd700fde6",
@@ -635,6 +659,34 @@
         "id.token.claim" : "false",
         "lightweight.claim" : "false",
         "access.token.claim" : "true"
+      }
+    }, {
+      "id" : "84114d22-faf5-4533-86c6-81276a0d108e",
+      "name" : "client roles",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usermodel-client-role-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "introspection.token.claim" : "true",
+        "multivalued" : "true",
+        "user.attribute" : "foo",
+        "access.token.claim" : "true",
+        "claim.name" : "resource_access.${client_id}.roles",
+        "jsonType.label" : "String"
+      }
+    }, {
+      "id" : "a91289ed-7ff0-45d7-a457-336dadf9892f",
+      "name" : "realm roles",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usermodel-realm-role-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "introspection.token.claim" : "true",
+        "multivalued" : "true",
+        "user.attribute" : "foo",
+        "access.token.claim" : "true",
+        "claim.name" : "realm_access.roles",
+        "jsonType.label" : "String"
       }
     } ],
     "defaultClientScopes" : [ "web-origins", "acr", "roles", "profile", "email" ],
@@ -1186,7 +1238,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "saml-user-attribute-mapper", "saml-role-list-mapper", "oidc-full-name-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-address-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "saml-role-list-mapper", "oidc-full-name-mapper" ]
       }
     }, {
       "id" : "df4acae2-494f-4c6b-8c75-1a64296e47db",
@@ -1205,7 +1257,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "saml-user-property-mapper", "saml-role-list-mapper", "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-address-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "saml-user-property-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "saml-role-list-mapper", "saml-user-attribute-mapper", "oidc-sha256-pairwise-sub-mapper" ]
       }
     }, {
       "id" : "79c2f0c9-65fd-4c62-83a3-0ede96795205",

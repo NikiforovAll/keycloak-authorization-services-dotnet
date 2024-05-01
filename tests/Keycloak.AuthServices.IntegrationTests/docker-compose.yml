@@ -12,7 +12,6 @@ services:
         '--import-realm'
       ]
     volumes:
-      - ./Test-realm.json:/opt/keycloak/data/import/Test-realm.json
-      - ./Test-users-0.json:/opt/keycloak/data/import/Test-users-0.json
+      - ./KeycloakConfiguration/:/opt/keycloak/data/import/
     ports:
       - 8080:8080

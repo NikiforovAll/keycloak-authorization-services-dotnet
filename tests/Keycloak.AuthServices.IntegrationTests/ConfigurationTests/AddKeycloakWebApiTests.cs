@@ -6,11 +6,20 @@ using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
 {
     private const string Endpoint1 = "/endpoints/1";
     private static readonly string AppSettings = "appsettings.json";
+    private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions =
+        new()
+        {
+            Authority = "http://localhost:8080/realms/Test",
+            Audience = "test-client",
+            RequireHttpsMetadata = false,
+            TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
+        };
 
     [Fact]
     public async Task AddKeycloakWebApi_FromConfiguration_Unauthorized()
@@ -23,6 +32,8 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
                     AddKeycloakWebApi_FromConfiguration_Setup(services, context.Configuration)
             );
         });
+
+        host.Services.EnsureConfiguredJwtOptions(ExpectedAppSettingsJwtBearerOptions);
 
         await host.Scenario(_ =>
         {
@@ -58,6 +69,8 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
             );
         });
 
+        host.Services.EnsureConfiguredJwtOptions(ExpectedAppSettingsJwtBearerOptions);
+
         await host.Scenario(_ =>
         {
             _.Get.Url(Endpoint1);
@@ -86,6 +99,8 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
             x.ConfigureServices(AddKeycloakWebApi_FromInline_Setup);
         });
 
+        host.Services.EnsureConfiguredJwtOptions(ExpectedAppSettingsJwtBearerOptions);
+
         await host.Scenario(_ =>
         {
             _.Get.Url(Endpoint1);
@@ -104,6 +119,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
                 options.Realm = "Test";
                 options.SslRequired = "none";
                 options.AuthServerUrl = "http://localhost:8080/";
+                options.VerifyTokenAudience = false;
             });
         // #endregion AddKeycloakWebApiAuthentication_FromInline
     }
@@ -116,6 +132,8 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
             x.UseConfiguration(AppSettings);
             x.ConfigureServices(AddKeycloakWebApi_FromInline2_Setup);
         });
+
+        host.Services.EnsureConfiguredJwtOptions(ExpectedAppSettingsJwtBearerOptions);
 
         await host.Scenario(_ =>
         {
@@ -135,6 +153,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
                     options.Resource = "test-client";
                     options.Realm = "Test";
                     options.AuthServerUrl = "http://localhost:8080/";
+                    options.VerifyTokenAudience = false;
                 },
                 options =>
                 {

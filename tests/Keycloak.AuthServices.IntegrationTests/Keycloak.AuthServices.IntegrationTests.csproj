@@ -23,9 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="KeycloakConfiguration/*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TestWebApi\TestWebApi.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
   </ItemGroup>
 
 </Project>

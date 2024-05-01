@@ -1,7 +1,9 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
+using Keycloak.AuthServices.Authorization.Claims;
 using Keycloak.AuthServices.Common;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,11 +44,31 @@ public static class ServiceCollectionExtensions
     /// Adds keycloak authorization services
     /// </summary>
     /// <param name="services"></param>
-    public static IServiceCollection AddKeycloakAuthorization(this IServiceCollection services)
+    /// <param name="configureKeycloakAuthorizationOptions"></param>
+    public static IServiceCollection AddKeycloakAuthorization(
+        this IServiceCollection services,
+        Action<KeycloakAuthorizationOptions>? configureKeycloakAuthorizationOptions = null
+    )
     {
         services.AddSingleton<IAuthorizationHandler, RptRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
+
+        services.AddTransient<IClaimsTransformation>(sp =>
+        {
+            var keycloakOptions = sp.GetRequiredService<
+                IOptionsMonitor<KeycloakAuthorizationOptions>
+            >().CurrentValue;
+
+            return new KeycloakRolesClaimsTransformation(
+                keycloakOptions.RoleClaimType,
+                keycloakOptions.EnableRolesMapping,
+                keycloakOptions.RolesResource ?? keycloakOptions.Resource
+            );
+        });
+        configureKeycloakAuthorizationOptions ??= _ => { };
+
+        services.Configure<KeycloakAuthorizationOptions>(configureKeycloakAuthorizationOptions);
 
         return services;
     }
