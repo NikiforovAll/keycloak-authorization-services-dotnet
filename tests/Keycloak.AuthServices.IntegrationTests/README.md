@@ -5,7 +5,7 @@
 Inside docker container run:
 
 ```bash
-/opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --real Test
+/opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm Test
 ```
 
 ## User Registry in Test Realm
