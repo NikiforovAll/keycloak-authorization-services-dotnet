@@ -103,7 +103,7 @@ public class KeycloakInstallationOptions
                 return default!;
             }
 
-            return $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}";
+            return $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}/";
         }
     }
 

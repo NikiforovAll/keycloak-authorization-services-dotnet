@@ -264,6 +264,13 @@
       "security-admin-console" : [ ],
       "admin-cli" : [ ],
       "test-client" : [ {
+        "id" : "9bf9ae1c-95c2-4aee-b04b-6d3ffc0cfe6a",
+        "name" : "uma_protection",
+        "composite" : false,
+        "clientRole" : true,
+        "containerId" : "0751463c-5267-483b-84b5-2ea45013838c",
+        "attributes" : { }
+      }, {
         "id" : "2eedf79d-cc99-4ef4-885a-0dd67ace5c22",
         "name" : "TestClientRole",
         "description" : "",
@@ -631,7 +638,8 @@
     "standardFlowEnabled" : true,
     "implicitFlowEnabled" : false,
     "directAccessGrantsEnabled" : true,
-    "serviceAccountsEnabled" : false,
+    "serviceAccountsEnabled" : true,
+    "authorizationServicesEnabled" : true,
     "publicClient" : false,
     "frontchannelLogout" : true,
     "protocol" : "openid-connect",
@@ -641,6 +649,7 @@
       "backchannel.logout.session.required" : "true",
       "post.logout.redirect.uris" : "+",
       "oauth2.device.authorization.grant.enabled" : "false",
+      "display.on.consent.screen" : "false",
       "backchannel.logout.revoke.offline.tokens" : "false"
     },
     "authenticationFlowBindingOverrides" : { },
@@ -690,7 +699,45 @@
       }
     } ],
     "defaultClientScopes" : [ "web-origins", "acr", "roles", "profile", "email" ],
-    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
+    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ],
+    "authorizationSettings" : {
+      "allowRemoteResourceManagement" : true,
+      "policyEnforcementMode" : "ENFORCING",
+      "resources" : [ {
+        "name" : "urn:test-client:resources:default",
+        "type" : "urn:test-client:resources:default",
+        "ownerManagedAccess" : false,
+        "displayName" : "",
+        "attributes" : { },
+        "_id" : "605c8302-4d45-4d60-aff1-9d1727ddde5f",
+        "uris" : [ "/*" ],
+        "icon_uri" : ""
+      } ],
+      "policies" : [ {
+        "id" : "04034aae-7d80-4ad4-902f-c8e57211b4c7",
+        "name" : "Require Admin Role",
+        "description" : "",
+        "type" : "role",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "roles" : "[{\"id\":\"Admin\",\"required\":true}]"
+        }
+      }, {
+        "id" : "90c2fe20-481c-4d32-b5e7-04cca9f8d9a5",
+        "name" : "Default Permission",
+        "description" : "A permission that applies to the default resource type",
+        "type" : "resource",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "defaultResourceType" : "urn:test-client:resources:default",
+          "applyPolicies" : "[\"Require Admin Role\"]"
+        }
+      } ],
+      "scopes" : [ ],
+      "decisionStrategy" : "UNANIMOUS"
+    }
   } ],
   "clientScopes" : [ {
     "id" : "04a2958c-7f06-417c-8609-ad861436645a",

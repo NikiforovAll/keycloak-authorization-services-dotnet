@@ -33,12 +33,14 @@ public class KeycloakProtectionClient : IKeycloakProtectionClient
     {
         var audience = this.clientOptions.Value.Resource;
 
+        var permission = string.IsNullOrWhiteSpace(scope) ? resource : $"{resource}#{scope}";
+
         var data = new Dictionary<string, string>
         {
             { "grant_type", "urn:ietf:params:oauth:grant-type:uma-ticket" },
             { "response_mode", "decision" },
             { "audience", audience ?? string.Empty },
-            { "permission", $"{resource}#{scope}" }
+            { "permission", permission }
         };
 
         var response = await this.httpClient.PostAsync(

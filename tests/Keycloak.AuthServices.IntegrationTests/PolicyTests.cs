@@ -75,7 +75,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
     [Fact]
     public async Task RequireClientRoles_TestClientRole_Verified()
     {
-        var policyName = "RequireResourceRoles";
+        var policyName = "RequireResourceRolesWithSource";
         await using var host = await AlbaHost.For<Program>(
             x =>
             {
@@ -193,7 +193,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
     [Fact]
     public async Task RequireRealmRoles_AdminRoleWithMapping_Verified()
     {
-        var policyName = "RequireRealmRole";
+        var policyName = "RequireRole";
         await using var host = await AlbaHost.For<Program>(
             x =>
             {
@@ -254,7 +254,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
     [Fact]
     public async Task RequireClientRoles_TestClientRoleWithMapping_Verified()
     {
-        var policyName = "RequireResourceRoles";
+        var policyName = "RequireRole";
         await using var host = await AlbaHost.For<Program>(
             x =>
             {

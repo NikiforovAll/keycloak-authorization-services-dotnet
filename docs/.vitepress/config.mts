@@ -32,8 +32,14 @@ export default defineConfig({
                         { text: 'Authorization', link: '/configuration/configuration-authorization' },
                         { text: 'Keycloak', link: '/configuration/configuration-keycloak' },
                     ]
-                }
-                ,
+                },
+                {
+                    text: 'Authorization',
+                    collapsed: false,
+                    items: [
+                        { text: 'Authorization Server', link: '/authorization/authorization-server' },
+                    ]
+                },
                 {
                     text: 'Examples',
                     collapsed: false,
