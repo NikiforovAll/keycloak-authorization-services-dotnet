@@ -58,12 +58,12 @@ The *Keycloak Authorization Server* evaluates these policies whenever a user att
 
 💡 Here is an example of how to create a resource and associate a scopes with it:
 
-![my-workspace-resource](/assets/my-workspace-resource.png)
+<!-- ![my-workspace-resource](/assets/my-workspace-resource.png) -->
 ![permission](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/public/assets/my-workspace-resource.png)
 
 💡 Keycloak provides a UI to evaluate permissions for a given resource, user, scopes, etc. This feature enables you to prototype and troubleshoot more easily. Here is an example of how to evaluate permissions for an admin user:
 
-![evaluate-permissions-for-admin](/assets/evaluate-permissions-for-admin.png)
+<!-- ![evaluate-permissions-for-admin](/assets/evaluate-permissions-for-admin.png) -->
 ![evaluate-permissions-for-admin](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/public/assets/evaluate-permissions-for-admin.png)
 
 ## Add to your code
