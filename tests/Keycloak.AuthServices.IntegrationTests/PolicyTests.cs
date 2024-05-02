@@ -57,7 +57,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Admin.UserName, TestUsersRegistry.Admin.Password);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
 
@@ -65,8 +65,8 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         {
             _.Get.Url(RunPolicyBuyName(policyName));
             _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
+                TestUsers.Tester.UserName,
+                TestUsers.Tester.Password
             );
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
@@ -117,7 +117,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Admin.UserName, TestUsersRegistry.Admin.Password);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
@@ -125,8 +125,8 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         {
             _.Get.Url(RunPolicyBuyName(policyName));
             _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
+                TestUsers.Tester.UserName,
+                TestUsers.Tester.Password
             );
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
@@ -175,7 +175,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Admin.UserName, TestUsersRegistry.Admin.Password);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
@@ -183,8 +183,8 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         {
             _.Get.Url(RunPolicyBuyName(policyName));
             _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
+                TestUsers.Tester.UserName,
+                TestUsers.Tester.Password
             );
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
@@ -236,7 +236,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Admin.UserName, TestUsersRegistry.Admin.Password);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
 
@@ -244,8 +244,8 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         {
             _.Get.Url(RunPolicyBuyName(policyName));
             _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
+                TestUsers.Tester.UserName,
+                TestUsers.Tester.Password
             );
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
@@ -297,7 +297,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Admin.UserName, TestUsersRegistry.Admin.Password);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
@@ -305,8 +305,8 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         {
             _.Get.Url(RunPolicyBuyName(policyName));
             _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
+                TestUsers.Tester.UserName,
+                TestUsers.Tester.Password
             );
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });

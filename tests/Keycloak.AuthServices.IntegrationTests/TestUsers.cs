@@ -1,7 +1,9 @@
 ﻿namespace Keycloak.AuthServices.IntegrationTests;
 
-public static class TestUsersRegistry
+public static class TestUsers
 {
+#pragma warning disable CA2211 // Non-constant fields should not be visible
+#pragma warning disable IDE1006 // Naming Styles
     public static TestUser Admin =
         new(
             UserName: "testadminuser",
@@ -22,6 +24,8 @@ public static class TestUsersRegistry
                 ["test-client"] = [KeycloakRoles.TestClientRole]
             }
         );
+#pragma warning restore IDE1006 // Naming Styles
+#pragma warning restore CA2211 // Non-constant fields should not be visible
 }
 
 public static class KeycloakRoles

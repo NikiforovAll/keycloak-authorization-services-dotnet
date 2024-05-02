@@ -15,9 +15,14 @@ public class DecisionRequirement : IAuthorizationRequirement
     public string Resource { get; }
 
     /// <summary>
-    /// Resource scope
+    /// Resource scopes
     /// </summary>
-    public string Scope { get; }
+    public string[] Scopes { get; }
+
+    /// <summary>
+    /// Validation Mode
+    /// </summary>
+    public ScopesValidationMode? ScopesValidationMode { get; set; }
 
     /// <summary>
     /// Constructs requirement
@@ -27,7 +32,18 @@ public class DecisionRequirement : IAuthorizationRequirement
     public DecisionRequirement(string resource, string scope)
     {
         this.Resource = resource;
-        this.Scope = scope;
+        this.Scopes = new[] { scope };
+    }
+
+    /// <summary>
+    /// Constructs requirement
+    /// </summary>
+    /// <param name="resource"></param>
+    /// <param name="scopes"></param>
+    public DecisionRequirement(string resource, string[] scopes)
+    {
+        this.Resource = resource;
+        this.Scopes = scopes;
     }
 
     /// <summary>
@@ -41,7 +57,12 @@ public class DecisionRequirement : IAuthorizationRequirement
 
     /// <inheritdoc />
     public override string ToString() =>
-        $"{nameof(DecisionRequirement)}: {this.Resource}#{this.Scope}";
+        $"{nameof(DecisionRequirement)}: {this.Resource}#{this.GetScopesExpression()}";
+
+    /// <summary>
+    /// </summary>
+    /// <returns></returns>
+    public string GetScopesExpression() => string.Join(',', this.Scopes);
 }
 
 /// <summary>
@@ -82,7 +103,8 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         {
             var success = await this.client.VerifyAccessToResource(
                 requirement.Resource,
-                requirement.Scope,
+                requirement.GetScopesExpression(),
+                requirement.ScopesValidationMode,
                 CancellationToken.None
             );
 

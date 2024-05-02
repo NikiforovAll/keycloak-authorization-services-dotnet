@@ -4,6 +4,7 @@
 
 ---
 
+*Table of Contents*:
 [[toc]]
 
 ## Web API
@@ -108,7 +109,7 @@ Inline declaration with `JwtBearerOptions` overrides:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiTests.cs#AddKeycloakWebApiAuthentication_FromInline2
 
-## Web App
+## Web App <Badge type="warning" text="beta" />
 
 In the context of web development, a web application (web app) refers to a software application that runs on a web server and is accessed by users through a web browser.
 

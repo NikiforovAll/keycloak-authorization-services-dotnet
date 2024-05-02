@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Requirements;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authorization;
@@ -64,4 +65,25 @@ public static class PoliciesBuilderExtensions
         string resource,
         string scope
     ) => builder.AddRequirements(new DecisionRequirement(resource, scope));
+
+    /// <summary>
+    /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="resource"></param>
+    /// <param name="scopes"></param>
+    /// <param name="scopesValidationMode"></param>
+    /// <returns></returns>
+    public static AuthorizationPolicyBuilder RequireProtectedResource(
+        this AuthorizationPolicyBuilder builder,
+        string resource,
+        string[] scopes,
+        ScopesValidationMode? scopesValidationMode = default
+    ) =>
+        builder.AddRequirements(
+            new DecisionRequirement(resource, scopes)
+            {
+                ScopesValidationMode = scopesValidationMode
+            }
+        );
 }

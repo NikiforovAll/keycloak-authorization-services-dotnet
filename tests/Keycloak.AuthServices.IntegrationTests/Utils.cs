@@ -52,6 +52,12 @@ public static class Utils
         options.RequireHttpsMetadata = false;
     }
 
+    public static void WithLocalKeycloakInstallation(this JwtBearerOptions options)
+    {
+        options.Authority = $"localhost:8080/realms/Test";
+        options.RequireHttpsMetadata = false;
+    }
+
     public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(string fileName)
     {
         var configuration = new ConfigurationBuilder()
@@ -74,7 +80,7 @@ public static class Utils
         {
             ClientId = keycloakAuthenticationOptions.Resource,
             ClientSecret = keycloakAuthenticationOptions.Credentials.Secret,
-            UserName = TestUsersRegistry.Tester.UserName,
-            Password = TestUsersRegistry.Tester.Password,
+            UserName = TestUsers.Tester.UserName,
+            Password = TestUsers.Tester.Password,
         };
 }

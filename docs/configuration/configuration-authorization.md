@@ -4,6 +4,7 @@
 
 With Keycloak, you can configure roles by defining realm roles and resource roles. Realm roles are global roles that apply to the entire realm, while resource roles are specific to a particular client or resource.
 
+*Table of Contents*:
 [[toc]]
 
 ## Require Realm Roles

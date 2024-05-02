@@ -18,7 +18,6 @@ public class KeycloakAuthorizationOptions : KeycloakInstallationOptions
     public RolesClaimTransformationSource EnableRolesMapping { get; set; } =
         RolesClaimTransformationSource.None;
 
-
     /// <summary>
     /// The name of the resource to be used for Roles mapping
     /// </summary>
@@ -29,8 +28,6 @@ public class KeycloakAuthorizationOptions : KeycloakInstallationOptions
     /// </summary>
     public string RoleClaimType { get; set; } = KeycloakConstants.RoleClaimType;
 }
-
-
 
 /// <summary>
 /// RolesClaimTransformationSource

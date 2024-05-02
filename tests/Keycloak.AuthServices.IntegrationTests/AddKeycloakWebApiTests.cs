@@ -40,10 +40,7 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper t
         await host.Scenario(_ =>
         {
             _.Get.Url(Endpoint1);
-            _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }
@@ -75,10 +72,7 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper t
         await host.Scenario(_ =>
         {
             _.Get.Url(Endpoint1);
-            _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }

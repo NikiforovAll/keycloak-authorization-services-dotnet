@@ -14,7 +14,7 @@ hero:
       link: /configuration/configuration-authentication
     - theme: alt
       text: Authorization
-      link: /configuration/configuration-authorization
+      link: /authorization/authorization-server
     - theme: alt
       text: HTTP REST Admin API
       link: /admin-rest-api

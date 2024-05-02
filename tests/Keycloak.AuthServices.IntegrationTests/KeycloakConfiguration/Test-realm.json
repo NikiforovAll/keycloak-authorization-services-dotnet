@@ -712,6 +712,20 @@
         "_id" : "605c8302-4d45-4d60-aff1-9d1727ddde5f",
         "uris" : [ "/*" ],
         "icon_uri" : ""
+      }, {
+        "name" : "my-workspace",
+        "type" : "urn:workspaces",
+        "ownerManagedAccess" : false,
+        "displayName" : "my-workspace",
+        "attributes" : { },
+        "_id" : "9e5ec5de-30be-44b6-a55a-d572840d2f91",
+        "uris" : [ ],
+        "scopes" : [ {
+          "name" : "workspace:delete"
+        }, {
+          "name" : "workspace:read"
+        } ],
+        "icon_uri" : ""
       } ],
       "policies" : [ {
         "id" : "04034aae-7d80-4ad4-902f-c8e57211b4c7",
@@ -724,6 +738,16 @@
           "roles" : "[{\"id\":\"Admin\",\"required\":true}]"
         }
       }, {
+        "id" : "b7e23d24-a1f0-4139-b866-6ea01d3bf9d4",
+        "name" : "Require Reader Role",
+        "description" : "",
+        "type" : "role",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "roles" : "[{\"id\":\"Reader\",\"required\":true}]"
+        }
+      }, {
         "id" : "90c2fe20-481c-4d32-b5e7-04cca9f8d9a5",
         "name" : "Default Permission",
         "description" : "A permission that applies to the default resource type",
@@ -734,8 +758,40 @@
           "defaultResourceType" : "urn:test-client:resources:default",
           "applyPolicies" : "[\"Require Admin Role\"]"
         }
+      }, {
+        "id" : "d009e33d-16f2-41a5-a235-dca56c010226",
+        "name" : "Read Workspace",
+        "description" : "",
+        "type" : "scope",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "AFFIRMATIVE",
+        "config" : {
+          "defaultResourceType" : "urn:workspaces",
+          "applyPolicies" : "[\"Require Reader Role\",\"Require Admin Role\"]",
+          "scopes" : "[\"workspace:read\"]"
+        }
+      }, {
+        "id" : "740a28fd-117d-4572-8fc2-2e65a61860d3",
+        "name" : "Delete Workspace",
+        "description" : "",
+        "type" : "scope",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "defaultResourceType" : "urn:workspaces",
+          "applyPolicies" : "[\"Require Admin Role\"]",
+          "scopes" : "[\"workspace:delete\"]"
+        }
       } ],
-      "scopes" : [ ],
+      "scopes" : [ {
+        "id" : "9bef5afa-f20c-4f24-8df9-f6cc634dece2",
+        "name" : "workspace:read",
+        "iconUri" : ""
+      }, {
+        "id" : "032c731c-c2db-4de4-89a3-b1a93bda51c7",
+        "name" : "workspace:delete",
+        "iconUri" : ""
+      } ],
       "decisionStrategy" : "UNANIMOUS"
     }
   } ],
@@ -1285,7 +1341,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "saml-role-list-mapper", "oidc-full-name-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "oidc-address-mapper" ]
       }
     }, {
       "id" : "df4acae2-494f-4c6b-8c75-1a64296e47db",
@@ -1304,7 +1360,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-usermodel-property-mapper", "saml-user-property-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "oidc-full-name-mapper", "saml-role-list-mapper", "saml-user-attribute-mapper", "oidc-sha256-pairwise-sub-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper" ]
       }
     }, {
       "id" : "79c2f0c9-65fd-4c62-83a3-0ede96795205",
