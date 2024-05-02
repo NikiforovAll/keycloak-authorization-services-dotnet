@@ -15,7 +15,8 @@ When a request to access a resource is made, the PEP intercepts the request and 
 
 Remember that to use the PEP endpoint and the Keycloak Authorization Services, you need to enable authorization for your client in the Keycloak admin console.
 
-![authz-arch-overview](/assets/authz-arch-overview.png)
+<!-- ![authz-arch-overview](/assets/authz-arch-overview.png) -->
+![authz-arch-overview](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/public/assets/authz-arch-overview.png)
 
 > [!TIP]
 > See Keycloak's documentation - [Authorization Server Architecture](https://www.keycloak.org/docs/latest/authorization_services/index.html#_overview_architecture) for more details.
