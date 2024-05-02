@@ -15,7 +15,7 @@ public class Playground(ITestOutputHelper testOutputHelper)
     private static readonly string AppSettings = "appsettings.json";
 
     [Fact(Skip = "Playground Test")]
-    public async Task RequireProtectedResource_MultipleScopes_Verified()
+    public async Task PlaygroundRequireProtectedResource_Scopes_Verified()
     {
         var policyName = "RequireProtectedResource";
         await using var host = await AlbaHost.For<Program>(
@@ -27,7 +27,6 @@ public class Playground(ITestOutputHelper testOutputHelper)
                 x.ConfigureServices(
                     (context, services) =>
                     {
-                        #region RequireProtectedResource_DefaultResource_Verified
                         services
                             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                             .AddKeycloakWebApi(context.Configuration);
@@ -47,8 +46,6 @@ public class Playground(ITestOutputHelper testOutputHelper)
 
                         services.AddAuthorizationServer(context.Configuration);
 
-                        #endregion RequireProtectedResource_DefaultResource_Verified
-
                         services.PostConfigure<JwtBearerOptions>(options =>
                             options.WithLocalKeycloakInstallation()
                         );
@@ -61,7 +58,10 @@ public class Playground(ITestOutputHelper testOutputHelper)
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Tester.UserName, TestUsersRegistry.Tester.Password);
+            _.UserAndPasswordIs(
+                TestUsers.Tester.UserName,
+                TestUsers.Tester.Password
+            );
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }

@@ -51,7 +51,6 @@ public class AuthorizationServerPolicyTests(
                         services
                             .AddAuthorizationServer(context.Configuration)
                             .AddStandardResilienceHandler(); // an example of how to extend IKeycloakProtectionClient by adding Polly
-
                         #endregion RequireProtectedResource_DefaultResource_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
@@ -66,19 +65,77 @@ public class AuthorizationServerPolicyTests(
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(TestUsersRegistry.Admin.UserName, TestUsersRegistry.Admin.Password);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
 
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsersRegistry.Tester.UserName,
-                TestUsersRegistry.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
+    }
+
+    [Fact]
+    public async Task RequireProtectedResource_Scopes_Verified()
+    {
+        var policyName = "RequireProtectedResource";
+        await using var host = await AlbaHost.For<Program>(
+            x =>
+            {
+                x.WithLogging(testOutputHelper);
+                x.UseConfiguration(AppSettings);
+
+                x.ConfigureServices(
+                    (context, services) =>
+                    {
+                        #region RequireProtectedResource_Scopes_Verified
+                        services
+                            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddKeycloakWebApi(context.Configuration);
+
+                        services
+                            .AddAuthorization()
+                            .AddKeycloakAuthorization()
+                            .AddAuthorizationBuilder()
+                            .AddPolicy(
+                                policyName,
+                                policy =>
+                                    policy.RequireProtectedResource(
+                                        resource: "my-workspace",
+                                        scope: "workspace:delete"
+                                    )
+                            );
+
+                        services.AddAuthorizationServer(context.Configuration);
+
+                        #endregion RequireProtectedResource_Scopes_Verified
+
+                        services.PostConfigure<JwtBearerOptions>(options =>
+                            options.WithLocalKeycloakInstallation()
+                        );
+                    }
+                );
+            },
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+        );
+        #region RequireProtectedResource_Scopes_Verified_Assertion
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(RunPolicyBuyName(policyName));
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(RunPolicyBuyName(policyName));
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
+        });
+        #endregion RequireProtectedResource_Scopes_Verified_Assertion
     }
 
     private static string RunPolicyBuyName(string policyName) =>

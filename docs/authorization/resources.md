@@ -51,3 +51,9 @@ And here is an example of how to create a resource and associate a scopes with i
 Keycloak provides a UI to evaluate permissions for a given resource, user, scopes, etc. This feature enables you to prototype and troubleshoot more easily. Here is an example of how to evaluate permissions for an admin user:
 
 ![permission](/images/evaluate-permissions-for-admin.png)
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified
+
+Here are the assertions from integration test for this scenario:
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified_Assertion

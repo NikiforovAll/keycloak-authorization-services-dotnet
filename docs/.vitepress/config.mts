@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from "vitepress-plugin-mermaid";
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
     title: "Keycloak.AuthServices",
     description: "",
     base: '/keycloak-authorization-services-dotnet/',
     themeConfig: {
+        logo: '/logo.svg',
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             { text: 'Home', link: '/' },
@@ -13,7 +15,6 @@ export default defineConfig({
             { text: 'Migration', link: '/migration' },
             { text: 'Examples', link: 'examples/auth-getting-started' }
         ],
-
         sidebar: {
             '/': [
                 {
@@ -38,6 +39,7 @@ export default defineConfig({
                     collapsed: false,
                     items: [
                         { text: 'Authorization Server', link: '/authorization/authorization-server' },
+                        { text: 'Protect Resources ✨', link: '/authorization/resources' },
                     ]
                 },
                 {
@@ -54,6 +56,9 @@ export default defineConfig({
         },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/NikiforovAll/keycloak-authorization-services-dotnet' }
-        ]
+        ],
+        editLink: {
+            pattern: 'https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/edit/main/docs/:path'
+        }
     }
-})
+});

@@ -1,6 +1,6 @@
 ﻿namespace Keycloak.AuthServices.IntegrationTests;
 
-public static class TestUsersRegistry
+public static class TestUsers
 {
     public static TestUser Admin =
         new(
