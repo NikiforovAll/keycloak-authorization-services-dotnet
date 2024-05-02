@@ -14,7 +14,7 @@ using Xunit.Abstractions;
 
 public static class Utils
 {
-    public static IWebHostBuilder UseConfiguration(
+    public static IWebHostBuilder WithConfiguration(
         this IWebHostBuilder hostBuilder,
         string fileName
     ) =>
@@ -28,7 +28,7 @@ public static class Utils
     ) =>
         hostBuilder.ConfigureLogging(builder =>
         {
-            builder.SetMinimumLevel(LogLevel.Debug);
+            builder.SetMinimumLevel(LogLevel.Trace);
 
             builder.Services.AddSingleton<ILoggerProvider>(
                 new XUnitLoggerProvider(
@@ -52,10 +52,43 @@ public static class Utils
         options.RequireHttpsMetadata = false;
     }
 
-    public static void WithLocalKeycloakInstallation(this JwtBearerOptions options)
+    public static void WithLocalKeycloakInstallation(
+        this JwtBearerOptions options,
+        string realm = "Test"
+    )
     {
-        options.Authority = $"localhost:8080/realms/Test";
+        options.Authority = $"localhost:8080/realms/{realm}";
         options.RequireHttpsMetadata = false;
+    }
+
+    public static (IServiceCollection services, IConfiguration configuration1) KeycloakSetup(
+        string fileName,
+        ITestOutputHelper testOutputHelper
+    )
+    {
+        var services = new ServiceCollection();
+
+        var configuration = new ConfigurationBuilder()
+            .AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), fileName), optional: false)
+            .Build();
+
+        services.AddSingleton<IConfiguration>(configuration);
+
+        services.AddLogging(builder => builder.SetMinimumLevel(LogLevel.Debug));
+
+        services.AddSingleton<ILoggerProvider>(
+            new XUnitLoggerProvider(
+                testOutputHelper,
+                new XUnitLoggerOptions
+                {
+                    IncludeScopes = true,
+                    IncludeCategory = true,
+                    IncludeLogLevel = true,
+                }
+            )
+        );
+
+        return (services, configuration);
     }
 
     public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(string fileName)
@@ -66,9 +99,8 @@ public static class Utils
             .AddEnvironmentVariables()
             .Build();
 
-        var keycloakAuthenticationOptions = configuration
-            .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
+        var keycloakAuthenticationOptions =
+            configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
 
         return keycloakAuthenticationOptions;
     }

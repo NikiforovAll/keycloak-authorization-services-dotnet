@@ -1,11 +1,11 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+﻿namespace Keycloak.AuthServices.Sdk;
 
 using Common;
 
 /// <summary>
 /// Defines a set of options used to perform Admin HTTP Client calls
 /// </summary>
-public sealed class KeycloakAdminClientOptions: KeycloakInstallationOptions
+public sealed class KeycloakAdminClientOptions : KeycloakInstallationOptions
 {
     /// <summary>
     /// Default section name

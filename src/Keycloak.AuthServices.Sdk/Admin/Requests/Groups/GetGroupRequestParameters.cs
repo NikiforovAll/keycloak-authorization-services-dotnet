@@ -1,7 +1,5 @@
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 
-using Refit;
-
 /// <summary>
 /// Optional request parameters for the GetGroups endpoint.
 /// It can be called in three different ways.
@@ -33,38 +31,32 @@ public class GetGroupRequestParameters
     /// <summary>
     /// Defines whether brief representations are returned. Default is false.
     /// </summary>
-    [AliasAs("briefRepresentation")]
     public bool? BriefRepresentation { get; init; }
 
     /// <summary>
     /// Defines whether the params LastName, FirstName,
     /// Email and Username must match exactly
     /// </summary>
-    [AliasAs("exact")]
     public bool? Exact { get; init; }
 
     /// <summary>
     /// Pagination offset.
     /// </summary>
-    [AliasAs("first")]
     public int? First { get; init; }
 
     /// <summary>
     /// Maximum results size. Default is 100.
     /// </summary>
-    [AliasAs("max")]
     public int? Max { get; init; }
 
     /// <summary>
     /// A query to search for custom attributes, in the format "<c>key1:value2 key2:value2</c>".
     /// </summary>
-    [AliasAs("q")]
     public string? Query { get; init; }
 
     /// <summary>
     /// Search for a string contained in Username, FirstName,
     /// LastName or Email.
     /// </summary>
-    [AliasAs("search")]
     public string? Search { get; init; }
 }

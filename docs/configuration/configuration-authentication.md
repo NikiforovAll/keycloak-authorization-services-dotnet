@@ -53,7 +53,7 @@ Not everything you want to do can be configured with `KeycloakAuthenticationOpti
 
 Here is a trick to bind options from configuration an override directly in the same code:
 
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2{3-5}
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2{3}
 
 Typically, ASP.NET Core expects to find these (default) options under the `Authentication:Schemes:{SchemeName}`. See [Configuring Authentication **Strategies**](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis/security?view=aspnetcore-8.0#configuring-authentication-strategy) for more details. Here is how to configure [JwtBearerOptions](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.jwtbeareroptions):
 

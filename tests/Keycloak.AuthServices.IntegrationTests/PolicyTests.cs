@@ -24,7 +24,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -80,7 +80,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -140,7 +140,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -198,7 +198,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -259,7 +259,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>

@@ -1,7 +1,6 @@
-namespace Keycloak.AuthServices.Sdk.Tests.Admin;
+namespace Keycloak.AuthServices.Sdk.Tests;
 
 using System.Net;
-using Refit;
 using RichardSzalay.MockHttp;
 using Sdk.Admin;
 
@@ -25,9 +24,10 @@ public class KeycloakRealmClientTests
     [Fact]
     public async Task GetRealmShouldCallRealmEndpoint()
     {
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master").Respond(HttpStatusCode.OK);
+        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master")
+            .Respond(HttpStatusCode.OK);
 
-        await this.keycloakRealmClient.GetRealm("master");
+        await this.keycloakRealmClient.GetRealmAsync("master");
 
         this.handler.VerifyNoOutstandingExpectation();
     }
@@ -39,7 +39,8 @@ public class KeycloakRealmClientTests
             .Respond(HttpStatusCode.NotFound);
 
         var exception = await Assert.ThrowsAsync<ApiException>(
-            () => this.keycloakRealmClient.GetRealm("nonexistent"));
+            () => this.keycloakRealmClient.GetRealmAsync("nonexistent")
+        );
 
         Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
         this.handler.VerifyNoOutstandingExpectation();

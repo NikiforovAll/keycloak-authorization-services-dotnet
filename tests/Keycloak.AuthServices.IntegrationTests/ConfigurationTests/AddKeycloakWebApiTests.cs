@@ -15,7 +15,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
     private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions =
         new()
         {
-            Authority = "http://localhost:8080/realms/Test",
+            Authority = "http://localhost:8080/realms/Test/",
             Audience = "test-client",
             RequireHttpsMetadata = false,
             TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
@@ -26,7 +26,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApi_FromConfiguration_Setup(services, context.Configuration)
@@ -59,7 +59,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApi_FromConfigurationSection_Setup(
@@ -95,7 +95,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(AddKeycloakWebApi_FromInline_Setup);
         });
 
@@ -129,7 +129,7 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(AddKeycloakWebApi_FromInline2_Setup);
         });
 

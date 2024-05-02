@@ -71,10 +71,7 @@ public static partial class KeycloakWebApiServiceCollectionExtensions
         var builder = services.AddAuthentication(jwtBearerScheme);
 
         return builder.AddKeycloakWebApi(
-            options =>
-                configuration
-                    .GetSection(configSectionName)
-                    .Bind(options, KeycloakFormatBinder.Instance),
+            options => configuration.BindKeycloakOptions(options, configSectionName),
             configureJwtBearerOptions,
             jwtBearerScheme
         );

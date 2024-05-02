@@ -18,7 +18,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions =
         new()
         {
-            Authority = "http://localhost:8080/realms/Test",
+            Authority = "http://localhost:8080/realms/Test/",
             Audience = "test-client",
             RequireHttpsMetadata = false,
             TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
@@ -31,7 +31,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApiAuthentication_FromConfiguration_Setup(
@@ -65,7 +65,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApiAuthentication_FromConfiguration2_Setup(
@@ -102,7 +102,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettingsWithOverrides);
+            x.WithConfiguration(AppSettingsWithOverrides);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApiAuthentication_FromConfigurationWithOverrides_Setup(
@@ -147,7 +147,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides_Setup(
@@ -188,7 +188,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2_Setup(
@@ -215,9 +215,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
         // #region AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2
         services.AddKeycloakWebApiAuthentication(options =>
         {
-            configuration
-                .GetSection(KeycloakAuthenticationOptions.Section)
-                .Bind(options, KeycloakFormatBinder.Instance);
+            configuration.BindKeycloakOptions(options);
 
             options.SslRequired = "none";
             options.Audience = "test-client";
@@ -230,7 +228,7 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     {
         await using var host = await AlbaHost.For<Program>(x =>
         {
-            x.UseConfiguration(AppSettings);
+            x.WithConfiguration(AppSettings);
             x.ConfigureServices(
                 (context, services) =>
                     AddKeycloakWebApiAuthentication_FromConfigurationSection_Setup(

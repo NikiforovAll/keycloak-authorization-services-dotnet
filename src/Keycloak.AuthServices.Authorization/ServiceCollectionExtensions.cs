@@ -106,7 +106,7 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     ) =>
         services.AddAuthorizationServer(
-            options => configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            options => configurationSection.BindKeycloakOptions(options),
             configureClient
         );
 

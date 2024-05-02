@@ -23,7 +23,7 @@ public class Playground(ITestOutputHelper testOutputHelper)
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>

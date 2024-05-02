@@ -1,7 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
-using Constants;
-using Refit;
+using Keycloak.AuthServices.Sdk;
+using Keycloak.AuthServices.Sdk.Admin.Models;
 
 /// <summary>
 /// Realm management
@@ -12,8 +12,26 @@ public interface IKeycloakRealmClient
     /// Get realm
     /// </summary>
     /// <param name="realm"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    [Get(KeycloakClientApiConstants.GetRealm)]
-    [Headers("Accept: application/json")]
-    Task<string> GetRealm(string realm);
+    async Task<RealmRepresentation> GetRealmAsync(
+        string realm,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetRealmWithResponseAsync(realm, cancellationToken);
+
+        return (await response.GetAsync<RealmRepresentation>(cancellationToken))!;
+    }
+
+    /// <summary>
+    /// Get realm
+    /// </summary>
+    /// <param name="realm"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> GetRealmWithResponseAsync(
+        string realm,
+        CancellationToken cancellationToken = default
+    );
 }

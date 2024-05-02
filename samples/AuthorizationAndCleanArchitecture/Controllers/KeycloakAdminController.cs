@@ -22,7 +22,7 @@ public class KeycloakAdminController : ApiControllerBase
     [HttpGet("realms")]
     public async Task<IActionResult> GetRealms()
     {
-        return this.Ok(await this.keycloakRealmClient.GetRealm(DefaultRealm));
+        return this.Ok(await this.keycloakRealmClient.GetRealmAsync(DefaultRealm));
     }
 
     [HttpGet("resources")]
