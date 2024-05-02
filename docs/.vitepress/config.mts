@@ -39,7 +39,7 @@ export default withMermaid({
                     collapsed: false,
                     items: [
                         { text: 'Authorization Server', link: '/authorization/authorization-server' },
-                        { text: 'Protect Resources ✨', link: '/authorization/resources' },
+                        { text: 'Protected Resources ✨', link: '/authorization/resources' },
                     ]
                 },
                 {

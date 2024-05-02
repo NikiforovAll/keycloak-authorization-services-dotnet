@@ -5,6 +5,7 @@ using Alba;
 using Alba.Security;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit.Abstractions;
@@ -40,7 +41,8 @@ public class Playground(ITestOutputHelper testOutputHelper)
                                 policy =>
                                     policy.RequireProtectedResource(
                                         resource: "my-workspace",
-                                        scope: "workspace:read"
+                                        scopes: ["workspace:read", "workspace:delete"],
+                                        scopesValidationMode: ScopesValidationMode.AllOf
                                     )
                             );
 
@@ -58,10 +60,7 @@ public class Playground(ITestOutputHelper testOutputHelper)
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsers.Tester.UserName,
-                TestUsers.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }

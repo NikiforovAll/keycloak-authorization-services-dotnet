@@ -26,7 +26,7 @@ Assume we have a default resource with Name *"urn:test-client:resources:default"
 
 We want to check if a given user has access to it. It is accomplished based on permissions. In our case default permission is applied to default resource type. *"Default Permission"* is based on policy named - *"Require Admin Role"*. This policy checks if a user has *"Admin"* realm role.
 
-Here is how to do it from code:
+Here is how to use `AuthorizationBuilder` to define policy for a protected resource:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_DefaultResource_Verified
 

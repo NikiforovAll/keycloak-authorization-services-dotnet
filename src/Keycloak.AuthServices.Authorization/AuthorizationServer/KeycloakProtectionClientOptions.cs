@@ -24,4 +24,25 @@ public sealed class KeycloakProtectionClientOptions : KeycloakInstallationOption
     /// When set to true, the protected resource policy provider will be used to dynamically register policies based on their names.
     /// </remarks>
     public bool UseProtectedResourcePolicyProvider { get; set; }
+
+    /// <summary>
+    /// Represents the mode for validating scopes.
+    /// </summary>
+    public ScopesValidationMode ScopesValidationMode { get; set; } = ScopesValidationMode.AllOf;
+}
+
+/// <summary>
+/// Specifies the validation mode for multiple scopes.
+/// </summary>
+public enum ScopesValidationMode
+{
+    /// <summary>
+    /// Specifies that all of the scopes must be valid.
+    /// </summary>
+    AllOf,
+
+    /// <summary>
+    /// Specifies that at least one of the scopes must be valid.
+    /// </summary>
+    AnyOf,
 }

@@ -1,6 +1,9 @@
-# Protect Resources
+# Protected Resources
 
 *Keycloak Authorization Server* is a powerful tool that provides fine-grained access control to your services and applications. It enables developers to manage **permissions** and **policies** *centrally*, providing a standardized way to secure applications regardless of the platform they are built on.
+
+*Table of Contents*:
+[[toc]]
 
 ## Example
 
@@ -39,21 +42,47 @@ To delete a workspace, a user must have the Admin role, as defined by the "Requi
 
 The *Keycloak Authorization Server* evaluates these policies whenever a user attempts to access a resource. If the user meets the conditions of the policy, the server grants the permission and the user can perform the action on the resource. This allows for powerful, fine-grained access control that can be easily managed and updated as your application evolves.
 
+## Configure Keycloak
 
-Here an example of how to create a permission for scopes:
+> [!NOTE]
+> In this section, I'm not going to show you how to setup full example, but rather provide some example, for the full configuration I suggest you looking at the source code. It contains import files that Keycloak allows you to use manually or via CLI.
+> 
+> * [tests/Keycloak.AuthServices.IntegrationTests/KeycloakConfiguration](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/tree/main/tests/Keycloak.AuthServices.IntegrationTests/KeycloakConfiguration)
+> * [tests/Keycloak.AuthServices.IntegrationTests/docker-compose.yml](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/tree/main/tests/Keycloak.AuthServices.IntegrationTests/docker-compose.yml)
+> * <https://www.keycloak.org/server/importExport>
+
+💡 Here an example of how to create a permission for scopes:
 
 ![permission](/images/read-workspace-permission.png)
 
-And here is an example of how to create a resource and associate a scopes with it:
+💡 Here is an example of how to create a resource and associate a scopes with it:
 
 ![permission](/images/my-workspace-resource.png)
 
-Keycloak provides a UI to evaluate permissions for a given resource, user, scopes, etc. This feature enables you to prototype and troubleshoot more easily. Here is an example of how to evaluate permissions for an admin user:
+💡 Keycloak provides a UI to evaluate permissions for a given resource, user, scopes, etc. This feature enables you to prototype and troubleshoot more easily. Here is an example of how to evaluate permissions for an admin user:
 
 ![permission](/images/evaluate-permissions-for-admin.png)
 
+## Add to your code
+
+Here is how to use to use protected resource authorization.
+
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified
 
-Here are the assertions from integration test for this scenario:
+Here are the assertions from the integration test for this scenario:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified_Assertion
+
+Source code of integration test: [tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/blob/main/tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs)
+
+## Validate Multiple Scopes
+
+You can specify multiple scopes to validate against and control comparison by using `ScopesValidationMode`.
+
+Here is an example for `ScopesValidationMode.AllOf`:
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_MultipleScopesAllOf_Verified
+
+Here is an example for `ScopesValidationMode.AnyOf`:
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_MultipleScopesAnyOf_Verified
