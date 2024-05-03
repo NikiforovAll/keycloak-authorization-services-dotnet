@@ -64,10 +64,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsers.Tester.UserName,
-                TestUsers.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
     }
@@ -124,10 +121,62 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsers.Tester.UserName,
-                TestUsers.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+    }
+
+    [Fact]
+    public async Task RequireClientRoles_TestClientRoleWithInlineConfiguration_Verified()
+    {
+        var policyName = "RequireResourceRoles";
+        await using var host = await AlbaHost.For<Program>(
+            x =>
+            {
+                x.WithLogging(testOutputHelper);
+                x.WithConfiguration(AppSettings);
+
+                x.ConfigureServices(
+                    (context, services) =>
+                    {
+                        #region RequireClientRoles_TestClientRoleWithInlineConfiguration_Verified
+                        services
+                            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddKeycloakWebApi(context.Configuration);
+
+                        services
+                            .AddAuthorization()
+                            .AddKeycloakAuthorization(options =>
+                                options.RolesResource = "test-client"
+                            )
+                            .AddAuthorizationBuilder()
+                            .AddPolicy(
+                                policyName,
+                                policy => policy.RequireResourceRoles(KeycloakRoles.TestClientRole)
+                            );
+
+                        #endregion RequireClientRoles_TestClientRoleWithInlineConfiguration_Verified
+
+                        services.PostConfigure<JwtBearerOptions>(options =>
+                            options.WithKeycloakFixture(this.Keycloak)
+                        );
+                    }
+                );
+            },
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+        );
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(RunPolicyBuyName(policyName));
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
+        });
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(RunPolicyBuyName(policyName));
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }
@@ -152,9 +201,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
                         services
                             .AddAuthorization()
-                            .AddKeycloakAuthorization(options =>
-                                options.RolesResource = "test-client"
-                            )
+                            .AddKeycloakAuthorization(context.Configuration)
                             .AddAuthorizationBuilder()
                             .AddPolicy(
                                 policyName,
@@ -182,10 +229,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsers.Tester.UserName,
-                TestUsers.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }
@@ -243,10 +287,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsers.Tester.UserName,
-                TestUsers.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
     }
@@ -304,10 +345,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
         await host.Scenario(_ =>
         {
             _.Get.Url(RunPolicyBuyName(policyName));
-            _.UserAndPasswordIs(
-                TestUsers.Tester.UserName,
-                TestUsers.Tester.Password
-            );
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }

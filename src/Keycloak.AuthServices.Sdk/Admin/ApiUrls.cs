@@ -42,6 +42,10 @@ internal static class ApiUrls
 
     internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
     internal const string GetUserGroups = $"{GetRealm}/users/{{id}}/groups";
+
+    internal const string JoinGroup = $"{GetRealm}/users/{{id}}/groups/{{groupId}}";
+
+    internal const string LeaveGroup = $"{GetRealm}/users/{{id}}/groups/{{groupId}}";
     #endregion
 
     #region Group API

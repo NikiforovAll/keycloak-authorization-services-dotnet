@@ -11,7 +11,7 @@ using RichardSzalay.MockHttp;
 public class KeycloakUserClientTests
 {
     private const string BaseAddress = "http://localhost:8080";
-
+    private const string MediaType = "application/json";
     private readonly MockHttpMessageHandler handler = new();
     private readonly IKeycloakUserClient keycloakUserClient;
 
@@ -29,7 +29,7 @@ public class KeycloakUserClientTests
         var userId = userFixture.Id;
 
         this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/users/{userId}")
-            .Respond(HttpStatusCode.OK, "application/json", JsonSerializer.Serialize(userFixture));
+            .Respond(HttpStatusCode.OK, MediaType, JsonSerializer.Serialize(userFixture));
 
         var user = await this.keycloakUserClient.GetUserAsync("master", userId.ToString());
 
@@ -45,7 +45,7 @@ public class KeycloakUserClientTests
             "{\"error\":\"User not found\"}";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users/{userId}")
-            .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(() => this.keycloakUserClient.GetUserAsync("master", userId.ToString()))
@@ -73,7 +73,7 @@ public class KeycloakUserClientTests
         var response = $"[{string.Join(",", users.Select(u => u.Representation))}]";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users")
-            .Respond(HttpStatusCode.OK, "application/json", response);
+            .Respond(HttpStatusCode.OK, MediaType, response);
 
         var result = await this.keycloakUserClient.GetUsersAsync("master");
 
@@ -102,7 +102,7 @@ public class KeycloakUserClientTests
             Username = "username"
         };
 
-        var url = $"{BaseAddress}/admin/realms/master/users";
+        var url = $"/admin/realms/master/users";
         var queryBuilder = new QueryBuilder
         {
             { "briefRepresentation", "False" },
@@ -124,7 +124,7 @@ public class KeycloakUserClientTests
         var response = $"[{GetUserRepresentation(Guid.NewGuid())}]";
 
         this.handler.Expect(HttpMethod.Get, url + queryBuilder.ToQueryString())
-            .Respond(HttpStatusCode.OK, "application/json", response);
+            .Respond(HttpStatusCode.OK, MediaType, response);
 
         _ = await this.keycloakUserClient.GetUsersAsync("master", getUsersRequestParameters);
 
@@ -152,7 +152,7 @@ public class KeycloakUserClientTests
             "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Post, $"/admin/realms/master/users")
-            .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
+            .Respond(HttpStatusCode.BadRequest, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(
@@ -166,150 +166,240 @@ public class KeycloakUserClientTests
         this.handler.VerifyNoOutstandingExpectation();
     }
 
-    // [Fact]
-    // public async Task UpdateUserShouldCallCorrectEndpoint()
-    // {
-    //     var userId = Guid.NewGuid();
+    [Fact]
+    public async Task UpdateUserShouldCallCorrectEndpoint()
+    {
+        var userId = Guid.NewGuid();
 
-    //     this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}")
-    //         .WithAcceptAndContentTypeHeaders()
-    //         .WithContent( /*lang=json,strict*/
-    //             "{\"firstName\":\"FirstName\"}"
-    //         )
-    //         .Respond(HttpStatusCode.NoContent);
+        this.handler.Expect(HttpMethod.Put, $"/admin/realms/master/users/{userId}")
+            .WithContent( /*lang=json,strict*/
+                "{\"firstName\":\"FirstName\"}"
+            )
+            .Respond(HttpStatusCode.NoContent);
 
-    //     await this.keycloakUserClient.UpdateUser(
-    //         "master",
-    //         userId.ToString(),
-    //         new() { FirstName = "FirstName" }
-    //     );
+        await this.keycloakUserClient.UpdateUserAsync(
+            "master",
+            userId.ToString(),
+            new() { FirstName = "FirstName" }
+        );
 
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
-    // [Fact]
-    // public async Task UpdateUserShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
-    // {
-    //     var userId = Guid.NewGuid();
-    //     const string errorMessage = /*lang=json,strict*/
-    //         "{\"errorMessage\":\"User name is missing\"}";
+    [Fact]
+    public async Task UpdateUserShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
+    {
+        var userId = Guid.NewGuid().ToString();
+        const string errorMessage = /*lang=json,strict*/
+            "{\"errorMessage\":\"User name is missing\"}";
 
-    //     this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/users/{userId}")
-    //         .WithAcceptAndContentTypeHeaders()
-    //         .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
+        this.handler.Expect(HttpMethod.Put, $"/admin/realms/master/users/{userId}")
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
-    //     var exception = await Assert.ThrowsAsync<ApiException>(
-    //         () => this.keycloakUserClient.UpdateUser("master", userId.ToString(), new User())
-    //     );
+        var exception = await FluentActions
+            .Invoking(
+                () =>
+                    this.keycloakUserClient.UpdateUserAsync(
+                        "master",
+                        userId,
+                        new UserRepresentation()
+                    )
+            )
+            .Should()
+            .ThrowAsync<KeycloakHttpClientException>();
 
-    //     exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
-    //     exception.Content.Should().Be(errorMessage);
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        exception.And.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
 
-    // [Fact]
-    // public async Task DeleteUserShouldCallCorrectEndpoint()
-    // {
-    //     var userId = Guid.NewGuid();
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
-    //     this.handler.Expect(HttpMethod.Delete, $"{BaseAddress}/admin/realms/master/users/{userId}")
-    //         .WithAcceptAndContentTypeHeaders()
-    //         .WithContent(string.Empty)
-    //         .Respond(HttpStatusCode.NoContent);
+    [Fact]
+    public async Task DeleteUserShouldCallCorrectEndpoint()
+    {
+        var userId = Guid.NewGuid();
 
-    //     await this.keycloakUserClient.DeleteUser("master", userId.ToString());
+        this.handler.Expect(HttpMethod.Delete, $"/admin/realms/master/users/{userId}")
+            .Respond(HttpStatusCode.NoContent);
 
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        await this.keycloakUserClient.DeleteUserAsync("master", userId.ToString());
 
-    // [Fact]
-    // public async Task DeleteUserShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
-    // {
-    //     var userId = Guid.NewGuid();
-    //     const string errorMessage = /*lang=json,strict*/
-    //         "{\"errorMessage\":\"User name is missing\"}";
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
-    //     this.handler.Expect(
-    //             HttpMethod.Delete,
-    //             $"{BaseAddress}/admin/realms/master/users/{userId.ToString()}"
-    //         )
-    //         .WithAcceptAndContentTypeHeaders()
-    //         .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
+    [Fact]
+    public async Task DeleteUserShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
+    {
+        var userId = Guid.NewGuid().ToString();
+        const string errorMessage = /*lang=json,strict*/
+            "{\"errorMessage\":\"User name is missing\"}";
 
-    //     var exception = await Assert.ThrowsAsync<ApiException>(
-    //         () => this.keycloakUserClient.DeleteUser("master", userId.ToString())
-    //     );
+        this.handler.Expect(HttpMethod.Delete, $"/admin/realms/master/users/{userId}")
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
-    //     exception.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-    //     exception.Content.Should().Be(errorMessage);
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        var exception = await FluentActions
+            .Invoking(() => this.keycloakUserClient.DeleteUserAsync("master", userId))
+            .Should()
+            .ThrowAsync<KeycloakHttpClientException>();
 
-    // [Fact]
-    // public async Task SendVerifyEmailShouldCallCorrectEndpoint()
-    // {
-    //     var userId = Guid.NewGuid();
+        exception.And.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
 
-    //     this.handler.Expect(
-    //             HttpMethod.Put,
-    //             $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email"
-    //         )
-    //         .WithAcceptHeader()
-    //         .Respond(HttpStatusCode.NoContent);
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
-    //     await this.keycloakUserClient.SendVerifyEmail("master", userId.ToString());
+    [Fact]
+    public async Task SendVerifyEmailShouldCallCorrectEndpoint()
+    {
+        var userId = Guid.NewGuid().ToString();
 
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        this.handler.Expect(
+                HttpMethod.Put,
+                $"/admin/realms/master/users/{userId}/send-verify-email"
+            )
+            .Respond(HttpStatusCode.OK);
 
-    // [Fact]
-    // public async Task SendVerifyEmailShouldCallCorrectEndpointWithOptionalQueryParameters()
-    // {
-    //     var userId = Guid.NewGuid();
-    //     const string clientId = "client-id";
-    //     const string redirectUri = "https://localhost:5001";
+        await this.keycloakUserClient.SendVerifyEmailAsync("master", userId.ToString());
 
-    //     var url =
-    //         $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email"
-    //         + $"?client_id={clientId}"
-    //         + $"&redirect_uri={redirectUri}";
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
-    //     this.handler.Expect(HttpMethod.Put, url)
-    //         .WithAcceptHeader()
-    //         .Respond(HttpStatusCode.NoContent);
+    [Fact]
+    public async Task SendVerifyEmailShouldCallCorrectEndpointWithOptionalQueryParameters()
+    {
+        var userId = Guid.NewGuid();
+        const string clientId = "client-id";
+        const string redirectUri = "https://localhost:5001";
 
-    //     await this.keycloakUserClient.SendVerifyEmail(
-    //         "master",
-    //         userId.ToString(),
-    //         clientId,
-    //         redirectUri
-    //     );
+        var queryBuilder = new QueryBuilder
+        {
+            { "client_id", clientId },
+            { "redirect_uri", redirectUri },
+        };
 
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        this.handler.Expect(
+                HttpMethod.Put,
+                $"/admin/realms/master/users/{userId}/send-verify-email{queryBuilder.ToQueryString()}"
+            )
+            .Respond(HttpStatusCode.OK);
 
-    // [Fact]
-    // public async Task SendVerifyEmailShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
-    // {
-    //     var userId = Guid.NewGuid();
-    //     const string errorMessage = /*lang=json,strict*/
-    //         "{\"error\":\"User not found\"}";
+        await this.keycloakUserClient.SendVerifyEmailAsync(
+            "master",
+            userId.ToString(),
+            clientId,
+            redirectUri
+        );
 
-    //     this.handler.Expect(
-    //             HttpMethod.Put,
-    //             $"{BaseAddress}/admin/realms/master/users/{userId}/send-verify-email"
-    //         )
-    //         .WithAcceptHeader()
-    //         .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
-    //     var exception = await Assert.ThrowsAsync<ApiException>(
-    //         () => this.keycloakUserClient.SendVerifyEmail("master", userId.ToString())
-    //     );
+    [Fact]
+    public async Task SendVerifyEmailShouldThrowNotFoundApiExceptionWhenUserDoesNotExist()
+    {
+        var userId = Guid.NewGuid();
+        const string errorMessage = /*lang=json,strict*/
+            "{\"error\":\"User not found\"}";
 
-    //     exception.StatusCode.Should().Be(HttpStatusCode.NotFound);
-    //     exception.Content.Should().Be(errorMessage);
-    //     this.handler.VerifyNoOutstandingExpectation();
-    // }
+        this.handler.Expect(
+                HttpMethod.Put,
+                $"/admin/realms/master/users/{userId}/send-verify-email"
+            )
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
+
+        var exception = await FluentActions
+            .Invoking(
+                () => this.keycloakUserClient.SendVerifyEmailAsync("master", userId.ToString())
+            )
+            .Should()
+            .ThrowAsync<KeycloakHttpClientException>();
+
+        exception.And.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task ExecuteActionsEmailAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var actions = new List<string> { "UPDATE_PASSWORD" };
+        var realm = "master";
+        var expectedUrl =
+            $"{BaseAddress}/admin/realms/{realm}/users/{userId}/execute-actions-email";
+
+        var request = new ExecuteActionsEmailRequest
+        {
+            ClientId = "client-id",
+            Lifespan = 1800,
+            RedirectUri = "http://localhost:3000/callback",
+            Actions = actions
+        };
+
+        this.handler.Expect(HttpMethod.Put, expectedUrl).Respond(HttpStatusCode.OK);
+
+        // Act
+        await this.keycloakUserClient.ExecuteActionsEmailAsync(realm, userId, request);
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task GetUserGroupsAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var realm = "master";
+        var expectedUrl = $"/admin/realms/{realm}/users/{userId}/groups";
+
+        this.handler.Expect(HttpMethod.Get, expectedUrl)
+            .Respond(
+                HttpStatusCode.OK,
+                MediaType,
+                JsonSerializer.Serialize(Array.Empty<GroupRepresentation>())
+            );
+
+        // Act
+        await this.keycloakUserClient.GetUserGroupsAsync(realm, userId, new());
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task JoinGroupAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var groupId = Guid.NewGuid().ToString();
+        var realm = "master";
+        var expectedUrl = $"/admin/realms/{realm}/users/{userId}/groups/{groupId}";
+
+        this.handler.Expect(HttpMethod.Put, expectedUrl).Respond(HttpStatusCode.NoContent);
+
+        // Act
+        await this.keycloakUserClient.JoinGroupAsync(realm, userId, groupId);
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task LeaveGroupAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var groupId = Guid.NewGuid().ToString();
+        var realm = "master";
+        var expectedUrl = $"/admin/realms/{realm}/users/{userId}/groups/{groupId}";
+
+        this.handler.Expect(HttpMethod.Delete, expectedUrl).Respond(HttpStatusCode.NoContent);
+
+        // Act
+        await this.keycloakUserClient.LeaveGroupAsync(realm, userId, groupId);
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
 
     private static string GetUserRepresentation(Guid userId) =>
         /*lang=json,strict*/"""

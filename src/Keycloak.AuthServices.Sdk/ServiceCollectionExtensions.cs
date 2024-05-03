@@ -15,6 +15,42 @@ public static class ServiceCollectionExtensions
     /// TBD:
     /// </summary>
     /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <param name="configureClient"></param>
+    /// <param name="keycloakClientSectionName"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddKeycloakAdminHttpClient(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string keycloakClientSectionName = KeycloakAdminClientOptions.Section
+    ) =>
+        services.AddKeycloakAdminHttpClient(
+            options => configuration.BindKeycloakOptions(options, keycloakClientSectionName),
+            configureClient
+        );
+
+    /// <summary>
+    /// TBD:
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configurationSection"></param>
+    /// <param name="configureClient"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddKeycloakAdminHttpClient(
+        this IServiceCollection services,
+        IConfigurationSection configurationSection,
+        Action<HttpClient>? configureClient = default
+    ) =>
+        services.AddKeycloakAdminHttpClient(
+            options => configurationSection.BindKeycloakOptions(options),
+            configureClient
+        );
+
+    /// <summary>
+    /// TBD:
+    /// </summary>
+    /// <param name="services"></param>
     /// <param name="configureKeycloakOptions"></param>
     /// <param name="configureClient"></param>
     /// <returns></returns>v
@@ -24,7 +60,7 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
-        services.Configure<KeycloakAdminClientOptions>(configureKeycloakOptions);
+        services.Configure(configureKeycloakOptions);
 
         services.AddTransient<IKeycloakRealmClient>(sp => sp.GetRequiredService<IKeycloakClient>());
         services.AddTransient<IKeycloakProtectedResourceClient>(sp =>
@@ -75,23 +111,4 @@ public static class ServiceCollectionExtensions
 
         return services.AddKeycloakAdminHttpClient(configureKeycloakOptions, configureClient);
     }
-
-    /// <summary>
-    /// Adds keycloak confidential client and underlying token management
-    /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    /// <param name="configureClient"></param>
-    /// <param name="keycloakClientSectionName"></param>
-    /// <returns></returns>
-    public static IHttpClientBuilder AddKeycloakAdminHttpClient(
-        this IServiceCollection services,
-        IConfiguration configuration,
-        Action<HttpClient>? configureClient = default,
-        string keycloakClientSectionName = KeycloakAdminClientOptions.Section
-    ) =>
-        services.AddKeycloakAdminHttpClient(
-            options => configuration.BindKeycloakOptions(options, keycloakClientSectionName),
-            configureClient
-        );
 }

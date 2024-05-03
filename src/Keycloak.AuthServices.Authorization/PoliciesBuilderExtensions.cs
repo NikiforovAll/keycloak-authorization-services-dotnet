@@ -11,6 +11,7 @@ public static class PoliciesBuilderExtensions
 {
     /// <summary>
     /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
+    /// Note, make sure role source is configure. See documentation for more details.
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="roles"></param>

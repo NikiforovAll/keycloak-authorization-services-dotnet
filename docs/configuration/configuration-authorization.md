@@ -15,13 +15,30 @@ With [Keycloak.AuthServices.Authorization](https://www.nuget.org/packages/Keyclo
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRole_Verified
 
-Configure default source:
+Configure default source. The client name is taken from the `KeycloakAuthorizationOptions.Resource`:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRoleWithConfiguration_Verified
 
+```json
+{
+  "Keycloak": {
+    "resource": "test-client"
+  }
+}
+```
+
+> [!IMPORTANT]
+> If you don't configure the default source `KeycloakException` exception will be thrown.
+
+Override default source with `KeycloakAuthorizationOptions.RolesResource`:
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRoleWithInlineConfiguration_Verified
+
+Note it has more priority over the `KeycloakAuthorizationOptions.Resource`
+
 ## Keycloak Role Claims Transformation
 
-Keycloak roles can be automatically transformed to [AspNetCore Roles](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles). This feature is disabled by default and is based on `KeycloakRolesClaimsTransformation`.
+Keycloak roles can be automatically transformed to [AspNetCore Roles](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles). This feature is **disabled by default** and is based on `KeycloakRolesClaimsTransformation`.
 
 Specify `KeycloakAuthorizationOptions.EnableRolesMapping` to enable it. E.g.:
 

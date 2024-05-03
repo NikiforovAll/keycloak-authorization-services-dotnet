@@ -20,25 +20,32 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configuration"></param>
-    /// <param name="keycloakClientSectionName"></param>
+    /// <param name="configSectionName"></param>
     /// <returns></returns>
-    [Obsolete(
-        "Method overload will be removed in future versions. Use AddKeycloakAuthorization together with AddAuthorizationServer instead"
-    )]
     public static IServiceCollection AddKeycloakAuthorization(
         this IServiceCollection services,
         IConfiguration configuration,
-        string keycloakClientSectionName = KeycloakProtectionClientOptions.Section
+        string configSectionName = KeycloakAuthorizationOptions.Section
     )
     {
-        services.AddAuthorizationServer(configuration, keycloakClientSectionName);
+        var configurationSection = configuration.GetSection(configSectionName);
 
-        services.AddSingleton<IAuthorizationHandler, RptRequirementHandler>();
-        services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
-        services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
-
-        return services;
+        return services.AddKeycloakAuthorization(configurationSection);
     }
+
+    /// <summary>
+    /// Adds keycloak authorization services
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configurationSection"></param>
+    /// <returns></returns>
+    public static IServiceCollection AddKeycloakAuthorization(
+        this IServiceCollection services,
+        IConfigurationSection configurationSection
+    ) =>
+        services.AddKeycloakAuthorization(options =>
+            configurationSection.BindKeycloakOptions(options)
+        );
 
     /// <summary>
     /// Adds keycloak authorization services
@@ -50,6 +57,9 @@ public static class ServiceCollectionExtensions
         Action<KeycloakAuthorizationOptions>? configureKeycloakAuthorizationOptions = null
     )
     {
+        configureKeycloakAuthorizationOptions ??= _ => { };
+        services.Configure(configureKeycloakAuthorizationOptions);
+
         services.AddSingleton<IAuthorizationHandler, RptRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
@@ -66,9 +76,6 @@ public static class ServiceCollectionExtensions
                 keycloakOptions.RolesResource ?? keycloakOptions.Resource
             );
         });
-        configureKeycloakAuthorizationOptions ??= _ => { };
-
-        services.Configure<KeycloakAuthorizationOptions>(configureKeycloakAuthorizationOptions);
 
         return services;
     }
@@ -84,14 +91,13 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddAuthorizationServer(
         this IServiceCollection services,
         IConfiguration configuration,
-        string configSectionName = KeycloakProtectionClientOptions.Section,
-        Action<HttpClient>? configureClient = default
-    )
-    {
-        var configurationSection = configuration.GetSection(configSectionName);
-
-        return services.AddAuthorizationServer(configurationSection, configureClient);
-    }
+        Action<HttpClient>? configureClient = default,
+        string configSectionName = KeycloakProtectionClientOptions.Section
+    ) =>
+        services.AddAuthorizationServer(
+            configuration.GetSection(configSectionName),
+            configureClient
+        );
 
     /// <summary>
     /// Adds Keycloak Protection client and auto header propagation
@@ -123,10 +129,14 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
+        configureKeycloakOptions ??= _ => { };
+        services.Configure(configureKeycloakOptions);
+
         services.AddHttpContextAccessor();
 
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
 
+        // (!) resolved locally, will not work with PostConfigure and IOptions pattern
         var keycloakOptions = new KeycloakProtectionClientOptions();
         configureKeycloakOptions.Invoke(keycloakOptions);
 
@@ -134,8 +144,6 @@ public static class ServiceCollectionExtensions
         {
             services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
         }
-
-        services.AddOptions<KeycloakProtectionClientOptions>().Configure(configureKeycloakOptions);
 
         return services
             .AddHttpClient<IKeycloakProtectionClient, KeycloakProtectionClient>()

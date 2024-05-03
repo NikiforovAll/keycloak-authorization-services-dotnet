@@ -19,20 +19,7 @@ public partial class KeycloakClient : IKeycloakClient
     /// <param name="httpClient"></param>
     public KeycloakClient(HttpClient httpClient) => this.httpClient = httpClient;
 
-    /// <inheritdoc/>
-    public async Task<HttpResponseMessage> CreateUserWithResponseAsync(
-        string realm,
-        UserRepresentation user,
-        CancellationToken cancellationToken = default
-    )
-    {
-        var path = ApiUrls.CreateUser.Replace(RealmParam, realm);
-
-        var responseMessage = await this.httpClient.PostAsJsonAsync(path, user, cancellationToken);
-
-        return responseMessage!;
-    }
-
+    #region Realm
     /// <inheritdoc/>
     public async Task<HttpResponseMessage> GetRealmWithResponseAsync(
         string realm,
@@ -45,6 +32,22 @@ public partial class KeycloakClient : IKeycloakClient
             path,
             cancellationToken: cancellationToken
         );
+
+        return responseMessage!;
+    }
+    #endregion
+
+    #region User
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> CreateUserWithResponseAsync(
+        string realm,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.CreateUser.Replace(RealmParam, realm);
+
+        var responseMessage = await this.httpClient.PostAsJsonAsync(path, user, cancellationToken);
 
         return responseMessage!;
     }
@@ -113,4 +116,181 @@ public partial class KeycloakClient : IKeycloakClient
 
         return responseMessage!;
     }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> UpdateUserWithResponseAsync(
+        string realm,
+        string userId,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.UpdateUser.Replace(RealmParam, realm).Replace("{id}", userId);
+
+        var responseMessage = await this.httpClient.PutAsJsonAsync(path, user, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> DeleteUserWithResponseAsync(
+        string realm,
+        string userId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.DeleteUser.Replace(RealmParam, realm).Replace("{id}", userId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> SendVerifyEmailWithResponseAsync(
+        string realm,
+        string userId,
+        string? clientId = null,
+        string? redirectUri = null,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.SendVerifyEmail.Replace(RealmParam, realm).Replace("{id}", userId);
+
+        var queryBuilder = new QueryBuilder();
+
+        if (clientId is not null)
+        {
+            queryBuilder.Add("client_id", clientId);
+        }
+
+        if (redirectUri is not null)
+        {
+            queryBuilder.Add("redirect_uri", redirectUri);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.PutAsync(
+            url,
+            new StringContent(string.Empty),
+            cancellationToken
+        );
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> ExecuteActionsEmailWithResponseAsync(
+        string realm,
+        string userId,
+        ExecuteActionsEmailRequest request,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.ExecuteActionsEmail.Replace("{realm}", realm).Replace("{id}", userId);
+
+        var queryBuilder = new QueryBuilder();
+
+        if (request.ClientId is not null)
+        {
+            queryBuilder.Add("client_id", request.ClientId);
+        }
+
+        if (request.RedirectUri is not null)
+        {
+            queryBuilder.Add("redirect_uri", request.RedirectUri);
+        }
+
+        if (request.Lifespan.HasValue)
+        {
+            queryBuilder.Add("lifespan", request.Lifespan?.ToString()!);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.PutAsJsonAsync(
+            url,
+            request.Actions,
+            cancellationToken
+        );
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
+        string realm,
+        string userId,
+        GetUserGroupsRequestParameters parameters,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetUserGroups.Replace("{realm}", realm).Replace("{id}", userId);
+
+        var queryBuilder = new QueryBuilder();
+
+        if (parameters.BriefRepresentation.HasValue)
+        {
+            queryBuilder.Add("briefRepresentation", parameters.BriefRepresentation.ToString());
+        }
+
+        if (parameters.First.HasValue)
+        {
+            queryBuilder.Add("first", parameters.First.ToString());
+        }
+
+        if (parameters.Max.HasValue)
+        {
+            queryBuilder.Add("max", parameters.Max.ToString()!);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> JoinGroupWithResponseAsync(
+        string realm,
+        string userId,
+        string groupId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls
+            .JoinGroup.Replace(RealmParam, realm)
+            .Replace("{id}", userId)
+            .Replace("{groupId}", groupId);
+
+        var responseMessage = await this.httpClient.PutAsync(
+            path,
+            new StringContent(string.Empty),
+            cancellationToken
+        );
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> LeaveGroupWithResponseAsync(
+        string realm,
+        string userId,
+        string groupId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls
+            .LeaveGroup.Replace(RealmParam, realm)
+            .Replace("{id}", userId)
+            .Replace("{groupId}", groupId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    #endregion
 }
