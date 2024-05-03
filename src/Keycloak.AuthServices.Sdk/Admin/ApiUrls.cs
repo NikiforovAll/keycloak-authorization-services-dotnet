@@ -1,9 +1,9 @@
-namespace Keycloak.AuthServices.Sdk.Admin.Constants;
+namespace Keycloak.AuthServices.Sdk.Admin;
 
 /// <summary>
 /// Keycloak API endpoints
 /// </summary>
-internal static class KeycloakClientApiConstants
+internal static class ApiUrls
 {
     private const string AdminApiBase = "/admin";
 
@@ -42,6 +42,9 @@ internal static class KeycloakClientApiConstants
 
     internal const string ExecuteActionsEmail = $"{GetRealm}/users/{{id}}/execute-actions-email";
     internal const string GetUserGroups = $"{GetRealm}/users/{{id}}/groups";
+    #endregion
+
+    #region Group API
 
     internal const string GetGroups = $"{GetRealm}/groups";
     internal const string CreateGroup = $"{GetRealm}/groups";

@@ -1,36 +1,122 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
+using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
+
 /// <summary>
 /// User management
 /// </summary>
 public interface IKeycloakUserClient
 {
-    // /// <summary>
-    // /// Get a stream of users on the realm.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="parameters">Optional query parameters.</param>
-    // /// <returns>A stream of users, filtered according to query parameters.</returns>
-    // Task<IEnumerable<User>> GetUsers(string realm, GetUsersRequestParameters? parameters = default);
+    /// <summary>
+    /// Get a stream of users on the realm.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    async Task<IEnumerable<UserRepresentation>> GetUsersAsync(
+        string realm,
+        GetUsersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetUsersWithResponseAsync(realm, parameters, cancellationToken);
 
-    // /// <summary>
-    // /// Get representation of a user.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="userId">User ID.</param>
-    // /// <returns>The user representation.</returns>
-    // Task<User> GetUser(string realm, string userId);
+        return (
+            await response.GetResponseAsync<IEnumerable<UserRepresentation>>(cancellationToken)
+        )!;
+    }
 
-    // /// <summary>
-    // /// Create a new user.
-    // /// </summary>
-    // /// <remarks>
-    // /// Username must be unique.
-    // /// </remarks>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="user">User representation.</param>
-    // /// <returns></returns>
-    // Task<HttpResponseMessage> CreateUser(string realm, User user);
+    /// <summary>
+    /// Get a stream of users on the realm.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    Task<HttpResponseMessage> GetUsersWithResponseAsync(
+        string realm,
+        GetUsersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Get representation of a user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="includeUserProfileMetadata"> Indicates if the user profile metadata should be added to the response.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The user representation.</returns>
+    async Task<UserRepresentation> GetUserAsync(
+        string realm,
+        string userId,
+        bool includeUserProfileMetadata = false,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetUserWithResponseAsync(
+            realm,
+            userId,
+            includeUserProfileMetadata,
+            cancellationToken
+        );
+
+        return (await response.GetResponseAsync<UserRepresentation>(cancellationToken))!;
+    }
+
+    // <summary>
+    /// Get representation of a user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="includeUserProfileMetadata"> Indicates if the user profile metadata should be added to the response.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The user representation.</returns>
+    Task<HttpResponseMessage> GetUserWithResponseAsync(
+        string realm,
+        string userId,
+        bool includeUserProfileMetadata = false,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Create a new user.
+    /// </summary>
+    /// <remarks>
+    /// Username must be unique.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="user">User representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task CreateUserAsync(
+        string realm,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.CreateUserWithResponseAsync(realm, user, cancellationToken);
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Create a new user.
+    /// </summary>
+    /// <remarks>
+    /// Username must be unique.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="user">User representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> CreateUserWithResponseAsync(
+        string realm,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    );
 
     // /// <summary>
     // /// Update the user.

@@ -1,10 +1,9 @@
 namespace Keycloak.AuthServices.Sdk.Admin;
-
 /// <summary>
 /// Keycloak Admin API Client
 /// </summary>
 /// <remarks>
-/// Aggregates multiple clients. <see cref="IKeycloakRealmClient"/> and <see cref="IKeycloakProtectedResourceClient"/>
+/// Aggregates multiple clients
 /// </remarks>
 public interface IKeycloakClient
     : IKeycloakRealmClient,

@@ -75,7 +75,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
     [Fact]
     public async Task RequireClientRoles_TestClientRole_Verified()
     {
-        var policyName = "RequireResourceRolesWithSource";
+        var policyName = "RequireResourceRolesForClient";
         await using var host = await AlbaHost.For<Program>(
             x =>
             {
@@ -97,7 +97,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                             .AddPolicy(
                                 policyName,
                                 policy =>
-                                    policy.RequireResourceRolesWithSource(
+                                    policy.RequireResourceRolesForClient(
                                         "test-client",
                                         [KeycloakRoles.TestClientRole]
                                     )

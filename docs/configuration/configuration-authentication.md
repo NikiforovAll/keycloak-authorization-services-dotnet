@@ -1,6 +1,6 @@
 # Configure Authentication
 
-**Keycloak.AuthServices.Authentication** provides robust authentication mechanisms for both web APIs and web applications. For web APIs, it supports JWT Bearer token authentication, which allows clients to authenticate to the API by providing a JWT token in the Authorization header of their requests. For web applications, it supports OpenID Connect, a simple identity layer on top of the OAuth 2.0 protocol
+[Keycloak.AuthServices.Authentication](https://www.nuget.org/packages/Keycloak.AuthServices.Authentication) provides robust authentication mechanisms for both web APIs and web applications. For web APIs, it supports JWT Bearer token authentication, which allows clients to authenticate to the API by providing a JWT token in the Authorization header of their requests. For web applications, it supports OpenID Connect, a simple identity layer on top of the OAuth 2.0 protocol
 
 ---
 

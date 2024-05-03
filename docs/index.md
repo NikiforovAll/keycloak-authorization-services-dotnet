@@ -16,14 +16,14 @@ hero:
       text: Authorization
       link: /authorization/authorization-server
     - theme: alt
-      text: HTTP REST Admin API
-      link: /admin-rest-api
+      text: HTTP Admin REST API
+      link: /admin-rest-api/admin-rest-api
 
 features:
   - title: 🔒Authentication
-    details: Keycloak.AuthServices provides robust authentication mechanisms for both web APIs and web applications. For web APIs, it supports JWT Bearer token authentication, which allows clients to authenticate to the API by providing a JWT token in the Authorization header of their requests. For web applications, it supports OpenID Connect, a simple identity layer on top of the OAuth 2.0 protocol, which allows clients to verify the identity of the end-user based on the authentication performed by an authorization server, as well as to obtain basic profile information about the end-user.
+    details: Keycloak.AuthServices provides robust authentication mechanisms for both web APIs and web applications. For web APIs, it supports JWT Bearer token authentication, which allows clients to authenticate to the API by providing a JWT token in the Authorization header of their requests. For web applications, it supports OpenID Connect, a simple identity layer on top of the OAuth 2.0 protocol, which allows clients to verify the identity of the end-user, obtain basic profile information about the end-user, etc.
   - title: 🗝️Authorization
     details: Keycloak.AuthServices allows authorization based role-based access control (RBAC). It also enables Keycloak to function as an Authorization Server, enforcing execution policies based on permissions of authenticated users. This ensures secure access to resources, with the ability to define fine-grained permissions and policies.
-  - title: ⚙️ HTTP REST Admin API integration
-    details: Keycloak.AuthServices includes an SDK client that integrates with the Keycloak Admin HTTP REST API. This allows developers to manage and configure Keycloak instances programmatically, providing a high degree of flexibility and automation.
+  - title: ⚙️ HTTP Admin REST API integration
+    details: Keycloak.AuthServices includes an SDK client that integrates with the Keycloak Admin API. This allows developers to manage and configure Keycloak instances programmatically, providing a high degree of flexibility and automation.
 ---

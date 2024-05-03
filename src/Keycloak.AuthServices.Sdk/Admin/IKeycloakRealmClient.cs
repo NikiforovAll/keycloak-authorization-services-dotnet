@@ -21,7 +21,7 @@ public interface IKeycloakRealmClient
     {
         var response = await this.GetRealmWithResponseAsync(realm, cancellationToken);
 
-        return (await response.GetAsync<RealmRepresentation>(cancellationToken))!;
+        return (await response.GetResponseAsync<RealmRepresentation>(cancellationToken))!;
     }
 
     /// <summary>

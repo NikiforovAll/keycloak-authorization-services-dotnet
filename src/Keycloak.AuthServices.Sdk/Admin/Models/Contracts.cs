@@ -8062,73 +8062,31 @@ public partial class FileResponse : System.IDisposable
     "NSwag",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-public partial class KeycloakException : System.Exception
+public partial class KeycloakHttpClientException : System.Exception
 {
     public int StatusCode { get; private set; }
 
-    public string? Response { get; private set; }
+    public string HttpResponse { get; private set; }
 
-    public System.Collections.Generic.IReadOnlyDictionary<
-        string,
-        System.Collections.Generic.IEnumerable<string>
-    > Headers { get; private set; }
+    public ErrorResponse Response { get; private set; }
 
-    public KeycloakException(
+    public KeycloakHttpClientException(
         string message,
         int statusCode,
-        string? response,
-        System.Collections.Generic.IReadOnlyDictionary<
-            string,
-            System.Collections.Generic.IEnumerable<string>
-        > headers,
+        string httpResponse,
+        ErrorResponse response,
         System.Exception? innerException
     )
-        : base(
-            message
-                + "\n\nStatus: "
-                + statusCode
-                + "\nResponse: \n"
-                + (
-                    (response == null)
-                        ? "(null)"
-                        : response.Substring(0, response.Length >= 512 ? 512 : response.Length)
-                ),
-            innerException
-        )
+        : base(message + "\n\nStatus: " + statusCode, innerException)
     {
         StatusCode = statusCode;
+        HttpResponse = httpResponse;
         Response = response;
-        Headers = headers;
     }
 
     public override string ToString()
     {
-        return string.Format("HTTP Response: \n\n{0}\n\n{1}", Response, base.ToString());
-    }
-}
-
-[System.CodeDom.Compiler.GeneratedCode(
-    "NSwag",
-    "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
-)]
-public partial class KeycloakException<TResult> : KeycloakException
-{
-    public TResult Result { get; private set; }
-
-    public KeycloakException(
-        string message,
-        int statusCode,
-        string? response,
-        System.Collections.Generic.IReadOnlyDictionary<
-            string,
-            System.Collections.Generic.IEnumerable<string>
-        > headers,
-        TResult result,
-        System.Exception? innerException
-    )
-        : base(message, statusCode, response, headers, innerException)
-    {
-        Result = result;
+        return string.Format("HTTP Response: \n\n{0}\n\n{1}", HttpResponse, base.ToString());
     }
 }
 

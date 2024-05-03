@@ -49,6 +49,34 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
+    /// TBD:
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="keycloakAdminClientOptions"></param>
+    /// <param name="configureClient"></param>
+    /// <returns></returns>v
+    public static IHttpClientBuilder AddKeycloakAdminHttpClient(
+        this IServiceCollection services,
+        KeycloakAdminClientOptions keycloakAdminClientOptions,
+        Action<HttpClient>? configureClient = default
+    )
+    {
+        void configureKeycloakOptions(KeycloakAdminClientOptions options)
+        {
+            options.Realm = keycloakAdminClientOptions.Realm;
+            options.AuthServerUrl = keycloakAdminClientOptions.AuthServerUrl;
+            options.Resource = keycloakAdminClientOptions.Resource;
+            // redundant
+            options.SslRequired = keycloakAdminClientOptions.SslRequired;
+            options.VerifyTokenAudience = keycloakAdminClientOptions.VerifyTokenAudience;
+            options.Credentials = keycloakAdminClientOptions.Credentials;
+            options.TokenClockSkew = keycloakAdminClientOptions.TokenClockSkew;
+        }
+
+        return services.AddKeycloakAdminHttpClient(configureKeycloakOptions, configureClient);
+    }
+
+    /// <summary>
     /// Adds keycloak confidential client and underlying token management
     /// </summary>
     /// <param name="services"></param>

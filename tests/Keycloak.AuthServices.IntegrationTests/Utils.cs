@@ -69,7 +69,7 @@ public static class Utils
         var services = new ServiceCollection();
 
         var configuration = new ConfigurationBuilder()
-            .AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), fileName), optional: false)
+            .AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), fileName), optional: true)
             .Build();
 
         services.AddSingleton<IConfiguration>(configuration);

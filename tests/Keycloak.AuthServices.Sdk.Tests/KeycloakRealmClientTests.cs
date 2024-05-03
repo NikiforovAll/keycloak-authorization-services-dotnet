@@ -1,12 +1,11 @@
 namespace Keycloak.AuthServices.Sdk.Tests;
 
 using System.Net;
+using Keycloak.AuthServices.Sdk.Admin;
+using Keycloak.AuthServices.Sdk.Admin.Models;
 using RichardSzalay.MockHttp;
-using Sdk.Admin;
 
-#pragma warning disable CA1001 // Types that own disposable fields should be disposable
 public class KeycloakRealmClientTests
-#pragma warning restore CA1001 // Types that own disposable fields should be disposable
 {
     private const string BaseAddress = "http://localhost:8080";
 
@@ -18,14 +17,14 @@ public class KeycloakRealmClientTests
         var httpClient = this.handler.ToHttpClient();
         httpClient.BaseAddress = new Uri(BaseAddress);
 
-        this.keycloakRealmClient = RestService.For<IKeycloakRealmClient>(httpClient);
+        this.keycloakRealmClient = new KeycloakClient(httpClient);
     }
 
     [Fact]
     public async Task GetRealmShouldCallRealmEndpoint()
     {
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master")
-            .Respond(HttpStatusCode.OK);
+        this.handler.Expect(HttpMethod.Get, "/admin/realms/master")
+            .Respond(HttpStatusCode.OK, "application/json", "{}");
 
         await this.keycloakRealmClient.GetRealmAsync("master");
 
@@ -35,14 +34,20 @@ public class KeycloakRealmClientTests
     [Fact]
     public async Task GetRealmShouldThrowNotFoundApiExceptionWhenRealmDoesNotExist()
     {
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/nonexistent")
-            .Respond(HttpStatusCode.NotFound);
+        this.handler.Expect(HttpMethod.Get, "/admin/realms/nonexistent")
+            .Respond(
+                HttpStatusCode.NotFound,
+                "application/json",
+                /*lang=json,strict*/"{\"error\": \"Realm not found\"}"
+            );
 
-        var exception = await Assert.ThrowsAsync<ApiException>(
-            () => this.keycloakRealmClient.GetRealmAsync("nonexistent")
-        );
+        var exception = await FluentActions
+            .Invoking(() => this.keycloakRealmClient.GetRealmAsync("nonexistent"))
+            .Should()
+            .ThrowAsync<KeycloakHttpClientException>();
 
-        Assert.Equal(HttpStatusCode.NotFound, exception.StatusCode);
+        exception.And.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
+
         this.handler.VerifyNoOutstandingExpectation();
     }
 }

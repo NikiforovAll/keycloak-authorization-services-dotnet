@@ -2,7 +2,7 @@
 
 *RBAC* (Role-Based Access Control) is a widely used authorization model in software applications. It provides a way to control access to resources based on the roles assigned to users. Keycloak, an open-source identity and access management solution, offers robust support for RBAC.
 
-With Keycloak, you can configure roles by defining realm roles and resource roles. Realm roles are global roles that apply to the entire realm, while resource roles are specific to a particular client or resource.
+With [Keycloak.AuthServices.Authorization](https://www.nuget.org/packages/Keycloak.AuthServices.Authorization), you can configure roles by defining realm roles and resource roles. Realm roles are global roles that apply to the entire realm, while resource roles are specific to a particular client or resource.
 
 *Table of Contents*:
 [[toc]]
