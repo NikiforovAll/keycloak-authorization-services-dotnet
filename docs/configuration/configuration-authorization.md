@@ -15,7 +15,7 @@ With [Keycloak.AuthServices.Authorization](https://www.nuget.org/packages/Keyclo
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRole_Verified
 
-Configure default source. The client name is taken from the `KeycloakAuthorizationOptions.Resource`:
+Configure default roles source. The client name is taken from the `KeycloakAuthorizationOptions.Resource`:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRoleWithConfiguration_Verified
 
@@ -28,7 +28,7 @@ Configure default source. The client name is taken from the `KeycloakAuthorizati
 ```
 
 > [!IMPORTANT]
-> If you don't configure the default source `KeycloakException` exception will be thrown.
+> If you don't configure the default roles source `KeycloakException` exception will be thrown.
 
 Override default source with `KeycloakAuthorizationOptions.RolesResource`:
 

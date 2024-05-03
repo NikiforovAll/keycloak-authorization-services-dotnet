@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
 
+/// <remarks>
+/// Used for demonstration/docs, this is why this class is so verbose
+/// </remarks>
 public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
     : AuthenticationScenarioNoKeycloak()
 {

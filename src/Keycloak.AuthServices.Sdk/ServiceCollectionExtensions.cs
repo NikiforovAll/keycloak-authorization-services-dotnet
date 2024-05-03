@@ -63,11 +63,11 @@ public static class ServiceCollectionExtensions
         services.Configure(configureKeycloakOptions);
 
         services.AddTransient<IKeycloakRealmClient>(sp => sp.GetRequiredService<IKeycloakClient>());
+        services.AddTransient<IKeycloakUserClient>(sp => sp.GetRequiredService<IKeycloakClient>());
+        services.AddTransient<IKeycloakGroupClient>(sp => sp.GetRequiredService<IKeycloakClient>());
         services.AddTransient<IKeycloakProtectedResourceClient>(sp =>
             sp.GetRequiredService<IKeycloakClient>()
         );
-        services.AddTransient<IKeycloakUserClient>(sp => sp.GetRequiredService<IKeycloakClient>());
-
         return services
             .AddHttpClient(
                 "keycloak_admin_api",

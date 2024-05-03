@@ -1,113 +1,228 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
+using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
+
 /// <summary>
 /// Group management
 /// </summary>
 public interface IKeycloakGroupClient
 {
-    // /// <summary>
-    // /// Get a stream of groups on the realm.
-    // /// </summary>
-    // /// <param name="realm">Realm name.</param>
-    // /// <param name="parameters">Optional query parameters.</param>
-    // /// <returns>A stream of groups, filtered according to query parameters.</returns>
-    // Task<IEnumerable<Group>> GetGroups(
-    //     string realm,
-    //     GetGroupRequestParameters? parameters = default
-    // );
-
-    // /// <summary>
-    // /// Get representation of a group.
-    // /// </summary>
-    // /// <param name="realm">Realm name.</param>
-    // /// <param name="groupId">group ID.</param>
-    // /// <returns>The group representation.</returns>
-    // Task<Group> GetGroup(string realm, string groupId);
-
-    // /// <summary>
-    // /// Create a new group.
-    // /// </summary>
-    // /// <remarks>
-    // /// Group name must be unique.
-    // /// </remarks>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="group">Group representation.</param>
-    // /// <returns></returns>
-    // Task<HttpResponseMessage> CreateGroup(string realm, Group group);
-
-    // /// <summary>
-    // /// Update the group.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="groupId">group ID.</param>
-    // /// <param name="group">Group representation.</param>
-    // /// <returns></returns>
-    // Task<HttpResponseMessage> UpdateGroup(string realm, string groupId, Group group);
-
-    //    /// <summary>
-    // /// Get a stream of groups on the realm.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="parameters">Optional query parameters.</param>
-    // /// <returns>A stream of groups, filtered according to query parameters.</returns>
+    /// <summary>
+    /// Get a collection of groups on the realm.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of groups, filtered according to query parameters.</returns>
     // [Get(KeycloakClientApiConstants.GetGroups)]
-    // [Headers("Accept: application/json")]
-    // Task<IEnumerable<Group>> GetGroups(string realm, [Query] GetGroupsRequestParameters? parameters = default);
+    Task<HttpResponseMessage> GetGroupsWithResponseAsync(
+        string realm,
+        GetGroupsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    );
 
-    // /// <summary>
-    // /// Get representation of a Group.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="groupId">Group ID.</param>
-    // /// <returns>The group representation.</returns>
-    // [Get(KeycloakClientApiConstants.GetGroup)]
-    // [Headers("Accept: application/json")]
-    // Task<Group> GetGroup(string realm, [AliasAs("id")] string groupId);
+    /// <summary>
+    /// Get group hierarchy. Only name and ids are returned.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of groups, filtered according to query parameters.</returns>
+    async Task<IEnumerable<GroupRepresentation>> GetGroupsAsync(
+        string realm,
+        GetGroupsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetGroupsWithResponseAsync(realm, parameters, cancellationToken);
 
-    // /// <summary>
-    // /// Create a new Group.
-    // /// </summary>
-    // /// <remarks>
-    // /// Name must be unique.
-    // /// </remarks>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="group">Group representation.</param>
-    // /// <returns></returns>
-    // [Post(KeycloakClientApiConstants.CreateGroup)]
-    // [Headers("Content-Type: application/json")]
-    // Task<HttpResponseMessage> CreateGroup(string realm, [Body] Group group);
+        return await response.GetResponseAsync<IEnumerable<GroupRepresentation>>(cancellationToken)
+            ?? Enumerable.Empty<GroupRepresentation>();
+    }
 
-    // /// <summary>
-    // /// Update the Group.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="groupId">Group ID.</param>
-    // /// <param name="group">Group representation.</param>
-    // /// <returns></returns>
-    // [Put(KeycloakClientApiConstants.UpdateGroup)]
-    // [Headers("Content-Type: application/json")]
-    // Task UpdateGroup(string realm, [AliasAs("id")] string groupId, [Body] Group group);
+    /// <summary>
+    /// Get representation of a Group.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The group representation.</returns>
+    Task<HttpResponseMessage> GetGroupWithResponseAsync(
+        string realm,
+        string groupId,
+        CancellationToken cancellationToken = default
+    );
 
-    // /// <summary>
-    // /// Create a new child group.
-    // /// </summary>
-    // /// <remarks>
-    // /// Name must be unique.
-    // /// </remarks>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="groupId">Group ID.</param>
-    // /// <param name="group">Group representation.</param>
-    // /// <returns></returns>
-    // [Post(KeycloakClientApiConstants.CreateChildGroup)]
-    // [Headers("Content-Type: application/json")]
-    // Task<HttpResponseMessage> CreateChildGroup(string realm, [AliasAs("id")] string groupId, [Body] Group group);
+    /// <summary>
+    /// Get representation of a Group.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The group representation.</returns>
+    async Task<GroupRepresentation> GetGroupAsync(
+        string realm,
+        string groupId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetGroupWithResponseAsync(realm, groupId, cancellationToken);
 
-    // /// <summary>
-    // /// Delete a group. Note: the Keycloak documentation does not specify if this deletes subgroups.
-    // /// </summary>
-    // /// <param name="realm">Realm name (not ID).</param>
-    // /// <param name="groupId">Group ID.</param>
-    // /// <returns></returns>
-    // [Delete(KeycloakClientApiConstants.DeleteGroup)]
-    // Task DeleteGroup(string realm, [AliasAs("id")] string groupId);
+        return await response.GetResponseAsync<GroupRepresentation>(cancellationToken) ?? new();
+    }
+
+    /// <summary>
+    /// Create or add a top level realm groupSet or create child.
+    /// </summary>
+    /// <remarks>
+    /// This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="group">Group representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> CreateGroupWithResponseAsync(
+        string realm,
+        GroupRepresentation group,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Create or add a top level realm groupSet or create child.
+    /// </summary>
+    /// <remarks>
+    /// This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="group">Group representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task CreateGroupAsync(
+        string realm,
+        GroupRepresentation group,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.CreateGroupWithResponseAsync(realm, group, cancellationToken);
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Update group, ignores subgroups.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="group">Group representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> UpdateGroupWithResponseAsync(
+        string realm,
+        string groupId,
+        GroupRepresentation group,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Update group, ignores subgroups.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="group">Group representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task UpdateGroupAsync(
+        string realm,
+        string groupId,
+        GroupRepresentation group,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.UpdateGroupWithResponseAsync(
+            realm,
+            groupId,
+            group,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Set or create child.
+    /// </summary>
+    /// <remarks>
+    /// This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="group">Group representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> CreateChildGroupWithResponseAsync(
+        string realm,
+        string groupId,
+        GroupRepresentation group,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Set or create child.
+    /// </summary>
+    /// <remarks>
+    /// This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="group">Group representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task CreateChildGroupAsync(
+        string realm,
+        string groupId,
+        GroupRepresentation group,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.CreateChildGroupWithResponseAsync(
+            realm,
+            groupId,
+            group,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Delete a group. Note: the Keycloak documentation does not specify if this deletes subgroups.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> DeleteGroupWithResponseAsync(
+        string realm,
+        string groupId,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Delete a group. Note: the Keycloak documentation does not specify if this deletes subgroups.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task DeleteGroupAsync(
+        string realm,
+        string groupId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.DeleteGroupWithResponseAsync(realm, groupId, cancellationToken);
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
 }

@@ -7,9 +7,11 @@ internal static class ApiUrls
 {
     private const string AdminApiBase = "/admin";
 
+    private const string RealmParam = "{realm}";
+
     private const string Realms = "realms";
 
-    internal const string GetRealm = $"{AdminApiBase}/{Realms}/{{realm}}";
+    internal const string GetRealm = $"{AdminApiBase}/{Realms}/{RealmParam}";
 
     #region Resource API
 
@@ -51,10 +53,19 @@ internal static class ApiUrls
     #region Group API
 
     internal const string GetGroups = $"{GetRealm}/groups";
+
     internal const string CreateGroup = $"{GetRealm}/groups";
 
     internal const string GetGroup = $"{GetRealm}/groups/{{id}}";
+
     internal const string UpdateGroup = $"{GetRealm}/groups/{{id}}";
 
+    internal const string DeleteGroup = $"{GetRealm}/groups";
+
+    internal const string CreateChildGroup = $"{GetRealm}/groups/{{id}}/children";
+
     #endregion
+
+    public static string WithRealm(this string path, string realm) =>
+        path.Replace(RealmParam, realm);
 }

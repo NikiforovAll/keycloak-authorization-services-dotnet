@@ -286,7 +286,7 @@ public interface IKeycloakUserClient
     Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
         string realm,
         string userId,
-        GetUserGroupsRequestParameters parameters,
+        GetUserGroupsRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
     );
 
@@ -301,7 +301,7 @@ public interface IKeycloakUserClient
     async Task<IEnumerable<GroupRepresentation>> GetUserGroupsAsync(
         string realm,
         string userId,
-        GetUserGroupsRequestParameters parameters,
+        GetUserGroupsRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
     )
     {

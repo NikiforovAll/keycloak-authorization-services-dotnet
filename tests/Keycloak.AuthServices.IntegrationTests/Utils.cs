@@ -3,6 +3,7 @@
 using Alba.Security;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
+using Keycloak.AuthServices.Sdk;
 using Meziantou.Extensions.Logging.Xunit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
@@ -89,6 +90,38 @@ public static class Utils
         );
 
         return (services, configuration);
+    }
+
+    public static (IServiceCollection services, IConfiguration configuration1) AdminHttpClientSetup(
+        string fileName,
+        ITestOutputHelper testOutputHelper
+    )
+    {
+        var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
+
+        var tokenClientName = "keycloak_admin_api_token";
+        var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAdminClientOptions>()!;
+
+        services.AddDistributedMemoryCache();
+        services
+            .AddClientCredentialsTokenManagement()
+            .AddClient(tokenClientName, client => BindKeycloak(client, keycloakOptions));
+
+        services
+            .AddKeycloakAdminHttpClient(configuration)
+            .AddClientCredentialsTokenHandler(tokenClientName);
+
+        return (services, configuration);
+    }
+
+    private static void BindKeycloak(
+        Duende.AccessTokenManagement.ClientCredentialsClient client,
+        KeycloakAdminClientOptions adminClientOptions
+    )
+    {
+        client.ClientId = adminClientOptions.Resource;
+        client.ClientSecret = adminClientOptions.Credentials.Secret;
+        client.TokenEndpoint = adminClientOptions.KeycloakTokenEndpoint;
     }
 
     public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(string fileName)
