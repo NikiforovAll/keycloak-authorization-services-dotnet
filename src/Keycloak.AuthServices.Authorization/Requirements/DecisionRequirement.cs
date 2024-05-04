@@ -69,7 +69,7 @@ public class DecisionRequirement : IAuthorizationRequirement
 /// </summary>
 public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
 {
-    private readonly IKeycloakProtectionClient client;
+    private readonly IAuthorizationServerClient client;
     private readonly ILogger<DecisionRequirementHandler> logger;
 
     /// <summary>
@@ -78,7 +78,7 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
     public DecisionRequirementHandler(
-        IKeycloakProtectionClient client,
+        IAuthorizationServerClient client,
         ILogger<DecisionRequirementHandler> logger
     )
     {

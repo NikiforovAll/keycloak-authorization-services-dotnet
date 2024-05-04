@@ -82,7 +82,7 @@ public partial class ResourceAccessRequirementHandler
         if (string.IsNullOrWhiteSpace(clientId))
         {
             throw new KeycloakException(
-                $"Unable to resolve Resource for Role Validation - please make sure {nameof(KeycloakAuthorizationOptions)} are configured."
+                $"Unable to resolve Resource for Role Validation - please make sure {nameof(KeycloakAuthorizationOptions)} are configured. \n\n See documentation for more details - https://nikiforovall.github.io/keycloak-authorization-services-dotnet/configuration/configuration-authorization.html#require-resource-roles"
             );
         }
 

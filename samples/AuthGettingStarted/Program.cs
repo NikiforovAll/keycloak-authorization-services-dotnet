@@ -2,7 +2,7 @@ using System.Security.Claims;
 using Api;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Sdk.Admin;
+using Keycloak.AuthServices.Sdk;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +30,7 @@ services
             }
         )
     )
-    .AddKeycloakAuthorization()
+    .AddKeycloakAuthorization(configuration)
     .AddAuthorizationServer(configuration);
 
 services.AddKeycloakAdminHttpClient(configuration);

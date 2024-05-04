@@ -3,7 +3,6 @@ namespace Microsoft.Extensions.DependencyInjection;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
 public static partial class ServiceCollectionExtensions
@@ -13,9 +12,7 @@ public static partial class ServiceCollectionExtensions
         IConfiguration configuration
     )
     {
-        var options = configuration
-            .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance);
+        var options = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>();
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
@@ -58,9 +55,7 @@ public static partial class ServiceCollectionExtensions
     {
         KeycloakAuthenticationOptions options = new();
 
-        configuration
-            .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options, KeycloakFormatBinder.Instance);
+        configuration.BindKeycloakOptions<KeycloakAuthenticationOptions>(options);
 
         app.UseSwagger();
         app.UseSwaggerUI(s => s.OAuthClientId(options.Resource));

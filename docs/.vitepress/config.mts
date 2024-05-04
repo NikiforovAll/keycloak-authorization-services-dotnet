@@ -6,6 +6,11 @@ export default withMermaid({
     title: "Keycloak.AuthServices",
     description: "",
     base: '/keycloak-authorization-services-dotnet/',
+    head: [
+        ["link", { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" }],
+        ["link", { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" }],
+        ["link", { rel: "manifest", href: "/site.webmanifest" }]
+    ],
     themeConfig: {
         logo: '/logo.svg',
         // https://vitepress.dev/reference/default-theme-config
@@ -38,8 +43,45 @@ export default withMermaid({
                     text: 'Authorization',
                     collapsed: false,
                     items: [
-                        { text: 'Authorization Server', link: '/authorization/authorization-server' },
-                        { text: 'Protected Resources ✨', link: '/authorization/resources' },
+                        {
+                            text: 'Authorization Server', link: '/authorization/authorization-server'
+                        },
+                        {
+                            text: 'Protected Resources ✨', link: '/authorization/resources',
+                            collapsed: true,
+                            items: [
+                                { text: 'ASP.NET Core Integration', link: '/authorization/resources-api' },
+                                { text: 'Use HTTP Client', link: '/authorization/resources-client' },
+                                { text: 'Client API Reference', link: '/authorization/resources-client-reference' },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    text: 'Admin REST API ⚙️',
+                    collapsed: true,
+                    items: [
+                        { text: 'Introduction', link: '/admin-rest-api/admin-rest-api' },
+                        { text: 'Access Token Management', link: '/admin-rest-api/access-token' },
+                        {
+                            text: 'Admin API Reference', link: '/admin-rest-api/admin-api-reference',
+                            items: [
+                                { text: 'Realm Client', link: '/admin-rest-api/realm-client' },
+                                { text: 'User Client', link: '/admin-rest-api/user-client' },
+                                { text: 'Group Client', link: '/admin-rest-api/group-client' },
+                            ]
+                        },
+                        { text: 'OpenAPI Support', link: '/admin-rest-api/admin-api-openapi' },
+                    ]
+                },
+                {
+                    text: 'Protection API ⚙️',
+                    collapsed: true,
+                    items: [
+                        { text: 'Introduction', link: '/protection-api/protection-api' },
+                        {
+                            text: 'Protection API Reference', link: '/protection-api/protection-api-reference',
+                        },
                     ]
                 },
                 {

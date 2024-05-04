@@ -107,6 +107,8 @@ app.Run();
 
 `dotnet cake --target build`
 
+`dotnet cake --target test`
+
 `dotnet pack -o ./Artefacts`
 
 ## Blog Posts

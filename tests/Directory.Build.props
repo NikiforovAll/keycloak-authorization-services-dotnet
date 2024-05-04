@@ -24,6 +24,7 @@
 
   <ItemGroup Label="Global Usings">
     <Using Include="Xunit" />
+    <Using Include="Xunit.Abstractions" />
     <Using Include="FluentAssertions" />
   </ItemGroup>
 

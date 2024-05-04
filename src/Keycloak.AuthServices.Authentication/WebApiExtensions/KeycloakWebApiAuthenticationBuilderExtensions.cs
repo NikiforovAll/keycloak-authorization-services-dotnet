@@ -97,8 +97,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptions,
-            configureKeycloakOptions: options =>
-                configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            configureKeycloakOptions: options => configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }
@@ -127,8 +126,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptions,
-            configureKeycloakOptions: options =>
-                configurationSection.Bind(options, KeycloakFormatBinder.Instance),
+            configureKeycloakOptions: options => configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }

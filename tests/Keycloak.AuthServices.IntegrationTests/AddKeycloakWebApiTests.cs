@@ -6,7 +6,6 @@ using Alba.Security;
 using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
-using Xunit.Abstractions;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
 
 public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper testOutputHelper)
@@ -22,7 +21,7 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper t
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -52,7 +51,7 @@ public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper t
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>

@@ -1,15 +1,11 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
-using Constants;
-using Models;
-using Refit;
-using Requests.Groups;
-using Requests.Users;
+using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 
 /// <summary>
 /// User management
 /// </summary>
-[Headers("Accept: application/json")]
 public interface IKeycloakUserClient
 {
     /// <summary>
@@ -17,21 +13,72 @@ public interface IKeycloakUserClient
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
-    [Get(KeycloakClientApiConstants.GetUsers)]
-    Task<IEnumerable<User>> GetUsers(
+    Task<HttpResponseMessage> GetUsersWithResponseAsync(
         string realm,
-        [Query] GetUsersRequestParameters? parameters = default
+        GetUsersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Get a stream of users on the realm.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    async Task<IEnumerable<UserRepresentation>> GetUsersAsync(
+        string realm,
+        GetUsersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetUsersWithResponseAsync(realm, parameters, cancellationToken);
+
+        return await response.GetResponseAsync<IEnumerable<UserRepresentation>>(cancellationToken)
+            ?? Enumerable.Empty<UserRepresentation>();
+    }
 
     /// <summary>
     /// Get representation of a user.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
+    /// <param name="includeUserProfileMetadata"> Indicates if the user profile metadata should be added to the response.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The user representation.</returns>
-    [Get(KeycloakClientApiConstants.GetUser)]
-    Task<User> GetUser(string realm, [AliasAs("id")] string userId);
+    async Task<UserRepresentation> GetUserAsync(
+        string realm,
+        string userId,
+        bool includeUserProfileMetadata = false,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetUserWithResponseAsync(
+            realm,
+            userId,
+            includeUserProfileMetadata,
+            cancellationToken
+        );
+
+        return await response.GetResponseAsync<UserRepresentation>(cancellationToken) ?? new();
+    }
+
+    // <summary>
+    /// Get representation of a user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="includeUserProfileMetadata"> Indicates if the user profile metadata should be added to the response.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The user representation.</returns>
+    Task<HttpResponseMessage> GetUserWithResponseAsync(
+        string realm,
+        string userId,
+        bool includeUserProfileMetadata = false,
+        CancellationToken cancellationToken = default
+    );
 
     /// <summary>
     /// Create a new user.
@@ -41,10 +88,34 @@ public interface IKeycloakUserClient
     /// </remarks>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="user">User representation.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    [Post(KeycloakClientApiConstants.CreateUser)]
-    [Headers("Content-Type: application/json")]
-    Task<HttpResponseMessage> CreateUser(string realm, [Body] User user);
+    Task<HttpResponseMessage> CreateUserWithResponseAsync(
+        string realm,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Create a new user.
+    /// </summary>
+    /// <remarks>
+    /// Username must be unique.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="user">User representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task CreateUserAsync(
+        string realm,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.CreateUserWithResponseAsync(realm, user, cancellationToken);
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
 
     /// <summary>
     /// Update the user.
@@ -52,20 +123,70 @@ public interface IKeycloakUserClient
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="user">User representation.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    [Put(KeycloakClientApiConstants.UpdateUser)]
-    [Headers("Content-Type: application/json")]
-    Task UpdateUser(string realm, [AliasAs("id")] string userId, [Body] User user);
+    Task<HttpResponseMessage> UpdateUserWithResponseAsync(
+        string realm,
+        string userId,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Update the user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="user">User representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task UpdateUserAsync(
+        string realm,
+        string userId,
+        UserRepresentation user,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.UpdateUserWithResponseAsync(
+            realm,
+            userId,
+            user,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
 
     /// <summary>
     /// Delete the given user.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    [Delete(KeycloakClientApiConstants.DeleteUser)]
-    [Headers("Content-Type: application/json")]
-    Task DeleteUser(string realm, [AliasAs("id")] string userId);
+    Task<HttpResponseMessage> DeleteUserWithResponseAsync(
+        string realm,
+        string userId,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Delete the given user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task DeleteUserAsync(
+        string realm,
+        string userId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.DeleteUserWithResponseAsync(realm, userId, cancellationToken);
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
 
     /// <summary>
     /// Send an email-verification email to the user.
@@ -77,12 +198,57 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID.</param>
     /// <param name="clientId">Client ID.</param>
     /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
-    [Put(KeycloakClientApiConstants.SendVerifyEmail)]
-    Task SendVerifyEmail(
+    /// <param name="cancellationToken"></param>
+    Task<HttpResponseMessage> SendVerifyEmailWithResponseAsync(
         string realm,
-        [AliasAs("id")] string userId,
-        [Query] [AliasAs("client_id")] string? clientId = default,
-        [Query] [AliasAs("redirect_uri")] string? redirectUri = default
+        string userId,
+        string? clientId = default,
+        string? redirectUri = default,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Send an email-verification email to the user.
+    /// </summary>
+    /// <remarks>
+    /// An email contains a link the user can click to verify their email address.
+    /// </remarks>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="clientId">Client ID.</param>
+    /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
+    /// <param name="cancellationToken"></param>
+    async Task SendVerifyEmailAsync(
+        string realm,
+        string userId,
+        string? clientId = default,
+        string? redirectUri = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.SendVerifyEmailWithResponseAsync(
+            realm,
+            userId,
+            clientId,
+            redirectUri,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Execute actions email for the user.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    Task<HttpResponseMessage> ExecuteActionsEmailWithResponseAsync(
+        string realm,
+        string userId,
+        ExecuteActionsEmailRequest request,
+        CancellationToken cancellationToken = default
     );
 
     /// <summary>
@@ -90,19 +256,38 @@ public interface IKeycloakUserClient
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
-    /// <param name="clientId">Client ID.</param>
-    /// <param name="lifespan">Number of seconds after which the generated token expires</param>
-    /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
-    /// <param name="actions">Actions</param>
-    [Put(KeycloakClientApiConstants.ExecuteActionsEmail)]
-    [Headers("Content-Type: application/json")]
-    Task ExecuteActionsEmail(
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    async Task ExecuteActionsEmailAsync(
         string realm,
-        [AliasAs("id")] string userId,
-        [Query] [AliasAs("client_id")] string? clientId = default,
-        [Query] int? lifespan = default,
-        [Query] [AliasAs("redirect_uri")] string? redirectUri = default,
-        [Body] List<string>? actions = default
+        string userId,
+        ExecuteActionsEmailRequest request,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.ExecuteActionsEmailWithResponseAsync(
+            realm,
+            userId,
+            request,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Get a users's groups.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of users, filtered according to query parameters.</returns>
+    Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
+        string realm,
+        string userId,
+        GetUserGroupsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
     );
 
     /// <summary>
@@ -111,11 +296,103 @@ public interface IKeycloakUserClient
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
-    [Get(KeycloakClientApiConstants.GetUserGroups)]
-    Task<IEnumerable<Group>> GetUserGroups(
+    async Task<IEnumerable<GroupRepresentation>> GetUserGroupsAsync(
         string realm,
-        [AliasAs("id")] string userId,
-        [Query] GetGroupRequestParameters? parameters = default
+        string userId,
+        GetUserGroupsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetUserGroupsWithResponseAsync(
+            realm,
+            userId,
+            parameters,
+            cancellationToken
+        );
+
+        return await response.GetResponseAsync<IEnumerable<GroupRepresentation>>(cancellationToken)
+            ?? Enumerable.Empty<GroupRepresentation>();
+    }
+
+    /// <summary>
+    /// Join a group
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> JoinGroupWithResponseAsync(
+        string realm,
+        string userId,
+        string groupId,
+        CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Join a group
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task JoinGroupAsync(
+        string realm,
+        string userId,
+        string groupId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.JoinGroupWithResponseAsync(
+            realm,
+            userId,
+            groupId,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Leave a group
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> LeaveGroupWithResponseAsync(
+        string realm,
+        string userId,
+        string groupId,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Leave a group
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task LeaveGroupAsync(
+        string realm,
+        string userId,
+        string groupId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.LeaveGroupWithResponseAsync(
+            realm,
+            userId,
+            groupId,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
 }

@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect"/>
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect"/>
   </ItemGroup>
 
   <ItemGroup>

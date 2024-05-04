@@ -2,7 +2,7 @@
 
 *RBAC* (Role-Based Access Control) is a widely used authorization model in software applications. It provides a way to control access to resources based on the roles assigned to users. Keycloak, an open-source identity and access management solution, offers robust support for RBAC.
 
-With Keycloak, you can configure roles by defining realm roles and resource roles. Realm roles are global roles that apply to the entire realm, while resource roles are specific to a particular client or resource.
+With [Keycloak.AuthServices.Authorization](https://www.nuget.org/packages/Keycloak.AuthServices.Authorization), you can configure roles by defining realm roles and resource roles. Realm roles are global roles that apply to the entire realm, while resource roles are specific to a particular client or resource.
 
 *Table of Contents*:
 [[toc]]
@@ -15,13 +15,30 @@ With Keycloak, you can configure roles by defining realm roles and resource role
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRole_Verified
 
-Configure default source:
+Configure default roles source. The client name is taken from the `KeycloakAuthorizationOptions.Resource`:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRoleWithConfiguration_Verified
 
+```json
+{
+  "Keycloak": {
+    "resource": "test-client"
+  }
+}
+```
+
+> [!IMPORTANT]
+> If you don't configure the default roles source `KeycloakException` exception will be thrown.
+
+Override default source with `KeycloakAuthorizationOptions.RolesResource`:
+
+<<< @/../tests/Keycloak.AuthServices.IntegrationTests/PolicyTests.cs#RequireClientRoles_TestClientRoleWithInlineConfiguration_Verified
+
+Note it has more priority over the `KeycloakAuthorizationOptions.Resource`
+
 ## Keycloak Role Claims Transformation
 
-Keycloak roles can be automatically transformed to [AspNetCore Roles](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles). This feature is disabled by default and is based on `KeycloakRolesClaimsTransformation`.
+Keycloak roles can be automatically transformed to [AspNetCore Roles](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/roles). This feature is **disabled by default** and is based on `KeycloakRolesClaimsTransformation`.
 
 Specify `KeycloakAuthorizationOptions.EnableRolesMapping` to enable it. E.g.:
 

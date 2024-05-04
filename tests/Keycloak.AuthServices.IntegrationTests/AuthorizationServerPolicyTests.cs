@@ -8,7 +8,6 @@ using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
-using Xunit.Abstractions;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
 
 public class AuthorizationServerPolicyTests(
@@ -26,7 +25,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -51,7 +50,7 @@ public class AuthorizationServerPolicyTests(
 
                         services
                             .AddAuthorizationServer(context.Configuration)
-                            .AddStandardResilienceHandler(); // an example of how to extend IKeycloakProtectionClient by adding Polly
+                            .AddStandardResilienceHandler(); // an example of how to extend based on IHttpClientBuilder by adding Polly
                         #endregion RequireProtectedResource_DefaultResource_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
@@ -86,7 +85,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -147,7 +146,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -206,7 +205,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -265,7 +264,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.UseConfiguration(AppSettings);
+                x.WithConfiguration(AppSettings);
 
                 x.ConfigureServices(
                     (context, services) =>

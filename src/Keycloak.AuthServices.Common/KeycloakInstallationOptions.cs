@@ -103,7 +103,25 @@ public class KeycloakInstallationOptions
                 return default!;
             }
 
-            return $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}/";
+            return $"{NormalizeUrl(this.AuthServerUrl?.TrimEnd('/'))}/realms/{this.Realm}/";
+        }
+    }
+
+    /// <summary>
+    /// Token endpoint URL including Realm
+    /// </summary>
+    public string KeycloakTokenEndpoint
+    {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(this.KeycloakUrlRealm))
+            {
+                return default!;
+            }
+
+            return NormalizeUrl(
+                $"{this.KeycloakUrlRealm?.TrimEnd('/')}/{KeycloakConstants.TokenEndpointPath}"
+            )!;
         }
     }
 

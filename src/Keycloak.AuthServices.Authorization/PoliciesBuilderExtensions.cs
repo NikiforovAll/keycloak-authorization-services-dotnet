@@ -11,6 +11,7 @@ public static class PoliciesBuilderExtensions
 {
     /// <summary>
     /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
+    /// Note, make sure role source is configure. See documentation for more details.
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="roles"></param>
@@ -27,17 +28,17 @@ public static class PoliciesBuilderExtensions
     /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
     /// </summary>
     /// <param name="builder"></param>
-    /// <param name="rolesSource"></param>
+    /// <param name="client"></param>
     /// <param name="roles"></param>
     /// <returns></returns>
-    public static AuthorizationPolicyBuilder RequireResourceRolesWithSource(
+    public static AuthorizationPolicyBuilder RequireResourceRolesForClient(
         this AuthorizationPolicyBuilder builder,
-        string rolesSource,
+        string client,
         string[] roles
     ) =>
         builder
             .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
-            .AddRequirements(new ResourceAccessRequirement(rolesSource, roles));
+            .AddRequirements(new ResourceAccessRequirement(client, roles));
 
     /// <summary>
     /// Adds realm role requirement to builder. Ensures that at least one realm role is present in realm claims.
@@ -53,6 +54,7 @@ public static class PoliciesBuilderExtensions
             .RequireClaim(KeycloakConstants.RealmAccessClaimType)
             .AddRequirements(new RealmAccessRequirement(roles));
 
+    #region RequireProtectedResource
     /// <summary>
     /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
@@ -65,7 +67,9 @@ public static class PoliciesBuilderExtensions
         string resource,
         string scope
     ) => builder.AddRequirements(new DecisionRequirement(resource, scope));
+    #endregion RequireProtectedResource
 
+    #region RequireProtectedResourceScopes
     /// <summary>
     /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
@@ -86,4 +90,5 @@ public static class PoliciesBuilderExtensions
                 ScopesValidationMode = scopesValidationMode
             }
         );
+    #endregion RequireProtectedResourceScopes
 }

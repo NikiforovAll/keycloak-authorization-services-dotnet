@@ -68,9 +68,8 @@ public static class ServiceCollectionExtensions
         Action<JwtBearerOptions>? configureOptions = default
     )
     {
-        var authenticationOptions = configuration
-            .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
+        var authenticationOptions =
+            configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
@@ -91,9 +90,8 @@ public static class ServiceCollectionExtensions
         Action<JwtBearerOptions>? configureOptions = default
     )
     {
-        var authenticationOptions = configuration
-            .GetSection(keycloakClientSectionName)
-            .Get<KeycloakAuthenticationOptions>(KeycloakFormatBinder.Instance)!;
+        var authenticationOptions =
+            configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
 
         return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
