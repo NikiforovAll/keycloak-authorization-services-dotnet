@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
+using System.Globalization;
 using System.Net.Http.Json;
 using Keycloak.AuthServices.Sdk.Admin.Models;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
@@ -7,14 +8,14 @@ using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 using Keycloak.AuthServices.Sdk.Utils;
 
 /// <summary>
-/// TBD:
+/// Represents a client for interacting with the Keycloak Admin API.
 /// </summary>
 public partial class KeycloakClient : IKeycloakClient
 {
     private readonly HttpClient httpClient;
 
     /// <summary>
-    /// TBD:
+    /// Initializes a new instance of the <see cref="KeycloakClient"/> class.
     /// </summary>
     /// <param name="httpClient"></param>
     public KeycloakClient(HttpClient httpClient) => this.httpClient = httpClient;
@@ -204,7 +205,7 @@ public partial class KeycloakClient : IKeycloakClient
 
         if (request.Lifespan.HasValue)
         {
-            queryBuilder.Add("lifespan", request.Lifespan?.ToString()!);
+            queryBuilder.Add("lifespan", request.Lifespan?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         var url = path + queryBuilder.ToQueryString();
@@ -233,17 +234,17 @@ public partial class KeycloakClient : IKeycloakClient
         parameters ??= new();
         if (parameters.BriefRepresentation.HasValue)
         {
-            queryBuilder.Add("briefRepresentation", parameters.BriefRepresentation.ToString());
+            queryBuilder.Add("briefRepresentation", parameters.BriefRepresentation?.ToString()!);
         }
 
         if (parameters.First.HasValue)
         {
-            queryBuilder.Add("first", parameters.First.ToString());
+            queryBuilder.Add("first", parameters.First?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         if (parameters.Max.HasValue)
         {
-            queryBuilder.Add("max", parameters.Max.ToString()!);
+            queryBuilder.Add("max", parameters.Max?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         var url = path + queryBuilder.ToQueryString();
@@ -310,22 +311,25 @@ public partial class KeycloakClient : IKeycloakClient
         parameters ??= new();
         if (parameters.BriefRepresentation.HasValue)
         {
-            queryBuilder.Add("briefRepresentation", parameters.BriefRepresentation.ToString());
+            queryBuilder.Add(
+                "briefRepresentation",
+                parameters.BriefRepresentation?.ToString(CultureInfo.InvariantCulture)!
+            );
         }
 
         if (parameters.First.HasValue)
         {
-            queryBuilder.Add("first", parameters.First.ToString());
+            queryBuilder.Add("first", parameters.First?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         if (parameters.Exact.HasValue)
         {
-            queryBuilder.Add("exact", parameters.Exact.ToString());
+            queryBuilder.Add("exact", parameters.Exact?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         if (parameters.Max.HasValue)
         {
-            queryBuilder.Add("max", parameters.Max.ToString()!);
+            queryBuilder.Add("max", parameters.Max?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         if (parameters.Search is not null)

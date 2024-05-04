@@ -1,3 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
+  <PropertyGroup>
+    <NoWarn>CS7022</NoWarn>
+  </PropertyGroup>
 </Project>

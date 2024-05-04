@@ -161,6 +161,8 @@ dotnet_diagnostic.IDE0045.severity = suggestion
 dotnet_style_prefer_conditional_expression_over_return = false:suggestion
 dotnet_diagnostic.IDE0046.severity = suggestion
 dotnet_style_prefer_compound_assignment = true:warning
+
+dotnet_diagnostic.CA1848.severity = suggestion
 # Null-checking preferences
 # https://docs.microsoft.com/visualstudio/ide/editorconfig-language-conventions#null-checking-preferences
 dotnet_style_coalesce_expression = true:warning

@@ -65,7 +65,7 @@ public interface IKeycloakUserClient
         return await response.GetResponseAsync<UserRepresentation>(cancellationToken) ?? new();
     }
 
-    // <summary>
+    /// <summary>
     /// Get representation of a user.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>

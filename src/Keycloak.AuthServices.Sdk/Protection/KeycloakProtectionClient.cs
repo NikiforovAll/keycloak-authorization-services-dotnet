@@ -1,21 +1,22 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Protection;
 
+using System.Globalization;
 using System.Net.Http.Json;
 using Keycloak.AuthServices.Sdk.Protection.Models;
 using Keycloak.AuthServices.Sdk.Protection.Requests;
 using Keycloak.AuthServices.Sdk.Utils;
 
 /// <summary>
-/// TBD:
+/// Represents a client for interacting with Keycloak Protection API services.
 /// </summary>
 public partial class KeycloakProtectionClient : IKeycloakProtectionClient
 {
     private readonly HttpClient httpClient;
 
     /// <summary>
-    /// TBD:
+    /// Initializes a new instance of the <see cref="KeycloakProtectionClient"/> class.
     /// </summary>
-    /// <param name="httpClient"></param>
+    /// <param name="httpClient">The HTTP client used for making requests.</param>
     public KeycloakProtectionClient(HttpClient httpClient) => this.httpClient = httpClient;
 
     #region IKeycloakProtectedResourceClient
@@ -118,7 +119,7 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
 
             if (parameters.ExactName.HasValue)
             {
-                queryBuilder.Add("exactName", parameters.ExactName.ToString());
+                queryBuilder.Add("exactName", parameters.ExactName?.ToString()!);
             }
 
             if (parameters.Uri is not null)
@@ -199,12 +200,12 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
         parameters ??= new();
         if (parameters.First.HasValue)
         {
-            queryBuilder.Add("first", parameters.First.ToString());
+            queryBuilder.Add("first", parameters.First?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         if (parameters.Max.HasValue)
         {
-            queryBuilder.Add("max", parameters.Max.ToString()!);
+            queryBuilder.Add("max", parameters.Max?.ToString(CultureInfo.InvariantCulture)!);
         }
 
         if (!string.IsNullOrEmpty(parameters.PermissionName))

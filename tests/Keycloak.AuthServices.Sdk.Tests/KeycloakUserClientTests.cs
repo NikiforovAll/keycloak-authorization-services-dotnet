@@ -32,7 +32,7 @@ public class KeycloakUserClientTests
         this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/users/{userId}")
             .Respond(HttpStatusCode.OK, MediaType, JsonSerializer.Serialize(userFixture));
 
-        var user = await this.keycloakUserClient.GetUserAsync("master", userId.ToString());
+        var user = await this.keycloakUserClient.GetUserAsync("master", userId!.ToString());
 
         user.Id.Should().Be(userId.ToString());
         this.handler.VerifyNoOutstandingExpectation();

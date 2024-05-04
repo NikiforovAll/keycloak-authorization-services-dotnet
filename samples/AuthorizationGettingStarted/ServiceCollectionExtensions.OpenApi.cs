@@ -31,7 +31,7 @@ public static partial class ServiceCollectionExtensions
                     Implicit = new OpenApiOAuthFlow
                     {
                         AuthorizationUrl = new Uri(
-                            $"{options.KeycloakUrlRealm}/protocol/openid-connect/auth"
+                            $"{options!.KeycloakUrlRealm}/protocol/openid-connect/auth"
                         ),
                         TokenUrl = new Uri(
                             $"{options.KeycloakUrlRealm}/protocol/openid-connect/token"
@@ -55,7 +55,7 @@ public static partial class ServiceCollectionExtensions
     {
         KeycloakAuthenticationOptions options = new();
 
-        configuration.BindKeycloakOptions<KeycloakAuthenticationOptions>(options);
+        configuration.BindKeycloakOptions(options);
 
         app.UseSwagger();
         app.UseSwaggerUI(s => s.OAuthClientId(options.Resource));
