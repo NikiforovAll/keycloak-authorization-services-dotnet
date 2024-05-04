@@ -1,4 +1,5 @@
 namespace Keycloak.AuthServices.Sdk.Admin;
+
 /// <summary>
 /// Keycloak Admin API Client
 /// </summary>
@@ -7,6 +8,5 @@ namespace Keycloak.AuthServices.Sdk.Admin;
 /// </remarks>
 public interface IKeycloakClient
     : IKeycloakRealmClient,
-        IKeycloakProtectedResourceClient,
         IKeycloakUserClient,
         IKeycloakGroupClient { }

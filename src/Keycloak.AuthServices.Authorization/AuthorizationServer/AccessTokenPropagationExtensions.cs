@@ -20,7 +20,7 @@ public static class AccessTokenPropagationExtensions
             (sp) =>
             {
                 var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
-                var options = sp.GetRequiredService<IOptions<KeycloakProtectionClientOptions>>();
+                var options = sp.GetRequiredService<IOptions<KeycloakAuthorizationServerClientOptions>>();
 
                 return new AccessTokenPropagationHandler(contextAccessor, options);
             }

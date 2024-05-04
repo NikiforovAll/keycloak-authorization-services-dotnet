@@ -2,7 +2,7 @@
 
 [Keycloak.AuthServices.Sdk](https://www.nuget.org/packages/Keycloak.AuthServices.Sdk/) provides a basic support for common and most popular API endpoints.
 
-The full API documentation see <https://www.keycloak.org/docs-api/24.0.1/rest-api/>.
+The full API documentation - <https://www.keycloak.org/docs-api/latest/rest-api/>.
 
 >[!IMPORTANT]
 > **Keycloak.AuthServices** is an open source project with limited developer capacity. Many API endpoints might be missing. But **contributions are encouraged**!

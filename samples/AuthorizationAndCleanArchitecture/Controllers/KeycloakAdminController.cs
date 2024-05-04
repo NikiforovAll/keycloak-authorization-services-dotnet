@@ -2,18 +2,19 @@ namespace Api.Controllers;
 
 using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Protection;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/keycloak-api")]
 public class KeycloakAdminController : ApiControllerBase
 {
     private readonly IKeycloakRealmClient keycloakRealmClient;
-    private readonly IKeycloakProtectedResourceClient protectedResourceClient;
+    private readonly IKeycloakProtectionClient protectedResourceClient;
     private const string DefaultRealm = "authz";
 
     public KeycloakAdminController(
         IKeycloakRealmClient keycloakRealmClient,
-        IKeycloakProtectedResourceClient protectedResourceClient)
+        IKeycloakProtectionClient protectedResourceClient)
     {
         this.keycloakRealmClient = keycloakRealmClient;
         this.protectedResourceClient = protectedResourceClient;

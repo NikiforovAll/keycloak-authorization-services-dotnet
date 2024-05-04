@@ -59,10 +59,19 @@ export default withMermaid({
                                 { text: 'Realm Client', link: '/admin-rest-api/realm-client' },
                                 { text: 'User Client', link: '/admin-rest-api/user-client' },
                                 { text: 'Group Client', link: '/admin-rest-api/group-client' },
-                                { text: 'Protected Resource Client', link: '/admin-rest-api/protected-resource-client' },
                             ]
                         },
                         { text: 'OpenAPI Support', link: '/admin-rest-api/admin-api-openapi' },
+                    ]
+                },
+                {
+                    text: 'Protection API ⚙️',
+                    collapsed: true,
+                    items: [
+                        { text: 'Introduction', link: '/protection-api/protection-api' },
+                        {
+                            text: 'Protection API Reference', link: '/protection-api/protection-api-reference',
+                        },
                     ]
                 },
                 {

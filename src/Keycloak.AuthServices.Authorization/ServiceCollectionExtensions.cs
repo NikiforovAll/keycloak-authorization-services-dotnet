@@ -81,7 +81,7 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Adds Keycloak Protection client and auto header propagation
+    /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client and auto header propagation
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configuration"></param>
@@ -92,7 +92,7 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration,
         Action<HttpClient>? configureClient = default,
-        string configSectionName = KeycloakProtectionClientOptions.Section
+        string configSectionName = KeycloakAuthorizationServerClientOptions.Section
     ) =>
         services.AddAuthorizationServer(
             configuration.GetSection(configSectionName),
@@ -100,7 +100,7 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// Adds Keycloak Protection client and auto header propagation
+    /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client and auto header propagation
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configurationSection"></param>
@@ -117,7 +117,7 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// Adds Keycloak Protection client and auto header propagation
+    /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client and auto header propagation
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configureKeycloakOptions"></param>
@@ -125,7 +125,7 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IHttpClientBuilder AddAuthorizationServer(
         this IServiceCollection services,
-        Action<KeycloakProtectionClientOptions> configureKeycloakOptions,
+        Action<KeycloakAuthorizationServerClientOptions> configureKeycloakOptions,
         Action<HttpClient>? configureClient = default
     )
     {
@@ -137,7 +137,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
 
         // (!) resolved locally, will not work with PostConfigure and IOptions pattern
-        var keycloakOptions = new KeycloakProtectionClientOptions();
+        var keycloakOptions = new KeycloakAuthorizationServerClientOptions();
         configureKeycloakOptions.Invoke(keycloakOptions);
 
         if (keycloakOptions.UseProtectedResourcePolicyProvider)
@@ -146,12 +146,12 @@ public static class ServiceCollectionExtensions
         }
 
         return services
-            .AddHttpClient<IKeycloakProtectionClient, KeycloakProtectionClient>()
+            .AddHttpClient<IAuthorizationServerClient, AuthorizationServerClient>()
             .ConfigureHttpClient(
                 (serviceProvider, client) =>
                 {
                     var keycloakOptions = serviceProvider
-                        .GetRequiredService<IOptions<KeycloakProtectionClientOptions>>()
+                        .GetRequiredService<IOptions<KeycloakAuthorizationServerClientOptions>>()
                         .Value;
 
                     client.BaseAddress = new Uri(keycloakOptions.KeycloakUrlRealm);

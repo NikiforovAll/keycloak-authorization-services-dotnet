@@ -1,9 +1,9 @@
 namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
 /// <summary>
-/// Keycloak Protection API
+/// Keycloak AuthorizationServer API
 /// </summary>
-public interface IKeycloakProtectionClient
+public interface IAuthorizationServerClient
 {
     /// <summary>
     /// Verifies access to the protected resource. Sends decision request to token endpoint {resource}#{scope}

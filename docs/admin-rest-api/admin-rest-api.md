@@ -6,7 +6,7 @@
 The Admin REST API in Keycloak provides a programmatic way to manage and administer Keycloak instances. It allows you to perform various administrative tasks such as creating and managing realms, users, roles, clients, and more. To interact with the Admin REST API, you can use HTTP requests to send commands and retrieve data. The API follows the REST architectural style and is designed to be simple and intuitive to use.
 
 > [!NOTE]
-> See full list of API endpoints - [Admin REST API](https://www.keycloak.org/docs-api/24.0.1/rest-api/#_overview)
+> See full list of API endpoints - [Admin REST API](https://www.keycloak.org/docs-api/latest/rest-api/#_overview)
 
 Keycloak provides a comprehensive set of endpoints that cover a wide range of administrative operations. These endpoints are organized into different resource types, such as realms, users, roles, and clients, making it easy to navigate and manipulate the Keycloak configuration.
 

@@ -13,21 +13,6 @@ internal static class ApiUrls
 
     internal const string GetRealm = $"{AdminApiBase}/{Realms}/{RealmParam}";
 
-    #region Resource API
-
-    internal const string GetResources = "/realms/{realm}/authz/protection/resource_set";
-
-    internal const string GetResource = $"{GetResources}/{{id}}";
-
-    internal const string CreateResource = $"{GetResources}";
-
-    internal const string PutResource = $"{GetResource}";
-
-    internal const string GetResourceByExactName =
-        "/realms/{realm}/authz/protection/resource_set?&exactName=true";
-
-    #endregion
-
     #region User API
 
     internal const string GetUsers = $"{GetRealm}/users";

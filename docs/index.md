@@ -18,6 +18,9 @@ hero:
     - theme: alt
       text: HTTP Admin REST API
       link: /admin-rest-api/admin-rest-api
+    - theme: alt
+      text: Protection REST API
+      link: /protection-api/protection-api
 
 features:
   - title: 🔒Authentication

@@ -114,14 +114,46 @@ public static class Utils
         return (services, configuration);
     }
 
-    private static void BindKeycloak(
-        Duende.AccessTokenManagement.ClientCredentialsClient client,
-        KeycloakAdminClientOptions adminClientOptions
+    public static (IServiceCollection services, IConfiguration configuration1) ProtectionHttpClientSetup(
+        string fileName,
+        ITestOutputHelper testOutputHelper
     )
     {
-        client.ClientId = adminClientOptions.Resource;
-        client.ClientSecret = adminClientOptions.Credentials.Secret;
-        client.TokenEndpoint = adminClientOptions.KeycloakTokenEndpoint;
+        var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
+
+        var tokenClientName = "keycloak_protection_api_token";
+        var keycloakOptions = configuration.GetKeycloakOptions<KeycloakProtectionClientOptions>()!;
+
+        services.AddDistributedMemoryCache();
+        services
+            .AddClientCredentialsTokenManagement()
+            .AddClient(tokenClientName, client => BindKeycloak(client, keycloakOptions));
+
+        services
+            .AddKeycloakProtectionHttpClient(configuration)
+            .AddClientCredentialsTokenHandler(tokenClientName);
+
+        return (services, configuration);
+    }
+
+    private static void BindKeycloak(
+        Duende.AccessTokenManagement.ClientCredentialsClient client,
+        KeycloakAdminClientOptions keycloaktOptions
+    )
+    {
+        client.ClientId = keycloaktOptions.Resource;
+        client.ClientSecret = keycloaktOptions.Credentials.Secret;
+        client.TokenEndpoint = keycloaktOptions.KeycloakTokenEndpoint;
+    }
+
+    private static void BindKeycloak(
+        Duende.AccessTokenManagement.ClientCredentialsClient client,
+        KeycloakProtectionClientOptions keycloaktOptions
+    )
+    {
+        client.ClientId = keycloaktOptions.Resource;
+        client.ClientSecret = keycloaktOptions.Credentials.Secret;
+        client.TokenEndpoint = keycloaktOptions.KeycloakTokenEndpoint;
     }
 
     public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(string fileName)

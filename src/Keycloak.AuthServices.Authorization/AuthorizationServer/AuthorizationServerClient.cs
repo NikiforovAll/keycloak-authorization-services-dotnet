@@ -7,23 +7,22 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 /// <inheritdoc />
-public class KeycloakProtectionClient : IKeycloakProtectionClient
+public class AuthorizationServerClient : IAuthorizationServerClient
 {
     private readonly HttpClient httpClient;
-    private readonly IOptions<KeycloakProtectionClientOptions> options;
-    private readonly ILogger<KeycloakProtectionClient> logger;
+    private readonly IOptions<KeycloakAuthorizationServerClientOptions> options;
+    private readonly ILogger<AuthorizationServerClient> logger;
 
     /// <summary>
-    /// Constructs KeycloakProtectionClient
     /// </summary>
     /// <param name="httpClient"></param>
     /// <param name="clientOptions"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public KeycloakProtectionClient(
+    public AuthorizationServerClient(
         HttpClient httpClient,
-        IOptions<KeycloakProtectionClientOptions> clientOptions,
-        ILogger<KeycloakProtectionClient> logger
+        IOptions<KeycloakAuthorizationServerClientOptions> clientOptions,
+        ILogger<AuthorizationServerClient> logger
     )
     {
         this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));

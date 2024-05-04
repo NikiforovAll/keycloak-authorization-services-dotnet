@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Authorization;
 using Authorization.Abstractions;
 using Data;
-using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Protection;
 using MediatR;
 
 [AuthorizeProtectedResource("workspaces", "workspaces:create")]
@@ -15,12 +15,12 @@ public record CreateWorkspaceCommand(string Name, IList<Project>? Projects = def
 public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceCommand>
 {
     private readonly IApplicationDbContext db;
-    private readonly IKeycloakProtectedResourceClient resourceClient;
+    private readonly IKeycloakProtectionClient resourceClient;
     private readonly IIdentityService identityService;
 
     public CreateWorkspaceCommandHandler(
         IApplicationDbContext db,
-        IKeycloakProtectedResourceClient resourceClient,
+        IKeycloakProtectionClient resourceClient,
         IIdentityService identityService)
     {
         this.db = db ?? throw new ArgumentNullException(nameof(db));

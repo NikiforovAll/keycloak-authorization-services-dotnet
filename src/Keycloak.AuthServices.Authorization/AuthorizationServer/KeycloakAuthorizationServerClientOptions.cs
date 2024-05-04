@@ -5,7 +5,7 @@ using Common;
 /// <summary>
 /// Defines a set of options used to perform Authorization Server calls
 /// </summary>
-public sealed class KeycloakProtectionClientOptions : KeycloakInstallationOptions
+public sealed class KeycloakAuthorizationServerClientOptions : KeycloakInstallationOptions
 {
     /// <summary>
     /// Default section name.

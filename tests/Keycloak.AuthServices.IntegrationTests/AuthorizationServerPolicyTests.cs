@@ -50,7 +50,7 @@ public class AuthorizationServerPolicyTests(
 
                         services
                             .AddAuthorizationServer(context.Configuration)
-                            .AddStandardResilienceHandler(); // an example of how to extend IKeycloakProtectionClient by adding Polly
+                            .AddStandardResilienceHandler(); // an example of how to extend based on IHttpClientBuilder by adding Polly
                         #endregion RequireProtectedResource_DefaultResource_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
