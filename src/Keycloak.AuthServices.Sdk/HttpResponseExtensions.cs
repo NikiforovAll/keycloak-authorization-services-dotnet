@@ -2,7 +2,6 @@ namespace Keycloak.AuthServices.Sdk;
 
 using System.Net.Http.Json;
 using System.Text.Json;
-using Keycloak.AuthServices.Sdk.Admin.Models;
 
 /// <summary>
 /// TBD:

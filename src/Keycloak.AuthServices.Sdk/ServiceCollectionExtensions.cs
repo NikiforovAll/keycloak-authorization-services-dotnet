@@ -162,6 +162,13 @@ public static class ServiceCollectionExtensions
     {
         services.Configure(configureKeycloakOptions);
 
+        services.AddTransient<IKeycloakProtectedResourceClient>(sp =>
+            sp.GetRequiredService<IKeycloakProtectionClient>()
+        );
+        services.AddTransient<IKeycloakPolicyClient>(sp =>
+            sp.GetRequiredService<IKeycloakProtectionClient>()
+        );
+
         return services
             .AddHttpClient(
                 "keycloak_protection_api",

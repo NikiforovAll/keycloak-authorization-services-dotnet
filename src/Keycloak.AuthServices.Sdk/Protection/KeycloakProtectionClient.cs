@@ -18,6 +18,7 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
     /// <param name="httpClient"></param>
     public KeycloakProtectionClient(HttpClient httpClient) => this.httpClient = httpClient;
 
+    #region IKeycloakProtectedResourceClient
     ///<inheritdoc/>
     public async Task<HttpResponseMessage> CreateResourceWithResponseAsync(
         string realm,
@@ -147,4 +148,115 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
 
         return responseMessage!;
     }
+    #endregion
+
+    #region IKeycloakPolicyClient
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> CreatePolicyWithResponseAsync(
+        string realm,
+        string resourceId,
+        Policy policy,
+        CancellationToken cancellationToken
+    )
+    {
+        var path = ApiUrls.CreatePolicy.WithRealm(realm).Replace("{resourceId}", resourceId);
+
+        var responseMessage = await this.httpClient.PostAsJsonAsync(
+            path,
+            policy,
+            cancellationToken
+        );
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> DeletePolicyWithResponseAsync(
+        string realm,
+        string policyId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.DeletePolicy.WithRealm(realm).Replace("{id}", policyId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> GetPoliciesWithResponseAsync(
+        string realm,
+        GetPoliciesRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetPolicies.WithRealm(realm);
+
+        var queryBuilder = new QueryBuilder();
+
+        parameters ??= new();
+        if (parameters.First.HasValue)
+        {
+            queryBuilder.Add("first", parameters.First.ToString());
+        }
+
+        if (parameters.Max.HasValue)
+        {
+            queryBuilder.Add("max", parameters.Max.ToString()!);
+        }
+
+        if (!string.IsNullOrEmpty(parameters.PermissionName))
+        {
+            queryBuilder.Add("name", parameters.PermissionName);
+        }
+
+        if (!string.IsNullOrEmpty(parameters.ResourceId))
+        {
+            queryBuilder.Add("resource", parameters.ResourceId);
+        }
+
+        if (!string.IsNullOrEmpty(parameters.Scope))
+        {
+            queryBuilder.Add("scope", parameters.Scope);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> GetPolicyWithResponseAsync(
+        string realm,
+        string policyId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetPolicy.WithRealm(realm).Replace("{id}", policyId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> UpdatePolicyWithResponseAsync(
+        string realm,
+        string policyId,
+        Policy policy,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.UpdatePolicy.WithRealm(realm).Replace("{id}", policyId);
+
+        var responseMessage = await this.httpClient.PutAsJsonAsync(path, policy, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    #endregion
 }

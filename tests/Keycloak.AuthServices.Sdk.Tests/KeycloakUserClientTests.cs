@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Sdk.Tests;
 
 using System.Net;
 using System.Text.Json;
+using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Users;

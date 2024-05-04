@@ -8058,38 +8058,6 @@ public partial class FileResponse : System.IDisposable
     }
 }
 
-[System.CodeDom.Compiler.GeneratedCode(
-    "NSwag",
-    "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
-)]
-public partial class KeycloakHttpClientException : System.Exception
-{
-    public int StatusCode { get; private set; }
-
-    public string HttpResponse { get; private set; }
-
-    public ErrorResponse Response { get; private set; }
-
-    public KeycloakHttpClientException(
-        string message,
-        int statusCode,
-        string httpResponse,
-        ErrorResponse response,
-        System.Exception? innerException
-    )
-        : base(message + "\n\nStatus: " + statusCode, innerException)
-    {
-        StatusCode = statusCode;
-        HttpResponse = httpResponse;
-        Response = response;
-    }
-
-    public override string ToString()
-    {
-        return string.Format("HTTP Response: \n\n{0}\n\n{1}", HttpResponse, base.ToString());
-    }
-}
-
 #pragma warning restore  108
 #pragma warning restore  114
 #pragma warning restore  472
