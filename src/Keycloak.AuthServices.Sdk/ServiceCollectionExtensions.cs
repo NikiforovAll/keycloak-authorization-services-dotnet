@@ -13,13 +13,13 @@ using Microsoft.Extensions.Options;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Admin API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    /// <param name="configureClient"></param>
-    /// <param name="keycloakClientSectionName"></param>
-    /// <returns></returns>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configuration">The IConfiguration instance to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <param name="keycloakClientSectionName">The name of the configuration section containing the Keycloak client options.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -32,12 +32,12 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Admin API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configurationSection"></param>
-    /// <param name="configureClient"></param>
-    /// <returns></returns>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configurationSection">The IConfigurationSection to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         IConfigurationSection configurationSection,
@@ -49,12 +49,12 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Admin API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configureKeycloakOptions"></param>
-    /// <param name="configureClient"></param>
-    /// <returns></returns>v
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configureKeycloakOptions">An action to configure the Keycloak client options.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         Action<KeycloakAdminClientOptions> configureKeycloakOptions,
@@ -84,12 +84,12 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Admin API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="keycloakOptions"></param>
-    /// <param name="configureClient"></param>
-    /// <returns></returns>v
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="keycloakOptions">The Keycloak client options.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         KeycloakAdminClientOptions keycloakOptions,
@@ -112,13 +112,13 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Protection API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    /// <param name="configureClient"></param>
-    /// <param name="keycloakClientSectionName"></param>
-    /// <returns></returns>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configuration">The IConfiguration instance to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <param name="keycloakClientSectionName">The name of the configuration section containing the Keycloak client options.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -131,12 +131,12 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Protection API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configurationSection"></param>
-    /// <param name="configureClient"></param>
-    /// <returns></returns>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configurationSection">The IConfigurationSection to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         IConfigurationSection configurationSection,
@@ -148,12 +148,12 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Protection API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configureKeycloakOptions"></param>
-    /// <param name="configureClient"></param>
-    /// <returns></returns>v
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configureKeycloakOptions">An action to configure the Keycloak client options.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         Action<KeycloakProtectionClientOptions> configureKeycloakOptions,
@@ -161,6 +161,13 @@ public static class ServiceCollectionExtensions
     )
     {
         services.Configure(configureKeycloakOptions);
+
+        services.AddTransient<IKeycloakProtectedResourceClient>(sp =>
+            sp.GetRequiredService<IKeycloakProtectionClient>()
+        );
+        services.AddTransient<IKeycloakPolicyClient>(sp =>
+            sp.GetRequiredService<IKeycloakProtectionClient>()
+        );
 
         return services
             .AddHttpClient(
@@ -179,12 +186,12 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// TBD:
+    /// Adds an HttpClient for Keycloak Protection API to the service collection.
     /// </summary>
-    /// <param name="services"></param>
-    /// <param name="keycloakOptions"></param>
-    /// <param name="configureClient"></param>
-    /// <returns></returns>v
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="keycloakOptions">The Keycloak client options.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         KeycloakProtectionClientOptions keycloakOptions,

@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Sdk.Tests;
 
 using System.Net;
 using System.Text.Json;
+using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Admin;
 using Keycloak.AuthServices.Sdk.Admin.Models;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
@@ -31,7 +32,7 @@ public class KeycloakUserClientTests
         this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/users/{userId}")
             .Respond(HttpStatusCode.OK, MediaType, JsonSerializer.Serialize(userFixture));
 
-        var user = await this.keycloakUserClient.GetUserAsync("master", userId.ToString());
+        var user = await this.keycloakUserClient.GetUserAsync("master", userId!.ToString());
 
         user.Id.Should().Be(userId.ToString());
         this.handler.VerifyNoOutstandingExpectation();

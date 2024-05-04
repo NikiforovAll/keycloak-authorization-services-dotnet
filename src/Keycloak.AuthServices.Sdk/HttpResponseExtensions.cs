@@ -2,20 +2,19 @@ namespace Keycloak.AuthServices.Sdk;
 
 using System.Net.Http.Json;
 using System.Text.Json;
-using Keycloak.AuthServices.Sdk.Admin.Models;
 
 /// <summary>
-/// TBD:
+/// Provides extension methods for handling HTTP responses.
 /// </summary>
 public static class HttpResponseExtensions
 {
     /// <summary>
-    /// TBD:
+    /// Reads the HTTP response content as JSON and deserializes it into the specified type.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="response"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
+    /// <typeparam name="T">The type to deserialize the response content into.</typeparam>
+    /// <param name="response">The HTTP response message.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>The deserialized response content.</returns>
     public static async Task<T?> GetResponseAsync<T>(
         this HttpResponseMessage response,
         CancellationToken cancellationToken = default
@@ -31,12 +30,11 @@ public static class HttpResponseExtensions
     }
 
     /// <summary>
-    /// TBD:
+    /// Ensures that the HTTP response is successful, otherwise throws an exception.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="response"></param>
-    /// <param name="cancellationToken"></param>
-    /// <returns></returns>
+    /// <param name="response">The HTTP response message.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <exception cref="KeycloakHttpClientException">Thrown when the response is not successful.</exception>
     public static async Task EnsureResponseAsync(
         this HttpResponseMessage response,
         CancellationToken cancellationToken = default

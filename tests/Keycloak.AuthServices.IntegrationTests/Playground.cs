@@ -15,7 +15,9 @@ public class Playground(ITestOutputHelper testOutputHelper)
 {
     private static readonly string AppSettings = "appsettings.json";
 
+#pragma warning disable xUnit1004 // Test methods should not be skipped
     [Fact(Skip = "Playground Test")]
+#pragma warning restore xUnit1004 // Test methods should not be skipped
     public async Task PlaygroundRequireProtectedResource_Scopes_Verified()
     {
         var policyName = "RequireProtectedResource";

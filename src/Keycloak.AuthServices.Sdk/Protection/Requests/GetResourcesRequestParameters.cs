@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Protection.Requests;
 
 /// <summary>
-/// Optional parameters for the <see cref="IKeycloakProtectionClient.GetResourcesIdsAsync"/> endpoint.
+/// Optional parameters for the <see cref="IKeycloakProtectedResourceClient.GetResourcesIdsAsync"/> endpoint.
 /// </summary>
 public class GetResourcesRequestParameters
 {

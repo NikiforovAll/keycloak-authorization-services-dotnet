@@ -1,8 +1,8 @@
 namespace Keycloak.AuthServices.Sdk.Tests;
 
 using System.Net;
+using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Admin;
-using Keycloak.AuthServices.Sdk.Admin.Models;
 using RichardSzalay.MockHttp;
 
 public class KeycloakRealmClientTests

@@ -46,19 +46,6 @@ public class QueryBuilder : IEnumerable<KeyValuePair<string, string>>
     /// Adds a query string token to the instance.
     /// </summary>
     /// <param name="key">The query key.</param>
-    /// <param name="values">The sequence of query values.</param>
-    // public void Add(string key, IEnumerable<string> values)
-    // {
-    //     foreach (var value in values)
-    //     {
-    //         this.@params.Add(new KeyValuePair<string, string>(key, value));
-    //     }
-    // }
-
-    /// <summary>
-    /// Adds a query string token to the instance.
-    /// </summary>
-    /// <param name="key">The query key.</param>
     /// <param name="value">The query value.</param>
     public QueryBuilder Add(string key, string value)
     {
