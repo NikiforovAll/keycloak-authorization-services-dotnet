@@ -26,7 +26,7 @@ public class UriBasedResourceProtectionMiddleware
     /// <exception cref="ArgumentNullException">Thrown, if <see cref="IKeycloakProtectionClient"/> is null.</exception>
     public UriBasedResourceProtectionMiddleware(RequestDelegate next, IKeycloakProtectionClient client)
     {
-        this.next = next;
+        this.next = next ?? throw new ArgumentNullException(nameof(next));
         this.client = client ?? throw new ArgumentNullException(nameof(client));
     }
 
@@ -72,10 +72,10 @@ public class UriBasedResourceProtectionMiddleware
 
         if (isAuthorized)
         {
-            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             return true;
         }
 
+        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
         return false;
     }
 
