@@ -81,6 +81,10 @@ export default withMermaid({
                         { text: 'Introduction', link: '/protection-api/protection-api' },
                         {
                             text: 'Protection API Reference', link: '/protection-api/protection-api-reference',
+                            items: [
+                                { text: 'Protected Resource Client', link: '/protection-api/protected-resource-client' },
+                                { text: 'Policy Client', link: '/protection-api/policy-client' },
+                            ]
                         },
                     ]
                 },
