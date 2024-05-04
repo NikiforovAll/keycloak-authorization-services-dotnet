@@ -11,4 +11,4 @@ The full API documentation - <https://www.keycloak.org/docs-api/latest/rest-api/
 
 💡**Alternatively**, you may want to use OpenAPI definition for Keycloak to generate a client based on your generator of choice - see [OpenAPI Support](/admin-rest-api/admin-api-openapi) for more details.
 
-<<< @/../src/Keycloak.AuthServices.Sdk\Admin\IKeycloakClient.cs
+<<< @/../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakClient.cs
