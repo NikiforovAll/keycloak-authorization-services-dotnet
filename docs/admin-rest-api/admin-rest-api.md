@@ -78,4 +78,4 @@ var realm = await client.GetRealmAsync("Test");
 
 Here is `IKeycloakClient`:
 
-<<< @/../src/Keycloak.AuthServices.Sdk\Admin\IKeycloakClient.cs
+<<< @/../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakClient.cs
