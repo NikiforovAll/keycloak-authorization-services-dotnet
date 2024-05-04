@@ -33,33 +33,61 @@ public class UriBasedResourceProtectionMiddleware
     /// <inheritdoc/>
     public async Task InvokeAsync(HttpContext context)
     {
-        var targetAllowsAnonymous = context.Features?
+        if (this.EvaluateAuthorization(context).Result)
+        {
+            await this.next(context);
+        }
+    }
+
+    private async Task<bool> EvaluateAuthorization(HttpContext context)
+    {
+        var attributes = context.Features?
             .Get<IEndpointFeature>()?
             .Endpoint?
-            .Metadata
-            .Any(attribute => attribute is AllowAnonymousAttribute) ?? false;
+            .Metadata;
 
-        if (!targetAllowsAnonymous)
+        if (UriBasedProtectionDisabled(attributes))
         {
-            var isAuthorized = await this.client.VerifyAccessToResource(
-            context.Request.Path, context.Request.Method, CancellationToken.None);
-
-            if (!isAuthorized)
-            {
-                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                return;
-            }
+            return true;
         }
 
-        await this.next(context);
+        var resourceName = "";
+        var scope = "";
+
+        if (attributes != null && attributes
+            .SingleOrDefault(attribute => attribute is ExplicitResourceProtectionAttribute)
+                is ExplicitResourceProtectionAttribute explicitResourceProtectionAttribute)
+        {
+            resourceName = explicitResourceProtectionAttribute.ResourceName;
+            scope = explicitResourceProtectionAttribute.Scope;
+        }
+        else
+        {
+            resourceName = context.Request.Path;
+            scope = context.Request.Method;
+        }
+
+        var isAuthorized = await this.client.VerifyAccessToResource(
+        resourceName, scope, CancellationToken.None);
+
+        if (isAuthorized)
+        {
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            return true;
+        }
+
+        return false;
     }
+
+    private static bool UriBasedProtectionDisabled(EndpointMetadataCollection? attributes) => attributes != null && attributes.Any(attribute => attribute is AllowAnonymousAttribute
+                    or DisableUriBasedResourceProtectionAttribute);
 }
 
 /// <summary/>
 public static class MiddlewareExtensions
 {
     /// <summary>
-    /// Extension method to enable automatic resource protection.
+    /// Extension method to enable automatic uri based resource protection.
     /// </summary>
     /// <param name="builder">The <see cref="IApplicationBuilder"/> isntance.</param>
     /// <returns>The <see cref="IApplicationBuilder"/> isntance with <see cref="UriBasedResourceProtectionMiddleware"/> usage.</returns>
