@@ -12,7 +12,7 @@ using Microsoft.Extensions.Options;
 public class AccessTokenPropagationHandler : DelegatingHandler
 {
     private readonly IHttpContextAccessor contextAccessor;
-    private readonly KeycloakAuthorizationServerClientOptions options;
+    private readonly KeycloakAuthorizationServerOptions options;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AccessTokenPropagationHandler"/> class.
@@ -21,7 +21,7 @@ public class AccessTokenPropagationHandler : DelegatingHandler
     /// <param name="options">The Keycloak client options.</param>
     public AccessTokenPropagationHandler(
         IHttpContextAccessor contextAccessor,
-        IOptions<KeycloakAuthorizationServerClientOptions> options
+        IOptions<KeycloakAuthorizationServerOptions> options
     )
     {
         this.contextAccessor = contextAccessor;

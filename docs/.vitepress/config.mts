@@ -43,8 +43,18 @@ export default withMermaid({
                     text: 'Authorization',
                     collapsed: false,
                     items: [
-                        { text: 'Authorization Server', link: '/authorization/authorization-server' },
-                        { text: 'Protected Resources ✨', link: '/authorization/resources' },
+                        {
+                            text: 'Authorization Server', link: '/authorization/authorization-server'
+                        },
+                        {
+                            text: 'Protected Resources ✨', link: '/authorization/resources',
+                            collapsed: true,
+                            items: [
+                                { text: 'ASP.NET Core Integration', link: '/authorization/resources-api' },
+                                { text: 'Use HTTP Client', link: '/authorization/resources-client' },
+                                { text: 'Client API Reference', link: '/authorization/resources-client-reference' },
+                            ]
+                        },
                     ]
                 },
                 {

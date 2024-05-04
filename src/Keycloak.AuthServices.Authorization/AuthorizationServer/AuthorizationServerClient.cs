@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 public class AuthorizationServerClient : IAuthorizationServerClient
 {
     private readonly HttpClient httpClient;
-    private readonly IOptions<KeycloakAuthorizationServerClientOptions> options;
+    private readonly IOptions<KeycloakAuthorizationServerOptions> options;
     private readonly ILogger<AuthorizationServerClient> logger;
 
     /// <summary>
@@ -21,7 +21,7 @@ public class AuthorizationServerClient : IAuthorizationServerClient
     /// <exception cref="ArgumentNullException"></exception>
     public AuthorizationServerClient(
         HttpClient httpClient,
-        IOptions<KeycloakAuthorizationServerClientOptions> clientOptions,
+        IOptions<KeycloakAuthorizationServerOptions> clientOptions,
         ILogger<AuthorizationServerClient> logger
     )
     {

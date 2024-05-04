@@ -92,7 +92,7 @@ public static class Utils
         return (services, configuration);
     }
 
-    public static (IServiceCollection services, IConfiguration configuration1) AdminHttpClientSetup(
+    public static (IServiceCollection services, IConfiguration configuration) AdminHttpClientSetup(
         string fileName,
         ITestOutputHelper testOutputHelper
     )
@@ -114,10 +114,10 @@ public static class Utils
         return (services, configuration);
     }
 
-    public static (IServiceCollection services, IConfiguration configuration1) ProtectionHttpClientSetup(
-        string fileName,
-        ITestOutputHelper testOutputHelper
-    )
+    public static (
+        IServiceCollection services,
+        IConfiguration configuration
+    ) ProtectionHttpClientSetup(string fileName, ITestOutputHelper testOutputHelper)
     {
         var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
 
@@ -138,22 +138,22 @@ public static class Utils
 
     private static void BindKeycloak(
         Duende.AccessTokenManagement.ClientCredentialsClient client,
-        KeycloakAdminClientOptions keycloaktOptions
+        KeycloakAdminClientOptions keycloakOptions
     )
     {
-        client.ClientId = keycloaktOptions.Resource;
-        client.ClientSecret = keycloaktOptions.Credentials.Secret;
-        client.TokenEndpoint = keycloaktOptions.KeycloakTokenEndpoint;
+        client.ClientId = keycloakOptions.Resource;
+        client.ClientSecret = keycloakOptions.Credentials.Secret;
+        client.TokenEndpoint = keycloakOptions.KeycloakTokenEndpoint;
     }
 
     private static void BindKeycloak(
         Duende.AccessTokenManagement.ClientCredentialsClient client,
-        KeycloakProtectionClientOptions keycloaktOptions
+        KeycloakProtectionClientOptions keycloakOptions
     )
     {
-        client.ClientId = keycloaktOptions.Resource;
-        client.ClientSecret = keycloaktOptions.Credentials.Secret;
-        client.TokenEndpoint = keycloaktOptions.KeycloakTokenEndpoint;
+        client.ClientId = keycloakOptions.Resource;
+        client.ClientSecret = keycloakOptions.Credentials.Secret;
+        client.TokenEndpoint = keycloakOptions.KeycloakTokenEndpoint;
     }
 
     public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(string fileName)

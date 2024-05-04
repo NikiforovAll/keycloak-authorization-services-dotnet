@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Authorization;
 using Authorization.Abstractions;
 using Data;
-using Keycloak.AuthServices.Sdk.Admin.Models;
 using Keycloak.AuthServices.Sdk.Protection;
+using Keycloak.AuthServices.Sdk.Protection.Models;
 using MediatR;
 
 [AuthorizeProtectedResource("workspaces", "workspaces:create")]
@@ -21,16 +21,17 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
     public CreateWorkspaceCommandHandler(
         IApplicationDbContext db,
         IKeycloakProtectionClient resourceClient,
-        IIdentityService identityService)
+        IIdentityService identityService
+    )
     {
         this.db = db ?? throw new ArgumentNullException(nameof(db));
-        this.resourceClient = resourceClient ?? throw new ArgumentNullException(nameof(resourceClient));
-        this.identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        this.resourceClient =
+            resourceClient ?? throw new ArgumentNullException(nameof(resourceClient));
+        this.identityService =
+            identityService ?? throw new ArgumentNullException(nameof(identityService));
     }
 
-    public async Task Handle(
-        CreateWorkspaceCommand request,
-        CancellationToken cancellationToken)
+    public async Task Handle(CreateWorkspaceCommand request, CancellationToken cancellationToken)
     {
         var (name, projects) = request;
 
@@ -38,13 +39,18 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
         this.db.Workspaces.Add(workspace);
         await this.db.SaveChangesAsync(cancellationToken);
 
-        var userName = this.identityService?.UserName
-            ?? throw new InvalidOperationException();
-        await this.resourceClient.CreateResource("authz",
-            new Resource($"workspaces/{workspace.Id}", new[] { "workspaces:read", "workspaces:delete" })
+        var userName = this.identityService?.UserName ?? throw new InvalidOperationException();
+        await this.resourceClient.CreateResourceAsync(
+            "authz",
+            new Resource(
+                $"workspaces/{workspace.Id}",
+                new[] { "workspaces:read", "workspaces:delete" }
+            )
             {
                 Attributes = { [userName] = "Owner" },
                 Type = "urn:workspace-authz:resource:workspaces",
-            });
+            },
+            cancellationToken
+        );
     }
 }

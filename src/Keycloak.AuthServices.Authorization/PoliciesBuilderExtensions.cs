@@ -54,6 +54,7 @@ public static class PoliciesBuilderExtensions
             .RequireClaim(KeycloakConstants.RealmAccessClaimType)
             .AddRequirements(new RealmAccessRequirement(roles));
 
+    #region RequireProtectedResource
     /// <summary>
     /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
@@ -66,7 +67,9 @@ public static class PoliciesBuilderExtensions
         string resource,
         string scope
     ) => builder.AddRequirements(new DecisionRequirement(resource, scope));
+    #endregion RequireProtectedResource
 
+    #region RequireProtectedResourceScopes
     /// <summary>
     /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
@@ -87,4 +90,5 @@ public static class PoliciesBuilderExtensions
                 ScopesValidationMode = scopesValidationMode
             }
         );
+    #endregion RequireProtectedResourceScopes
 }

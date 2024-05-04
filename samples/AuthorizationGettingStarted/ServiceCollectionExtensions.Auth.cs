@@ -6,31 +6,41 @@ using static AuthorizationConstants;
 
 public static partial class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddAuth(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddAuth(
+        this IServiceCollection services,
+        IConfiguration configuration
+    )
     {
         services.AddKeycloakWebApiAuthentication(configuration);
 
-        services.AddAuthorization(options =>
-        {
-            options.AddPolicy(
-                Policies.RequireAspNetCoreRole,
-                builder => builder.RequireRole(Roles.AspNetCoreRole));
+        services
+            .AddAuthorization(options =>
+            {
+                options.AddPolicy(
+                    Policies.RequireAspNetCoreRole,
+                    builder => builder.RequireRole(Roles.AspNetCoreRole)
+                );
 
-            options.AddPolicy(
-                Policies.RequireRealmRole,
-                builder => builder.RequireRealmRoles(Roles.RealmRole));
+                options.AddPolicy(
+                    Policies.RequireRealmRole,
+                    builder => builder.RequireRealmRoles(Roles.RealmRole)
+                );
 
-            options.AddPolicy(
-                Policies.RequireClientRole,
-                builder => builder.RequireResourceRoles(Roles.ClientRole));
+                options.AddPolicy(
+                    Policies.RequireClientRole,
+                    builder => builder.RequireResourceRoles(Roles.ClientRole)
+                );
 
-            options.AddPolicy(
-                Policies.RequireToBeInKeycloakGroupAsReader,
-                builder => builder
-                    .RequireAuthenticatedUser()
-                    .RequireProtectedResource("workspace", "workspaces:read"));
-
-        }).AddKeycloakAuthorization().AddAuthorizationServer(configuration);
+                options.AddPolicy(
+                    Policies.RequireToBeInKeycloakGroupAsReader,
+                    builder =>
+                        builder
+                            .RequireAuthenticatedUser()
+                            .RequireProtectedResource("workspace", "workspaces:read")
+                );
+            })
+            .AddKeycloakAuthorization(configuration)
+            .AddAuthorizationServer(configuration);
 
         return services;
     }
@@ -55,6 +65,8 @@ public static class AuthorizationConstants
 
         public const string RequireClientRole = nameof(RequireClientRole);
 
-        public const string RequireToBeInKeycloakGroupAsReader = nameof(RequireToBeInKeycloakGroupAsReader);
+        public const string RequireToBeInKeycloakGroupAsReader = nameof(
+            RequireToBeInKeycloakGroupAsReader
+        );
     }
 }

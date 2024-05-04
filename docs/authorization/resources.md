@@ -65,27 +65,3 @@ The *Keycloak Authorization Server* evaluates these policies whenever a user att
 
 <!-- ![evaluate-permissions-for-admin](/assets/evaluate-permissions-for-admin.png) -->
 ![evaluate-permissions-for-admin](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/public/assets/evaluate-permissions-for-admin.png)
-
-## Add to your code
-
-Here is how to use to use protected resource authorization.
-
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified
-
-Here are the assertions from the integration test for this scenario:
-
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified_Assertion
-
-Source code of integration test: [tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/blob/main/tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs)
-
-## Validate Multiple Scopes
-
-You can specify multiple scopes to validate against and control comparison by using `ScopesValidationMode`.
-
-Here is an example for `ScopesValidationMode.AllOf`:
-
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_MultipleScopesAllOf_Verified
-
-Here is an example for `ScopesValidationMode.AnyOf`:
-
-<<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_MultipleScopesAnyOf_Verified

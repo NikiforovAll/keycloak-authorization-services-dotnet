@@ -92,7 +92,7 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration,
         Action<HttpClient>? configureClient = default,
-        string configSectionName = KeycloakAuthorizationServerClientOptions.Section
+        string configSectionName = KeycloakAuthorizationServerOptions.Section
     ) =>
         services.AddAuthorizationServer(
             configuration.GetSection(configSectionName),
@@ -117,7 +117,7 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client and auto header propagation
+    /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client, <see cref="ProtectedResourcePolicyProvider"/> and auto header propagation
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configureKeycloakOptions"></param>
@@ -125,11 +125,10 @@ public static class ServiceCollectionExtensions
     /// <returns></returns>
     public static IHttpClientBuilder AddAuthorizationServer(
         this IServiceCollection services,
-        Action<KeycloakAuthorizationServerClientOptions> configureKeycloakOptions,
+        Action<KeycloakAuthorizationServerOptions> configureKeycloakOptions,
         Action<HttpClient>? configureClient = default
     )
     {
-        configureKeycloakOptions ??= _ => { };
         services.Configure(configureKeycloakOptions);
 
         services.AddHttpContextAccessor();
@@ -137,7 +136,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
 
         // (!) resolved locally, will not work with PostConfigure and IOptions pattern
-        var keycloakOptions = new KeycloakAuthorizationServerClientOptions();
+        configureKeycloakOptions ??= _ => { };
+        var keycloakOptions = new KeycloakAuthorizationServerOptions();
         configureKeycloakOptions.Invoke(keycloakOptions);
 
         if (keycloakOptions.UseProtectedResourcePolicyProvider)
@@ -145,20 +145,34 @@ public static class ServiceCollectionExtensions
             services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
         }
 
-        return services
+        return services.AddAuthorizationServerClient(configureClient).AddHeaderPropagation();
+    }
+
+    /// <summary>
+    /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configureClient"></param>
+    /// <returns></returns>
+    public static IHttpClientBuilder AddAuthorizationServerClient(
+        this IServiceCollection services,
+        Action<HttpClient>? configureClient = default
+    ) =>
+        services
             .AddHttpClient<IAuthorizationServerClient, AuthorizationServerClient>()
             .ConfigureHttpClient(
                 (serviceProvider, client) =>
                 {
                     var keycloakOptions = serviceProvider
-                        .GetRequiredService<IOptions<KeycloakAuthorizationServerClientOptions>>()
-                        .Value;
+                        .GetService<IOptions<KeycloakAuthorizationServerOptions>>()
+                        ?.Value;
 
-                    client.BaseAddress = new Uri(keycloakOptions.KeycloakUrlRealm);
+                    if (!string.IsNullOrWhiteSpace(keycloakOptions?.KeycloakUrlRealm))
+                    {
+                        client.BaseAddress = new Uri(keycloakOptions.KeycloakUrlRealm);
+                    }
 
                     configureClient?.Invoke(client);
                 }
-            )
-            .AddHeaderPropagation();
-    }
+            );
 }

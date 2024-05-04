@@ -30,7 +30,7 @@ services
             }
         )
     )
-    .AddKeycloakAuthorization()
+    .AddKeycloakAuthorization(configuration)
     .AddAuthorizationServer(configuration);
 
 services.AddKeycloakAdminHttpClient(configuration);

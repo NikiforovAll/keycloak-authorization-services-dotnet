@@ -10,9 +10,7 @@ var services = builder.Services;
 
 builder.AddSerilog();
 
-services
-    .AddApplicationSwagger(configuration)
-    .AddAuth(configuration);
+services.AddApplicationSwagger(configuration).AddAuth(configuration);
 
 services.Configure<JsonOptions>(opts =>
 {
@@ -22,8 +20,7 @@ services.Configure<JsonOptions>(opts =>
 
 var app = builder.Build();
 
-app
-    .UseHttpsRedirection()
+app.UseHttpsRedirection()
     .UseApplicationSwagger(configuration)
     .UseAuthentication()
     .UseAuthorization();
@@ -33,12 +30,10 @@ app.MapGet("/endpoint1", (ClaimsPrincipal user) => user)
     .RequireAuthorization(RequireAspNetCoreRole);
 
 // login with requireed realm role evaluated from corresponding claim
-app.MapGet("/endpoint2", (ClaimsPrincipal user) => user)
-    .RequireAuthorization(RequireRealmRole);
+app.MapGet("/endpoint2", (ClaimsPrincipal user) => user).RequireAuthorization(RequireRealmRole);
 
 // login with requireed client role evaluated from corresponding claim
-app.MapGet("/endpoint3", (ClaimsPrincipal user) => user)
-    .RequireAuthorization(RequireClientRole);
+app.MapGet("/endpoint3", (ClaimsPrincipal user) => user).RequireAuthorization(RequireClientRole);
 
 // login based on remotely executed policy
 // authorization is performed by Keycloak (Authorization Server)
