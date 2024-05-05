@@ -1,7 +1,11 @@
 # HTTP Admin REST API
 
-[Keycloak.AuthServices.Sdk](https://www.nuget.org/packages/Keycloak.AuthServices.Sdk) provides a typed HTTP Client to work with Keycloak Admin HTTP REST API.
+[Keycloak.AuthServices](https://www.nuget.org/packages?q=Keycloak.AuthServices) has to options for integration with the Admin REST API.
 
+| NuGet | Description |
+|------|-------------|
+| [Keycloak.AuthServices.Sdk](https://www.nuget.org/packages/Keycloak.AuthServices.Sdk) | Provides a typed HTTP Client to work with Keycloak Admin HTTP REST API. A high quality SDK client written manually, but not all functionality is implemented. |
+| [Keycloak.AuthServices.Sdk.Kiota](https://www.nuget.org/packages/Keycloak.AuthServices.Sdk.Kiota) | A client generated based on OpenAPI Spec, **full functionality** covered|
 
 The Admin REST API in Keycloak provides a programmatic way to manage and administer Keycloak instances. It allows you to perform various administrative tasks such as creating and managing realms, users, roles, clients, and more. To interact with the Admin REST API, you can use HTTP requests to send commands and retrieve data. The API follows the REST architectural style and is designed to be simple and intuitive to use.
 
@@ -31,10 +35,15 @@ You can use `IKeycloakClient` from Web APIs, Worker, Console apps, etc. It is fu
 To add it to DI, you can use convenience extensions method `AddKeycloakAdminHttpClient`:
 
 ```csharp
+/// <summary>
+/// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/> HTTP clients for Keycloak Admin API.
+/// </summary>
+/// <returns>The IHttpClientBuilder for further configuration.</returns>
 public static IHttpClientBuilder AddKeycloakAdminHttpClient(
     this IServiceCollection services,
-    KeycloakAdminClientOptions keycloakAdminClientOptions,
-    Action<HttpClient>? configureClient = default
+    IConfiguration configuration,
+    Action<HttpClient>? configureClient = default,
+    string keycloakClientSectionName = KeycloakAdminClientOptions.Section
 )
 ```
 

@@ -72,6 +72,7 @@ export default withMermaid({
                             ]
                         },
                         { text: 'OpenAPI Support', link: '/admin-rest-api/admin-api-openapi' },
+                        { text: 'Generated Client - Kiota', link: '/admin-rest-api/admin-api-kiota' },
                     ]
                 },
                 {

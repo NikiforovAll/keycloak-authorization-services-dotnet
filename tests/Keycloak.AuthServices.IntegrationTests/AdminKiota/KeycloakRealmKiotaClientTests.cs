@@ -21,7 +21,7 @@ public class KeycloakRealmKiotaClientTests(ITestOutputHelper testOutputHelper)
         var (services, configuration) = KeycloakSetup(AppSettings, testOutputHelper);
         var tokenClientName = "keycloak_admin_api_token";
 
-        #region GetRealmAsync_RealmExists_Success
+        #region GetRealmAsyncKiota_RealmExists_Success
         var options = configuration.GetKeycloakOptions<KeycloakAdminClientOptions>()!;
 
         services.AddDistributedMemoryCache();
@@ -50,7 +50,7 @@ public class KeycloakRealmKiotaClientTests(ITestOutputHelper testOutputHelper)
         realm.Should().NotBeNull();
         realm!.Realm.Should().Be(realmName);
 
-        #endregion GetRealmAsync_RealmExists_Success
+        #endregion GetRealmAsyncKiota_RealmExists_Success
 
     }
 }
