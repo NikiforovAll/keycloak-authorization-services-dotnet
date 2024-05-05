@@ -33,7 +33,7 @@ For more details see an example - [Program.cs](../../samples/AuthorizationAndCle
 
 "workspace-authz" is a "confidential client".
 
-![install-keycloak](../../assets/install-keycloak.png)
+<!-- ![install-keycloak](../../assets/install-keycloak.png) -->
 
 Here is how non-confidential client installation configuration look like:
 ```csharp

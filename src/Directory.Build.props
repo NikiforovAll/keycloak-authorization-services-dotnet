@@ -13,6 +13,7 @@
     <PackageProjectUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NikiforovAll/keycloak-authorization-services-dotnet</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageReleaseNotes>The release notes are available at https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/releases</PackageReleaseNotes>
   </PropertyGroup>
 
@@ -24,6 +25,8 @@
   <ItemGroup>
     <!-- Include README.md to NuGet package -->
     <None Include="../../README.md" Pack="true" PackagePath="\"/>
+    <!-- Include icon.png to NuGet package -->
+    <None Include="../../docs/public/icon.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <PropertyGroup Label="Build">
