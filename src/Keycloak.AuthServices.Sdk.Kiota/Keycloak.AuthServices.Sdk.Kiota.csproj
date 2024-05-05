@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Keycloak.AuthServices.Sdk.Kiota</RootNamespace>
+    <NoWarn>CS1591;CS0618</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
