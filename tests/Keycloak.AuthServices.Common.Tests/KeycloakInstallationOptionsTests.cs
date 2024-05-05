@@ -28,6 +28,18 @@ public class KeycloakInstallationOptionsTests
     }
 
     [Fact]
+    public void TestKebabCaseNotationWithExtensionMethod()
+    {
+        var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+        var authenticationOptions = configuration.GetKeycloakOptions<KeycloakInstallationOptions>(
+            "Keycloak1"
+        );
+
+        authenticationOptions.Should().BeEquivalentTo(Expected);
+    }
+
+    [Fact]
     public void TestPascalCaseNotation()
     {
         var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
