@@ -6,7 +6,7 @@
 
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.Authentication</Product>
-    <Description>OICD Authentication; JWT Bearer Authentication for Keycloak</Description>
+    <Description>Simple and configurable JWT Bearer Authentication for Web APIs and OIDC+Cookie Authentication for Web Apps.</Description>
     <PackageTags>Keycloak;Authentication;Authrorization;authserver;JWT;OICD;jwt-authentication</PackageTags>
   </PropertyGroup>
 

@@ -1,10 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Alba" Version="7.4.1" />
     <PackageReference Include="Duende.AccessTokenManagement" Version="2.1.2" />
@@ -38,6 +32,7 @@
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk.Kiota\Keycloak.AuthServices.Sdk.Kiota.csproj" />
   </ItemGroup>
 
 </Project>

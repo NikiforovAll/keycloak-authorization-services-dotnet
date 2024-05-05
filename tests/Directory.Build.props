@@ -29,6 +29,6 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 </Project>

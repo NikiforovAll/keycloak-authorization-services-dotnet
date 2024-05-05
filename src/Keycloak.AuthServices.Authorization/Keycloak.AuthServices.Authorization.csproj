@@ -6,8 +6,8 @@
 
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.Authorization</Product>
-    <Description>Keycloak Authorization Server integration. Decision + Rpt</Description>
-    <PackageTags>Keycloak;Authrorization;authserver</PackageTags>
+    <Description>Adds Keycloak Authorization - including RBAC, Authorization Server, Claims Transformation and more.</Description>
+    <PackageTags>Keycloak;Authrorization;AuthorizationServer;RBAC</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

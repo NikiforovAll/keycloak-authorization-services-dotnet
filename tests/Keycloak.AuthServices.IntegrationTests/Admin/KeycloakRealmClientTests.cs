@@ -85,7 +85,7 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
             );
 
         services
-            .AddKeycloakAdminHttpClient(options)
+            .AddKeycloakAdminHttpClient(configuration)
             .AddClientCredentialsTokenHandler(tokenClientName);
 
         var sp = services.BuildServiceProvider();
