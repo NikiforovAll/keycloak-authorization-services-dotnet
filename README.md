@@ -8,7 +8,7 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikiforovall/keycloak-authorization-services-dotnet/blob/main/LICENSE.md)
 
-Easy Authentication and Authorization with Keycloak in .NET and ASP.NET Core.
+Easy Authentication and Authorization with Keycloak in .NET.
 
 | Package                                | Version                                                                                                                                              | Description                                                  |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -70,7 +70,7 @@ In this example, configuration is based on `appsettings.json`.
 }
 ```
 
-## Example Authorization
+## Example - Add Authorization
 
 With `Keycloak.AuthServices.Authorization`, you can implement role-based authorization in your application. This package allows you to define policies based on roles. Also, you can use Keycloak as Authorization Server. It is a powerful way to organize and apply authorization polices centrally.
 
@@ -103,6 +103,23 @@ app.MapGet("/hello", () => "[]")
     .RequireAuthorization("AdminAndUser");
 
 app.Run();
+```
+
+### Example - Invoke Admin API
+
+```csharp
+var services = new ServiceCollection();
+services.AddKeycloakAdminHttpClient(new KeycloakAdminClientOptions
+{
+    AuthServerUrl = "http://localhost:8080/",
+    Realm = "master",
+    Resource = "admin-api",
+});
+
+var sp = services.BuildServiceProvider();
+var client = sp.GetRequiredService<IKeycloakRealmClient>();
+
+var realm = await client.GetRealmAsync("Test");
 ```
 
 ## Build and Development
