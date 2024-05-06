@@ -5,7 +5,7 @@
 * Breaking change 💥: Lot's of changes `Keycloak.AuthServices.Sdk` - API has changed, no backward compatibility.
 * Breaking change 💥: Removed dependencies on `Refit` and `IdentityModel.AspNetCore`. Tokens are no longer managed by this library and **you need to configure it separately**.
 * `RolesClaimTransformationSource` changed to `None` from `ResourceAccess` meaning we no longer map to `AspNetCore` roles by default. Renamed to `EnableRolesMapping`. Moved to `Keycloak.AuthServices.Authorization`.
-* Moved `IKeycloakProtectionClient` to `Keycloak.AuthServices.Authorization`. Removed `AddKeycloakProtectionHttpClient`, added `AddAuthorizationServer` instead.
+* Moved `IKeycloakProtectionClient` to `Keycloak.AuthServices.Authorization` and renamed it to `IAuthorizationServerClient`. Removed `AddKeycloakProtectionHttpClient`, added `AddAuthorizationServer` instead. Note, `IKeycloakProtectionClient` is used as umbrella interface for Protection API now. (can be confusing if you used previous versions)
 
 ```csharp
 // Before
