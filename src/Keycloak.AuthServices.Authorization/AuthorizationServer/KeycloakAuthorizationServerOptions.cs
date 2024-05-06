@@ -18,6 +18,11 @@ public sealed class KeycloakAuthorizationServerOptions : KeycloakInstallationOpt
     public string SourceAuthenticationScheme { get; set; } = "Bearer";
 
     /// <summary>
+    /// Controls if <see cref="AccessTokenPropagationHandler"/> is added to the <see cref="IAuthorizationServerClient"/>
+    /// </summary>
+    public static bool DisableHeaderPropagation { get; set; }
+
+    /// <summary>
     /// Gets or sets a value indicating whether to use the protected resource policy provider.
     /// </summary>
     /// <remarks>
