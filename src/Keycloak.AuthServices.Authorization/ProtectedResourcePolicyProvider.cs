@@ -23,7 +23,7 @@ public class ProtectedResourcePolicyProvider : DefaultAuthorizationPolicyProvide
             return registeredPolicy;
         }
 
-        // TODO: policy should be cached and managed properly, not production ready
+        // Policy should be cached and managed properly, probably not production ready
         // https://0xnf.github.io/posts/oauthserver/15/#dynamically-handling-policies
         var builder = new AuthorizationPolicyBuilder();
         var tokens = policyName.Split('#');
