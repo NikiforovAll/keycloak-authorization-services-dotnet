@@ -3,13 +3,13 @@
 You can use `IAuthorizationServerClient` directly in your code, but beware that it depends on `IHttpContextAccessor`.
 
 > [!TIP]
-> In situations when you want to authorize access in your code I advise you to use [IAuthorizationService](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) and not `IAuthorizationServerClient` directly. In this case, you still need to define policies and use them by name like this:
+> In situations when you want to authorize access in your code I advise you to use [Microsoft.AspNetCore.Authorization.IAuthorizationService](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) and not `IAuthorizationServerClient` directly. In this case, you still need to define policies and use them by name like this:
 >
 > ```csharp
 > var result = await authorizationService.AuthorizeAsync(claimsPrincipal, policyName);
 > ```
 
-If you need more control and for some reason you don't want to use *Policies* and [IAuthorizationService](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) you can use `IAuthorizationServerClient` directly.
+If you need more control and for some reason you don't want to use *Policies* and `IAuthorizationService` you can use `IAuthorizationServerClient` directly.
 
 ## Add to your code
 
