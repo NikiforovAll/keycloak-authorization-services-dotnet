@@ -1,4 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
+  </ItemGroup>
   <PropertyGroup>
     <NoWarn>CS7022</NoWarn>
   </PropertyGroup>

@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,9 @@ var endpoints = app.MapGroup("/endpoints").RequireAuthorization();
 
 endpoints.MapGet("1", () => new { Success = true });
 endpoints.MapGet("RunPolicyBuyName", AuthorizeAsync);
+endpoints
+    .MapGet("DynamicProtectedResourcePolicy", () => new { Success = true })
+    .RequireProtectedResource("my-workspace", "workspace:delete");
 
 app.Run();
 

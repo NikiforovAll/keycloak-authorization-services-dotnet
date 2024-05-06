@@ -133,6 +133,15 @@ public static class ServiceCollectionExtensions
 
         services.AddHttpContextAccessor();
 
+        services.AddAuthorization(options =>
+            options.AddPolicy(
+                DynamicProtectedResourceRequirement.DynamicProtectedResourcePolicy,
+                p => p.AddRequirements(new DynamicProtectedResourceRequirement())
+            )
+        );
+
+        services.AddScoped<IAuthorizationHandler, DynamicProtectedResourceRequirementHandler>();
+        // TODO: determine correct lifetime.
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
 
         // (!) resolved locally, will not work with PostConfigure and IOptions pattern
