@@ -18,7 +18,9 @@ export default withMermaid({
             { text: 'Home', link: '/' },
             { text: 'Getting Started', link: '/introduction' },
             { text: 'Migration', link: '/migration' },
-            { text: 'Examples', link: 'examples/auth-getting-started' }
+            { text: 'Examples', link: 'examples/auth-getting-started' },
+            { text: 'Blog', link: 'blogs' },
+            { text: 'Join Chat', link: 'https://discord.gg/jdYFw2xq' },
         ],
         sidebar: {
             '/': [
