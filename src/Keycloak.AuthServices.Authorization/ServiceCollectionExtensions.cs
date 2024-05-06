@@ -145,7 +145,14 @@ public static class ServiceCollectionExtensions
             services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
         }
 
-        return services.AddAuthorizationServerClient(configureClient).AddHeaderPropagation();
+        var clientBuilder = services.AddAuthorizationServerClient(configureClient);
+
+        if (!KeycloakAuthorizationServerOptions.DisableHeaderPropagation)
+        {
+            clientBuilder.AddHeaderPropagation();
+        }
+
+        return clientBuilder;
     }
 
     /// <summary>

@@ -12,10 +12,16 @@ public sealed class KeycloakAuthorizationServerOptions : KeycloakInstallationOpt
     /// </summary>
     public const string Section = ConfigurationConstants.ConfigurationPrefix;
 
+
     /// <summary>
     /// Gets or sets the source authentication scheme used for header propagation.
     /// </summary>
     public string SourceAuthenticationScheme { get; set; } = "Bearer";
+
+    /// <summary>
+    /// Controls if <see cref="AccessTokenPropagationHandler"/> is added to the <see cref="IAuthorizationServerClient"/>
+    /// </summary>
+    public static bool DisableHeaderPropagation { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether to use the protected resource policy provider.
@@ -29,6 +35,7 @@ public sealed class KeycloakAuthorizationServerOptions : KeycloakInstallationOpt
     /// Represents the mode for validating scopes.
     /// </summary>
     public ScopesValidationMode ScopesValidationMode { get; set; } = ScopesValidationMode.AllOf;
+
 }
 
 /// <summary>
