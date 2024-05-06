@@ -12,6 +12,20 @@ Here is how to use to use protected resource authorization.
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified{7,12-15,18 cs:line-numbers}
 
+Here is an example of how to use registered policies:
+
+```cs
+var app = builder.Build();
+
+app.UseAuthentication(); 
+app.UseAuthorization(); 
+
+app.MapGet("/", () => "Hello World!")
+    .RequireAuthorization(policyName);
+
+app.Run();
+```
+
 Here are the assertions from the integration test for this scenario:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_Scopes_Verified_Assertion
