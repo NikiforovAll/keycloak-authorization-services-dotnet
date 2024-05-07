@@ -32,4 +32,4 @@ Here is how to use `AuthorizationBuilder` to define policy for a protected resou
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_DefaultResource_Verified
 
 > [!Note]
-> The calls to Authorization Servers are made on behalf of a user based on header propagation. We are taking user's *access_token* (JWT Bearer Token) from `IHttpContextAccessor`. `AddHeaderPropagation` adds `AccessTokenPropagationHandler` delegating handler to `IKeycloakProtectionClient` responsible for header propagation.
+> The calls to Authorization Servers are made on behalf of a user based on header propagation. We are taking user's *access_token* (JWT Bearer Token) from `IHttpContextAccessor`. `AddHeaderPropagation` adds `AccessTokenPropagationHandler` delegating handler to `IAuthorizationServerClient` responsible for header propagation.
