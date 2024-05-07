@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Builder;
 public static class ProtectedResourceEndpointConventionBuilderExtensions
 {
     /// <summary>
-    /// Adds authorization policies with the specified names to the endpoint(s).
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s).
     /// </summary>
     /// <param name="builder">The endpoint convention builder.</param>
     /// <param name="resource"></param>
@@ -33,7 +33,7 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
     }
 
     /// <summary>
-    /// Adds authorization policies with the specified names to the endpoint(s).
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s).
     /// </summary>
     /// <param name="builder">The endpoint convention builder.</param>
     /// <param name="resource"></param>
@@ -48,7 +48,7 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
         builder.RequireProtectedResource(resource, new string[] { scope });
 
     /// <summary>
-    /// Adds authorization policies with the specified names to the endpoint(s).
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s).
     /// </summary>
     /// <param name="builder">The endpoint convention builder.</param>
     /// <param name="resource"></param>
@@ -68,6 +68,41 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
         RequireAuthorizationCore(
             builder,
             new ProtectedResourceAttribute[] { new(resource, scopes) }
+        );
+
+        return builder;
+    }
+
+    /// <summary>
+    /// Adds <see cref="IgnoreProtectedResourceAttribute"/> to the endpoint(s).
+    /// </summary>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder IgnoreProtectedResource<TBuilder>(this TBuilder builder, string resource)
+        where TBuilder : IEndpointConventionBuilder
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+
+        RequireAuthorizationCore(builder, new IgnoreProtectedResourceAttribute[] { new(resource) });
+
+        return builder;
+    }
+
+    /// <summary>
+    /// Adds <see cref="IgnoreProtectedResourceAttribute"/> to the endpoint(s).
+    /// </summary>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder IgnoreProtectedResources<TBuilder>(this TBuilder builder)
+        where TBuilder : IEndpointConventionBuilder
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+
+        RequireAuthorizationCore(
+            builder,
+            new IgnoreProtectedResourceAttribute[] { new(string.Empty) }
         );
 
         return builder;

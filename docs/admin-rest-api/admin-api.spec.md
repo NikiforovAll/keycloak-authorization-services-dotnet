@@ -1,6 +1,9 @@
 # admin-api (Service Client)
 
-Here is an configuration file for admin-api client. Note, you might need to assign master realm roles after export separately.
+Here is an configuration file for admin-api client. 
+
+> [!IMPORTANT]
+> You need to assign master realm roles after export separately, otherwise you will get 403 error.
 
 ```json
 {

@@ -43,7 +43,18 @@ app.MapGet("/workspaces", () => "Hello World!") // [!code ++]
 app.Run();
 ```
 
-With just one line, we can authorize access for `"workspaces#workspace:read"`, no policy registrations.
+With just one line, we can authorize access for `"workspaces#workspace:read"`, no policy registrations needed. 🚀
+
+## Dynamic Resources
+
+You can use path parameters in resource names by enclosing parameter name in '{}'.
+
+In example below, we are substituting resource with value `{id}` with the actual value of path parameter.
+
+<<< @/../tests/TestWebApi/Program.cs#SingleDynamicResourceSingleScopeSingleEndpoint
+
+> [!NOTE]
+> ☝️Currently, it is not possible to use body or query parameters. Please create an issue if it is something that you are interested in adding.
 
 ## Multiple Scopes
 
@@ -62,9 +73,9 @@ Endpoint hierarchy:
 Basically, you can define *Group-level* protected resources and *Endpoint-level* protected resources.
 
 > [!NOTE]
-> 💡 `RequireProtectedResource` is extension method over `IEndpointConventionBuilder` it means you can use it outside of Minimal API. E.g.: MVC, RazorPages, etc. Here is the original design document: <https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/issues/87>
+> 💡 `RequireProtectedResource` is extension method over `IEndpointConventionBuilder`. It means you can use it outside of Minimal API. E.g.: MVC, RazorPages, etc. Here is the original design document: <https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/issues/87>
 
-## Multiple resources
+## Multiple Resources
 
 You are not limited to use single resource:
 
@@ -73,6 +84,16 @@ You are not limited to use single resource:
 Here is how to define top-level rule for "workspaces" in general and specific rule for particular workspace.
 
 <<< @/../tests/TestWebApi/Program.cs#MultipleResourcesMultipleScopesEndpointHierarchy
+
+## Ignore Resources
+
+Similarly, to `AllowAnonymous` from `Microsoft.AspNetCore.Authorization` namespace, there are two methods to ignore what has been registered for protected resources: `IgnoreProtectedResources`, `IgnoreProtectedResource`.
+
+```csharp
+public static TBuilder AllowAnonymous<TBuilder>(this TBuilder builder) where TBuilder : IEndpointConventionBuilder;
+```
+
+<<< @/../tests/TestWebApi/Program.cs#SingleResourceIgnoreProtectedResourceEndpointHierarchy
 
 > [!TIP]
 > See the integration tests [ProtectedResourcePolicyTests](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/tree/main/tests/Keycloak.AuthServices.IntegrationTests/ProtectedResourcePolicyTests.cs) for more details.

@@ -8,23 +8,12 @@ namespace Keycloak.AuthServices.Authorization;
     AllowMultiple = true,
     Inherited = true
 )]
-public sealed class ProtectedResourceAttribute : Attribute, IProtectedResourceData
+public sealed class IgnoreProtectedResourceAttribute : Attribute, IProtectedResourceData
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ProtectedResourceAttribute"/> class with the specified policy.
     /// </summary>
-    public ProtectedResourceAttribute(string resource, string? scope)
-        : this(resource, string.IsNullOrWhiteSpace(scope) ? Array.Empty<string>() : new[] { scope })
-    { }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ProtectedResourceAttribute"/> class with the specified policy.
-    /// </summary>
-    public ProtectedResourceAttribute(string resource, string[] scopes)
-    {
-        this.Resource = resource;
-        this.Scopes = scopes;
-    }
+    public IgnoreProtectedResourceAttribute(string resource) => this.Resource = resource;
 
     /// <inheritdoc/>
     public string Resource { get; set; }

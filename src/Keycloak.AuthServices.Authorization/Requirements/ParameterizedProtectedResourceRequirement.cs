@@ -1,10 +1,12 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using System.Collections;
 using System.Globalization;
 using System.Text;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 
 /// <summary>
@@ -68,25 +70,31 @@ public partial class ParameterizedProtectedResourceRequirementHandler
             endpoint?.Metadata?.GetOrderedMetadata<IProtectedResourceData>()
             ?? Array.Empty<IProtectedResourceData>();
 
-        var verificationLog = new VerificationLog();
+        var verificationPlan = new VerificationPlan();
+        verificationPlan.AddRange(requirementData);
 
         if (requirementData.Count > 0)
         {
-            foreach (var r in requirementData)
+            foreach (var entry in verificationPlan)
             {
-                var scopes = r.GetScopesExpression();
+                var scopes = entry.GetScopesExpression();
+
+                var resource = ResolveResource(
+                    entry.Resource,
+                    this.httpContextAccessor.HttpContext
+                );
 
                 var success = await this.client.VerifyAccessToResource(
-                    r.Resource,
+                    resource,
                     scopes,
                     CancellationToken.None
                 );
 
-                verificationLog.Append(r.Resource, scopes, success);
+                verificationPlan.Complete(entry.Resource, success);
 
                 if (!success)
                 {
-                    this.logger.LogVerification(verificationLog.ToString(), userName);
+                    this.logger.LogVerification(verificationPlan.ToString(), userName);
                     this.logger.LogAuthorizationResult(
                         nameof(ParameterizedProtectedResourceRequirementHandler),
                         false,
@@ -98,7 +106,7 @@ public partial class ParameterizedProtectedResourceRequirementHandler
                 }
             }
 
-            this.logger.LogVerification(verificationLog.ToString(), userName);
+            this.logger.LogVerification(verificationPlan.ToString(), userName);
             this.logger.LogAuthorizationResult(
                 nameof(ParameterizedProtectedResourceRequirementHandler),
                 true,
@@ -109,12 +117,91 @@ public partial class ParameterizedProtectedResourceRequirementHandler
         }
     }
 
-    private sealed class VerificationLog
+    private static string ResolveResource(string resource, HttpContext? httpContext)
     {
-        public List<(string resource, string scopes, bool outcome)> Entries { get; } = new();
+        if (httpContext is null)
+        {
+            return resource;
+        }
 
-        public void Append(string resource, string scopes, bool outcome) =>
-            this.Entries.Add((resource, scopes, outcome));
+        var pathParameters = httpContext.GetRouteData()?.Values;
+
+        if (pathParameters != null && resource.Contains('}') && resource.Contains('{'))
+        {
+            foreach (var parameter in pathParameters)
+            {
+                var parameterName = parameter.Key;
+
+                if (resource.Contains($"{{{parameterName}}}"))
+                {
+                    var parameterValue = parameter.Value?.ToString();
+                    resource = resource.Replace($"{{{parameterName}}}", parameterValue);
+                }
+            }
+        }
+
+        return resource;
+    }
+
+    private sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
+    {
+        public List<string> Resources { get; } = new();
+        private Dictionary<string, List<string>> resourceToScopes = new();
+        private Dictionary<string, bool> resourceToOutcomes = new();
+
+        public void AddRange(IEnumerable<IProtectedResourceData> protectedResources)
+        {
+            foreach (var item in protectedResources)
+            {
+                if (item is IgnoreProtectedResourceAttribute)
+                {
+                    this.Remove(item.Resource);
+                }
+                else
+                {
+                    this.Add(item.Resource, item.GetScopesExpression());
+                }
+            }
+        }
+
+        public void Add(string resource, string scopes)
+        {
+            if (this.resourceToScopes.ContainsKey(resource))
+            {
+                this.resourceToScopes[resource].Add(scopes);
+            }
+            else
+            {
+                this.Resources.Add(resource);
+
+                this.resourceToScopes[resource] = new List<string>() { scopes };
+            }
+        }
+
+        public bool Remove(string resource)
+        {
+            if (resource == string.Empty)
+            {
+                this.resourceToScopes = new();
+                this.resourceToOutcomes = new();
+                this.Resources.RemoveAll(_ => true);
+
+                return true;
+            }
+            else if (this.resourceToScopes.ContainsKey(resource))
+            {
+                this.resourceToScopes.Remove(resource);
+                this.resourceToOutcomes.Remove(resource);
+                this.Resources.Remove(resource);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public void Complete(string resource, bool result) =>
+            this.resourceToOutcomes[resource] = result;
 
         public override string ToString()
         {
@@ -124,15 +211,32 @@ public partial class ParameterizedProtectedResourceRequirementHandler
                 CultureInfo.InvariantCulture,
                 $"Resource: {string.Empty, -5} Scopes: {string.Empty, -7}"
             );
-            foreach (var (resource, scopes, outcome) in this.Entries)
+
+            foreach (var data in this)
             {
+                var executed = this.resourceToOutcomes.TryGetValue(data.Resource, out var outcome);
+
                 sb.AppendLine(
                     CultureInfo.InvariantCulture,
-                    $"{resource, -15} {scopes, -20} {outcome, -9}"
+                    $"{data.Resource, -15} {data.GetScopesExpression(), -20} {(executed ? outcome : string.Empty), -9}"
                 );
             }
 
             return sb.ToString();
         }
+
+        public IEnumerator<IProtectedResourceData> GetEnumerator()
+        {
+            var resources = new List<ProtectedResourceAttribute>();
+
+            foreach (var resource in this.Resources)
+            {
+                resources.Add(new(resource, this.resourceToScopes[resource].ToArray()));
+            }
+
+            return resources.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 }

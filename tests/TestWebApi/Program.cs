@@ -52,6 +52,15 @@ MultipleResourcesMultipleScopesEndpointHierarchy(
     nameof(MultipleResourcesMultipleScopesEndpointHierarchy)
 );
 
+SingleResourceIgnoreProtectedResourceEndpointHierarchy(
+    protectedResources,
+    nameof(SingleResourceIgnoreProtectedResourceEndpointHierarchy)
+);
+
+SingleDynamicResourceSingleScopeSingleEndpoint(
+    protectedResources,
+    nameof(SingleDynamicResourceSingleScopeSingleEndpoint)
+);
 app.Run();
 
 static async Task<IResult> AuthorizeAsync(
@@ -96,9 +105,9 @@ static void SingleResourceMultipleScopesEndpointHierarchy(RouteGroupBuilder app,
     var endpoints = app.MapGroup(string.Empty)
         .RequireProtectedResource("workspaces", "workspace:read");
 
-    // require workspaces#workspace:read,workspace:delete
+    // requires workspaces#workspace:read,workspace:delete
     endpoints.MapGet(path, Run).RequireProtectedResource("workspaces", "workspace:delete");
-    // require workspaces#workspace:read, inherited from parent group
+    // requires workspaces#workspace:read, inherited from parent group
     endpoints.MapGet("other-endpoint", Run);
     #endregion SingleResourceMultipleScopesEndpointHierarchy
 }
@@ -117,10 +126,45 @@ static void MultipleResourcesMultipleScopesEndpointHierarchy(RouteGroupBuilder a
     var endpoints = app.MapGroup(string.Empty)
         .RequireProtectedResource("workspaces", "workspace:read");
 
-    // require workspaces#workspace:read;my-workspace#workspace:delete
+    // requires workspaces#workspace:read;my-workspace#workspace:delete
     endpoints.MapGet(path, Run).RequireProtectedResource("my-workspace", "workspace:delete");
     #endregion MultipleResourcesMultipleScopesEndpointHierarchy
 }
+
+static void SingleResourceIgnoreProtectedResourceEndpointHierarchy(
+    RouteGroupBuilder app,
+    string path
+)
+{
+    #region SingleResourceIgnoreProtectedResourceEndpointHierarchy
+    var endpoints = app.MapGroup(string.Empty)
+        .RequireProtectedResource("workspaces", "workspace:read");
+
+    var childrenEndpoints = endpoints
+        .MapGroup(string.Empty)
+        .RequireProtectedResource("my-workspace", "workspace:delete");
+
+    // requires my-workspace#workspace:read
+    childrenEndpoints
+        .MapGet($"{path}1", Run)
+        .IgnoreProtectedResources()
+        .RequireProtectedResource("my-workspace", "workspace:read");
+
+    // requires my-workspace#workspace:delete,workspace:read
+    childrenEndpoints
+        .MapGet($"{path}2", Run)
+        .IgnoreProtectedResource("workspaces")
+        .RequireProtectedResource("my-workspace", "workspace:read");
+
+    #endregion SingleResourceIgnoreProtectedResourceEndpointHierarchy
+}
+
+static void SingleDynamicResourceSingleScopeSingleEndpoint(RouteGroupBuilder app, string path) =>
+    #region SingleDynamicResourceSingleScopeSingleEndpoint
+    app.MapGet($"{path}/{{id}}", (string id) => "Hello World!")
+        .RequireProtectedResource("{id}", "workspace:delete");
+    #endregion SingleDynamicResourceSingleScopeSingleEndpoint
+
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public record Response(bool Success, string? Resource, string? Scopes);

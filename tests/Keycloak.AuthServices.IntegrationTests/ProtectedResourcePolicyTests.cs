@@ -156,6 +156,80 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
         });
     }
 
+    [Fact]
+    public async Task RequireProtectedResource_SingleResourceIgnoreAllResourcesEndpointHierarchy_Verified()
+    {
+        await using var host = await AlbaHost.For<Program>(
+            SetupAuthorizationServer(testOutputHelper),
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+        );
+
+        // tests/TestWebApi/Program.cs#SingleResourceIgnoreProtectedResourceEndpointHierarchy
+        var requestUrl1 = RunEndpoint(
+            "SingleResourceIgnoreProtectedResourceEndpointHierarchy1",
+            "my-workspace#workspace:read"
+        );
+        var requestUrl2 = RunEndpoint(
+            "SingleResourceIgnoreProtectedResourceEndpointHierarchy2",
+            "my-workspace#workspace:delete,workspace:read"
+        );
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(requestUrl1);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(requestUrl1);
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(requestUrl2);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(requestUrl2);
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
+        });
+    }
+
+    [Fact]
+    public async Task RequireProtectedResource_SingleDynamicResourceSingleScopeSingleEndpoint_Verified()
+    {
+        await using var host = await AlbaHost.For<Program>(
+            SetupAuthorizationServer(testOutputHelper),
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+        );
+
+        // tests/TestWebApi/Program.cs#MultipleResourcesMultipleScopesEndpointHierarchy
+        var requestUrl = RunEndpoint(
+            "SingleDynamicResourceSingleScopeSingleEndpoint/my-workspace",
+            "my-workspace:workspace:delete"
+        );
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(requestUrl);
+            _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.OK);
+        });
+
+        await host.Scenario(_ =>
+        {
+            _.Get.Url(requestUrl);
+            _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
+            _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
+        });
+    }
+
     private static Action<IWebHostBuilder> SetupAuthorizationServer(
         ITestOutputHelper testOutputHelper
     ) =>
