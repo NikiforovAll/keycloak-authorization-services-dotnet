@@ -37,13 +37,6 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
     public RealmAccessRequirementHandler(ILogger<RealmAccessRequirementHandler> logger) =>
         this.logger = logger;
 
-    [LoggerMessage(
-        100,
-        LogLevel.Debug,
-        "[{Requirement}] Access outcome {Outcome} for user {UserName}"
-    )]
-    partial void RealmAuthorizationResult(string requirement, bool outcome, string? userName);
-
     /// <inheritdoc />
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
@@ -51,6 +44,7 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
     )
     {
         var success = false;
+
         if (context.User.Claims.TryGetRealmResource(out var resourceAccess))
         {
             success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
@@ -61,7 +55,11 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
             }
         }
 
-        this.RealmAuthorizationResult(requirement.ToString(), success, context.User.Identity?.Name);
+        this.logger.LogAuthorizationResult(
+            requirement.ToString(),
+            success,
+            context.User.Identity?.Name
+        );
 
         return Task.CompletedTask;
     }

@@ -11,7 +11,7 @@
     "credentials" : [ ],
     "disableableCredentialTypes" : [ ],
     "requiredActions" : [ ],
-    "realmRoles" : [ "default-roles-test" ],
+    "realmRoles" : [ "default-roles-test", "offline_access", "uma_authorization" ],
     "clientRoles" : {
       "test-client" : [ "uma_protection" ]
     },
