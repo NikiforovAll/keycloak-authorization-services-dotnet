@@ -53,6 +53,7 @@ export default withMermaid({
                             collapsed: true,
                             items: [
                                 { text: 'ASP.NET Core Integration', link: '/authorization/resources-api' },
+                                { text: 'Protected Resource Builder', link: '/authorization/protected-resource-builder' },
                                 { text: 'Policy Provider', link: '/authorization/policy-provider' },
                             ]
                         },

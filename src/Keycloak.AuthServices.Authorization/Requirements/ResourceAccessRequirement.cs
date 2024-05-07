@@ -58,13 +58,6 @@ public partial class ResourceAccessRequirementHandler
         this.logger = logger;
     }
 
-    [LoggerMessage(
-        101,
-        LogLevel.Debug,
-        "[{Requirement}] Access outcome {Outcome} for user {UserName}"
-    )]
-    partial void ResourceAuthorizationResult(string requirement, bool outcome, string? userName);
-
     /// <inheritdoc />
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
@@ -99,7 +92,7 @@ public partial class ResourceAccessRequirementHandler
             }
         }
 
-        this.ResourceAuthorizationResult(
+        this.logger.LogAuthorizationResult(
             requirement.ToString(),
             success,
             context.User.Identity?.Name

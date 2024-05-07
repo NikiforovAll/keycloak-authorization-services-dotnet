@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 /// <summary>
 /// Decision requirement
 /// </summary>
-public class DecisionRequirement : IAuthorizationRequirement
+public class DecisionRequirement : IAuthorizationRequirement, IProtectedResourceData
 {
     /// <summary>
     /// Resource name
@@ -57,12 +57,7 @@ public class DecisionRequirement : IAuthorizationRequirement
 
     /// <inheritdoc />
     public override string ToString() =>
-        $"{nameof(DecisionRequirement)}: {this.Resource}#{this.GetScopesExpression()}";
-
-    /// <summary>
-    /// </summary>
-    /// <returns></returns>
-    public string GetScopesExpression() => string.Join(',', this.Scopes);
+        $"{nameof(DecisionRequirement)}: {this.Resource}#{(this as IProtectedResourceData).GetScopesExpression()}";
 }
 
 /// <summary>
@@ -86,50 +81,43 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    [LoggerMessage(
-        103,
-        LogLevel.Debug,
-        "[{Requirement}] Access outcome {Outcome} for user {UserName}"
-    )]
-    partial void DecisionAuthorizationResult(string requirement, bool outcome, string? userName);
-
     /// <inheritdoc/>
     protected override async Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         DecisionRequirement requirement
     )
     {
-        if (context.User.Identity?.IsAuthenticated ?? false)
+        if (!(context.User.Identity?.IsAuthenticated ?? false))
         {
-            var success = await this.client.VerifyAccessToResource(
-                requirement.Resource,
-                requirement.GetScopesExpression(),
-                requirement.ScopesValidationMode,
-                CancellationToken.None
-            );
-
-            this.DecisionAuthorizationResult(
-                requirement.ToString(),
-                success,
+            this.logger.LogRequirementSkipped(
+                nameof(ParameterizedProtectedResourceRequirementHandler),
+                "User is not Authenticated",
                 context.User.Identity?.Name
             );
 
-            if (success)
-            {
-                context.Succeed(requirement);
-            }
-            else
-            {
-                context.Fail();
-            }
+            return;
+        }
+
+        var success = await this.client.VerifyAccessToResource(
+            requirement.Resource,
+            (requirement as IProtectedResourceData).GetScopesExpression(),
+            requirement.ScopesValidationMode,
+            CancellationToken.None
+        );
+
+        this.logger.LogAuthorizationResult(
+            requirement.ToString(),
+            success,
+            context.User.Identity?.Name
+        );
+
+        if (success)
+        {
+            context.Succeed(requirement);
         }
         else
         {
-            this.DecisionAuthorizationResult(
-                requirement.ToString(),
-                false,
-                context.User.Identity?.Name
-            );
+            context.Fail();
         }
     }
 }

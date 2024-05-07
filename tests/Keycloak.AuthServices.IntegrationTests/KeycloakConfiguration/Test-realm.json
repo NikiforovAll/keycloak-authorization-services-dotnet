@@ -726,6 +726,20 @@
           "name" : "workspace:read"
         } ],
         "icon_uri" : ""
+      }, {
+        "name" : "workspaces",
+        "type" : "urn:workspaces",
+        "ownerManagedAccess" : false,
+        "displayName" : "",
+        "attributes" : { },
+        "_id" : "767170b6-af5b-4e47-bb0d-a89c6c7f7573",
+        "uris" : [ ],
+        "scopes" : [ {
+          "name" : "workspace:delete"
+        }, {
+          "name" : "workspace:read"
+        } ],
+        "icon_uri" : ""
       } ],
       "policies" : [ {
         "id" : "04034aae-7d80-4ad4-902f-c8e57211b4c7",
@@ -1341,7 +1355,7 @@
       "subType" : "anonymous",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-sha256-pairwise-sub-mapper", "saml-role-list-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "oidc-address-mapper" ]
+        "allowed-protocol-mapper-types" : [ "saml-user-attribute-mapper", "oidc-full-name-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-usermodel-property-mapper", "oidc-usermodel-attribute-mapper", "oidc-address-mapper", "saml-role-list-mapper", "saml-user-property-mapper" ]
       }
     }, {
       "id" : "df4acae2-494f-4c6b-8c75-1a64296e47db",
@@ -1360,7 +1374,7 @@
       "subType" : "authenticated",
       "subComponents" : { },
       "config" : {
-        "allowed-protocol-mapper-types" : [ "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-address-mapper", "oidc-usermodel-attribute-mapper", "oidc-usermodel-property-mapper", "saml-role-list-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper" ]
+        "allowed-protocol-mapper-types" : [ "oidc-usermodel-attribute-mapper", "saml-user-property-mapper", "oidc-sha256-pairwise-sub-mapper", "oidc-full-name-mapper", "saml-user-attribute-mapper", "oidc-usermodel-property-mapper", "oidc-address-mapper", "saml-role-list-mapper" ]
       }
     }, {
       "id" : "79c2f0c9-65fd-4c62-83a3-0ede96795205",

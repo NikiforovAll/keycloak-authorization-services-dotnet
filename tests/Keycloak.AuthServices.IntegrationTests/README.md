@@ -8,6 +8,14 @@ Inside docker container run:
 /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm Test
 ```
 
+## Test
+
+```bash
+dotnet test \
+    --logger:"console;verbosity=detailed" \
+    --filter NAME 
+```
+
 ## User Registry in Test Realm
 
 ```csharp

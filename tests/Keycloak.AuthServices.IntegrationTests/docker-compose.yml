@@ -9,7 +9,9 @@ services:
     command:
       [
         'start-dev',
-        '--import-realm'
+        '--import-realm',
+        '--log-level=DEBUG,org.hibernate:info,org.keycloak.transaction.JtaTransactionWrapper:info',
+        '--log-console-color=true'
       ]
     volumes:
       - ./KeycloakConfiguration/:/opt/keycloak/data/import/

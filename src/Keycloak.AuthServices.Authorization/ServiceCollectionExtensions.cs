@@ -135,12 +135,12 @@ public static class ServiceCollectionExtensions
 
         services.AddAuthorization(options =>
             options.AddPolicy(
-                DynamicProtectedResourceRequirement.DynamicProtectedResourcePolicy,
-                p => p.AddRequirements(new DynamicProtectedResourceRequirement())
+                ParameterizedProtectedResourceRequirement.DynamicProtectedResourcePolicy,
+                p => p.AddRequirements(new ParameterizedProtectedResourceRequirement())
             )
         );
 
-        services.AddScoped<IAuthorizationHandler, DynamicProtectedResourceRequirementHandler>();
+        services.AddScoped<IAuthorizationHandler, ParameterizedProtectedResourceRequirementHandler>();
         // TODO: determine correct lifetime.
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
 

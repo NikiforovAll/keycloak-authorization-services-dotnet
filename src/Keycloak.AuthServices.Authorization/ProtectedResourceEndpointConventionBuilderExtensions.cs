@@ -1,6 +1,7 @@
 namespace Keycloak.AuthServices.Authorization;
 
 using Keycloak.AuthServices.Authorization.Requirements;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 
 /// <summary>
@@ -76,18 +77,22 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
         TBuilder builder,
         IEnumerable<IProtectedResourceData> authorizeData
     )
-        where TBuilder : IEndpointConventionBuilder
-    {
-        builder.RequireAuthorization(
-            DynamicProtectedResourceRequirement.DynamicProtectedResourcePolicy
-        );
-
+        where TBuilder : IEndpointConventionBuilder =>
         builder.Add(endpointBuilder =>
         {
+            // avoid multiple requirements registration
+            if (!endpointBuilder.Metadata.Any(m => m is IProtectedResourceData))
+            {
+                endpointBuilder.Metadata.Add(
+                    new AuthorizeAttribute(
+                        ParameterizedProtectedResourceRequirement.DynamicProtectedResourcePolicy
+                    )
+                );
+            }
+
             foreach (var data in authorizeData)
             {
                 endpointBuilder.Metadata.Add(data);
             }
         });
-    }
 }

@@ -27,7 +27,7 @@ public sealed class ProtectedResourceAttribute : Attribute, IProtectedResourceDa
     }
 
     /// <inheritdoc/>
-    public string? Resource { get; set; }
+    public string Resource { get; set; }
 
     /// <inheritdoc/>
     public string[]? Scopes { get; set; }
@@ -41,10 +41,16 @@ public interface IProtectedResourceData
     /// <summary>
     /// Gets or sets resource name
     /// </summary>
-    string Resource { get; set; }
+    string Resource { get; }
 
     /// <summary>
     /// Get or sets scopes
     /// </summary>
-    string[]? Scopes { get; set; }
+    string[]? Scopes { get; }
+
+    /// <summary>
+    /// </summary>
+    /// <returns></returns>
+    public string GetScopesExpression() =>
+        this.Scopes is not null ? string.Join(',', this.Scopes) : string.Empty;
 }

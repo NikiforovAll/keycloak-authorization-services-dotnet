@@ -37,7 +37,7 @@ services.AddSwaggerGen(c =>
     });
 });
 
-Log.Logger = new LoggerConfiguration()
+LogExtensions.Logger = new LoggerConfiguration()
     .MinimumLevel.Verbose()
     .WriteTo.Console(
         outputTemplate: "[{Level:u4}] | {Message:lj}{NewLine}{Exception}",
