@@ -7,7 +7,6 @@ using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
-
 public class AddKeycloakWebApiTests(KeycloakFixture fixture, ITestOutputHelper testOutputHelper)
     : AuthenticationScenario(fixture)
 {

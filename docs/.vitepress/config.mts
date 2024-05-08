@@ -53,7 +53,11 @@ export default withMermaid({
                             collapsed: true,
                             items: [
                                 { text: 'ASP.NET Core Integration', link: '/authorization/resources-api' },
-                                { text: 'Protected Resource Builder', link: '/authorization/protected-resource-builder' },
+                                {
+                                    text: 'Protected Resource Builder', link: '/authorization/protected-resource-builder', items: [
+                                        { text: 'MVC-style projects', link: '/authorization/protected-resource-builder-mvc' },
+                                    ]
+                                },
                                 { text: 'Policy Provider', link: '/authorization/policy-provider' },
                             ]
                         },
@@ -97,6 +101,12 @@ export default withMermaid({
                                 { text: 'Policy Client', link: '/protection-api/policy-client' },
                             ]
                         },
+                    ]
+                },
+                {
+                    text: 'Q&A',
+                    items: [
+                        { text: 'Recipes', link: '/qa/recipes' },
                     ]
                 },
                 {

@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Common;
 
+using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 
 /// <summary>
@@ -10,25 +11,34 @@ using Microsoft.Extensions.Configuration;
 /// </remarks>
 public class KeycloakInstallationOptions
 {
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string? authServerUrl;
+
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private bool? verifyTokenAudience;
+
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private TimeSpan? tokenClockSkew;
+
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string? sslRequired;
 
     /// <summary>
     /// Authorization server URL
     /// </summary>
+    /// <remarks>The value is normalized, the trailing '/' is ensured.</remarks>
     /// <example>
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
     [ConfigurationKeyName("AuthServerUrl")]
-    public string AuthServerUrl
+    public string? AuthServerUrl
     {
-        get => this.authServerUrl ?? this.AuthServerUrl2;
-        set => this.authServerUrl = value;
+        get => this.authServerUrl ?? NormalizeUrl(this.AuthServerUrl2);
+        set => this.authServerUrl = NormalizeUrl(value);
     }
 
     [ConfigurationKeyName("auth-server-url")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string AuthServerUrl2 { get; set; } = default!;
 
     /// <summary>
@@ -55,6 +65,7 @@ public class KeycloakInstallationOptions
     }
 
     [ConfigurationKeyName("verify-token-audience")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private bool? VerifyTokenAudience2 { get; set; }
 
     /// <summary>
@@ -76,6 +87,7 @@ public class KeycloakInstallationOptions
     }
 
     [ConfigurationKeyName("token-clock-skew")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private TimeSpan? TokenClockSkew2 { get; set; }
 
     /// <summary>
@@ -89,6 +101,7 @@ public class KeycloakInstallationOptions
     }
 
     [ConfigurationKeyName("ssl-required")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string SslRequired2 { get; set; } = default!;
 
     /// <summary>
@@ -103,7 +116,7 @@ public class KeycloakInstallationOptions
                 return default!;
             }
 
-            return $"{NormalizeUrl(this.AuthServerUrl?.TrimEnd('/'))}/realms/{this.Realm}/";
+            return $"{this.AuthServerUrl}realms/{this.Realm}/";
         }
     }
 
@@ -119,9 +132,7 @@ public class KeycloakInstallationOptions
                 return default!;
             }
 
-            return NormalizeUrl(
-                $"{this.KeycloakUrlRealm?.TrimEnd('/')}/{KeycloakConstants.TokenEndpointPath}"
-            )!;
+            return $"{this.KeycloakUrlRealm}{KeycloakConstants.TokenEndpointPath}";
         }
     }
 
@@ -132,9 +143,12 @@ public class KeycloakInstallationOptions
             return url;
         }
 
-        var urlNormalized = !url.EndsWith('/') ? url : url.TrimEnd('/');
+        if (!url.EndsWith('/'))
+        {
+            url += "/";
+        }
 
-        return urlNormalized;
+        return url;
     }
 }
 

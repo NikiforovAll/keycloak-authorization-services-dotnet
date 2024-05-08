@@ -129,16 +129,3 @@ var realm = await client.GetRealmAsync("Test");
 `dotnet cake --target test`
 
 `dotnet pack -o ./Artefacts`
-
-## Blog Posts
-
-For more information and real world examples, please see my blog posts related to Keycloak and .NET <https://nikiforovall.github.io/tags.html#keycloak-ref>
-
-* <https://nikiforovall.github.io/aspnetcore/dotnet/2022/08/24/dotnet-keycloak-auth.html>
-* <https://nikiforovall.github.io/dotnet/keycloak/2022/12/28/keycloak-authorization-server.html>
-* <https://nikiforovall.github.io/blazor/dotnet/2022/12/08/dotnet-keycloak-blazorwasm-auth.html>
-
-## Reference
-
-* <https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-authorization-uma-authz-process.adoc>
-* <https://www.keycloak.org/docs/latest/authorization_services/index.html>

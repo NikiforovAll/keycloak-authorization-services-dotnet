@@ -10,6 +10,12 @@ public static class KeycloakConstants
     /// </summary>
     public const string TokenEndpointPath = "protocol/openid-connect/token";
 
+   ///  <summary>
+   /// OpenIdConnect configuration endpoint
+   ///  </summary>
+    public const string OpenIdConnectConfigurationPath = ".well-known/openid-configuration";
+
+
     /// <summary>
     /// Token Claim - Resource Access
     /// </summary>

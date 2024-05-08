@@ -102,7 +102,7 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
 
         RequireAuthorizationCore(
             builder,
-            new IgnoreProtectedResourceAttribute[] { new(string.Empty) }
+            new IgnoreProtectedResourceAttribute[] { new() }
         );
 
         return builder;
@@ -115,19 +115,23 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
         where TBuilder : IEndpointConventionBuilder =>
         builder.Add(endpointBuilder =>
         {
-            // avoid multiple requirements registration
-            if (!endpointBuilder.Metadata.Any(m => m is IProtectedResourceData))
-            {
-                endpointBuilder.Metadata.Add(
-                    new AuthorizeAttribute(
-                        ParameterizedProtectedResourceRequirement.DynamicProtectedResourcePolicy
-                    )
-                );
-            }
+            AddProtectedResourcePolicy(endpointBuilder);
 
             foreach (var data in authorizeData)
             {
                 endpointBuilder.Metadata.Add(data);
             }
         });
+
+    private static void AddProtectedResourcePolicy(EndpointBuilder endpointBuilder)
+    {
+        if (!endpointBuilder.Metadata.Any(m => m is IProtectedResourceData))
+        {
+            endpointBuilder.Metadata.Add(
+                new AuthorizeAttribute(
+                    ParameterizedProtectedResourceRequirement.DynamicProtectedResourcePolicy
+                )
+            );
+        }
+    }
 }

@@ -1,12 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <RootNamespace>TestWebApi</RootNamespace>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <NoWarn>CS7022</NoWarn>
-  </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
   </ItemGroup>
@@ -15,4 +7,7 @@
     <InternalsVisibleTo Include="Keycloak.AuthServices.IntegrationTests" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <StartupObject>TestWebApiWithControllers.Program</StartupObject>
+  </PropertyGroup>
 </Project>
