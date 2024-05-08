@@ -20,6 +20,8 @@ public static class HttpResponseExtensions
         CancellationToken cancellationToken = default
     )
     {
+        ArgumentNullException.ThrowIfNull(response);
+
         await response.EnsureResponseAsync(cancellationToken);
 
         var result = await response.Content.ReadFromJsonAsync<T>(
@@ -40,6 +42,8 @@ public static class HttpResponseExtensions
         CancellationToken cancellationToken = default
     )
     {
+        ArgumentNullException.ThrowIfNull(response);
+
         try
         {
             response.EnsureSuccessStatusCode();

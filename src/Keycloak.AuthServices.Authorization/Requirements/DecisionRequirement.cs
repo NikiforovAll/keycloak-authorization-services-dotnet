@@ -87,6 +87,9 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         DecisionRequirement requirement
     )
     {
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
+
         if (!(context.User.Identity?.IsAuthenticated ?? false))
         {
             this.logger.LogRequirementSkipped(
@@ -117,6 +120,7 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         }
         else
         {
+            this.logger.LogAuthorizationFailed(requirement.ToString(), context.User.Identity?.Name);
             context.Fail();
         }
     }

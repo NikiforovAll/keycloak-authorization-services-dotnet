@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authentication.Configuration;
 
+using System;
 using Keycloak.AuthServices.Common;
 using Microsoft.Extensions.Hosting;
 
@@ -19,8 +20,11 @@ public static class HostBuilderExtensions
         this IHostBuilder hostBuilder,
         string fileName = "keycloak.json",
         string section = ConfigurationConstants.ConfigurationPrefix
-    ) =>
-        hostBuilder.ConfigureAppConfiguration(
+    )
+    {
+        ArgumentNullException.ThrowIfNull(hostBuilder);
+
+        return hostBuilder.ConfigureAppConfiguration(
             (_, builder) =>
             {
                 var source = new KeycloakConfigurationSource
@@ -32,4 +36,5 @@ public static class HostBuilderExtensions
                 builder.Sources.Insert(0, source);
             }
         );
+    }
 }

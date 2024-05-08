@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
+using System;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Requirements;
 using Keycloak.AuthServices.Common;
@@ -19,10 +20,15 @@ public static class PoliciesBuilderExtensions
     public static AuthorizationPolicyBuilder RequireResourceRoles(
         this AuthorizationPolicyBuilder builder,
         params string[] roles
-    ) =>
-        builder
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(roles);
+
+        return builder
             .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
             .AddRequirements(new ResourceAccessRequirement(default, roles));
+    }
 
     /// <summary>
     /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
@@ -35,10 +41,16 @@ public static class PoliciesBuilderExtensions
         this AuthorizationPolicyBuilder builder,
         string client,
         string[] roles
-    ) =>
-        builder
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(client);
+        ArgumentNullException.ThrowIfNull(roles);
+
+        return builder
             .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
             .AddRequirements(new ResourceAccessRequirement(client, roles));
+    }
 
     /// <summary>
     /// Adds realm role requirement to builder. Ensures that at least one realm role is present in realm claims.
@@ -49,10 +61,15 @@ public static class PoliciesBuilderExtensions
     public static AuthorizationPolicyBuilder RequireRealmRoles(
         this AuthorizationPolicyBuilder builder,
         params string[] roles
-    ) =>
-        builder
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(roles);
+
+        return builder
             .RequireClaim(KeycloakConstants.RealmAccessClaimType)
             .AddRequirements(new RealmAccessRequirement(roles));
+    }
 
     #region RequireProtectedResource
     /// <summary>
@@ -66,7 +83,14 @@ public static class PoliciesBuilderExtensions
         this AuthorizationPolicyBuilder builder,
         string resource,
         string scope
-    ) => builder.AddRequirements(new DecisionRequirement(resource, scope));
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+        ArgumentNullException.ThrowIfNull(scope);
+
+        return builder.AddRequirements(new DecisionRequirement(resource, scope));
+    }
     #endregion RequireProtectedResource
 
     #region RequireProtectedResourceScopes
@@ -83,12 +107,18 @@ public static class PoliciesBuilderExtensions
         string resource,
         string[] scopes,
         ScopesValidationMode? scopesValidationMode = default
-    ) =>
-        builder.AddRequirements(
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+        ArgumentNullException.ThrowIfNull(scopes);
+
+        return builder.AddRequirements(
             new DecisionRequirement(resource, scopes)
             {
                 ScopesValidationMode = scopesValidationMode
             }
         );
+    }
     #endregion RequireProtectedResourceScopes
 }

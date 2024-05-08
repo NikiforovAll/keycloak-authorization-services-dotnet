@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using System;
 using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.Common.Claims;
 using Microsoft.AspNetCore.Authorization;
@@ -64,6 +65,9 @@ public partial class ResourceAccessRequirementHandler
         ResourceAccessRequirement requirement
     )
     {
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
+
         var clientId =
             requirement.Resource
             ?? this.keycloakOptions.Value.RolesResource

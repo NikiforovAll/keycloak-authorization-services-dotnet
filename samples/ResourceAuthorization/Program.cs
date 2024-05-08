@@ -21,6 +21,8 @@ services.AddOpenApiDocument(
             >()
             ?.Get(JwtBearerDefaults.AuthenticationScheme)!;
 
+        document.Title = "Workspaces API";
+
         document.AddSecurity(
             OpenIdConnectDefaults.AuthenticationScheme,
             [],
@@ -36,6 +38,8 @@ services.AddOpenApiDocument(
         );
     }
 );
+
+services.AddControllers(options => options.AddProtectedResources());
 
 services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -56,7 +60,6 @@ app.UseSwaggerUi(ui =>
 {
     var keycloakOptions =
         builder.Configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
-    ui.DocumentTitle = "Workspaces";
 
     ui.OAuth2Client = new OAuth2ClientSettings
     {
@@ -68,26 +71,6 @@ app.UseSwaggerUi(ui =>
 app.UseAuthentication();
 app.UseAuthorization();
 
-var workspaces = app.MapGroup("/workspaces")
-    .WithTags("Workspaces Management")
-    .RequireProtectedResource("workspaces");
-
-workspaces
-    .MapGet("", () => "Hello World!")
-    .RequireProtectedResource("workspaces", "workspace:list");
-
-workspaces
-    .MapPost("", () => "Hello World!")
-    .RequireProtectedResource("workspaces", "workspace:create");
-
-workspaces
-    .MapGet("{id}", (string id) => "Hello World!")
-    .RequireProtectedResource("workspaces/{id}", "workspace:read");
-
-var users = workspaces.MapGroup("users").RequireProtectedResource("workspaces", "workspace:update");
-
-users
-    .MapGet("{id}/users", (string id) => "Hello World!")
-    .RequireProtectedResource("workspaces/{id}", "workspace:list-users");
+app.MapControllers().RequireAuthorization();
 
 app.Run();

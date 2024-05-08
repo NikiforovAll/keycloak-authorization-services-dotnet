@@ -99,6 +99,21 @@ dotnet_diagnostic.IDE0036.severity = error
 dotnet_diagnostic.IDE0059.severity = error
 # IDE0016 Use throw expression
 dotnet_diagnostic.IDE0016.severity = suggestion
+# CA1056: URI properties should not be strings
+dotnet_diagnostic.CA1056.severity = suggestion
+
+dotnet_diagnostic.CA1812.severity =  none
+dotnet_diagnostic.CA2007.severity =  none
+dotnet_diagnostic.CA1307.severity =  none
+dotnet_diagnostic.CA2234.severity =  none
+dotnet_diagnostic.CA1054.severity =  none
+dotnet_diagnostic.CA1032.severity =  none
+dotnet_diagnostic.CA1724.severity =  none
+dotnet_diagnostic.CA1055.severity =  none
+dotnet_diagnostic.CA1510.severity =  suggestion
+dotnet_diagnostic.CA2227.severity =  suggestion
+dotnet_diagnostic.CA1819.severity =  suggestion
+dotnet_diagnostic.CA1019.severity =  none
 
 ##########################################
 # File Header (Uncomment to support file headers)

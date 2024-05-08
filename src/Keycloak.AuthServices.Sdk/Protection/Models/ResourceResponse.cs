@@ -47,18 +47,18 @@ public class ResourceResponse
     /// <summary>
     /// Gets or sets the URIs associated with the resource.
     /// </summary>
-    public List<string>? Uris { get; set; }
+    public IList<string>? Uris { get; set; }
 
     /// <summary>
     /// Gets or sets the resource scopes associated with the resource.
     /// </summary>
     [JsonPropertyName("resource_scopes")]
-    public List<ResourceScope>? ResourceScopes { get; set; }
+    public IList<ResourceScope>? ResourceScopes { get; set; }
 
     /// <summary>
     /// Gets or sets the scopes associated with the resource.
     /// </summary>
-    public List<Scope>? Scopes { get; set; }
+    public IList<Scope>? Scopes { get; set; }
 }
 
 /// <summary>

@@ -28,6 +28,17 @@ public static class ServiceCollectionExtensions
         string configSectionName = KeycloakAuthorizationOptions.Section
     )
     {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configuration);
+
+        if (string.IsNullOrEmpty(configSectionName))
+        {
+            throw new ArgumentException(
+                $"'{nameof(configSectionName)}' cannot be null or empty.",
+                nameof(configSectionName)
+            );
+        }
+
         var configurationSection = configuration.GetSection(configSectionName);
 
         return services.AddKeycloakAuthorization(configurationSection);
@@ -42,10 +53,22 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddKeycloakAuthorization(
         this IServiceCollection services,
         IConfigurationSection configurationSection
-    ) =>
-        services.AddKeycloakAuthorization(options =>
+    )
+    {
+        if (services is null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
+        if (configurationSection is null)
+        {
+            throw new ArgumentNullException(nameof(configurationSection));
+        }
+
+        return services.AddKeycloakAuthorization(options =>
             configurationSection.BindKeycloakOptions(options)
         );
+    }
 
     /// <summary>
     /// Adds keycloak authorization services
@@ -57,6 +80,11 @@ public static class ServiceCollectionExtensions
         Action<KeycloakAuthorizationOptions>? configureKeycloakAuthorizationOptions = null
     )
     {
+        if (services is null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
         configureKeycloakAuthorizationOptions ??= _ => { };
         services.Configure(configureKeycloakAuthorizationOptions);
 
@@ -93,11 +121,31 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration,
         Action<HttpClient>? configureClient = default,
         string configSectionName = KeycloakAuthorizationServerOptions.Section
-    ) =>
-        services.AddAuthorizationServer(
+    )
+    {
+        if (services is null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
+        if (configuration is null)
+        {
+            throw new ArgumentNullException(nameof(configuration));
+        }
+
+        if (string.IsNullOrEmpty(configSectionName))
+        {
+            throw new ArgumentException(
+                $"'{nameof(configSectionName)}' cannot be null or empty.",
+                nameof(configSectionName)
+            );
+        }
+
+        return services.AddAuthorizationServer(
             configuration.GetSection(configSectionName),
             configureClient
         );
+    }
 
     /// <summary>
     /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client and auto header propagation
@@ -110,11 +158,23 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfigurationSection configurationSection,
         Action<HttpClient>? configureClient = default
-    ) =>
-        services.AddAuthorizationServer(
+    )
+    {
+        if (services is null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
+        if (configurationSection is null)
+        {
+            throw new ArgumentNullException(nameof(configurationSection));
+        }
+
+        return services.AddAuthorizationServer(
             options => configurationSection.BindKeycloakOptions(options),
             configureClient
         );
+    }
 
     /// <summary>
     /// Adds Keycloak <see cref="IAuthorizationServerClient"/> client, <see cref="ProtectedResourcePolicyProvider"/> and auto header propagation
@@ -129,6 +189,11 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
+        if (services is null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
         services.Configure(configureKeycloakOptions);
 
         services.AddHttpContextAccessor();
@@ -140,7 +205,10 @@ public static class ServiceCollectionExtensions
             )
         );
 
-        services.AddScoped<IAuthorizationHandler, ParameterizedProtectedResourceRequirementHandler>();
+        services.AddScoped<
+            IAuthorizationHandler,
+            ParameterizedProtectedResourceRequirementHandler
+        >();
         // TODO: determine correct lifetime.
         services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
 
@@ -173,8 +241,14 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddAuthorizationServerClient(
         this IServiceCollection services,
         Action<HttpClient>? configureClient = default
-    ) =>
-        services
+    )
+    {
+        if (services is null)
+        {
+            throw new ArgumentNullException(nameof(services));
+        }
+
+        return services
             .AddHttpClient<IAuthorizationServerClient, AuthorizationServerClient>()
             .ConfigureHttpClient(
                 (serviceProvider, client) =>
@@ -191,4 +265,5 @@ public static class ServiceCollectionExtensions
                     configureClient?.Invoke(client);
                 }
             );
+    }
 }

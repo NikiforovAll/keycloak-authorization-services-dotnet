@@ -209,6 +209,8 @@ public readonly struct QueryString : IEquatable<QueryString>
     /// <returns>The resulting QueryString</returns>
     public static QueryString Create(IEnumerable<KeyValuePair<string, string?>> parameters)
     {
+        ArgumentNullException.ThrowIfNull(parameters);
+
         var builder = new StringBuilder();
         var first = true;
         foreach (var pair in parameters)
@@ -227,6 +229,8 @@ public readonly struct QueryString : IEquatable<QueryString>
     /// <returns>The resulting QueryString</returns>
     public static QueryString Create(IEnumerable<KeyValuePair<string, StringValues>> parameters)
     {
+        ArgumentNullException.ThrowIfNull(parameters);
+
         var builder = new StringBuilder();
         var first = true;
 
@@ -292,7 +296,7 @@ public readonly struct QueryString : IEquatable<QueryString>
     }
 
     /// <summary>
-    /// Evalutes if the current query string is equal to <paramref name="other"/>.
+    /// Evaluates if the current query string is equal to <paramref name="other"/>.
     /// </summary>
     /// <param name="other">The <see cref="QueryString"/> to compare.</param>
     /// <returns><see langword="true"/> if the query strings are equal.</returns>

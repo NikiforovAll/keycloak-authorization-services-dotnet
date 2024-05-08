@@ -22,5 +22,5 @@ public class ExecuteActionsEmailRequest
 
     /// <summary>
     /// </summary>
-    public List<string>? Actions { get; init; }
+    public IList<string>? Actions { get; init; }
 }

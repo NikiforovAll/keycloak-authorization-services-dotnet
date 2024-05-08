@@ -49,6 +49,9 @@ public class ParameterizedProtectedResourceRequirementHandler
         ParameterizedProtectedResourceRequirement requirement
     )
     {
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
+
         if (!(context.User.Identity?.IsAuthenticated ?? false))
         {
             this.logger.LogRequirementSkipped(
@@ -91,6 +94,8 @@ public class ParameterizedProtectedResourceRequirementHandler
                     false,
                     userName
                 );
+                this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+
                 context.Fail();
 
                 return;

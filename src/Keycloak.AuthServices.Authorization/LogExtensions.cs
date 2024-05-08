@@ -17,6 +17,17 @@ internal static partial class LogExtensions
     );
 
     [LoggerMessage(
+        103,
+        LogLevel.Information,
+        "[{Requirement}] Authorization failed for user '{UserName}'"
+    )]
+    public static partial void LogAuthorizationFailed(
+        this ILogger logger,
+        string requirement,
+        string? userName
+    );
+
+    [LoggerMessage(
         101,
         LogLevel.Warning,
         "[{Requirement}] Has been skipped because of '{Reason}' for user '{UserName}'"

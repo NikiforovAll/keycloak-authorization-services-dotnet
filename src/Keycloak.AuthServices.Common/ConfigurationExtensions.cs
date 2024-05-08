@@ -18,8 +18,12 @@ public static class ConfigurationExtensions
         this IConfiguration configuration,
         string configSectionName = ConfigurationConstants.ConfigurationPrefix
     )
-        where T : KeycloakInstallationOptions =>
-        configuration.GetSection(configSectionName).Get<T>(KeycloakFormatBinder.Instance);
+        where T : KeycloakInstallationOptions
+    {
+        ArgumentNullException.ThrowIfNull(configuration);
+
+        return configuration.GetSection(configSectionName).Get<T>(KeycloakFormatBinder.Instance);
+    }
 
     /// <summary>
     /// Retrieves the Keycloak options from the configuration section
@@ -27,8 +31,12 @@ public static class ConfigurationExtensions
     /// <typeparam name="T">The type of the Keycloak options.</typeparam>
     /// <returns>The Keycloak options instance.</returns>
     public static T? GetKeycloakOptions<T>(this IConfigurationSection configurationSection)
-        where T : KeycloakInstallationOptions =>
-        configurationSection.Get<T>(KeycloakFormatBinder.Instance);
+        where T : KeycloakInstallationOptions
+    {
+        ArgumentNullException.ThrowIfNull(configurationSection);
+
+        return configurationSection.Get<T>(KeycloakFormatBinder.Instance);
+    }
 
     /// <summary>
     /// Binds the Keycloak options from the configuration section with the specified name to the provided options instance.
@@ -42,8 +50,12 @@ public static class ConfigurationExtensions
         T options,
         string configSectionName = ConfigurationConstants.ConfigurationPrefix
     )
-        where T : KeycloakInstallationOptions =>
+        where T : KeycloakInstallationOptions
+    {
+        ArgumentNullException.ThrowIfNull(configuration);
+
         configuration.GetSection(configSectionName).Bind(options, KeycloakFormatBinder.Instance);
+    }
 
     /// <summary>
     /// Binds the Keycloak options from the configuration section to the provided options instance.
@@ -55,6 +67,10 @@ public static class ConfigurationExtensions
         this IConfigurationSection configurationSection,
         T options
     )
-        where T : KeycloakInstallationOptions =>
+        where T : KeycloakInstallationOptions
+    {
+        ArgumentNullException.ThrowIfNull(configurationSection);
+
         configurationSection.Bind(options, KeycloakFormatBinder.Instance);
+    }
 }
