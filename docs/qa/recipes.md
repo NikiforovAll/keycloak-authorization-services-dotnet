@@ -4,7 +4,7 @@ Welcome to the Recipes section! Here you will find a collection of instructions 
 
 [[toc]]
 
-## How to add OpenAPI support with Authorization?
+## how to get an access token from Swagger UI?
 
 Here is an example of how to use [NSwag](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware#add-oauth2-authentication-openapi-3):
 
