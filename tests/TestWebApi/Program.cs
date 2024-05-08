@@ -168,6 +168,4 @@ static void SingleDynamicResourceSingleScopeSingleEndpoint(RouteGroupBuilder app
 
 #pragma warning disable CA1050 // Declare types in namespaces
 public record Response(bool Success, string? Resource, string? Scopes);
-
-public partial class Program { }
 #pragma warning restore CA1050 // Declare types in namespaces

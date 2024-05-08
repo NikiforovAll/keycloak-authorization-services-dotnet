@@ -15,6 +15,11 @@ public sealed class IgnoreProtectedResourceAttribute : Attribute, IProtectedReso
     /// </summary>
     public IgnoreProtectedResourceAttribute(string resource) => this.Resource = resource;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ProtectedResourceAttribute"/> class with the specified policy.
+    /// </summary>
+    public IgnoreProtectedResourceAttribute() => this.Resource = string.Empty;
+
     /// <inheritdoc/>
     public string Resource { get; set; }
 

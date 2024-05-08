@@ -13,7 +13,7 @@ public sealed class ProtectedResourceAttribute : Attribute, IProtectedResourceDa
     /// <summary>
     /// Initializes a new instance of the <see cref="ProtectedResourceAttribute"/> class with the specified policy.
     /// </summary>
-    public ProtectedResourceAttribute(string resource, string? scope)
+    public ProtectedResourceAttribute(string resource, string? scope = default)
         : this(resource, string.IsNullOrWhiteSpace(scope) ? Array.Empty<string>() : new[] { scope })
     { }
 

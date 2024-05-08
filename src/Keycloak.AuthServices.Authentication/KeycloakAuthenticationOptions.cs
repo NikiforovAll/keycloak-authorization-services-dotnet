@@ -13,7 +13,7 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
     public const string Section = ConfigurationConstants.ConfigurationPrefix;
 
     /// <summary>
-    /// Gets or sets the audience for the authentication. Takes priority over Resource
+    /// Gets or sets the audience for the authentication. Takes priority over Resource.
     /// </summary>
     public string? Audience { get; set; }
 
@@ -26,4 +26,12 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
     /// Gets or sets the claim type used for the name.
     /// </summary>
     public string NameClaimType { get; set; } = KeycloakConstants.NameClaimType;
+
+    /// <summary>
+    /// Gets the OpenId Connect URL to discover OAuth2 configuration values.
+    /// </summary>
+    public string? OpenIdConnectUrl =>
+        string.IsNullOrWhiteSpace(this.KeycloakUrlRealm)
+            ? default
+            : $"{this.KeycloakUrlRealm}{KeycloakConstants.OpenIdConnectConfigurationPath}";
 }

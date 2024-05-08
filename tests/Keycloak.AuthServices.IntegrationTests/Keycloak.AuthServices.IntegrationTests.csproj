@@ -33,6 +33,7 @@
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk.Kiota\Keycloak.AuthServices.Sdk.Kiota.csproj" />
+    <ProjectReference Include="..\TestWebApiWithControllers\TestWebApiWithControllers.csproj" />
   </ItemGroup>
 
 </Project>
