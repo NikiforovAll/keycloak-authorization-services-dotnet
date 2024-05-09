@@ -834,7 +834,7 @@
         }
       }, {
         "id" : "a97f05a6-2164-4310-924e-5bdde44692a3",
-        "name" : "Workspaces Access",
+        "name" : "Workspaces Global Access",
         "description" : "",
         "type" : "resource",
         "logic" : "POSITIVE",
@@ -876,7 +876,7 @@
         "id" : "e9ef9eae-7ff0-44d7-9052-dd884044485c",
         "name" : "workspace:list-user"
       } ],
-      "decisionStrategy" : "UNANIMOUS"
+      "decisionStrategy" : "AFFIRMATIVE"
     }
   } ],
   "clientScopes" : [ {

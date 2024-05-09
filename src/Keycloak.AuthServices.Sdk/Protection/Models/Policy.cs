@@ -1,5 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Protection.Models;
 
+using System.Runtime.Serialization;
+
 /// <summary>
 /// Represents a policy used for service protection.
 /// </summary>
@@ -36,7 +38,7 @@ public class Policy
     /// <summary>
     /// Gets or sets the decision strategy of the policy.
     /// </summary>
-    public string? DecisionStrategy { get; init; } // UNANIMOUS
+    public DecisionStrategy DecisionStrategy { get; init; } = DecisionStrategy.UNANIMOUS;
 
     /// <summary>
     /// Gets or sets the owner of the policy.
@@ -67,4 +69,23 @@ public class Policy
     /// Gets or sets the clients associated with the policy.
     /// </summary>
     public string[]? Clients { get; init; }
+}
+
+/// <summary>
+/// </summary>
+public enum DecisionStrategy
+{
+    /// <summary>
+    /// </summary>
+    [EnumMember(Value = "AFFIRMATIVE")]
+    AFFIRMATIVE,
+
+    /// <summary>
+    /// </summary>    [EnumMember(Value = "UNANIMOUS")]
+    UNANIMOUS,
+
+    /// <summary>
+    /// </summary>
+    [EnumMember(Value = "CONSENSUS")]
+    CONSENSUS,
 }

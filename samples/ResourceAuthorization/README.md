@@ -1,5 +1,9 @@
 # Resource Authorization
 
+## Login
+
+There are different users: admin, test1, test2, test3, stranger1, all users have `test` password.
+
 ## Use Cases
 
 ### Only users with roles - Admin or Reader can access workspace functionality

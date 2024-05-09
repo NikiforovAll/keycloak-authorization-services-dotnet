@@ -25,16 +25,6 @@ public class WorkspacesController(WorkspaceService workspaceService) : Controlle
         return this.Ok(workspaces.Select(w => w.Name));
     }
 
-    [HttpGet("my", Name = nameof(GetMyWorkspacesAsync))]
-    [OpenApiOperation("[workspace:list]", "")]
-    [ProtectedResource("workspaces", "workspace:list")]
-    public async Task<ActionResult<IEnumerable<string>>> GetMyWorkspacesAsync()
-    {
-        var workspaces = await workspaceService.ListMyWorkspacesAsync();
-
-        return this.Ok(workspaces.Select(w => w.Name));
-    }
-
     [HttpGet("public")]
     [OpenApiIgnore]
     [AllowAnonymous]

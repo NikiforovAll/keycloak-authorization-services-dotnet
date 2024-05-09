@@ -10,6 +10,7 @@ using ResourceAuthorization.Models;
 public class WorkspaceService(
     KeycloakAdminApiClient adminApiClient,
     IKeycloakProtectedResourceClient protectedResourceClient,
+    IKeycloakPolicyClient policyClient,
     IHttpContextAccessor httpContextAccessor
 )
 {
@@ -95,10 +96,28 @@ public class WorkspaceService(
             .Admin.Realms[DefaultRealm]
             .Groups.PostAsync(new GroupRepresentation() { Name = workspace.Name, });
 
-        await protectedResourceClient.CreateResourceAsync(
+        var resource = await protectedResourceClient.CreateResourceAsync(
             DefaultRealm,
-            new Resource(WorkspaceResourceId(workspace.Name), Scopes) { Type = WorkspaceType }
+            new Resource(WorkspaceResourceId(workspace.Name), Scopes)
+            {
+                Type = WorkspaceType,
+                OwnerManagedAccess = true
+            }
         );
+
+        if (resource is not null)
+        {
+            await policyClient.CreatePolicyAsync(
+                DefaultRealm,
+                resource.Id,
+                new Policy
+                {
+                    Name = $"Allow read access to group [{workspace.Name}]",
+                    Scopes = ["workspace:read", "workspace:list-users"],
+                    Groups = [workspace.Name]
+                }
+            );
+        }
     }
 
     public async Task AddMember(string groupName, User member)
