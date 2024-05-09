@@ -43,9 +43,10 @@ public class AuthorizationServerClient : IAuthorizationServerClient
 
         var data = this.PrepareData(resource, scope);
 
+        using var content = new FormUrlEncodedContent(data);
         var response = await this.httpClient.PostAsync(
             KeycloakConstants.TokenEndpointPath,
-            new FormUrlEncodedContent(data),
+            content,
             cancellationToken
         );
 

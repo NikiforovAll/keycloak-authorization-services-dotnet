@@ -1,5 +1,6 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
+using System;
 using System.Globalization;
 using System.Net.Http.Json;
 using Keycloak.AuthServices.Sdk.Admin.Models;
@@ -172,9 +173,10 @@ public partial class KeycloakClient : IKeycloakClient
 
         var url = path + queryBuilder.ToQueryString();
 
+        using var content = new StringContent(string.Empty);
         var responseMessage = await this.httpClient.PutAsync(
             url,
-            new StringContent(string.Empty),
+            content,
             cancellationToken
         );
 
@@ -189,6 +191,8 @@ public partial class KeycloakClient : IKeycloakClient
         CancellationToken cancellationToken = default
     )
     {
+        ArgumentNullException.ThrowIfNull(request);
+
         var path = ApiUrls.ExecuteActionsEmail.WithRealm(realm).Replace("{id}", userId);
 
         var queryBuilder = new QueryBuilder();
@@ -267,9 +271,10 @@ public partial class KeycloakClient : IKeycloakClient
             .Replace("{id}", userId)
             .Replace("{groupId}", groupId);
 
+        using var content = new StringContent(string.Empty);
         var responseMessage = await this.httpClient.PutAsync(
             path,
-            new StringContent(string.Empty),
+            content,
             cancellationToken
         );
 

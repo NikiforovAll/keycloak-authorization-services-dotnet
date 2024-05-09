@@ -47,12 +47,12 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     /// <param name="scopes">The scopes associated with the resource.</param>
     public void Add(string resource, string scopes)
     {
-        if (
-            this.resourceToScopes.ContainsKey(resource)
-            && !this.resourceToScopes[resource].Contains(scopes)
-        )
+        if (this.resourceToScopes.TryGetValue(resource, out var registeredScopes))
         {
-            this.resourceToScopes[resource].Add(scopes);
+            if (!registeredScopes.Contains(scopes))
+            {
+                registeredScopes.Add(scopes);
+            }
         }
         else
         {
@@ -69,7 +69,9 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     /// <returns>True if the resource was successfully removed, false otherwise.</returns>
     public bool Remove(string resource)
     {
-        if (resource == string.Empty)
+        ArgumentNullException.ThrowIfNull(resource);
+
+        if (resource.Length == 0)
         {
             this.resourceToScopes = new();
             this.resourceToOutcomes = new();
@@ -77,16 +79,12 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
 
             return true;
         }
-        else if (this.resourceToScopes.ContainsKey(resource))
-        {
-            this.resourceToScopes.Remove(resource);
-            this.resourceToOutcomes.Remove(resource);
-            this.Resources.Remove(resource);
 
-            return true;
-        }
+        this.resourceToScopes.Remove(resource);
+        this.resourceToOutcomes.Remove(resource);
+        this.Resources.Remove(resource);
 
-        return false;
+        return true;
     }
 
     /// <summary>

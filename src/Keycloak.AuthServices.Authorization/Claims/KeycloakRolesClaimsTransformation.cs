@@ -56,6 +56,8 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     /// </returns>
     public Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
     {
+        ArgumentNullException.ThrowIfNull(principal);
+
         if (this.roleSource == RolesClaimTransformationSource.None)
         {
             return Task.FromResult(principal);

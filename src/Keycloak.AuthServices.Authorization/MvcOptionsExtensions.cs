@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Authorization;
 
+using System;
 using Keycloak.AuthServices.Authorization.Requirements;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -16,6 +17,8 @@ public static class MvcOptionsExtensions
     /// <returns>The configured <see cref="MvcOptions"/>.</returns>
     public static MvcOptions AddProtectedResources(this MvcOptions options)
     {
+        ArgumentNullException.ThrowIfNull(options);
+
         options.Filters.Add(
             new AuthorizeFilter(
                 ParameterizedProtectedResourceRequirement.DynamicProtectedResourcePolicy

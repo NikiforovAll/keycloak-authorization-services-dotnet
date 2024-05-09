@@ -20,6 +20,8 @@ public static class HttpResponseExtensions
         CancellationToken cancellationToken = default
     )
     {
+        ArgumentNullException.ThrowIfNull(response);
+
         await response.EnsureResponseAsync(cancellationToken);
 
         var result = await response.Content.ReadFromJsonAsync<T>(
@@ -40,6 +42,8 @@ public static class HttpResponseExtensions
         CancellationToken cancellationToken = default
     )
     {
+        ArgumentNullException.ThrowIfNull(response);
+
         try
         {
             response.EnsureSuccessStatusCode();
@@ -47,7 +51,14 @@ public static class HttpResponseExtensions
         catch (Exception exception)
         {
             var body = await response.Content.ReadAsStringAsync(cancellationToken);
-            var error = JsonSerializer.Deserialize<ErrorResponse>(body);
+
+            var error = string.IsNullOrWhiteSpace(body)
+                ? new ErrorResponse()
+                {
+                    Error = "Something went wrong",
+                    ErrorDescription = string.Empty,
+                }
+                : JsonSerializer.Deserialize<ErrorResponse>(body);
 
             throw new KeycloakHttpClientException(
                 message: $"Unable to submit the request - '{error?.Error}'",

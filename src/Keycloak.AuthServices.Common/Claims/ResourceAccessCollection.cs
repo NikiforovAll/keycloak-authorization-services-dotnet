@@ -21,5 +21,5 @@ public class ResourceAccess
     /// Represents a collection of resource access roles.
     /// </summary>
     [JsonPropertyName("roles")]
-    public List<string> Roles { get; init; } = new();
+    public IList<string> Roles { get; init; } = new List<string>();
 }

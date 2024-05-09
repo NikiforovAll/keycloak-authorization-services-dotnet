@@ -21,8 +21,8 @@ public sealed class IgnoreProtectedResourceAttribute : Attribute, IProtectedReso
     public IgnoreProtectedResourceAttribute() => this.Resource = string.Empty;
 
     /// <inheritdoc/>
-    public string Resource { get; set; }
+    public string Resource { get; }
 
     /// <inheritdoc/>
-    public string[]? Scopes { get; set; }
+    public string[]? Scopes { get; }
 }

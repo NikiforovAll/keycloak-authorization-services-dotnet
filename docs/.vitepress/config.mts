@@ -113,10 +113,11 @@ export default withMermaid({
                     text: 'Examples',
                     collapsed: false,
                     items: [
-                        { text: 'Auth Web API Getting Started', link: '/examples/auth-getting-started' },
+                        { text: 'Web API Getting Started', link: '/examples/auth-getting-started' },
                         { text: 'Authorization', link: '/examples/authorization-getting-started' },
-                        { text: 'Auth Clean Architecture', link: '/examples/auth-clean-arch' },
-                        { text: 'Auth Web API + Blazor', link: '/examples/web-api-blazor' }
+                        { text: 'Resource Authorization ✨', link: '/examples/resource-authorization' },
+                        { text: 'Clean Architecture', link: '/examples/auth-clean-arch' },
+                        { text: 'Web API + Blazor', link: '/examples/web-api-blazor' }
                     ]
                 }
             ]

@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using System;
 using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
@@ -47,6 +48,8 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
         RptRequirement requirement
     )
     {
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
         // the client application is responsible for acquiring of the token
         // should request special RPT access_token that contains this section
         var authorizationClaim = context.User.FindFirstValue("authorization");

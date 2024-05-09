@@ -25,6 +25,8 @@ public class AccessTokenPropagationHandler : DelegatingHandler
     )
     {
         this.contextAccessor = contextAccessor;
+
+        ArgumentNullException.ThrowIfNull(options);
         this.options = options.Value;
     }
 
@@ -34,6 +36,8 @@ public class AccessTokenPropagationHandler : DelegatingHandler
         CancellationToken cancellationToken
     )
     {
+        ArgumentNullException.ThrowIfNull(request);
+
         if (this.contextAccessor.HttpContext == null)
         {
             return await Continue();

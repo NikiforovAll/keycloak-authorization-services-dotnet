@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using System;
 using Keycloak.AuthServices.Common.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
@@ -43,6 +44,9 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
         RealmAccessRequirement requirement
     )
     {
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
+
         var success = false;
 
         if (context.User.Claims.TryGetRealmResource(out var resourceAccess))

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationModels;
 /// <summary>
 /// A convention that applies protected resource attributes to controllers and actions.
 /// </summary>
-internal class ProtectedResourceModelConvention : IApplicationModelConvention
+internal sealed class ProtectedResourceModelConvention : IApplicationModelConvention
 {
     /// <summary>
     /// Applies protected resource attributes to controllers and actions in the application model.

@@ -25,6 +25,9 @@ public static class ServiceCollectionExtensions
         Action<JwtBearerOptions>? configureOptions = default
     )
     {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(keycloakOptions);
+
         var validationParameters = new TokenValidationParameters
         {
             ClockSkew = keycloakOptions.TokenClockSkew,

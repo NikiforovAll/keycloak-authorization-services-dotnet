@@ -2,6 +2,9 @@
 
 Using *Policies* is a standard and common approach. However, as the number of resources grows, organizing and managing these policies can become a challenge. To address this issue, we suggest using the **Protected Resource Builder** approach. This builder provides a convenient way to authorize resources, making it easier to manage and maintain authorization rules.
 
+> [!TIP]
+> 💡See [Resource Authorization](/examples/resource-authorization) Reference Solution to see a real world example of how to use Protected Resource Builder.
+
 ::: info
 In most cases, we don't really need to build policies when working with *Authorization Server*, the authorization responsibility is delegated.
 :::

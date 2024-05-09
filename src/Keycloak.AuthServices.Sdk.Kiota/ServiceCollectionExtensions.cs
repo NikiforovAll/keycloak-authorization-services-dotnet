@@ -13,6 +13,29 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
+
+#pragma warning disable CS0419 // Ambiguous reference in cref attribute
+    /// <summary>
+    /// Adds <see cref="KeycloakAdminApiClient"/> for Keycloak Admin API alias for <see cref="AddKeycloakAdminHttpClient"/>. You can use it to resolve possible namespaces issues.
+    /// </summary>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configuration">The IConfiguration instance to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <param name="keycloakClientSectionName">The name of the configuration section containing the Keycloak client options.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
+    public static IHttpClientBuilder AddKiotaKeycloakAdminHttpClient(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string keycloakClientSectionName = KeycloakAdminClientOptions.Section
+    ) =>
+        services.AddKeycloakAdminHttpClient(
+            configuration,
+            configureClient,
+            keycloakClientSectionName
+        );
+#pragma warning restore CS0419 // Ambiguous reference in cref attribute
+
     /// <summary>
     /// Adds <see cref="KeycloakAdminApiClient"/> for Keycloak Admin API.
     /// </summary>
@@ -73,7 +96,7 @@ public static class ServiceCollectionExtensions
                         IOptions<KeycloakAdminClientOptions>
                     >();
 
-                    http.BaseAddress = new Uri(keycloakOptions.Value.AuthServerUrl);
+                    http.BaseAddress = new Uri(keycloakOptions.Value.AuthServerUrl!);
                     configureClient?.Invoke(http);
                 }
             )

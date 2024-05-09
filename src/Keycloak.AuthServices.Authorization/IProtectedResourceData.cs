@@ -19,5 +19,7 @@ public interface IProtectedResourceData
     /// </summary>
     /// <returns></returns>
     public string GetScopesExpression() =>
-        this.Scopes is not null ? string.Join(',', this.Scopes) : string.Empty;
+        this.Scopes is not null
+            ? string.Join(',', this.Scopes.Where(s => !string.IsNullOrWhiteSpace(s)))
+            : string.Empty;
 }
