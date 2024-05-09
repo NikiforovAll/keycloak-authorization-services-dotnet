@@ -1,0 +1,203 @@
+{
+  "allowRemoteResourceManagement": true,
+  "policyEnforcementMode": "ENFORCING",
+  "resources": [
+    {
+      "name": "workspaces",
+      "type": "urn:workspaces",
+      "ownerManagedAccess": false,
+      "displayName": "",
+      "attributes": {},
+      "_id": "14b70534-d3f3-43ad-bdb4-99eb19e19b97",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "workspace:list"
+        },
+        {
+          "name": "workspace:create"
+        }
+      ],
+      "icon_uri": ""
+    },
+    {
+      "name": "workspaces__public",
+      "type": "urn:workspaces",
+      "ownerManagedAccess": false,
+      "attributes": {},
+      "_id": "581c2315-7097-4961-aa98-4ea1c0a808ef",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "workspace:list"
+        },
+        {
+          "name": "workspace:add-user"
+        },
+        {
+          "name": "workspace:create"
+        },
+        {
+          "name": "workspace:remove-user"
+        },
+        {
+          "name": "workspace:list-users"
+        },
+        {
+          "name": "workspace:delete"
+        },
+        {
+          "name": "workspace:read"
+        }
+      ]
+    },
+    {
+      "name": "workspaces__main",
+      "type": "urn:workspaces",
+      "ownerManagedAccess": true,
+      "attributes": {},
+      "_id": "3e23a12e-9ecd-4453-867d-760c7b296f0c",
+      "uris": [],
+      "scopes": [
+        {
+          "name": "workspace:list"
+        },
+        {
+          "name": "workspace:add-user"
+        },
+        {
+          "name": "workspace:create"
+        },
+        {
+          "name": "workspace:remove-user"
+        },
+        {
+          "name": "workspace:list-users"
+        },
+        {
+          "name": "workspace:delete"
+        },
+        {
+          "name": "workspace:read"
+        }
+      ]
+    }
+  ],
+  "policies": [
+    {
+      "id": "303e03b1-f5bf-403f-bacc-578a5d62bc87",
+      "name": "Is Admin",
+      "description": "",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"Admin\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "a14be734-9e9a-4ccb-a6ff-32bcb840b42e",
+      "name": "Is Reader",
+      "description": "",
+      "type": "role",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "roles": "[{\"id\":\"Reader\",\"required\":true}]"
+      }
+    },
+    {
+      "id": "9b546455-6ffb-4df7-9806-429b0b67f296",
+      "name": "Can Create Workspace",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "resources": "[\"workspaces\"]",
+        "scopes": "[\"workspace:create\"]",
+        "applyPolicies": "[\"Is Admin\"]"
+      }
+    },
+    {
+      "id": "8535849b-d637-4a60-8b9a-3f045f3f23e9",
+      "name": "Can List Workspaces",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"workspaces\"]",
+        "scopes": "[\"workspace:list\"]",
+        "applyPolicies": "[\"Is Admin\",\"Is Reader\"]"
+      }
+    },
+    {
+      "id": "64782bb2-79bd-4904-8299-5012f66c2c85",
+      "name": "Admin Can Manage Workspaces",
+      "description": "",
+      "type": "scope",
+      "logic": "POSITIVE",
+      "decisionStrategy": "UNANIMOUS",
+      "config": {
+        "defaultResourceType": "urn:workspaces",
+        "applyPolicies": "[\"Is Admin\"]",
+        "scopes": "[\"workspace:delete\",\"workspace:read\",\"workspace:add-user\",\"workspace:remove-user\",\"workspace:list-users\"]"
+      }
+    },
+    {
+      "id": "a97f05a6-2164-4310-924e-5bdde44692a3",
+      "name": "Workspaces Global Access",
+      "description": "",
+      "type": "resource",
+      "logic": "POSITIVE",
+      "decisionStrategy": "AFFIRMATIVE",
+      "config": {
+        "resources": "[\"workspaces\"]",
+        "applyPolicies": "[\"Is Admin\",\"Is Reader\"]"
+      }
+    }
+  ],
+  "scopes": [
+    {
+      "id": "5e5817b9-23ec-4422-aa1c-521aedee90e2",
+      "name": "workspace:read",
+      "iconUri": ""
+    },
+    {
+      "id": "bb5b4947-607e-4095-bec6-1b5350a3aa31",
+      "name": "workspace:delete",
+      "iconUri": ""
+    },
+    {
+      "id": "5d8af7a9-ab34-4e35-842f-bd5e1c79ecf0",
+      "name": "workspace:list",
+      "iconUri": ""
+    },
+    {
+      "id": "b838e1d0-f65b-41ca-a601-a442df709ffd",
+      "name": "workspace:list-users",
+      "iconUri": ""
+    },
+    {
+      "id": "c4df45cf-8dee-48ce-afc1-ae595387c6a5",
+      "name": "workspace:add-user",
+      "iconUri": ""
+    },
+    {
+      "id": "0f7ae0fb-2645-4ef0-9f1a-55e59d45ca97",
+      "name": "workspace:remove-user",
+      "iconUri": ""
+    },
+    {
+      "id": "9e76de21-b0e7-43aa-b959-e72ec7d2d14e",
+      "name": "workspace:create",
+      "iconUri": ""
+    },
+    {
+      "id": "e9ef9eae-7ff0-44d7-9052-dd884044485c",
+      "name": "workspace:list-user"
+    }
+  ],
+  "decisionStrategy": "AFFIRMATIVE"
+}

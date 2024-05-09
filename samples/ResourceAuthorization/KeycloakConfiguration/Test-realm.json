@@ -359,7 +359,7 @@
     }
   },
   "groups" : [ {
-    "id" : "b0f0a35b-b8ff-4cf9-af2f-b779a0263aa8",
+    "id" : "39130ba7-a609-4f88-a657-a824de18f9bd",
     "name" : "main",
     "path" : "/main",
     "subGroups" : [ ],
@@ -732,11 +732,11 @@
         } ],
         "icon_uri" : ""
       }, {
-        "name" : "workspaces__main",
+        "name" : "workspaces__public",
         "type" : "urn:workspaces",
         "ownerManagedAccess" : false,
         "attributes" : { },
-        "_id" : "123397a4-4fe4-47ff-b59d-4881accadda7",
+        "_id" : "581c2315-7097-4961-aa98-4ea1c0a808ef",
         "uris" : [ ],
         "scopes" : [ {
           "name" : "workspace:list"
@@ -754,11 +754,11 @@
           "name" : "workspace:read"
         } ]
       }, {
-        "name" : "workspaces__public",
+        "name" : "workspaces__main",
         "type" : "urn:workspaces",
-        "ownerManagedAccess" : false,
+        "ownerManagedAccess" : true,
         "attributes" : { },
-        "_id" : "581c2315-7097-4961-aa98-4ea1c0a808ef",
+        "_id" : "3e23a12e-9ecd-4453-867d-760c7b296f0c",
         "uris" : [ ],
         "scopes" : [ {
           "name" : "workspace:list"

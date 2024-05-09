@@ -107,7 +107,7 @@
     "requiredActions" : [ ],
     "realmRoles" : [ "Reader", "default-roles-test" ],
     "notBefore" : 0,
-    "groups" : [ ]
+    "groups" : [ "/main" ]
   }, {
     "id" : "05ae40a3-b90f-4a3f-bf72-a12221769b24",
     "username" : "test3",
