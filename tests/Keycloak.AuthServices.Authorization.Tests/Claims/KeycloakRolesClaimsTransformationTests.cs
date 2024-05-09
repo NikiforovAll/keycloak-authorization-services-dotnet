@@ -10,6 +10,7 @@ public class KeycloakRolesClaimsTransformationTests
     [Theory]
     [InlineData(RolesClaimTransformationSource.Realm)]
     [InlineData(RolesClaimTransformationSource.ResourceAccess)]
+    [InlineData(RolesClaimTransformationSource.All)]
     public async Task ClaimsTransformationShouldMap(RolesClaimTransformationSource roleSource)
     {
         var target = new KeycloakRolesClaimsTransformation(ClaimTypes.Role, roleSource, ClientId);
@@ -23,6 +24,20 @@ public class KeycloakRolesClaimsTransformationTests
             claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim).Should().BeTrue();
             claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(2);
         }
+    }
+
+    [Fact]
+    public async Task ClaimsTransformationShouldHandleNoneSource()
+    {
+        var target = new KeycloakRolesClaimsTransformation(
+            ClaimTypes.Role,
+            RolesClaimTransformationSource.None,
+            ClientId
+        );
+        var claimsPrincipal = GetClaimsPrincipal(MyRealmClaimValue, MyResourceClaimValue);
+
+        claimsPrincipal = await target.TransformAsync(claimsPrincipal);
+        claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(0);
     }
 
     [Fact]
