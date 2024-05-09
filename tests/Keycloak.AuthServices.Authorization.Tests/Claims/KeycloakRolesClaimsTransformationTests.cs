@@ -10,7 +10,6 @@ public class KeycloakRolesClaimsTransformationTests
     [Theory]
     [InlineData(RolesClaimTransformationSource.Realm)]
     [InlineData(RolesClaimTransformationSource.ResourceAccess)]
-    [InlineData(RolesClaimTransformationSource.All)]
     public async Task ClaimsTransformationShouldMap(RolesClaimTransformationSource roleSource)
     {
         var target = new KeycloakRolesClaimsTransformation(ClaimTypes.Role, roleSource, ClientId);
@@ -20,8 +19,19 @@ public class KeycloakRolesClaimsTransformationTests
         for (var testCount = 0; testCount < 3; testCount++)
         {
             claimsPrincipal = await target.TransformAsync(claimsPrincipal);
-            claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleUserClaim).Should().BeTrue();
-            claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim).Should().BeTrue();
+            switch (roleSource)
+            {
+                case RolesClaimTransformationSource.Realm:
+                    claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleUserClaim).Should().BeTrue();
+                    claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleSuperUserClaim).Should().BeTrue();
+                    break;
+                case RolesClaimTransformationSource.ResourceAccess:
+                    claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleUserClaim).Should().BeTrue();
+                    claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim).Should().BeTrue();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(roleSource), roleSource, "Unexpected role source");
+            }
             claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(2);
         }
     }
@@ -38,6 +48,24 @@ public class KeycloakRolesClaimsTransformationTests
 
         claimsPrincipal = await target.TransformAsync(claimsPrincipal);
         claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(0);
+    }
+
+    [Fact]
+    public async Task ClaimsTransformationShouldHandleAllSource()
+    {
+        var target = new KeycloakRolesClaimsTransformation(
+            ClaimTypes.Role,
+            RolesClaimTransformationSource.All,
+            ClientId
+        );
+        var claimsPrincipal = GetClaimsPrincipal(MyRealmClaimValue, MyResourceClaimValue);
+
+        claimsPrincipal = await target.TransformAsync(claimsPrincipal);
+        claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleUserClaim).Should().BeTrue();
+        claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim).Should().BeTrue();
+        claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleUserClaim).Should().BeTrue();
+        claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleSuperUserClaim).Should().BeTrue();
+        claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(4);
     }
 
     [Fact]
@@ -87,8 +115,8 @@ public class KeycloakRolesClaimsTransformationTests
         """
         {
             "roles": [
-                "my_client_app_role_user",
-                "my_client_app_role_super_user"
+                "realm_role_user",
+                "realm_role_super_user"
             ]
         }
         """;
@@ -96,6 +124,8 @@ public class KeycloakRolesClaimsTransformationTests
     // Fake claim values
     private const string AppRoleUserClaim = "my_client_app_role_user";
     private const string AppRoleSuperUserClaim = "my_client_app_role_super_user";
+    private const string RealmRoleUserClaim = "realm_role_user";
+    private const string RealmRoleSuperUserClaim = "realm_role_super_user";
 
     // The issuer/original issuer
     private const string MyUrl = "https://keycloak.mydomain.com/realms/my_realm";
