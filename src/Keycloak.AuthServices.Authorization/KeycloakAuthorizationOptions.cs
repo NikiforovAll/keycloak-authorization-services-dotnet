@@ -32,20 +32,26 @@ public class KeycloakAuthorizationOptions : KeycloakInstallationOptions
 /// <summary>
 /// RolesClaimTransformationSource
 /// </summary>
+[Flags]
 public enum RolesClaimTransformationSource
 {
     /// <summary>
     /// Specifies that no transformation should be applied from the source.
     /// </summary>
-    None,
+    None = 0,
 
     /// <summary>
     /// Specifies that transformation should be applied to the realm.
     /// </summary>
-    Realm,
+    Realm = 1 << 0,
 
     /// <summary>
     /// Specifies that transformation should be applied to the resource access.
     /// </summary>
-    ResourceAccess
+    ResourceAccess = 1 << 1,
+
+    /// <summary>
+    /// Specifies that transformation should be applied to all sources.
+    /// </summary>
+    All = Realm | ResourceAccess
 }

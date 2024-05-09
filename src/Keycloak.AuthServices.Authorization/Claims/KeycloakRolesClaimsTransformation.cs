@@ -70,7 +70,7 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
 
         var result = principal.Clone();
 
-        if (this.roleSource == RolesClaimTransformationSource.ResourceAccess)
+        if (this.roleSource.HasFlag(RolesClaimTransformationSource.ResourceAccess))
         {
             var resourceAccessValue = principal.FindFirst("resource_access")?.Value;
             if (string.IsNullOrWhiteSpace(resourceAccessValue))
@@ -107,11 +107,9 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                     identity.AddClaim(new Claim(this.roleClaimType, value));
                 }
             }
-
-            return Task.FromResult(result);
         }
 
-        if (this.roleSource == RolesClaimTransformationSource.Realm)
+        if (this.roleSource.HasFlag(RolesClaimTransformationSource.Realm))
         {
             var realmAccessValue = principal.FindFirst("realm_access")?.Value;
             if (string.IsNullOrWhiteSpace(realmAccessValue))
@@ -144,8 +142,6 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                         identity.AddClaim(new Claim(this.roleClaimType, value));
                     }
                 }
-
-                return Task.FromResult(result);
             }
         }
 

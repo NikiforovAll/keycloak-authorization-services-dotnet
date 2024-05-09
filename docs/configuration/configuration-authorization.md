@@ -61,22 +61,28 @@ Here an example of how to configure client role:
 There are three options to determine a source for the roles:
 
 ```csharp
+[Flags]
 public enum RolesClaimTransformationSource
 {
     /// <summary>
-    /// No Transformation. Default
+    /// Specifies that no transformation should be applied from the source.
     /// </summary>
-    None,
+    None = 0,
 
     /// <summary>
-    /// Use realm roles as source
+    /// Specifies that transformation should be applied to the realm.
     /// </summary>
-    Realm,
+    Realm = 1 << 0,
 
     /// <summary>
-    /// Use client roles as source
+    /// Specifies that transformation should be applied to the resource access.
     /// </summary>
-    ResourceAccess
+    ResourceAccess = 1 << 1,
+
+    /// <summary>
+    /// Specifies that transformation should be applied to all sources.
+    /// </summary>
+    All = Realm | ResourceAccess
 }
 ```
 
@@ -134,5 +140,14 @@ Result = ["default-roles-test","offline_access","uma_authorization"]
 If we specify `KeycloakAuthorizationOptions.EnableRolesMapping = RolesClaimTransformationSource.ResourceAccess` and `KeycloakAuthorizationOptions.RolesResource="test-client"` the roles are taken from $token.realm_access.test-client.roles.
 
 Result = ["manage-account","manage-account-links","view-profile"]
+
+See below the table for possible combinations:
+
+| EnableRolesMapping | RolesResource | Result                                                                                                               |
+|--------------------|---------------|----------------------------------------------------------------------------------------------------------------------|
+| Realm              | N/A           | `["default-roles-test","offline_access","uma_authorization"]`                                                        |
+| ResourceAccess     | `test-client` | `["manage-account","manage-account-links","view-profile"]`                                                           |
+| All                | `test-client` | `["default-roles-test","offline_access","uma_authorization","manage-account","manage-account-links","view-profile"]` |
+
 
 The target claim can be configured `KeycloakAuthorizationOptions.RoleClaimType`, the default value is "role".
