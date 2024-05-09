@@ -45,7 +45,17 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
         CancellationToken cancellationToken = default
     )
     {
-        var path = ApiUrls.DeleteResource.WithRealm(realm).Replace("{id}", resourceId);
+        if (string.IsNullOrWhiteSpace(resourceId))
+        {
+            throw new ArgumentException(
+                $"'{nameof(resourceId)}' cannot be null or whitespace.",
+                nameof(resourceId)
+            );
+        }
+
+        var path = ApiUrls
+            .DeleteResource.WithRealm(realm)
+            .Replace("{id}", resourceId.Replace("/", "%2F"));
 
         var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
 

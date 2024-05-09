@@ -51,7 +51,14 @@ public static class HttpResponseExtensions
         catch (Exception exception)
         {
             var body = await response.Content.ReadAsStringAsync(cancellationToken);
-            var error = JsonSerializer.Deserialize<ErrorResponse>(body);
+
+            var error = string.IsNullOrWhiteSpace(body)
+                ? new ErrorResponse()
+                {
+                    Error = "Something went wrong",
+                    ErrorDescription = string.Empty,
+                }
+                : JsonSerializer.Deserialize<ErrorResponse>(body);
 
             throw new KeycloakHttpClientException(
                 message: $"Unable to submit the request - '{error?.Error}'",

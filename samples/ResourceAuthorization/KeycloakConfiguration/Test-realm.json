@@ -641,6 +641,34 @@
     "fullScopeAllowed" : true,
     "nodeReRegistrationTimeout" : -1,
     "protocolMappers" : [ {
+      "id" : "48678e96-25e8-4a72-8134-e8a9cee40dc2",
+      "name" : "Client ID",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usersessionmodel-note-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "user.session.note" : "client_id",
+        "introspection.token.claim" : "true",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "client_id",
+        "jsonType.label" : "String"
+      }
+    }, {
+      "id" : "c68d08da-3d9b-4abf-920c-e6ab826992e5",
+      "name" : "Client IP Address",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usersessionmodel-note-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "user.session.note" : "clientAddress",
+        "introspection.token.claim" : "true",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "clientAddress",
+        "jsonType.label" : "String"
+      }
+    }, {
       "id" : "49a458a3-7ce7-40ad-b125-92f812d1b592",
       "name" : "audience",
       "protocol" : "openid-connect",
@@ -652,6 +680,20 @@
         "lightweight.claim" : "false",
         "introspection.token.claim" : "true",
         "access.token.claim" : "true"
+      }
+    }, {
+      "id" : "b34c35d9-cb80-4b65-9b47-c2ccf601c626",
+      "name" : "Client Host",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-usersessionmodel-note-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "user.session.note" : "clientHost",
+        "introspection.token.claim" : "true",
+        "id.token.claim" : "true",
+        "access.token.claim" : "true",
+        "claim.name" : "clientHost",
+        "jsonType.label" : "String"
       }
     } ],
     "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email" ],
@@ -718,6 +760,18 @@
           "scopes" : "[\"workspace:list\"]",
           "applyPolicies" : "[\"Is Admin\",\"Is Reader\"]"
         }
+      }, {
+        "id" : "64782bb2-79bd-4904-8299-5012f66c2c85",
+        "name" : "Admin Can Manage Workspaces",
+        "description" : "",
+        "type" : "scope",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "defaultResourceType" : "urn:workspaces",
+          "applyPolicies" : "[\"Is Admin\"]",
+          "scopes" : "[\"workspace:delete\",\"workspace:read\",\"workspace:add-user\",\"workspace:remove-user\",\"workspace:list-users\"]"
+        }
       } ],
       "scopes" : [ {
         "id" : "5e5817b9-23ec-4422-aa1c-521aedee90e2",
@@ -747,6 +801,9 @@
         "id" : "9e76de21-b0e7-43aa-b959-e72ec7d2d14e",
         "name" : "workspace:create",
         "iconUri" : ""
+      }, {
+        "id" : "e9ef9eae-7ff0-44d7-9052-dd884044485c",
+        "name" : "workspace:list-user"
       } ],
       "decisionStrategy" : "UNANIMOUS"
     }

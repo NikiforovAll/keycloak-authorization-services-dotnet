@@ -4,6 +4,7 @@
     "id" : "2520cfe4-cbd9-4427-900e-454ac427ae07",
     "username" : "admin",
     "firstName" : "Admin",
+    "lastName" : "Root",
     "email" : "admin@test.com",
     "emailVerified" : true,
     "createdTimestamp" : 1715203376448,
