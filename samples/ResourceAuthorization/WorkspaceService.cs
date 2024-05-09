@@ -9,7 +9,8 @@ using ResourceAuthorization.Models;
 
 public class WorkspaceService(
     KeycloakAdminApiClient adminApiClient,
-    IKeycloakProtectedResourceClient protectedResourceClient
+    IKeycloakProtectedResourceClient protectedResourceClient,
+    IHttpContextAccessor httpContextAccessor
 )
 {
     private const string DefaultRealm = "Test";
@@ -30,14 +31,42 @@ public class WorkspaceService(
     {
         var groups = await adminApiClient.Admin.Realms[DefaultRealm].Groups.GetAsync();
 
-        return groups!.Select(Map);
+        return groups!.Select(x => Map(x, default));
+    }
+
+    public async Task<IEnumerable<Workspace>> ListMyWorkspacesAsync()
+    {
+        var currentUserEmail = httpContextAccessor.HttpContext?.User?.Identity?.Name;
+
+        var currentUser = await adminApiClient
+            .Admin.Realms[DefaultRealm]
+            .Users.GetAsync(q =>
+            {
+                q.QueryParameters.Search = currentUserEmail;
+                q.QueryParameters.Exact = true;
+            });
+
+        if (currentUser is not null && currentUser.Count > 0)
+        {
+            var userId = currentUser.First().Id;
+            var groups = await adminApiClient
+                .Admin.Realms[DefaultRealm]
+                .Users[userId]
+                .Groups.GetAsync();
+            return groups!.Select(x => Map(x, default));
+        }
+        else
+        {
+            return [];
+        }
     }
 
     public async Task<Workspace> GetWorkspaceAsync(string name)
     {
         var group = await this.GetGroupByExactName(name);
+        var members = await this.ListMembersAsync(name);
 
-        return Map(group!);
+        return Map(group!, members.Count());
     }
 
     public async Task DeleteWorkspaceAsync(string name)
@@ -57,7 +86,8 @@ public class WorkspaceService(
         }
     }
 
-    private static Workspace Map(GroupRepresentation group) => new(group.Name!);
+    private static Workspace Map(GroupRepresentation group, int membersCount) =>
+        new(group.Name!, membersCount);
 
     public async Task CreateWorkspaceAsync(Workspace workspace)
     {

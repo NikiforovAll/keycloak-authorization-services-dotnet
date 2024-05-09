@@ -3,6 +3,7 @@ namespace ResourceAuthorization.Controllers;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Keycloak.AuthServices.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
 using ResourceAuthorization.Models;
@@ -11,6 +12,7 @@ using ResourceAuthorization.Models;
 [ApiController]
 [Route("workspaces")]
 [OpenApiTag("Workspaces", Description = "Manage workspaces.")]
+[ProtectedResource("workspaces")]
 public class WorkspacesController(WorkspaceService workspaceService) : ControllerBase
 {
     [HttpGet(Name = nameof(GetWorkspacesAsync))]
@@ -20,12 +22,22 @@ public class WorkspacesController(WorkspaceService workspaceService) : Controlle
     {
         var workspaces = await workspaceService.ListWorkspacesAsync();
 
-        return this.Ok(workspaces);
+        return this.Ok(workspaces.Select(w => w.Name));
+    }
+
+    [HttpGet("my", Name = nameof(GetMyWorkspacesAsync))]
+    [OpenApiOperation("[workspace:list]", "")]
+    [ProtectedResource("workspaces", "workspace:list")]
+    public async Task<ActionResult<IEnumerable<string>>> GetMyWorkspacesAsync()
+    {
+        var workspaces = await workspaceService.ListMyWorkspacesAsync();
+
+        return this.Ok(workspaces.Select(w => w.Name));
     }
 
     [HttpGet("public")]
     [OpenApiIgnore]
-    [IgnoreProtectedResource]
+    [AllowAnonymous]
     public async Task<IActionResult> GetPublicWorkspaceAsync() =>
         await this.GetWorkspaceAsync("public");
 
@@ -46,7 +58,7 @@ public class WorkspacesController(WorkspaceService workspaceService) : Controlle
     {
         await workspaceService.CreateWorkspaceAsync(workspace);
 
-        return this.Ok(workspace);
+        return this.Created();
     }
 
     [HttpDelete("{id}", Name = nameof(DeleteWorkspaceAsync))]

@@ -10,6 +10,12 @@ using ResourceAuthorization.Models;
 [OpenApiTag("Users", Description = "Manage Users.")]
 public class WorkspaceUsersController(WorkspaceService workspaceService) : ControllerBase
 {
+    [HttpGet("", Name = nameof(ListUsersForPublicWorkspaceAsync))]
+    [Route("/workspaces/public/users")]
+    [OpenApiIgnore]
+    [IgnoreProtectedResource]
+    public Task<IActionResult> ListUsersForPublicWorkspaceAsync() => this.ListUsersAsync("public");
+
     [HttpGet("", Name = nameof(ListUsersAsync))]
     [OpenApiOperation("[workspace:list-users]", "")]
     [ProtectedResource("workspaces__{id}", "workspace:list-users")]

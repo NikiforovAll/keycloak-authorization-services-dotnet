@@ -41,6 +41,29 @@
     "notBefore" : 0,
     "groups" : [ ]
   }, {
+    "id" : "988744c3-2248-4cba-b55d-31b3d1530a61",
+    "username" : "stranger1",
+    "firstName" : "Stranger",
+    "lastName" : "1",
+    "email" : "stranger@other.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1715248374124,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "e4d239d6-97ef-410b-a99d-e6eae578bd1e",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1715248380363,
+      "secretData" : "{\"value\":\"eZAGUIFM+hMORHI8BDcsX/O8FHZ21yKorigTuqxIhg59exPvjw5zUYIirGydATLWW2a2ogXLYPqMNgw6vFB/dA==\",\"salt\":\"HIiYwMOlQJn83wzoWMEqpQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":210000,\"algorithm\":\"pbkdf2-sha512\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-test" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
     "id" : "5d0dfaeb-373a-4f28-96a1-eac7629c15ce",
     "username" : "test1",
     "firstName" : "Test",
@@ -61,7 +84,7 @@
     "requiredActions" : [ ],
     "realmRoles" : [ "Reader", "default-roles-test" ],
     "notBefore" : 0,
-    "groups" : [ ]
+    "groups" : [ "/main" ]
   }, {
     "id" : "0a1f6355-6b7e-49e9-8117-f4d1c53149ff",
     "username" : "test2",

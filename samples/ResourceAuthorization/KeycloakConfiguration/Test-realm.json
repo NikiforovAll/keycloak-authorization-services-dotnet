@@ -358,7 +358,23 @@
       } ]
     }
   },
-  "groups" : [ ],
+  "groups" : [ {
+    "id" : "b0f0a35b-b8ff-4cf9-af2f-b779a0263aa8",
+    "name" : "main",
+    "path" : "/main",
+    "subGroups" : [ ],
+    "attributes" : { },
+    "realmRoles" : [ ],
+    "clientRoles" : { }
+  }, {
+    "id" : "ba2daa3f-5373-4ccb-8a2c-f831a81b52f8",
+    "name" : "public",
+    "path" : "/public",
+    "subGroups" : [ ],
+    "attributes" : { },
+    "realmRoles" : [ ],
+    "clientRoles" : { }
+  } ],
   "defaultRole" : {
     "id" : "9ce9d3eb-e6df-45c7-a42f-00c3d4b7df4b",
     "name" : "default-roles-test",
@@ -715,6 +731,50 @@
           "name" : "workspace:create"
         } ],
         "icon_uri" : ""
+      }, {
+        "name" : "workspaces__main",
+        "type" : "urn:workspaces",
+        "ownerManagedAccess" : false,
+        "attributes" : { },
+        "_id" : "123397a4-4fe4-47ff-b59d-4881accadda7",
+        "uris" : [ ],
+        "scopes" : [ {
+          "name" : "workspace:list"
+        }, {
+          "name" : "workspace:add-user"
+        }, {
+          "name" : "workspace:create"
+        }, {
+          "name" : "workspace:remove-user"
+        }, {
+          "name" : "workspace:list-users"
+        }, {
+          "name" : "workspace:delete"
+        }, {
+          "name" : "workspace:read"
+        } ]
+      }, {
+        "name" : "workspaces__public",
+        "type" : "urn:workspaces",
+        "ownerManagedAccess" : false,
+        "attributes" : { },
+        "_id" : "581c2315-7097-4961-aa98-4ea1c0a808ef",
+        "uris" : [ ],
+        "scopes" : [ {
+          "name" : "workspace:list"
+        }, {
+          "name" : "workspace:add-user"
+        }, {
+          "name" : "workspace:create"
+        }, {
+          "name" : "workspace:remove-user"
+        }, {
+          "name" : "workspace:list-users"
+        }, {
+          "name" : "workspace:delete"
+        }, {
+          "name" : "workspace:read"
+        } ]
       } ],
       "policies" : [ {
         "id" : "303e03b1-f5bf-403f-bacc-578a5d62bc87",
@@ -771,6 +831,17 @@
           "defaultResourceType" : "urn:workspaces",
           "applyPolicies" : "[\"Is Admin\"]",
           "scopes" : "[\"workspace:delete\",\"workspace:read\",\"workspace:add-user\",\"workspace:remove-user\",\"workspace:list-users\"]"
+        }
+      }, {
+        "id" : "a97f05a6-2164-4310-924e-5bdde44692a3",
+        "name" : "Workspaces Access",
+        "description" : "",
+        "type" : "resource",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "AFFIRMATIVE",
+        "config" : {
+          "resources" : "[\"workspaces\"]",
+          "applyPolicies" : "[\"Is Admin\",\"Is Reader\"]"
         }
       } ],
       "scopes" : [ {

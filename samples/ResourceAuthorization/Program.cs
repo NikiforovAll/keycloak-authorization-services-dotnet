@@ -21,8 +21,10 @@ services
 
 services
     .AddAuthorization()
-    .AddKeycloakAuthorization()
-    .AddAuthorizationServer(builder.Configuration);
+    .AddAuthorizationBuilder()
+    .AddDefaultPolicy("", policy => policy.RequireRealmRoles("Admin", "Reader"));
+
+services.AddKeycloakAuthorization().AddAuthorizationServer(builder.Configuration);
 
 var adminSection = "KeycloakAdmin";
 
