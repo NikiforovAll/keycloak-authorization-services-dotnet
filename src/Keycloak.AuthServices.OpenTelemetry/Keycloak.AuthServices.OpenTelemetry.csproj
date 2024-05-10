@@ -4,6 +4,8 @@
     <Product>Keycloak.AuthServices.OpenTelemetry</Product>
     <Description>Instrumentation for OpenTelemetry .NET</Description>
     <PackageTags>$(PackageTags);distributed-tracing;opentelemetry;</PackageTags>
+    <MinVerSkip>true</MinVerSkip>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

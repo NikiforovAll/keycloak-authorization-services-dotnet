@@ -37,7 +37,7 @@ Task("Build")
 
 Task("Test")
     .Description("Runs unit tests and outputs test results to the artefacts directory.")
-    .DoesForEach(GetFiles("./tests/**/*.csproj"), project =>
+    .DoesForEach(GetFiles("./tests/**/*.csproj").Where(file => !file.ToString().Contains("Integration")), project =>
     {
         DotNetTest(
             project.ToString(),

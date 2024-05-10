@@ -21,5 +21,7 @@
 
 Keycloak is a central part of the system used by many components. Especially, in Authorization Server scenario where authorization requests are sent to centralized place. Essentially, Keycloak becomes a bottleneck of the system. Consider [Cluster Setup](https://www.keycloak.org/2019/05/keycloak-cluster-setup) to tackle this problem.
 
+Also, you can handle transient HTTP errors by adding resiliency, see [How to setup resiliency to HTTP Clients](/qa/recipes.html#how-to-setup-resiliency-to-http-clients)
+
 > [!NOTE]
 > ☝️`Keycloak.AuthServices` supports OpenTelemetry. See [Keycloak.AuthServices.OpenTelemetry](/opentelemetry).

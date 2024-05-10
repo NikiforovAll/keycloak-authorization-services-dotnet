@@ -15,10 +15,7 @@ public static class TracerProviderBuilderExtensions
         this TracerProviderBuilder builder
     )
     {
-        if (builder == null)
-        {
-            throw new ArgumentNullException(nameof(builder));
-        }
+        ArgumentNullException.ThrowIfNull(builder);
 
         builder.AddSource("Keycloak.AuthServices.Authorization");
 

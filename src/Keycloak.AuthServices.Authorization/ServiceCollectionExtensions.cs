@@ -92,6 +92,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
 
+        services.AddSingleton<KeycloakMetrics>();
+
         services.AddTransient<IClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<

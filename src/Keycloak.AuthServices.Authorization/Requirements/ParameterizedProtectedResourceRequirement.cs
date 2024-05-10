@@ -25,6 +25,7 @@ public class ParameterizedProtectedResourceRequirementHandler
 {
     private readonly IAuthorizationServerClient client;
     private readonly IHttpContextAccessor httpContextAccessor;
+    private readonly KeycloakMetrics metrics;
     private readonly ILogger<ParameterizedProtectedResourceRequirementHandler> logger;
 
     /// <summary>
@@ -36,12 +37,14 @@ public class ParameterizedProtectedResourceRequirementHandler
     public ParameterizedProtectedResourceRequirementHandler(
         IAuthorizationServerClient client,
         IHttpContextAccessor httpContextAccessor,
+        KeycloakMetrics metrics,
         ILogger<ParameterizedProtectedResourceRequirementHandler> logger
     )
     {
-        this.client = client ?? throw new ArgumentNullException(nameof(client));
+        this.client = client;
         this.httpContextAccessor = httpContextAccessor;
-        this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        this.metrics = metrics;
+        this.logger = logger;
     }
 
     /// <inheritdoc/>
@@ -60,6 +63,7 @@ public class ParameterizedProtectedResourceRequirementHandler
 
         if (!context.User.IsAuthenticated())
         {
+            this.metrics.SkipRequirement(nameof(ParameterizedProtectedResourceRequirement));
             this.logger.LogRequirementSkipped(
                 nameof(ParameterizedProtectedResourceRequirementHandler)
             );
@@ -87,11 +91,12 @@ public class ParameterizedProtectedResourceRequirementHandler
             );
             this.logger.LogResourceResolved(entry.Resource, resource);
 
-            var verifier = new ProtectedResourceVerifier(this.client, this.logger);
+            var verifier = new ProtectedResourceVerifier(this.client, this.metrics, this.logger);
 
             success = await verifier.Verify(
                 resource,
                 scopes,
+                nameof(ParameterizedProtectedResourceRequirement),
                 cancellationToken: CancellationToken.None
             );
             verificationPlan.Complete(entry.Resource, success);
@@ -113,10 +118,12 @@ public class ParameterizedProtectedResourceRequirementHandler
 
         if (success)
         {
+            this.metrics.SucceedRequirement(nameof(ParameterizedProtectedResourceRequirement));
             context.Succeed(requirement);
         }
         else
         {
+            this.metrics.FailRequirement(nameof(ParameterizedProtectedResourceRequirement));
             this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
 
             context.Fail();

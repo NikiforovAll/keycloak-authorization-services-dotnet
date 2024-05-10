@@ -28,7 +28,7 @@ internal static partial class LoggerExtensions
         string? userName
     );
 
-    [LoggerMessage(101, LogLevel.Warning, "[{Requirement}] Has been skipped because of '{Reason}'")]
+    [LoggerMessage(101, LogLevel.Debug, "[{Requirement}] Has been skipped because of '{Reason}'")]
     public static partial void LogRequirementSkipped(
         this ILogger logger,
         string requirement,

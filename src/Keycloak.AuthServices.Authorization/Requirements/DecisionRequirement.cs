@@ -68,23 +68,27 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
 {
     private readonly IAuthorizationServerClient client;
     private readonly IHttpContextAccessor httpContextAccessor;
+    private readonly KeycloakMetrics metrics;
     private readonly ILogger<DecisionRequirementHandler> logger;
 
     /// <summary>
     /// </summary>
     /// <param name="client"></param>
     /// <param name="httpContextAccessor"></param>
+    /// <param name="metrics"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
     public DecisionRequirementHandler(
         IAuthorizationServerClient client,
         IHttpContextAccessor httpContextAccessor,
+        KeycloakMetrics metrics,
         ILogger<DecisionRequirementHandler> logger
     )
     {
         this.client = client ?? throw new ArgumentNullException(nameof(client));
         this.httpContextAccessor =
             httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+        this.metrics = metrics;
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
@@ -104,6 +108,7 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
 
         if (!context.User.IsAuthenticated())
         {
+            this.metrics.SkipRequirement(nameof(ParameterizedProtectedResourceRequirement));
             this.logger.LogRequirementSkipped(
                 nameof(ParameterizedProtectedResourceRequirementHandler)
             );
@@ -119,11 +124,12 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
 
         var scopes = (requirement as IProtectedResourceData).GetScopesExpression();
 
-        var verifier = new ProtectedResourceVerifier(this.client, this.logger);
+        var verifier = new ProtectedResourceVerifier(this.client, this.metrics, this.logger);
 
         var success = await verifier.Verify(
             resource,
             scopes,
+            nameof(DecisionRequirement),
             requirement.ScopesValidationMode,
             CancellationToken.None
         );
@@ -138,10 +144,12 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
 
         if (success)
         {
+            this.metrics.SucceedRequirement(nameof(DecisionRequirement));
             context.Succeed(requirement);
         }
         else
         {
+            this.metrics.FailRequirement(nameof(DecisionRequirement));
             this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
 
             context.Fail();

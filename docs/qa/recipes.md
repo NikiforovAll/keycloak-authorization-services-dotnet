@@ -20,6 +20,32 @@ Adjust logging level:
 > [!NOTE]
 > ☝️`Keycloak.AuthServices` supports OpenTelemetry. See [Keycloak.AuthServices.OpenTelemetry](/opentelemetry).
 
+## How to get Options from DI?
+
+```csharp
+var keycloakAuthenticationOptions = serviceProvider
+    .GetRequiredService<IOptionsMonitor<KeycloakAuthenticationOptions>>()
+    .Get(JwtBearerDefaults.AuthenticationScheme);
+
+var keycloakAuthenticationOptions = serviceProvider
+    .GetRequiredService<IOptionsMonitor<KeycloakAuthorizationOptions>>()
+    .CurrentValue;
+```
+
+> [!NOTE]
+> To retrieve `KeycloakAuthenticationOptions` you need to use `IOptionsMonitor.Get(string name)` because this options are registered per Scheme.
+
+## How to get Options outside of `IServiceProvider`?
+
+Sometimes you need to resolve options before the DI container is built. E.g: application startup.
+
+```csharp
+var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
+// OR
+KeycloakAuthorizationOptions options = new();
+configuration.BindKeycloakOptions(options);
+```
+
 ## How to get an access token via Swagger UI?
 
 Here is an example of how to use [NSwag](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware#add-oauth2-authentication-openapi-3):
@@ -75,29 +101,37 @@ app.Run();
 
 :::
 
-## How to get Options from DI?
+## How to setup resiliency to HTTP Clients?
 
-```csharp
-var keycloakAuthenticationOptions = serviceProvider
-    .GetRequiredService<IOptionsMonitor<KeycloakAuthenticationOptions>>()
-    .Get(JwtBearerDefaults.AuthenticationScheme);
+Every HTTP Client provided by `Keycloak.AuthServices` expose `IHttpClientBuilder`. It a standard way to extend behavior of `HttpClient`. We can use it to our advantage!
 
-var keycloakAuthenticationOptions = serviceProvider
-    .GetRequiredService<IOptionsMonitor<KeycloakAuthorizationOptions>>()
-    .CurrentValue;
+Install [Microsoft.Extensions.Http.Resilience](https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience)
+
+```bash
+dotnet add package Microsoft.Extensions.Http.Resilience
 ```
 
-> [!NOTE]
-> To retrieve `KeycloakAuthenticationOptions` you need to use `IOptionsMonitor.Get(string name)` because this options are registered per Scheme.
+Add resilience handler globally (for all `HttpClient`s including ones provided by `Keycloak.AuthServices`)
 
-## How to get Options outside of `IServiceProvider`?
-
-Sometimes you need to resolve options before the DI container is built. E.g: application startup.
+Add globally:
 
 ```csharp
-var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
-// OR
-KeycloakAuthorizationOptions options = new();
-configuration.BindKeycloakOptions(options);
+// Program.cs
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services
+
+builder.Services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
 ```
 
+Add per-client:
+
+```csharp
+// Program.cs
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services
+
+services
+    .AddKeycloakAuthorization()
+    .AddAuthorizationServer(builder.Configuration)
+    .AddStandardResilienceHandler();
+```

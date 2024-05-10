@@ -22,19 +22,22 @@ builder.Logging.AddOpenTelemetry(logging =>
     logging.IncludeScopes = true;
 });
 
+builder.Services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
+
 services
     .AddOpenTelemetry()
     .WithMetrics(metrics =>
-    {
-        metrics.AddAspNetCoreInstrumentation().AddHttpClientInstrumentation();
-    })
+        metrics
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddKeycloakAuthServicesInstrumentation()
+    )
     .WithTracing(tracing =>
-    {
         tracing
             .AddAspNetCoreInstrumentation()
             .AddHttpClientInstrumentation()
-            .AddKeycloakAuthServicesInstrumentation();
-    })
+            .AddKeycloakAuthServicesInstrumentation()
+    )
     .UseOtlpExporter();
 
 services.AddControllers(options => options.AddProtectedResources());
@@ -48,7 +51,9 @@ services
     .AddAuthorizationBuilder()
     .AddDefaultPolicy("", policy => policy.RequireRealmRoles("Admin", "Reader"));
 
-services.AddKeycloakAuthorization().AddAuthorizationServer(builder.Configuration);
+services
+    .AddKeycloakAuthorization()
+    .AddAuthorizationServer(builder.Configuration);
 
 var adminSection = "KeycloakAdmin";
 

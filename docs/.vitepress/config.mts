@@ -104,10 +104,11 @@ export default withMermaid({
                     ]
                 },
                 {
-                    text: 'Q&A',
+                    text: 'Maintenance👨‍🔬',
                     items: [
-                        { text: 'Recipes', link: '/qa/recipes' },
+                        { text: 'Q&A', link: '/qa/recipes' },
                         { text: 'Troubleshooting', link: '/qa/troubleshooting' },
+                        { text: 'OpenTelemetry🔭', link: '/opentelemetry' }
                     ]
                 },
                 {
