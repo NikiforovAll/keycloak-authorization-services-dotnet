@@ -19,6 +19,7 @@ internal sealed class ProtectedResourceVerifier
     public async Task<bool> Verify(
         string resource,
         string scopes,
+        ScopesValidationMode? scopesValidationMode = default,
         CancellationToken cancellationToken = default
     )
     {
@@ -34,7 +35,12 @@ internal sealed class ProtectedResourceVerifier
 
         try
         {
-            success = await this.client.VerifyAccessToResource(resource, scopes, cancellationToken);
+            success = await this.client.VerifyAccessToResource(
+                resource,
+                scopes,
+                scopesValidationMode,
+                cancellationToken
+            );
         }
         catch (Exception exception)
         {

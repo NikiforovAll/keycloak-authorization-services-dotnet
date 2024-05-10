@@ -61,7 +61,9 @@ public class AccessTokenPropagationHandler : DelegatingHandler
                 this.options.SourceAuthenticationScheme,
                 token
             );
-
+        }
+        else
+        {
             this.logger.LogTokenIsEmpty();
         }
 

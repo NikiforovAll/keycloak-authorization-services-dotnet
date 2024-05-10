@@ -121,7 +121,12 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
 
         var verifier = new ProtectedResourceVerifier(this.client, this.logger);
 
-        var success = await verifier.Verify(resource, scopes, CancellationToken.None);
+        var success = await verifier.Verify(
+            resource,
+            scopes,
+            requirement.ScopesValidationMode,
+            CancellationToken.None
+        );
 
         activity?.AddTag(Tags.Outcome, success);
 

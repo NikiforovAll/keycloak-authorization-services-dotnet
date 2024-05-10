@@ -74,7 +74,9 @@ public class ParameterizedProtectedResourceRequirementHandler
             ?? Array.Empty<IProtectedResourceData>();
 
         var verificationPlan = new VerificationPlan(requirementData);
-        var success = false;
+        this.logger.LogVerificationPlan(verificationPlan.ToString(), userName);
+
+        var success = true;
 
         foreach (var entry in verificationPlan)
         {
@@ -87,7 +89,11 @@ public class ParameterizedProtectedResourceRequirementHandler
 
             var verifier = new ProtectedResourceVerifier(this.client, this.logger);
 
-            success = await verifier.Verify(resource, scopes, CancellationToken.None);
+            success = await verifier.Verify(
+                resource,
+                scopes,
+                cancellationToken: CancellationToken.None
+            );
             verificationPlan.Complete(entry.Resource, success);
 
             if (!success)

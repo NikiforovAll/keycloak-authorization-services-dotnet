@@ -47,6 +47,17 @@ internal static partial class LoggerExtensions
     );
 
     [LoggerMessage(
+        112,
+        LogLevel.Debug,
+        "User - '{UserName}' has verification plan: {Verification}"
+    )]
+    public static partial void LogVerificationPlan(
+        this ILogger logger,
+        string verification,
+        string? userName
+    );
+
+    [LoggerMessage(
         104,
         LogLevel.Error,
         "Exception occurred during resource[{Resource}#{Scopes}] verification"
