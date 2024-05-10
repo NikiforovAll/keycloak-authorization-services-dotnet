@@ -32,6 +32,7 @@ public class ParameterizedProtectedResourceRequirementHandler
     /// </summary>
     /// <param name="client"></param>
     /// <param name="httpContextAccessor"></param>
+    /// <param name="metrics"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
     public ParameterizedProtectedResourceRequirementHandler(
