@@ -4,6 +4,7 @@ using System;
 using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 /// Requesting Party Token (RPT) requirement
@@ -38,6 +39,14 @@ public class RptRequirement : IAuthorizationRequirement
 /// </summary>
 public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 {
+    private readonly ILogger<RptRequirementHandler> logger;
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="logger"></param>
+    public RptRequirementHandler(ILogger<RptRequirementHandler> logger) => this.logger = logger;
+
     /// <summary>
     /// </summary>
     /// <param name="context"></param>
@@ -53,6 +62,10 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 
         if (!context.User.IsAuthenticated())
         {
+            this.logger.LogRequirementSkipped(
+                nameof(RptRequirementHandler)
+            );
+
             return Task.CompletedTask;
         }
 
@@ -99,6 +112,7 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
             }
 
             context.Succeed(requirement);
+
             return Task.CompletedTask;
         }
 

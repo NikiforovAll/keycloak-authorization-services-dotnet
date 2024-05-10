@@ -28,16 +28,11 @@ internal static partial class LoggerExtensions
         string? userName
     );
 
-    [LoggerMessage(
-        101,
-        LogLevel.Warning,
-        "[{Requirement}] Has been skipped because of '{Reason}' for user '{UserName}'"
-    )]
+    [LoggerMessage(101, LogLevel.Warning, "[{Requirement}] Has been skipped because of '{Reason}'")]
     public static partial void LogRequirementSkipped(
         this ILogger logger,
         string requirement,
-        string reason,
-        string? userName
+        string reason = "User is not Authenticated"
     );
 
     [LoggerMessage(
@@ -45,7 +40,7 @@ internal static partial class LoggerExtensions
         LogLevel.Debug,
         "User - '{UserName}' has verification table: {Verification}"
     )]
-    public static partial void LogVerification(
+    public static partial void LogVerificationTable(
         this ILogger logger,
         string verification,
         string? userName
@@ -62,24 +57,16 @@ internal static partial class LoggerExtensions
         string? scopes
     );
 
-    [LoggerMessage(
-        105,
-        LogLevel.Debug,
-        "AccessTokenPropagationHandler: HttpContext is null, continuing without token"
-    )]
+    [LoggerMessage(105, LogLevel.Debug, "HttpContext is null, continuing without token")]
     public static partial void LogHttpContextIsNull(this ILogger logger);
 
-    [LoggerMessage(
-        106,
-        LogLevel.Information,
-        "AccessTokenPropagationHandler: Token is null or empty, continuing without token"
-    )]
+    [LoggerMessage(106, LogLevel.Information, "Token is null or empty, continuing without token")]
     public static partial void LogTokenIsEmpty(this ILogger logger);
 
     [LoggerMessage(
         107,
         LogLevel.Debug,
-        "AuthorizationServerClient: Verifying access to resource '{Resource}' with scope '{Scope}'"
+        "Verifying access to resource '{Resource}' with scope '{Scope}'"
     )]
     public static partial void LogVerifyingAccess(
         this ILogger logger,
@@ -90,7 +77,7 @@ internal static partial class LoggerExtensions
     [LoggerMessage(
         108,
         LogLevel.Debug,
-        "AuthorizationServerClient: Validating scopes for resource '{Resource}' in {ValidationMode}"
+        "Validating scopes for resource '{Resource}' in {ValidationMode}"
     )]
     public static partial void LogValidatingScopes(
         this ILogger logger,
@@ -101,7 +88,7 @@ internal static partial class LoggerExtensions
     [LoggerMessage(
         109,
         LogLevel.Error,
-        "AuthorizationServerClient: An unexpected error occurred while verifying access to resource '{Resource}' with scope '{Scope}'"
+        "An unexpected error occurred while verifying access to resource '{Resource}' with scope '{Scope}'"
     )]
     public static partial void LogVerifyAccessToResourceFailed(
         this ILogger logger,
@@ -113,11 +100,18 @@ internal static partial class LoggerExtensions
     [LoggerMessage(
         110,
         LogLevel.Warning,
-        "AuthorizationServerClient: Verification on resource '{Resource}' was not able to recognize response. Verification terminated due to '{Reason}'"
+        "Verification on resource '{Resource}' was not able to recognize response. Verification terminated due to '{Reason}'"
     )]
     public static partial void LogUnableToRecognizeResponse(
         this ILogger logger,
         string resource,
         string reason
+    );
+
+    [LoggerMessage(111, LogLevel.Debug, "Resource '{Resource}' resolved as '{ResourceValue}'")]
+    public static partial void LogResourceResolved(
+        this ILogger logger,
+        string resource,
+        string resourceValue
     );
 }

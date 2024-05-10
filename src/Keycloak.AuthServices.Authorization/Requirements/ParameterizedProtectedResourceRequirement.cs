@@ -1,6 +1,5 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
-using System.Diagnostics;
 using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
@@ -51,20 +50,18 @@ public class ParameterizedProtectedResourceRequirementHandler
         ParameterizedProtectedResourceRequirement requirement
     )
     {
-        using var activity = AuthServicesActivitySource.Default.StartActivity(
-            Activities.ProtectedResourceRequirement
-        );
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
+        using var activity = KeycloakActivitySource.Default.StartActivity(
+            Activities.ProtectedResourceRequirement
+        );
         var userName = context.User.Identity?.Name;
 
         if (!context.User.IsAuthenticated())
         {
             this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler),
-                "User is not Authenticated",
-                userName
+                nameof(ParameterizedProtectedResourceRequirementHandler)
             );
 
             return;
@@ -77,75 +74,46 @@ public class ParameterizedProtectedResourceRequirementHandler
             ?? Array.Empty<IProtectedResourceData>();
 
         var verificationPlan = new VerificationPlan(requirementData);
+        var success = false;
 
         foreach (var entry in verificationPlan)
         {
-            using var resourceActivity = AuthServicesActivitySource.Default.StartActivity(
-                Activities.ProtectedResourceVerification
-            );
-
             var scopes = entry.GetScopesExpression();
-            resourceActivity?.AddEvent(new(Events.VerificationStarted));
-
             var resource = Utils.ResolveResource(
                 entry.Resource,
                 this.httpContextAccessor.HttpContext
             );
+            this.logger.LogResourceResolved(entry.Resource, resource);
 
-            resourceActivity?.AddTag(Tags.Resource, resource);
-            resourceActivity?.AddTag(Tags.Scopes, scopes);
+            var verifier = new ProtectedResourceVerifier(this.client, this.logger);
 
-            var success = false;
-            try
-            {
-                success = await this.client.VerifyAccessToResource(
-                    resource,
-                    scopes,
-                    CancellationToken.None
-                );
-            }
-            catch (Exception exception)
-            {
-                this.logger.LogAuthorizationError(resource, scopes);
-
-                resourceActivity?.SetStatus(
-                    ActivityStatusCode.Error,
-                    $"Unable to complete verification - {exception.Message}"
-                );
-
-                throw;
-            }
-
+            success = await verifier.Verify(resource, scopes, CancellationToken.None);
             verificationPlan.Complete(entry.Resource, success);
-
-            resourceActivity?.AddEvent(new(Events.VerificationCompleted));
-            resourceActivity?.AddTag(Tags.Outcome, success);
 
             if (!success)
             {
-                this.logger.LogAuthorizationResult(
-                    nameof(ParameterizedProtectedResourceRequirementHandler),
-                    false,
-                    userName
-                );
-                this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
-                this.logger.LogVerification(verificationPlan.ToString(), userName);
-                activity?.AddTag(Tags.Outcome, false);
-
-                context.Fail();
-
-                return;
+                break;
             }
         }
 
+        activity?.AddTag(Tags.Outcome, success);
+
+        this.logger.LogVerificationTable(verificationPlan.ToString(), userName);
         this.logger.LogAuthorizationResult(
             nameof(ParameterizedProtectedResourceRequirementHandler),
-            true,
+            success,
             userName
         );
-        this.logger.LogVerification(verificationPlan.ToString(), userName);
-        activity?.AddTag(Tags.Outcome, true);
 
-        context.Succeed(requirement);
+        if (success)
+        {
+            context.Succeed(requirement);
+        }
+        else
+        {
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+
+            context.Fail();
+        }
     }
 }

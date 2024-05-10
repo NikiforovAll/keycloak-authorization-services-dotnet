@@ -4,6 +4,7 @@ using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using static Keycloak.AuthServices.Authorization.ActivityConstants;
 
 /// <summary>
 /// Decision requirement
@@ -96,14 +97,15 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
+        using var activity = KeycloakActivitySource.Default.StartActivity(
+            Activities.DecisionRequirement
+        );
         var userName = context.User.Identity?.Name;
 
         if (!context.User.IsAuthenticated())
         {
             this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler),
-                "User is not Authenticated",
-                userName
+                nameof(ParameterizedProtectedResourceRequirementHandler)
             );
 
             return;
@@ -113,15 +115,21 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
             requirement.Resource,
             this.httpContextAccessor.HttpContext
         );
+        this.logger.LogResourceResolved(requirement.Resource, resource);
 
-        var success = await this.client.VerifyAccessToResource(
-            resource,
-            (requirement as IProtectedResourceData).GetScopesExpression(),
-            requirement.ScopesValidationMode,
-            CancellationToken.None
+        var scopes = (requirement as IProtectedResourceData).GetScopesExpression();
+
+        var verifier = new ProtectedResourceVerifier(this.client, this.logger);
+
+        var success = await verifier.Verify(resource, scopes, CancellationToken.None);
+
+        activity?.AddTag(Tags.Outcome, success);
+
+        this.logger.LogAuthorizationResult(
+            nameof(ParameterizedProtectedResourceRequirementHandler),
+            success,
+            userName
         );
-
-        this.logger.LogAuthorizationResult(requirement.ToString(), success, userName);
 
         if (success)
         {
@@ -129,7 +137,8 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
         }
         else
         {
-            this.logger.LogAuthorizationFailed(requirement.ToString(), userName);
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+
             context.Fail();
         }
     }

@@ -52,9 +52,7 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
         if (!context.User.IsAuthenticated())
         {
             this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler),
-                "User is not Authenticated",
-                userName
+                nameof(ParameterizedProtectedResourceRequirementHandler)
             );
 
             return Task.CompletedTask;
@@ -65,14 +63,22 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
         if (context.User.Claims.TryGetRealmResource(out var resourceAccess))
         {
             success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
-
-            if (success)
-            {
-                context.Succeed(requirement);
-            }
         }
 
-        this.logger.LogAuthorizationResult(requirement.ToString(), success, userName);
+        this.logger.LogAuthorizationResult(
+            nameof(RealmAccessRequirementHandler),
+            success,
+            userName
+        );
+
+        if (success)
+        {
+            context.Succeed(requirement);
+        }
+        else
+        {
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+        }
 
         return Task.CompletedTask;
     }
