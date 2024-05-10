@@ -82,6 +82,38 @@ public class KeycloakRolesClaimsTransformationTests
         claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(0);
     }
 
+    [Fact]
+    public async Task ClaimsTransformationShouldHandleMissingResourceClaimWithRealmRoles()
+    {
+        var target = new KeycloakRolesClaimsTransformation(
+            ClaimTypes.Role,
+            RolesClaimTransformationSource.All,
+            ClientId
+        );
+        var claimsPrincipal = GetClaimsPrincipal(MyRealmClaimValue, null);
+
+        claimsPrincipal = await target.TransformAsync(claimsPrincipal);
+        claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleUserClaim).Should().BeTrue();
+        claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleSuperUserClaim).Should().BeTrue();
+        claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(2);
+    }
+
+    [Fact]
+    public async Task ClaimsTransformationShouldHandleMissingRealmClaimWithResourceRoles()
+    {
+        var target = new KeycloakRolesClaimsTransformation(
+            ClaimTypes.Role,
+            RolesClaimTransformationSource.All,
+            ClientId
+        );
+        var claimsPrincipal = GetClaimsPrincipal(null, MyResourceClaimValue);
+
+        claimsPrincipal = await target.TransformAsync(claimsPrincipal);
+        claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleUserClaim).Should().BeTrue();
+        claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim).Should().BeTrue();
+        claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(2);
+    }
+
     private const string MyResourceClaimValue = /*lang=json,strict*/
         """
             {
@@ -138,17 +170,28 @@ public class KeycloakRolesClaimsTransformationTests
 
     // Get a claims principal that has all the appropriate claim details required for testing
     private static ClaimsPrincipal GetClaimsPrincipal(
-        string realmClaimValue,
-        string resourceClaimValue
-    ) =>
-        new(
-            new ClaimsIdentity(
-                [
-                    new Claim(ResourceClaimType, resourceClaimValue, JsonValueType, MyUrl, MyUrl),
-                    new Claim(RealmClaimType, realmClaimValue, JsonValueType, MyUrl, MyUrl),
-                ]
-            )
-        );
+        string? realmClaimValue,
+        string? resourceClaimValue
+    )
+    {
+        var claimsIdentity = new ClaimsIdentity();
+
+        if (realmClaimValue != null)
+        {
+            claimsIdentity.AddClaim(
+                new Claim(RealmClaimType, realmClaimValue, JsonValueType, MyUrl, MyUrl)
+            );
+        }
+
+        if (resourceClaimValue != null)
+        {
+            claimsIdentity.AddClaim(
+                new Claim(ResourceClaimType, resourceClaimValue, JsonValueType, MyUrl, MyUrl)
+            );
+        }
+
+        return new ClaimsPrincipal(claimsIdentity);
+    }
 
     // Get a claims principal that has all the appropriate claim details required for testing
     private static ClaimsPrincipal GetClaimsPrincipalClaim(string claimValue) =>
