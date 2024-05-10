@@ -22,8 +22,8 @@ builder.Logging.AddOpenTelemetry(logging =>
     logging.IncludeScopes = true;
 });
 
-builder
-    .Services.AddOpenTelemetry()
+services
+    .AddOpenTelemetry()
     .WithMetrics(metrics =>
     {
         metrics.AddAspNetCoreInstrumentation().AddHttpClientInstrumentation();

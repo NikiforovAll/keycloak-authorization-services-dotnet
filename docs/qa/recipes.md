@@ -4,9 +4,27 @@ Welcome to the Recipes section! Here you will find a collection of instructions 
 
 [[toc]]
 
-## How to get an access token from Swagger UI?
+## How to debug an application?
+
+Adjust logging level:
+
+```json
+{
+    "Logging": {
+        "Keycloak.AuthServices": "Debug",
+        "Keycloak.AuthServices.Authorization": "Trace"
+    }
+}
+```
+
+> [!NOTE]
+> ☝️`Keycloak.AuthServices` supports OpenTelemetry. See [Keycloak.AuthServices.OpenTelemetry](/opentelemetry).
+
+## How to get an access token via Swagger UI?
 
 Here is an example of how to use [NSwag](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware#add-oauth2-authentication-openapi-3):
+
+::: details Code
 
 ```csharp
 // Program.cs
@@ -55,6 +73,8 @@ app.UseSwaggerUi(ui =>
 app.Run();
 ```
 
+:::
+
 ## How to get Options from DI?
 
 ```csharp
@@ -81,16 +101,3 @@ KeycloakAuthorizationOptions options = new();
 configuration.BindKeycloakOptions(options);
 ```
 
-## How to debug an application?
-
-Adjust logging level:
-
-```json
-{
-    "Logging": {
-            "Keycloak.AuthServices": "Debug",
-            "Keycloak.AuthServices.Authorization": "Trace"
-        }
-    }
-}
-```

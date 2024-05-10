@@ -2,9 +2,11 @@
 
 ASP.NET Core allows you to built policies based on [Microsoft.AspNetCore.Authorization.AuthorizationBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.authorizationbuilder). `Keycloak.AuthServices.Authorization` adds [Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicybuilder) extension methods to work with protected resources and configure your polices.
 
+::: details AuthorizationPolicyBuilderExtensions
+
 <<< @/../src/Keycloak.AuthServices.Authorization/PoliciesBuilderExtensions.cs#RequireProtectedResource
 
-<!-- <<< @/../src/Keycloak.AuthServices.Authorization/PoliciesBuilderExtensions.cs#RequireProtectedResourceScopes -->
+:::
 
 ## Add to your code
 

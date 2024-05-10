@@ -1,6 +1,6 @@
 # Configure Keycloak
 
-This section contains a general instruction of how to configure Keyclaok to be used for .NET applications.
+This section contains a general instruction of how to configure Keycloak to be used for .NET applications.
 
 *Table of Contents*:
 [[toc]]

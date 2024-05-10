@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net6.0</TargetFrameworks>
+  <PropertyGroup Label="Package">
+    <Product>Keycloak.AuthServices.OpenTelemetry</Product>
+    <Description>Instrumentation for OpenTelemetry .NET</Description>
+    <PackageTags>$(PackageTags);distributed-tracing;opentelemetry;</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
