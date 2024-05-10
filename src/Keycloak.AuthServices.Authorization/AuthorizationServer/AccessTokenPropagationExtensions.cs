@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 /// <summary>
@@ -14,18 +15,15 @@ public static class AccessTokenPropagationExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <returns></returns>
-    public static IHttpClientBuilder AddHeaderPropagation(this IHttpClientBuilder builder)
-    {
+    public static IHttpClientBuilder AddHeaderPropagation(this IHttpClientBuilder builder) =>
         builder.AddHttpMessageHandler(
             (sp) =>
             {
                 var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
                 var options = sp.GetRequiredService<IOptions<KeycloakAuthorizationServerOptions>>();
+                var logger = sp.GetRequiredService<ILogger<AccessTokenPropagationHandler>>();
 
-                return new AccessTokenPropagationHandler(contextAccessor, options);
+                return new AccessTokenPropagationHandler(contextAccessor, options, logger);
             }
         );
-
-        return builder;
-    }
 }

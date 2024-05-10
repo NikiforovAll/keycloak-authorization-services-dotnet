@@ -17,6 +17,9 @@ public sealed class KeycloakAuthorizationServerOptions : KeycloakInstallationOpt
     /// </summary>
     public string SourceAuthenticationScheme { get; set; } = "Bearer";
 
+    /// Gets or sets the token named used by <see cref="AccessTokenPropagationHandler"/>
+    public string SourceTokenName { get; set; } = "access_token";
+
     /// <summary>
     /// Controls if <see cref="AccessTokenPropagationHandler"/> is added to the <see cref="IAuthorizationServerClient"/>
     /// </summary>

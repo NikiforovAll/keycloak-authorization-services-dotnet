@@ -10,11 +10,16 @@
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk.Kiota\Keycloak.AuthServices.Sdk.Kiota.csproj" />
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.OpenTelemetry\Keycloak.AuthServices.OpenTelemetry.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Duende.AccessTokenManagement" />
     <PackageReference Include="NSwag.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
   </ItemGroup>
 
 </Project>

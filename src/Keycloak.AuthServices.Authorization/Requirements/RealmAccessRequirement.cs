@@ -47,6 +47,19 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
+        {
+            this.logger.LogRequirementSkipped(
+                nameof(ParameterizedProtectedResourceRequirementHandler),
+                "User is not Authenticated",
+                userName
+            );
+
+            return Task.CompletedTask;
+        }
+
         var success = false;
 
         if (context.User.Claims.TryGetRealmResource(out var resourceAccess))
@@ -59,11 +72,7 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
             }
         }
 
-        this.logger.LogAuthorizationResult(
-            requirement.ToString(),
-            success,
-            context.User.Identity?.Name
-        );
+        this.logger.LogAuthorizationResult(requirement.ToString(), success, userName);
 
         return Task.CompletedTask;
     }

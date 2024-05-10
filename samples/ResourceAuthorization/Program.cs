@@ -4,6 +4,9 @@ using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Kiota;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
 using ResourceAuthorization;
 using KeycloakAdminClientOptions = Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions;
 
@@ -12,6 +15,27 @@ var services = builder.Services;
 
 services.AddProblemDetails();
 services.AddApplicationSwagger();
+
+builder.Logging.AddOpenTelemetry(logging =>
+{
+    logging.IncludeFormattedMessage = true;
+    logging.IncludeScopes = true;
+});
+
+builder
+    .Services.AddOpenTelemetry()
+    .WithMetrics(metrics =>
+    {
+        metrics.AddAspNetCoreInstrumentation().AddHttpClientInstrumentation();
+    })
+    .WithTracing(tracing =>
+    {
+        tracing
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddKeycloakAuthServicesInstrumentation();
+    })
+    .UseOtlpExporter();
 
 services.AddControllers(options => options.AddProtectedResources());
 

@@ -50,6 +50,12 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
     {
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
+
+        if (!context.User.IsAuthenticated())
+        {
+            return Task.CompletedTask;
+        }
+
         // the client application is responsible for acquiring of the token
         // should request special RPT access_token that contains this section
         var authorizationClaim = context.User.FindFirstValue("authorization");
@@ -58,8 +64,7 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
             return Task.CompletedTask;
         }
 
-        /* Sample value for authorizationClaim
-        {
+        /*{
             "permissions":[
                 {
                     "scopes":["read"],

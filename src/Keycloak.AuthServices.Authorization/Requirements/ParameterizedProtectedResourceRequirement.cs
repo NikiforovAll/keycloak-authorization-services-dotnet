@@ -1,10 +1,12 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using System.Diagnostics;
+using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
+using static Keycloak.AuthServices.Authorization.ActivityConstants;
 
 /// <summary>
 /// Decision requirement
@@ -49,22 +51,26 @@ public class ParameterizedProtectedResourceRequirementHandler
         ParameterizedProtectedResourceRequirement requirement
     )
     {
+        using var activity = AuthServicesActivitySource.Default.StartActivity(
+            Activities.ProtectedResourceRequirement
+        );
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
-        if (!(context.User.Identity?.IsAuthenticated ?? false))
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
         {
             this.logger.LogRequirementSkipped(
                 nameof(ParameterizedProtectedResourceRequirementHandler),
                 "User is not Authenticated",
-                context.User.Identity?.Name
+                userName
             );
 
             return;
         }
 
         var endpoint = this.httpContextAccessor.HttpContext?.GetEndpoint();
-        var userName = context.User.Identity?.Name;
 
         var requirementData =
             endpoint?.Metadata?.GetOrderedMetadata<IProtectedResourceData>()
@@ -74,27 +80,57 @@ public class ParameterizedProtectedResourceRequirementHandler
 
         foreach (var entry in verificationPlan)
         {
-            var scopes = entry.GetScopesExpression();
-
-            var resource = ResolveResource(entry.Resource, this.httpContextAccessor.HttpContext);
-
-            var success = await this.client.VerifyAccessToResource(
-                resource,
-                scopes,
-                CancellationToken.None
+            using var resourceActivity = AuthServicesActivitySource.Default.StartActivity(
+                Activities.ProtectedResourceVerification
             );
+
+            var scopes = entry.GetScopesExpression();
+            resourceActivity?.AddEvent(new(Events.VerificationStarted));
+
+            var resource = Utils.ResolveResource(
+                entry.Resource,
+                this.httpContextAccessor.HttpContext
+            );
+
+            resourceActivity?.AddTag(Tags.Resource, resource);
+            resourceActivity?.AddTag(Tags.Scopes, scopes);
+
+            var success = false;
+            try
+            {
+                success = await this.client.VerifyAccessToResource(
+                    resource,
+                    scopes,
+                    CancellationToken.None
+                );
+            }
+            catch (Exception exception)
+            {
+                this.logger.LogAuthorizationError(resource, scopes);
+
+                resourceActivity?.SetStatus(
+                    ActivityStatusCode.Error,
+                    $"Unable to complete verification - {exception.Message}"
+                );
+
+                throw;
+            }
 
             verificationPlan.Complete(entry.Resource, success);
 
+            resourceActivity?.AddEvent(new(Events.VerificationCompleted));
+            resourceActivity?.AddTag(Tags.Outcome, success);
+
             if (!success)
             {
-                this.logger.LogVerification(verificationPlan.ToString(), userName);
                 this.logger.LogAuthorizationResult(
                     nameof(ParameterizedProtectedResourceRequirementHandler),
                     false,
                     userName
                 );
                 this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+                this.logger.LogVerification(verificationPlan.ToString(), userName);
+                activity?.AddTag(Tags.Outcome, false);
 
                 context.Fail();
 
@@ -102,39 +138,14 @@ public class ParameterizedProtectedResourceRequirementHandler
             }
         }
 
-        this.logger.LogVerification(verificationPlan.ToString(), userName);
         this.logger.LogAuthorizationResult(
             nameof(ParameterizedProtectedResourceRequirementHandler),
             true,
             userName
         );
+        this.logger.LogVerification(verificationPlan.ToString(), userName);
+        activity?.AddTag(Tags.Outcome, true);
 
         context.Succeed(requirement);
-    }
-
-    private static string ResolveResource(string resource, HttpContext? httpContext)
-    {
-        if (httpContext is null)
-        {
-            return resource;
-        }
-
-        var pathParameters = httpContext.GetRouteData()?.Values;
-
-        if (pathParameters != null && resource.Contains('}') && resource.Contains('{'))
-        {
-            foreach (var parameter in pathParameters)
-            {
-                var parameterName = parameter.Key;
-
-                if (resource.Contains($"{{{parameterName}}}"))
-                {
-                    var parameterValue = parameter.Value?.ToString();
-                    resource = resource.Replace($"{{{parameterName}}}", parameterValue);
-                }
-            }
-        }
-
-        return resource;
     }
 }

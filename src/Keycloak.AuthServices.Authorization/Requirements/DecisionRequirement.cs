@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Authorization.Requirements;
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
 /// <summary>
@@ -62,22 +63,27 @@ public class DecisionRequirement : IAuthorizationRequirement, IProtectedResource
 
 /// <summary>
 /// </summary>
-public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
+public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
 {
     private readonly IAuthorizationServerClient client;
+    private readonly IHttpContextAccessor httpContextAccessor;
     private readonly ILogger<DecisionRequirementHandler> logger;
 
     /// <summary>
     /// </summary>
     /// <param name="client"></param>
+    /// <param name="httpContextAccessor"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
     public DecisionRequirementHandler(
         IAuthorizationServerClient client,
+        IHttpContextAccessor httpContextAccessor,
         ILogger<DecisionRequirementHandler> logger
     )
     {
         this.client = client ?? throw new ArgumentNullException(nameof(client));
+        this.httpContextAccessor =
+            httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
@@ -90,29 +96,32 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
-        if (!(context.User.Identity?.IsAuthenticated ?? false))
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
         {
             this.logger.LogRequirementSkipped(
                 nameof(ParameterizedProtectedResourceRequirementHandler),
                 "User is not Authenticated",
-                context.User.Identity?.Name
+                userName
             );
 
             return;
         }
 
-        var success = await this.client.VerifyAccessToResource(
+        var resource = Utils.ResolveResource(
             requirement.Resource,
+            this.httpContextAccessor.HttpContext
+        );
+
+        var success = await this.client.VerifyAccessToResource(
+            resource,
             (requirement as IProtectedResourceData).GetScopesExpression(),
             requirement.ScopesValidationMode,
             CancellationToken.None
         );
 
-        this.logger.LogAuthorizationResult(
-            requirement.ToString(),
-            success,
-            context.User.Identity?.Name
-        );
+        this.logger.LogAuthorizationResult(requirement.ToString(), success, userName);
 
         if (success)
         {
@@ -120,7 +129,7 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         }
         else
         {
-            this.logger.LogAuthorizationFailed(requirement.ToString(), context.User.Identity?.Name);
+            this.logger.LogAuthorizationFailed(requirement.ToString(), userName);
             context.Fail();
         }
     }
