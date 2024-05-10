@@ -2,8 +2,8 @@
 
 ## V2.0.0
 
-[Announcement - Keycloak.AuthServices v2.3.0 is out 🎉!](https://nikiforovall.github.io/dotnet/keycloak/2024/05/10/keycloak-v2-3-0.html)
-[Announcement - Keycloak.AuthServices v2.0.0 is out 🎉!](https://nikiforovall.github.io/dotnet/keycloak/2024/05/05/keycloak-v2-0-0.html)
+* [Announcement - Keycloak.AuthServices v2.3.0 is out 🎉!](https://nikiforovall.github.io/dotnet/keycloak/2024/05/10/keycloak-v2-3-0.html)
+* [Announcement - Keycloak.AuthServices v2.0.0 is out 🎉!](https://nikiforovall.github.io/dotnet/keycloak/2024/05/05/keycloak-v2-0-0.html)
 
 ## V1.0.0
 
