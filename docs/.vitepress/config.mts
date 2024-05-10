@@ -43,7 +43,7 @@ export default withMermaid({
                 },
                 {
                     text: 'Authorization',
-                    collapsed: false,
+                    collapsed: true,
                     items: [
                         {
                             text: 'Authorization Server', link: '/authorization/authorization-server'
@@ -104,9 +104,11 @@ export default withMermaid({
                     ]
                 },
                 {
-                    text: 'Q&A',
+                    text: 'Maintenance👨‍🔬',
                     items: [
-                        { text: 'Recipes', link: '/qa/recipes' },
+                        { text: 'Q&A', link: '/qa/recipes' },
+                        { text: 'Troubleshooting', link: '/qa/troubleshooting' },
+                        { text: 'OpenTelemetry🔭', link: '/opentelemetry' }
                     ]
                 },
                 {

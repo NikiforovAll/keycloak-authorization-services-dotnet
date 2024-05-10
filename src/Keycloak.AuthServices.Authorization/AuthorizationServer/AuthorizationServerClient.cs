@@ -41,34 +41,43 @@ public class AuthorizationServerClient : IAuthorizationServerClient
         ArgumentNullException.ThrowIfNull(resource);
         ArgumentNullException.ThrowIfNull(scope);
 
-        var data = this.PrepareData(resource, scope);
+        this.logger.LogVerifyingAccess(resource, scope);
 
-        using var content = new FormUrlEncodedContent(data);
-        var response = await this.httpClient.PostAsync(
-            KeycloakConstants.TokenEndpointPath,
-            content,
-            cancellationToken
-        );
+        try
+        {
+            using var content = new FormUrlEncodedContent(this.PrepareRequest(resource, scope));
+            var response = await this.httpClient.PostAsync(
+                KeycloakConstants.TokenEndpointPath,
+                content,
+                cancellationToken
+            );
 
-        return await this.HandleResponse(
-            response,
-            resource,
-            scope,
-            scopesValidationMode,
-            cancellationToken
-        );
+            return await this.HandleResponse(
+                response,
+                resource,
+                scope,
+                scopesValidationMode,
+                cancellationToken
+            );
+        }
+        catch (Exception exception)
+        {
+            this.logger.LogVerifyAccessToResourceFailed(exception, resource, scope);
+            throw;
+        }
     }
 
-    private Dictionary<string, string> PrepareData(string resource, string scope)
+    private Dictionary<string, string> PrepareRequest(string resource, string scope)
     {
         var permission = string.IsNullOrWhiteSpace(scope) ? resource : $"{resource}#{scope}";
-        var audience = this.options.Value.Resource;
+        var audience = this.options.Value.Resource ?? string.Empty;
+        var responseMode = scope.Contains(',') ? "permissions" : "decision";
 
         return new Dictionary<string, string>
         {
             { "grant_type", "urn:ietf:params:oauth:grant-type:uma-ticket" },
-            { "response_mode", scope.Contains(',') ? "permissions" : "decision" },
-            { "audience", audience ?? string.Empty },
+            { "response_mode", responseMode },
+            { "audience", audience },
             { "permission", permission }
         };
     }
@@ -83,9 +92,33 @@ public class AuthorizationServerClient : IAuthorizationServerClient
     {
         if (!response.IsSuccessStatusCode)
         {
-            return await this.HandleErrorResponse(response, cancellationToken);
+            var error = await response.Content.ReadAsStringAsync(cancellationToken);
+
+            if (!error.Contains(ErrorResponse.AccessDeniedError))
+            {
+                this.logger.LogUnableToRecognizeResponse(resource, error);
+            }
+
+            return false;
         }
 
+        return await this.ValidateScopesAsync(
+            resource,
+            scope,
+            scopesValidationMode,
+            response,
+            cancellationToken
+        );
+    }
+
+    private async Task<bool> ValidateScopesAsync(
+        string resource,
+        string scope,
+        ScopesValidationMode? scopesValidationMode,
+        HttpResponseMessage response,
+        CancellationToken cancellationToken
+    )
+    {
         var scopes = scope.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
 
         if (scopes is { Count: <= 1 })
@@ -97,61 +130,43 @@ public class AuthorizationServerClient : IAuthorizationServerClient
             cancellationToken: cancellationToken
         );
 
-        return this.ValidateScopes(scopeResponse, resource, scopes, scopesValidationMode);
+        return this.ValidateScopesAsync(resource, scopes, scopeResponse, scopesValidationMode);
     }
 
-    private async Task<bool> HandleErrorResponse(
-        HttpResponseMessage response,
-        CancellationToken cancellationToken
-    )
-    {
-        var error = await response.Content.ReadFromJsonAsync<ErrorResponse?>(
-            cancellationToken: cancellationToken
-        );
-
-        if (
-            !string.IsNullOrWhiteSpace(error?.Error)
-            && error.Error != ErrorResponse.AccessDeniedError
-        )
-        {
-#pragma warning disable CA1848 // Use the LoggerMessage delegates
-            this.logger.LogWarning(
-                "Issues invoking {Method} - {Errors}",
-                nameof(VerifyAccessToResource),
-                error
-            );
-#pragma warning restore CA1848 // Use the LoggerMessage delegates
-        }
-
-        return false;
-    }
-
-    private bool ValidateScopes(
-        ScopeResponse[]? scopeResponse,
+    private bool ValidateScopesAsync(
         string resource,
-        List<string> scopes,
+        List<string> scopesToValidate,
+        ScopeResponse[]? scopeResponse,
         ScopesValidationMode? scopesValidationMode
     )
     {
-        var resourceToValidate =
-            Array.Find(
-                scopeResponse ?? Array.Empty<ScopeResponse>(),
-                r => string.Equals(r.Rsname, resource, StringComparison.Ordinal)
-            ) ?? throw new KeycloakException($"Unable to find a resource - {resource}");
+        scopeResponse ??= Array.Empty<ScopeResponse>();
+
+        var resourceToValidate = Array.Find(
+            scopeResponse,
+            r => string.Equals(r.Rsname, resource, StringComparison.Ordinal)
+        );
+
+        if (resourceToValidate is null)
+        {
+            throw new KeycloakException($"Unable to find a resource - {resource}");
+        }
 
         scopesValidationMode ??= this.options.Value.ScopesValidationMode;
+
+        this.logger.LogValidatingScopes(resource, scopesValidationMode.Value);
 
         if (scopesValidationMode == ScopesValidationMode.AllOf)
         {
             var resourceScopes = resourceToValidate.Scopes;
-            var allScopesPresent = scopes.TrueForAll(s => resourceScopes.Contains(s));
+            var allScopesPresent = scopesToValidate.TrueForAll(s => resourceScopes.Contains(s));
 
             return allScopesPresent;
         }
         else if (scopesValidationMode == ScopesValidationMode.AnyOf)
         {
             var resourceScopes = resourceToValidate.Scopes;
-            var anyScopePresent = scopes.Exists(s => resourceScopes.Contains(s));
+            var anyScopePresent = scopesToValidate.Exists(s => resourceScopes.Contains(s));
 
             return anyScopePresent;
         }

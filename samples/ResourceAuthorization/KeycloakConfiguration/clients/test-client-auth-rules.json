@@ -134,7 +134,7 @@
     },
     {
       "id": "64782bb2-79bd-4904-8299-5012f66c2c85",
-      "name": "Admin Can Manage Workspaces",
+      "name": "Can Manage Workspaces",
       "description": "",
       "type": "scope",
       "logic": "POSITIVE",
@@ -143,18 +143,6 @@
         "defaultResourceType": "urn:workspaces",
         "applyPolicies": "[\"Is Admin\"]",
         "scopes": "[\"workspace:delete\",\"workspace:read\",\"workspace:add-user\",\"workspace:remove-user\",\"workspace:list-users\"]"
-      }
-    },
-    {
-      "id": "a97f05a6-2164-4310-924e-5bdde44692a3",
-      "name": "Workspaces Global Access",
-      "description": "",
-      "type": "resource",
-      "logic": "POSITIVE",
-      "decisionStrategy": "AFFIRMATIVE",
-      "config": {
-        "resources": "[\"workspaces\"]",
-        "applyPolicies": "[\"Is Admin\",\"Is Reader\"]"
       }
     }
   ],

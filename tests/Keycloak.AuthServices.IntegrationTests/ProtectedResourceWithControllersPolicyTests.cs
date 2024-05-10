@@ -16,7 +16,7 @@ public class ProtectedResourceWithControllersPolicyTests(ITestOutputHelper testO
     private static readonly string AppSettings = "appsettings.json";
 
     [Fact]
-    public async Task ProtectedResourceAttribute_DeleteWorkspace_Verified()
+    public async Task ProtectedResourceAttribute_DeleteWorkspaceAndAccessPublic_Verified()
     {
         await using var host = await AlbaHost.For<TestWebApiWithControllers.Program>(
             SetupAuthorizationServer(testOutputHelper),

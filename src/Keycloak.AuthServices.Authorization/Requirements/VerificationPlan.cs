@@ -101,6 +101,11 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     /// <returns>A string representation of the verification plan.</returns>
     public override string ToString()
     {
+        if (!this.Any())
+        {
+            return "<empty>";
+        }
+
         var sb = new StringBuilder(Environment.NewLine);
 
         sb.AppendLine(

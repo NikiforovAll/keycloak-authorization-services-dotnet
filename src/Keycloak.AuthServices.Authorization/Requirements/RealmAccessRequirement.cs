@@ -28,15 +28,23 @@ public class RealmAccessRequirement : IAuthorizationRequirement
 
 /// <summary>
 /// </summary>
-public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessRequirement>
+public class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessRequirement>
 {
+    private readonly KeycloakMetrics metrics;
     private readonly ILogger<RealmAccessRequirementHandler> logger;
 
     /// <summary>
     /// </summary>
+    /// <param name="metrics"></param>
     /// <param name="logger"></param>
-    public RealmAccessRequirementHandler(ILogger<RealmAccessRequirementHandler> logger) =>
+    public RealmAccessRequirementHandler(
+        KeycloakMetrics metrics,
+        ILogger<RealmAccessRequirementHandler> logger
+    )
+    {
+        this.metrics = metrics;
         this.logger = logger;
+    }
 
     /// <inheritdoc />
     protected override Task HandleRequirementAsync(
@@ -47,23 +55,38 @@ public partial class RealmAccessRequirementHandler : AuthorizationHandler<RealmA
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
+        {
+            this.metrics.SkipRequirement(nameof(RealmAccessRequirement));
+            this.logger.LogRequirementSkipped(
+                nameof(ParameterizedProtectedResourceRequirementHandler)
+            );
+
+            return Task.CompletedTask;
+        }
+
         var success = false;
 
         if (context.User.Claims.TryGetRealmResource(out var resourceAccess))
         {
             success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
-
-            if (success)
-            {
-                context.Succeed(requirement);
-            }
         }
 
-        this.logger.LogAuthorizationResult(
-            requirement.ToString(),
-            success,
-            context.User.Identity?.Name
-        );
+        this.logger.LogAuthorizationResult(requirement.ToString()!, success, userName);
+
+        if (success)
+        {
+            this.metrics.SucceedRequirement(nameof(RealmAccessRequirement));
+
+            context.Succeed(requirement);
+        }
+        else
+        {
+            this.metrics.FailRequirement(nameof(RealmAccessRequirement));
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+        }
 
         return Task.CompletedTask;
     }

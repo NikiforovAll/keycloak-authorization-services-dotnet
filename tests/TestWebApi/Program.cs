@@ -18,7 +18,7 @@ app.UseAuthorization();
 var endpoints = app.MapGroup("/endpoints").RequireAuthorization();
 
 endpoints.MapGet("1", () => new { Success = true });
-endpoints.MapGet("RunPolicyBuyName", AuthorizeAsync);
+endpoints.MapGet("RunPolicyByName", AuthorizeAsync);
 
 var protectedResources = app.MapGroup("/pr");
 

@@ -48,6 +48,7 @@ public static class PoliciesBuilderExtensions
         ArgumentNullException.ThrowIfNull(roles);
 
         return builder
+            .RequireAuthenticatedUser()
             .RequireClaim(KeycloakConstants.ResourceAccessClaimType)
             .AddRequirements(new ResourceAccessRequirement(client, roles));
     }
@@ -67,6 +68,7 @@ public static class PoliciesBuilderExtensions
         ArgumentNullException.ThrowIfNull(roles);
 
         return builder
+            .RequireAuthenticatedUser()
             .RequireClaim(KeycloakConstants.RealmAccessClaimType)
             .AddRequirements(new RealmAccessRequirement(roles));
     }

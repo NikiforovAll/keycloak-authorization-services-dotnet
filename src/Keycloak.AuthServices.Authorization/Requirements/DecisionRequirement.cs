@@ -2,7 +2,9 @@ namespace Keycloak.AuthServices.Authorization.Requirements;
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using static Keycloak.AuthServices.Authorization.ActivityConstants;
 
 /// <summary>
 /// Decision requirement
@@ -62,22 +64,31 @@ public class DecisionRequirement : IAuthorizationRequirement, IProtectedResource
 
 /// <summary>
 /// </summary>
-public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
+public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
 {
     private readonly IAuthorizationServerClient client;
+    private readonly IHttpContextAccessor httpContextAccessor;
+    private readonly KeycloakMetrics metrics;
     private readonly ILogger<DecisionRequirementHandler> logger;
 
     /// <summary>
     /// </summary>
     /// <param name="client"></param>
+    /// <param name="httpContextAccessor"></param>
+    /// <param name="metrics"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
     public DecisionRequirementHandler(
         IAuthorizationServerClient client,
+        IHttpContextAccessor httpContextAccessor,
+        KeycloakMetrics metrics,
         ILogger<DecisionRequirementHandler> logger
     )
     {
         this.client = client ?? throw new ArgumentNullException(nameof(client));
+        this.httpContextAccessor =
+            httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+        this.metrics = metrics;
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
@@ -90,37 +101,57 @@ public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionR
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
-        if (!(context.User.Identity?.IsAuthenticated ?? false))
+        using var activity = KeycloakActivitySource.Default.StartActivity(
+            Activities.DecisionRequirement
+        );
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
         {
+            this.metrics.SkipRequirement(nameof(ParameterizedProtectedResourceRequirement));
             this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler),
-                "User is not Authenticated",
-                context.User.Identity?.Name
+                nameof(ParameterizedProtectedResourceRequirementHandler)
             );
 
             return;
         }
 
-        var success = await this.client.VerifyAccessToResource(
+        var resource = Utils.ResolveResource(
             requirement.Resource,
-            (requirement as IProtectedResourceData).GetScopesExpression(),
+            this.httpContextAccessor.HttpContext
+        );
+        this.logger.LogResourceResolved(requirement.Resource, resource);
+
+        var scopes = (requirement as IProtectedResourceData).GetScopesExpression();
+
+        var verifier = new ProtectedResourceVerifier(this.client, this.metrics, this.logger);
+
+        var success = await verifier.Verify(
+            resource,
+            scopes,
+            nameof(DecisionRequirement),
             requirement.ScopesValidationMode,
             CancellationToken.None
         );
 
+        activity?.AddTag(Tags.Outcome, success);
+
         this.logger.LogAuthorizationResult(
-            requirement.ToString(),
+            nameof(ParameterizedProtectedResourceRequirementHandler),
             success,
-            context.User.Identity?.Name
+            userName
         );
 
         if (success)
         {
+            this.metrics.SucceedRequirement(nameof(DecisionRequirement));
             context.Succeed(requirement);
         }
         else
         {
-            this.logger.LogAuthorizationFailed(requirement.ToString(), context.User.Identity?.Name);
+            this.metrics.FailRequirement(nameof(DecisionRequirement));
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+
             context.Fail();
         }
     }

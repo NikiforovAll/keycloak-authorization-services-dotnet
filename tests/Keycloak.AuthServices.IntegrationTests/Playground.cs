@@ -61,12 +61,12 @@ public class Playground(ITestOutputHelper testOutputHelper)
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }
 
-    private static string RunPolicyBuyName(string policyName) =>
-        $"/endpoints/RunPolicyBuyName?policy={policyName}";
+    private static string RunPolicyByName(string policyName) =>
+        $"/endpoints/RunPolicyByName?policy={policyName}";
 }

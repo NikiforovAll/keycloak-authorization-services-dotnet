@@ -56,14 +56,14 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
@@ -113,14 +113,14 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
@@ -168,14 +168,14 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
@@ -221,14 +221,14 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
@@ -279,14 +279,14 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
@@ -337,19 +337,19 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Admin.UserName, TestUsers.Admin.Password);
             _.StatusCodeShouldBe(HttpStatusCode.Forbidden);
         });
 
         await host.Scenario(_ =>
         {
-            _.Get.Url(RunPolicyBuyName(policyName));
+            _.Get.Url(RunPolicyByName(policyName));
             _.UserAndPasswordIs(TestUsers.Tester.UserName, TestUsers.Tester.Password);
             _.StatusCodeShouldBe(HttpStatusCode.OK);
         });
     }
 
-    private static string RunPolicyBuyName(string policyName) =>
-        $"/endpoints/RunPolicyBuyName?policy={policyName}";
+    private static string RunPolicyByName(string policyName) =>
+        $"/endpoints/RunPolicyByName?policy={policyName}";
 }

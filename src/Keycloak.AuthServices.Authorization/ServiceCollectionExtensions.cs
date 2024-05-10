@@ -92,6 +92,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
 
+        services.AddSingleton<KeycloakMetrics>();
+
         services.AddTransient<IClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<
@@ -209,8 +211,7 @@ public static class ServiceCollectionExtensions
             IAuthorizationHandler,
             ParameterizedProtectedResourceRequirementHandler
         >();
-        // TODO: determine correct lifetime.
-        services.AddSingleton<IAuthorizationHandler, DecisionRequirementHandler>();
+        services.AddScoped<IAuthorizationHandler, DecisionRequirementHandler>();
 
         // (!) resolved locally, will not work with PostConfigure and IOptions pattern
         configureKeycloakOptions ??= _ => { };

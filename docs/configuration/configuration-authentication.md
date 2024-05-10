@@ -50,6 +50,9 @@ Not everything you want to do can be configured with `KeycloakAuthenticationOpti
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides
 
+> [!NOTE]
+> `KeycloakAuthenticationOptions` ("Keycloak") takes precedence over `Authentication:Schemes:{SchemeName}` ("Bearer" - `JwtBearerOptions`) in the case of default configuration
+
 Here is a trick to bind options from configuration an override directly in the same code:
 
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/ConfigurationTests/AddKeycloakWebApiAuthenticationTests.cs#AddKeycloakWebApiAuthentication_FromConfigurationWithInlineOverrides2{3}
@@ -86,9 +89,6 @@ Typically, ASP.NET Core expects to find these (default) options under the `Authe
   }
 }
 ```
-
-> [!NOTE]
-> `KeycloakAuthenticationOptions` ("Keycloak") takes precedence over `Authentication:Schemes:{SchemeName}` ("Bearer") in the case of default configuration
 
 ### AuthenticationBuilder Extensions
 

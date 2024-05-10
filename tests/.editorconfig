@@ -1,4 +1,5 @@
-[*.cs]
+[*.{cs,csx,cake,vb,vbx}]
+
 dotnet_diagnostic.CA1707.severity = none
 
 # CA1711: Identifiers should not have incorrect suffix

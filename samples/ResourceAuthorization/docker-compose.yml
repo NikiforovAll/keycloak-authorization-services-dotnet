@@ -17,3 +17,10 @@ services:
       - ./KeycloakConfiguration/:/opt/keycloak/data/import/
     ports:
       - 8080:8080
+  aspire-dashboard:
+      image: mcr.microsoft.com/dotnet/nightly/aspire-dashboard:8.0.0-preview.5
+      environment:
+        - DOTNET_DASHBOARD_UNSECURED_ALLOW_ANONYMOUS=true
+      ports:
+        - "4317:18889"
+        - "18888:18888"

@@ -44,18 +44,22 @@ public partial class ResourceAccessRequirementHandler
     : AuthorizationHandler<ResourceAccessRequirement>
 {
     private readonly IOptions<KeycloakAuthorizationOptions> keycloakOptions;
+    private readonly KeycloakMetrics metrics;
     private readonly ILogger<ResourceAccessRequirementHandler> logger;
 
     /// <summary>
     /// </summary>
     /// <param name="keycloakOptions"></param>
+    /// <param name="metrics"></param>
     /// <param name="logger"></param>
     public ResourceAccessRequirementHandler(
         IOptions<KeycloakAuthorizationOptions> keycloakOptions,
+        KeycloakMetrics metrics,
         ILogger<ResourceAccessRequirementHandler> logger
     )
     {
         this.keycloakOptions = keycloakOptions;
+        this.metrics = metrics;
         this.logger = logger;
     }
 
@@ -68,6 +72,18 @@ public partial class ResourceAccessRequirementHandler
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(requirement);
 
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
+        {
+            this.metrics.SkipRequirement(nameof(RealmAccessRequirement));
+            this.logger.LogRequirementSkipped(
+                nameof(ParameterizedProtectedResourceRequirementHandler)
+            );
+
+            return Task.CompletedTask;
+        }
+
         var clientId =
             requirement.Resource
             ?? this.keycloakOptions.Value.RolesResource
@@ -78,6 +94,7 @@ public partial class ResourceAccessRequirementHandler
 
         if (string.IsNullOrWhiteSpace(clientId))
         {
+            this.metrics.ErrorRequirement(nameof(ResourceAccessRequirement));
             throw new KeycloakException(
                 $"Unable to resolve Resource for Role Validation - please make sure {nameof(KeycloakAuthorizationOptions)} are configured. \n\n See documentation for more details - https://nikiforovall.github.io/keycloak-authorization-services-dotnet/configuration/configuration-authorization.html#require-resource-roles"
             );
@@ -89,18 +106,21 @@ public partial class ResourceAccessRequirementHandler
         )
         {
             success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
-
-            if (success)
-            {
-                context.Succeed(requirement);
-            }
         }
 
-        this.logger.LogAuthorizationResult(
-            requirement.ToString(),
-            success,
-            context.User.Identity?.Name
-        );
+        this.logger.LogAuthorizationResult(requirement.ToString()!, success, userName);
+
+        if (success)
+        {
+            this.metrics.SucceedRequirement(nameof(ResourceAccessRequirement));
+
+            context.Succeed(requirement);
+        }
+        else
+        {
+            this.metrics.FailRequirement(nameof(ResourceAccessRequirement));
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+        }
 
         return Task.CompletedTask;
     }

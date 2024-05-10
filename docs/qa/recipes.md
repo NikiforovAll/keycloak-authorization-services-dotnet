@@ -4,9 +4,53 @@ Welcome to the Recipes section! Here you will find a collection of instructions 
 
 [[toc]]
 
-## How to get an access token from Swagger UI?
+## How to debug an application?
+
+Adjust logging level:
+
+```json
+{
+    "Logging": {
+        "Keycloak.AuthServices": "Debug",
+        "Keycloak.AuthServices.Authorization": "Trace"
+    }
+}
+```
+
+> [!NOTE]
+> ☝️`Keycloak.AuthServices` supports OpenTelemetry. See [Keycloak.AuthServices.OpenTelemetry](/opentelemetry).
+
+## How to get Options from DI?
+
+```csharp
+var keycloakAuthenticationOptions = serviceProvider
+    .GetRequiredService<IOptionsMonitor<KeycloakAuthenticationOptions>>()
+    .Get(JwtBearerDefaults.AuthenticationScheme);
+
+var keycloakAuthenticationOptions = serviceProvider
+    .GetRequiredService<IOptionsMonitor<KeycloakAuthorizationOptions>>()
+    .CurrentValue;
+```
+
+> [!NOTE]
+> To retrieve `KeycloakAuthenticationOptions` you need to use `IOptionsMonitor.Get(string name)` because this options are registered per Scheme.
+
+## How to get Options outside of `IServiceProvider`?
+
+Sometimes you need to resolve options before the DI container is built. E.g: application startup.
+
+```csharp
+var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
+// OR
+KeycloakAuthorizationOptions options = new();
+configuration.BindKeycloakOptions(options);
+```
+
+## How to get an access token via Swagger UI?
 
 Here is an example of how to use [NSwag](https://github.com/RicoSuter/NSwag/wiki/AspNetCore-Middleware#add-oauth2-authentication-openapi-3):
+
+::: details Code
 
 ```csharp
 // Program.cs
@@ -55,42 +99,39 @@ app.UseSwaggerUi(ui =>
 app.Run();
 ```
 
-## How to get Options from DI?
+:::
 
-```csharp
-var keycloakAuthenticationOptions = serviceProvider
-    .GetRequiredService<IOptionsMonitor<KeycloakAuthenticationOptions>>()
-    .Get(JwtBearerDefaults.AuthenticationScheme);
+## How to setup resiliency to HTTP Clients?
 
-var keycloakAuthenticationOptions = serviceProvider
-    .GetRequiredService<IOptionsMonitor<KeycloakAuthorizationOptions>>()
-    .CurrentValue;
+Every HTTP Client provided by `Keycloak.AuthServices` expose `IHttpClientBuilder`. It a standard way to extend behavior of `HttpClient`. We can use it to our advantage!
+
+Install [Microsoft.Extensions.Http.Resilience](https://www.nuget.org/packages/Microsoft.Extensions.Http.Resilience)
+
+```bash
+dotnet add package Microsoft.Extensions.Http.Resilience
 ```
 
-> [!NOTE]
-> To retrieve `KeycloakAuthenticationOptions` you need to use `IOptionsMonitor.Get(string name)` because this options are registered per Scheme.
+Add resilience handler globally (for all `HttpClient`s including ones provided by `Keycloak.AuthServices`)
 
-## How to get Options outside of `IServiceProvider`?
-
-Sometimes you need to resolve options before the DI container is built. E.g: application startup.
+Add globally:
 
 ```csharp
-var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
-// OR
-KeycloakAuthorizationOptions options = new();
-configuration.BindKeycloakOptions(options);
+// Program.cs
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services
+
+builder.Services.ConfigureHttpClientDefaults(http => http.AddStandardResilienceHandler());
 ```
 
-## How to debug an application?
+Add per-client:
 
-Adjust logging level:
+```csharp
+// Program.cs
+var builder = WebApplication.CreateBuilder(args);
+var services = builder.Services
 
-```json
-{
-    "Logging": {
-            "Keycloak.AuthServices": "Debug",
-            "Keycloak.AuthServices.Authorization": "Trace"
-        }
-    }
-}
+services
+    .AddKeycloakAuthorization()
+    .AddAuthorizationServer(builder.Configuration)
+    .AddStandardResilienceHandler();
 ```
