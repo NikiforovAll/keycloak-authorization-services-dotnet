@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Moq;
 
-#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
-[System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1707:Identifiers should not contain underscores", Justification = "<Pending>")]
 public class UriBasedResourceProtectionMiddlewareTests
 {
     [Fact]
@@ -16,9 +14,10 @@ public class UriBasedResourceProtectionMiddlewareTests
     {
         // Arrange
         var clientMock = new Mock<IKeycloakProtectionClient>();
+        Action intialization = () => _ = new UriBasedResourceProtectionMiddleware(null, clientMock.Object);
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => _ = new UriBasedResourceProtectionMiddleware(null, clientMock.Object));
+        intialization.Should().Throw<ArgumentNullException>();
     }
 
     [Fact]
@@ -26,9 +25,10 @@ public class UriBasedResourceProtectionMiddlewareTests
     {
         // Arrange
         var requestDelegateMock = new Mock<RequestDelegate>();
+        Action intialization = () => _ = new UriBasedResourceProtectionMiddleware(requestDelegateMock.Object, null);
 
         // Act & Assert
-        Assert.Throws<ArgumentNullException>(() => _ = new UriBasedResourceProtectionMiddleware(requestDelegateMock.Object, null));
+        intialization.Should().Throw<ArgumentNullException>();
     }
 
     [Fact]
@@ -68,7 +68,7 @@ public class UriBasedResourceProtectionMiddlewareTests
         var httpContextMock = new Mock<HttpContext>();
         httpContextMock.Setup(x => x.Request).Returns(new Mock<HttpRequest>().Object);
         SetAttributesOnContextMock(httpContextMock,
-                                    new List<Attribute>() { new DisableUriBasedResourceProtectionAttribute() },
+                                    new List<Attribute>() { new ExplicitResourceProtectionAttribute(true) },
                                     requestDelegateMock.Object);
 
         // Act
@@ -91,31 +91,6 @@ public class UriBasedResourceProtectionMiddlewareTests
         httpContextMock.Setup(x => x.Request).Returns(new Mock<HttpRequest>().Object);
         SetAttributesOnContextMock(httpContextMock,
                                     new List<Attribute>() { new AllowAnonymousAttribute() },
-                                    requestDelegateMock.Object);
-
-        // Act
-        var target = new UriBasedResourceProtectionMiddleware(requestDelegateMock.Object, clientMock.Object);
-        await target.InvokeAsync(httpContextMock.Object);
-
-        // Assert
-        clientMock.Verify(x => x.VerifyAccessToResource(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<CancellationToken>()), Times.Never);
-        requestDelegateMock.Verify(x => x.Invoke(httpContextMock.Object), Times.Once);
-    }
-
-    [Fact]
-    public async void EvaluateAuthorization_DisableAndExplicitAuthAttributesGiven_DontCallAuthorizationClientButCallDelegate()
-    {
-        // Arrange
-        var clientMock = new Mock<IKeycloakProtectionClient>();
-        var requestDelegateMock = new Mock<RequestDelegate>();
-
-        var httpContextMock = new Mock<HttpContext>();
-        httpContextMock.Setup(x => x.Request).Returns(new Mock<HttpRequest>().Object);
-        SetAttributesOnContextMock(httpContextMock,
-                                    new List<Attribute>() {
-                                        new DisableUriBasedResourceProtectionAttribute(),
-                                        new ExplicitResourceProtectionAttribute(It.IsAny<string>(), It.IsAny<string>())
-                                        },
                                     requestDelegateMock.Object);
 
         // Act

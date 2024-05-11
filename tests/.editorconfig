@@ -1,0 +1,9 @@
+##########################################
+# Unit test Settings
+##########################################
+
+[*.{cs,vb}]
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity = none
+# CS8625: Cannot convert null literal to non-nullable reference type
+dotnet_diagnostic.CS8625.severity = none

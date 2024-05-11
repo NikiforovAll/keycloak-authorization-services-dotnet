@@ -14,7 +14,7 @@ public class ApiController : ControllerBase
     [HttpGet]
     [Route("/api/no-auth")]
     [ProducesResponseType(statusCode: 200, type: typeof(string))]
-    [DisableUriBasedResourceProtection]
+    [ExplicitResourceProtection(true)]
     public IActionResult GetDataWithoutAuth() => this.Ok("Auto Authorization works, but is disabled by attribute.");
 
     [HttpGet]

@@ -2,7 +2,8 @@ namespace Keycloak.AuthServices.Authorization;
 
 /// <summary>
 /// Use this attribute on a method when the <see cref="UriBasedResourceProtectionMiddleware"/>
-/// to exclude the method from uri based resource protection and set a specific resource name and scope instead.
+/// to exclude the method from uri based resource protection. In case a specific resource name and scope are passed,
+/// it will use them for authorization instead.
 /// </summary>
 [AttributeUsage(AttributeTargets.Method, Inherited = false)]
 public class ExplicitResourceProtectionAttribute : Attribute
@@ -19,12 +20,23 @@ public class ExplicitResourceProtectionAttribute : Attribute
     }
 
     /// <summary>
+    /// <see cref="ExplicitResourceProtectionAttribute"/> 
+    /// </summary>
+    /// <param name="disable">Indicates if a method should be excluded from the uri nased resource protection.</param>
+    public ExplicitResourceProtectionAttribute(bool disable) => this.Disable = disable;
+
+    /// <summary>
     /// The resource name to authorize for.
     /// </summary>
-    public string ResourceName { get; }
+    public string? ResourceName { get; }
 
     /// <summary>
     /// The scope to authorize the resource for.
     /// </summary>
-    public string Scope { get; }
+    public string? Scope { get; }
+
+    /// <summary>
+    /// If authorization is disabled.
+    /// </summary>
+    public bool Disable { get; }
 }
