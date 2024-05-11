@@ -31,7 +31,7 @@ builder
                 }
             };
 
-            // NOTE, the source for claims is id_token and not access token.
+            // NOTE, the source for claims is id_token and not access_token.
             // By default, id_token doesn't contain realm_roles claim
             // and you will need to create a mapper for that
             options.ClaimActions.MapUniqueJsonKey("realm_access", "realm_access");

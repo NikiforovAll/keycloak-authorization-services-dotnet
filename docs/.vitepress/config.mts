@@ -119,7 +119,7 @@ export default withMermaid({
                         { text: 'Authorization', link: '/examples/authorization-getting-started' },
                         { text: 'Resource Authorization ✨', link: '/examples/resource-authorization' },
                         { text: 'Clean Architecture', link: '/examples/auth-clean-arch' },
-                        { text: 'Web App', link: '/examples/web-app-razor' },
+                        { text: 'Web App MVC', link: '/examples/web-app-mvc' },
                         { text: 'Web API + Blazor', link: '/examples/web-api-blazor' }
                     ]
                 }

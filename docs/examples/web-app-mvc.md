@@ -1,4 +1,4 @@
-# WebApp
+# WebApp MVC
 
 <<< @/../samples/WebApp/Program.cs
 
