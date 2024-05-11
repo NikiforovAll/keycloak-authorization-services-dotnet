@@ -13,18 +13,18 @@ using Microsoft.AspNetCore.Http.Features;
 /// b) annotate controller methods with the "[Authorize]" attribute
 /// It is possible to exclude methods from the policy enforcement by annotate them with the "[AllowAnonymous]" attribute, however.
 /// </summary>
-public class AutoProtectResourceMiddleware
+public class UriBasedResourceProtectionMiddleware
 {
     private readonly RequestDelegate next;
     private readonly IKeycloakProtectionClient client;
 
     /// <summary>
-    /// <see cref="AutoProtectResourceMiddleware"/> 
+    /// <see cref="UriBasedResourceProtectionMiddleware"/> 
     /// </summary>
     /// <param name="next">The <see cref="RequestDelegate"/> to proceed with in case of authorization success.</param>
     /// <param name="client">The <see cref="IKeycloakProtectionClient"/> is used for the authorization request.</param>
     /// <exception cref="ArgumentNullException">Thrown, if <see cref="IKeycloakProtectionClient"/> is null.</exception>
-    public AutoProtectResourceMiddleware(RequestDelegate next, IKeycloakProtectionClient client)
+    public UriBasedResourceProtectionMiddleware(RequestDelegate next, IKeycloakProtectionClient client)
     {
         this.next = next;
         this.client = client ?? throw new ArgumentNullException(nameof(client));
@@ -62,7 +62,7 @@ public static class MiddlewareExtensions
     /// Extension method to enable automatic resource protection.
     /// </summary>
     /// <param name="builder">The <see cref="IApplicationBuilder"/> isntance.</param>
-    /// <returns>The <see cref="IApplicationBuilder"/> isntance with <see cref="AutoProtectResourceMiddleware"/> usage.</returns>
-    public static IApplicationBuilder UseAutomaticKeycloakEndpointProtection(
-        this IApplicationBuilder builder) => builder.UseMiddleware<AutoProtectResourceMiddleware>();
+    /// <returns>The <see cref="IApplicationBuilder"/> isntance with <see cref="UriBasedResourceProtectionMiddleware"/> usage.</returns>
+    public static IApplicationBuilder UseUriBasedKeycloakEndpointProtection(
+        this IApplicationBuilder builder) => builder.UseMiddleware<UriBasedResourceProtectionMiddleware>();
 }
