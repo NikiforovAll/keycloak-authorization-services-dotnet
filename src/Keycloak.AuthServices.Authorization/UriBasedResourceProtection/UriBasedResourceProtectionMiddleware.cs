@@ -46,26 +46,28 @@ public class UriBasedResourceProtectionMiddleware
             .Endpoint?
             .Metadata;
 
-        if (UriBasedProtectionDisabled(attributes))
+        if (AllowAnonymous(attributes))
         {
             return true;
         }
 
-        var resourceName = "";
-        var scope = "";
+        string? resourceName = null;
+        string? scope = null;
 
         if (attributes != null && attributes
             .SingleOrDefault(attribute => attribute is ExplicitResourceProtectionAttribute)
                 is ExplicitResourceProtectionAttribute explicitResourceProtectionAttribute)
         {
+            if (explicitResourceProtectionAttribute.Disable)
+            {
+                return true;
+            }
             resourceName = explicitResourceProtectionAttribute.ResourceName;
             scope = explicitResourceProtectionAttribute.Scope;
         }
-        else
-        {
-            resourceName = context.Request.Path;
-            scope = context.Request.Method;
-        }
+
+        resourceName ??= context.Request.Path;
+        scope ??= context.Request.Method;
 
         var isAuthorized = await this.client.VerifyAccessToResource(
         resourceName, scope, CancellationToken.None);
@@ -79,8 +81,7 @@ public class UriBasedResourceProtectionMiddleware
         return false;
     }
 
-    private static bool UriBasedProtectionDisabled(EndpointMetadataCollection? attributes) => attributes != null && attributes.Any(attribute => attribute is AllowAnonymousAttribute
-                    or DisableUriBasedResourceProtectionAttribute);
+    private static bool AllowAnonymous(EndpointMetadataCollection? attributes) => attributes != null && attributes.Any(attribute => attribute is AllowAnonymousAttribute);
 }
 
 /// <summary/>
