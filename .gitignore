@@ -236,3 +236,7 @@ _Pvt_Extensions
 
 artifacts
 Artefacts
+
+
+docs/.vitepress/dist
+docs/.vitepress/cache

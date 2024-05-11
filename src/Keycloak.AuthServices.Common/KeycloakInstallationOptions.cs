@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Common;
 
+using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 
 /// <summary>
@@ -10,31 +11,40 @@ using Microsoft.Extensions.Configuration;
 /// </remarks>
 public class KeycloakInstallationOptions
 {
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string? authServerUrl;
+
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private bool? verifyTokenAudience;
+
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private TimeSpan? tokenClockSkew;
+
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string? sslRequired;
 
     /// <summary>
     /// Authorization server URL
     /// </summary>
+    /// <remarks>The value is normalized, the trailing '/' is ensured.</remarks>
     /// <example>
     /// "auth-server-url": "http://localhost:8088/auth/"
     /// </example>
-    [ConfigurationKeyName("auth-server-url")]
-    public string AuthServerUrl
+    [ConfigurationKeyName("AuthServerUrl")]
+    public string? AuthServerUrl
     {
-        get => this.authServerUrl ?? this.AuthServerUrl2;
-        set => this.authServerUrl = value;
+        get => this.authServerUrl ?? NormalizeUrl(this.AuthServerUrl2);
+        set => this.authServerUrl = NormalizeUrl(value);
     }
 
-    [ConfigurationKeyName("AuthServerUrl")]
+    [ConfigurationKeyName("auth-server-url")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string AuthServerUrl2 { get; set; } = default!;
 
     /// <summary>
     /// Keycloak Realm
     /// </summary>
-    public string Realm { get; set; } = string.Empty;
+    public string Realm { get; set; } = default!;
 
     /// <summary>
     /// Resource as client id
@@ -42,18 +52,20 @@ public class KeycloakInstallationOptions
     /// <example>
     /// "resource": "client-id"
     /// </example>
-    public string Resource { get; set; } = string.Empty;
+    public string Resource { get; set; } = default!;
 
     /// <summary>
     /// Audience verification
     /// </summary>
-    [ConfigurationKeyName("verify-token-audience")]
+    [ConfigurationKeyName("VerifyTokenAudience")]
     public bool? VerifyTokenAudience
     {
         get => this.verifyTokenAudience ?? this.VerifyTokenAudience2;
         set => this.verifyTokenAudience = value;
     }
-    [ConfigurationKeyName("VerifyTokenAudience")]
+
+    [ConfigurationKeyName("verify-token-audience")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private bool? VerifyTokenAudience2 { get; set; }
 
     /// <summary>
@@ -67,54 +79,77 @@ public class KeycloakInstallationOptions
     /// <remarks>
     ///     - Default: 0 seconds
     /// </remarks>
-    [ConfigurationKeyName("token-clock-skew")]
+    [ConfigurationKeyName("TokenClockSkew")]
     public TimeSpan TokenClockSkew
     {
         get => this.tokenClockSkew ?? this.TokenClockSkew2 ?? TimeSpan.Zero;
         set => this.tokenClockSkew = value;
     }
-    [ConfigurationKeyName("TokenClockSkew")]
+
+    [ConfigurationKeyName("token-clock-skew")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private TimeSpan? TokenClockSkew2 { get; set; }
 
     /// <summary>
     /// Require HTTPS
     /// </summary>
-    [ConfigurationKeyName("ssl-required")]
+    [ConfigurationKeyName("SslRequired")]
     public string SslRequired
     {
         get => this.sslRequired ?? this.SslRequired2;
         set => this.sslRequired = value;
     }
-    [ConfigurationKeyName("SslRequired")]
+
+    [ConfigurationKeyName("ssl-required")]
+    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private string SslRequired2 { get; set; } = default!;
 
     /// <summary>
     /// Realm URL
     /// </summary>
-    public string KeycloakUrlRealm => $"{NormalizeUrl(this.AuthServerUrl)}/realms/{this.Realm}";
-
-    private static string NormalizeUrl(string url)
+    public string KeycloakUrlRealm
     {
-        var urlNormalized = !url.EndsWith('/') ? url : url.TrimEnd('/');
+        get
+        {
+            if (string.IsNullOrWhiteSpace(this.AuthServerUrl))
+            {
+                return default!;
+            }
 
-        return urlNormalized;
+            return $"{this.AuthServerUrl}realms/{this.Realm}/";
+        }
     }
 
     /// <summary>
-    /// RolesClaimTransformationSource
+    /// Token endpoint URL including Realm
     /// </summary>
-    [ConfigurationKeyName("RolesSource")]
-    public RolesClaimTransformationSource RolesSource { get; set; } = RolesClaimTransformationSource.ResourceAccess;
-}
+    public string KeycloakTokenEndpoint
+    {
+        get
+        {
+            if (string.IsNullOrWhiteSpace(this.KeycloakUrlRealm))
+            {
+                return default!;
+            }
 
-/// <summary>
-/// RolesClaimTransformationSource
-/// </summary>
-public enum RolesClaimTransformationSource
-{
-    None,
-    Realm,
-    ResourceAccess
+            return $"{this.KeycloakUrlRealm}{KeycloakConstants.TokenEndpointPath}";
+        }
+    }
+
+    private static string? NormalizeUrl(string? url)
+    {
+        if (url is null)
+        {
+            return url;
+        }
+
+        if (!url.EndsWith('/'))
+        {
+            url += "/";
+        }
+
+        return url;
+    }
 }
 
 /// <summary>
@@ -126,15 +161,4 @@ public class KeycloakClientInstallationCredentials
     /// Secret
     /// </summary>
     public string Secret { get; set; } = string.Empty;
-}
-
-/// <summary>
-/// Configuration constant, used internally
-/// </summary>
-public static class ConfigurationConstants
-{
-    /// <summary>
-    /// Configuration prefix
-    /// </summary>
-    public const string ConfigurationPrefix = "Keycloak";
 }

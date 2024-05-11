@@ -1,14 +1,14 @@
 namespace Api.Controllers;
 
-using Keycloak.AuthServices.Sdk.AuthZ;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Mvc;
 
 [Route("api/authz")]
 public class KeycloakAuthZController : ApiControllerBase
 {
-    private readonly IKeycloakProtectionClient protectionClient;
+    private readonly IAuthorizationServerClient protectionClient;
 
-    public KeycloakAuthZController(IKeycloakProtectionClient protectionClient) =>
+    public KeycloakAuthZController(IAuthorizationServerClient protectionClient) =>
         this.protectionClient = protectionClient;
 
     [HttpGet("try-resource")]

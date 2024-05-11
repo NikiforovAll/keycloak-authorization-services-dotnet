@@ -1,9 +1,19 @@
-##########################################
-# Unit test Settings
-##########################################
+[*.{cs,csx,cake,vb,vbx}]
 
-[*.{cs,vb}]
 # CA1707: Identifiers should not contain underscores
 dotnet_diagnostic.CA1707.severity = none
+
 # CS8625: Cannot convert null literal to non-nullable reference type
 dotnet_diagnostic.CS8625.severity = none
+
+# CA1711: Identifiers should not have incorrect suffix
+dotnet_diagnostic.CA1711.severity = suggestion
+
+# IDE0022: Use expression body for method
+dotnet_diagnostic.IDE0022.severity = suggestion
+
+# CA1001: Types that own disposable fields should be disposable
+dotnet_diagnostic.CA1001.severity = suggestion
+
+# CA1859: Use concrete types when possible for improved performance
+dotnet_diagnostic.CA1859.severity = suggestion

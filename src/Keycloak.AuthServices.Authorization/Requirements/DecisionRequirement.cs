@@ -1,24 +1,30 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
-using Keycloak.AuthServices.Sdk.AuthZ;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using static Keycloak.AuthServices.Authorization.ActivityConstants;
 
 /// <summary>
 /// Decision requirement
 /// </summary>
-public class DecisionRequirement : IAuthorizationRequirement
+public class DecisionRequirement : IAuthorizationRequirement, IProtectedResourceData
 {
     /// <summary>
     /// Resource name
     /// </summary>
     public string Resource { get; }
 
+    /// <summary>
+    /// Resource scopes
+    /// </summary>
+    public string[] Scopes { get; }
 
     /// <summary>
-    /// Resource scope
+    /// Validation Mode
     /// </summary>
-    public string Scope { get; }
+    public ScopesValidationMode? ScopesValidationMode { get; set; }
 
     /// <summary>
     /// Constructs requirement
@@ -28,7 +34,18 @@ public class DecisionRequirement : IAuthorizationRequirement
     public DecisionRequirement(string resource, string scope)
     {
         this.Resource = resource;
-        this.Scope = scope;
+        this.Scopes = new[] { scope };
+    }
+
+    /// <summary>
+    /// Constructs requirement
+    /// </summary>
+    /// <param name="resource"></param>
+    /// <param name="scopes"></param>
+    public DecisionRequirement(string resource, string[] scopes)
+    {
+        this.Resource = resource;
+        this.Scopes = scopes;
     }
 
     /// <summary>
@@ -38,63 +55,104 @@ public class DecisionRequirement : IAuthorizationRequirement
     /// <param name="id"></param>
     /// <param name="scope"></param>
     public DecisionRequirement(string resource, string id, string scope)
-        : this($"{resource}/{id}", scope)
-    {
-    }
+        : this($"{resource}/{id}", scope) { }
 
     /// <inheritdoc />
-    public override string ToString() => $"{nameof(DecisionRequirement)}: {this.Resource}#{this.Scope}";
+    public override string ToString() =>
+        $"{nameof(DecisionRequirement)}: {this.Resource}#{(this as IProtectedResourceData).GetScopesExpression()}";
 }
 
 /// <summary>
 /// </summary>
-public partial class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
+public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
 {
-    private readonly IKeycloakProtectionClient client;
+    private readonly IAuthorizationServerClient client;
+    private readonly IHttpContextAccessor httpContextAccessor;
+    private readonly KeycloakMetrics metrics;
     private readonly ILogger<DecisionRequirementHandler> logger;
 
     /// <summary>
     /// </summary>
     /// <param name="client"></param>
+    /// <param name="httpContextAccessor"></param>
+    /// <param name="metrics"></param>
     /// <param name="logger"></param>
     /// <exception cref="ArgumentNullException"></exception>
-    public DecisionRequirementHandler(IKeycloakProtectionClient client,
-        ILogger<DecisionRequirementHandler> logger)
+    public DecisionRequirementHandler(
+        IAuthorizationServerClient client,
+        IHttpContextAccessor httpContextAccessor,
+        KeycloakMetrics metrics,
+        ILogger<DecisionRequirementHandler> logger
+    )
     {
         this.client = client ?? throw new ArgumentNullException(nameof(client));
+        this.httpContextAccessor =
+            httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+        this.metrics = metrics;
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
-
-    [LoggerMessage(103, LogLevel.Debug,
-        "[{Requirement}] Access outcome {Outcome} for user {UserName}")]
-    partial void DecisionAuthorizationResult(string requirement, bool outcome, string? userName);
 
     /// <inheritdoc/>
     protected override async Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
-        DecisionRequirement requirement)
+        DecisionRequirement requirement
+    )
     {
-        if (context.User.Identity?.IsAuthenticated ?? false)
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
+
+        using var activity = KeycloakActivitySource.Default.StartActivity(
+            Activities.DecisionRequirement
+        );
+        var userName = context.User.Identity?.Name;
+
+        if (!context.User.IsAuthenticated())
         {
-            var success = await this.client.VerifyAccessToResource(
-            requirement.Resource, requirement.Scope, CancellationToken.None);
+            this.metrics.SkipRequirement(nameof(ParameterizedProtectedResourceRequirement));
+            this.logger.LogRequirementSkipped(
+                nameof(ParameterizedProtectedResourceRequirementHandler)
+            );
 
-            this.DecisionAuthorizationResult(
-                requirement.ToString(), success, context.User.Identity?.Name);
+            return;
+        }
 
-            if (success)
-            {
-                context.Succeed(requirement);
-            }
-            else
-            {
-                context.Fail();
-            }
+        var resource = Utils.ResolveResource(
+            requirement.Resource,
+            this.httpContextAccessor.HttpContext
+        );
+        this.logger.LogResourceResolved(requirement.Resource, resource);
+
+        var scopes = (requirement as IProtectedResourceData).GetScopesExpression();
+
+        var verifier = new ProtectedResourceVerifier(this.client, this.metrics, this.logger);
+
+        var success = await verifier.Verify(
+            resource,
+            scopes,
+            nameof(DecisionRequirement),
+            requirement.ScopesValidationMode,
+            CancellationToken.None
+        );
+
+        activity?.AddTag(Tags.Outcome, success);
+
+        this.logger.LogAuthorizationResult(
+            nameof(ParameterizedProtectedResourceRequirementHandler),
+            success,
+            userName
+        );
+
+        if (success)
+        {
+            this.metrics.SucceedRequirement(nameof(DecisionRequirement));
+            context.Succeed(requirement);
         }
         else
         {
-            this.DecisionAuthorizationResult(
-                requirement.ToString(), false, context.User.Identity?.Name);
+            this.metrics.FailRequirement(nameof(DecisionRequirement));
+            this.logger.LogAuthorizationFailed(requirement.ToString()!, userName);
+
+            context.Fail();
         }
     }
 }

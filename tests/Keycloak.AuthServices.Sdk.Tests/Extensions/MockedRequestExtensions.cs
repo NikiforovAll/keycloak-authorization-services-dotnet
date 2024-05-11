@@ -8,9 +8,11 @@ public static class MockedRequestExtensions
         request.WithHeaders("Accept", "application/json");
 
     public static MockedRequest WithAcceptAndContentTypeHeaders(this MockedRequest request) =>
-        request.WithHeaders(new Dictionary<string, string>
-        {
-            ["Accept"] = "application/json",
-            ["Content-Type"] = "application/json"
-        });
+        request.WithHeaders(
+            new Dictionary<string, string>
+            {
+                ["Accept"] = "application/json",
+                ["Content-Type"] = "application/json"
+            }
+        );
 }

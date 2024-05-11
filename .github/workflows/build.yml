@@ -26,7 +26,7 @@ jobs:
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest]
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2.4.0
@@ -36,7 +36,7 @@ jobs:
       - name: "Install .NET SDK"
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.100
+          dotnet-version: 8.0.204
       - name: "Dotnet Tool Restore"
         run: dotnet tool restore
         shell: pwsh

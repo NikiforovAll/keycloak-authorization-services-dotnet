@@ -1,23 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <RootNamespace>Keycloak.AuthServices.Authentication</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Product>Keycloak.AuthServices.Authorization</Product>
-    <Description>OICD + JWT Authentication provider. JWT Bearer Authentication for Keycloak</Description>
+    <Product>Keycloak.AuthServices.Authentication</Product>
+    <Description>Simple and configurable JWT Bearer Authentication for Web APIs and OIDC+Cookie Authentication for Web Apps.</Description>
     <PackageTags>Keycloak;Authentication;Authrorization;authserver;JWT;OICD;jwt-authentication</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect"/>
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,2 @@
+[*.{cs,csx,cake,vb,vbx}]
+dotnet_diagnostic.CA1848.severity = warning

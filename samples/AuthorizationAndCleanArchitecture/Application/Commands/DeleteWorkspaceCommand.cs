@@ -2,9 +2,9 @@ namespace Api.Application.Commands;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Data;
 using Authorization;
 using Authorization.Abstractions;
+using Data;
 using Keycloak.AuthServices.Authorization;
 using MediatR;
 
@@ -21,7 +21,7 @@ public class DeleteWorkspaceCommandHandler : IRequestHandler<DeleteWorkspaceComm
         this.identityService = identityService;
     }
 
-    public async Task<Unit> Handle(
+    public async Task Handle(
         DeleteWorkspaceCommand request,
         CancellationToken cancellationToken)
     {
@@ -35,7 +35,5 @@ public class DeleteWorkspaceCommandHandler : IRequestHandler<DeleteWorkspaceComm
         var workspace = new Workspace() { Id = request.Id };
         this.db.Workspaces.Remove(workspace);
         await this.db.SaveChangesAsync(cancellationToken);
-
-        return Unit.Value;
     }
 }

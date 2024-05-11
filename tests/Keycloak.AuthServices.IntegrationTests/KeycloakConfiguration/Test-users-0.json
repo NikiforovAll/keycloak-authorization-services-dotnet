@@ -1,0 +1,70 @@
+{
+  "realm" : "Test",
+  "users" : [ {
+    "id" : "7bd66f78-377e-4685-b3ab-eea4f5952645",
+    "username" : "service-account-test-client",
+    "emailVerified" : false,
+    "createdTimestamp" : 1714575417572,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "test-client",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-test", "offline_access", "uma_authorization" ],
+    "clientRoles" : {
+      "test-client" : [ "uma_protection" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "53a698f2-972b-4dcc-8db5-62a388bb8022",
+    "username" : "test",
+    "firstName" : "TestFirstName",
+    "lastName" : "TestLastName",
+    "email" : "test@test.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1714395430365,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "f52386d6-b7a3-4112-a6eb-d9da2c632575",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1714395437582,
+      "secretData" : "{\"value\":\"5ZhWc2dFsOs1aD64HRg72ubalTD1ZHQ0bq9+LYIq9niEzS/ini7UiEZVM0Ob9fPh+3/nxQ8OlHV6exvutN81Iw==\",\"salt\":\"E548rOu+ZRIWwAER3LFemQ==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":210000,\"algorithm\":\"pbkdf2-sha512\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-test", "Reader" ],
+    "clientRoles" : {
+      "test-client" : [ "TestClientRole" ]
+    },
+    "notBefore" : 0,
+    "groups" : [ ]
+  }, {
+    "id" : "314b65f9-6c59-4114-8bcf-4f65ccd1fd55",
+    "username" : "testadminuser",
+    "firstName" : "Test",
+    "lastName" : "Admin",
+    "email" : "testadminuser@test.com",
+    "emailVerified" : true,
+    "createdTimestamp" : 1714551218415,
+    "enabled" : true,
+    "totp" : false,
+    "credentials" : [ {
+      "id" : "7bc9d2cf-5b52-4b05-ba75-c2d8310f255a",
+      "type" : "password",
+      "userLabel" : "My password",
+      "createdDate" : 1714551228417,
+      "secretData" : "{\"value\":\"GVAwCmlmwwdtmVcgaLI+XTNT07+kAyAep3z21eFPi6lewA9Bko6l3ciJb+bL4+m1ddjs3hyN4skfoOc9r6vC9Q==\",\"salt\":\"Wu1k668c4HVb8tOWBpLL3w==\",\"additionalParameters\":{}}",
+      "credentialData" : "{\"hashIterations\":210000,\"algorithm\":\"pbkdf2-sha512\",\"additionalParameters\":{}}"
+    } ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-test", "Admin" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

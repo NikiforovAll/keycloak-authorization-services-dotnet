@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <RootNamespace>Keycloak.AuthServices.Sdk</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.Sdk</Product>
-    <Description>HttpClient integration with Keycloak. HTTP Client SDK</Description>
-    <PackageTags>Keycloak;authserver;http-sdk</PackageTags>
+    <Description>HttpClient integration with Keycloak. Includes HTTP Admin REST API, Protection API. </Description>
+    <PackageTags>Keycloak;KeycloakAdminAPI;ProtectionAPI;HttpClient</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,12 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityModel.AspNetCore" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.Http"/>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-    <PackageReference Include="Refit" />
-    <PackageReference Include="Refit.HttpClientFactory" />
   </ItemGroup>
 
   <ItemGroup>

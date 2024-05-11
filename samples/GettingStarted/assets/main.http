@@ -1,0 +1,22 @@
+
+@client_id=test-client
+@username=test
+@password=test
+@realm=Test
+
+@client_secret=svbEVJq6xFROYL6oUvEbqemzNiKabrwJ
+
+@BASE_URL=http://localhost:5228
+@KEYCLOAK_URL=http://localhost:8080
+
+###
+# @name tokenRequestOffilineCredentials
+curl --data "grant_type=password&client_id={{client_id}}&username={{username}}&password={{password}}&client_secret={{client_secret}}&scope=roles" \
+    {{KEYCLOAK_URL}}/realms/{{realm}}/protocol/openid-connect/token
+
+@token={{tokenRequestOffilineCredentials.response.body.$.access_token}}
+
+###
+
+GET {{BASE_URL}}/
+Authorization: Bearer {{token}}

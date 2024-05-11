@@ -1,24 +1,26 @@
-﻿namespace Api.Application.Authorization;
+namespace Api.Application.Authorization;
 
 using Abstractions;
 using MediatR;
 
-public class AuthorizationBehavior<TRequest, TResponse>
-    : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+public class AuthorizationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    where TRequest : IRequest<TResponse>
 {
     private readonly IIdentityService identityService;
     private readonly ILogger<TRequest> logger;
 
     public AuthorizationBehavior(IIdentityService identityService, ILogger<TRequest> logger)
     {
-        this.identityService = identityService ?? throw new ArgumentNullException(nameof(identityService));
+        this.identityService =
+            identityService ?? throw new ArgumentNullException(nameof(identityService));
         this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task<TResponse> Handle(
         TRequest request,
-        CancellationToken cancellationToken,
-        RequestHandlerDelegate<TResponse> next)
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken
+    )
     {
         // TODO: consider reflection performance impact
         var authorizeAttributes = request
@@ -42,7 +44,8 @@ public class AuthorizationBehavior<TRequest, TResponse>
 
     private async Task EnsureAuthorizedPolicies(
         TRequest request,
-        IEnumerable<AuthorizeAttribute> authorizeAttributes)
+        IEnumerable<AuthorizeAttribute> authorizeAttributes
+    )
     {
         // Policy-based authorization
         var authorizeAttributesWithPolicies = authorizeAttributes
@@ -54,28 +57,33 @@ public class AuthorizationBehavior<TRequest, TResponse>
             return;
         }
 
-        var requiredPolicies = authorizeAttributesWithPolicies
-            .Select(a =>
+        var requiredPolicies = authorizeAttributesWithPolicies.Select(a =>
+        {
+            if (
+                a is AuthorizeProtectedResourceAttribute resourceAttribute
+                && request is IRequestWithResourceId requestWithResourceId
+            )
             {
-                if (a is AuthorizeProtectedResourceAttribute resourceAttribute
-                    && request is IRequestWithResourceId requestWithResourceId)
-                {
-                    resourceAttribute.ResourceId = requestWithResourceId.ResourceId;
-                }
-                return a.Policy;
-            });
+                resourceAttribute.ResourceId = requestWithResourceId.ResourceId;
+            }
+            return a.Policy;
+        });
 
         foreach (var policy in requiredPolicies)
         {
-            var authorized = await this.identityService
-                .AuthorizeAsync(this.identityService.Principal!, policy!);
+            var authorized = await this.identityService.AuthorizeAsync(
+                this.identityService.Principal!,
+                policy!
+            );
 
             if (authorized)
             {
                 continue;
             }
 
+#pragma warning disable CA1848 // Use the LoggerMessage delegates
             this.logger.LogDebug("Failed policy authorization {Policy}", policy);
+#pragma warning restore CA1848 // Use the LoggerMessage delegates
             throw new ForbiddenAccessException();
         }
     }
@@ -96,12 +104,16 @@ public class AuthorizationBehavior<TRequest, TResponse>
             .Where(a => !string.IsNullOrWhiteSpace(a.Roles))
             .Select(a => a.Roles!.Split(','));
 
-        if (requiredRoles
-            .Select(roles => roles.Any(
-                role => this.identityService.IsInRoleAsync(role.Trim())))
-            .Any(authorized => !authorized))
+        if (
+            requiredRoles
+                .Select(roles => roles.Any(role => this.identityService.IsInRoleAsync(role.Trim())))
+                .Any(authorized => !authorized)
+        )
         {
+#pragma warning disable CA1848 // Use the LoggerMessage delegates
             this.logger.LogDebug("Failed role authorization");
+#pragma warning restore CA1848 // Use the LoggerMessage delegates
+
             throw new ForbiddenAccessException();
         }
     }

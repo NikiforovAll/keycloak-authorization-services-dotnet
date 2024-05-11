@@ -1,50 +1,52 @@
 namespace Keycloak.AuthServices.Authentication;
 
-using Claims;
-using Configuration;
+using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 
 /// <summary>
 /// Configures Authentication via Keycloak
 /// </summary>
+[Obsolete("This class will be removed")]
 public static class ServiceCollectionExtensions
 {
     /// <summary>
     /// Adds keycloak authentication services.
     /// </summary>
+    [Obsolete(
+        "This method will be removed. Use AddKeycloakWebApiAuthentication. Furthermore, the way KeycloakAuthenticationOptions is changed and you need to specify KeycloakFormatBinder.Instance to correctly bind the instance. See for more details https://nikiforovall.github.io/keycloak-authorization-services-dotnet/migration.html#key-changes-in-2-0-0"
+    )]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         KeycloakAuthenticationOptions keycloakOptions,
-        Action<JwtBearerOptions>? configureOptions = default)
+        Action<JwtBearerOptions>? configureOptions = default
+    )
     {
-        const string roleClaimType = "role";
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(keycloakOptions);
+
         var validationParameters = new TokenValidationParameters
         {
             ClockSkew = keycloakOptions.TokenClockSkew,
             ValidateAudience = keycloakOptions.VerifyTokenAudience ?? true,
             ValidateIssuer = true,
-            NameClaimType = "preferred_username",
-            RoleClaimType = roleClaimType,
+            NameClaimType = keycloakOptions.NameClaimType,
+            RoleClaimType = keycloakOptions.RoleClaimType,
         };
 
-        // options.Resource == Audience
-        services.AddTransient<IClaimsTransformation>(_ =>
-            new KeycloakRolesClaimsTransformation(
-                roleClaimType,
-                keycloakOptions.RolesSource,
-                keycloakOptions.Resource));
-
-        return services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        return services
+            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opts =>
             {
-                var sslRequired = string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
-                    || keycloakOptions.SslRequired
-                        .Equals("external", StringComparison.OrdinalIgnoreCase);
+                var sslRequired =
+                    string.IsNullOrWhiteSpace(keycloakOptions.SslRequired)
+                    || keycloakOptions.SslRequired.Equals(
+                        "external",
+                        StringComparison.OrdinalIgnoreCase
+                    );
 
                 opts.Authority = keycloakOptions.KeycloakUrlRealm;
                 opts.Audience = keycloakOptions.Resource;
@@ -55,7 +57,6 @@ public static class ServiceCollectionExtensions
             });
     }
 
-
     /// <summary>
     /// Adds keycloak authentication services from configuration located in specified default section.
     /// </summary>
@@ -63,18 +64,17 @@ public static class ServiceCollectionExtensions
     /// <param name="configuration">Configuration source</param>
     /// <param name="configureOptions">Configure overrides</param>
     /// <returns></returns>
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<JwtBearerOptions>? configureOptions = default)
+        Action<JwtBearerOptions>? configureOptions = default
+    )
     {
-        KeycloakAuthenticationOptions options = new();
+        var authenticationOptions =
+            configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
 
-        configuration
-            .GetSection(KeycloakAuthenticationOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
-
-        return services.AddKeycloakAuthentication(options, configureOptions);
+        return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
 
     /// <summary>
@@ -85,32 +85,17 @@ public static class ServiceCollectionExtensions
     /// <param name="keycloakClientSectionName"></param>
     /// <param name="configureOptions"></param>
     /// <returns></returns>
+    [Obsolete("This method will be removed. Use AddKeycloakWebApiAuthentication")]
     public static AuthenticationBuilder AddKeycloakAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,
-        string? keycloakClientSectionName,
-        Action<JwtBearerOptions>? configureOptions = default)
+        string keycloakClientSectionName,
+        Action<JwtBearerOptions>? configureOptions = default
+    )
     {
-        KeycloakAuthenticationOptions options = new();
+        var authenticationOptions =
+            configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
 
-        configuration
-            .GetSection(keycloakClientSectionName ?? KeycloakAuthenticationOptions.Section)
-            .Bind(options, opt => opt.BindNonPublicProperties = true);
-
-        return services.AddKeycloakAuthentication(options, configureOptions);
+        return services.AddKeycloakAuthentication(authenticationOptions, configureOptions);
     }
-
-    /// <summary>
-    /// Adds configuration source based on adapter config.
-    /// </summary>
-    /// <param name="hostBuilder"></param>
-    /// <param name="fileName"></param>
-    /// <returns></returns>
-    public static IHostBuilder ConfigureKeycloakConfigurationSource(
-        this IHostBuilder hostBuilder, string fileName = "keycloak.json") =>
-        hostBuilder.ConfigureAppConfiguration((_, builder) =>
-        {
-            var source = new KeycloakConfigurationSource { Path = fileName, Optional = false };
-            builder.Sources.Insert(0, source);
-        });
 }

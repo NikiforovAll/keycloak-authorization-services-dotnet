@@ -1,5 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authorization;
 
+using System;
+
 /// <summary>
 /// </summary>
 public static class ProtectedResourcePolicy
@@ -18,12 +20,16 @@ public static class ProtectedResourcePolicy
     /// <param name="resource"></param>
     /// <param name="scope"></param>
     /// <returns></returns>
-    public static string From(string resource, string scope) =>
-        $"{resource}#{scope}";
+    public static string From(string resource, string scope) => $"{resource}#{scope}";
 
     /// <summary>
     /// </summary>
     /// <param name="policy"></param>
     /// <returns></returns>
-    public static bool Match(string policy) => policy.Contains('#');
+    public static bool Match(string policy)
+    {
+        ArgumentNullException.ThrowIfNull(policy);
+
+        return policy.Contains('#');
+    }
 }

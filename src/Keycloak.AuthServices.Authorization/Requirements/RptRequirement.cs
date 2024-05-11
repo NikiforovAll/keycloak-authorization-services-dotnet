@@ -1,8 +1,10 @@
 namespace Keycloak.AuthServices.Authorization.Requirements;
 
+using System;
 using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 /// Requesting Party Token (RPT) requirement
@@ -37,13 +39,36 @@ public class RptRequirement : IAuthorizationRequirement
 /// </summary>
 public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 {
+    private readonly ILogger<RptRequirementHandler> logger;
+
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="logger"></param>
+    public RptRequirementHandler(ILogger<RptRequirementHandler> logger) => this.logger = logger;
+
     /// <summary>
     /// </summary>
     /// <param name="context"></param>
     /// <param name="requirement"></param>
     /// <returns></returns>
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, RptRequirement requirement)
+    protected override Task HandleRequirementAsync(
+        AuthorizationHandlerContext context,
+        RptRequirement requirement
+    )
     {
+        ArgumentNullException.ThrowIfNull(context);
+        ArgumentNullException.ThrowIfNull(requirement);
+
+        if (!context.User.IsAuthenticated())
+        {
+            this.logger.LogRequirementSkipped(
+                nameof(RptRequirementHandler)
+            );
+
+            return Task.CompletedTask;
+        }
+
         // the client application is responsible for acquiring of the token
         // should request special RPT access_token that contains this section
         var authorizationClaim = context.User.FindFirstValue("authorization");
@@ -52,8 +77,7 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
             return Task.CompletedTask;
         }
 
-        /* Sample value for authorizationClaim
-        {
+        /*{
             "permissions":[
                 {
                     "scopes":["read"],
@@ -77,14 +101,18 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
                 continue;
             }
 
-            if (permission.GetProperty("scopes")
-                .EnumerateArray()
-                .All(scope => scope.GetString() != requirement.Scope))
+            if (
+                permission
+                    .GetProperty("scopes")
+                    .EnumerateArray()
+                    .All(scope => scope.GetString() != requirement.Scope)
+            )
             {
                 continue;
             }
 
             context.Succeed(requirement);
+
             return Task.CompletedTask;
         }
 

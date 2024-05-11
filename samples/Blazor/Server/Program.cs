@@ -1,3 +1,4 @@
+using System.Globalization;
 using Keycloak.AuthServices.Authentication;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -40,12 +41,13 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Verbose()
     .WriteTo.Console(
         outputTemplate: "[{Level:u4}] | {Message:lj}{NewLine}{Exception}",
-        restrictedToMinimumLevel: LogEventLevel.Information)
+        restrictedToMinimumLevel: LogEventLevel.Information,
+        formatProvider: CultureInfo.InvariantCulture)
     .CreateBootstrapLogger();
 
 builder.Host.UseSerilog();
 
-services.AddKeycloakAuthentication(configuration);
+services.AddKeycloakWebApiAuthentication(configuration);
 
 var app = builder.Build();
 

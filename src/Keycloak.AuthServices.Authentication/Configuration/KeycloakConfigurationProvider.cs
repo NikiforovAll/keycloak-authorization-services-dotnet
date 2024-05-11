@@ -2,7 +2,6 @@ namespace Keycloak.AuthServices.Authentication.Configuration;
 
 using System.Globalization;
 using System.Text;
-using Common;
 using Microsoft.Extensions.Configuration.Json;
 
 /// <summary>
@@ -10,6 +9,8 @@ using Microsoft.Extensions.Configuration.Json;
 /// </summary>
 public class KeycloakConfigurationProvider : JsonConfigurationProvider
 {
+    private readonly string configurationPrefix;
+
     private const char KeycloakPropertyDelimiter = '-';
     private const char NestedConfigurationDelimiter = ':';
     private const int Utf8LowerCaseDistant = 32;
@@ -19,8 +20,16 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
     /// Initializes a new instance with the specified source.
     /// </summary>
     /// <param name="source">The source settings.</param>
-    public KeycloakConfigurationProvider(KeycloakConfigurationSource source) : base(source) =>
+    /// <param name="configurationPrefix"></param>
+    public KeycloakConfigurationProvider(
+        KeycloakConfigurationSource source,
+        string configurationPrefix
+    )
+        : base(source)
+    {
         this.stringBuilder = new StringBuilder();
+        this.configurationPrefix = configurationPrefix;
+    }
 
     /// <summary>
     /// Loads the JSON data from a stream.
@@ -32,7 +41,8 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
         this.Data = this.Data.ToDictionary(
             x => this.NormalizeKey(x.Key),
             x => x.Value,
-            StringComparer.OrdinalIgnoreCase);
+            StringComparer.OrdinalIgnoreCase
+        );
     }
 
     /// <summary>
@@ -42,8 +52,7 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
     /// <returns></returns>
     private string NormalizeKey(string key)
     {
-        var sections = key
-            .ToUpper(CultureInfo.InvariantCulture)
+        var sections = key.ToUpper(CultureInfo.InvariantCulture)
             .Split(NestedConfigurationDelimiter);
 
         foreach (var section in sections)
@@ -70,9 +79,11 @@ public class KeycloakConfigurationProvider : JsonConfigurationProvider
             }
         }
 
-        var result = ConfigurationConstants.ConfigurationPrefix + NestedConfigurationDelimiter +
-                     this.stringBuilder.ToString();
+        var result =
+            this.configurationPrefix + NestedConfigurationDelimiter + this.stringBuilder.ToString();
+
         this.stringBuilder.Clear();
+
         return result;
     }
 }
