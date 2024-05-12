@@ -10,10 +10,14 @@ public class HomeController : Controller
 {
     public IActionResult Index() => this.View();
 
+    [Authorize(Policy = "PrivacyAccess")]
     public IActionResult Privacy() => this.View();
 
     [AllowAnonymous]
     public IActionResult Public() => this.View();
+
+    [AllowAnonymous]
+    public IActionResult AccessDenied() => this.View();
 
     [AllowAnonymous]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,5 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authentication;
 
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -80,8 +82,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
 
         return builder.AddKeycloakWebAppWithConfiguration(
-            configureKeycloakOptions: options =>
-                configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: options => configurationSection.BindKeycloakOptions(options),
             configureCookieAuthenticationOptions: configureCookieAuthenticationOptions,
             configureOpenIdConnectOptions: configureOpenIdConnectOptions,
             openIdConnectScheme: openIdConnectScheme,
@@ -271,8 +272,75 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
                         RoleClaimType = keycloakOptions.RoleClaimType,
                     };
 
+                    if (options.MapInboundClaims)
+                    {
+                        options.ClaimActions.MapUniqueJsonKey(
+                            KeycloakConstants.RealmAccessClaimType,
+                            KeycloakConstants.RealmAccessClaimType
+                        );
+                        options.ClaimActions.MapUniqueJsonKey(
+                            KeycloakConstants.ResourceAccessClaimType,
+                            KeycloakConstants.ResourceAccessClaimType
+                        );
+                    }
+
                     configureOpenIdConnectOptions?.Invoke(options);
+
+                    if (!keycloakOptions.DisableRolesAccessTokenMapping)
+                    {
+                        MapAccessTokenRoles(options);
+                    }
                 }
             );
+    }
+
+    private static void MapAccessTokenRoles(OpenIdConnectOptions options)
+    {
+        options.Events ??= new OpenIdConnectEvents();
+
+        var baseOnTokenResponseReceived = options.Events.OnTokenResponseReceived;
+        var baseOnTokenValidated = options.Events.OnTokenValidated;
+
+        options.Events.OnTokenResponseReceived = async context =>
+        {
+            if (options.Events.OnTokenResponseReceived is not null)
+            {
+                await baseOnTokenResponseReceived.Invoke(context);
+            }
+
+            var accessToken = context.TokenEndpointResponse.AccessToken;
+
+            context.Properties?.SetParameter("access_token", accessToken);
+        };
+
+        options.Events.OnTokenValidated = async context =>
+        {
+            if (options.Events.OnTokenValidated is not null)
+            {
+                await baseOnTokenValidated.Invoke(context);
+            }
+
+            var accessToken = context.Properties?.GetParameter<string>("access_token");
+
+            if (accessToken is not null && context.Principal is not null)
+            {
+                var handler = new JwtSecurityTokenHandler();
+
+                if (handler.ReadToken(accessToken) is JwtSecurityToken jwtSecurityToken)
+                {
+                    var claims = jwtSecurityToken.Claims;
+
+                    var identity = new ClaimsIdentity();
+                    identity.AddClaims(
+                        claims.Where(c =>
+                            c.Type
+                                is KeycloakConstants.RealmAccessClaimType
+                                    or KeycloakConstants.ResourceAccessClaimType
+                        )
+                    );
+                    context.Principal.AddIdentity(identity);
+                }
+            }
+        };
     }
 }

@@ -165,6 +165,9 @@ public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(
 
 See [source code](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/blob/main/src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs) for more details.
 
+> [!TIP]
+> See an example of how to use `AddKeycloakWebApp` in MVC application - [Web App MVC](/examples/web-app-mvc)
+
 ## Adapter File Configuration Provider
 
 Using *appsettings.json* is a recommended and it is an idiomatic approach for .NET, but if you want a standalone "adapter" (installation) file - *keycloak.json*. You can use `ConfigureKeycloakConfigurationSource`. It adds dedicated configuration source.

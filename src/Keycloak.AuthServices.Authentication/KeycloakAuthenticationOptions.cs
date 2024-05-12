@@ -34,4 +34,9 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
         string.IsNullOrWhiteSpace(this.KeycloakUrlRealm)
             ? default
             : $"{this.KeycloakUrlRealm}{KeycloakConstants.OpenIdConnectConfigurationPath}";
+
+    /// <summary>
+    /// Gets or sets the roles mapping from access_token mapping
+    /// </summary>
+    public bool DisableRolesAccessTokenMapping { get; set; }
 }

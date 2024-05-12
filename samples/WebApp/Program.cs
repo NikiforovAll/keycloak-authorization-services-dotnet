@@ -1,6 +1,5 @@
 ﻿using Keycloak.AuthServices.Authentication;
-using Keycloak.AuthServices.Authorization.AuthorizationServer;
-using Microsoft.AspNetCore.Authentication;
+using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,12 +13,12 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 builder
     .Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
     .AddKeycloakWebApp(
-        builder.Configuration.GetSection(KeycloakAuthorizationServerOptions.Section),
+        builder.Configuration.GetSection(KeycloakAuthenticationOptions.Section),
         configureOpenIdConnectOptions: options =>
         {
-            // used for front-channel logout
+            // we need this for front-channel sign-out
             options.SaveTokens = true;
-
+            options.ResponseType = "code";
             options.Events = new OpenIdConnectEvents
             {
                 OnSignedOutCallbackRedirect = context =>
@@ -30,15 +29,13 @@ builder
                     return Task.CompletedTask;
                 }
             };
-
-            // NOTE, the source for claims is id_token and not access_token.
-            // By default, id_token doesn't contain realm_roles claim
-            // and you will need to create a mapper for that
-            options.ClaimActions.MapUniqueJsonKey("realm_access", "realm_access");
         }
     );
 
-builder.Services.PostConfigure<OpenIdConnectOptions>(options => { });
+builder
+    .Services.AddKeycloakAuthorization(builder.Configuration)
+    .AddAuthorizationBuilder()
+    .AddPolicy("PrivacyAccess", policy => policy.RequireRealmRoles("Admin"));
 
 builder.Services.AddControllersWithViews();
 
