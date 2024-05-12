@@ -9,9 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 
 public class AccountController : Controller
 {
+    private readonly ILogger<AccountController> logger;
+
+    public AccountController(ILogger<AccountController> logger) => this.logger = logger;
+
+    [AllowAnonymous]
     public IActionResult SignIn()
     {
-        if (!User.Identity.IsAuthenticated)
+        if (!this.User.Identity!.IsAuthenticated)
         {
             return this.Challenge(OpenIdConnectDefaults.AuthenticationScheme);
         }
@@ -19,10 +24,25 @@ public class AccountController : Controller
         return this.RedirectToAction("Index", "Home");
     }
 
-    [Authorize]
+    [AllowAnonymous]
     public async Task<IActionResult> SignOutAsync()
     {
+        if (!this.User.Identity!.IsAuthenticated)
+        {
+            return this.Challenge(OpenIdConnectDefaults.AuthenticationScheme);
+        }
+
         var idToken = await this.HttpContext.GetTokenAsync("id_token");
+
+        var authResult = this
+            .HttpContext.Features.Get<IAuthenticateResultFeature>()
+            ?.AuthenticateResult;
+
+        var tokens = authResult!.Properties!.GetTokens();
+
+        var tokenNames = tokens.Select(token => token.Name).ToArray();
+
+        this.logger.LogInformation("Token Names: {TokenNames}", string.Join(", ", tokenNames));
 
         return this.SignOut(
             new AuthenticationProperties
@@ -34,4 +54,7 @@ public class AccountController : Controller
             OpenIdConnectDefaults.AuthenticationScheme
         );
     }
+
+    [AllowAnonymous]
+    public IActionResult AccessDenied() => this.RedirectToAction("AccessDenied", "Home");
 }
