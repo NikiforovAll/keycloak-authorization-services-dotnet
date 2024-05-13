@@ -1,6 +1,6 @@
 # Keycloak.AuthServices
 
-[![Discord](https://img.shields.io/discord/1236946465318768670?color=blue&label=Chat%20on%20Discord)](https://discord.gg/jdYFw2xq)
+[![Discord](https://img.shields.io/discord/1236946465318768670?color=blue&label=Chat%20on%20Discord)](https://discord.gg/S449PhBPRQ)
 [![Build](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/build.yml)
 [![CodeQL](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/workflows/codeql-analysis.yml)
 [![NuGet](https://img.shields.io/nuget/dt/Keycloak.AuthServices.Authentication.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authentication)
