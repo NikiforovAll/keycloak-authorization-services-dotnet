@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
-    public class RealmRepresentation : IAdditionalDataHolder, IParsable {
+    #pragma warning disable CS1591
+    public class RealmRepresentation : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>The accessCodeLifespan property</summary>
         public int? AccessCodeLifespan { get; set; }
         /// <summary>The accessCodeLifespanLogin property</summary>
@@ -809,7 +812,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Instantiates a new <see cref="RealmRepresentation"/> and sets the default values.
         /// </summary>
-        public RealmRepresentation() {
+        public RealmRepresentation()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -817,7 +821,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// </summary>
         /// <returns>A <see cref="RealmRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RealmRepresentation CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RealmRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RealmRepresentation();
         }
@@ -825,8 +830,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"accessCodeLifespan", n => { AccessCodeLifespan = n.GetIntValue(); } },
                 {"accessCodeLifespanLogin", n => { AccessCodeLifespanLogin = n.GetIntValue(); } },
                 {"accessCodeLifespanUserAction", n => { AccessCodeLifespanUserAction = n.GetIntValue(); } },
@@ -978,7 +985,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("accessCodeLifespan", AccessCodeLifespan);
             writer.WriteIntValue("accessCodeLifespanLogin", AccessCodeLifespanLogin);

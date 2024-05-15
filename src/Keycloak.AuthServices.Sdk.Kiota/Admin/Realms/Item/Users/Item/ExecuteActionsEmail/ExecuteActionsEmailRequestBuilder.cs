@@ -11,20 +11,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Exe
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\execute-actions-email
     /// </summary>
-    public class ExecuteActionsEmailRequestBuilder : BaseRequestBuilder {
+    public class ExecuteActionsEmailRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ExecuteActionsEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExecuteActionsEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/execute-actions-email{?client_id*,lifespan*,redirect_uri*}", pathParameters) {
+        public ExecuteActionsEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/execute-actions-email{?client_id*,lifespan*,redirect_uri*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ExecuteActionsEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExecuteActionsEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/execute-actions-email{?client_id*,lifespan*,redirect_uri*}", rawUrl) {
+        public ExecuteActionsEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/execute-actions-email{?client_id*,lifespan*,redirect_uri*}", rawUrl)
+        {
         }
         /// <summary>
         /// An email contains a link the user can click to perform a set of required actions. The redirectUri and clientId parameters are optional. If no redirect is given, then there will be no link back to click after actions have completed. Redirect uri must be a valid uri for the particular clientId.
@@ -35,10 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Exe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -52,10 +57,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Exe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(List<string> body, Action<RequestConfiguration<ExecuteActionsEmailRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
@@ -68,13 +75,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Exe
         /// </summary>
         /// <returns>A <see cref="ExecuteActionsEmailRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExecuteActionsEmailRequestBuilder WithUrl(string rawUrl) {
+        public ExecuteActionsEmailRequestBuilder WithUrl(string rawUrl)
+        {
             return new ExecuteActionsEmailRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// An email contains a link the user can click to perform a set of required actions. The redirectUri and clientId parameters are optional. If no redirect is given, then there will be no link back to click after actions have completed. Redirect uri must be a valid uri for the particular clientId.
         /// </summary>
-        public class ExecuteActionsEmailRequestBuilderPutQueryParameters {
+        public class ExecuteActionsEmailRequestBuilderPutQueryParameters 
+        {
             /// <summary>Client id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

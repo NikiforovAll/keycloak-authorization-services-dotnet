@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
-    public class EvaluationResultRepresentation : IAdditionalDataHolder, IParsable {
+    #pragma warning disable CS1591
+    public class EvaluationResultRepresentation : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allowedScopes property</summary>
@@ -45,7 +48,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Instantiates a new <see cref="EvaluationResultRepresentation"/> and sets the default values.
         /// </summary>
-        public EvaluationResultRepresentation() {
+        public EvaluationResultRepresentation()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -53,7 +57,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// </summary>
         /// <returns>A <see cref="EvaluationResultRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EvaluationResultRepresentation CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static EvaluationResultRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new EvaluationResultRepresentation();
         }
@@ -61,8 +66,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"allowedScopes", n => { AllowedScopes = n.GetCollectionOfObjectValues<ScopeRepresentation>(ScopeRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<PolicyResultRepresentation>(PolicyResultRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"resource", n => { Resource = n.GetObjectValue<ResourceRepresentation>(ResourceRepresentation.CreateFromDiscriminatorValue); } },
@@ -74,7 +81,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<ScopeRepresentation>("allowedScopes", AllowedScopes);
             writer.WriteCollectionOfObjectValues<PolicyResultRepresentation>("policies", Policies);

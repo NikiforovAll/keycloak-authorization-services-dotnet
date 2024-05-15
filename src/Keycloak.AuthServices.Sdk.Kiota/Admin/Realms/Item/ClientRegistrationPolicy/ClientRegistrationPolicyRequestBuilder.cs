@@ -10,24 +10,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistra
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\client-registration-policy
     /// </summary>
-    public class ClientRegistrationPolicyRequestBuilder : BaseRequestBuilder {
+    public class ClientRegistrationPolicyRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The providers property</summary>
-        public ProvidersRequestBuilder Providers { get =>
-            new ProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public ProvidersRequestBuilder Providers
+        {
+            get => new ProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientRegistrationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientRegistrationPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-registration-policy", pathParameters) {
+        public ClientRegistrationPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-registration-policy", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientRegistrationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientRegistrationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-registration-policy", rawUrl) {
+        public ClientRegistrationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-registration-policy", rawUrl)
+        {
         }
     }
 }

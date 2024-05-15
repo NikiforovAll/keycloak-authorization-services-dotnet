@@ -10,24 +10,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetectio
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\attack-detection
     /// </summary>
-    public class AttackDetectionRequestBuilder : BaseRequestBuilder {
+    public class AttackDetectionRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The bruteForce property</summary>
-        public BruteForceRequestBuilder BruteForce { get =>
-            new BruteForceRequestBuilder(PathParameters, RequestAdapter);
+        public BruteForceRequestBuilder BruteForce
+        {
+            get => new BruteForceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AttackDetectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttackDetectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection", pathParameters) {
+        public AttackDetectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AttackDetectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttackDetectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection", rawUrl) {
+        public AttackDetectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection", rawUrl)
+        {
         }
     }
 }

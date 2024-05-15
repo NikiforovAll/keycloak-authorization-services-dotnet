@@ -11,28 +11,33 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\client-policies
     /// </summary>
-    public class ClientPoliciesRequestBuilder : BaseRequestBuilder {
+    public class ClientPoliciesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The policies property</summary>
-        public PoliciesRequestBuilder Policies { get =>
-            new PoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public PoliciesRequestBuilder Policies
+        {
+            get => new PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The profiles property</summary>
-        public ProfilesRequestBuilder Profiles { get =>
-            new ProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public ProfilesRequestBuilder Profiles
+        {
+            get => new ProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientPoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies", pathParameters) {
+        public ClientPoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies", rawUrl) {
+        public ClientPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies", rawUrl)
+        {
         }
     }
 }

@@ -10,24 +10,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetectio
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\attack-detection\brute-force
     /// </summary>
-    public class BruteForceRequestBuilder : BaseRequestBuilder {
+    public class BruteForceRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The users property</summary>
-        public UsersRequestBuilder Users { get =>
-            new UsersRequestBuilder(PathParameters, RequestAdapter);
+        public UsersRequestBuilder Users
+        {
+            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="BruteForceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BruteForceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection/brute-force", pathParameters) {
+        public BruteForceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection/brute-force", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BruteForceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BruteForceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection/brute-force", rawUrl) {
+        public BruteForceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/attack-detection/brute-force", rawUrl)
+        {
         }
     }
 }

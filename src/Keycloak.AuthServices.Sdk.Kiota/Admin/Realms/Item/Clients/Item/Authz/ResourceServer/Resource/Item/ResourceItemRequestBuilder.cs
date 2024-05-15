@@ -15,41 +15,49 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\authz\resource-server\resource\{resource-id}
     /// </summary>
-    public class ResourceItemRequestBuilder : BaseRequestBuilder {
+    public class ResourceItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The attributes property</summary>
-        public AttributesRequestBuilder Attributes { get =>
-            new AttributesRequestBuilder(PathParameters, RequestAdapter);
+        public AttributesRequestBuilder Attributes
+        {
+            get => new AttributesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The permissions property</summary>
-        public PermissionsRequestBuilder Permissions { get =>
-            new PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        public PermissionsRequestBuilder Permissions
+        {
+            get => new PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scopes property</summary>
-        public ScopesRequestBuilder Scopes { get =>
-            new ScopesRequestBuilder(PathParameters, RequestAdapter);
+        public ScopesRequestBuilder Scopes
+        {
+            get => new ScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ResourceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz/resource-server/resource/{resource%2Did}{?_id*,deep*,exactName*,first*,matchingUri*,max*,name*,owner*,scope*,type*,uri*}", pathParameters) {
+        public ResourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz/resource-server/resource/{resource%2Did}{?_id*,deep*,exactName*,first*,matchingUri*,max*,name*,owner*,scope*,type*,uri*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ResourceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz/resource-server/resource/{resource%2Did}{?_id*,deep*,exactName*,first*,matchingUri*,max*,name*,owner*,scope*,type*,uri*}", rawUrl) {
+        public ResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz/resource-server/resource/{resource%2Did}{?_id*,deep*,exactName*,first*,matchingUri*,max*,name*,owner*,scope*,type*,uri*}", rawUrl)
+        {
         }
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +67,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ResourceRepresentation?> GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ResourceRepresentation?> GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ResourceRepresentation> GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ResourceRepresentation> GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ResourceRepresentation>(requestInfo, ResourceRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -72,10 +82,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PutAsync(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PutAsync(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PutAsync(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -85,10 +97,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -98,10 +112,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -113,10 +129,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
@@ -129,10 +147,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
         /// </summary>
         /// <returns>A <see cref="ResourceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResourceItemRequestBuilder WithUrl(string rawUrl) {
+        public ResourceItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ResourceItemRequestBuilder(rawUrl, RequestAdapter);
         }
-        public class ResourceItemRequestBuilderDeleteQueryParameters {
+        #pragma warning disable CS1591
+        public class ResourceItemRequestBuilderDeleteQueryParameters 
+        #pragma warning restore CS1591
+        {
             [QueryParameter("deep")]
             public bool? Deep { get; set; }
             [QueryParameter("exactName")]
@@ -198,7 +220,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
             public string Uri { get; set; }
 #endif
         }
-        public class ResourceItemRequestBuilderGetQueryParameters {
+        #pragma warning disable CS1591
+        public class ResourceItemRequestBuilderGetQueryParameters 
+        #pragma warning restore CS1591
+        {
             [QueryParameter("deep")]
             public bool? Deep { get; set; }
             [QueryParameter("exactName")]
@@ -264,7 +289,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
             public string Uri { get; set; }
 #endif
         }
-        public class ResourceItemRequestBuilderPutQueryParameters {
+        #pragma warning disable CS1591
+        public class ResourceItemRequestBuilderPutQueryParameters 
+        #pragma warning restore CS1591
+        {
             [QueryParameter("deep")]
             public bool? Deep { get; set; }
             [QueryParameter("exactName")]

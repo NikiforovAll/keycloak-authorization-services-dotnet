@@ -14,40 +14,48 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\evaluate-scopes
     /// </summary>
-    public class EvaluateScopesRequestBuilder : BaseRequestBuilder {
+    public class EvaluateScopesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The generateExampleAccessToken property</summary>
-        public GenerateExampleAccessTokenRequestBuilder GenerateExampleAccessToken { get =>
-            new GenerateExampleAccessTokenRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateExampleAccessTokenRequestBuilder GenerateExampleAccessToken
+        {
+            get => new GenerateExampleAccessTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateExampleIdToken property</summary>
-        public GenerateExampleIdTokenRequestBuilder GenerateExampleIdToken { get =>
-            new GenerateExampleIdTokenRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateExampleIdTokenRequestBuilder GenerateExampleIdToken
+        {
+            get => new GenerateExampleIdTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateExampleUserinfo property</summary>
-        public GenerateExampleUserinfoRequestBuilder GenerateExampleUserinfo { get =>
-            new GenerateExampleUserinfoRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateExampleUserinfoRequestBuilder GenerateExampleUserinfo
+        {
+            get => new GenerateExampleUserinfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocolMappers property</summary>
-        public ProtocolMappersRequestBuilder ProtocolMappers { get =>
-            new ProtocolMappersRequestBuilder(PathParameters, RequestAdapter);
+        public ProtocolMappersRequestBuilder ProtocolMappers
+        {
+            get => new ProtocolMappersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scopeMappings property</summary>
-        public ScopeMappingsRequestBuilder ScopeMappings { get =>
-            new ScopeMappingsRequestBuilder(PathParameters, RequestAdapter);
+        public ScopeMappingsRequestBuilder ScopeMappings
+        {
+            get => new ScopeMappingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="EvaluateScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EvaluateScopesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes", pathParameters) {
+        public EvaluateScopesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EvaluateScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EvaluateScopesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes", rawUrl) {
+        public EvaluateScopesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes", rawUrl)
+        {
         }
     }
 }

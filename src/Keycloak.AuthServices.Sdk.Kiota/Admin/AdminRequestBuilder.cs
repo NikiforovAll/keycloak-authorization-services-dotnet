@@ -10,24 +10,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin {
     /// <summary>
     /// Builds and executes requests for operations under \admin
     /// </summary>
-    public class AdminRequestBuilder : BaseRequestBuilder {
+    public class AdminRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The realms property</summary>
-        public RealmsRequestBuilder Realms { get =>
-            new RealmsRequestBuilder(PathParameters, RequestAdapter);
+        public RealmsRequestBuilder Realms
+        {
+            get => new RealmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AdminRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdminRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin", pathParameters) {
+        public AdminRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AdminRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdminRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin", rawUrl) {
+        public AdminRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin", rawUrl)
+        {
         }
     }
 }

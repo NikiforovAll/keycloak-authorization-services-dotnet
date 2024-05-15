@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
-    public class PolicyProviderRepresentation : IAdditionalDataHolder, IParsable {
+    #pragma warning disable CS1591
+    public class PolicyProviderRepresentation : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The group property</summary>
@@ -35,7 +38,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Instantiates a new <see cref="PolicyProviderRepresentation"/> and sets the default values.
         /// </summary>
-        public PolicyProviderRepresentation() {
+        public PolicyProviderRepresentation()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -43,7 +47,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// </summary>
         /// <returns>A <see cref="PolicyProviderRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PolicyProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PolicyProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PolicyProviderRepresentation();
         }
@@ -51,8 +56,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"group", n => { Group = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
@@ -62,7 +69,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("group", Group);
             writer.WriteStringValue("name", Name);

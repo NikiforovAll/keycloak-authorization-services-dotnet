@@ -2,10 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
-    public enum KeyUse {
+    #pragma warning disable CS1591
+    public enum KeyUse
+    #pragma warning restore CS1591
+    {
         [EnumMember(Value = "SIG")]
+        #pragma warning disable CS1591
         SIG,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ENC")]
+        #pragma warning disable CS1591
         ENC,
+        #pragma warning restore CS1591
     }
 }

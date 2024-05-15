@@ -44,148 +44,183 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}
     /// </summary>
-    public class WithRealmItemRequestBuilder : BaseRequestBuilder {
+    public class WithRealmItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The adminEvents property</summary>
-        public AdminEventsRequestBuilder AdminEvents { get =>
-            new AdminEventsRequestBuilder(PathParameters, RequestAdapter);
+        public AdminEventsRequestBuilder AdminEvents
+        {
+            get => new AdminEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attackDetection property</summary>
-        public AttackDetectionRequestBuilder AttackDetection { get =>
-            new AttackDetectionRequestBuilder(PathParameters, RequestAdapter);
+        public AttackDetectionRequestBuilder AttackDetection
+        {
+            get => new AttackDetectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The authentication property</summary>
-        public AuthenticationRequestBuilder Authentication { get =>
-            new AuthenticationRequestBuilder(PathParameters, RequestAdapter);
+        public AuthenticationRequestBuilder Authentication
+        {
+            get => new AuthenticationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientDescriptionConverter property</summary>
-        public ClientDescriptionConverterRequestBuilder ClientDescriptionConverter { get =>
-            new ClientDescriptionConverterRequestBuilder(PathParameters, RequestAdapter);
+        public ClientDescriptionConverterRequestBuilder ClientDescriptionConverter
+        {
+            get => new ClientDescriptionConverterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientPolicies property</summary>
-        public ClientPoliciesRequestBuilder ClientPolicies { get =>
-            new ClientPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public ClientPoliciesRequestBuilder ClientPolicies
+        {
+            get => new ClientPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientRegistrationPolicy property</summary>
-        public ClientRegistrationPolicyRequestBuilder ClientRegistrationPolicy { get =>
-            new ClientRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
+        public ClientRegistrationPolicyRequestBuilder ClientRegistrationPolicy
+        {
+            get => new ClientRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clients property</summary>
-        public ClientsRequestBuilder Clients { get =>
-            new ClientsRequestBuilder(PathParameters, RequestAdapter);
+        public ClientsRequestBuilder Clients
+        {
+            get => new ClientsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientScopes property</summary>
-        public ClientScopesRequestBuilder ClientScopes { get =>
-            new ClientScopesRequestBuilder(PathParameters, RequestAdapter);
+        public ClientScopesRequestBuilder ClientScopes
+        {
+            get => new ClientScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientSessionStats property</summary>
-        public ClientSessionStatsRequestBuilder ClientSessionStats { get =>
-            new ClientSessionStatsRequestBuilder(PathParameters, RequestAdapter);
+        public ClientSessionStatsRequestBuilder ClientSessionStats
+        {
+            get => new ClientSessionStatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientsInitialAccess property</summary>
-        public ClientsInitialAccessRequestBuilder ClientsInitialAccess { get =>
-            new ClientsInitialAccessRequestBuilder(PathParameters, RequestAdapter);
+        public ClientsInitialAccessRequestBuilder ClientsInitialAccess
+        {
+            get => new ClientsInitialAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientTemplates property</summary>
-        public ClientTemplatesRequestBuilder ClientTemplates { get =>
-            new ClientTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        public ClientTemplatesRequestBuilder ClientTemplates
+        {
+            get => new ClientTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The components property</summary>
-        public ComponentsRequestBuilder Components { get =>
-            new ComponentsRequestBuilder(PathParameters, RequestAdapter);
+        public ComponentsRequestBuilder Components
+        {
+            get => new ComponentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The credentialRegistrators property</summary>
-        public CredentialRegistratorsRequestBuilder CredentialRegistrators { get =>
-            new CredentialRegistratorsRequestBuilder(PathParameters, RequestAdapter);
+        public CredentialRegistratorsRequestBuilder CredentialRegistrators
+        {
+            get => new CredentialRegistratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultDefaultClientScopes property</summary>
-        public DefaultDefaultClientScopesRequestBuilder DefaultDefaultClientScopes { get =>
-            new DefaultDefaultClientScopesRequestBuilder(PathParameters, RequestAdapter);
+        public DefaultDefaultClientScopesRequestBuilder DefaultDefaultClientScopes
+        {
+            get => new DefaultDefaultClientScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultGroups property</summary>
-        public DefaultGroupsRequestBuilder DefaultGroups { get =>
-            new DefaultGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public DefaultGroupsRequestBuilder DefaultGroups
+        {
+            get => new DefaultGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultOptionalClientScopes property</summary>
-        public DefaultOptionalClientScopesRequestBuilder DefaultOptionalClientScopes { get =>
-            new DefaultOptionalClientScopesRequestBuilder(PathParameters, RequestAdapter);
+        public DefaultOptionalClientScopesRequestBuilder DefaultOptionalClientScopes
+        {
+            get => new DefaultOptionalClientScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
-        public EventsRequestBuilder Events { get =>
-            new EventsRequestBuilder(PathParameters, RequestAdapter);
+        public EventsRequestBuilder Events
+        {
+            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groupByPath property</summary>
-        public GroupByPathRequestBuilder GroupByPath { get =>
-            new GroupByPathRequestBuilder(PathParameters, RequestAdapter);
+        public GroupByPathRequestBuilder GroupByPath
+        {
+            get => new GroupByPathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groups property</summary>
-        public GroupsRequestBuilder Groups { get =>
-            new GroupsRequestBuilder(PathParameters, RequestAdapter);
+        public GroupsRequestBuilder Groups
+        {
+            get => new GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The identityProvider property</summary>
-        public IdentityProviderRequestBuilder IdentityProvider { get =>
-            new IdentityProviderRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityProviderRequestBuilder IdentityProvider
+        {
+            get => new IdentityProviderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
-        public KeysRequestBuilder Keys { get =>
-            new KeysRequestBuilder(PathParameters, RequestAdapter);
+        public KeysRequestBuilder Keys
+        {
+            get => new KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The localization property</summary>
-        public LocalizationRequestBuilder Localization { get =>
-            new LocalizationRequestBuilder(PathParameters, RequestAdapter);
+        public LocalizationRequestBuilder Localization
+        {
+            get => new LocalizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logoutAll property</summary>
-        public LogoutAllRequestBuilder LogoutAll { get =>
-            new LogoutAllRequestBuilder(PathParameters, RequestAdapter);
+        public LogoutAllRequestBuilder LogoutAll
+        {
+            get => new LogoutAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The partialExport property</summary>
-        public PartialExportRequestBuilder PartialExport { get =>
-            new PartialExportRequestBuilder(PathParameters, RequestAdapter);
+        public PartialExportRequestBuilder PartialExport
+        {
+            get => new PartialExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The partialImport property</summary>
-        public PartialImportRequestBuilder PartialImport { get =>
-            new PartialImportRequestBuilder(PathParameters, RequestAdapter);
+        public PartialImportRequestBuilder PartialImport
+        {
+            get => new PartialImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pushRevocation property</summary>
-        public PushRevocationRequestBuilder PushRevocation { get =>
-            new PushRevocationRequestBuilder(PathParameters, RequestAdapter);
+        public PushRevocationRequestBuilder PushRevocation
+        {
+            get => new PushRevocationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The roles property</summary>
-        public RolesRequestBuilder Roles { get =>
-            new RolesRequestBuilder(PathParameters, RequestAdapter);
+        public RolesRequestBuilder Roles
+        {
+            get => new RolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rolesById property</summary>
-        public RolesByIdRequestBuilder RolesById { get =>
-            new RolesByIdRequestBuilder(PathParameters, RequestAdapter);
+        public RolesByIdRequestBuilder RolesById
+        {
+            get => new RolesByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sessions property</summary>
-        public SessionsRequestBuilder Sessions { get =>
-            new SessionsRequestBuilder(PathParameters, RequestAdapter);
+        public SessionsRequestBuilder Sessions
+        {
+            get => new SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The testSMTPConnection property</summary>
-        public TestSMTPConnectionRequestBuilder TestSMTPConnection { get =>
-            new TestSMTPConnectionRequestBuilder(PathParameters, RequestAdapter);
+        public TestSMTPConnectionRequestBuilder TestSMTPConnection
+        {
+            get => new TestSMTPConnectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public UsersRequestBuilder Users { get =>
-            new UsersRequestBuilder(PathParameters, RequestAdapter);
+        public UsersRequestBuilder Users
+        {
+            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The usersManagementPermissions property</summary>
-        public UsersManagementPermissionsRequestBuilder UsersManagementPermissions { get =>
-            new UsersManagementPermissionsRequestBuilder(PathParameters, RequestAdapter);
+        public UsersManagementPermissionsRequestBuilder UsersManagementPermissions
+        {
+            get => new UsersManagementPermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRealmItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRealmItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}", pathParameters) {
+        public WithRealmItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRealmItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRealmItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}", rawUrl) {
+        public WithRealmItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete the realm
@@ -194,10 +229,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -210,10 +247,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RealmRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RealmRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RealmRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RealmRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<RealmRepresentation>(requestInfo, RealmRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -227,10 +266,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -243,10 +284,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -259,10 +302,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -277,10 +322,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
@@ -293,7 +340,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// </summary>
         /// <returns>A <see cref="WithRealmItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithRealmItemRequestBuilder WithUrl(string rawUrl) {
+        public WithRealmItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithRealmItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

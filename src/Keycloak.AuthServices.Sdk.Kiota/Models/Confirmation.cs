@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
-    public class Confirmation : IAdditionalDataHolder, IParsable {
+    #pragma warning disable CS1591
+    public class Confirmation : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The jkt property</summary>
@@ -27,7 +30,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Instantiates a new <see cref="Confirmation"/> and sets the default values.
         /// </summary>
-        public Confirmation() {
+        public Confirmation()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +39,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// </summary>
         /// <returns>A <see cref="Confirmation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Confirmation CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Confirmation CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Confirmation();
         }
@@ -43,8 +48,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"jkt", n => { Jkt = n.GetStringValue(); } },
                 {"x5t#S256", n => { X5tS256 = n.GetStringValue(); } },
             };
@@ -53,7 +60,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("jkt", Jkt);
             writer.WriteStringValue("x5t#S256", X5tS256);

@@ -13,7 +13,6 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
-
 #pragma warning disable CS0419 // Ambiguous reference in cref attribute
     /// <summary>
     /// Adds <see cref="KeycloakAdminApiClient"/> for Keycloak Admin API alias for <see cref="AddKeycloakAdminHttpClient"/>. You can use it to resolve possible namespaces issues.
