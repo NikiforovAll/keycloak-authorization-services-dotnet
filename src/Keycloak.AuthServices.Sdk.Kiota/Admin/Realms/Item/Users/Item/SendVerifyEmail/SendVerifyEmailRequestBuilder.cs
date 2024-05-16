@@ -11,20 +11,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sen
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\send-verify-email
     /// </summary>
-    public class SendVerifyEmailRequestBuilder : BaseRequestBuilder {
+    public class SendVerifyEmailRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SendVerifyEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendVerifyEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/send-verify-email{?client_id*,lifespan*,redirect_uri*}", pathParameters) {
+        public SendVerifyEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/send-verify-email{?client_id*,lifespan*,redirect_uri*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SendVerifyEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SendVerifyEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/send-verify-email{?client_id*,lifespan*,redirect_uri*}", rawUrl) {
+        public SendVerifyEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/send-verify-email{?client_id*,lifespan*,redirect_uri*}", rawUrl)
+        {
         }
         /// <summary>
         /// The redirectUri, clientId and lifespan parameters are optional. The default for the redirect is the account client. The default for the lifespan is 12 hours
@@ -34,10 +37,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sen
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -49,10 +54,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sen
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<SendVerifyEmailRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -63,13 +70,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sen
         /// </summary>
         /// <returns>A <see cref="SendVerifyEmailRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SendVerifyEmailRequestBuilder WithUrl(string rawUrl) {
+        public SendVerifyEmailRequestBuilder WithUrl(string rawUrl)
+        {
             return new SendVerifyEmailRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The redirectUri, clientId and lifespan parameters are optional. The default for the redirect is the account client. The default for the lifespan is 12 hours
         /// </summary>
-        public class SendVerifyEmailRequestBuilderPutQueryParameters {
+        public class SendVerifyEmailRequestBuilderPutQueryParameters 
+        {
             /// <summary>Client id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

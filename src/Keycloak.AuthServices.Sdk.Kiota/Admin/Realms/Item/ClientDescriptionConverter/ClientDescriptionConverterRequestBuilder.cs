@@ -12,20 +12,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescript
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\client-description-converter
     /// </summary>
-    public class ClientDescriptionConverterRequestBuilder : BaseRequestBuilder {
+    public class ClientDescriptionConverterRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ClientDescriptionConverterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientDescriptionConverterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-description-converter", pathParameters) {
+        public ClientDescriptionConverterRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-description-converter", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientDescriptionConverterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientDescriptionConverterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-description-converter", rawUrl) {
+        public ClientDescriptionConverterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-description-converter", rawUrl)
+        {
         }
         /// <summary>
         /// Base path for importing clients under this realm.
@@ -36,10 +39,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescript
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ClientRepresentation?> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ClientRepresentation?> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ClientRepresentation> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ClientRepresentation> PostAsync(string body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -53,10 +58,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescript
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(string body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(string body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(string body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(string body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -70,7 +77,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescript
         /// </summary>
         /// <returns>A <see cref="ClientDescriptionConverterRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ClientDescriptionConverterRequestBuilder WithUrl(string rawUrl) {
+        public ClientDescriptionConverterRequestBuilder WithUrl(string rawUrl)
+        {
             return new ClientDescriptionConverterRequestBuilder(rawUrl, RequestAdapter);
         }
     }

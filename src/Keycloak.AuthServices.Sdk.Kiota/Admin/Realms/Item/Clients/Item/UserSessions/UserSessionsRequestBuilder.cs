@@ -12,20 +12,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.U
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\user-sessions
     /// </summary>
-    public class UserSessionsRequestBuilder : BaseRequestBuilder {
+    public class UserSessionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="UserSessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserSessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/user-sessions{?first*,max*}", pathParameters) {
+        public UserSessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/user-sessions{?first*,max*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UserSessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserSessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/user-sessions{?first*,max*}", rawUrl) {
+        public UserSessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/user-sessions{?first*,max*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get user sessions for client Returns a list of user sessions associated with this client
@@ -35,10 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.U
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<UserSessionRepresentation>?> GetAsync(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<UserSessionRepresentation>?> GetAsync(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<UserSessionRepresentation>> GetAsync(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<UserSessionRepresentation>> GetAsync(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<UserSessionRepresentation>(requestInfo, UserSessionRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.U
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserSessionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.U
         /// </summary>
         /// <returns>A <see cref="UserSessionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserSessionsRequestBuilder WithUrl(string rawUrl) {
+        public UserSessionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new UserSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get user sessions for client Returns a list of user sessions associated with this client
         /// </summary>
-        public class UserSessionsRequestBuilderGetQueryParameters {
+        public class UserSessionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Paging offset</summary>
             [QueryParameter("first")]
             public int? First { get; set; }

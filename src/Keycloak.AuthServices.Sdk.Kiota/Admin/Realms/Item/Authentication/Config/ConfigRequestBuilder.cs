@@ -13,28 +13,35 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\authentication\config
     /// </summary>
-    public class ConfigRequestBuilder : BaseRequestBuilder {
+    public class ConfigRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item.authentication.config.item collection</summary>
         /// <param name="position">Configuration id</param>
         /// <returns>A <see cref="ConfigItemRequestBuilder"/></returns>
-        public ConfigItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("id", position);
-            return new ConfigItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public ConfigItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new ConfigItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ConfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/authentication/config", pathParameters) {
+        public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/authentication/config", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ConfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/authentication/config", rawUrl) {
+        public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/authentication/config", rawUrl)
+        {
         }
         /// <summary>
         /// Create new authenticator configuration
@@ -46,10 +53,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PostAsync(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -64,10 +73,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(AuthenticatorConfigRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -81,7 +92,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
         /// <returns>A <see cref="ConfigRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public ConfigRequestBuilder WithUrl(string rawUrl) {
+        public ConfigRequestBuilder WithUrl(string rawUrl)
+        {
             return new ConfigRequestBuilder(rawUrl, RequestAdapter);
         }
     }

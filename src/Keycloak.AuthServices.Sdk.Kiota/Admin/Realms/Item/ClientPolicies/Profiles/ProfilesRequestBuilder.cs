@@ -12,30 +12,35 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\client-policies\profiles
     /// </summary>
-    public class ProfilesRequestBuilder : BaseRequestBuilder {
+    public class ProfilesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies/profiles{?include%2Dglobal%2Dprofiles*}", pathParameters) {
+        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies/profiles{?include%2Dglobal%2Dprofiles*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies/profiles{?include%2Dglobal%2Dprofiles*}", rawUrl) {
+        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-policies/profiles{?include%2Dglobal%2Dprofiles*}", rawUrl)
+        {
         }
         /// <returns>A <see cref="ClientProfilesRepresentation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ClientProfilesRepresentation?> GetAsync(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ClientProfilesRepresentation?> GetAsync(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ClientProfilesRepresentation> GetAsync(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ClientProfilesRepresentation> GetAsync(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ClientProfilesRepresentation>(requestInfo, ClientProfilesRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -46,10 +51,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -59,10 +66,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +83,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(ClientProfilesRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/admin/realms/{realm}/client-policies/profiles", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
@@ -90,10 +101,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
         /// </summary>
         /// <returns>A <see cref="ProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProfilesRequestBuilder WithUrl(string rawUrl) {
+        public ProfilesRequestBuilder WithUrl(string rawUrl)
+        {
             return new ProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
-        public class ProfilesRequestBuilderGetQueryParameters {
+        #pragma warning disable CS1591
+        public class ProfilesRequestBuilderGetQueryParameters 
+        #pragma warning restore CS1591
+        {
             [QueryParameter("include%2Dglobal%2Dprofiles")]
             public bool? IncludeGlobalProfiles { get; set; }
         }

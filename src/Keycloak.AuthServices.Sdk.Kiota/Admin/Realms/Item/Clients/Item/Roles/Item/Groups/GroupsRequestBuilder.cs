@@ -12,20 +12,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\roles\{role-name}\groups
     /// </summary>
-    public class GroupsRequestBuilder : BaseRequestBuilder {
+    public class GroupsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/roles/{role%2Dname}/groups{?briefRepresentation*,first*,max*}", pathParameters) {
+        public GroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/roles/{role%2Dname}/groups{?briefRepresentation*,first*,max*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/roles/{role%2Dname}/groups{?briefRepresentation*,first*,max*}", rawUrl) {
+        public GroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/roles/{role%2Dname}/groups{?briefRepresentation*,first*,max*}", rawUrl)
+        {
         }
         /// <summary>
         /// Returns a stream of groups that have the specified role name
@@ -35,10 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<GroupRepresentation>?> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GroupRepresentation>?> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<GroupRepresentation>> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GroupRepresentation>> GetAsync(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<GroupRepresentation>(requestInfo, GroupRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         /// </summary>
         /// <returns>A <see cref="GroupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupsRequestBuilder WithUrl(string rawUrl) {
+        public GroupsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Returns a stream of groups that have the specified role name
         /// </summary>
-        public class GroupsRequestBuilderGetQueryParameters {
+        public class GroupsRequestBuilderGetQueryParameters 
+        {
             /// <summary>if false, return a full representation of the {@code GroupRepresentation} objects.</summary>
             [QueryParameter("briefRepresentation")]
             public bool? BriefRepresentation { get; set; }

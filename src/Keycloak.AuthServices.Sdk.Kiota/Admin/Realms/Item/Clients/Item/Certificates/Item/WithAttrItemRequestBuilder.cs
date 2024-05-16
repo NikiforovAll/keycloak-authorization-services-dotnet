@@ -17,40 +17,48 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.C
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\certificates\{attr}
     /// </summary>
-    public class WithAttrItemRequestBuilder : BaseRequestBuilder {
+    public class WithAttrItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The download property</summary>
-        public DownloadRequestBuilder Download { get =>
-            new DownloadRequestBuilder(PathParameters, RequestAdapter);
+        public DownloadRequestBuilder Download
+        {
+            get => new DownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generate property</summary>
-        public GenerateRequestBuilder Generate { get =>
-            new GenerateRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateRequestBuilder Generate
+        {
+            get => new GenerateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateAndDownload property</summary>
-        public GenerateAndDownloadRequestBuilder GenerateAndDownload { get =>
-            new GenerateAndDownloadRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateAndDownloadRequestBuilder GenerateAndDownload
+        {
+            get => new GenerateAndDownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The upload property</summary>
-        public UploadRequestBuilder Upload { get =>
-            new UploadRequestBuilder(PathParameters, RequestAdapter);
+        public UploadRequestBuilder Upload
+        {
+            get => new UploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The uploadCertificate property</summary>
-        public UploadCertificateRequestBuilder UploadCertificate { get =>
-            new UploadCertificateRequestBuilder(PathParameters, RequestAdapter);
+        public UploadCertificateRequestBuilder UploadCertificate
+        {
+            get => new UploadCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAttrItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAttrItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/certificates/{attr}", pathParameters) {
+        public WithAttrItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/certificates/{attr}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAttrItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAttrItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/certificates/{attr}", rawUrl) {
+        public WithAttrItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/certificates/{attr}", rawUrl)
+        {
         }
         /// <summary>
         /// Get key info
@@ -60,10 +68,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.C
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CertificateRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CertificateRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<CertificateRepresentation>(requestInfo, CertificateRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -75,10 +85,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.C
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,7 +102,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.C
         /// </summary>
         /// <returns>A <see cref="WithAttrItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithAttrItemRequestBuilder WithUrl(string rawUrl) {
+        public WithAttrItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithAttrItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

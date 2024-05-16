@@ -10,28 +10,35 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\roles-by-id\{role-id}\composites\clients
     /// </summary>
-    public class ClientsRequestBuilder : BaseRequestBuilder {
+    public class ClientsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item.rolesById.item.composites.clients.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="WithClientUuItemRequestBuilder"/></returns>
-        public WithClientUuItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("clientUuid", position);
-            return new WithClientUuItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithClientUuItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("clientUuid", position);
+                return new WithClientUuItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ClientsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles-by-id/{role%2Did}/composites/clients", pathParameters) {
+        public ClientsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles-by-id/{role%2Did}/composites/clients", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ClientsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles-by-id/{role%2Did}/composites/clients", rawUrl) {
+        public ClientsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles-by-id/{role%2Did}/composites/clients", rawUrl)
+        {
         }
     }
 }

@@ -12,20 +12,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Ite
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\components\{id}\sub-component-types
     /// </summary>
-    public class SubComponentTypesRequestBuilder : BaseRequestBuilder {
+    public class SubComponentTypesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SubComponentTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubComponentTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/components/{id}/sub-component-types{?type*}", pathParameters) {
+        public SubComponentTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/components/{id}/sub-component-types{?type*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SubComponentTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubComponentTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/components/{id}/sub-component-types{?type*}", rawUrl) {
+        public SubComponentTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/components/{id}/sub-component-types{?type*}", rawUrl)
+        {
         }
         /// <summary>
         /// List of subcomponent types that are available to configure for a particular parent component.
@@ -35,10 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ComponentTypeRepresentation>?> GetAsync(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ComponentTypeRepresentation>?> GetAsync(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<ComponentTypeRepresentation>> GetAsync(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ComponentTypeRepresentation>> GetAsync(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<ComponentTypeRepresentation>(requestInfo, ComponentTypeRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubComponentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Ite
         /// </summary>
         /// <returns>A <see cref="SubComponentTypesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SubComponentTypesRequestBuilder WithUrl(string rawUrl) {
+        public SubComponentTypesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SubComponentTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of subcomponent types that are available to configure for a particular parent component.
         /// </summary>
-        public class SubComponentTypesRequestBuilderGetQueryParameters {
+        public class SubComponentTypesRequestBuilderGetQueryParameters 
+        {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

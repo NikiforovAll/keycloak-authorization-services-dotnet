@@ -27,80 +27,98 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}
     /// </summary>
-    public class UserItemRequestBuilder : BaseRequestBuilder {
+    public class UserItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The configuredUserStorageCredentialTypes property</summary>
-        public ConfiguredUserStorageCredentialTypesRequestBuilder ConfiguredUserStorageCredentialTypes { get =>
-            new ConfiguredUserStorageCredentialTypesRequestBuilder(PathParameters, RequestAdapter);
+        public ConfiguredUserStorageCredentialTypesRequestBuilder ConfiguredUserStorageCredentialTypes
+        {
+            get => new ConfiguredUserStorageCredentialTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The consents property</summary>
-        public ConsentsRequestBuilder Consents { get =>
-            new ConsentsRequestBuilder(PathParameters, RequestAdapter);
+        public ConsentsRequestBuilder Consents
+        {
+            get => new ConsentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The credentials property</summary>
-        public CredentialsRequestBuilder Credentials { get =>
-            new CredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public CredentialsRequestBuilder Credentials
+        {
+            get => new CredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The disableCredentialTypes property</summary>
-        public DisableCredentialTypesRequestBuilder DisableCredentialTypes { get =>
-            new DisableCredentialTypesRequestBuilder(PathParameters, RequestAdapter);
+        public DisableCredentialTypesRequestBuilder DisableCredentialTypes
+        {
+            get => new DisableCredentialTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The executeActionsEmail property</summary>
-        public ExecuteActionsEmailRequestBuilder ExecuteActionsEmail { get =>
-            new ExecuteActionsEmailRequestBuilder(PathParameters, RequestAdapter);
+        public ExecuteActionsEmailRequestBuilder ExecuteActionsEmail
+        {
+            get => new ExecuteActionsEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The federatedIdentity property</summary>
-        public FederatedIdentityRequestBuilder FederatedIdentity { get =>
-            new FederatedIdentityRequestBuilder(PathParameters, RequestAdapter);
+        public FederatedIdentityRequestBuilder FederatedIdentity
+        {
+            get => new FederatedIdentityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groups property</summary>
-        public GroupsRequestBuilder Groups { get =>
-            new GroupsRequestBuilder(PathParameters, RequestAdapter);
+        public GroupsRequestBuilder Groups
+        {
+            get => new GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The impersonation property</summary>
-        public ImpersonationRequestBuilder Impersonation { get =>
-            new ImpersonationRequestBuilder(PathParameters, RequestAdapter);
+        public ImpersonationRequestBuilder Impersonation
+        {
+            get => new ImpersonationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logout property</summary>
-        public LogoutRequestBuilder Logout { get =>
-            new LogoutRequestBuilder(PathParameters, RequestAdapter);
+        public LogoutRequestBuilder Logout
+        {
+            get => new LogoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The offlineSessions property</summary>
-        public OfflineSessionsRequestBuilder OfflineSessions { get =>
-            new OfflineSessionsRequestBuilder(PathParameters, RequestAdapter);
+        public OfflineSessionsRequestBuilder OfflineSessions
+        {
+            get => new OfflineSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resetPassword property</summary>
-        public ResetPasswordRequestBuilder ResetPassword { get =>
-            new ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
+        public ResetPasswordRequestBuilder ResetPassword
+        {
+            get => new ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resetPasswordEmail property</summary>
-        public ResetPasswordEmailRequestBuilder ResetPasswordEmail { get =>
-            new ResetPasswordEmailRequestBuilder(PathParameters, RequestAdapter);
+        public ResetPasswordEmailRequestBuilder ResetPasswordEmail
+        {
+            get => new ResetPasswordEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The roleMappings property</summary>
-        public RoleMappingsRequestBuilder RoleMappings { get =>
-            new RoleMappingsRequestBuilder(PathParameters, RequestAdapter);
+        public RoleMappingsRequestBuilder RoleMappings
+        {
+            get => new RoleMappingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sendVerifyEmail property</summary>
-        public SendVerifyEmailRequestBuilder SendVerifyEmail { get =>
-            new SendVerifyEmailRequestBuilder(PathParameters, RequestAdapter);
+        public SendVerifyEmailRequestBuilder SendVerifyEmail
+        {
+            get => new SendVerifyEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sessions property</summary>
-        public SessionsRequestBuilder Sessions { get =>
-            new SessionsRequestBuilder(PathParameters, RequestAdapter);
+        public SessionsRequestBuilder Sessions
+        {
+            get => new SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}{?userProfileMetadata*}", pathParameters) {
+        public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}{?userProfileMetadata*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}{?userProfileMetadata*}", rawUrl) {
+        public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}{?userProfileMetadata*}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete the user
@@ -110,10 +128,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -126,10 +146,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserRepresentation?> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserRepresentation?> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserRepresentation> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserRepresentation> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<UserRepresentation>(requestInfo, UserRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -143,10 +165,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -159,12 +183,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -175,10 +201,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -193,13 +221,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(UserRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
@@ -209,13 +239,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item {
         /// </summary>
         /// <returns>A <see cref="UserItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserItemRequestBuilder WithUrl(string rawUrl) {
+        public UserItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new UserItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get representation of the user
         /// </summary>
-        public class UserItemRequestBuilderGetQueryParameters {
+        public class UserItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Indicates if the user profile metadata should be added to the response</summary>
             [QueryParameter("userProfileMetadata")]
             public bool? UserProfileMetadata { get; set; }

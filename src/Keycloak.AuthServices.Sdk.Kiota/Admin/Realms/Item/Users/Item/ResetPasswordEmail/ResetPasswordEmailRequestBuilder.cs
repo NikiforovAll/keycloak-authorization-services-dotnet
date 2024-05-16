@@ -11,20 +11,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Res
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\reset-password-email
     /// </summary>
-    public class ResetPasswordEmailRequestBuilder : BaseRequestBuilder {
+    public class ResetPasswordEmailRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ResetPasswordEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResetPasswordEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/reset-password-email{?client_id*,redirect_uri*}", pathParameters) {
+        public ResetPasswordEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/reset-password-email{?client_id*,redirect_uri*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ResetPasswordEmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResetPasswordEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/reset-password-email{?client_id*,redirect_uri*}", rawUrl) {
+        public ResetPasswordEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/reset-password-email{?client_id*,redirect_uri*}", rawUrl)
+        {
         }
         /// <summary>
         /// The redirectUri and clientId parameters are optional. The default for the redirect is the account client. This endpoint has been deprecated.  Please use the execute-actions-email passing a list with UPDATE_PASSWORD within it.
@@ -35,10 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Res
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +56,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Res
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<ResetPasswordEmailRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -66,13 +73,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Res
         /// <returns>A <see cref="ResetPasswordEmailRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public ResetPasswordEmailRequestBuilder WithUrl(string rawUrl) {
+        public ResetPasswordEmailRequestBuilder WithUrl(string rawUrl)
+        {
             return new ResetPasswordEmailRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The redirectUri and clientId parameters are optional. The default for the redirect is the account client. This endpoint has been deprecated.  Please use the execute-actions-email passing a list with UPDATE_PASSWORD within it.
         /// </summary>
-        public class ResetPasswordEmailRequestBuilderPutQueryParameters {
+        public class ResetPasswordEmailRequestBuilderPutQueryParameters 
+        {
             /// <summary>client id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

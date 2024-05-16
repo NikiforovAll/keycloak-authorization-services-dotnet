@@ -11,28 +11,33 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\evaluate-scopes\scope-mappings\{roleContainerId}
     /// </summary>
-    public class WithRoleContainerItemRequestBuilder : BaseRequestBuilder {
+    public class WithRoleContainerItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The granted property</summary>
-        public GrantedRequestBuilder Granted { get =>
-            new GrantedRequestBuilder(PathParameters, RequestAdapter);
+        public GrantedRequestBuilder Granted
+        {
+            get => new GrantedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notGranted property</summary>
-        public NotGrantedRequestBuilder NotGranted { get =>
-            new NotGrantedRequestBuilder(PathParameters, RequestAdapter);
+        public NotGrantedRequestBuilder NotGranted
+        {
+            get => new NotGrantedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRoleContainerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRoleContainerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/scope-mappings/{roleContainerId}", pathParameters) {
+        public WithRoleContainerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/scope-mappings/{roleContainerId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRoleContainerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRoleContainerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/scope-mappings/{roleContainerId}", rawUrl) {
+        public WithRoleContainerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/scope-mappings/{roleContainerId}", rawUrl)
+        {
         }
     }
 }

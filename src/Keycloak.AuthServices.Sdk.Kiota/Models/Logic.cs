@@ -2,10 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
-    public enum Logic {
+    #pragma warning disable CS1591
+    public enum Logic
+    #pragma warning restore CS1591
+    {
         [EnumMember(Value = "POSITIVE")]
+        #pragma warning disable CS1591
         POSITIVE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NEGATIVE")]
+        #pragma warning disable CS1591
         NEGATIVE,
+        #pragma warning restore CS1591
     }
 }

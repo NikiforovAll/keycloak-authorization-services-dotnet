@@ -5,13 +5,17 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents {
-    public class Consents : IAdditionalDataHolder, IParsable {
+    #pragma warning disable CS1591
+    public class Consents : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="Consents"/> and sets the default values.
         /// </summary>
-        public Consents() {
+        public Consents()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -19,7 +23,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Con
         /// </summary>
         /// <returns>A <see cref="Consents"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Consents CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Consents CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Consents();
         }
@@ -27,15 +32,18 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Con
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteAdditionalData(AdditionalData);
         }

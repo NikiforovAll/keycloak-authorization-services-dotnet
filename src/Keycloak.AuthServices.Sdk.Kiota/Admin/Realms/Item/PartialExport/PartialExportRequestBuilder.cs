@@ -11,20 +11,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport 
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\partial-export
     /// </summary>
-    public class PartialExportRequestBuilder : BaseRequestBuilder {
+    public class PartialExportRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="PartialExportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartialExportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/partial-export{?exportClients*,exportGroupsAndRoles*}", pathParameters) {
+        public PartialExportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/partial-export{?exportClients*,exportGroupsAndRoles*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PartialExportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartialExportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/partial-export{?exportClients*,exportGroupsAndRoles*}", rawUrl) {
+        public PartialExportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/partial-export{?exportClients*,exportGroupsAndRoles*}", rawUrl)
+        {
         }
         /// <summary>
         /// Partial export of existing realm into a JSON file.
@@ -34,10 +37,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PostAsync(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -49,10 +54,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<PartialExportRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -63,13 +70,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport 
         /// </summary>
         /// <returns>A <see cref="PartialExportRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PartialExportRequestBuilder WithUrl(string rawUrl) {
+        public PartialExportRequestBuilder WithUrl(string rawUrl)
+        {
             return new PartialExportRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Partial export of existing realm into a JSON file.
         /// </summary>
-        public class PartialExportRequestBuilderPostQueryParameters {
+        public class PartialExportRequestBuilderPostQueryParameters 
+        {
             [QueryParameter("exportClients")]
             public bool? ExportClients { get; set; }
             [QueryParameter("exportGroupsAndRoles")]

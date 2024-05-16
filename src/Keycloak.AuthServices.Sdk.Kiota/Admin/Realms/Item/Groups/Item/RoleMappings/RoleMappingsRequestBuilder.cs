@@ -14,28 +14,33 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Ro
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\groups\{group-id}\role-mappings
     /// </summary>
-    public class RoleMappingsRequestBuilder : BaseRequestBuilder {
+    public class RoleMappingsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The clients property</summary>
-        public ClientsRequestBuilder Clients { get =>
-            new ClientsRequestBuilder(PathParameters, RequestAdapter);
+        public ClientsRequestBuilder Clients
+        {
+            get => new ClientsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The realm property</summary>
-        public RealmRequestBuilder Realm { get =>
-            new RealmRequestBuilder(PathParameters, RequestAdapter);
+        public RealmRequestBuilder Realm
+        {
+            get => new RealmRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleMappingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleMappingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/groups/{group%2Did}/role-mappings", pathParameters) {
+        public RoleMappingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/groups/{group%2Did}/role-mappings", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleMappingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleMappingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/groups/{group%2Did}/role-mappings", rawUrl) {
+        public RoleMappingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/groups/{group%2Did}/role-mappings", rawUrl)
+        {
         }
         /// <summary>
         /// Get role mappings
@@ -45,10 +50,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Ro
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MappingsRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MappingsRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MappingsRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MappingsRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<MappingsRepresentation>(requestInfo, MappingsRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -60,10 +67,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Ro
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,7 +84,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Ro
         /// </summary>
         /// <returns>A <see cref="RoleMappingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleMappingsRequestBuilder WithUrl(string rawUrl) {
+        public RoleMappingsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RoleMappingsRequestBuilder(rawUrl, RequestAdapter);
         }
     }

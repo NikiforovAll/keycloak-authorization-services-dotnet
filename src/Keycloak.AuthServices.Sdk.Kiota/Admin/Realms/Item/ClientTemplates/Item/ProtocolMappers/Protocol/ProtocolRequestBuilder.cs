@@ -10,28 +10,35 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplate
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\client-templates\{client-scope-id}\protocol-mappers\protocol
     /// </summary>
-    public class ProtocolRequestBuilder : BaseRequestBuilder {
+    public class ProtocolRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item.clientTemplates.item.protocolMappers.protocol.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="WithProtocolItemRequestBuilder"/></returns>
-        public WithProtocolItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("protocol", position);
-            return new WithProtocolItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithProtocolItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("protocol", position);
+                return new WithProtocolItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ProtocolRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProtocolRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-templates/{client%2Dscope%2Did}/protocol-mappers/protocol", pathParameters) {
+        public ProtocolRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-templates/{client%2Dscope%2Did}/protocol-mappers/protocol", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ProtocolRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProtocolRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-templates/{client%2Dscope%2Did}/protocol-mappers/protocol", rawUrl) {
+        public ProtocolRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/client-templates/{client%2Dscope%2Did}/protocol-mappers/protocol", rawUrl)
+        {
         }
     }
 }

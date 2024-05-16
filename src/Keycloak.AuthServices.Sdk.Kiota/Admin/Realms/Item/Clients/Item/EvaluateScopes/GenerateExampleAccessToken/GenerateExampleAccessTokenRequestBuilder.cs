@@ -12,20 +12,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\evaluate-scopes\generate-example-access-token
     /// </summary>
-    public class GenerateExampleAccessTokenRequestBuilder : BaseRequestBuilder {
+    public class GenerateExampleAccessTokenRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GenerateExampleAccessTokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenerateExampleAccessTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/generate-example-access-token{?scope*,userId*}", pathParameters) {
+        public GenerateExampleAccessTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/generate-example-access-token{?scope*,userId*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GenerateExampleAccessTokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenerateExampleAccessTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/generate-example-access-token{?scope*,userId*}", rawUrl) {
+        public GenerateExampleAccessTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/evaluate-scopes/generate-example-access-token{?scope*,userId*}", rawUrl)
+        {
         }
         /// <summary>
         /// Create JSON with payload of example access token
@@ -35,10 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessToken?> GetAsync(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessToken?> GetAsync(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AccessToken> GetAsync(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AccessToken> GetAsync(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<AccessToken>(requestInfo, AccessToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GenerateExampleAccessTokenRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
         /// </summary>
         /// <returns>A <see cref="GenerateExampleAccessTokenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GenerateExampleAccessTokenRequestBuilder WithUrl(string rawUrl) {
+        public GenerateExampleAccessTokenRequestBuilder WithUrl(string rawUrl)
+        {
             return new GenerateExampleAccessTokenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Create JSON with payload of example access token
         /// </summary>
-        public class GenerateExampleAccessTokenRequestBuilderGetQueryParameters {
+        public class GenerateExampleAccessTokenRequestBuilderGetQueryParameters 
+        {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("scope")]

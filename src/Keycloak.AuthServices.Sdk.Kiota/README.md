@@ -12,3 +12,4 @@ kiota generate -l CSharp \
     --exclude-backward-compatible \
     --openapi https://www.keycloak.org/docs-api/$KEYCLOAK_API_VERSION/rest-api/openapi.json
 ```
+q

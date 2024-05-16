@@ -14,32 +14,38 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Cre
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\credentials\{credentialId}
     /// </summary>
-    public class WithCredentialItemRequestBuilder : BaseRequestBuilder {
+    public class WithCredentialItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The moveAfter property</summary>
-        public MoveAfterRequestBuilder MoveAfter { get =>
-            new MoveAfterRequestBuilder(PathParameters, RequestAdapter);
+        public MoveAfterRequestBuilder MoveAfter
+        {
+            get => new MoveAfterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The moveToFirst property</summary>
-        public MoveToFirstRequestBuilder MoveToFirst { get =>
-            new MoveToFirstRequestBuilder(PathParameters, RequestAdapter);
+        public MoveToFirstRequestBuilder MoveToFirst
+        {
+            get => new MoveToFirstRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The userLabel property</summary>
-        public UserLabelRequestBuilder UserLabel { get =>
-            new UserLabelRequestBuilder(PathParameters, RequestAdapter);
+        public UserLabelRequestBuilder UserLabel
+        {
+            get => new UserLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCredentialItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCredentialItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/credentials/{credentialId}", pathParameters) {
+        public WithCredentialItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/credentials/{credentialId}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCredentialItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCredentialItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/credentials/{credentialId}", rawUrl) {
+        public WithCredentialItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/{user%2Did}/credentials/{credentialId}", rawUrl)
+        {
         }
         /// <summary>
         /// Remove a credential for a user
@@ -48,10 +54,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Cre
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -63,10 +71,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Cre
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -77,7 +87,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Cre
         /// </summary>
         /// <returns>A <see cref="WithCredentialItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithCredentialItemRequestBuilder WithUrl(string rawUrl) {
+        public WithCredentialItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithCredentialItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

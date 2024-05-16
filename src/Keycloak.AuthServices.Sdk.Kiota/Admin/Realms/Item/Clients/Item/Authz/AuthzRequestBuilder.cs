@@ -10,24 +10,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.A
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\authz
     /// </summary>
-    public class AuthzRequestBuilder : BaseRequestBuilder {
+    public class AuthzRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The resourceServer property</summary>
-        public ResourceServerRequestBuilder ResourceServer { get =>
-            new ResourceServerRequestBuilder(PathParameters, RequestAdapter);
+        public ResourceServerRequestBuilder ResourceServer
+        {
+            get => new ResourceServerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthzRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthzRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz", pathParameters) {
+        public AuthzRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AuthzRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthzRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz", rawUrl) {
+        public AuthzRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/clients/{client%2Duuid}/authz", rawUrl)
+        {
         }
     }
 }
