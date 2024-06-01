@@ -272,6 +272,14 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
                         RoleClaimType = keycloakOptions.RoleClaimType,
                     };
 
+                    options.Scope.Add("openid");
+
+                    options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
+                    options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "sub");
+                    options.ClaimActions.MapJsonKey(ClaimTypes.Name, "name");
+                    options.ClaimActions.MapJsonKey(ClaimTypes.GivenName, "given_name");
+                    options.ClaimActions.MapJsonKey(ClaimTypes.Role, "roles");
+
                     if (options.MapInboundClaims)
                     {
                         options.ClaimActions.MapUniqueJsonKey(
