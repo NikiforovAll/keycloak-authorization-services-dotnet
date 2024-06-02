@@ -12,7 +12,8 @@
 
   <PropertyGroup Label="Package">
     <Title>Keycloak.AuthServices.Templates</Title>
-    <PackageTags>dotnetnew;templates;keycloak;productivity</PackageTags>
+    <PackageTags>dotnetnew;template;templates;keycloak;productivity</PackageTags>
+    <Description>Aspire support for Keycloak</Description>
   </PropertyGroup>
 
   <ItemGroup>
