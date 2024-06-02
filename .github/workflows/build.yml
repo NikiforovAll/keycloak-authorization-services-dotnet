@@ -37,6 +37,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 8.0.204
+      - name: Install .NET Aspire workload
+        run: dotnet workload install aspire
       - name: "Dotnet Tool Restore"
         run: dotnet tool restore
         shell: pwsh
