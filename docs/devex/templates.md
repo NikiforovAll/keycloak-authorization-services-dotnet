@@ -29,6 +29,10 @@ List installed packages:
 
 ## Web API
 
+Use `dotnet new keycloak-webapi -h` to discover how to use this template.
+
+### Example
+
 Verify the output of the command by using `--dry-run` option:
 
 ```bash
@@ -77,6 +81,10 @@ Run:
 4. Update `appsettings.Development.json` correspondingly.
 
 ## Aspire + Web API
+
+Use `dotnet new keycloak-aspire-starter -h` to discover how to use this template.
+
+### Example
 
 Verify the output of the command by using `--dry-run` option:
 

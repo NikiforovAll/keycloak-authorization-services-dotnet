@@ -125,11 +125,12 @@ export default withMermaid({
                     collapsed: false,
                     items: [
                         { text: 'Web API Getting Started', link: '/examples/auth-getting-started' },
+                        { text: 'Aspire + Web API', link: '/examples/aspire-web-api' },
                         { text: 'Authorization', link: '/examples/authorization-getting-started' },
                         { text: 'Resource Authorization ✨', link: '/examples/resource-authorization' },
                         { text: 'Clean Architecture', link: '/examples/auth-clean-arch' },
                         { text: 'Web App MVC', link: '/examples/web-app-mvc' },
-                        { text: 'Web API + Blazor', link: '/examples/web-api-blazor' }
+                        { text: 'Web API + Blazor', link: '/examples/web-api-blazor' },
                     ]
                 }
             ]

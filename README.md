@@ -16,6 +16,9 @@ Easy Authentication and Authorization with Keycloak in .NET.
 | `Keycloak.AuthServices.Authorization`  | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Authorization.svg)](https://nuget.org/packages/Keycloak.AuthServices.Authorization)   | Authorization Services. Use Keycloak as authorization server |
 | `Keycloak.AuthServices.Sdk`            | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Sdk.svg)](https://nuget.org/packages/Keycloak.AuthServices.Sdk)                       | HTTP API integration with Keycloak                           |
 | `Keycloak.AuthServices.Sdk.Kiota`      | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Sdk.Kiota.svg)](https://nuget.org/packages/Keycloak.AuthServices.Sdk.Kiota)           | HTTP API integration with Keycloak based on OpenAPI          |
+| `Keycloak.AuthServices.OpenTelemetry`  | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.OpenTelemetry.svg)](https://nuget.org/packages/Keycloak.AuthServices.OpenTelemetry)   | OpenTelemetry support                                        |
+| `Keycloak.AuthServices.Templates`      | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Templates.svg)](https://nuget.org/packages/Keycloak.AuthServices.Templates)           | `dotnet new` templates                                       |
+
 
 [![GitHub Actions Build History](https://buildstats.info/github/chart/nikiforovall/keycloak-authorization-services-dotnet?branch=main&includeBuildsFromPullRequest=false)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions)
 
