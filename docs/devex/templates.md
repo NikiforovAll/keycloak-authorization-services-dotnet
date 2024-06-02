@@ -140,4 +140,4 @@ Run:
 #       Distributed application started. Press Ctrl+C to shut down.
 ```
 
-Additionally, open Keycloak master realm by navigating: <http://localhost:8080/>. Use `admin:admin` as credentials.
+Additionally, open Keycloak master realm by navigating: **localhost:8080/**. Use `admin:admin` as credentials.
