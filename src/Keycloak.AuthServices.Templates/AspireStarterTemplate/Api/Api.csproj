@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Keycloak.AuthServices.Authentication" />
+    <PackageReference Include="Keycloak.AuthServices.Common" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

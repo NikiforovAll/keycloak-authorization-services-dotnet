@@ -10,7 +10,7 @@
     <PackageTags>$(PackageTags);aspire;cloud-native</PackageTags>
     <MinVerSkip>true</MinVerSkip>
     <VersionPrefix>0.1.0</VersionPrefix>
-    <VersionSuffix>preview1</VersionSuffix>
+    <VersionSuffix></VersionSuffix>
   </PropertyGroup>
 
   <ItemGroup>

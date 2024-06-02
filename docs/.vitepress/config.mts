@@ -104,18 +104,20 @@ export default withMermaid({
                     ]
                 },
                 {
-                    text: 'Developer Experience 👷‍♂️🛠️',
-                    items: [
-                        { text: 'Aspire', link: '/devex/aspire' },
-                        { text: 'Templates', link: '/devex/templates' },
-                    ]
-                },
-                {
                     text: 'Maintenance👨‍🔬',
+                    collapsed: true,
                     items: [
                         { text: 'Q&A', link: '/qa/recipes' },
                         { text: 'Troubleshooting', link: '/qa/troubleshooting' },
                         { text: 'OpenTelemetry🔭', link: '/opentelemetry' }
+                    ]
+                },
+                {
+                    text: 'Dev Experience 🛠️',
+                    collapsed: true,
+                    items: [
+                        { text: 'Templates', link: '/devex/templates' },
+                        { text: 'Aspire Support', link: '/devex/aspire' },
                     ]
                 },
                 {

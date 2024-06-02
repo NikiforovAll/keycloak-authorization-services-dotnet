@@ -2,7 +2,8 @@
 
   <PropertyGroup Label="Build">
     <PackageType>Template</PackageType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
@@ -10,17 +11,17 @@
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
-    <Title>na-templates</Title>
-    <PackageTags>dotnetnew;template;microservices;cleanarchitecture;eventsourcing;productivity</PackageTags>
+    <Title>Keycloak.AuthServices.Templates</Title>
+    <PackageTags>dotnetnew;templates;keycloak;productivity</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Label="Package References">
-    <PackageReference Include="MinVer" PrivateAssets="all" Version="2.4.0" />
+  <ItemGroup>
+    <Content Include="**\*" Exclude="**\bin\**;content\**\obj\**" />
+    <Compile Remove="**\*" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
-    <Compile Remove="**\*" />
+    <PackageReference Include="Microsoft.TemplateEngine.Tasks" Version="*" PrivateAssets="all" IsImplicitlyDefined="true"/>
   </ItemGroup>
 
 </Project>
