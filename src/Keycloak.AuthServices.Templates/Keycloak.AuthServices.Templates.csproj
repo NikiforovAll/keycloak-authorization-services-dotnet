@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Build">
+    <PackageType>Template</PackageType>
+    <TargetFramework>net8.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Title>na-templates</Title>
+    <PackageTags>dotnetnew;template;microservices;cleanarchitecture;eventsourcing;productivity</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="MinVer" PrivateAssets="all" Version="2.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>

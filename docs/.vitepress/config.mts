@@ -104,6 +104,13 @@ export default withMermaid({
                     ]
                 },
                 {
+                    text: 'Developer Experience 👷‍♂️🛠️',
+                    items: [
+                        { text: 'Aspire', link: '/devex/aspire' },
+                        { text: 'Templates', link: '/devex/templates' },
+                    ]
+                },
+                {
                     text: 'Maintenance👨‍🔬',
                     items: [
                         { text: 'Q&A', link: '/qa/recipes' },
