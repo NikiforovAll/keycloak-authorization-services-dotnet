@@ -1,0 +1,20 @@
+<Project>
+  <ItemGroup>
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="8.0.1" />
+    <PackageVersion Include="Aspire.Hosting" Version="8.0.1" />
+    <PackageVersion Include="Keycloak.AuthServices.Aspire.Hosting" Version="0.1.0-preview1" />
+    <PackageVersion Include="Keycloak.AuthServices.Authentication" Version="2.4.1" />
+    <PackageVersion Include="Keycloak.AuthServices.Common" Version="2.4.1" />
+    <PackageVersion Include="Keycloak.AuthServices.OpenTelemetry" Version="1.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.5.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="8.0.1" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.8.1" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.8.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.8.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.8.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="0.5.0-beta.4" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.7.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+</Project>

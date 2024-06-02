@@ -40,8 +40,16 @@ var keycloakAuthenticationOptions = serviceProvider
 Sometimes you need to resolve options before the DI container is built. E.g: application startup.
 
 ```csharp
+using Keycloak.AuthServices.Common;
+
 var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
-// OR
+```
+
+Or:
+
+```csharp
+using Keycloak.AuthServices.Common;
+
 KeycloakAuthorizationOptions options = new();
 configuration.BindKeycloakOptions(options);
 ```

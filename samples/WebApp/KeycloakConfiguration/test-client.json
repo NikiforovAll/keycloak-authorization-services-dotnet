@@ -19,7 +19,7 @@
   "bearerOnly": false,
   "consentRequired": false,
   "standardFlowEnabled": true,
-  "implicitFlowEnabled": true,
+  "implicitFlowEnabled": false,
   "directAccessGrantsEnabled": true,
   "serviceAccountsEnabled": false,
   "publicClient": true,
@@ -36,24 +36,6 @@
   "authenticationFlowBindingOverrides": {},
   "fullScopeAllowed": true,
   "nodeReRegistrationTimeout": -1,
-  "protocolMappers": [
-    {
-      "name": "realm_access",
-      "protocol": "openid-connect",
-      "protocolMapper": "oidc-usermodel-realm-role-mapper",
-      "consentRequired": false,
-      "config": {
-        "introspection.token.claim": "true",
-        "multivalued": "true",
-        "userinfo.token.claim": "true",
-        "id.token.claim": "true",
-        "lightweight.claim": "false",
-        "access.token.claim": "true",
-        "claim.name": "realm_roles",
-        "jsonType.label": "String"
-      }
-    }
-  ],
   "defaultClientScopes": [
     "web-origins",
     "acr",

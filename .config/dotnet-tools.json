@@ -2,6 +2,12 @@
   "version": 1,
   "isRoot": true,
   "tools": {
+    "centralisedpackageconverter": {
+      "version": "1.0.52",
+      "commands": [
+        "central-pkg-converter"
+      ]
+    },
     "cake.tool": {
       "version": "2.0.0",
       "commands": [

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Oleksii Nikiforov",
+  "classifications": [
+    "Common",
+    ".NET Aspire",
+    "Cloud",
+    "API",
+    "Keycloak"
+  ],
+  "identity": "Keycloak.AuthServices.Templates.AspireStarter",
+  "name": "Keycloak Aspire Starter",
+  "description": "Creates a solution based on Aspire integrated with Keycloak",
+  "shortName": "keycloak-aspire-starter",
+  "sourceName": "KeycloakAspireStarter",
+  "preferNameDirectory": true,
+  "defaultName": "KeycloakAspireStarter",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "guids": [
+    "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC",
+    "D0C22C1E-C3BD-4BBE-8D9F-33DAF1B5CB40",
+    "2D658505-DDE3-49DF-AF39-2E921C7A984C",
+    "6C56AC38-F4CE-492F-BFE5-8444CE785FE4"
+  ],
+  "postActions": [],
+  "symbols": {
+    "EnableKeycloakImport": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!EnableKeycloakImport)",
+          "exclude": [
+            "AppHost/KeycloakConfiguration/Test-realm.json",
+            "AppHost/KeycloakConfiguration/Test-users-0.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 ﻿using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +19,7 @@ builder
         {
             // we need this for front-channel sign-out
             options.SaveTokens = true;
-            options.ResponseType = "code";
+            options.ResponseType = OpenIdConnectResponseType.Code;
             options.Events = new OpenIdConnectEvents
             {
                 OnSignedOutCallbackRedirect = context =>
