@@ -2,12 +2,17 @@
 
 This `KeycloakAdminApiClient` was generated using the *Kiota* library.
 
-```bash
-dotnet add package Keycloak.AuthServices.Sdk.Kiota
-```
+> [!TIP]
+> API Reference: [Keycloak.AuthServices.Sdk.Kiota](https://nikiforovall.github.io/keycloak-authorization-services-dotnet-docs/api-reference/Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html)
 
 > [!NOTE]
 > Kiota is a powerful command line tool developed by Microsoft that simplifies the process of generating API clients for calling any OpenAPI-described API. See [OpenAPI Support](/admin-rest-api/admin-api-openapi) for more details.
+
+## Getting Started
+
+```bash
+dotnet add package Keycloak.AuthServices.Sdk.Kiota
+```
 
 ```csharp
 /// <summary>
