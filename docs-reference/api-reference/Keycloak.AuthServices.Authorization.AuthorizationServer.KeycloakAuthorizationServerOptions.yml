@@ -1,0 +1,663 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  id: KeycloakAuthorizationServerOptions
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  children:
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.Section
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  langs:
+  - csharp
+  - vb
+  name: KeycloakAuthorizationServerOptions
+  nameWithType: KeycloakAuthorizationServerOptions
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakAuthorizationServerOptions
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 7
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Defines a set of options used to perform Authorization Server calls
+  example: []
+  syntax:
+    content: 'public sealed class KeycloakAuthorizationServerOptions : KeycloakInstallationOptions'
+    content.vb: Public NotInheritable Class KeycloakAuthorizationServerOptions Inherits KeycloakInstallationOptions
+  inheritance:
+  - System.Object
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  inheritedMembers:
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.Section
+  commentId: F:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.Section
+  id: Section
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  langs:
+  - csharp
+  - vb
+  name: Section
+  nameWithType: KeycloakAuthorizationServerOptions.Section
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.Section
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Section
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Default section name.
+  example: []
+  syntax:
+    content: public const string Section = "Keycloak"
+    return:
+      type: System.String
+    content.vb: Public Const Section As String = "Keycloak"
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  commentId: P:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  id: SourceAuthenticationScheme
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  langs:
+  - csharp
+  - vb
+  name: SourceAuthenticationScheme
+  nameWithType: KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: SourceAuthenticationScheme
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 17
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Gets or sets the source authentication scheme used for header propagation.
+  example: []
+  syntax:
+    content: public string SourceAuthenticationScheme { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SourceAuthenticationScheme As String
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme*
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName
+  commentId: P:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName
+  id: SourceTokenName
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  langs:
+  - csharp
+  - vb
+  name: SourceTokenName
+  nameWithType: KeycloakAuthorizationServerOptions.SourceTokenName
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: SourceTokenName
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 20
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  example: []
+  syntax:
+    content: public string SourceTokenName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SourceTokenName As String
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName*
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  commentId: P:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  id: DisableHeaderPropagation
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  langs:
+  - csharp
+  - vb
+  name: DisableHeaderPropagation
+  nameWithType: KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DisableHeaderPropagation
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 25
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Controls if <xref href="Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler" data-throw-if-not-resolved="false"></xref> is added to the <xref href="Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public static bool DisableHeaderPropagation { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Property DisableHeaderPropagation As Boolean
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation*
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  commentId: P:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  id: UseProtectedResourcePolicyProvider
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  langs:
+  - csharp
+  - vb
+  name: UseProtectedResourcePolicyProvider
+  nameWithType: KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseProtectedResourcePolicyProvider
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 33
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Gets or sets a value indicating whether to use the protected resource policy provider.
+  remarks: When set to true, the protected resource policy provider will be used to dynamically register policies based on their names.
+  example: []
+  syntax:
+    content: public bool UseProtectedResourcePolicyProvider { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property UseProtectedResourcePolicyProvider As Boolean
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider*
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode
+  commentId: P:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode
+  id: ScopesValidationMode
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  langs:
+  - csharp
+  - vb
+  name: ScopesValidationMode
+  nameWithType: KeycloakAuthorizationServerOptions.ScopesValidationMode
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ScopesValidationMode
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 38
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Represents the mode for validating scopes.
+  example: []
+  syntax:
+    content: public ScopesValidationMode ScopesValidationMode { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+    content.vb: Public Property ScopesValidationMode As ScopesValidationMode
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode*
+references:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  commentId: T:Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  parent: Keycloak.AuthServices.Common
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html
+  name: KeycloakInstallationOptions
+  nameWithType: KeycloakInstallationOptions
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_AuthServerUrl
+  name: AuthServerUrl
+  nameWithType: KeycloakInstallationOptions.AuthServerUrl
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_Realm
+  name: Realm
+  nameWithType: KeycloakInstallationOptions.Realm
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_Resource
+  name: Resource
+  nameWithType: KeycloakInstallationOptions.Resource
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_VerifyTokenAudience
+  name: VerifyTokenAudience
+  nameWithType: KeycloakInstallationOptions.VerifyTokenAudience
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_Credentials
+  name: Credentials
+  nameWithType: KeycloakInstallationOptions.Credentials
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_TokenClockSkew
+  name: TokenClockSkew
+  nameWithType: KeycloakInstallationOptions.TokenClockSkew
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_SslRequired
+  name: SslRequired
+  nameWithType: KeycloakInstallationOptions.SslRequired
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_KeycloakUrlRealm
+  name: KeycloakUrlRealm
+  nameWithType: KeycloakInstallationOptions.KeycloakUrlRealm
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_KeycloakTokenEndpoint
+  name: KeycloakTokenEndpoint
+  nameWithType: KeycloakInstallationOptions.KeycloakTokenEndpoint
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Common
+  commentId: N:Keycloak.AuthServices.Common
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Common
+  nameWithType: Keycloak.AuthServices.Common
+  fullName: Keycloak.AuthServices.Common
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme*
+  commentId: Overload:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html#Keycloak_AuthServices_Authorization_AuthorizationServer_KeycloakAuthorizationServerOptions_SourceAuthenticationScheme
+  name: SourceAuthenticationScheme
+  nameWithType: KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceAuthenticationScheme
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler.html
+  name: AccessTokenPropagationHandler
+  nameWithType: AccessTokenPropagationHandler
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName*
+  commentId: Overload:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html#Keycloak_AuthServices_Authorization_AuthorizationServer_KeycloakAuthorizationServerOptions_SourceTokenName
+  name: SourceTokenName
+  nameWithType: KeycloakAuthorizationServerOptions.SourceTokenName
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.SourceTokenName
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.html
+  name: IAuthorizationServerClient
+  nameWithType: IAuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation*
+  commentId: Overload:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html#Keycloak_AuthServices_Authorization_AuthorizationServer_KeycloakAuthorizationServerOptions_DisableHeaderPropagation
+  name: DisableHeaderPropagation
+  nameWithType: KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.DisableHeaderPropagation
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider*
+  commentId: Overload:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html#Keycloak_AuthServices_Authorization_AuthorizationServer_KeycloakAuthorizationServerOptions_UseProtectedResourcePolicyProvider
+  name: UseProtectedResourcePolicyProvider
+  nameWithType: KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.UseProtectedResourcePolicyProvider
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode*
+  commentId: Overload:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html#Keycloak_AuthServices_Authorization_AuthorizationServer_KeycloakAuthorizationServerOptions_ScopesValidationMode
+  name: ScopesValidationMode
+  nameWithType: KeycloakAuthorizationServerOptions.ScopesValidationMode
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.ScopesValidationMode
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.html
+  name: ScopesValidationMode
+  nameWithType: ScopesValidationMode
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode

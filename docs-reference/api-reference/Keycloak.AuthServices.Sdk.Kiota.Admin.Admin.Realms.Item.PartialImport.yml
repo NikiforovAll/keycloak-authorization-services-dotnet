@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder.html
+  name: PartialImportRequestBuilder
+  nameWithType: PartialImportRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+    name: PartialImport
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+    name: PartialImport
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.html

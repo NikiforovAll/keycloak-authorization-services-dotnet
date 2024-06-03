@@ -1,0 +1,822 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  id: Policy
+  parent: Keycloak.AuthServices.Sdk.Protection.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes
+  - Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type
+  langs:
+  - csharp
+  - vb
+  name: Policy
+  nameWithType: Policy
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Policy
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 10
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Represents a policy used for service protection.
+  remarks: See <a href="https://www.keycloak.org/docs/latest/authorization_services/index.html#_service_protection_api">https://www.keycloak.org/docs/latest/authorization_services/index.html#_service_protection_api</a> for details.
+  example: []
+  syntax:
+    content: public class Policy
+    content.vb: Public Class Policy
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id
+  id: Id
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Policy.Id
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Id
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 15
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the ID of the policy.
+  example: []
+  syntax:
+    content: public string? Id { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name
+  id: Name
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Policy.Name
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Name
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 20
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the name of the policy.
+  example: []
+  syntax:
+    content: public string? Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description
+  id: Description
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: Policy.Description
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Description
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 25
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the description of the policy.
+  example: []
+  syntax:
+    content: public string? Description { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type
+  id: Type
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: Policy.Type
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Type
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 30
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the type of the policy.
+  example: []
+  syntax:
+    content: public string? Type { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic
+  id: Logic
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Logic
+  nameWithType: Policy.Logic
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Logic
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 35
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the logic of the policy.
+  example: []
+  syntax:
+    content: public string? Logic { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Logic As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy
+  id: DecisionStrategy
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: DecisionStrategy
+  nameWithType: Policy.DecisionStrategy
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DecisionStrategy
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 40
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the decision strategy of the policy.
+  example: []
+  syntax:
+    content: public DecisionStrategy DecisionStrategy { get; init; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+    content.vb: Public Property DecisionStrategy As DecisionStrategy
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner
+  id: Owner
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Policy.Owner
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Owner
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 45
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the owner of the policy.
+  example: []
+  syntax:
+    content: public string? Owner { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Owner As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition
+  id: Condition
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Condition
+  nameWithType: Policy.Condition
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Condition
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 50
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the condition of the policy.
+  example: []
+  syntax:
+    content: public string? Condition { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Condition As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes
+  id: Scopes
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Scopes
+  nameWithType: Policy.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Scopes
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 55
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the scopes associated with the policy.
+  example: []
+  syntax:
+    content: public string[]? Scopes { get; init; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property Scopes As String()
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups
+  id: Groups
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Groups
+  nameWithType: Policy.Groups
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Groups
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 60
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the groups associated with the policy.
+  example: []
+  syntax:
+    content: public string[]? Groups { get; set; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property Groups As String()
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles
+  id: Roles
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Roles
+  nameWithType: Policy.Roles
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Roles
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 65
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the roles associated with the policy.
+  example: []
+  syntax:
+    content: public string[]? Roles { get; init; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property Roles As String()
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients
+  id: Clients
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+  langs:
+  - csharp
+  - vb
+  name: Clients
+  nameWithType: Policy.Clients
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Clients
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 70
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Gets or sets the clients associated with the policy.
+  example: []
+  syntax:
+    content: public string[]? Clients { get; init; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property Clients As String()
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients*
+references:
+- uid: Keycloak.AuthServices.Sdk.Protection.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Protection.Models
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Id
+  name: Id
+  nameWithType: Policy.Id
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Name
+  name: Name
+  nameWithType: Policy.Name
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Name
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Description
+  name: Description
+  nameWithType: Policy.Description
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Description
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Type
+  name: Type
+  nameWithType: Policy.Type
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Type
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Logic
+  name: Logic
+  nameWithType: Policy.Logic
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Logic
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_DecisionStrategy
+  name: DecisionStrategy
+  nameWithType: Policy.DecisionStrategy
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.DecisionStrategy
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  parent: Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.html
+  name: DecisionStrategy
+  nameWithType: DecisionStrategy
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Owner
+  name: Owner
+  nameWithType: Policy.Owner
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Owner
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Condition
+  name: Condition
+  nameWithType: Policy.Condition
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Condition
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Scopes
+  name: Scopes
+  nameWithType: Policy.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Scopes
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Groups
+  name: Groups
+  nameWithType: Policy.Groups
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Groups
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Roles
+  name: Roles
+  nameWithType: Policy.Roles
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Roles
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html#Keycloak_AuthServices_Sdk_Protection_Models_Policy_Clients
+  name: Clients
+  nameWithType: Policy.Clients
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Policy.Clients

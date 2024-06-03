@@ -1,0 +1,1475 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+  commentId: T:Keycloak.AuthServices.Sdk.Utils.QueryString
+  id: QueryString
+  parent: Keycloak.AuthServices.Sdk.Utils
+  children:
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.#ctor(System.String)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Add(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Add(System.String,System.String)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.String,System.String)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Empty
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(System.Object)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.String)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.Uri)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.ToString
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.Value
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  - Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  langs:
+  - csharp
+  - vb
+  name: QueryString
+  nameWithType: QueryString
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString
+  type: Struct
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: QueryString
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 100
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Provides correct handling for QueryString value when needed to reconstruct a request or redirect URI string
+  example: []
+  syntax:
+    content: 'public readonly struct QueryString : IEquatable<QueryString>'
+    content.vb: Public Structure QueryString Implements IEquatable(Of QueryString)
+  implements:
+  - System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Empty
+  commentId: F:Keycloak.AuthServices.Sdk.Utils.QueryString.Empty
+  id: Empty
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Empty
+  nameWithType: QueryString.Empty
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Empty
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Empty
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 105
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Represents the empty query string. This field is read-only.
+  example: []
+  syntax:
+    content: public static readonly QueryString Empty
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+    content.vb: Public Shared ReadOnly Empty As QueryString
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.#ctor(System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: QueryString(string?)
+  nameWithType: QueryString.QueryString(string?)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.QueryString(string?)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 112
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: >-
+    Initialize the query string with a given value. This value must be in escaped and delimited format with
+
+    a leading '?' character.
+  example: []
+  syntax:
+    content: public QueryString(string? value)
+    parameters:
+    - id: value
+      type: System.String
+      description: The query string to be assigned to the Value property.
+    content.vb: Public Sub New(value As String)
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.#ctor*
+  nameWithType.vb: QueryString.New(String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.New(String)
+  name.vb: New(String)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Value
+  commentId: P:Keycloak.AuthServices.Sdk.Utils.QueryString.Value
+  id: Value
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: QueryString.Value
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Value
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Value
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 127
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: The escaped query string with the leading '?' character
+  example: []
+  syntax:
+    content: public string? Value { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Value As String
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Value*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue
+  commentId: P:Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue
+  id: HasValue
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: HasValue
+  nameWithType: QueryString.HasValue
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: HasValue
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 132
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: True if the query string is not empty
+  example: []
+  syntax:
+    content: public bool HasValue { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasValue As Boolean
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.ToString
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.ToString
+  id: ToString
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: QueryString.ToString()
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToString
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 141
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: >-
+    Provides the query string escaped in a way which is correct for combining into the URI representation.
+
+    A leading '?' character will be included unless the Value is null or empty. Characters which are potentially
+
+    dangerous are escaped.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The query string value
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.ToString*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent
+  id: ToUriComponent
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: ToUriComponent()
+  nameWithType: QueryString.ToUriComponent()
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent()
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToUriComponent
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 149
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: >-
+    Provides the query string escaped in a way which is correct for combining into the URI representation.
+
+    A leading '?' character will be included unless the Value is null or empty. Characters which are potentially
+
+    dangerous are escaped.
+  example: []
+  syntax:
+    content: public string ToUriComponent()
+    return:
+      type: System.String
+      description: The query string value
+    content.vb: Public Function ToUriComponent() As String
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.String)
+  id: FromUriComponent(System.String)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: FromUriComponent(string)
+  nameWithType: QueryString.FromUriComponent(string)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FromUriComponent
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 161
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: >-
+    Returns an QueryString given the query as it is escaped in the URI format. The string MUST NOT contain any
+
+    value that is not a query.
+  example: []
+  syntax:
+    content: public static QueryString FromUriComponent(string uriComponent)
+    parameters:
+    - id: uriComponent
+      type: System.String
+      description: The escaped query as it appears in the URI format.
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The resulting QueryString
+    content.vb: Public Shared Function FromUriComponent(uriComponent As String) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent*
+  nameWithType.vb: QueryString.FromUriComponent(String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(String)
+  name.vb: FromUriComponent(String)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.Uri)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.Uri)
+  id: FromUriComponent(System.Uri)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: FromUriComponent(Uri)
+  nameWithType: QueryString.FromUriComponent(Uri)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent(System.Uri)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FromUriComponent
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 175
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Returns an QueryString given the query as from a Uri object. Relative Uri objects are not supported.
+  example: []
+  syntax:
+    content: public static QueryString FromUriComponent(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+      description: The Uri object
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The resulting QueryString
+    content.vb: Public Shared Function FromUriComponent(uri As Uri) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.String,System.String)
+  id: Create(System.String,System.String)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Create(string, string)
+  nameWithType: QueryString.Create(string, string)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Create
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 193
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Create a query string with a single given parameter name and value.
+  example: []
+  syntax:
+    content: public static QueryString Create(string name, string value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The un-encoded parameter name
+    - id: value
+      type: System.String
+      description: The un-encoded parameter value
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The resulting QueryString
+    content.vb: Public Shared Function Create(name As String, value As String) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Create*
+  nameWithType.vb: QueryString.Create(String, String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(String, String)
+  name.vb: Create(String, String)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  id: Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Create(IEnumerable<KeyValuePair<string, string?>>)
+  nameWithType: QueryString.Create(IEnumerable<KeyValuePair<string, string?>>)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string?>>)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Create
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 209
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Creates a query string composed from the given name value pairs.
+  example: []
+  syntax:
+    content: public static QueryString Create(IEnumerable<KeyValuePair<string, string?>> parameters)
+    parameters:
+    - id: parameters
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+      description: ''
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The resulting QueryString
+    content.vb: Public Shared Function Create(parameters As IEnumerable(Of KeyValuePair(Of String, String))) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Create*
+  nameWithType.vb: QueryString.Create(IEnumerable(Of KeyValuePair(Of String, String)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of String, String)))
+  name.vb: Create(IEnumerable(Of KeyValuePair(Of String, String)))
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})
+  id: Create(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}})
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Create(IEnumerable<KeyValuePair<string, StringValues>>)
+  nameWithType: QueryString.Create(IEnumerable<KeyValuePair<string, StringValues>>)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.Extensions.Primitives.StringValues>>)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Create
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 229
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Creates a query string composed from the given name value pairs.
+  example: []
+  syntax:
+    content: public static QueryString Create(IEnumerable<KeyValuePair<string, StringValues>> parameters)
+    parameters:
+    - id: parameters
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}}
+      description: ''
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The resulting QueryString
+    content.vb: Public Shared Function Create(parameters As IEnumerable(Of KeyValuePair(Of String, StringValues))) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Create*
+  nameWithType.vb: QueryString.Create(IEnumerable(Of KeyValuePair(Of String, StringValues)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.Create(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of String, Microsoft.Extensions.Primitives.StringValues)))
+  name.vb: Create(IEnumerable(Of KeyValuePair(Of String, StringValues)))
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Add(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Add(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  id: Add(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Add(QueryString)
+  nameWithType: QueryString.Add(QueryString)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Add(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Add
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 261
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Concatenates <code class="paramref">other</code> to the current query string.
+  example: []
+  syntax:
+    content: public QueryString Add(QueryString other)
+    parameters:
+    - id: other
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> to concatenate.
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The concatenated <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function Add(other As QueryString) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Add*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Add(System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Add(System.String,System.String)
+  id: Add(System.String,System.String)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Add(string, string)
+  nameWithType: QueryString.Add(string, string)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Add(string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Add
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 283
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: >-
+    Concatenates a query string with <code class="paramref">name</code> and <code class="paramref">value</code>
+
+    to the current query string.
+  example: []
+  syntax:
+    content: public QueryString Add(string name, string value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the query string to concatenate.
+    - id: value
+      type: System.String
+      description: The value of the query string to concatenate.
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The concatenated <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function Add(name As String, value As String) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Add*
+  nameWithType.vb: QueryString.Add(String, String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.Add(String, String)
+  name.vb: Add(String, String)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  id: Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Equals(QueryString)
+  nameWithType: QueryString.Equals(QueryString)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Equals
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 302
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Evaluates if the current query string is equal to <code class="paramref">other</code>.
+  example: []
+  syntax:
+    content: public bool Equals(QueryString other)
+    parameters:
+    - id: other
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> to compare.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the query strings are equal.
+    content.vb: Public Function Equals(other As QueryString) As Boolean
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals*
+  implements:
+  - System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(System.Object)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: QueryString.Equals(object?)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Equals
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 316
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Evaluates if the current query string is equal to an object <code class="paramref">obj</code>.
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: An object to compare.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the query strings are equal.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals*
+  nameWithType.vb: QueryString.Equals(Object)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals(Object)
+  name.vb: Equals(Object)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode
+  id: GetHashCode
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: QueryString.GetHashCode()
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetHashCode
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 329
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Gets a hash code for the value.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: The hash code as an <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode*
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  id: op_Equality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: operator ==(QueryString, QueryString)
+  nameWithType: QueryString.operator ==(QueryString, QueryString)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.operator ==(Keycloak.AuthServices.Sdk.Utils.QueryString, Keycloak.AuthServices.Sdk.Utils.QueryString)
+  type: Operator
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: op_Equality
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 337
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Evaluates if one query string is equal to another.
+  example: []
+  syntax:
+    content: public static bool operator ==(QueryString left, QueryString right)
+    parameters:
+    - id: left
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: A <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> instance.
+    - id: right
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: A <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the query strings are equal.
+    content.vb: Public Shared Operator =(left As QueryString, right As QueryString) As Boolean
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality*
+  nameWithType.vb: QueryString.=(QueryString, QueryString)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.=(Keycloak.AuthServices.Sdk.Utils.QueryString, Keycloak.AuthServices.Sdk.Utils.QueryString)
+  name.vb: =(QueryString, QueryString)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  id: op_Inequality(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: operator !=(QueryString, QueryString)
+  nameWithType: QueryString.operator !=(QueryString, QueryString)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.operator !=(Keycloak.AuthServices.Sdk.Utils.QueryString, Keycloak.AuthServices.Sdk.Utils.QueryString)
+  type: Operator
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: op_Inequality
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 345
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Evaluates if one query string is not equal to another.
+  example: []
+  syntax:
+    content: public static bool operator !=(QueryString left, QueryString right)
+    parameters:
+    - id: left
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: A <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> instance.
+    - id: right
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: A <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the query strings are not equal.
+    content.vb: Public Shared Operator <>(left As QueryString, right As QueryString) As Boolean
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality*
+  nameWithType.vb: QueryString.<>(QueryString, QueryString)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.<>(Keycloak.AuthServices.Sdk.Utils.QueryString, Keycloak.AuthServices.Sdk.Utils.QueryString)
+  name.vb: <>(QueryString, QueryString)
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  commentId: M:Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  id: op_Addition(Keycloak.AuthServices.Sdk.Utils.QueryString,Keycloak.AuthServices.Sdk.Utils.QueryString)
+  parent: Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: operator +(QueryString, QueryString)
+  nameWithType: QueryString.operator +(QueryString, QueryString)
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.operator +(Keycloak.AuthServices.Sdk.Utils.QueryString, Keycloak.AuthServices.Sdk.Utils.QueryString)
+  type: Operator
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: op_Addition
+    path: ../src/Keycloak.AuthServices.Sdk/Utils/QueryBuilder.cs
+    startLine: 353
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Utils
+  summary: Concatenates <code class="paramref">left</code> and <code class="paramref">right</code> into a single query string.
+  example: []
+  syntax:
+    content: public static QueryString operator +(QueryString left, QueryString right)
+    parameters:
+    - id: left
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: A <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> instance.
+    - id: right
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: A <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: Keycloak.AuthServices.Sdk.Utils.QueryString
+      description: The concatenated <xref href="Keycloak.AuthServices.Sdk.Utils.QueryString" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Operator +(left As QueryString, right As QueryString) As QueryString
+  overload: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition*
+  nameWithType.vb: QueryString.+(QueryString, QueryString)
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.+(Keycloak.AuthServices.Sdk.Utils.QueryString, Keycloak.AuthServices.Sdk.Utils.QueryString)
+  name.vb: +(QueryString, QueryString)
+references:
+- uid: Keycloak.AuthServices.Sdk.Utils
+  commentId: N:Keycloak.AuthServices.Sdk.Utils
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Utils
+  nameWithType: Keycloak.AuthServices.Sdk.Utils
+  fullName: Keycloak.AuthServices.Sdk.Utils
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Utils
+    name: Utils
+    href: Keycloak.AuthServices.Sdk.Utils.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Utils
+    name: Utils
+    href: Keycloak.AuthServices.Sdk.Utils.html
+- uid: System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}
+  commentId: T:System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<QueryString>
+  nameWithType: IEquatable<QueryString>
+  fullName: System.IEquatable<Keycloak.AuthServices.Sdk.Utils.QueryString>
+  nameWithType.vb: IEquatable(Of QueryString)
+  fullName.vb: System.IEquatable(Of Keycloak.AuthServices.Sdk.Utils.QueryString)
+  name.vb: IEquatable(Of QueryString)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+    name: QueryString
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+    name: QueryString
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+  commentId: T:Keycloak.AuthServices.Sdk.Utils.QueryString
+  parent: Keycloak.AuthServices.Sdk.Utils
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html
+  name: QueryString
+  nameWithType: QueryString
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.#ctor
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString__ctor_System_String_
+  name: QueryString
+  nameWithType: QueryString.QueryString
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.QueryString
+  nameWithType.vb: QueryString.New
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Value*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.Value
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_Value
+  name: Value
+  nameWithType: QueryString.Value
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Value
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_HasValue
+  name: HasValue
+  nameWithType: QueryString.HasValue
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.HasValue
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.ToString*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.ToString
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_ToString
+  name: ToString
+  nameWithType: QueryString.ToString
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.ToString
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_ToUriComponent
+  name: ToUriComponent
+  nameWithType: QueryString.ToUriComponent
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.ToUriComponent
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_FromUriComponent_System_String_
+  name: FromUriComponent
+  nameWithType: QueryString.FromUriComponent
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.FromUriComponent
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uri
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Create*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.Create
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_Create_System_String_System_String_
+  name: Create
+  nameWithType: QueryString.Create
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Create
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<KeyValuePair<string, string>>
+  nameWithType: IEnumerable<KeyValuePair<string, string>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of String, String))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, String))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,Microsoft.Extensions.Primitives.StringValues}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<KeyValuePair<string, StringValues>>
+  nameWithType: IEnumerable<KeyValuePair<string, StringValues>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.Extensions.Primitives.StringValues>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, StringValues))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of String, Microsoft.Extensions.Primitives.StringValues))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, StringValues))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Primitives.StringValues
+    name: StringValues
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.primitives.stringvalues
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Primitives.StringValues
+    name: StringValues
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.primitives.stringvalues
+  - name: )
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Add*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.Add
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_Add_Keycloak_AuthServices_Sdk_Utils_QueryString_
+  name: Add
+  nameWithType: QueryString.Add
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Add
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.Equals
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_Equals_Keycloak_AuthServices_Sdk_Utils_QueryString_
+  name: Equals
+  nameWithType: QueryString.Equals
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.Equals
+- uid: System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  commentId: M:System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  parent: System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(QueryString)
+  nameWithType: IEquatable<QueryString>.Equals(QueryString)
+  fullName: System.IEquatable<Keycloak.AuthServices.Sdk.Utils.QueryString>.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  nameWithType.vb: IEquatable(Of QueryString).Equals(QueryString)
+  fullName.vb: System.IEquatable(Of Keycloak.AuthServices.Sdk.Utils.QueryString).Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+  spec.csharp:
+  - uid: System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+    name: QueryString
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{Keycloak.AuthServices.Sdk.Utils.QueryString}.Equals(Keycloak.AuthServices.Sdk.Utils.QueryString)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+    name: QueryString
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_GetHashCode
+  name: GetHashCode
+  nameWithType: QueryString.GetHashCode
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.GetHashCode
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_op_Equality_Keycloak_AuthServices_Sdk_Utils_QueryString_Keycloak_AuthServices_Sdk_Utils_QueryString_
+  name: operator ==
+  nameWithType: QueryString.operator ==
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.operator ==
+  nameWithType.vb: QueryString.=
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Equality*
+    name: ==
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_op_Equality_Keycloak_AuthServices_Sdk_Utils_QueryString_Keycloak_AuthServices_Sdk_Utils_QueryString_
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_op_Inequality_Keycloak_AuthServices_Sdk_Utils_QueryString_Keycloak_AuthServices_Sdk_Utils_QueryString_
+  name: operator !=
+  nameWithType: QueryString.operator !=
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.operator !=
+  nameWithType.vb: QueryString.<>
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Inequality*
+    name: '!='
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_op_Inequality_Keycloak_AuthServices_Sdk_Utils_QueryString_Keycloak_AuthServices_Sdk_Utils_QueryString_
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_op_Addition_Keycloak_AuthServices_Sdk_Utils_QueryString_Keycloak_AuthServices_Sdk_Utils_QueryString_
+  name: operator +
+  nameWithType: QueryString.operator +
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString.operator +
+  nameWithType.vb: QueryString.+
+  fullName.vb: Keycloak.AuthServices.Sdk.Utils.QueryString.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString.op_Addition*
+    name: +
+    href: Keycloak.AuthServices.Sdk.Utils.QueryString.html#Keycloak_AuthServices_Sdk_Utils_QueryString_op_Addition_Keycloak_AuthServices_Sdk_Utils_QueryString_Keycloak_AuthServices_Sdk_Utils_QueryString_

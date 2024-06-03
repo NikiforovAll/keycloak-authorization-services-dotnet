@@ -1,0 +1,1200 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  id: GetUsersRequestParameters
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  langs:
+  - csharp
+  - vb
+  name: GetUsersRequestParameters
+  nameWithType: GetUsersRequestParameters
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetUsersRequestParameters
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 31
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Optional request parameters for the <xref href="Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(System.String%2cKeycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> endpoint.
+
+    It can be called in three different ways.
+
+    <ol><li>
+                Don’t specify any criteria. A stream of all users within that realm will be returned (limited by pagination).
+            </li><li>
+                If <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search" data-throw-if-not-resolved="false"></xref> is specified, other criteria such as <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName" data-throw-if-not-resolved="false"></xref>
+                will be ignored even though you may set them. The <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search" data-throw-if-not-resolved="false"></xref> string will be matched against
+                the <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.FirstName" data-throw-if-not-resolved="false"></xref>, <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.LastName" data-throw-if-not-resolved="false"></xref>, <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Username" data-throw-if-not-resolved="false"></xref>
+                and the <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Email" data-throw-if-not-resolved="false"></xref> of a <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation" data-throw-if-not-resolved="false"></xref>.
+            </li><li>
+                If <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search" data-throw-if-not-resolved="false"></xref> is unspecified but any of <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName" data-throw-if-not-resolved="false"></xref>, <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName" data-throw-if-not-resolved="false"></xref>,
+                <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email" data-throw-if-not-resolved="false"></xref> or <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username" data-throw-if-not-resolved="false"></xref> are specified, then those criteria are matched against
+                their respective fields on a <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation" data-throw-if-not-resolved="false"></xref> entity. Combined with a logical <code>AND</code>.
+            </li></ol>
+  example: []
+  syntax:
+    content: public class GetUsersRequestParameters
+    content.vb: Public Class GetUsersRequestParameters
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation
+  id: BriefRepresentation
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: BriefRepresentation
+  nameWithType: GetUsersRequestParameters.BriefRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BriefRepresentation
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 36
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Defines whether brief representations are returned. Default is false.
+  example: []
+  syntax:
+    content: public bool? BriefRepresentation { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property BriefRepresentation As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  id: Email
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: GetUsersRequestParameters.Email
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Email
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 42
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Search for a string contained in <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Email" data-throw-if-not-resolved="false"></xref>,
+
+    or the complete <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Email" data-throw-if-not-resolved="false"></xref> if <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact" data-throw-if-not-resolved="false"></xref> is true.
+  example: []
+  syntax:
+    content: public string? Email { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified
+  id: EmailVerified
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: EmailVerified
+  nameWithType: GetUsersRequestParameters.EmailVerified
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: EmailVerified
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 47
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Search for whether the email has been verified.
+  example: []
+  syntax:
+    content: public bool? EmailVerified { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property EmailVerified As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled
+  id: Enabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: GetUsersRequestParameters.Enabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Enabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 52
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Search for whether the <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation" data-throw-if-not-resolved="false"></xref> is enabled or not.
+  example: []
+  syntax:
+    content: public bool? Enabled { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property Enabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  id: Exact
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Exact
+  nameWithType: GetUsersRequestParameters.Exact
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Exact
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 58
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Defines whether the params <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName" data-throw-if-not-resolved="false"></xref>, <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName" data-throw-if-not-resolved="false"></xref>,
+
+    <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email" data-throw-if-not-resolved="false"></xref> and <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username" data-throw-if-not-resolved="false"></xref> must match exactly
+  example: []
+  syntax:
+    content: public bool? Exact { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property Exact As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First
+  id: First
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: GetUsersRequestParameters.First
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: First
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 63
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Pagination offset.
+  example: []
+  syntax:
+    content: public int? First { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property First As Integer?
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  id: FirstName
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: FirstName
+  nameWithType: GetUsersRequestParameters.FirstName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FirstName
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 69
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Search for a string contained in <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.FirstName" data-throw-if-not-resolved="false"></xref>,
+
+    or the complete <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.FirstName" data-throw-if-not-resolved="false"></xref> if <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact" data-throw-if-not-resolved="false"></xref> is true.
+  example: []
+  syntax:
+    content: public string? FirstName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FirstName As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias
+  id: IdpAlias
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: IdpAlias
+  nameWithType: GetUsersRequestParameters.IdpAlias
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IdpAlias
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 74
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Search for the alias of an Identity Provider linked to the <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public string? IdpAlias { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property IdpAlias As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId
+  id: IdpUserId
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: IdpUserId
+  nameWithType: GetUsersRequestParameters.IdpUserId
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IdpUserId
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 79
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Search for a <xref href="Keycloak.AuthServices.Sdk.Admin.Models.FederatedIdentityRepresentation.UserId" data-throw-if-not-resolved="false"></xref> at an Identity Provider linked to the <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public string? IdpUserId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property IdpUserId As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  id: LastName
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: LastName
+  nameWithType: GetUsersRequestParameters.LastName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: LastName
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 85
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Search for a string contained in <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.LastName" data-throw-if-not-resolved="false"></xref>,
+
+    or the complete <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.LastName" data-throw-if-not-resolved="false"></xref> if <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact" data-throw-if-not-resolved="false"></xref> is true.
+  example: []
+  syntax:
+    content: public string? LastName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LastName As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max
+  id: Max
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Max
+  nameWithType: GetUsersRequestParameters.Max
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Max
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 90
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: Maximum results size. Default is 100.
+  example: []
+  syntax:
+    content: public int? Max { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Max As Integer?
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query
+  id: Query
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Query
+  nameWithType: GetUsersRequestParameters.Query
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Query
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 95
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: A query to search for custom attributes, in the format "<code>key1:value2 key2:value2</code>".
+  example: []
+  syntax:
+    content: public string? Query { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Query As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  id: Search
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Search
+  nameWithType: GetUsersRequestParameters.Search
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Search
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 101
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Search for a string contained in <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username" data-throw-if-not-resolved="false"></xref>, <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName" data-throw-if-not-resolved="false"></xref>,
+
+    <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName" data-throw-if-not-resolved="false"></xref> or <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public string? Search { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Search As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search*
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  id: Username
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Username
+  nameWithType: GetUsersRequestParameters.Username
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Username
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Requests/Users/GetUsersRequestParameters.cs
+    startLine: 107
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  summary: >-
+    Search for a string contained in <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Username" data-throw-if-not-resolved="false"></xref>,
+
+    or the complete <xref href="Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Username" data-throw-if-not-resolved="false"></xref> if <xref href="Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact" data-throw-if-not-resolved="false"></xref> is true.
+  example: []
+  syntax:
+    content: public string? Username { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Username As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username*
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakUserClient_GetUsersAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_System_Threading_CancellationToken_
+  name: GetUsersAsync(string, GetUsersRequestParameters, CancellationToken)
+  nameWithType: IKeycloakUserClient.GetUsersAsync(string, GetUsersRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(string, Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakUserClient.GetUsersAsync(String, GetUsersRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(String, Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetUsersAsync(String, GetUsersRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters,System.Threading.CancellationToken)
+    name: GetUsersAsync
+    href: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakUserClient_GetUsersAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+    name: GetUsersRequestParameters
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.GetUsersAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters,System.Threading.CancellationToken)
+    name: GetUsersAsync
+    href: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakUserClient_GetUsersAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+    name: GetUsersRequestParameters
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Search
+  name: Search
+  nameWithType: GetUsersRequestParameters.Search
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_LastName
+  name: LastName
+  nameWithType: GetUsersRequestParameters.LastName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.FirstName
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.FirstName
+  href: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_UserRepresentation_FirstName
+  name: FirstName
+  nameWithType: UserRepresentation.FirstName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.FirstName
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.LastName
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.LastName
+  href: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_UserRepresentation_LastName
+  name: LastName
+  nameWithType: UserRepresentation.LastName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.LastName
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Username
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Username
+  href: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_UserRepresentation_Username
+  name: Username
+  nameWithType: UserRepresentation.Username
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Username
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Email
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Email
+  href: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_UserRepresentation_Email
+  name: Email
+  nameWithType: UserRepresentation.Email
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.Email
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation.html
+  name: UserRepresentation
+  nameWithType: UserRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_FirstName
+  name: FirstName
+  nameWithType: GetUsersRequestParameters.FirstName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Email
+  name: Email
+  nameWithType: GetUsersRequestParameters.Email
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Username
+  name: Username
+  nameWithType: GetUsersRequestParameters.Username
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+    name: Users
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+    name: Users
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.html
+  name: IKeycloakUserClient
+  nameWithType: IKeycloakUserClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+- uid: Keycloak.AuthServices.Sdk.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Admin
+  fullName: Keycloak.AuthServices.Sdk.Admin
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_BriefRepresentation
+  name: BriefRepresentation
+  nameWithType: GetUsersRequestParameters.BriefRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.BriefRepresentation
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Exact
+  name: Exact
+  nameWithType: GetUsersRequestParameters.Exact
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Email
+  name: Email
+  nameWithType: GetUsersRequestParameters.Email
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Email
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_EmailVerified
+  name: EmailVerified
+  nameWithType: GetUsersRequestParameters.EmailVerified
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.EmailVerified
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Enabled
+  name: Enabled
+  nameWithType: GetUsersRequestParameters.Enabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Enabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Exact
+  name: Exact
+  nameWithType: GetUsersRequestParameters.Exact
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Exact
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_First
+  name: First
+  nameWithType: GetUsersRequestParameters.First
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.First
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_FirstName
+  name: FirstName
+  nameWithType: GetUsersRequestParameters.FirstName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.FirstName
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_IdpAlias
+  name: IdpAlias
+  nameWithType: GetUsersRequestParameters.IdpAlias
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpAlias
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.FederatedIdentityRepresentation.UserId
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.FederatedIdentityRepresentation.UserId
+  href: Keycloak.AuthServices.Sdk.Admin.Models.FederatedIdentityRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_FederatedIdentityRepresentation_UserId
+  name: UserId
+  nameWithType: FederatedIdentityRepresentation.UserId
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.FederatedIdentityRepresentation.UserId
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_IdpUserId
+  name: IdpUserId
+  nameWithType: GetUsersRequestParameters.IdpUserId
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.IdpUserId
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_LastName
+  name: LastName
+  nameWithType: GetUsersRequestParameters.LastName
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.LastName
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Max
+  name: Max
+  nameWithType: GetUsersRequestParameters.Max
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Max
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Query
+  name: Query
+  nameWithType: GetUsersRequestParameters.Query
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Query
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Search
+  name: Search
+  nameWithType: GetUsersRequestParameters.Search
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Search
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html#Keycloak_AuthServices_Sdk_Admin_Requests_Users_GetUsersRequestParameters_Username
+  name: Username
+  nameWithType: GetUsersRequestParameters.Username
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.Username

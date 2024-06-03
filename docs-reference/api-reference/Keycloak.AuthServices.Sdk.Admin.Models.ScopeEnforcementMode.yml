@@ -1,0 +1,208 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  id: ScopeEnforcementMode
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ALL
+  - Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ANY
+  - Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.DISABLED
+  langs:
+  - csharp
+  - vb
+  name: ScopeEnforcementMode
+  nameWithType: ScopeEnforcementMode
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ScopeEnforcementMode
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 6802
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: public enum ScopeEnforcementMode
+    content.vb: Public Enum ScopeEnforcementMode
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ALL
+  commentId: F:Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ALL
+  id: ALL
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  langs:
+  - csharp
+  - vb
+  name: ALL
+  nameWithType: ScopeEnforcementMode.ALL
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ALL
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ALL
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 6808
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ALL")]
+
+      ALL = 0
+    return:
+      type: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+    content.vb: >-
+      <EnumMember(Value:="ALL")>
+
+      ALL = 0
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ALL
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ANY
+  commentId: F:Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ANY
+  id: ANY
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  langs:
+  - csharp
+  - vb
+  name: ANY
+  nameWithType: ScopeEnforcementMode.ANY
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.ANY
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ANY
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 6811
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ANY")]
+
+      ANY = 1
+    return:
+      type: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+    content.vb: >-
+      <EnumMember(Value:="ANY")>
+
+      ANY = 1
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ANY
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.DISABLED
+  commentId: F:Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.DISABLED
+  id: DISABLED
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  langs:
+  - csharp
+  - vb
+  name: DISABLED
+  nameWithType: ScopeEnforcementMode.DISABLED
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.DISABLED
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DISABLED
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 6814
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "DISABLED")]
+
+      DISABLED = 2
+    return:
+      type: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+    content.vb: >-
+      <EnumMember(Value:="DISABLED")>
+
+      DISABLED = 2
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: DISABLED
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode.html
+  name: ScopeEnforcementMode
+  nameWithType: ScopeEnforcementMode
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode

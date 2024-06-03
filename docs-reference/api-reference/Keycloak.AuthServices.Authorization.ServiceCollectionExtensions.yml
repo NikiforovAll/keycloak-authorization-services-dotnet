@@ -1,0 +1,935 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: Keycloak.AuthServices.Authorization
+  children:
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions},System.Action{System.Net.Http.HttpClient})
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.Net.Http.HttpClient})
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions})
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ServiceCollectionExtensions
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 15
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Add Keycloak authorization services
+  example: []
+  syntax:
+    content: public static class ServiceCollectionExtensions
+    content.vb: Public Module ServiceCollectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  id: AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAuthorization(IServiceCollection, IConfiguration, string)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAuthorization(IServiceCollection, IConfiguration, string)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAuthorization
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 24
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds keycloak authorization services
+  example: []
+  syntax:
+    content: public static IServiceCollection AddKeycloakAuthorization(this IServiceCollection services, IConfiguration configuration, string configSectionName = "Keycloak")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: ''
+    - id: configSectionName
+      type: System.String
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    content.vb: Public Shared Function AddKeycloakAuthorization(services As IServiceCollection, configuration As IConfiguration, configSectionName As String = "Keycloak") As IServiceCollection
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization*
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAuthorization(IServiceCollection, IConfiguration, String)
+  fullName.vb: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, String)
+  name.vb: AddKeycloakAuthorization(IServiceCollection, IConfiguration, String)
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  id: AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAuthorization(IServiceCollection, IConfigurationSection)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAuthorization(IServiceCollection, IConfigurationSection)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAuthorization
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 52
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds keycloak authorization services
+  example: []
+  syntax:
+    content: public static IServiceCollection AddKeycloakAuthorization(this IServiceCollection services, IConfigurationSection configurationSection)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    content.vb: Public Shared Function AddKeycloakAuthorization(services As IServiceCollection, configurationSection As IConfigurationSection) As IServiceCollection
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization*
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions})
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions})
+  id: AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAuthorization(IServiceCollection, Action<KeycloakAuthorizationOptions>?)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAuthorization(IServiceCollection, Action<KeycloakAuthorizationOptions>?)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAuthorization
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 77
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds keycloak authorization services
+  example: []
+  syntax:
+    content: public static IServiceCollection AddKeycloakAuthorization(this IServiceCollection services, Action<KeycloakAuthorizationOptions>? configureKeycloakAuthorizationOptions = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configureKeycloakAuthorizationOptions
+      type: System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions}
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Shared Function AddKeycloakAuthorization(services As IServiceCollection, configureKeycloakAuthorizationOptions As Action(Of KeycloakAuthorizationOptions) = Nothing) As IServiceCollection
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization*
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAuthorization(IServiceCollection, Action(Of KeycloakAuthorizationOptions))
+  fullName.vb: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions))
+  name.vb: AddKeycloakAuthorization(IServiceCollection, Action(Of KeycloakAuthorizationOptions))
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  id: AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAuthorizationServer(IServiceCollection, IConfiguration, Action<HttpClient>?, string)
+  nameWithType: ServiceCollectionExtensions.AddAuthorizationServer(IServiceCollection, IConfiguration, Action<HttpClient>?, string)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action<System.Net.Http.HttpClient>?, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddAuthorizationServer
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 120
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds Keycloak <xref href="Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient" data-throw-if-not-resolved="false"></xref> client and auto header propagation
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddAuthorizationServer(this IServiceCollection services, IConfiguration configuration, Action<HttpClient>? configureClient = null, string configSectionName = "Keycloak")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: ''
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: ''
+    - id: configSectionName
+      type: System.String
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: ''
+    content.vb: Public Shared Function AddAuthorizationServer(services As IServiceCollection, configuration As IConfiguration, configureClient As Action(Of HttpClient) = Nothing, configSectionName As String = "Keycloak") As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer*
+  nameWithType.vb: ServiceCollectionExtensions.AddAuthorizationServer(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+  fullName.vb: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action(Of System.Net.Http.HttpClient), String)
+  name.vb: AddAuthorizationServer(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  id: AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAuthorizationServer(IServiceCollection, IConfigurationSection, Action<HttpClient>?)
+  nameWithType: ServiceCollectionExtensions.AddAuthorizationServer(IServiceCollection, IConfigurationSection, Action<HttpClient>?)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection, System.Action<System.Net.Http.HttpClient>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddAuthorizationServer
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 158
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds Keycloak <xref href="Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient" data-throw-if-not-resolved="false"></xref> client and auto header propagation
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddAuthorizationServer(this IServiceCollection services, IConfigurationSection configurationSection, Action<HttpClient>? configureClient = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: ''
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: ''
+    content.vb: Public Shared Function AddAuthorizationServer(services As IServiceCollection, configurationSection As IConfigurationSection, configureClient As Action(Of HttpClient) = Nothing) As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer*
+  nameWithType.vb: ServiceCollectionExtensions.AddAuthorizationServer(IServiceCollection, IConfigurationSection, Action(Of HttpClient))
+  fullName.vb: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection, System.Action(Of System.Net.Http.HttpClient))
+  name.vb: AddAuthorizationServer(IServiceCollection, IConfigurationSection, Action(Of HttpClient))
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions},System.Action{System.Net.Http.HttpClient})
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions},System.Action{System.Net.Http.HttpClient})
+  id: AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions},System.Action{System.Net.Http.HttpClient})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAuthorizationServer(IServiceCollection, Action<KeycloakAuthorizationServerOptions>, Action<HttpClient>?)
+  nameWithType: ServiceCollectionExtensions.AddAuthorizationServer(IServiceCollection, Action<KeycloakAuthorizationServerOptions>, Action<HttpClient>?)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions>, System.Action<System.Net.Http.HttpClient>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddAuthorizationServer
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 187
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds Keycloak <xref href="Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient" data-throw-if-not-resolved="false"></xref> client, <xref href="Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider" data-throw-if-not-resolved="false"></xref> and auto header propagation
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddAuthorizationServer(this IServiceCollection services, Action<KeycloakAuthorizationServerOptions> configureKeycloakOptions, Action<HttpClient>? configureClient = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configureKeycloakOptions
+      type: System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions}
+      description: ''
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: ''
+    content.vb: Public Shared Function AddAuthorizationServer(services As IServiceCollection, configureKeycloakOptions As Action(Of KeycloakAuthorizationServerOptions), configureClient As Action(Of HttpClient) = Nothing) As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer*
+  nameWithType.vb: ServiceCollectionExtensions.AddAuthorizationServer(IServiceCollection, Action(Of KeycloakAuthorizationServerOptions), Action(Of HttpClient))
+  fullName.vb: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions), System.Action(Of System.Net.Http.HttpClient))
+  name.vb: AddAuthorizationServer(IServiceCollection, Action(Of KeycloakAuthorizationServerOptions), Action(Of HttpClient))
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.Net.Http.HttpClient})
+  commentId: M:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.Net.Http.HttpClient})
+  id: AddAuthorizationServerClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{System.Net.Http.HttpClient})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAuthorizationServerClient(IServiceCollection, Action<HttpClient>?)
+  nameWithType: ServiceCollectionExtensions.AddAuthorizationServerClient(IServiceCollection, Action<HttpClient>?)
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<System.Net.Http.HttpClient>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddAuthorizationServerClient
+    path: ../src/Keycloak.AuthServices.Authorization/ServiceCollectionExtensions.cs
+    startLine: 241
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds Keycloak <xref href="Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient" data-throw-if-not-resolved="false"></xref> client
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddAuthorizationServerClient(this IServiceCollection services, Action<HttpClient>? configureClient = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: ''
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: ''
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: ''
+    content.vb: Public Shared Function AddAuthorizationServerClient(services As IServiceCollection, configureClient As Action(Of HttpClient) = Nothing) As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient*
+  nameWithType.vb: ServiceCollectionExtensions.AddAuthorizationServerClient(IServiceCollection, Action(Of HttpClient))
+  fullName.vb: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of System.Net.Http.HttpClient))
+  name.vb: AddAuthorizationServerClient(IServiceCollection, Action(Of HttpClient))
+references:
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization*
+  commentId: Overload:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization
+  href: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.html#Keycloak_AuthServices_Authorization_ServiceCollectionExtensions_AddKeycloakAuthorization_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_
+  name: AddKeycloakAuthorization
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAuthorization
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddKeycloakAuthorization
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: Microsoft.Extensions.Configuration.IConfigurationSection
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSection
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsection
+  name: IConfigurationSection
+  nameWithType: IConfigurationSection
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSection
+- uid: System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions}
+  commentId: T:System.Action{Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<KeycloakAuthorizationOptions>
+  nameWithType: Action<KeycloakAuthorizationOptions>
+  fullName: System.Action<Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions>
+  nameWithType.vb: Action(Of KeycloakAuthorizationOptions)
+  fullName.vb: System.Action(Of Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions)
+  name.vb: Action(Of KeycloakAuthorizationOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+    name: KeycloakAuthorizationOptions
+    href: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+    name: KeycloakAuthorizationOptions
+    href: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.html
+  name: IAuthorizationServerClient
+  nameWithType: IAuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer*
+  commentId: Overload:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer
+  href: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.html#Keycloak_AuthServices_Authorization_ServiceCollectionExtensions_AddAuthorizationServer_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_Action_System_Net_Http_HttpClient__System_String_
+  name: AddAuthorizationServer
+  nameWithType: ServiceCollectionExtensions.AddAuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServer
+- uid: System.Action{System.Net.Http.HttpClient}
+  commentId: T:System.Action{System.Net.Http.HttpClient}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<HttpClient>
+  nameWithType: Action<HttpClient>
+  fullName: System.Action<System.Net.Http.HttpClient>
+  nameWithType.vb: Action(Of HttpClient)
+  fullName.vb: System.Action(Of System.Net.Http.HttpClient)
+  name.vb: Action(Of HttpClient)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Net.Http.HttpClient
+    name: HttpClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.Http.HttpClient
+    name: HttpClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  - name: )
+- uid: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+  commentId: T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder
+  name: IHttpClientBuilder
+  nameWithType: IHttpClientBuilder
+  fullName: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+  href: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider.html
+  name: ProtectedResourcePolicyProvider
+  nameWithType: ProtectedResourcePolicyProvider
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+- uid: System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions}
+  commentId: T:System.Action{Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<KeycloakAuthorizationServerOptions>
+  nameWithType: Action<KeycloakAuthorizationServerOptions>
+  fullName: System.Action<Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions>
+  nameWithType.vb: Action(Of KeycloakAuthorizationServerOptions)
+  fullName.vb: System.Action(Of Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions)
+  name.vb: Action(Of KeycloakAuthorizationServerOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+    name: KeycloakAuthorizationServerOptions
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+    name: KeycloakAuthorizationServerOptions
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html
+  - name: )
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient*
+  commentId: Overload:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient
+  href: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.html#Keycloak_AuthServices_Authorization_ServiceCollectionExtensions_AddAuthorizationServerClient_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_System_Net_Http_HttpClient__
+  name: AddAuthorizationServerClient
+  nameWithType: ServiceCollectionExtensions.AddAuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.AddAuthorizationServerClient

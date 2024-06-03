@@ -1,0 +1,110 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStats
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStats
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStats
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStats.html
+  name: ClientSessionStats
+  nameWithType: ClientSessionStats
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStats
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder.html
+  name: ClientSessionStatsRequestBuilder
+  nameWithType: ClientSessionStatsRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+    name: ClientSessionStats
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+    name: ClientSessionStats
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.html

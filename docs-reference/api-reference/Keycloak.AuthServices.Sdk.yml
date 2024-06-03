@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk
+  commentId: N:Keycloak.AuthServices.Sdk
+  id: Keycloak.AuthServices.Sdk
+  children:
+  - Keycloak.AuthServices.Sdk.ErrorResponse
+  - Keycloak.AuthServices.Sdk.HttpResponseExtensions
+  - Keycloak.AuthServices.Sdk.KeycloakAdminClientOptions
+  - Keycloak.AuthServices.Sdk.KeycloakHttpClientException
+  - Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  - Keycloak.AuthServices.Sdk.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk
+  nameWithType: Keycloak.AuthServices.Sdk
+  fullName: Keycloak.AuthServices.Sdk
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+references:
+- uid: Keycloak.AuthServices.Sdk.ErrorResponse
+  commentId: T:Keycloak.AuthServices.Sdk.ErrorResponse
+  parent: Keycloak.AuthServices.Sdk
+  href: Keycloak.AuthServices.Sdk.ErrorResponse.html
+  name: ErrorResponse
+  nameWithType: ErrorResponse
+  fullName: Keycloak.AuthServices.Sdk.ErrorResponse
+- uid: Keycloak.AuthServices.Sdk.HttpResponseExtensions
+  commentId: T:Keycloak.AuthServices.Sdk.HttpResponseExtensions
+  href: Keycloak.AuthServices.Sdk.HttpResponseExtensions.html
+  name: HttpResponseExtensions
+  nameWithType: HttpResponseExtensions
+  fullName: Keycloak.AuthServices.Sdk.HttpResponseExtensions
+- uid: Keycloak.AuthServices.Sdk.KeycloakAdminClientOptions
+  commentId: T:Keycloak.AuthServices.Sdk.KeycloakAdminClientOptions
+  parent: Keycloak.AuthServices.Sdk
+  href: Keycloak.AuthServices.Sdk.KeycloakAdminClientOptions.html
+  name: KeycloakAdminClientOptions
+  nameWithType: KeycloakAdminClientOptions
+  fullName: Keycloak.AuthServices.Sdk.KeycloakAdminClientOptions
+- uid: Keycloak.AuthServices.Sdk.KeycloakHttpClientException
+  commentId: T:Keycloak.AuthServices.Sdk.KeycloakHttpClientException
+  href: Keycloak.AuthServices.Sdk.KeycloakHttpClientException.html
+  name: KeycloakHttpClientException
+  nameWithType: KeycloakHttpClientException
+  fullName: Keycloak.AuthServices.Sdk.KeycloakHttpClientException
+- uid: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  commentId: T:Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  parent: Keycloak.AuthServices.Sdk
+  href: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions.html
+  name: KeycloakProtectionClientOptions
+  nameWithType: KeycloakProtectionClientOptions
+  fullName: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+- uid: Keycloak.AuthServices.Sdk.ServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Sdk.ServiceCollectionExtensions
+  href: Keycloak.AuthServices.Sdk.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Sdk.ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Sdk
+  commentId: N:Keycloak.AuthServices.Sdk
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk
+  nameWithType: Keycloak.AuthServices.Sdk
+  fullName: Keycloak.AuthServices.Sdk
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html

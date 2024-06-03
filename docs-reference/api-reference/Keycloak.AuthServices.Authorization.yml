@@ -1,0 +1,133 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  id: Keycloak.AuthServices.Authorization
+  children:
+  - Keycloak.AuthServices.Authorization.IProtectedResourceData
+  - Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+  - Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+  - Keycloak.AuthServices.Authorization.KeycloakMetrics
+  - Keycloak.AuthServices.Authorization.MvcOptionsExtensions
+  - Keycloak.AuthServices.Authorization.PoliciesBuilderExtensions
+  - Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+  - Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  - Keycloak.AuthServices.Authorization.ProtectedResourcePolicy
+  - Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+  - Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  - Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+references:
+- uid: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+  commentId: T:Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+  href: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute.html
+  name: IgnoreProtectedResourceAttribute
+  nameWithType: IgnoreProtectedResourceAttribute
+  fullName: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData
+  commentId: T:Keycloak.AuthServices.Authorization.IProtectedResourceData
+  parent: Keycloak.AuthServices.Authorization
+  href: Keycloak.AuthServices.Authorization.IProtectedResourceData.html
+  name: IProtectedResourceData
+  nameWithType: IProtectedResourceData
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData
+- uid: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+  commentId: T:Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+  href: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions.html
+  name: KeycloakAuthorizationOptions
+  nameWithType: KeycloakAuthorizationOptions
+  fullName: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  commentId: T:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  parent: Keycloak.AuthServices.Authorization
+  href: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.html
+  name: RolesClaimTransformationSource
+  nameWithType: RolesClaimTransformationSource
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+- uid: Keycloak.AuthServices.Authorization.KeycloakMetrics
+  commentId: T:Keycloak.AuthServices.Authorization.KeycloakMetrics
+  parent: Keycloak.AuthServices.Authorization
+  href: Keycloak.AuthServices.Authorization.KeycloakMetrics.html
+  name: KeycloakMetrics
+  nameWithType: KeycloakMetrics
+  fullName: Keycloak.AuthServices.Authorization.KeycloakMetrics
+- uid: Keycloak.AuthServices.Authorization.MvcOptionsExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.MvcOptionsExtensions
+  href: Keycloak.AuthServices.Authorization.MvcOptionsExtensions.html
+  name: MvcOptionsExtensions
+  nameWithType: MvcOptionsExtensions
+  fullName: Keycloak.AuthServices.Authorization.MvcOptionsExtensions
+- uid: Keycloak.AuthServices.Authorization.PoliciesBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.PoliciesBuilderExtensions
+  href: Keycloak.AuthServices.Authorization.PoliciesBuilderExtensions.html
+  name: PoliciesBuilderExtensions
+  nameWithType: PoliciesBuilderExtensions
+  fullName: Keycloak.AuthServices.Authorization.PoliciesBuilderExtensions
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+  href: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute.html
+  name: ProtectedResourceAttribute
+  nameWithType: ProtectedResourceAttribute
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  href: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.html
+  name: ProtectedResourceEndpointConventionBuilderExtensions
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourcePolicy
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourcePolicy
+  href: Keycloak.AuthServices.Authorization.ProtectedResourcePolicy.html
+  name: ProtectedResourcePolicy
+  nameWithType: ProtectedResourcePolicy
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourcePolicy
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+  href: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider.html
+  name: ProtectedResourcePolicyProvider
+  nameWithType: ProtectedResourcePolicyProvider
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+- uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+  href: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html

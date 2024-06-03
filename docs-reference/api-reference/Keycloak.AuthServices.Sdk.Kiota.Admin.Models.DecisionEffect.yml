@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  id: DecisionEffect
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.DENY
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.PERMIT
+  langs:
+  - csharp
+  - vb
+  name: DecisionEffect
+  nameWithType: DecisionEffect
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/DecisionEffect.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DecisionEffect
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/DecisionEffect.cs
+    startLine: 5
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: public enum DecisionEffect
+    content.vb: Public Enum DecisionEffect
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.PERMIT
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.PERMIT
+  id: PERMIT
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  langs:
+  - csharp
+  - vb
+  name: PERMIT
+  nameWithType: DecisionEffect.PERMIT
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.PERMIT
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/DecisionEffect.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PERMIT
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/DecisionEffect.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "PERMIT")]
+
+      PERMIT = 0
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+    content.vb: >-
+      <EnumMember(Value:="PERMIT")>
+
+      PERMIT = 0
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: PERMIT
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.DENY
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.DENY
+  id: DENY
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  langs:
+  - csharp
+  - vb
+  name: DENY
+  nameWithType: DecisionEffect.DENY
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.DENY
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/DecisionEffect.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DENY
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/DecisionEffect.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "DENY")]
+
+      DENY = 1
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+    content.vb: >-
+      <EnumMember(Value:="DENY")>
+
+      DENY = 1
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: DENY
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect.html
+  name: DecisionEffect
+  nameWithType: DecisionEffect
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect

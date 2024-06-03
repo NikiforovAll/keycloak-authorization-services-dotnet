@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication
+  commentId: N:Keycloak.AuthServices.Authentication
+  id: Keycloak.AuthServices.Authentication
+  children:
+  - Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+  - Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilderExtensions
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppServiceCollectionExtensions
+  - Keycloak.AuthServices.Authentication.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Authentication
+  nameWithType: Keycloak.AuthServices.Authentication
+  fullName: Keycloak.AuthServices.Authentication
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+references:
+- uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions.html
+  name: KeycloakAuthenticationOptions
+  nameWithType: KeycloakAuthenticationOptions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.html
+  name: KeycloakBaseAuthenticationBuilder
+  nameWithType: KeycloakBaseAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+- uid: Keycloak.AuthServices.Authentication.ServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.ServiceCollectionExtensions
+  href: Keycloak.AuthServices.Authentication.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Authentication.ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder.html
+  name: KeycloakWebApiAuthenticationBuilder
+  nameWithType: KeycloakWebApiAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilderExtensions
+  href: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilderExtensions.html
+  name: KeycloakWebApiAuthenticationBuilderExtensions
+  nameWithType: KeycloakWebApiAuthenticationBuilderExtensions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilderExtensions
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  href: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.html
+  name: KeycloakWebApiServiceCollectionExtensions
+  nameWithType: KeycloakWebApiServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder.html
+  name: KeycloakWebAppAuthenticationBuilder
+  nameWithType: KeycloakWebAppAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  href: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.html
+  name: KeycloakWebAppAuthenticationBuilderExtensions
+  nameWithType: KeycloakWebAppAuthenticationBuilderExtensions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebAppServiceCollectionExtensions
+  href: Keycloak.AuthServices.Authentication.KeycloakWebAppServiceCollectionExtensions.html
+  name: KeycloakWebAppServiceCollectionExtensions
+  nameWithType: KeycloakWebAppServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Authentication
+  commentId: N:Keycloak.AuthServices.Authentication
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication
+  nameWithType: Keycloak.AuthServices.Authentication
+  fullName: Keycloak.AuthServices.Authentication
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html

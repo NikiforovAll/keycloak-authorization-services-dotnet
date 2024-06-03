@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  id: ScopesValidationMode
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  children:
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AllOf
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AnyOf
+  langs:
+  - csharp
+  - vb
+  name: ScopesValidationMode
+  nameWithType: ScopesValidationMode
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ScopesValidationMode
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 44
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Specifies the validation mode for multiple scopes.
+  example: []
+  syntax:
+    content: public enum ScopesValidationMode
+    content.vb: Public Enum ScopesValidationMode
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AllOf
+  commentId: F:Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AllOf
+  id: AllOf
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  langs:
+  - csharp
+  - vb
+  name: AllOf
+  nameWithType: ScopesValidationMode.AllOf
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AllOf
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AllOf
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 49
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Specifies that all of the scopes must be valid.
+  example: []
+  syntax:
+    content: AllOf = 0
+    return:
+      type: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AnyOf
+  commentId: F:Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AnyOf
+  id: AnyOf
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  langs:
+  - csharp
+  - vb
+  name: AnyOf
+  nameWithType: ScopesValidationMode.AnyOf
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.AnyOf
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AnyOf
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/KeycloakAuthorizationServerOptions.cs
+    startLine: 54
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Specifies that at least one of the scopes must be valid.
+  example: []
+  syntax:
+    content: AnyOf = 1
+    return:
+      type: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+references:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.html
+  name: ScopesValidationMode
+  nameWithType: ScopesValidationMode
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.Claims
+  commentId: N:Keycloak.AuthServices.Authorization.Claims
+  id: Keycloak.AuthServices.Authorization.Claims
+  children:
+  - Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Authorization.Claims
+  nameWithType: Keycloak.AuthServices.Authorization.Claims
+  fullName: Keycloak.AuthServices.Authorization.Claims
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+references:
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  commentId: T:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  href: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.html
+  name: KeycloakRolesClaimsTransformation
+  nameWithType: KeycloakRolesClaimsTransformation
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation

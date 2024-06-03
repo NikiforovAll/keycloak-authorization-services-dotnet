@@ -1,0 +1,2760 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  id: ClientRepresentation
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.#ctor
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins
+  langs:
+  - csharp
+  - vb
+  name: ClientRepresentation
+  nameWithType: ClientRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientRepresentation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: 'public class ClientRepresentation : IAdditionalDataHolder, IParsable'
+    content.vb: Public Class ClientRepresentation Implements IAdditionalDataHolder, IParsable
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  - Microsoft.Kiota.Abstractions.Serialization.IParsable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access
+  id: Access
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Access
+  nameWithType: ClientRepresentation.Access
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Access
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 14
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The access property
+  example: []
+  syntax:
+    content: public ClientRepresentation_access? Access { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_access
+    content.vb: Public Property Access As ClientRepresentation_access
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData
+  id: AdditionalData
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AdditionalData
+  nameWithType: ClientRepresentation.AdditionalData
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AdditionalData
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 20
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+  example: []
+  syntax:
+    content: public IDictionary<string, object> AdditionalData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+    content.vb: Public Property AdditionalData As IDictionary(Of String, Object)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData*
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl
+  id: AdminUrl
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AdminUrl
+  nameWithType: ClientRepresentation.AdminUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AdminUrl
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 24
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The adminUrl property
+  example: []
+  syntax:
+    content: public string? AdminUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AdminUrl As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole
+  id: AlwaysDisplayInConsole
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AlwaysDisplayInConsole
+  nameWithType: ClientRepresentation.AlwaysDisplayInConsole
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AlwaysDisplayInConsole
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 30
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The alwaysDisplayInConsole property
+  example: []
+  syntax:
+    content: public bool? AlwaysDisplayInConsole { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property AlwaysDisplayInConsole As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes
+  id: Attributes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: ClientRepresentation.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Attributes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 34
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The attributes property
+  example: []
+  syntax:
+    content: public ClientRepresentation_attributes? Attributes { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_attributes
+    content.vb: Public Property Attributes As ClientRepresentation_attributes
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides
+  id: AuthenticationFlowBindingOverrides
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AuthenticationFlowBindingOverrides
+  nameWithType: ClientRepresentation.AuthenticationFlowBindingOverrides
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthenticationFlowBindingOverrides
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 42
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The authenticationFlowBindingOverrides property
+  example: []
+  syntax:
+    content: public ClientRepresentation_authenticationFlowBindingOverrides? AuthenticationFlowBindingOverrides { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_authenticationFlowBindingOverrides
+    content.vb: Public Property AuthenticationFlowBindingOverrides As ClientRepresentation_authenticationFlowBindingOverrides
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled
+  id: AuthorizationServicesEnabled
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationServicesEnabled
+  nameWithType: ClientRepresentation.AuthorizationServicesEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthorizationServicesEnabled
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 48
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The authorizationServicesEnabled property
+  example: []
+  syntax:
+    content: public bool? AuthorizationServicesEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property AuthorizationServicesEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings
+  id: AuthorizationSettings
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationSettings
+  nameWithType: ClientRepresentation.AuthorizationSettings
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthorizationSettings
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 52
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The authorizationSettings property
+  example: []
+  syntax:
+    content: public ResourceServerRepresentation? AuthorizationSettings { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation
+    content.vb: Public Property AuthorizationSettings As ResourceServerRepresentation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl
+  id: BaseUrl
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: BaseUrl
+  nameWithType: ClientRepresentation.BaseUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BaseUrl
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 60
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The baseUrl property
+  example: []
+  syntax:
+    content: public string? BaseUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property BaseUrl As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly
+  id: BearerOnly
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: BearerOnly
+  nameWithType: ClientRepresentation.BearerOnly
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BearerOnly
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 66
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The bearerOnly property
+  example: []
+  syntax:
+    content: public bool? BearerOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property BearerOnly As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType
+  id: ClientAuthenticatorType
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientAuthenticatorType
+  nameWithType: ClientRepresentation.ClientAuthenticatorType
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientAuthenticatorType
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 70
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The clientAuthenticatorType property
+  example: []
+  syntax:
+    content: public string? ClientAuthenticatorType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ClientAuthenticatorType As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId
+  id: ClientId
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientId
+  nameWithType: ClientRepresentation.ClientId
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientId
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 78
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The clientId property
+  example: []
+  syntax:
+    content: public string? ClientId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ClientId As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate
+  id: ClientTemplate
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientTemplate
+  nameWithType: ClientRepresentation.ClientTemplate
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientTemplate
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 84
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The clientTemplate property
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("")]
+
+      public string? ClientTemplate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Obsolete("")>
+
+      Public Property ClientTemplate As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ''
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired
+  id: ConsentRequired
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ConsentRequired
+  nameWithType: ClientRepresentation.ConsentRequired
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ConsentRequired
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 93
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The consentRequired property
+  example: []
+  syntax:
+    content: public bool? ConsentRequired { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property ConsentRequired As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes
+  id: DefaultClientScopes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DefaultClientScopes
+  nameWithType: ClientRepresentation.DefaultClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DefaultClientScopes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 97
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The defaultClientScopes property
+  example: []
+  syntax:
+    content: public List<string>? DefaultClientScopes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property DefaultClientScopes As List(Of String)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles
+  id: DefaultRoles
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DefaultRoles
+  nameWithType: ClientRepresentation.DefaultRoles
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DefaultRoles
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 103
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The defaultRoles property
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("")]
+
+      public List<string>? DefaultRoles { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: >-
+      <Obsolete("")>
+
+      Public Property DefaultRoles As List(Of String)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ''
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description
+  id: Description
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ClientRepresentation.Description
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Description
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 114
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The description property
+  example: []
+  syntax:
+    content: public string? Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled
+  id: DirectAccessGrantsEnabled
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DirectAccessGrantsEnabled
+  nameWithType: ClientRepresentation.DirectAccessGrantsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DirectAccessGrantsEnabled
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 120
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The directAccessGrantsEnabled property
+  example: []
+  syntax:
+    content: public bool? DirectAccessGrantsEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property DirectAccessGrantsEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly
+  id: DirectGrantsOnly
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DirectGrantsOnly
+  nameWithType: ClientRepresentation.DirectGrantsOnly
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DirectGrantsOnly
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 122
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The directGrantsOnly property
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("")]
+
+      public bool? DirectGrantsOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <Obsolete("")>
+
+      Public Property DirectGrantsOnly As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ''
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled
+  id: Enabled
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: ClientRepresentation.Enabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Enabled
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 125
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The enabled property
+  example: []
+  syntax:
+    content: public bool? Enabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property Enabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout
+  id: FrontchannelLogout
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: FrontchannelLogout
+  nameWithType: ClientRepresentation.FrontchannelLogout
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FrontchannelLogout
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 127
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The frontchannelLogout property
+  example: []
+  syntax:
+    content: public bool? FrontchannelLogout { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property FrontchannelLogout As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed
+  id: FullScopeAllowed
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: FullScopeAllowed
+  nameWithType: ClientRepresentation.FullScopeAllowed
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FullScopeAllowed
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 129
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The fullScopeAllowed property
+  example: []
+  syntax:
+    content: public bool? FullScopeAllowed { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property FullScopeAllowed As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id
+  id: Id
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ClientRepresentation.Id
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Id
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 133
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The id property
+  example: []
+  syntax:
+    content: public string? Id { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled
+  id: ImplicitFlowEnabled
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ImplicitFlowEnabled
+  nameWithType: ClientRepresentation.ImplicitFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ImplicitFlowEnabled
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 139
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The implicitFlowEnabled property
+  example: []
+  syntax:
+    content: public bool? ImplicitFlowEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property ImplicitFlowEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name
+  id: Name
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ClientRepresentation.Name
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Name
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 143
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The name property
+  example: []
+  syntax:
+    content: public string? Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout
+  id: NodeReRegistrationTimeout
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: NodeReRegistrationTimeout
+  nameWithType: ClientRepresentation.NodeReRegistrationTimeout
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: NodeReRegistrationTimeout
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 149
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The nodeReRegistrationTimeout property
+  example: []
+  syntax:
+    content: public int? NodeReRegistrationTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property NodeReRegistrationTimeout As Integer?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore
+  id: NotBefore
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: NotBefore
+  nameWithType: ClientRepresentation.NotBefore
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: NotBefore
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 151
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The notBefore property
+  example: []
+  syntax:
+    content: public int? NotBefore { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property NotBefore As Integer?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes
+  id: OptionalClientScopes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: OptionalClientScopes
+  nameWithType: ClientRepresentation.OptionalClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: OptionalClientScopes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 155
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The optionalClientScopes property
+  example: []
+  syntax:
+    content: public List<string>? OptionalClientScopes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property OptionalClientScopes As List(Of String)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin
+  id: Origin
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Origin
+  nameWithType: ClientRepresentation.Origin
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Origin
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 163
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The origin property
+  example: []
+  syntax:
+    content: public string? Origin { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Origin As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol
+  id: Protocol
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Protocol
+  nameWithType: ClientRepresentation.Protocol
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Protocol
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 171
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The protocol property
+  example: []
+  syntax:
+    content: public string? Protocol { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Protocol As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers
+  id: ProtocolMappers
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ProtocolMappers
+  nameWithType: ClientRepresentation.ProtocolMappers
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ProtocolMappers
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 179
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The protocolMappers property
+  example: []
+  syntax:
+    content: public List<ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation}
+    content.vb: Public Property ProtocolMappers As List(Of ProtocolMapperRepresentation)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient
+  id: PublicClient
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: PublicClient
+  nameWithType: ClientRepresentation.PublicClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PublicClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 185
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The publicClient property
+  example: []
+  syntax:
+    content: public bool? PublicClient { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property PublicClient As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris
+  id: RedirectUris
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RedirectUris
+  nameWithType: ClientRepresentation.RedirectUris
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RedirectUris
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 189
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The redirectUris property
+  example: []
+  syntax:
+    content: public List<string>? RedirectUris { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property RedirectUris As List(Of String)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes
+  id: RegisteredNodes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RegisteredNodes
+  nameWithType: ClientRepresentation.RegisteredNodes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RegisteredNodes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 197
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The registeredNodes property
+  example: []
+  syntax:
+    content: public ClientRepresentation_registeredNodes? RegisteredNodes { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_registeredNodes
+    content.vb: Public Property RegisteredNodes As ClientRepresentation_registeredNodes
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken
+  id: RegistrationAccessToken
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RegistrationAccessToken
+  nameWithType: ClientRepresentation.RegistrationAccessToken
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RegistrationAccessToken
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 205
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The registrationAccessToken property
+  example: []
+  syntax:
+    content: public string? RegistrationAccessToken { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RegistrationAccessToken As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl
+  id: RootUrl
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RootUrl
+  nameWithType: ClientRepresentation.RootUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RootUrl
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 213
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The rootUrl property
+  example: []
+  syntax:
+    content: public string? RootUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RootUrl As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret
+  id: Secret
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Secret
+  nameWithType: ClientRepresentation.Secret
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Secret
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 221
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The secret property
+  example: []
+  syntax:
+    content: public string? Secret { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Secret As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled
+  id: ServiceAccountsEnabled
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ServiceAccountsEnabled
+  nameWithType: ClientRepresentation.ServiceAccountsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ServiceAccountsEnabled
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 227
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The serviceAccountsEnabled property
+  example: []
+  syntax:
+    content: public bool? ServiceAccountsEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property ServiceAccountsEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled
+  id: StandardFlowEnabled
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: StandardFlowEnabled
+  nameWithType: ClientRepresentation.StandardFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: StandardFlowEnabled
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 229
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The standardFlowEnabled property
+  example: []
+  syntax:
+    content: public bool? StandardFlowEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property StandardFlowEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired
+  id: SurrogateAuthRequired
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: SurrogateAuthRequired
+  nameWithType: ClientRepresentation.SurrogateAuthRequired
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: SurrogateAuthRequired
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 231
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The surrogateAuthRequired property
+  example: []
+  syntax:
+    content: public bool? SurrogateAuthRequired { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property SurrogateAuthRequired As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig
+  id: UseTemplateConfig
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: UseTemplateConfig
+  nameWithType: ClientRepresentation.UseTemplateConfig
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseTemplateConfig
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 233
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The useTemplateConfig property
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("")]
+
+      public bool? UseTemplateConfig { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <Obsolete("")>
+
+      Public Property UseTemplateConfig As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ''
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers
+  id: UseTemplateMappers
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: UseTemplateMappers
+  nameWithType: ClientRepresentation.UseTemplateMappers
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseTemplateMappers
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 236
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The useTemplateMappers property
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("")]
+
+      public bool? UseTemplateMappers { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <Obsolete("")>
+
+      Public Property UseTemplateMappers As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ''
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope
+  id: UseTemplateScope
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: UseTemplateScope
+  nameWithType: ClientRepresentation.UseTemplateScope
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseTemplateScope
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 239
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The useTemplateScope property
+  example: []
+  syntax:
+    content: >-
+      [Obsolete("")]
+
+      public bool? UseTemplateScope { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <Obsolete("")>
+
+      Public Property UseTemplateScope As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope*
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ''
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins
+  id: WebOrigins
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: WebOrigins
+  nameWithType: ClientRepresentation.WebOrigins
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WebOrigins
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 244
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The webOrigins property
+  example: []
+  syntax:
+    content: public List<string>? WebOrigins { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.String}
+    content.vb: Public Property WebOrigins As List(Of String)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.#ctor
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.#ctor
+  id: '#ctor'
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientRepresentation()
+  nameWithType: ClientRepresentation.ClientRepresentation()
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientRepresentation()
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 252
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Instantiates a new <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation" data-throw-if-not-resolved="false"></xref> and sets the default values.
+  example: []
+  syntax:
+    content: public ClientRepresentation()
+    content.vb: Public Sub New()
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.#ctor*
+  nameWithType.vb: ClientRepresentation.New()
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.New()
+  name.vb: New()
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  id: CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: CreateFromDiscriminatorValue(IParseNode)
+  nameWithType: ClientRepresentation.CreateFromDiscriminatorValue(IParseNode)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateFromDiscriminatorValue
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 261
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Creates a new instance of the appropriate class based on discriminator value
+  example: []
+  syntax:
+    content: public static ClientRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+    parameters:
+    - id: parseNode
+      type: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+      description: The parse node to use to read the discriminator value and create the object
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+      description: A <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function CreateFromDiscriminatorValue(parseNode As IParseNode) As ClientRepresentation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers
+  id: GetFieldDeserializers
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: GetFieldDeserializers()
+  nameWithType: ClientRepresentation.GetFieldDeserializers()
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers()
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetFieldDeserializers
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 270
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The deserialization information for the current model
+  example: []
+  syntax:
+    content: public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Action{Microsoft.Kiota.Abstractions.Serialization.IParseNode}}
+      description: A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;
+    content.vb: Public Overridable Function GetFieldDeserializers() As IDictionary(Of String, Action(Of IParseNode))
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers*
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  id: Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Serialize(ISerializationWriter)
+  nameWithType: ClientRepresentation.Serialize(ISerializationWriter)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Serialize
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ClientRepresentation.cs
+    startLine: 323
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Serializes information the current object
+  example: []
+  syntax:
+    content: public virtual void Serialize(ISerializationWriter writer)
+    parameters:
+    - id: writer
+      type: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+      description: Serialization writer to use to serialize this model
+    content.vb: Public Overridable Sub Serialize(writer As ISerializationWriter)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize*
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: IAdditionalDataHolder
+  nameWithType: IAdditionalDataHolder
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParsable
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.IParsable
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: IParsable
+  nameWithType: IParsable
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParsable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Kiota.Abstractions.Serialization
+  commentId: N:Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: Microsoft.Kiota.Abstractions.Serialization
+  nameWithType: Microsoft.Kiota.Abstractions.Serialization
+  fullName: Microsoft.Kiota.Abstractions.Serialization
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions.Serialization
+    name: Serialization
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions.Serialization
+    name: Serialization
+    isExternal: true
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Access
+  name: Access
+  nameWithType: ClientRepresentation.Access
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Access
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_access
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_access
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_access.html
+  name: ClientRepresentation_access
+  nameWithType: ClientRepresentation_access
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_access
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_AdditionalData
+  name: AdditionalData
+  nameWithType: ClientRepresentation.AdditionalData
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdditionalData
+- uid: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+  commentId: P:Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+  parent: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  isExternal: true
+  name: AdditionalData
+  nameWithType: IAdditionalDataHolder.AdditionalData
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, object>
+  nameWithType: IDictionary<string, object>
+  fullName: System.Collections.Generic.IDictionary<string, object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_AdminUrl
+  name: AdminUrl
+  nameWithType: ClientRepresentation.AdminUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AdminUrl
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_AlwaysDisplayInConsole
+  name: AlwaysDisplayInConsole
+  nameWithType: ClientRepresentation.AlwaysDisplayInConsole
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AlwaysDisplayInConsole
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Attributes
+  name: Attributes
+  nameWithType: ClientRepresentation.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Attributes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_attributes
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_attributes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_attributes.html
+  name: ClientRepresentation_attributes
+  nameWithType: ClientRepresentation_attributes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_attributes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_AuthenticationFlowBindingOverrides
+  name: AuthenticationFlowBindingOverrides
+  nameWithType: ClientRepresentation.AuthenticationFlowBindingOverrides
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthenticationFlowBindingOverrides
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_authenticationFlowBindingOverrides
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_authenticationFlowBindingOverrides
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_authenticationFlowBindingOverrides.html
+  name: ClientRepresentation_authenticationFlowBindingOverrides
+  nameWithType: ClientRepresentation_authenticationFlowBindingOverrides
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_authenticationFlowBindingOverrides
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_AuthorizationServicesEnabled
+  name: AuthorizationServicesEnabled
+  nameWithType: ClientRepresentation.AuthorizationServicesEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationServicesEnabled
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_AuthorizationSettings
+  name: AuthorizationSettings
+  nameWithType: ClientRepresentation.AuthorizationSettings
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.AuthorizationSettings
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation.html
+  name: ResourceServerRepresentation
+  nameWithType: ResourceServerRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_BaseUrl
+  name: BaseUrl
+  nameWithType: ClientRepresentation.BaseUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BaseUrl
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_BearerOnly
+  name: BearerOnly
+  nameWithType: ClientRepresentation.BearerOnly
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.BearerOnly
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ClientAuthenticatorType
+  name: ClientAuthenticatorType
+  nameWithType: ClientRepresentation.ClientAuthenticatorType
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientAuthenticatorType
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ClientId
+  name: ClientId
+  nameWithType: ClientRepresentation.ClientId
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientId
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ClientTemplate
+  name: ClientTemplate
+  nameWithType: ClientRepresentation.ClientTemplate
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientTemplate
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ConsentRequired
+  name: ConsentRequired
+  nameWithType: ClientRepresentation.ConsentRequired
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ConsentRequired
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_DefaultClientScopes
+  name: DefaultClientScopes
+  nameWithType: ClientRepresentation.DefaultClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultClientScopes
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_DefaultRoles
+  name: DefaultRoles
+  nameWithType: ClientRepresentation.DefaultRoles
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DefaultRoles
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Description
+  name: Description
+  nameWithType: ClientRepresentation.Description
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Description
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_DirectAccessGrantsEnabled
+  name: DirectAccessGrantsEnabled
+  nameWithType: ClientRepresentation.DirectAccessGrantsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectAccessGrantsEnabled
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_DirectGrantsOnly
+  name: DirectGrantsOnly
+  nameWithType: ClientRepresentation.DirectGrantsOnly
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.DirectGrantsOnly
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Enabled
+  name: Enabled
+  nameWithType: ClientRepresentation.Enabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Enabled
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_FrontchannelLogout
+  name: FrontchannelLogout
+  nameWithType: ClientRepresentation.FrontchannelLogout
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FrontchannelLogout
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_FullScopeAllowed
+  name: FullScopeAllowed
+  nameWithType: ClientRepresentation.FullScopeAllowed
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.FullScopeAllowed
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Id
+  name: Id
+  nameWithType: ClientRepresentation.Id
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Id
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ImplicitFlowEnabled
+  name: ImplicitFlowEnabled
+  nameWithType: ClientRepresentation.ImplicitFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ImplicitFlowEnabled
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Name
+  name: Name
+  nameWithType: ClientRepresentation.Name
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Name
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_NodeReRegistrationTimeout
+  name: NodeReRegistrationTimeout
+  nameWithType: ClientRepresentation.NodeReRegistrationTimeout
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NodeReRegistrationTimeout
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_NotBefore
+  name: NotBefore
+  nameWithType: ClientRepresentation.NotBefore
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.NotBefore
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_OptionalClientScopes
+  name: OptionalClientScopes
+  nameWithType: ClientRepresentation.OptionalClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.OptionalClientScopes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Origin
+  name: Origin
+  nameWithType: ClientRepresentation.Origin
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Origin
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Protocol
+  name: Protocol
+  nameWithType: ClientRepresentation.Protocol
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Protocol
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ProtocolMappers
+  name: ProtocolMappers
+  nameWithType: ClientRepresentation.ProtocolMappers
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ProtocolMappers
+- uid: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation}
+  commentId: T:System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<ProtocolMapperRepresentation>
+  nameWithType: List<ProtocolMapperRepresentation>
+  fullName: System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>
+  nameWithType.vb: List(Of ProtocolMapperRepresentation)
+  fullName.vb: System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation)
+  name.vb: List(Of ProtocolMapperRepresentation)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation
+    name: ProtocolMapperRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation
+    name: ProtocolMapperRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation.html
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_PublicClient
+  name: PublicClient
+  nameWithType: ClientRepresentation.PublicClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.PublicClient
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_RedirectUris
+  name: RedirectUris
+  nameWithType: ClientRepresentation.RedirectUris
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RedirectUris
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_RegisteredNodes
+  name: RegisteredNodes
+  nameWithType: ClientRepresentation.RegisteredNodes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegisteredNodes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_registeredNodes
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_registeredNodes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_registeredNodes.html
+  name: ClientRepresentation_registeredNodes
+  nameWithType: ClientRepresentation_registeredNodes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_registeredNodes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_RegistrationAccessToken
+  name: RegistrationAccessToken
+  nameWithType: ClientRepresentation.RegistrationAccessToken
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RegistrationAccessToken
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_RootUrl
+  name: RootUrl
+  nameWithType: ClientRepresentation.RootUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.RootUrl
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Secret
+  name: Secret
+  nameWithType: ClientRepresentation.Secret
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Secret
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_ServiceAccountsEnabled
+  name: ServiceAccountsEnabled
+  nameWithType: ClientRepresentation.ServiceAccountsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ServiceAccountsEnabled
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_StandardFlowEnabled
+  name: StandardFlowEnabled
+  nameWithType: ClientRepresentation.StandardFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.StandardFlowEnabled
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_SurrogateAuthRequired
+  name: SurrogateAuthRequired
+  nameWithType: ClientRepresentation.SurrogateAuthRequired
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.SurrogateAuthRequired
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_UseTemplateConfig
+  name: UseTemplateConfig
+  nameWithType: ClientRepresentation.UseTemplateConfig
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateConfig
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_UseTemplateMappers
+  name: UseTemplateMappers
+  nameWithType: ClientRepresentation.UseTemplateMappers
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateMappers
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_UseTemplateScope
+  name: UseTemplateScope
+  nameWithType: ClientRepresentation.UseTemplateScope
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.UseTemplateScope
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_WebOrigins
+  name: WebOrigins
+  nameWithType: ClientRepresentation.WebOrigins
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.WebOrigins
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html
+  name: ClientRepresentation
+  nameWithType: ClientRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.#ctor
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation__ctor
+  name: ClientRepresentation
+  nameWithType: ClientRepresentation.ClientRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.ClientRepresentation
+  nameWithType.vb: ClientRepresentation.New
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.New
+  name.vb: New
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_CreateFromDiscriminatorValue_Microsoft_Kiota_Abstractions_Serialization_IParseNode_
+  name: CreateFromDiscriminatorValue
+  nameWithType: ClientRepresentation.CreateFromDiscriminatorValue
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.IParseNode
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: IParseNode
+  nameWithType: IParseNode
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_GetFieldDeserializers
+  name: GetFieldDeserializers
+  nameWithType: ClientRepresentation.GetFieldDeserializers
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.GetFieldDeserializers
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+  commentId: M:Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+  parent: Microsoft.Kiota.Abstractions.Serialization.IParsable
+  isExternal: true
+  name: GetFieldDeserializers()
+  nameWithType: IParsable.GetFieldDeserializers()
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers()
+  spec.csharp:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+    name: GetFieldDeserializers
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+    name: GetFieldDeserializers
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IDictionary{System.String,System.Action{Microsoft.Kiota.Abstractions.Serialization.IParseNode}}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Action{Microsoft.Kiota.Abstractions.Serialization.IParseNode}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, Action<IParseNode>>
+  nameWithType: IDictionary<string, Action<IParseNode>>
+  fullName: System.Collections.Generic.IDictionary<string, System.Action<Microsoft.Kiota.Abstractions.Serialization.IParseNode>>
+  nameWithType.vb: IDictionary(Of String, Action(Of IParseNode))
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, System.Action(Of Microsoft.Kiota.Abstractions.Serialization.IParseNode))
+  name.vb: IDictionary(Of String, Action(Of IParseNode))
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+    name: IParseNode
+    isExternal: true
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+    name: IParseNode
+    isExternal: true
+  - name: )
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ClientRepresentation_Serialize_Microsoft_Kiota_Abstractions_Serialization_ISerializationWriter_
+  name: Serialize
+  nameWithType: ClientRepresentation.Serialize
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.Serialize
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  commentId: M:Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  parent: Microsoft.Kiota.Abstractions.Serialization.IParsable
+  isExternal: true
+  name: Serialize(ISerializationWriter)
+  nameWithType: IParsable.Serialize(ISerializationWriter)
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  spec.csharp:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+    name: Serialize
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+    name: ISerializationWriter
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+    name: Serialize
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+    name: ISerializationWriter
+    isExternal: true
+  - name: )
+- uid: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: ISerializationWriter
+  nameWithType: ISerializationWriter
+  fullName: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter

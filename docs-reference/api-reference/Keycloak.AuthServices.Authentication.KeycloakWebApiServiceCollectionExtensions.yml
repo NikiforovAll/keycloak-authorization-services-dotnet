@@ -1,0 +1,731 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  id: KeycloakWebApiServiceCollectionExtensions
+  parent: Keycloak.AuthServices.Authentication
+  children:
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String,System.String)
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.String)
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String)
+  langs:
+  - csharp
+  - vb
+  name: KeycloakWebApiServiceCollectionExtensions
+  nameWithType: KeycloakWebApiServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakWebApiServiceCollectionExtensions
+    path: ../src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+    startLine: 10
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Extension for IServiceCollection for startup initialization of web APIs.
+  example: []
+  syntax:
+    content: public static class KeycloakWebApiServiceCollectionExtensions
+    content.vb: Public Module KeycloakWebApiServiceCollectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  id: AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, string, string)
+  nameWithType: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, string, string)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApiAuthentication
+    path: ../src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+    startLine: 21
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: >-
+    Protects the web API with Keycloak.
+
+    This method expects the configuration file will have a section, named "Keycloak" as default, with the necessary settings to initialize authentication options.
+  example: []
+  syntax:
+    content: public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApiAuthentication(this IServiceCollection services, IConfiguration configuration, string configSectionName = "Keycloak", string jwtBearerScheme = "Bearer")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection to which to add authentication.
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The Configuration object.
+    - id: configSectionName
+      type: System.String
+      description: The configuration section with the necessary settings to initialize authentication options. Default value is "KeycloakAuthenticationOptions.Section".
+    - id: jwtBearerScheme
+      type: System.String
+      description: The JwtBearer scheme name to be used. Default value is "JwtBearerDefaults.AuthenticationScheme".
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+      description: The authentication builder to chain extension methods.
+    content.vb: Public Shared Function AddKeycloakWebApiAuthentication(services As IServiceCollection, configuration As IConfiguration, configSectionName As String = "Keycloak", jwtBearerScheme As String = "Bearer") As KeycloakWebApiAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication*
+  nameWithType.vb: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, String, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, String, String)
+  name.vb: AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, String, String)
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.String)
+  id: AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApiAuthentication(IServiceCollection, IConfigurationSection, string)
+  nameWithType: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, IConfigurationSection, string)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApiAuthentication
+    path: ../src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+    startLine: 41
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: >-
+    Protects the web API with Keycloak.
+
+    This method expects the configuration file will have a section, named "Keycloak" as default, with the necessary settings to initialize authentication options.
+  example: []
+  syntax:
+    content: public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApiAuthentication(this IServiceCollection services, IConfigurationSection configurationSection, string jwtBearerScheme = "Bearer")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection to which to add authentication.
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: The Configuration section object.
+    - id: jwtBearerScheme
+      type: System.String
+      description: The JwtBearer scheme name to be used. Default value is "JwtBearerDefaults.AuthenticationScheme".
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+      description: The authentication builder to chain extension methods.
+    content.vb: Public Shared Function AddKeycloakWebApiAuthentication(services As IServiceCollection, configurationSection As IConfigurationSection, jwtBearerScheme As String = "Bearer") As KeycloakWebApiAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication*
+  nameWithType.vb: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, IConfigurationSection, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection, String)
+  name.vb: AddKeycloakWebApiAuthentication(IServiceCollection, IConfigurationSection, String)
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String,System.String)
+  id: AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, Action<JwtBearerOptions>, string, string)
+  nameWithType: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, Action<JwtBearerOptions>, string, string)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action<Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions>, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApiAuthentication
+    path: ../src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+    startLine: 62
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: >-
+    Protects the web API with Keycloak.
+
+    This method expects the configuration file will have a section, named "Keycloak" as default, with the necessary settings to initialize authentication options.
+  example: []
+  syntax:
+    content: public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApiAuthentication(this IServiceCollection services, IConfiguration configuration, Action<JwtBearerOptions> configureJwtBearerOptions, string configSectionName = "Keycloak", string jwtBearerScheme = "Bearer")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection to which to add authentication.
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The Configuration object.
+    - id: configureJwtBearerOptions
+      type: System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions}
+      description: A delegate to configure the JwtBearerOptions.
+    - id: configSectionName
+      type: System.String
+      description: The configuration section with the necessary settings to initialize authentication options. Default value is "KeycloakAuthenticationOptions.Section".
+    - id: jwtBearerScheme
+      type: System.String
+      description: The JwtBearer scheme name to be used. Default value is "JwtBearerDefaults.AuthenticationScheme".
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+      description: The authentication builder to chain extension methods.
+    content.vb: Public Shared Function AddKeycloakWebApiAuthentication(services As IServiceCollection, configuration As IConfiguration, configureJwtBearerOptions As Action(Of JwtBearerOptions), configSectionName As String = "Keycloak", jwtBearerScheme As String = "Bearer") As KeycloakWebApiAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication*
+  nameWithType.vb: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, Action(Of JwtBearerOptions), String, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action(Of Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions), String, String)
+  name.vb: AddKeycloakWebApiAuthentication(IServiceCollection, IConfiguration, Action(Of JwtBearerOptions), String, String)
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String)
+  id: AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions},System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApiAuthentication(IServiceCollection, Action<KeycloakAuthenticationOptions>, Action<JwtBearerOptions>?, string)
+  nameWithType: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, Action<KeycloakAuthenticationOptions>, Action<JwtBearerOptions>?, string)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions>, System.Action<Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions>?, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApiAuthentication
+    path: ../src/Keycloak.AuthServices.Authentication/WebApiExtensions/KeycloakWebApiServiceCollectionExtensions.cs
+    startLine: 87
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Protects the web API with Keycloak.
+  example: []
+  syntax:
+    content: public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApiAuthentication(this IServiceCollection services, Action<KeycloakAuthenticationOptions> configureKeycloakOptions, Action<JwtBearerOptions>? configureJwtBearerOptions = null, string jwtBearerScheme = "Bearer")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection to which to add authentication.
+    - id: configureKeycloakOptions
+      type: System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions}
+      description: ''
+    - id: configureJwtBearerOptions
+      type: System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions}
+      description: ''
+    - id: jwtBearerScheme
+      type: System.String
+      description: The JwtBearer scheme name to be used. Default value is "JwtBearerDefaults.AuthenticationScheme".
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+      description: The authentication builder to chain extension methods.
+    content.vb: Public Shared Function AddKeycloakWebApiAuthentication(services As IServiceCollection, configureKeycloakOptions As Action(Of KeycloakAuthenticationOptions), configureJwtBearerOptions As Action(Of JwtBearerOptions) = Nothing, jwtBearerScheme As String = "Bearer") As KeycloakWebApiAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication*
+  nameWithType.vb: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(IServiceCollection, Action(Of KeycloakAuthenticationOptions), Action(Of JwtBearerOptions), String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions), System.Action(Of Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions), String)
+  name.vb: AddKeycloakWebApiAuthentication(IServiceCollection, Action(Of KeycloakAuthenticationOptions), Action(Of JwtBearerOptions), String)
+references:
+- uid: Keycloak.AuthServices.Authentication
+  commentId: N:Keycloak.AuthServices.Authentication
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication
+  nameWithType: Keycloak.AuthServices.Authentication
+  fullName: Keycloak.AuthServices.Authentication
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication*
+  commentId: Overload:Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication
+  href: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.html#Keycloak_AuthServices_Authentication_KeycloakWebApiServiceCollectionExtensions_AddKeycloakWebApiAuthentication_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_String_
+  name: AddKeycloakWebApiAuthentication
+  nameWithType: KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions.AddKeycloakWebApiAuthentication
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder.html
+  name: KeycloakWebApiAuthenticationBuilder
+  nameWithType: KeycloakWebApiAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: Microsoft.Extensions.Configuration.IConfigurationSection
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSection
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsection
+  name: IConfigurationSection
+  nameWithType: IConfigurationSection
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSection
+- uid: System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions}
+  commentId: T:System.Action{Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<JwtBearerOptions>
+  nameWithType: Action<JwtBearerOptions>
+  fullName: System.Action<Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions>
+  nameWithType.vb: Action(Of JwtBearerOptions)
+  fullName.vb: System.Action(Of Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions)
+  name.vb: Action(Of JwtBearerOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions
+    name: JwtBearerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbeareroptions
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerOptions
+    name: JwtBearerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.jwtbearer.jwtbeareroptions
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions}
+  commentId: T:System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<KeycloakAuthenticationOptions>
+  nameWithType: Action<KeycloakAuthenticationOptions>
+  fullName: System.Action<Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions>
+  nameWithType.vb: Action(Of KeycloakAuthenticationOptions)
+  fullName.vb: System.Action(Of Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions)
+  name.vb: Action(Of KeycloakAuthenticationOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+    name: KeycloakAuthenticationOptions
+    href: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+    name: KeycloakAuthenticationOptions
+    href: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions.html
+  - name: )

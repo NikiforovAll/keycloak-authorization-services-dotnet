@@ -1,0 +1,571 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions
+  commentId: T:Keycloak.AuthServices.Common.ConfigurationExtensions
+  id: ConfigurationExtensions
+  parent: Keycloak.AuthServices.Common
+  children:
+  - Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,``0,System.String)
+  - Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection,``0)
+  - Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  - Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection)
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationExtensions
+  nameWithType: ConfigurationExtensions
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ConfigurationExtensions
+    path: ../src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+    startLine: 7
+  assemblies:
+  - Keycloak.AuthServices.Common
+  namespace: Keycloak.AuthServices.Common
+  summary: ''
+  example: []
+  syntax:
+    content: public static class ConfigurationExtensions
+    content.vb: Public Module ConfigurationExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  commentId: M:Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  id: GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Common.ConfigurationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetKeycloakOptions<T>(IConfiguration, string)
+  nameWithType: ConfigurationExtensions.GetKeycloakOptions<T>(IConfiguration, string)
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions<T>(Microsoft.Extensions.Configuration.IConfiguration, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetKeycloakOptions
+    path: ../src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Common
+  namespace: Keycloak.AuthServices.Common
+  summary: Retrieves the Keycloak options from the configuration section with the specified name.
+  example: []
+  syntax:
+    content: 'public static T? GetKeycloakOptions<T>(this IConfiguration configuration, string configSectionName = "Keycloak") where T : KeycloakInstallationOptions'
+    parameters:
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The configuration instance.
+    - id: configSectionName
+      type: System.String
+      description: The name of the configuration section. Default is ConfigurationConstants.ConfigurationPrefix.
+    typeParameters:
+    - id: T
+      description: The type of the Keycloak options.
+    return:
+      type: '{T}'
+      description: The Keycloak options instance.
+    content.vb: Public Shared Function GetKeycloakOptions(Of T As KeycloakInstallationOptions)(configuration As IConfiguration, configSectionName As String = "Keycloak") As T
+  overload: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions*
+  nameWithType.vb: ConfigurationExtensions.GetKeycloakOptions(Of T)(IConfiguration, String)
+  fullName.vb: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions(Of T)(Microsoft.Extensions.Configuration.IConfiguration, String)
+  name.vb: GetKeycloakOptions(Of T)(IConfiguration, String)
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection)
+  commentId: M:Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection)
+  id: GetKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Common.ConfigurationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetKeycloakOptions<T>(IConfigurationSection)
+  nameWithType: ConfigurationExtensions.GetKeycloakOptions<T>(IConfigurationSection)
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions<T>(Microsoft.Extensions.Configuration.IConfigurationSection)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetKeycloakOptions
+    path: ../src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+    startLine: 32
+  assemblies:
+  - Keycloak.AuthServices.Common
+  namespace: Keycloak.AuthServices.Common
+  summary: Retrieves the Keycloak options from the configuration section
+  example: []
+  syntax:
+    content: 'public static T? GetKeycloakOptions<T>(this IConfigurationSection configurationSection) where T : KeycloakInstallationOptions'
+    parameters:
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+    typeParameters:
+    - id: T
+      description: The type of the Keycloak options.
+    return:
+      type: '{T}'
+      description: The Keycloak options instance.
+    content.vb: Public Shared Function GetKeycloakOptions(Of T As KeycloakInstallationOptions)(configurationSection As IConfigurationSection) As T
+  overload: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions*
+  nameWithType.vb: ConfigurationExtensions.GetKeycloakOptions(Of T)(IConfigurationSection)
+  fullName.vb: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions(Of T)(Microsoft.Extensions.Configuration.IConfigurationSection)
+  name.vb: GetKeycloakOptions(Of T)(IConfigurationSection)
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,``0,System.String)
+  commentId: M:Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,``0,System.String)
+  id: BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfiguration,``0,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Common.ConfigurationExtensions
+  langs:
+  - csharp
+  - vb
+  name: BindKeycloakOptions<T>(IConfiguration, T, string)
+  nameWithType: ConfigurationExtensions.BindKeycloakOptions<T>(IConfiguration, T, string)
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions<T>(Microsoft.Extensions.Configuration.IConfiguration, T, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BindKeycloakOptions
+    path: ../src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+    startLine: 47
+  assemblies:
+  - Keycloak.AuthServices.Common
+  namespace: Keycloak.AuthServices.Common
+  summary: Binds the Keycloak options from the configuration section with the specified name to the provided options instance.
+  example: []
+  syntax:
+    content: 'public static void BindKeycloakOptions<T>(this IConfiguration configuration, T options, string configSectionName = "Keycloak") where T : KeycloakInstallationOptions'
+    parameters:
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The configuration instance.
+    - id: options
+      type: '{T}'
+      description: The options instance to bind the configuration to.
+    - id: configSectionName
+      type: System.String
+      description: The name of the configuration section. Default is ConfigurationConstants.ConfigurationPrefix.
+    typeParameters:
+    - id: T
+      description: The type of the Keycloak options.
+    content.vb: Public Shared Sub BindKeycloakOptions(Of T As KeycloakInstallationOptions)(configuration As IConfiguration, options As T, configSectionName As String = "Keycloak")
+  overload: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions*
+  nameWithType.vb: ConfigurationExtensions.BindKeycloakOptions(Of T)(IConfiguration, T, String)
+  fullName.vb: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions(Of T)(Microsoft.Extensions.Configuration.IConfiguration, T, String)
+  name.vb: BindKeycloakOptions(Of T)(IConfiguration, T, String)
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection,``0)
+  commentId: M:Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection,``0)
+  id: BindKeycloakOptions``1(Microsoft.Extensions.Configuration.IConfigurationSection,``0)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Common.ConfigurationExtensions
+  langs:
+  - csharp
+  - vb
+  name: BindKeycloakOptions<T>(IConfigurationSection, T)
+  nameWithType: ConfigurationExtensions.BindKeycloakOptions<T>(IConfigurationSection, T)
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions<T>(Microsoft.Extensions.Configuration.IConfigurationSection, T)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BindKeycloakOptions
+    path: ../src/Keycloak.AuthServices.Common/ConfigurationExtensions.cs
+    startLine: 65
+  assemblies:
+  - Keycloak.AuthServices.Common
+  namespace: Keycloak.AuthServices.Common
+  summary: Binds the Keycloak options from the configuration section to the provided options instance.
+  example: []
+  syntax:
+    content: 'public static void BindKeycloakOptions<T>(this IConfigurationSection configurationSection, T options) where T : KeycloakInstallationOptions'
+    parameters:
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: ''
+    - id: options
+      type: '{T}'
+      description: The options instance to bind the configuration to.
+    typeParameters:
+    - id: T
+      description: The type of the Keycloak options.
+    content.vb: Public Shared Sub BindKeycloakOptions(Of T As KeycloakInstallationOptions)(configurationSection As IConfigurationSection, options As T)
+  overload: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions*
+  nameWithType.vb: ConfigurationExtensions.BindKeycloakOptions(Of T)(IConfigurationSection, T)
+  fullName.vb: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions(Of T)(Microsoft.Extensions.Configuration.IConfigurationSection, T)
+  name.vb: BindKeycloakOptions(Of T)(IConfigurationSection, T)
+references:
+- uid: Keycloak.AuthServices.Common
+  commentId: N:Keycloak.AuthServices.Common
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Common
+  nameWithType: Keycloak.AuthServices.Common
+  fullName: Keycloak.AuthServices.Common
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions*
+  commentId: Overload:Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions
+  href: Keycloak.AuthServices.Common.ConfigurationExtensions.html#Keycloak_AuthServices_Common_ConfigurationExtensions_GetKeycloakOptions__1_Microsoft_Extensions_Configuration_IConfiguration_System_String_
+  name: GetKeycloakOptions
+  nameWithType: ConfigurationExtensions.GetKeycloakOptions
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions.GetKeycloakOptions
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Microsoft.Extensions.Configuration.IConfigurationSection
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSection
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsection
+  name: IConfigurationSection
+  nameWithType: IConfigurationSection
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSection
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions*
+  commentId: Overload:Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions
+  href: Keycloak.AuthServices.Common.ConfigurationExtensions.html#Keycloak_AuthServices_Common_ConfigurationExtensions_BindKeycloakOptions__1_Microsoft_Extensions_Configuration_IConfiguration___0_System_String_
+  name: BindKeycloakOptions
+  nameWithType: ConfigurationExtensions.BindKeycloakOptions
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions.BindKeycloakOptions

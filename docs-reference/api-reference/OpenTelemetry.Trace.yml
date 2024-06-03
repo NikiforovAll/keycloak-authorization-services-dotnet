@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: OpenTelemetry.Trace
+  commentId: N:OpenTelemetry.Trace
+  id: OpenTelemetry.Trace
+  children:
+  - OpenTelemetry.Trace.TracerProviderBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: OpenTelemetry.Trace
+  nameWithType: OpenTelemetry.Trace
+  fullName: OpenTelemetry.Trace
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.OpenTelemetry
+references:
+- uid: OpenTelemetry.Trace.TracerProviderBuilderExtensions
+  commentId: T:OpenTelemetry.Trace.TracerProviderBuilderExtensions
+  href: OpenTelemetry.Trace.TracerProviderBuilderExtensions.html
+  name: TracerProviderBuilderExtensions
+  nameWithType: TracerProviderBuilderExtensions
+  fullName: OpenTelemetry.Trace.TracerProviderBuilderExtensions

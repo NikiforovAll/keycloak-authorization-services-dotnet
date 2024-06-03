@@ -1,0 +1,434 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  commentId: T:Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  id: KeycloakProtectionClientOptions
+  parent: Keycloak.AuthServices.Sdk
+  children:
+  - Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions.Section
+  langs:
+  - csharp
+  - vb
+  name: KeycloakProtectionClientOptions
+  nameWithType: KeycloakProtectionClientOptions
+  fullName: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/KeycloakProtectionClientOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakProtectionClientOptions
+    path: ../src/Keycloak.AuthServices.Sdk/KeycloakProtectionClientOptions.cs
+    startLine: 7
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk
+  summary: Defines a set of options used to perform Protection API HTTP Client calls
+  example: []
+  syntax:
+    content: 'public sealed class KeycloakProtectionClientOptions : KeycloakInstallationOptions'
+    content.vb: Public NotInheritable Class KeycloakProtectionClientOptions Inherits KeycloakInstallationOptions
+  inheritance:
+  - System.Object
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  inheritedMembers:
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions.Section
+  commentId: F:Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions.Section
+  id: Section
+  parent: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+  langs:
+  - csharp
+  - vb
+  name: Section
+  nameWithType: KeycloakProtectionClientOptions.Section
+  fullName: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions.Section
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/KeycloakProtectionClientOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Section
+    path: ../src/Keycloak.AuthServices.Sdk/KeycloakProtectionClientOptions.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk
+  summary: Default section name
+  example: []
+  syntax:
+    content: public const string Section = "Keycloak"
+    return:
+      type: System.String
+    content.vb: Public Const Section As String = "Keycloak"
+references:
+- uid: Keycloak.AuthServices.Sdk
+  commentId: N:Keycloak.AuthServices.Sdk
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk
+  nameWithType: Keycloak.AuthServices.Sdk
+  fullName: Keycloak.AuthServices.Sdk
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  commentId: T:Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  parent: Keycloak.AuthServices.Common
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html
+  name: KeycloakInstallationOptions
+  nameWithType: KeycloakInstallationOptions
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_AuthServerUrl
+  name: AuthServerUrl
+  nameWithType: KeycloakInstallationOptions.AuthServerUrl
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.AuthServerUrl
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_Realm
+  name: Realm
+  nameWithType: KeycloakInstallationOptions.Realm
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Realm
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_Resource
+  name: Resource
+  nameWithType: KeycloakInstallationOptions.Resource
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Resource
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_VerifyTokenAudience
+  name: VerifyTokenAudience
+  nameWithType: KeycloakInstallationOptions.VerifyTokenAudience
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.VerifyTokenAudience
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_Credentials
+  name: Credentials
+  nameWithType: KeycloakInstallationOptions.Credentials
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.Credentials
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_TokenClockSkew
+  name: TokenClockSkew
+  nameWithType: KeycloakInstallationOptions.TokenClockSkew
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.TokenClockSkew
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_SslRequired
+  name: SslRequired
+  nameWithType: KeycloakInstallationOptions.SslRequired
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.SslRequired
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_KeycloakUrlRealm
+  name: KeycloakUrlRealm
+  nameWithType: KeycloakInstallationOptions.KeycloakUrlRealm
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakUrlRealm
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+  commentId: P:Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+  parent: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html#Keycloak_AuthServices_Common_KeycloakInstallationOptions_KeycloakTokenEndpoint
+  name: KeycloakTokenEndpoint
+  nameWithType: KeycloakInstallationOptions.KeycloakTokenEndpoint
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions.KeycloakTokenEndpoint
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Common
+  commentId: N:Keycloak.AuthServices.Common
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Common
+  nameWithType: Keycloak.AuthServices.Common
+  fullName: Keycloak.AuthServices.Common
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

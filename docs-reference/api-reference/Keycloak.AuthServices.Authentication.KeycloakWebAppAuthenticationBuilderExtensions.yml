@@ -1,0 +1,754 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  id: KeycloakWebAppAuthenticationBuilderExtensions
+  parent: Keycloak.AuthServices.Authentication
+  children:
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String,System.String,System.String)
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: KeycloakWebAppAuthenticationBuilderExtensions
+  nameWithType: KeycloakWebAppAuthenticationBuilderExtensions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakWebAppAuthenticationBuilderExtensions
+    path: ../src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Extensions for the <xref href="Microsoft.AspNetCore.Authentication.AuthenticationBuilder" data-throw-if-not-resolved="false"></xref> for startup initialization.
+  example: []
+  syntax:
+    content: public static class KeycloakWebAppAuthenticationBuilderExtensions
+    content.vb: Public Module KeycloakWebAppAuthenticationBuilderExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String,System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String,System.String,System.String)
+  id: AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.String,System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApp(AuthenticationBuilder, IConfiguration, string, string, string, string?)
+  nameWithType: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(AuthenticationBuilder, IConfiguration, string, string, string, string?)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder, Microsoft.Extensions.Configuration.IConfiguration, string, string, string, string?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApp
+    path: ../src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+    startLine: 30
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: >-
+    Add authentication to a web app with Keycloak
+
+    This method expects the configuration file will have a section, named "Keycloak" as default,
+
+    with the necessary settings to initialize authentication options.
+  example: []
+  syntax:
+    content: public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(this AuthenticationBuilder builder, IConfiguration configuration, string configSectionName = "Keycloak", string openIdConnectScheme = "OpenIdConnect", string cookieScheme = "Cookies", string? displayName = null)
+    parameters:
+    - id: builder
+      type: Microsoft.AspNetCore.Authentication.AuthenticationBuilder
+      description: The <xref href="Microsoft.AspNetCore.Authentication.AuthenticationBuilder" data-throw-if-not-resolved="false"></xref> to which to add this configuration.
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The configuration instance.
+    - id: configSectionName
+      type: System.String
+      description: The configuration section with the necessary settings to initialize authentication options.
+    - id: openIdConnectScheme
+      type: System.String
+      description: The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".
+    - id: cookieScheme
+      type: System.String
+      description: The cookie-based scheme name to be used. By default it uses "Cookies".
+    - id: displayName
+      type: System.String
+      description: A display name for the authentication handler.
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+      description: The <xref href="Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder" data-throw-if-not-resolved="false"></xref> builder for chaining.
+    content.vb: Public Shared Function AddKeycloakWebApp(builder As AuthenticationBuilder, configuration As IConfiguration, configSectionName As String = "Keycloak", openIdConnectScheme As String = "OpenIdConnect", cookieScheme As String = "Cookies", displayName As String = Nothing) As KeycloakWebAppAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp*
+  nameWithType.vb: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(AuthenticationBuilder, IConfiguration, String, String, String, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder, Microsoft.Extensions.Configuration.IConfiguration, String, String, String, String)
+  name.vb: AddKeycloakWebApp(AuthenticationBuilder, IConfiguration, String, String, String, String)
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  id: AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApp(AuthenticationBuilder, IConfigurationSection, Action<CookieAuthenticationOptions>?, Action<OpenIdConnectOptions>?, string, string?, string?)
+  nameWithType: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(AuthenticationBuilder, IConfigurationSection, Action<CookieAuthenticationOptions>?, Action<OpenIdConnectOptions>?, string, string?, string?)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder, Microsoft.Extensions.Configuration.IConfigurationSection, System.Action<Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions>?, System.Action<Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions>?, string, string?, string?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApp
+    path: ../src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+    startLine: 70
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: >-
+    Add authentication with Keycloak
+
+    This method expects the configuration file will have a section, named "AzureAd" as default, with the necessary settings to initialize authentication options.
+  example: []
+  syntax:
+    content: public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(this AuthenticationBuilder builder, IConfigurationSection configurationSection, Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions = null, Action<OpenIdConnectOptions>? configureOpenIdConnectOptions = null, string openIdConnectScheme = "OpenIdConnect", string? cookieScheme = "Cookies", string? displayName = null)
+    parameters:
+    - id: builder
+      type: Microsoft.AspNetCore.Authentication.AuthenticationBuilder
+      description: The <xref href="Microsoft.AspNetCore.Authentication.AuthenticationBuilder" data-throw-if-not-resolved="false"></xref> to which to add this configuration.
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: The configuration section from which to get the options.
+    - id: configureCookieAuthenticationOptions
+      type: System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions}
+      description: ''
+    - id: configureOpenIdConnectOptions
+      type: System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions}
+      description: ''
+    - id: openIdConnectScheme
+      type: System.String
+      description: The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".
+    - id: cookieScheme
+      type: System.String
+      description: The cookie-based scheme name to be used. By default it uses "Cookies".
+    - id: displayName
+      type: System.String
+      description: A display name for the authentication handler.
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+      description: The authentication builder for chaining.
+    content.vb: Public Shared Function AddKeycloakWebApp(builder As AuthenticationBuilder, configurationSection As IConfigurationSection, configureCookieAuthenticationOptions As Action(Of CookieAuthenticationOptions) = Nothing, configureOpenIdConnectOptions As Action(Of OpenIdConnectOptions) = Nothing, openIdConnectScheme As String = "OpenIdConnect", cookieScheme As String = "Cookies", displayName As String = Nothing) As KeycloakWebAppAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp*
+  nameWithType.vb: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(AuthenticationBuilder, IConfigurationSection, Action(Of CookieAuthenticationOptions), Action(Of OpenIdConnectOptions), String, String, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder, Microsoft.Extensions.Configuration.IConfigurationSection, System.Action(Of Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions), System.Action(Of Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions), String, String, String)
+  name.vb: AddKeycloakWebApp(AuthenticationBuilder, IConfigurationSection, Action(Of CookieAuthenticationOptions), Action(Of OpenIdConnectOptions), String, String, String)
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  id: AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder,System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions},System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions},System.String,System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakWebApp(AuthenticationBuilder, Action<KeycloakAuthenticationOptions>, Action<CookieAuthenticationOptions>?, Action<OpenIdConnectOptions>?, string, string?, string?)
+  nameWithType: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(AuthenticationBuilder, Action<KeycloakAuthenticationOptions>, Action<CookieAuthenticationOptions>?, Action<OpenIdConnectOptions>?, string, string?, string?)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder, System.Action<Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions>, System.Action<Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions>?, System.Action<Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions>?, string, string?, string?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakWebApp
+    path: ../src/Keycloak.AuthServices.Authentication/WebAppExtensions/KeycloakWebAppAuthenticationBuilderExtensions.cs
+    startLine: 105
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Add authentication with Keycloak
+  example: []
+  syntax:
+    content: public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(this AuthenticationBuilder builder, Action<KeycloakAuthenticationOptions> configureKeycloakOptions, Action<CookieAuthenticationOptions>? configureCookieAuthenticationOptions = null, Action<OpenIdConnectOptions>? configureOpenIdConnectOptions = null, string openIdConnectScheme = "OpenIdConnect", string? cookieScheme = "Cookies", string? displayName = null)
+    parameters:
+    - id: builder
+      type: Microsoft.AspNetCore.Authentication.AuthenticationBuilder
+      description: The <xref href="Microsoft.AspNetCore.Authentication.AuthenticationBuilder" data-throw-if-not-resolved="false"></xref> to which to add this configuration.
+    - id: configureKeycloakOptions
+      type: System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions}
+      description: The action to configure <xref href="Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions" data-throw-if-not-resolved="false"></xref>.
+    - id: configureCookieAuthenticationOptions
+      type: System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions}
+      description: The action to configure <xref href="Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions" data-throw-if-not-resolved="false"></xref>.
+    - id: configureOpenIdConnectOptions
+      type: System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions}
+      description: ''
+    - id: openIdConnectScheme
+      type: System.String
+      description: The OpenID Connect scheme name to be used. By default it uses "OpenIdConnect".
+    - id: cookieScheme
+      type: System.String
+      description: The cookie-based scheme name to be used. By default it uses "Cookies".
+    - id: displayName
+      type: System.String
+      description: A display name for the authentication handler.
+    return:
+      type: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+      description: The authentication builder for chaining.
+    content.vb: Public Shared Function AddKeycloakWebApp(builder As AuthenticationBuilder, configureKeycloakOptions As Action(Of KeycloakAuthenticationOptions), configureCookieAuthenticationOptions As Action(Of CookieAuthenticationOptions) = Nothing, configureOpenIdConnectOptions As Action(Of OpenIdConnectOptions) = Nothing, openIdConnectScheme As String = "OpenIdConnect", cookieScheme As String = "Cookies", displayName As String = Nothing) As KeycloakWebAppAuthenticationBuilder
+  overload: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp*
+  nameWithType.vb: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(AuthenticationBuilder, Action(Of KeycloakAuthenticationOptions), Action(Of CookieAuthenticationOptions), Action(Of OpenIdConnectOptions), String, String, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp(Microsoft.AspNetCore.Authentication.AuthenticationBuilder, System.Action(Of Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions), System.Action(Of Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions), System.Action(Of Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions), String, String, String)
+  name.vb: AddKeycloakWebApp(AuthenticationBuilder, Action(Of KeycloakAuthenticationOptions), Action(Of CookieAuthenticationOptions), Action(Of OpenIdConnectOptions), String, String, String)
+references:
+- uid: Microsoft.AspNetCore.Authentication.AuthenticationBuilder
+  commentId: T:Microsoft.AspNetCore.Authentication.AuthenticationBuilder
+  parent: Microsoft.AspNetCore.Authentication
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.authenticationbuilder
+  name: AuthenticationBuilder
+  nameWithType: AuthenticationBuilder
+  fullName: Microsoft.AspNetCore.Authentication.AuthenticationBuilder
+- uid: Keycloak.AuthServices.Authentication
+  commentId: N:Keycloak.AuthServices.Authentication
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication
+  nameWithType: Keycloak.AuthServices.Authentication
+  fullName: Keycloak.AuthServices.Authentication
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Authentication
+  commentId: N:Microsoft.AspNetCore.Authentication
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Authentication
+  nameWithType: Microsoft.AspNetCore.Authentication
+  fullName: Microsoft.AspNetCore.Authentication
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Authentication
+    name: Authentication
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Authentication
+    name: Authentication
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder.html
+  name: KeycloakWebAppAuthenticationBuilder
+  nameWithType: KeycloakWebAppAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+- uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp*
+  commentId: Overload:Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp
+  href: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.html#Keycloak_AuthServices_Authentication_KeycloakWebAppAuthenticationBuilderExtensions_AddKeycloakWebApp_Microsoft_AspNetCore_Authentication_AuthenticationBuilder_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_String_System_String_System_String_
+  name: AddKeycloakWebApp
+  nameWithType: KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp
+  fullName: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions.AddKeycloakWebApp
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: Microsoft.Extensions.Configuration.IConfigurationSection
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSection
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsection
+  name: IConfigurationSection
+  nameWithType: IConfigurationSection
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSection
+- uid: System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions}
+  commentId: T:System.Action{Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<CookieAuthenticationOptions>
+  nameWithType: Action<CookieAuthenticationOptions>
+  fullName: System.Action<Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions>
+  nameWithType.vb: Action(Of CookieAuthenticationOptions)
+  fullName.vb: System.Action(Of Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions)
+  name.vb: Action(Of CookieAuthenticationOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions
+    name: CookieAuthenticationOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions
+    name: CookieAuthenticationOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions
+  - name: )
+- uid: System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions}
+  commentId: T:System.Action{Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<OpenIdConnectOptions>
+  nameWithType: Action<OpenIdConnectOptions>
+  fullName: System.Action<Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions>
+  nameWithType.vb: Action(Of OpenIdConnectOptions)
+  fullName.vb: System.Action(Of Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions)
+  name.vb: Action(Of OpenIdConnectOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions
+    name: OpenIdConnectOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Authentication.OpenIdConnect.OpenIdConnectOptions
+    name: OpenIdConnectOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.openidconnect.openidconnectoptions
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+  parent: Keycloak.AuthServices.Authentication
+  href: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions.html
+  name: KeycloakAuthenticationOptions
+  nameWithType: KeycloakAuthenticationOptions
+  fullName: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+- uid: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions
+  commentId: T:Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions
+  name: CookieAuthenticationOptions
+  nameWithType: CookieAuthenticationOptions
+  fullName: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationOptions
+- uid: System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions}
+  commentId: T:System.Action{Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<KeycloakAuthenticationOptions>
+  nameWithType: Action<KeycloakAuthenticationOptions>
+  fullName: System.Action<Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions>
+  nameWithType.vb: Action(Of KeycloakAuthenticationOptions)
+  fullName.vb: System.Action(Of Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions)
+  name.vb: Action(Of KeycloakAuthenticationOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+    name: KeycloakAuthenticationOptions
+    href: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+    name: KeycloakAuthenticationOptions
+    href: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions.html
+  - name: )

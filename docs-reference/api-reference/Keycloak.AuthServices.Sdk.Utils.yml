@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Utils
+  commentId: N:Keycloak.AuthServices.Sdk.Utils
+  id: Keycloak.AuthServices.Sdk.Utils
+  children:
+  - Keycloak.AuthServices.Sdk.Utils.QueryBuilder
+  - Keycloak.AuthServices.Sdk.Utils.QueryString
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Utils
+  nameWithType: Keycloak.AuthServices.Sdk.Utils
+  fullName: Keycloak.AuthServices.Sdk.Utils
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+references:
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Utils.QueryBuilder
+  parent: Keycloak.AuthServices.Sdk.Utils
+  href: Keycloak.AuthServices.Sdk.Utils.QueryBuilder.html
+  name: QueryBuilder
+  nameWithType: QueryBuilder
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryBuilder
+- uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+  commentId: T:Keycloak.AuthServices.Sdk.Utils.QueryString
+  parent: Keycloak.AuthServices.Sdk.Utils
+  href: Keycloak.AuthServices.Sdk.Utils.QueryString.html
+  name: QueryString
+  nameWithType: QueryString
+  fullName: Keycloak.AuthServices.Sdk.Utils.QueryString
+- uid: Keycloak.AuthServices.Sdk.Utils
+  commentId: N:Keycloak.AuthServices.Sdk.Utils
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Utils
+  nameWithType: Keycloak.AuthServices.Sdk.Utils
+  fullName: Keycloak.AuthServices.Sdk.Utils
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Utils
+    name: Utils
+    href: Keycloak.AuthServices.Sdk.Utils.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Utils
+    name: Utils
+    href: Keycloak.AuthServices.Sdk.Utils.html

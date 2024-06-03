@@ -1,0 +1,141 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountGetResponse
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountGetResponse
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountGetResponse
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountGetResponse.html
+  name: CountGetResponse
+  nameWithType: CountGetResponse
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountGetResponse
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.html
+  name: CountRequestBuilder
+  nameWithType: CountRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.html
+  name: CountRequestBuilder.CountRequestBuilderGetQueryParameters
+  nameWithType: CountRequestBuilder.CountRequestBuilderGetQueryParameters
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+    name: CountRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+    name: CountRequestBuilderGetQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters.html
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+    name: CountRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+    name: CountRequestBuilderGetQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+    name: Count
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+    name: Count
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.html

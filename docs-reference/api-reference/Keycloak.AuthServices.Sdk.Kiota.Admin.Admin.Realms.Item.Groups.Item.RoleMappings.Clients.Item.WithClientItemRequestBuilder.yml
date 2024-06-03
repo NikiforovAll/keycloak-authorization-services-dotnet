@@ -1,0 +1,1636 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  id: WithClientItemRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl(System.String)
+  langs:
+  - csharp
+  - vb
+  name: WithClientItemRequestBuilder
+  nameWithType: WithClientItemRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WithClientItemRequestBuilder
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Builds and executes requests for operations under \admin\realms\{realm}\groups\{group-id}\role-mappings\clients\{client}
+  example: []
+  syntax:
+    content: 'public class WithClientItemRequestBuilder : BaseRequestBuilder'
+    content.vb: Public Class WithClientItemRequestBuilder Inherits BaseRequestBuilder
+  inheritance:
+  - System.Object
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  inheritedMembers:
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available
+  id: Available
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Available
+  nameWithType: WithClientItemRequestBuilder.Available
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Available
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 19
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: The available property
+  example: []
+  syntax:
+    content: public AvailableRequestBuilder Available { get; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder
+    content.vb: Public ReadOnly Property Available As AvailableRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite
+  id: Composite
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Composite
+  nameWithType: WithClientItemRequestBuilder.Composite
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Composite
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 24
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: The composite property
+  example: []
+  syntax:
+    content: public CompositeRequestBuilder Composite { get; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder
+    content.vb: Public ReadOnly Property Composite As CompositeRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)
+  id: '#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)'
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithClientItemRequestBuilder(Dictionary<string, object>, IRequestAdapter)
+  nameWithType: WithClientItemRequestBuilder.WithClientItemRequestBuilder(Dictionary<string, object>, IRequestAdapter)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithClientItemRequestBuilder(System.Collections.Generic.Dictionary<string, object>, Microsoft.Kiota.Abstractions.IRequestAdapter)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 33
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Instantiates a new <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder" data-throw-if-not-resolved="false"></xref> and sets the default values.
+  example: []
+  syntax:
+    content: public WithClientItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter)
+    parameters:
+    - id: pathParameters
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: Path parameters for the request
+    - id: requestAdapter
+      type: Microsoft.Kiota.Abstractions.IRequestAdapter
+      description: The request adapter to use to execute the requests.
+    content.vb: Public Sub New(pathParameters As Dictionary(Of String, Object), requestAdapter As IRequestAdapter)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor*
+  nameWithType.vb: WithClientItemRequestBuilder.New(Dictionary(Of String, Object), IRequestAdapter)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.New(System.Collections.Generic.Dictionary(Of String, Object), Microsoft.Kiota.Abstractions.IRequestAdapter)
+  name.vb: New(Dictionary(Of String, Object), IRequestAdapter)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)
+  id: '#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)'
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithClientItemRequestBuilder(string, IRequestAdapter)
+  nameWithType: WithClientItemRequestBuilder.WithClientItemRequestBuilder(string, IRequestAdapter)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithClientItemRequestBuilder(string, Microsoft.Kiota.Abstractions.IRequestAdapter)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 41
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Instantiates a new <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder" data-throw-if-not-resolved="false"></xref> and sets the default values.
+  example: []
+  syntax:
+    content: public WithClientItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter)
+    parameters:
+    - id: rawUrl
+      type: System.String
+      description: The raw URL to use for the request builder.
+    - id: requestAdapter
+      type: Microsoft.Kiota.Abstractions.IRequestAdapter
+      description: The request adapter to use to execute the requests.
+    content.vb: Public Sub New(rawUrl As String, requestAdapter As IRequestAdapter)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor*
+  nameWithType.vb: WithClientItemRequestBuilder.New(String, IRequestAdapter)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.New(String, Microsoft.Kiota.Abstractions.IRequestAdapter)
+  name.vb: New(String, IRequestAdapter)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  id: DeleteAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?, CancellationToken)
+  nameWithType: WithClientItemRequestBuilder.DeleteAsync(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync(System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>, System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DeleteAsync
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 52
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Delete client-level roles from user role mapping
+  example: []
+  syntax:
+    content: public Task DeleteAsync(List<RoleRepresentation> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: body
+      type: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}
+      description: The request body
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token to use when cancelling requests
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteAsync(body As List(Of RoleRepresentation), requestConfiguration As Action(Of RequestConfiguration(Of DefaultQueryParameters)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync*
+  nameWithType.vb: WithClientItemRequestBuilder.DeleteAsync(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)), CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync(System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation), System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters)), System.Threading.CancellationToken)
+  name.vb: DeleteAsync(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)), CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  id: GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>?, CancellationToken)
+  nameWithType: WithClientItemRequestBuilder.GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync(System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetAsync
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 71
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Get client-level role mappings for the user, and the app
+  example: []
+  syntax:
+    content: public Task<List<RoleRepresentation>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token to use when cancelling requests
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}}
+      description: A List&lt;RoleRepresentation&gt;
+    content.vb: Public Function GetAsync(requestConfiguration As Action(Of RequestConfiguration(Of DefaultQueryParameters)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of List(Of RoleRepresentation))
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync*
+  nameWithType.vb: WithClientItemRequestBuilder.GetAsync(Action(Of RequestConfiguration(Of DefaultQueryParameters)), CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync(System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters)), System.Threading.CancellationToken)
+  name.vb: GetAsync(Action(Of RequestConfiguration(Of DefaultQueryParameters)), CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  id: PostAsync(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: PostAsync(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?, CancellationToken)
+  nameWithType: WithClientItemRequestBuilder.PostAsync(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync(System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>, System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PostAsync
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 90
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Add client-level roles to the user role mapping
+  example: []
+  syntax:
+    content: public Task PostAsync(List<RoleRepresentation> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: body
+      type: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}
+      description: The request body
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token to use when cancelling requests
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function PostAsync(body As List(Of RoleRepresentation), requestConfiguration As Action(Of RequestConfiguration(Of DefaultQueryParameters)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync*
+  nameWithType.vb: WithClientItemRequestBuilder.PostAsync(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)), CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync(System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation), System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters)), System.Threading.CancellationToken)
+  name.vb: PostAsync(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)), CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  id: ToDeleteRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToDeleteRequestInformation(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?)
+  nameWithType: WithClientItemRequestBuilder.ToDeleteRequestInformation(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation(System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>, System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToDeleteRequestInformation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 109
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Delete client-level roles from user role mapping
+  example: []
+  syntax:
+    content: public RequestInformation ToDeleteRequestInformation(List<RoleRepresentation> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null)
+    parameters:
+    - id: body
+      type: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}
+      description: The request body
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    return:
+      type: Microsoft.Kiota.Abstractions.RequestInformation
+      description: A <xref href="Microsoft.Kiota.Abstractions.RequestInformation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function ToDeleteRequestInformation(body As List(Of RoleRepresentation), requestConfiguration As Action(Of RequestConfiguration(Of DefaultQueryParameters)) = Nothing) As RequestInformation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation*
+  nameWithType.vb: WithClientItemRequestBuilder.ToDeleteRequestInformation(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation(System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation), System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters)))
+  name.vb: ToDeleteRequestInformation(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)))
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  id: ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>?)
+  nameWithType: WithClientItemRequestBuilder.ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation(System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToGetRequestInformation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 129
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Get client-level role mappings for the user, and the app
+  example: []
+  syntax:
+    content: public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null)
+    parameters:
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    return:
+      type: Microsoft.Kiota.Abstractions.RequestInformation
+      description: A <xref href="Microsoft.Kiota.Abstractions.RequestInformation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function ToGetRequestInformation(requestConfiguration As Action(Of RequestConfiguration(Of DefaultQueryParameters)) = Nothing) As RequestInformation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation*
+  nameWithType.vb: WithClientItemRequestBuilder.ToGetRequestInformation(Action(Of RequestConfiguration(Of DefaultQueryParameters)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation(System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters)))
+  name.vb: ToGetRequestInformation(Action(Of RequestConfiguration(Of DefaultQueryParameters)))
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  id: ToPostRequestInformation(System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation},System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}})
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToPostRequestInformation(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?)
+  nameWithType: WithClientItemRequestBuilder.ToPostRequestInformation(List<RoleRepresentation>, Action<RequestConfiguration<DefaultQueryParameters>>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation(System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>, System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToPostRequestInformation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 149
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Add client-level roles to the user role mapping
+  example: []
+  syntax:
+    content: public RequestInformation ToPostRequestInformation(List<RoleRepresentation> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = null)
+    parameters:
+    - id: body
+      type: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}
+      description: The request body
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    return:
+      type: Microsoft.Kiota.Abstractions.RequestInformation
+      description: A <xref href="Microsoft.Kiota.Abstractions.RequestInformation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function ToPostRequestInformation(body As List(Of RoleRepresentation), requestConfiguration As Action(Of RequestConfiguration(Of DefaultQueryParameters)) = Nothing) As RequestInformation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation*
+  nameWithType.vb: WithClientItemRequestBuilder.ToPostRequestInformation(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation(System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation), System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters)))
+  name.vb: ToPostRequestInformation(List(Of RoleRepresentation), Action(Of RequestConfiguration(Of DefaultQueryParameters)))
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl(System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl(System.String)
+  id: WithUrl(System.String)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithUrl(string)
+  nameWithType: WithClientItemRequestBuilder.WithUrl(string)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl(string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WithUrl
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Groups/Item/RoleMappings/Clients/Item/WithClientItemRequestBuilder.cs
+    startLine: 167
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  summary: Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+  example: []
+  syntax:
+    content: public WithClientItemRequestBuilder WithUrl(string rawUrl)
+    parameters:
+    - id: rawUrl
+      type: System.String
+      description: The raw URL to use for the request builder.
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+      description: A <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function WithUrl(rawUrl As String) As WithClientItemRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl*
+  nameWithType.vb: WithClientItemRequestBuilder.WithUrl(String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl(String)
+  name.vb: WithUrl(String)
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+    name: RoleMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+    name: RoleMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  commentId: T:Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  parent: Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: BaseRequestBuilder
+  nameWithType: BaseRequestBuilder
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+  commentId: P:Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+  parent: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  isExternal: true
+  name: PathParameters
+  nameWithType: BaseRequestBuilder.PathParameters
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+  commentId: P:Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+  parent: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  isExternal: true
+  name: RequestAdapter
+  nameWithType: BaseRequestBuilder.RequestAdapter
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+  commentId: P:Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+  parent: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  isExternal: true
+  name: UrlTemplate
+  nameWithType: BaseRequestBuilder.UrlTemplate
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Kiota.Abstractions
+  commentId: N:Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: Microsoft.Kiota.Abstractions
+  nameWithType: Microsoft.Kiota.Abstractions
+  fullName: Microsoft.Kiota.Abstractions
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_Available
+  name: Available
+  nameWithType: WithClientItemRequestBuilder.Available
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Available
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder.html
+  name: AvailableRequestBuilder
+  nameWithType: AvailableRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+    name: RoleMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+    name: Available
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+    name: RoleMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+    name: Available
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_Composite
+  name: Composite
+  nameWithType: WithClientItemRequestBuilder.Composite
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.Composite
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder.html
+  name: CompositeRequestBuilder
+  nameWithType: CompositeRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+    name: RoleMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+    name: Composite
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+    name: RoleMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+    name: Composite
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html
+  name: WithClientItemRequestBuilder
+  nameWithType: WithClientItemRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.#ctor
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder__ctor_System_Collections_Generic_Dictionary_System_String_System_Object__Microsoft_Kiota_Abstractions_IRequestAdapter_
+  name: WithClientItemRequestBuilder
+  nameWithType: WithClientItemRequestBuilder.WithClientItemRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithClientItemRequestBuilder
+  nameWithType.vb: WithClientItemRequestBuilder.New
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.New
+  name.vb: New
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Microsoft.Kiota.Abstractions.IRequestAdapter
+  commentId: T:Microsoft.Kiota.Abstractions.IRequestAdapter
+  parent: Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: IRequestAdapter
+  nameWithType: IRequestAdapter
+  fullName: Microsoft.Kiota.Abstractions.IRequestAdapter
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_DeleteAsync_System_Collections_Generic_List_Keycloak_AuthServices_Sdk_Kiota_Admin_Models_RoleRepresentation__System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Microsoft_Kiota_Abstractions_DefaultQueryParameters___System_Threading_CancellationToken_
+  name: DeleteAsync
+  nameWithType: WithClientItemRequestBuilder.DeleteAsync
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.DeleteAsync
+- uid: System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}
+  commentId: T:System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<RoleRepresentation>
+  nameWithType: List<RoleRepresentation>
+  fullName: System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>
+  nameWithType.vb: List(Of RoleRepresentation)
+  fullName.vb: System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation)
+  name.vb: List(Of RoleRepresentation)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation
+    name: RoleRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation
+    name: RoleRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.html
+  - name: )
+- uid: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+  commentId: T:System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Microsoft.Kiota.Abstractions.DefaultQueryParameters}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<RequestConfiguration<DefaultQueryParameters>>
+  nameWithType: Action<RequestConfiguration<DefaultQueryParameters>>
+  fullName: System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Microsoft.Kiota.Abstractions.DefaultQueryParameters>>
+  nameWithType.vb: Action(Of RequestConfiguration(Of DefaultQueryParameters))
+  fullName.vb: System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Microsoft.Kiota.Abstractions.DefaultQueryParameters))
+  name.vb: Action(Of RequestConfiguration(Of DefaultQueryParameters))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.DefaultQueryParameters
+    name: DefaultQueryParameters
+    isExternal: true
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.DefaultQueryParameters
+    name: DefaultQueryParameters
+    isExternal: true
+  - name: )
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_GetAsync_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Microsoft_Kiota_Abstractions_DefaultQueryParameters___System_Threading_CancellationToken_
+  name: GetAsync
+  nameWithType: WithClientItemRequestBuilder.GetAsync
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.GetAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<RoleRepresentation>>
+  nameWithType: Task<List<RoleRepresentation>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>>
+  nameWithType.vb: Task(Of List(Of RoleRepresentation))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation))
+  name.vb: Task(Of List(Of RoleRepresentation))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation
+    name: RoleRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation
+    name: RoleRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_PostAsync_System_Collections_Generic_List_Keycloak_AuthServices_Sdk_Kiota_Admin_Models_RoleRepresentation__System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Microsoft_Kiota_Abstractions_DefaultQueryParameters___System_Threading_CancellationToken_
+  name: PostAsync
+  nameWithType: WithClientItemRequestBuilder.PostAsync
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.PostAsync
+- uid: Microsoft.Kiota.Abstractions.RequestInformation
+  commentId: T:Microsoft.Kiota.Abstractions.RequestInformation
+  parent: Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: RequestInformation
+  nameWithType: RequestInformation
+  fullName: Microsoft.Kiota.Abstractions.RequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_ToDeleteRequestInformation_System_Collections_Generic_List_Keycloak_AuthServices_Sdk_Kiota_Admin_Models_RoleRepresentation__System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Microsoft_Kiota_Abstractions_DefaultQueryParameters___
+  name: ToDeleteRequestInformation
+  nameWithType: WithClientItemRequestBuilder.ToDeleteRequestInformation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToDeleteRequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_ToGetRequestInformation_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Microsoft_Kiota_Abstractions_DefaultQueryParameters___
+  name: ToGetRequestInformation
+  nameWithType: WithClientItemRequestBuilder.ToGetRequestInformation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToGetRequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_ToPostRequestInformation_System_Collections_Generic_List_Keycloak_AuthServices_Sdk_Kiota_Admin_Models_RoleRepresentation__System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Microsoft_Kiota_Abstractions_DefaultQueryParameters___
+  name: ToPostRequestInformation
+  nameWithType: WithClientItemRequestBuilder.ToPostRequestInformation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.ToPostRequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Groups_Item_RoleMappings_Clients_Item_WithClientItemRequestBuilder_WithUrl_System_String_
+  name: WithUrl
+  nameWithType: WithClientItemRequestBuilder.WithUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder.WithUrl

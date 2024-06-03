@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.html
+  name: RolesRequestBuilder
+  nameWithType: RolesRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.html
+  name: RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+  nameWithType: RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+    name: RolesRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+    name: RolesRequestBuilderGetQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters.html
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+    name: RolesRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+    name: RolesRequestBuilderGetQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+    name: Roles
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+    name: Roles
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.html

@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyPostRequestBody
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyPostRequestBody
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyPostRequestBody
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyPostRequestBody.html
+  name: CopyPostRequestBody
+  nameWithType: CopyPostRequestBody
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyPostRequestBody
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyRequestBuilder.html
+  name: CopyRequestBuilder
+  nameWithType: CopyRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows
+    name: Flows
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+    name: Copy
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows
+    name: Flows
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+    name: Copy
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.html

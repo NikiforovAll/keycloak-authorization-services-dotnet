@@ -1,0 +1,739 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  id: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  langs:
+  - csharp
+  - vb
+  name: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientsRequestBuilderGetQueryParameters
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 135
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  summary: If a client can’t be retrieved from the storage due to a problem with the underlying storage, it is silently removed from the returned list. This ensures that concurrent modifications to the list don’t prevent callers from retrieving this list.
+  example: []
+  syntax:
+    content: public class ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+    content.vb: Public Class ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  id: ClientId
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: ClientId
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientId
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 140
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  summary: filter by clientId
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("clientId")]
+
+      public string? ClientId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("clientId")>
+
+      Public Property ClientId As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: clientId
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  id: First
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: First
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 148
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  summary: the first result
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("first")]
+
+      public int? First { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <QueryParameter("first")>
+
+      Public Property First As Integer?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: first
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  id: Max
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Max
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Max
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 151
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  summary: the max results to return
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("max")]
+
+      public int? Max { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <QueryParameter("max")>
+
+      Public Property Max As Integer?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: max
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  id: Q
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Q
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Q
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 155
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  syntax:
+    content: >-
+      [QueryParameter("q")]
+
+      public string? Q { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("q")>
+
+      Public Property Q As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: q
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  id: Search
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Search
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Search
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 163
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  summary: whether this is a search query or a getClientById query
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("search")]
+
+      public bool? Search { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <QueryParameter("search")>
+
+      Public Property Search As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: search
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  id: ViewableOnly
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: ViewableOnly
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ViewableOnly
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/ClientsRequestBuilder.cs
+    startLine: 166
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  summary: filter clients that cannot be viewed in full by admin
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("viewableOnly")]
+
+      public bool? ViewableOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <QueryParameter("viewableOnly")>
+
+      Public Property ViewableOnly As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: viewableOnly
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_ClientsRequestBuilder_ClientsRequestBuilderGetQueryParameters_ClientId
+  name: ClientId
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ClientId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_ClientsRequestBuilder_ClientsRequestBuilderGetQueryParameters_First
+  name: First
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.First
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_ClientsRequestBuilder_ClientsRequestBuilderGetQueryParameters_Max
+  name: Max
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Max
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_ClientsRequestBuilder_ClientsRequestBuilderGetQueryParameters_Q
+  name: Q
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Q
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_ClientsRequestBuilder_ClientsRequestBuilderGetQueryParameters_Search
+  name: Search
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.Search
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_ClientsRequestBuilder_ClientsRequestBuilderGetQueryParameters_ViewableOnly
+  name: ViewableOnly
+  nameWithType: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters.ViewableOnly

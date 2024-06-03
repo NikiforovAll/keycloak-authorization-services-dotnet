@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Protection
+  commentId: N:Keycloak.AuthServices.Sdk.Protection
+  id: Keycloak.AuthServices.Sdk.Protection
+  children:
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+  - Keycloak.AuthServices.Sdk.Protection.KeycloakProtectionClient
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Protection
+  nameWithType: Keycloak.AuthServices.Sdk.Protection
+  fullName: Keycloak.AuthServices.Sdk.Protection
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+references:
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html
+  name: IKeycloakPolicyClient
+  nameWithType: IKeycloakPolicyClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html
+  name: IKeycloakProtectedResourceClient
+  nameWithType: IKeycloakProtectedResourceClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient.html
+  name: IKeycloakProtectionClient
+  nameWithType: IKeycloakProtectionClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+- uid: Keycloak.AuthServices.Sdk.Protection.KeycloakProtectionClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.KeycloakProtectionClient
+  href: Keycloak.AuthServices.Sdk.Protection.KeycloakProtectionClient.html
+  name: KeycloakProtectionClient
+  nameWithType: KeycloakProtectionClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.KeycloakProtectionClient
+- uid: Keycloak.AuthServices.Sdk.Protection
+  commentId: N:Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection
+  nameWithType: Keycloak.AuthServices.Sdk.Protection
+  fullName: Keycloak.AuthServices.Sdk.Protection
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html

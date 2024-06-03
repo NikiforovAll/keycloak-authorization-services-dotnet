@@ -1,0 +1,76 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication.Configuration
+  commentId: N:Keycloak.AuthServices.Authentication.Configuration
+  id: Keycloak.AuthServices.Authentication.Configuration
+  children:
+  - Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  - Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationProvider
+  - Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Authentication.Configuration
+  nameWithType: Keycloak.AuthServices.Authentication.Configuration
+  fullName: Keycloak.AuthServices.Authentication.Configuration
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+references:
+- uid: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  href: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.html
+  name: HostBuilderExtensions
+  nameWithType: HostBuilderExtensions
+  fullName: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationProvider
+  commentId: T:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationProvider
+  href: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationProvider.html
+  name: KeycloakConfigurationProvider
+  nameWithType: KeycloakConfigurationProvider
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationProvider
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  commentId: T:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  parent: Keycloak.AuthServices.Authentication.Configuration
+  href: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.html
+  name: KeycloakConfigurationSource
+  nameWithType: KeycloakConfigurationSource
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+- uid: Keycloak.AuthServices.Authentication.Configuration
+  commentId: N:Keycloak.AuthServices.Authentication.Configuration
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication.Configuration
+  nameWithType: Keycloak.AuthServices.Authentication.Configuration
+  fullName: Keycloak.AuthServices.Authentication.Configuration
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication.Configuration
+    name: Configuration
+    href: Keycloak.AuthServices.Authentication.Configuration.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication.Configuration
+    name: Configuration
+    href: Keycloak.AuthServices.Authentication.Configuration.html

@@ -1,0 +1,1919 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  id: ResourceItemRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}})
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}})
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}})
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ResourceItemRequestBuilder
+  nameWithType: ResourceItemRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ResourceItemRequestBuilder
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 17
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\authz\resource-server\resource\{resource-id}
+  example: []
+  syntax:
+    content: 'public class ResourceItemRequestBuilder : BaseRequestBuilder'
+    content.vb: Public Class ResourceItemRequestBuilder Inherits BaseRequestBuilder
+  inheritance:
+  - System.Object
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  inheritedMembers:
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+  - Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes
+  id: Attributes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: ResourceItemRequestBuilder.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Attributes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 20
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: The attributes property
+  example: []
+  syntax:
+    content: public AttributesRequestBuilder Attributes { get; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder
+    content.vb: Public ReadOnly Property Attributes As AttributesRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions
+  id: Permissions
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Permissions
+  nameWithType: ResourceItemRequestBuilder.Permissions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Permissions
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 25
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: The permissions property
+  example: []
+  syntax:
+    content: public PermissionsRequestBuilder Permissions { get; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder
+    content.vb: Public ReadOnly Property Permissions As PermissionsRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes
+  id: Scopes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Scopes
+  nameWithType: ResourceItemRequestBuilder.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Scopes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 30
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: The scopes property
+  example: []
+  syntax:
+    content: public ScopesRequestBuilder Scopes { get; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder
+    content.vb: Public ReadOnly Property Scopes As ScopesRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)
+  id: '#ctor(System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Kiota.Abstractions.IRequestAdapter)'
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ResourceItemRequestBuilder(Dictionary<string, object>, IRequestAdapter)
+  nameWithType: ResourceItemRequestBuilder.ResourceItemRequestBuilder(Dictionary<string, object>, IRequestAdapter)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilder(System.Collections.Generic.Dictionary<string, object>, Microsoft.Kiota.Abstractions.IRequestAdapter)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 39
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: Instantiates a new <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder" data-throw-if-not-resolved="false"></xref> and sets the default values.
+  example: []
+  syntax:
+    content: public ResourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter)
+    parameters:
+    - id: pathParameters
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: Path parameters for the request
+    - id: requestAdapter
+      type: Microsoft.Kiota.Abstractions.IRequestAdapter
+      description: The request adapter to use to execute the requests.
+    content.vb: Public Sub New(pathParameters As Dictionary(Of String, Object), requestAdapter As IRequestAdapter)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor*
+  nameWithType.vb: ResourceItemRequestBuilder.New(Dictionary(Of String, Object), IRequestAdapter)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.New(System.Collections.Generic.Dictionary(Of String, Object), Microsoft.Kiota.Abstractions.IRequestAdapter)
+  name.vb: New(Dictionary(Of String, Object), IRequestAdapter)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)
+  id: '#ctor(System.String,Microsoft.Kiota.Abstractions.IRequestAdapter)'
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ResourceItemRequestBuilder(string, IRequestAdapter)
+  nameWithType: ResourceItemRequestBuilder.ResourceItemRequestBuilder(string, IRequestAdapter)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilder(string, Microsoft.Kiota.Abstractions.IRequestAdapter)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 47
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: Instantiates a new <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder" data-throw-if-not-resolved="false"></xref> and sets the default values.
+  example: []
+  syntax:
+    content: public ResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter)
+    parameters:
+    - id: rawUrl
+      type: System.String
+      description: The raw URL to use for the request builder.
+    - id: requestAdapter
+      type: Microsoft.Kiota.Abstractions.IRequestAdapter
+      description: The request adapter to use to execute the requests.
+    content.vb: Public Sub New(rawUrl As String, requestAdapter As IRequestAdapter)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor*
+  nameWithType.vb: ResourceItemRequestBuilder.New(String, IRequestAdapter)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.New(String, Microsoft.Kiota.Abstractions.IRequestAdapter)
+  name.vb: New(String, IRequestAdapter)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}},System.Threading.CancellationToken)
+  id: DeleteAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>>?, CancellationToken)
+  nameWithType: ResourceItemRequestBuilder.DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync(System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DeleteAsync
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 54
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  example: []
+  syntax:
+    content: public Task DeleteAsync(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token to use when cancelling requests
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function DeleteAsync(requestConfiguration As Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync*
+  nameWithType.vb: ResourceItemRequestBuilder.DeleteAsync(Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters)), CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync(System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters)), System.Threading.CancellationToken)
+  name.vb: DeleteAsync(Action(Of RequestConfiguration(Of ResourceItemRequestBuilderDeleteQueryParameters)), CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}},System.Threading.CancellationToken)
+  id: GetAsync(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>>?, CancellationToken)
+  nameWithType: ResourceItemRequestBuilder.GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync(System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetAsync
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 69
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  example: []
+  syntax:
+    content: public Task<ResourceRepresentation?> GetAsync(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token to use when cancelling requests
+    return:
+      type: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation}
+      description: A <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function GetAsync(requestConfiguration As Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of ResourceRepresentation)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync*
+  nameWithType.vb: ResourceItemRequestBuilder.GetAsync(Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters)), CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync(System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters)), System.Threading.CancellationToken)
+  name.vb: GetAsync(Action(Of RequestConfiguration(Of ResourceItemRequestBuilderGetQueryParameters)), CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}},System.Threading.CancellationToken)
+  id: PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: PutAsync(ResourceRepresentation, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>>?, CancellationToken)
+  nameWithType: ResourceItemRequestBuilder.PutAsync(ResourceRepresentation, Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation, System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PutAsync
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 84
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  example: []
+  syntax:
+    content: public Task PutAsync(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>? requestConfiguration = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: body
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+      description: The request body
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token to use when cancelling requests
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function PutAsync(body As ResourceRepresentation, requestConfiguration As Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync*
+  nameWithType.vb: ResourceItemRequestBuilder.PutAsync(ResourceRepresentation, Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters)), CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation, System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters)), System.Threading.CancellationToken)
+  name.vb: PutAsync(ResourceRepresentation, Action(Of RequestConfiguration(Of ResourceItemRequestBuilderPutQueryParameters)), CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}})
+  id: ToDeleteRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}})
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderDeleteQueryParameters>>?)
+  nameWithType: ResourceItemRequestBuilder.ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation(System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToDeleteRequestInformation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 99
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  example: []
+  syntax:
+    content: public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = null)
+    parameters:
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    return:
+      type: Microsoft.Kiota.Abstractions.RequestInformation
+      description: A <xref href="Microsoft.Kiota.Abstractions.RequestInformation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function ToDeleteRequestInformation(requestConfiguration As Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters)) = Nothing) As RequestInformation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation*
+  nameWithType.vb: ResourceItemRequestBuilder.ToDeleteRequestInformation(Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation(System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters)))
+  name.vb: ToDeleteRequestInformation(Action(Of RequestConfiguration(Of ResourceItemRequestBuilderDeleteQueryParameters)))
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}})
+  id: ToGetRequestInformation(System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}})
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilderGetQueryParameters>>?)
+  nameWithType: ResourceItemRequestBuilder.ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation(System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToGetRequestInformation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 114
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  example: []
+  syntax:
+    content: public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>? requestConfiguration = null)
+    parameters:
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    return:
+      type: Microsoft.Kiota.Abstractions.RequestInformation
+      description: A <xref href="Microsoft.Kiota.Abstractions.RequestInformation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function ToGetRequestInformation(requestConfiguration As Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters)) = Nothing) As RequestInformation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation*
+  nameWithType.vb: ResourceItemRequestBuilder.ToGetRequestInformation(Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation(System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters)))
+  name.vb: ToGetRequestInformation(Action(Of RequestConfiguration(Of ResourceItemRequestBuilderGetQueryParameters)))
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}})
+  id: ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation,System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}})
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToPutRequestInformation(ResourceRepresentation, Action<RequestConfiguration<ResourceItemRequestBuilderPutQueryParameters>>?)
+  nameWithType: ResourceItemRequestBuilder.ToPutRequestInformation(ResourceRepresentation, Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation, System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ToPutRequestInformation
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 131
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  example: []
+  syntax:
+    content: public RequestInformation ToPutRequestInformation(ResourceRepresentation body, Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>? requestConfiguration = null)
+    parameters:
+    - id: body
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+      description: The request body
+    - id: requestConfiguration
+      type: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}}
+      description: Configuration for the request such as headers, query parameters, and middleware options.
+    return:
+      type: Microsoft.Kiota.Abstractions.RequestInformation
+      description: A <xref href="Microsoft.Kiota.Abstractions.RequestInformation" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function ToPutRequestInformation(body As ResourceRepresentation, requestConfiguration As Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters)) = Nothing) As RequestInformation
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation*
+  nameWithType.vb: ResourceItemRequestBuilder.ToPutRequestInformation(ResourceRepresentation, Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters)))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation, System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters)))
+  name.vb: ToPutRequestInformation(ResourceRepresentation, Action(Of RequestConfiguration(Of ResourceItemRequestBuilderPutQueryParameters)))
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl(System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl(System.String)
+  id: WithUrl(System.String)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: WithUrl(string)
+  nameWithType: ResourceItemRequestBuilder.WithUrl(string)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl(string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WithUrl
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/Clients/Item/Authz/ResourceServer/Resource/Item/ResourceItemRequestBuilder.cs
+    startLine: 149
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  summary: Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+  example: []
+  syntax:
+    content: public ResourceItemRequestBuilder WithUrl(string rawUrl)
+    parameters:
+    - id: rawUrl
+      type: System.String
+      description: The raw URL to use for the request builder.
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+      description: A <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function WithUrl(rawUrl As String) As ResourceItemRequestBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl*
+  nameWithType.vb: ResourceItemRequestBuilder.WithUrl(String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl(String)
+  name.vb: WithUrl(String)
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  commentId: T:Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  parent: Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: BaseRequestBuilder
+  nameWithType: BaseRequestBuilder
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+  commentId: P:Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+  parent: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  isExternal: true
+  name: PathParameters
+  nameWithType: BaseRequestBuilder.PathParameters
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder.PathParameters
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+  commentId: P:Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+  parent: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  isExternal: true
+  name: RequestAdapter
+  nameWithType: BaseRequestBuilder.RequestAdapter
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder.RequestAdapter
+- uid: Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+  commentId: P:Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+  parent: Microsoft.Kiota.Abstractions.BaseRequestBuilder
+  isExternal: true
+  name: UrlTemplate
+  nameWithType: BaseRequestBuilder.UrlTemplate
+  fullName: Microsoft.Kiota.Abstractions.BaseRequestBuilder.UrlTemplate
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Kiota.Abstractions
+  commentId: N:Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: Microsoft.Kiota.Abstractions
+  nameWithType: Microsoft.Kiota.Abstractions
+  fullName: Microsoft.Kiota.Abstractions
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_Attributes
+  name: Attributes
+  nameWithType: ResourceItemRequestBuilder.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Attributes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder.html
+  name: AttributesRequestBuilder
+  nameWithType: AttributesRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+    name: Attributes
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+    name: Attributes
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_Permissions
+  name: Permissions
+  nameWithType: ResourceItemRequestBuilder.Permissions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Permissions
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder.html
+  name: PermissionsRequestBuilder
+  nameWithType: PermissionsRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+    name: Permissions
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+    name: Permissions
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_Scopes
+  name: Scopes
+  nameWithType: ResourceItemRequestBuilder.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.Scopes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder.html
+  name: ScopesRequestBuilder
+  nameWithType: ScopesRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+    name: Scopes
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+    name: Clients
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+    name: Authz
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+    name: ResourceServer
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+    name: Scopes
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  name: ResourceItemRequestBuilder
+  nameWithType: ResourceItemRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.#ctor
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder__ctor_System_Collections_Generic_Dictionary_System_String_System_Object__Microsoft_Kiota_Abstractions_IRequestAdapter_
+  name: ResourceItemRequestBuilder
+  nameWithType: ResourceItemRequestBuilder.ResourceItemRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilder
+  nameWithType.vb: ResourceItemRequestBuilder.New
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.New
+  name.vb: New
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Microsoft.Kiota.Abstractions.IRequestAdapter
+  commentId: T:Microsoft.Kiota.Abstractions.IRequestAdapter
+  parent: Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: IRequestAdapter
+  nameWithType: IRequestAdapter
+  fullName: Microsoft.Kiota.Abstractions.IRequestAdapter
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_DeleteAsync_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ResourceItemRequestBuilderDeleteQueryParameters___System_Threading_CancellationToken_
+  name: DeleteAsync
+  nameWithType: ResourceItemRequestBuilder.DeleteAsync
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.DeleteAsync
+- uid: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}}
+  commentId: T:System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>
+  nameWithType: Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>
+  fullName: System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters>>
+  nameWithType.vb: Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters))
+  fullName.vb: System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters))
+  name.vb: Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters
+    name: ResourceItemRequestBuilderDeleteQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters
+    name: ResourceItemRequestBuilderDeleteQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters.html
+  - name: )
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation.html
+  name: ResourceRepresentation
+  nameWithType: ResourceRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_GetAsync_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ResourceItemRequestBuilderGetQueryParameters___System_Threading_CancellationToken_
+  name: GetAsync
+  nameWithType: ResourceItemRequestBuilder.GetAsync
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.GetAsync
+- uid: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}}
+  commentId: T:System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>
+  nameWithType: Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>
+  fullName: System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters>>
+  nameWithType.vb: Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters))
+  fullName.vb: System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters))
+  name.vb: Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters
+    name: ResourceItemRequestBuilderGetQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters
+    name: ResourceItemRequestBuilderGetQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation}
+  commentId: T:System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ResourceRepresentation>
+  nameWithType: Task<ResourceRepresentation>
+  fullName: System.Threading.Tasks.Task<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>
+  nameWithType.vb: Task(Of ResourceRepresentation)
+  fullName.vb: System.Threading.Tasks.Task(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation)
+  name.vb: Task(Of ResourceRepresentation)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+    name: ResourceRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+    name: ResourceRepresentation
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation.html
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_PutAsync_Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ResourceRepresentation_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ResourceItemRequestBuilderPutQueryParameters___System_Threading_CancellationToken_
+  name: PutAsync
+  nameWithType: ResourceItemRequestBuilder.PutAsync
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.PutAsync
+- uid: System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}}
+  commentId: T:System.Action{Microsoft.Kiota.Abstractions.RequestConfiguration{Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>
+  nameWithType: Action<RequestConfiguration<ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>
+  fullName: System.Action<Microsoft.Kiota.Abstractions.RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters>>
+  nameWithType.vb: Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters))
+  fullName.vb: System.Action(Of Microsoft.Kiota.Abstractions.RequestConfiguration(Of Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters))
+  name.vb: Action(Of RequestConfiguration(Of ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters
+    name: ResourceItemRequestBuilderPutQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.RequestConfiguration`1
+    name: RequestConfiguration
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters
+    name: ResourceItemRequestBuilderPutQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters.html
+  - name: )
+  - name: )
+- uid: Microsoft.Kiota.Abstractions.RequestInformation
+  commentId: T:Microsoft.Kiota.Abstractions.RequestInformation
+  parent: Microsoft.Kiota.Abstractions
+  isExternal: true
+  name: RequestInformation
+  nameWithType: RequestInformation
+  fullName: Microsoft.Kiota.Abstractions.RequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ToDeleteRequestInformation_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ResourceItemRequestBuilderDeleteQueryParameters___
+  name: ToDeleteRequestInformation
+  nameWithType: ResourceItemRequestBuilder.ToDeleteRequestInformation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToDeleteRequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ToGetRequestInformation_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ResourceItemRequestBuilderGetQueryParameters___
+  name: ToGetRequestInformation
+  nameWithType: ResourceItemRequestBuilder.ToGetRequestInformation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToGetRequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ToPutRequestInformation_Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ResourceRepresentation_System_Action_Microsoft_Kiota_Abstractions_RequestConfiguration_Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_ResourceItemRequestBuilderPutQueryParameters___
+  name: ToPutRequestInformation
+  nameWithType: ResourceItemRequestBuilder.ToPutRequestInformation
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ToPutRequestInformation
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_Clients_Item_Authz_ResourceServer_Resource_Item_ResourceItemRequestBuilder_WithUrl_System_String_
+  name: WithUrl
+  nameWithType: ResourceItemRequestBuilder.WithUrl
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.WithUrl

@@ -1,0 +1,141 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.html
+  name: ExecuteActionsEmailRequestBuilder
+  nameWithType: ExecuteActionsEmailRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.html
+  name: ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+  nameWithType: ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+    name: ExecuteActionsEmailRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+    name: ExecuteActionsEmailRequestBuilderPutQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters.html
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+    name: ExecuteActionsEmailRequestBuilder
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+    name: ExecuteActionsEmailRequestBuilderPutQueryParameters
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
+    name: Users
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+    name: ExecuteActionsEmail
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
+    name: Users
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+    name: ExecuteActionsEmail
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.html

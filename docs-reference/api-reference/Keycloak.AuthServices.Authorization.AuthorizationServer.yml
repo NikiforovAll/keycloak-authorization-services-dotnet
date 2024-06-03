@@ -1,0 +1,98 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  id: Keycloak.AuthServices.Authorization.AuthorizationServer
+  children:
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationExtensions
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.AuthorizationServerClient
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+references:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationExtensions
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationExtensions.html
+  name: AccessTokenPropagationExtensions
+  nameWithType: AccessTokenPropagationExtensions
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationExtensions
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler.html
+  name: AccessTokenPropagationHandler
+  nameWithType: AccessTokenPropagationHandler
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AuthorizationServerClient
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.AuthorizationServerClient
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.AuthorizationServerClient.html
+  name: AuthorizationServerClient
+  nameWithType: AuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.AuthorizationServerClient
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.html
+  name: IAuthorizationServerClient
+  nameWithType: IAuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions.html
+  name: KeycloakAuthorizationServerOptions
+  nameWithType: KeycloakAuthorizationServerOptions
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.html
+  name: ScopesValidationMode
+  nameWithType: ScopesValidationMode
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html

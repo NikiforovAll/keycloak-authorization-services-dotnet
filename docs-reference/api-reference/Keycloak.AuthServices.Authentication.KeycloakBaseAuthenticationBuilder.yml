@@ -1,0 +1,526 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  commentId: T:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  id: KeycloakBaseAuthenticationBuilder
+  parent: Keycloak.AuthServices.Authentication
+  children:
+  - Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  - Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  - Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services
+  langs:
+  - csharp
+  - vb
+  name: KeycloakBaseAuthenticationBuilder
+  nameWithType: KeycloakBaseAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakBaseAuthenticationBuilder
+    path: ../src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Represents a base class for configuring Keycloak authentication in an application.
+  example: []
+  syntax:
+    content: public class KeycloakBaseAuthenticationBuilder
+    content.vb: Public Class KeycloakBaseAuthenticationBuilder
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+  - Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  commentId: M:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)
+  id: '#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection)'
+  parent: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  langs:
+  - csharp
+  - vb
+  name: KeycloakBaseAuthenticationBuilder(IServiceCollection, IConfigurationSection?)
+  nameWithType: KeycloakBaseAuthenticationBuilder.KeycloakBaseAuthenticationBuilder(IServiceCollection, IConfigurationSection?)
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.KeycloakBaseAuthenticationBuilder(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection?)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+    startLine: 15
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Constructor.
+  example: []
+  syntax:
+    content: protected KeycloakBaseAuthenticationBuilder(IServiceCollection services, IConfigurationSection? configurationSection = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The services being configured.
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: Optional configuration section.
+    content.vb: Protected Sub New(services As IServiceCollection, configurationSection As IConfigurationSection = Nothing)
+  overload: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.#ctor*
+  nameWithType.vb: KeycloakBaseAuthenticationBuilder.New(IServiceCollection, IConfigurationSection)
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.New(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection)
+  name.vb: New(IServiceCollection, IConfigurationSection)
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services
+  commentId: P:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services
+  id: Services
+  parent: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  langs:
+  - csharp
+  - vb
+  name: Services
+  nameWithType: KeycloakBaseAuthenticationBuilder.Services
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Services
+    path: ../src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+    startLine: 27
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Gets the services being configured.
+  example: []
+  syntax:
+    content: public IServiceCollection Services { get; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    content.vb: Public Property Services As IServiceCollection
+  overload: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services*
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  commentId: P:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  id: ConfigurationSection
+  parent: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationSection
+  nameWithType: KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ConfigurationSection
+    path: ../src/Keycloak.AuthServices.Authentication/KeycloakBaseAuthenticationBuilder.cs
+    startLine: 35
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication
+  summary: Gets the configuration section from which to bind options.
+  remarks: It can be null if the configuration happens with delegates rather than configuration.
+  example: []
+  syntax:
+    content: protected IConfigurationSection? ConfigurationSection { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+    content.vb: Protected Property ConfigurationSection As IConfigurationSection
+  overload: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection*
+references:
+- uid: Keycloak.AuthServices.Authentication
+  commentId: N:Keycloak.AuthServices.Authentication
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication
+  nameWithType: Keycloak.AuthServices.Authentication
+  fullName: Keycloak.AuthServices.Authentication
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.#ctor
+  href: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.html#Keycloak_AuthServices_Authentication_KeycloakBaseAuthenticationBuilder__ctor_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfigurationSection_
+  name: KeycloakBaseAuthenticationBuilder
+  nameWithType: KeycloakBaseAuthenticationBuilder.KeycloakBaseAuthenticationBuilder
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.KeycloakBaseAuthenticationBuilder
+  nameWithType.vb: KeycloakBaseAuthenticationBuilder.New
+  fullName.vb: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.New
+  name.vb: New
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.Configuration.IConfigurationSection
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSection
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsection
+  name: IConfigurationSection
+  nameWithType: IConfigurationSection
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSection
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services*
+  commentId: Overload:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services
+  href: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.html#Keycloak_AuthServices_Authentication_KeycloakBaseAuthenticationBuilder_Services
+  name: Services
+  nameWithType: KeycloakBaseAuthenticationBuilder.Services
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.Services
+- uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection*
+  commentId: Overload:Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  href: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.html#Keycloak_AuthServices_Authentication_KeycloakBaseAuthenticationBuilder_ConfigurationSection
+  name: ConfigurationSection
+  nameWithType: KeycloakBaseAuthenticationBuilder.ConfigurationSection
+  fullName: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder.ConfigurationSection

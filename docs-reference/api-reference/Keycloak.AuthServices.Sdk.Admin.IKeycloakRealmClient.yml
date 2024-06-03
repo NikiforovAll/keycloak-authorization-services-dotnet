@@ -1,0 +1,351 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  id: IKeycloakRealmClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync(System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync(System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IKeycloakRealmClient
+  nameWithType: IKeycloakRealmClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  type: Interface
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakRealmClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IKeycloakRealmClient
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakRealmClient.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Realm management
+  example: []
+  syntax:
+    content: public interface IKeycloakRealmClient
+    content.vb: Public Interface IKeycloakRealmClient
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync(System.String,System.Threading.CancellationToken)
+  id: GetRealmAsync(System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  langs:
+  - csharp
+  - vb
+  name: GetRealmAsync(string, CancellationToken)
+  nameWithType: IKeycloakRealmClient.GetRealmAsync(string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakRealmClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetRealmAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakRealmClient.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Get realm
+  example: []
+  syntax:
+    content: Task<RealmRepresentation> GetRealmAsync(string realm, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation}
+      description: ''
+    content.vb: Function GetRealmAsync(realm As String, cancellationToken As CancellationToken = Nothing) As Task(Of RealmRepresentation)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync*
+  nameWithType.vb: IKeycloakRealmClient.GetRealmAsync(String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync(String, System.Threading.CancellationToken)
+  name.vb: GetRealmAsync(String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync(System.String,System.Threading.CancellationToken)
+  id: GetRealmWithResponseAsync(System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  langs:
+  - csharp
+  - vb
+  name: GetRealmWithResponseAsync(string, CancellationToken)
+  nameWithType: IKeycloakRealmClient.GetRealmWithResponseAsync(string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync(string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakRealmClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetRealmWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakRealmClient.cs
+    startLine: 32
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Get realm
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> GetRealmWithResponseAsync(string realm, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function GetRealmWithResponseAsync(realm As String, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync*
+  nameWithType.vb: IKeycloakRealmClient.GetRealmWithResponseAsync(String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync(String, System.Threading.CancellationToken)
+  name.vb: GetRealmWithResponseAsync(String, CancellationToken)
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Admin
+  fullName: Keycloak.AuthServices.Sdk.Admin
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakRealmClient_GetRealmAsync_System_String_System_Threading_CancellationToken_
+  name: GetRealmAsync
+  nameWithType: IKeycloakRealmClient.GetRealmAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation}
+  commentId: T:System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<RealmRepresentation>
+  nameWithType: Task<RealmRepresentation>
+  fullName: System.Threading.Tasks.Task<Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation>
+  nameWithType.vb: Task(Of RealmRepresentation)
+  fullName.vb: System.Threading.Tasks.Task(Of Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation)
+  name.vb: Task(Of RealmRepresentation)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation
+    name: RealmRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation
+    name: RealmRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakRealmClient_GetRealmWithResponseAsync_System_String_System_Threading_CancellationToken_
+  name: GetRealmWithResponseAsync
+  nameWithType: IKeycloakRealmClient.GetRealmWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.GetRealmWithResponseAsync
+- uid: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  commentId: T:System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<HttpResponseMessage>
+  nameWithType: Task<HttpResponseMessage>
+  fullName: System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage>
+  nameWithType.vb: Task(Of HttpResponseMessage)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Net.Http.HttpResponseMessage)
+  name.vb: Task(Of HttpResponseMessage)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  - name: )

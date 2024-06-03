@@ -1,0 +1,854 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  id: Resource
+  parent: Keycloak.AuthServices.Sdk.Protection.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.#ctor(System.String,System.String[])
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes
+  - Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type
+  langs:
+  - csharp
+  - vb
+  name: Resource
+  nameWithType: Resource
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Resource
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 6
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: ''
+  example: []
+  syntax:
+    content: public class Resource
+    content.vb: Public Class Resource
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.#ctor(System.String,System.String[])
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.Models.Resource.#ctor(System.String,System.String[])
+  id: '#ctor(System.String,System.String[])'
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: Resource(string, string[])
+  nameWithType: Resource.Resource(string, string[])
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Resource(string, string[])
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 13
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Constructs resource
+  example: []
+  syntax:
+    content: public Resource(string name, string[] scopes)
+    parameters:
+    - id: name
+      type: System.String
+      description: Name of the resource
+    - id: scopes
+      type: System.String[]
+      description: Scope of the resource. Usually, it is in a form of verb
+    content.vb: Public Sub New(name As String, scopes As String())
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.#ctor*
+  nameWithType.vb: Resource.New(String, String())
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.Models.Resource.New(String, String())
+  name.vb: New(String, String())
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name
+  id: Name
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Resource.Name
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Name
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 22
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Resource name
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName
+  id: DisplayName
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: DisplayName
+  nameWithType: Resource.DisplayName
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DisplayName
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 27
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Display name
+  example: []
+  syntax:
+    content: public string? DisplayName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DisplayName As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type
+  id: Type
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: Resource.Type
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Type
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 33
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Resource type
+  example:
+  - urn:workspace-authz:resource:workspaces
+  syntax:
+    content: public string? Type { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes
+  id: Scopes
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: Scopes
+  nameWithType: Resource.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Scopes
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 38
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Resource scopes
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("resource_scopes")]
+
+      public string[] Scopes { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: >-
+      <JsonPropertyName("resource_scopes")>
+
+      Public ReadOnly Property Scopes As String()
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: resource_scopes
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes
+  id: Attributes
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: Resource.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Attributes
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 44
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: Resource attributes
+  example: []
+  syntax:
+    content: public Dictionary<string, string> Attributes { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+    content.vb: Public Property Attributes As Dictionary(Of String, String)
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner
+  id: Owner
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: Owner
+  nameWithType: Resource.Owner
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Owner
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 49
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: When set, will be used to enforce ownership at the time of the request
+  example: []
+  syntax:
+    content: public string? Owner { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Owner As String
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner*
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess
+  commentId: P:Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess
+  id: OwnerManagedAccess
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  langs:
+  - csharp
+  - vb
+  name: OwnerManagedAccess
+  nameWithType: Resource.OwnerManagedAccess
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: OwnerManagedAccess
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Resource.cs
+    startLine: 54
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: When set, will enforce owner-managed-access.
+  example: []
+  syntax:
+    content: public bool? OwnerManagedAccess { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property OwnerManagedAccess As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess*
+references:
+- uid: Keycloak.AuthServices.Sdk.Protection.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Protection.Models
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.#ctor
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource__ctor_System_String_System_String___
+  name: Resource
+  nameWithType: Resource.Resource
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Resource
+  nameWithType.vb: Resource.New
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.Models.Resource.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_Name
+  name: Name
+  nameWithType: Resource.Name
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Name
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_DisplayName
+  name: DisplayName
+  nameWithType: Resource.DisplayName
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.DisplayName
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_Type
+  name: Type
+  nameWithType: Resource.Type
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Type
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_Scopes
+  name: Scopes
+  nameWithType: Resource.Scopes
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Scopes
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_Attributes
+  name: Attributes
+  nameWithType: Resource.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Attributes
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_Owner
+  name: Owner
+  nameWithType: Resource.Owner
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.Owner
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html#Keycloak_AuthServices_Sdk_Protection_Models_Resource_OwnerManagedAccess
+  name: OwnerManagedAccess
+  nameWithType: Resource.OwnerManagedAccess
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource.OwnerManagedAccess
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

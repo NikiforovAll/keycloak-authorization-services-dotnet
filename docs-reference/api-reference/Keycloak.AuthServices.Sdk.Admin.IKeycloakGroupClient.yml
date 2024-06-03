@@ -1,0 +1,1052 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  id: IKeycloakGroupClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IKeycloakGroupClient
+  nameWithType: IKeycloakGroupClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  type: Interface
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IKeycloakGroupClient
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Group management
+  example: []
+  syntax:
+    content: public interface IKeycloakGroupClient
+    content.vb: Public Interface IKeycloakGroupClient
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  id: GetGroupsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: GetGroupsWithResponseAsync(string, GetGroupsRequestParameters?, CancellationToken)
+  nameWithType: IKeycloakGroupClient.GetGroupsWithResponseAsync(string, GetGroupsRequestParameters?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync(string, Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetGroupsWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 18
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Get a collection of groups on the realm.
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> GetGroupsWithResponseAsync(string realm, GetGroupsRequestParameters? parameters = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: parameters
+      type: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+      description: Optional query parameters.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: A stream of groups, filtered according to query parameters.
+    content.vb: Function GetGroupsWithResponseAsync(realm As String, parameters As GetGroupsRequestParameters = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync*
+  nameWithType.vb: IKeycloakGroupClient.GetGroupsWithResponseAsync(String, GetGroupsRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync(String, Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetGroupsWithResponseAsync(String, GetGroupsRequestParameters, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  id: GetGroupsAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: GetGroupsAsync(string, GetGroupsRequestParameters?, CancellationToken)
+  nameWithType: IKeycloakGroupClient.GetGroupsAsync(string, GetGroupsRequestParameters?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync(string, Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetGroupsAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 31
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Get group hierarchy. Only name and ids are returned.
+  example: []
+  syntax:
+    content: Task<IEnumerable<GroupRepresentation>> GetGroupsAsync(string realm, GetGroupsRequestParameters? parameters = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: parameters
+      type: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+      description: Optional query parameters.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation}}
+      description: A stream of groups, filtered according to query parameters.
+    content.vb: Function GetGroupsAsync(realm As String, parameters As GetGroupsRequestParameters = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IEnumerable(Of GroupRepresentation))
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync*
+  nameWithType.vb: IKeycloakGroupClient.GetGroupsAsync(String, GetGroupsRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync(String, Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetGroupsAsync(String, GetGroupsRequestParameters, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: GetGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: GetGroupWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakGroupClient.GetGroupWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetGroupWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 50
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Get representation of a Group.
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> GetGroupWithResponseAsync(string realm, string groupId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: The group representation.
+    content.vb: Function GetGroupWithResponseAsync(realm As String, groupId As String, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync*
+  nameWithType.vb: IKeycloakGroupClient.GetGroupWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetGroupWithResponseAsync(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: GetGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: GetGroupAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakGroupClient.GetGroupAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetGroupAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 63
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Get representation of a Group.
+  example: []
+  syntax:
+    content: Task<GroupRepresentation> GetGroupAsync(string realm, string groupId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation}
+      description: The group representation.
+    content.vb: Function GetGroupAsync(realm As String, groupId As String, cancellationToken As CancellationToken = Nothing) As Task(Of GroupRepresentation)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync*
+  nameWithType.vb: IKeycloakGroupClient.GetGroupAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetGroupAsync(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  id: CreateGroupWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: CreateGroupWithResponseAsync(string, GroupRepresentation, CancellationToken)
+  nameWithType: IKeycloakGroupClient.CreateGroupWithResponseAsync(string, GroupRepresentation, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync(string, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateGroupWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 84
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Create or add a top level realm groupSet or create child.
+  remarks: This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> CreateGroupWithResponseAsync(string realm, GroupRepresentation group, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: group
+      type: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+      description: Group representation.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function CreateGroupWithResponseAsync(realm As String, group As GroupRepresentation, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync*
+  nameWithType.vb: IKeycloakGroupClient.CreateGroupWithResponseAsync(String, GroupRepresentation, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync(String, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  name.vb: CreateGroupWithResponseAsync(String, GroupRepresentation, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  id: CreateGroupAsync(System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: CreateGroupAsync(string, GroupRepresentation, CancellationToken)
+  nameWithType: IKeycloakGroupClient.CreateGroupAsync(string, GroupRepresentation, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync(string, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateGroupAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 100
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Create or add a top level realm groupSet or create child.
+  remarks: This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+  example: []
+  syntax:
+    content: Task CreateGroupAsync(string realm, GroupRepresentation group, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: group
+      type: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+      description: Group representation.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function CreateGroupAsync(realm As String, group As GroupRepresentation, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync*
+  nameWithType.vb: IKeycloakGroupClient.CreateGroupAsync(String, GroupRepresentation, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync(String, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  name.vb: CreateGroupAsync(String, GroupRepresentation, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  id: UpdateGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateGroupWithResponseAsync(string, string, GroupRepresentation, CancellationToken)
+  nameWithType: IKeycloakGroupClient.UpdateGroupWithResponseAsync(string, string, GroupRepresentation, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync(string, string, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UpdateGroupWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 119
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Update group, ignores subgroups.
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> UpdateGroupWithResponseAsync(string realm, string groupId, GroupRepresentation group, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: group
+      type: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+      description: Group representation.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function UpdateGroupWithResponseAsync(realm As String, groupId As String, group As GroupRepresentation, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync*
+  nameWithType.vb: IKeycloakGroupClient.UpdateGroupWithResponseAsync(String, String, GroupRepresentation, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync(String, String, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  name.vb: UpdateGroupWithResponseAsync(String, String, GroupRepresentation, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  id: UpdateGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateGroupAsync(string, string, GroupRepresentation, CancellationToken)
+  nameWithType: IKeycloakGroupClient.UpdateGroupAsync(string, string, GroupRepresentation, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync(string, string, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UpdateGroupAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 134
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Update group, ignores subgroups.
+  example: []
+  syntax:
+    content: Task UpdateGroupAsync(string realm, string groupId, GroupRepresentation group, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: group
+      type: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+      description: Group representation.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function UpdateGroupAsync(realm As String, groupId As String, group As GroupRepresentation, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync*
+  nameWithType.vb: IKeycloakGroupClient.UpdateGroupAsync(String, String, GroupRepresentation, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync(String, String, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  name.vb: UpdateGroupAsync(String, String, GroupRepresentation, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  id: CreateChildGroupWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: CreateChildGroupWithResponseAsync(string, string, GroupRepresentation, CancellationToken)
+  nameWithType: IKeycloakGroupClient.CreateChildGroupWithResponseAsync(string, string, GroupRepresentation, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync(string, string, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateChildGroupWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 162
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Set or create child.
+  remarks: This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> CreateChildGroupWithResponseAsync(string realm, string groupId, GroupRepresentation group, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: group
+      type: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+      description: Group representation.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function CreateChildGroupWithResponseAsync(realm As String, groupId As String, group As GroupRepresentation, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync*
+  nameWithType.vb: IKeycloakGroupClient.CreateChildGroupWithResponseAsync(String, String, GroupRepresentation, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync(String, String, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  name.vb: CreateChildGroupWithResponseAsync(String, String, GroupRepresentation, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  id: CreateChildGroupAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: CreateChildGroupAsync(string, string, GroupRepresentation, CancellationToken)
+  nameWithType: IKeycloakGroupClient.CreateChildGroupAsync(string, string, GroupRepresentation, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync(string, string, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateChildGroupAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 180
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: Set or create child.
+  remarks: This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.
+  example: []
+  syntax:
+    content: Task CreateChildGroupAsync(string realm, string groupId, GroupRepresentation group, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: group
+      type: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+      description: Group representation.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function CreateChildGroupAsync(realm As String, groupId As String, group As GroupRepresentation, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync*
+  nameWithType.vb: IKeycloakGroupClient.CreateChildGroupAsync(String, String, GroupRepresentation, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync(String, String, Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation, System.Threading.CancellationToken)
+  name.vb: CreateChildGroupAsync(String, String, GroupRepresentation, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: DeleteGroupWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteGroupWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakGroupClient.DeleteGroupWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DeleteGroupWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 204
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: 'Delete a group. Note: the Keycloak documentation does not specify if this deletes subgroups.'
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> DeleteGroupWithResponseAsync(string realm, string groupId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function DeleteGroupWithResponseAsync(realm As String, groupId As String, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync*
+  nameWithType.vb: IKeycloakGroupClient.DeleteGroupWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeleteGroupWithResponseAsync(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: DeleteGroupAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteGroupAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakGroupClient.DeleteGroupAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DeleteGroupAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/IKeycloakGroupClient.cs
+    startLine: 217
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin
+  summary: 'Delete a group. Note: the Keycloak documentation does not specify if this deletes subgroups.'
+  example: []
+  syntax:
+    content: Task DeleteGroupAsync(string realm, string groupId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: groupId
+      type: System.String
+      description: Group ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function DeleteGroupAsync(realm As String, groupId As String, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync*
+  nameWithType.vb: IKeycloakGroupClient.DeleteGroupAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeleteGroupAsync(String, String, CancellationToken)
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Admin
+  fullName: Keycloak.AuthServices.Sdk.Admin
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_GetGroupsWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Requests_Groups_GetGroupsRequestParameters_System_Threading_CancellationToken_
+  name: GetGroupsWithResponseAsync
+  nameWithType: IKeycloakGroupClient.GetGroupsWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsWithResponseAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters.html
+  name: GetGroupsRequestParameters
+  nameWithType: GetGroupsRequestParameters
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  commentId: T:System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<HttpResponseMessage>
+  nameWithType: Task<HttpResponseMessage>
+  fullName: System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage>
+  nameWithType.vb: Task(Of HttpResponseMessage)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Net.Http.HttpResponseMessage)
+  name.vb: Task(Of HttpResponseMessage)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_GetGroupsAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Requests_Groups_GetGroupsRequestParameters_System_Threading_CancellationToken_
+  name: GetGroupsAsync
+  nameWithType: IKeycloakGroupClient.GetGroupsAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupsAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<GroupRepresentation>>
+  nameWithType: Task<IEnumerable<GroupRepresentation>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation>>
+  nameWithType.vb: Task(Of IEnumerable(Of GroupRepresentation))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation))
+  name.vb: Task(Of IEnumerable(Of GroupRepresentation))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+    name: GroupRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+    name: GroupRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation.html
+  - name: )
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_GetGroupWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetGroupWithResponseAsync
+  nameWithType: IKeycloakGroupClient.GetGroupWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_GetGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetGroupAsync
+  nameWithType: IKeycloakGroupClient.GetGroupAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.GetGroupAsync
+- uid: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation}
+  commentId: T:System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<GroupRepresentation>
+  nameWithType: Task<GroupRepresentation>
+  fullName: System.Threading.Tasks.Task<Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation>
+  nameWithType.vb: Task(Of GroupRepresentation)
+  fullName.vb: System.Threading.Tasks.Task(Of Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation)
+  name.vb: Task(Of GroupRepresentation)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+    name: GroupRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+    name: GroupRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation.html
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_CreateGroupWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Models_GroupRepresentation_System_Threading_CancellationToken_
+  name: CreateGroupWithResponseAsync
+  nameWithType: IKeycloakGroupClient.CreateGroupWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation.html
+  name: GroupRepresentation
+  nameWithType: GroupRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+- uid: Keycloak.AuthServices.Sdk.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_CreateGroupAsync_System_String_Keycloak_AuthServices_Sdk_Admin_Models_GroupRepresentation_System_Threading_CancellationToken_
+  name: CreateGroupAsync
+  nameWithType: IKeycloakGroupClient.CreateGroupAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateGroupAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_UpdateGroupWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Admin_Models_GroupRepresentation_System_Threading_CancellationToken_
+  name: UpdateGroupWithResponseAsync
+  nameWithType: IKeycloakGroupClient.UpdateGroupWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_UpdateGroupAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Admin_Models_GroupRepresentation_System_Threading_CancellationToken_
+  name: UpdateGroupAsync
+  nameWithType: IKeycloakGroupClient.UpdateGroupAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.UpdateGroupAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_CreateChildGroupWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Admin_Models_GroupRepresentation_System_Threading_CancellationToken_
+  name: CreateChildGroupWithResponseAsync
+  nameWithType: IKeycloakGroupClient.CreateChildGroupWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_CreateChildGroupAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Admin_Models_GroupRepresentation_System_Threading_CancellationToken_
+  name: CreateChildGroupAsync
+  nameWithType: IKeycloakGroupClient.CreateChildGroupAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.CreateChildGroupAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_DeleteGroupWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeleteGroupWithResponseAsync
+  nameWithType: IKeycloakGroupClient.DeleteGroupWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html#Keycloak_AuthServices_Sdk_Admin_IKeycloakGroupClient_DeleteGroupAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeleteGroupAsync
+  nameWithType: IKeycloakGroupClient.DeleteGroupAsync
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.DeleteGroupAsync

@@ -1,0 +1,216 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  id: UnmanagedAttributePolicy
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_EDIT
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_VIEW
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ENABLED
+  langs:
+  - csharp
+  - vb
+  name: UnmanagedAttributePolicy
+  nameWithType: UnmanagedAttributePolicy
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UnmanagedAttributePolicy
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+    startLine: 5
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: public enum UnmanagedAttributePolicy
+    content.vb: Public Enum UnmanagedAttributePolicy
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ENABLED
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ENABLED
+  id: ENABLED
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  langs:
+  - csharp
+  - vb
+  name: ENABLED
+  nameWithType: UnmanagedAttributePolicy.ENABLED
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ENABLED
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ENABLED
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ENABLED")]
+
+      ENABLED = 0
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+    content.vb: >-
+      <EnumMember(Value:="ENABLED")>
+
+      ENABLED = 0
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ENABLED
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_VIEW
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_VIEW
+  id: ADMIN_VIEW
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  langs:
+  - csharp
+  - vb
+  name: ADMIN_VIEW
+  nameWithType: UnmanagedAttributePolicy.ADMIN_VIEW
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_VIEW
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ADMIN_VIEW
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ADMIN_VIEW")]
+
+      ADMIN_VIEW = 1
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+    content.vb: >-
+      <EnumMember(Value:="ADMIN_VIEW")>
+
+      ADMIN_VIEW = 1
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ADMIN_VIEW
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_EDIT
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_EDIT
+  id: ADMIN_EDIT
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  langs:
+  - csharp
+  - vb
+  name: ADMIN_EDIT
+  nameWithType: UnmanagedAttributePolicy.ADMIN_EDIT
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.ADMIN_EDIT
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ADMIN_EDIT
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/UnmanagedAttributePolicy.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ADMIN_EDIT")]
+
+      ADMIN_EDIT = 2
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+    content.vb: >-
+      <EnumMember(Value:="ADMIN_EDIT")>
+
+      ADMIN_EDIT = 2
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ADMIN_EDIT
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy.html
+  name: UnmanagedAttributePolicy
+  nameWithType: UnmanagedAttributePolicy
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy

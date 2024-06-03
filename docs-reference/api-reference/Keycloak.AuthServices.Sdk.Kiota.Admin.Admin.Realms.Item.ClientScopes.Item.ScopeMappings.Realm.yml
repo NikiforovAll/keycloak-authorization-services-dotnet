@@ -1,0 +1,126 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.RealmRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.RealmRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.RealmRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.RealmRequestBuilder.html
+  name: RealmRequestBuilder
+  nameWithType: RealmRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes
+    name: ClientScopes
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings
+    name: ScopeMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+    name: Realm
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes
+    name: ClientScopes
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings
+    name: ScopeMappings
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+    name: Realm
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.html

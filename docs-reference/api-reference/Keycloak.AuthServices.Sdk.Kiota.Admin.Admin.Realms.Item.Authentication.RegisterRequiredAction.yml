@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionPostRequestBody
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionPostRequestBody
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionPostRequestBody
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionPostRequestBody.html
+  name: RegisterRequiredActionPostRequestBody
+  nameWithType: RegisterRequiredActionPostRequestBody
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionPostRequestBody
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder.html
+  name: RegisterRequiredActionRequestBuilder
+  nameWithType: RegisterRequiredActionRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+    name: RegisterRequiredAction
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+    name: RegisterRequiredAction
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.html

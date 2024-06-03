@@ -1,0 +1,97 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Common
+  commentId: N:Keycloak.AuthServices.Common
+  id: Keycloak.AuthServices.Common
+  children:
+  - Keycloak.AuthServices.Common.ConfigurationConstants
+  - Keycloak.AuthServices.Common.ConfigurationExtensions
+  - Keycloak.AuthServices.Common.KeycloakClientInstallationCredentials
+  - Keycloak.AuthServices.Common.KeycloakConstants
+  - Keycloak.AuthServices.Common.KeycloakException
+  - Keycloak.AuthServices.Common.KeycloakFormatBinder
+  - Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Common
+  nameWithType: Keycloak.AuthServices.Common
+  fullName: Keycloak.AuthServices.Common
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Common
+references:
+- uid: Keycloak.AuthServices.Common.ConfigurationConstants
+  commentId: T:Keycloak.AuthServices.Common.ConfigurationConstants
+  href: Keycloak.AuthServices.Common.ConfigurationConstants.html
+  name: ConfigurationConstants
+  nameWithType: ConfigurationConstants
+  fullName: Keycloak.AuthServices.Common.ConfigurationConstants
+- uid: Keycloak.AuthServices.Common.ConfigurationExtensions
+  commentId: T:Keycloak.AuthServices.Common.ConfigurationExtensions
+  href: Keycloak.AuthServices.Common.ConfigurationExtensions.html
+  name: ConfigurationExtensions
+  nameWithType: ConfigurationExtensions
+  fullName: Keycloak.AuthServices.Common.ConfigurationExtensions
+- uid: Keycloak.AuthServices.Common.KeycloakConstants
+  commentId: T:Keycloak.AuthServices.Common.KeycloakConstants
+  href: Keycloak.AuthServices.Common.KeycloakConstants.html
+  name: KeycloakConstants
+  nameWithType: KeycloakConstants
+  fullName: Keycloak.AuthServices.Common.KeycloakConstants
+- uid: Keycloak.AuthServices.Common.KeycloakException
+  commentId: T:Keycloak.AuthServices.Common.KeycloakException
+  href: Keycloak.AuthServices.Common.KeycloakException.html
+  name: KeycloakException
+  nameWithType: KeycloakException
+  fullName: Keycloak.AuthServices.Common.KeycloakException
+- uid: Keycloak.AuthServices.Common.KeycloakFormatBinder
+  commentId: T:Keycloak.AuthServices.Common.KeycloakFormatBinder
+  href: Keycloak.AuthServices.Common.KeycloakFormatBinder.html
+  name: KeycloakFormatBinder
+  nameWithType: KeycloakFormatBinder
+  fullName: Keycloak.AuthServices.Common.KeycloakFormatBinder
+- uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  commentId: T:Keycloak.AuthServices.Common.KeycloakInstallationOptions
+  parent: Keycloak.AuthServices.Common
+  href: Keycloak.AuthServices.Common.KeycloakInstallationOptions.html
+  name: KeycloakInstallationOptions
+  nameWithType: KeycloakInstallationOptions
+  fullName: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+- uid: Keycloak.AuthServices.Common.KeycloakClientInstallationCredentials
+  commentId: T:Keycloak.AuthServices.Common.KeycloakClientInstallationCredentials
+  parent: Keycloak.AuthServices.Common
+  href: Keycloak.AuthServices.Common.KeycloakClientInstallationCredentials.html
+  name: KeycloakClientInstallationCredentials
+  nameWithType: KeycloakClientInstallationCredentials
+  fullName: Keycloak.AuthServices.Common.KeycloakClientInstallationCredentials
+- uid: Keycloak.AuthServices.Common
+  commentId: N:Keycloak.AuthServices.Common
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Common
+  nameWithType: Keycloak.AuthServices.Common
+  fullName: Keycloak.AuthServices.Common
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html

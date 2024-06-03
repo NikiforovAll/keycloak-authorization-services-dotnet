@@ -1,0 +1,960 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  id: ParameterizedProtectedResourceRequirementHandler
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  children:
+  - Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.#ctor(Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient,Microsoft.AspNetCore.Http.IHttpContextAccessor,Keycloak.AuthServices.Authorization.KeycloakMetrics,Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler})
+  - Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  langs:
+  - csharp
+  - vb
+  name: ParameterizedProtectedResourceRequirementHandler
+  nameWithType: ParameterizedProtectedResourceRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/Requirements/ParameterizedProtectedResourceRequirement.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ParameterizedProtectedResourceRequirementHandler
+    path: ../src/Keycloak.AuthServices.Authorization/Requirements/ParameterizedProtectedResourceRequirement.cs
+    startLine: 22
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.Requirements
+  summary: ''
+  example: []
+  syntax:
+    content: 'public class ParameterizedProtectedResourceRequirementHandler : AuthorizationHandler<ParameterizedProtectedResourceRequirement>, IAuthorizationHandler'
+    content.vb: Public Class ParameterizedProtectedResourceRequirementHandler Inherits AuthorizationHandler(Of ParameterizedProtectedResourceRequirement) Implements IAuthorizationHandler
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}
+  implements:
+  - Microsoft.AspNetCore.Authorization.IAuthorizationHandler
+  inheritedMembers:
+  - Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.#ctor(Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient,Microsoft.AspNetCore.Http.IHttpContextAccessor,Keycloak.AuthServices.Authorization.KeycloakMetrics,Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler})
+  commentId: M:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.#ctor(Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient,Microsoft.AspNetCore.Http.IHttpContextAccessor,Keycloak.AuthServices.Authorization.KeycloakMetrics,Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler})
+  id: '#ctor(Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient,Microsoft.AspNetCore.Http.IHttpContextAccessor,Keycloak.AuthServices.Authorization.KeycloakMetrics,Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler})'
+  parent: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  langs:
+  - csharp
+  - vb
+  name: ParameterizedProtectedResourceRequirementHandler(IAuthorizationServerClient, IHttpContextAccessor, KeycloakMetrics, ILogger<ParameterizedProtectedResourceRequirementHandler>)
+  nameWithType: ParameterizedProtectedResourceRequirementHandler.ParameterizedProtectedResourceRequirementHandler(IAuthorizationServerClient, IHttpContextAccessor, KeycloakMetrics, ILogger<ParameterizedProtectedResourceRequirementHandler>)
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.ParameterizedProtectedResourceRequirementHandler(Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient, Microsoft.AspNetCore.Http.IHttpContextAccessor, Keycloak.AuthServices.Authorization.KeycloakMetrics, Microsoft.Extensions.Logging.ILogger<Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/Requirements/ParameterizedProtectedResourceRequirement.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Authorization/Requirements/ParameterizedProtectedResourceRequirement.cs
+    startLine: 37
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.Requirements
+  summary: ''
+  example: []
+  syntax:
+    content: public ParameterizedProtectedResourceRequirementHandler(IAuthorizationServerClient client, IHttpContextAccessor httpContextAccessor, KeycloakMetrics metrics, ILogger<ParameterizedProtectedResourceRequirementHandler> logger)
+    parameters:
+    - id: client
+      type: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+      description: ''
+    - id: httpContextAccessor
+      type: Microsoft.AspNetCore.Http.IHttpContextAccessor
+      description: ''
+    - id: metrics
+      type: Keycloak.AuthServices.Authorization.KeycloakMetrics
+      description: ''
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler}
+      description: ''
+    content.vb: Public Sub New(client As IAuthorizationServerClient, httpContextAccessor As IHttpContextAccessor, metrics As KeycloakMetrics, logger As ILogger(Of ParameterizedProtectedResourceRequirementHandler))
+  overload: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: ParameterizedProtectedResourceRequirementHandler.New(IAuthorizationServerClient, IHttpContextAccessor, KeycloakMetrics, ILogger(Of ParameterizedProtectedResourceRequirementHandler))
+  fullName.vb: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.New(Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient, Microsoft.AspNetCore.Http.IHttpContextAccessor, Keycloak.AuthServices.Authorization.KeycloakMetrics, Microsoft.Extensions.Logging.ILogger(Of Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler))
+  name.vb: New(IAuthorizationServerClient, IHttpContextAccessor, KeycloakMetrics, ILogger(Of ParameterizedProtectedResourceRequirementHandler))
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  commentId: M:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  id: HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  parent: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  langs:
+  - csharp
+  - vb
+  name: HandleRequirementAsync(AuthorizationHandlerContext, ParameterizedProtectedResourceRequirement)
+  nameWithType: ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync(AuthorizationHandlerContext, ParameterizedProtectedResourceRequirement)
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext, Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/Requirements/ParameterizedProtectedResourceRequirement.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: HandleRequirementAsync
+    path: ../src/Keycloak.AuthServices.Authorization/Requirements/ParameterizedProtectedResourceRequirement.cs
+    startLine: 51
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.Requirements
+  example: []
+  syntax:
+    content: protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, ParameterizedProtectedResourceRequirement requirement)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    - id: requirement
+      type: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected Overrides Function HandleRequirementAsync(context As AuthorizationHandlerContext, requirement As ParameterizedProtectedResourceRequirement) As Task
+  overridden: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  overload: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync*
+references:
+- uid: Keycloak.AuthServices.Authorization.Requirements
+  commentId: N:Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.Requirements
+  nameWithType: Keycloak.AuthServices.Authorization.Requirements
+  fullName: Keycloak.AuthServices.Authorization.Requirements
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.Requirements
+    name: Requirements
+    href: Keycloak.AuthServices.Authorization.Requirements.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.Requirements
+    name: Requirements
+    href: Keycloak.AuthServices.Authorization.Requirements.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}
+  commentId: T:Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}
+  parent: Microsoft.AspNetCore.Authorization
+  definition: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1
+  name: AuthorizationHandler<ParameterizedProtectedResourceRequirement>
+  nameWithType: AuthorizationHandler<ParameterizedProtectedResourceRequirement>
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandler<Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement>
+  nameWithType.vb: AuthorizationHandler(Of ParameterizedProtectedResourceRequirement)
+  fullName.vb: Microsoft.AspNetCore.Authorization.AuthorizationHandler(Of Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  name.vb: AuthorizationHandler(Of ParameterizedProtectedResourceRequirement)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+    name: AuthorizationHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1
+  - name: <
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+    name: ParameterizedProtectedResourceRequirement
+    href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+    name: AuthorizationHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+    name: ParameterizedProtectedResourceRequirement
+    href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement.html
+  - name: )
+- uid: Microsoft.AspNetCore.Authorization.IAuthorizationHandler
+  commentId: T:Microsoft.AspNetCore.Authorization.IAuthorizationHandler
+  parent: Microsoft.AspNetCore.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationhandler
+  name: IAuthorizationHandler
+  nameWithType: IAuthorizationHandler
+  fullName: Microsoft.AspNetCore.Authorization.IAuthorizationHandler
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  commentId: M:Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  parent: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}
+  definition: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handleasync
+  name: HandleAsync(AuthorizationHandlerContext)
+  nameWithType: AuthorizationHandler<ParameterizedProtectedResourceRequirement>.HandleAsync(AuthorizationHandlerContext)
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandler<Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement>.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  nameWithType.vb: AuthorizationHandler(Of ParameterizedProtectedResourceRequirement).HandleAsync(AuthorizationHandlerContext)
+  fullName.vb: Microsoft.AspNetCore.Authorization.AuthorizationHandler(Of Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement).HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+    name: HandleAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handleasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+    name: HandleAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handleasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+  commentId: T:Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1
+  name: AuthorizationHandler<TRequirement>
+  nameWithType: AuthorizationHandler<TRequirement>
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandler<TRequirement>
+  nameWithType.vb: AuthorizationHandler(Of TRequirement)
+  fullName.vb: Microsoft.AspNetCore.Authorization.AuthorizationHandler(Of TRequirement)
+  name.vb: AuthorizationHandler(Of TRequirement)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+    name: AuthorizationHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1
+  - name: <
+  - name: TRequirement
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1
+    name: AuthorizationHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRequirement
+  - name: )
+- uid: Microsoft.AspNetCore.Authorization
+  commentId: N:Microsoft.AspNetCore.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Authorization
+  nameWithType: Microsoft.AspNetCore.Authorization
+  fullName: Microsoft.AspNetCore.Authorization
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Authorization
+    name: Authorization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Authorization
+    name: Authorization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  commentId: M:Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handleasync
+  name: HandleAsync(AuthorizationHandlerContext)
+  nameWithType: AuthorizationHandler<TRequirement>.HandleAsync(AuthorizationHandlerContext)
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandler<TRequirement>.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  nameWithType.vb: AuthorizationHandler(Of TRequirement).HandleAsync(AuthorizationHandlerContext)
+  fullName.vb: Microsoft.AspNetCore.Authorization.AuthorizationHandler(Of TRequirement).HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+    name: HandleAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handleasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext)
+    name: HandleAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handleasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.#ctor
+  href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.html#Keycloak_AuthServices_Authorization_Requirements_ParameterizedProtectedResourceRequirementHandler__ctor_Keycloak_AuthServices_Authorization_AuthorizationServer_IAuthorizationServerClient_Microsoft_AspNetCore_Http_IHttpContextAccessor_Keycloak_AuthServices_Authorization_KeycloakMetrics_Microsoft_Extensions_Logging_ILogger_Keycloak_AuthServices_Authorization_Requirements_ParameterizedProtectedResourceRequirementHandler__
+  name: ParameterizedProtectedResourceRequirementHandler
+  nameWithType: ParameterizedProtectedResourceRequirementHandler.ParameterizedProtectedResourceRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.ParameterizedProtectedResourceRequirementHandler
+  nameWithType.vb: ParameterizedProtectedResourceRequirementHandler.New
+  fullName.vb: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.New
+  name.vb: New
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.html
+  name: IAuthorizationServerClient
+  nameWithType: IAuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+- uid: Microsoft.AspNetCore.Http.IHttpContextAccessor
+  commentId: T:Microsoft.AspNetCore.Http.IHttpContextAccessor
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor
+  name: IHttpContextAccessor
+  nameWithType: IHttpContextAccessor
+  fullName: Microsoft.AspNetCore.Http.IHttpContextAccessor
+- uid: Keycloak.AuthServices.Authorization.KeycloakMetrics
+  commentId: T:Keycloak.AuthServices.Authorization.KeycloakMetrics
+  parent: Keycloak.AuthServices.Authorization
+  href: Keycloak.AuthServices.Authorization.KeycloakMetrics.html
+  name: KeycloakMetrics
+  nameWithType: KeycloakMetrics
+  fullName: Keycloak.AuthServices.Authorization.KeycloakMetrics
+- uid: Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<ParameterizedProtectedResourceRequirementHandler>
+  nameWithType: ILogger<ParameterizedProtectedResourceRequirementHandler>
+  fullName: Microsoft.Extensions.Logging.ILogger<Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler>
+  nameWithType.vb: ILogger(Of ParameterizedProtectedResourceRequirementHandler)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler)
+  name.vb: ILogger(Of ParameterizedProtectedResourceRequirementHandler)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+    name: ParameterizedProtectedResourceRequirementHandler
+    href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+    name: ParameterizedProtectedResourceRequirementHandler
+    href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.html
+  - name: )
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  commentId: M:Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  parent: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}
+  definition: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,`0)
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handlerequirementasync
+  name: HandleRequirementAsync(AuthorizationHandlerContext, ParameterizedProtectedResourceRequirement)
+  nameWithType: AuthorizationHandler<ParameterizedProtectedResourceRequirement>.HandleRequirementAsync(AuthorizationHandlerContext, ParameterizedProtectedResourceRequirement)
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandler<Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement>.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext, Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  nameWithType.vb: AuthorizationHandler(Of ParameterizedProtectedResourceRequirement).HandleRequirementAsync(AuthorizationHandlerContext, ParameterizedProtectedResourceRequirement)
+  fullName.vb: Microsoft.AspNetCore.Authorization.AuthorizationHandler(Of Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement).HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext, Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+    name: HandleRequirementAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handlerequirementasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+    name: ParameterizedProtectedResourceRequirement
+    href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement.html
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler{Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement}.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement)
+    name: HandleRequirementAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handlerequirementasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+    name: ParameterizedProtectedResourceRequirement
+    href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement.html
+  - name: )
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync*
+  commentId: Overload:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync
+  href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.html#Keycloak_AuthServices_Authorization_Requirements_ParameterizedProtectedResourceRequirementHandler_HandleRequirementAsync_Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Keycloak_AuthServices_Authorization_Requirements_ParameterizedProtectedResourceRequirement_
+  name: HandleRequirementAsync
+  nameWithType: ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.HandleRequirementAsync
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+  commentId: T:Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+  parent: Microsoft.AspNetCore.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  name: AuthorizationHandlerContext
+  nameWithType: AuthorizationHandlerContext
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement.html
+  name: ParameterizedProtectedResourceRequirement
+  nameWithType: ParameterizedProtectedResourceRequirement
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,`0)
+  commentId: M:Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handlerequirementasync
+  name: HandleRequirementAsync(AuthorizationHandlerContext, TRequirement)
+  nameWithType: AuthorizationHandler<TRequirement>.HandleRequirementAsync(AuthorizationHandlerContext, TRequirement)
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationHandler<TRequirement>.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext, TRequirement)
+  nameWithType.vb: AuthorizationHandler(Of TRequirement).HandleRequirementAsync(AuthorizationHandlerContext, TRequirement)
+  fullName.vb: Microsoft.AspNetCore.Authorization.AuthorizationHandler(Of TRequirement).HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext, TRequirement)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,`0)
+    name: HandleRequirementAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handlerequirementasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: ','
+  - name: " "
+  - name: TRequirement
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandler`1.HandleRequirementAsync(Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext,`0)
+    name: HandleRequirementAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandler-1.handlerequirementasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Authorization.AuthorizationHandlerContext
+    name: AuthorizationHandlerContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext
+  - name: ','
+  - name: " "
+  - name: TRequirement
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

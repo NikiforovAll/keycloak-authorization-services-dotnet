@@ -1,0 +1,1361 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+  id: IKeycloakProtectionClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IKeycloakProtectionClient
+  nameWithType: IKeycloakProtectionClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+  type: Interface
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectionClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IKeycloakProtectionClient
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectionClient.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Access to protected resource API.
+  remarks: 'See: https://www.keycloak.org/docs/latest/authorization_services/index.html#_service_protection_api'
+  example: []
+  syntax:
+    content: 'public interface IKeycloakProtectionClient : IKeycloakProtectedResourceClient, IKeycloakPolicyClient'
+    content.vb: Public Interface IKeycloakProtectionClient Inherits IKeycloakProtectedResourceClient, IKeycloakPolicyClient
+  inheritedMembers:
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+references:
+- uid: Keycloak.AuthServices.Sdk.Protection
+  commentId: N:Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection
+  nameWithType: Keycloak.AuthServices.Sdk.Protection
+  fullName: Keycloak.AuthServices.Sdk.Protection
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesIdsWithResponseAsync(string, GetResourcesRequestParameters, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(string, GetResourcesRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesIdsWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesIdsWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesIdsWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesIdsAsync(string, GetResourcesRequestParameters, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesIdsAsync(string, GetResourcesRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesIdsAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesIdsAsync(String, GetResourcesRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesIdsAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesIdsAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesWithResponseAsync(string, GetResourcesRequestParameters, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(string, GetResourcesRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesAsync(string, GetResourcesRequestParameters, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesAsync(string, GetResourcesRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesAsync(String, GetResourcesRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+    name: GetResourcesAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetResourceWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetResourceWithResponseAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetResourceAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourceAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourceAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetResourceAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: CreateResourceWithResponseAsync(string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: CreateResourceWithResponseAsync(String, Resource, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: CreateResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: CreateResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: CreateResourceAsync(string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.CreateResourceAsync(string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.CreateResourceAsync(String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: CreateResourceAsync(String, Resource, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: CreateResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: CreateResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: UpdateResourceWithResponseAsync(string, string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(string, string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(String, String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: UpdateResourceWithResponseAsync(String, String, Resource, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: UpdateResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: UpdateResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: UpdateResourceAsync(string, string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.UpdateResourceAsync(string, string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.UpdateResourceAsync(String, String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: UpdateResourceAsync(String, String, Resource, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: UpdateResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+    name: UpdateResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeleteResourceWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeleteResourceWithResponseAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeleteResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeleteResourceWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeleteResourceAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.DeleteResourceAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakProtectedResourceClient.DeleteResourceAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeleteResourceAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeleteResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeleteResourceAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPoliciesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetPoliciesRequestParameters_System_Threading_CancellationToken_
+  name: GetPoliciesWithResponseAsync(string, GetPoliciesRequestParameters, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.GetPoliciesWithResponseAsync(string, GetPoliciesRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.GetPoliciesWithResponseAsync(String, GetPoliciesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetPoliciesWithResponseAsync(String, GetPoliciesRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+    name: GetPoliciesWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPoliciesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetPoliciesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters
+    name: GetPoliciesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+    name: GetPoliciesWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPoliciesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetPoliciesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters
+    name: GetPoliciesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPoliciesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetPoliciesRequestParameters_System_Threading_CancellationToken_
+  name: GetPoliciesAsync(string, GetPoliciesRequestParameters, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.GetPoliciesAsync(string, GetPoliciesRequestParameters, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.GetPoliciesAsync(String, GetPoliciesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetPoliciesAsync(String, GetPoliciesRequestParameters, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+    name: GetPoliciesAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPoliciesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetPoliciesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters
+    name: GetPoliciesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPoliciesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters,System.Threading.CancellationToken)
+    name: GetPoliciesAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPoliciesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetPoliciesRequestParameters_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters
+    name: GetPoliciesRequestParameters
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPolicyWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetPolicyWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.GetPolicyWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.GetPolicyWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetPolicyWithResponseAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetPolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPolicyWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetPolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPolicyWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPolicyAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetPolicyAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.GetPolicyAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.GetPolicyAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetPolicyAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetPolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPolicyAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.GetPolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: GetPolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_GetPolicyAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_CreatePolicyWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  name: CreatePolicyWithResponseAsync(string, string, Policy, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.CreatePolicyWithResponseAsync(string, string, Policy, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.CreatePolicyWithResponseAsync(String, String, Policy, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  name.vb: CreatePolicyWithResponseAsync(String, String, Policy, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: CreatePolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_CreatePolicyWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: CreatePolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_CreatePolicyWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_CreatePolicyAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  name: CreatePolicyAsync(string, string, Policy, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.CreatePolicyAsync(string, string, Policy, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.CreatePolicyAsync(String, String, Policy, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  name.vb: CreatePolicyAsync(String, String, Policy, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: CreatePolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_CreatePolicyAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.CreatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: CreatePolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_CreatePolicyAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_UpdatePolicyWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  name: UpdatePolicyWithResponseAsync(string, string, Policy, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(string, string, Policy, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(String, String, Policy, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  name.vb: UpdatePolicyWithResponseAsync(String, String, Policy, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: UpdatePolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_UpdatePolicyWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: UpdatePolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_UpdatePolicyWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_UpdatePolicyAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  name: UpdatePolicyAsync(string, string, Policy, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.UpdatePolicyAsync(string, string, Policy, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.UpdatePolicyAsync(String, String, Policy, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Policy, System.Threading.CancellationToken)
+  name.vb: UpdatePolicyAsync(String, String, Policy, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: UpdatePolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_UpdatePolicyAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.UpdatePolicyAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Policy,System.Threading.CancellationToken)
+    name: UpdatePolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_UpdatePolicyAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Policy_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+    href: Keycloak.AuthServices.Sdk.Protection.Models.Policy.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_DeletePolicyWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeletePolicyWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.DeletePolicyWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.DeletePolicyWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeletePolicyWithResponseAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeletePolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_DeletePolicyWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeletePolicyWithResponseAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_DeletePolicyWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_DeletePolicyAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeletePolicyAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakPolicyClient.DeletePolicyAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IKeycloakPolicyClient.DeletePolicyAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeletePolicyAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeletePolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_DeletePolicyAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.DeletePolicyAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: DeletePolicyAsync
+    href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakPolicyClient_DeletePolicyAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html
+  name: IKeycloakProtectedResourceClient
+  nameWithType: IKeycloakProtectedResourceClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient.html
+  name: IKeycloakPolicyClient
+  nameWithType: IKeycloakPolicyClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient

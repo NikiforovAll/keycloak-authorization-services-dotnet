@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder.html
+  name: AdminRequestBuilder
+  nameWithType: AdminRequestBuilder
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html

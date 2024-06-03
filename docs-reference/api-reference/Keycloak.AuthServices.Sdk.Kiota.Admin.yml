@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin
+  id: Keycloak.AuthServices.Sdk.Kiota.Admin
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient.html
+  name: KeycloakAdminApiClient
+  nameWithType: KeycloakAdminApiClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient

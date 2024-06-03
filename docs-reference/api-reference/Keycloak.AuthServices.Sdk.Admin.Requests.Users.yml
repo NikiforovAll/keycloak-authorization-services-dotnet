@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  id: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.ExecuteActionsEmailRequest
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUserGroupsRequestParameters
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.ExecuteActionsEmailRequest
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Requests.Users.ExecuteActionsEmailRequest
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.ExecuteActionsEmailRequest.html
+  name: ExecuteActionsEmailRequest
+  nameWithType: ExecuteActionsEmailRequest
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.ExecuteActionsEmailRequest
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUserGroupsRequestParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUserGroupsRequestParameters
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUserGroupsRequestParameters.html
+  name: GetUserGroupsRequestParameters
+  nameWithType: GetUserGroupsRequestParameters
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUserGroupsRequestParameters
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters.html
+  name: GetUsersRequestParameters
+  nameWithType: GetUsersRequestParameters
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+    name: Users
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+    name: Users
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Users.html

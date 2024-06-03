@@ -1,0 +1,129 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.Requirements
+  commentId: N:Keycloak.AuthServices.Authorization.Requirements
+  id: Keycloak.AuthServices.Authorization.Requirements
+  children:
+  - Keycloak.AuthServices.Authorization.Requirements.DecisionRequirement
+  - Keycloak.AuthServices.Authorization.Requirements.DecisionRequirementHandler
+  - Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+  - Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  - Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirement
+  - Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirementHandler
+  - Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirement
+  - Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirementHandler
+  - Keycloak.AuthServices.Authorization.Requirements.RptRequirement
+  - Keycloak.AuthServices.Authorization.Requirements.RptRequirementHandler
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Authorization.Requirements
+  nameWithType: Keycloak.AuthServices.Authorization.Requirements
+  fullName: Keycloak.AuthServices.Authorization.Requirements
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+references:
+- uid: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirement
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.DecisionRequirement
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirement.html
+  name: DecisionRequirement
+  nameWithType: DecisionRequirement
+  fullName: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirement
+- uid: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirementHandler
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.DecisionRequirementHandler
+  href: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirementHandler.html
+  name: DecisionRequirementHandler
+  nameWithType: DecisionRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirementHandler
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement.html
+  name: ParameterizedProtectedResourceRequirement
+  nameWithType: ParameterizedProtectedResourceRequirement
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+- uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+  href: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler.html
+  name: ParameterizedProtectedResourceRequirementHandler
+  nameWithType: ParameterizedProtectedResourceRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+- uid: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirement
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirement
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirement.html
+  name: RealmAccessRequirement
+  nameWithType: RealmAccessRequirement
+  fullName: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirement
+- uid: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirementHandler
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirementHandler
+  href: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirementHandler.html
+  name: RealmAccessRequirementHandler
+  nameWithType: RealmAccessRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirementHandler
+- uid: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirement
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirement
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirement.html
+  name: ResourceAccessRequirement
+  nameWithType: ResourceAccessRequirement
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirement
+- uid: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirementHandler
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirementHandler
+  href: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirementHandler.html
+  name: ResourceAccessRequirementHandler
+  nameWithType: ResourceAccessRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirementHandler
+- uid: Keycloak.AuthServices.Authorization.Requirements.RptRequirement
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.RptRequirement
+  parent: Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.AuthServices.Authorization.Requirements.RptRequirement.html
+  name: RptRequirement
+  nameWithType: RptRequirement
+  fullName: Keycloak.AuthServices.Authorization.Requirements.RptRequirement
+- uid: Keycloak.AuthServices.Authorization.Requirements.RptRequirementHandler
+  commentId: T:Keycloak.AuthServices.Authorization.Requirements.RptRequirementHandler
+  href: Keycloak.AuthServices.Authorization.Requirements.RptRequirementHandler.html
+  name: RptRequirementHandler
+  nameWithType: RptRequirementHandler
+  fullName: Keycloak.AuthServices.Authorization.Requirements.RptRequirementHandler
+- uid: Keycloak.AuthServices.Authorization.Requirements
+  commentId: N:Keycloak.AuthServices.Authorization.Requirements
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.Requirements
+  nameWithType: Keycloak.AuthServices.Authorization.Requirements
+  fullName: Keycloak.AuthServices.Authorization.Requirements
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.Requirements
+    name: Requirements
+    href: Keycloak.AuthServices.Authorization.Requirements.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.Requirements
+    name: Requirements
+    href: Keycloak.AuthServices.Authorization.Requirements.html

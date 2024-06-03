@@ -1,0 +1,216 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  id: PolicyEnforcementMode
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.DISABLED
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.ENFORCING
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.PERMISSIVE
+  langs:
+  - csharp
+  - vb
+  name: PolicyEnforcementMode
+  nameWithType: PolicyEnforcementMode
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PolicyEnforcementMode
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+    startLine: 5
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: public enum PolicyEnforcementMode
+    content.vb: Public Enum PolicyEnforcementMode
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.ENFORCING
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.ENFORCING
+  id: ENFORCING
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  langs:
+  - csharp
+  - vb
+  name: ENFORCING
+  nameWithType: PolicyEnforcementMode.ENFORCING
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.ENFORCING
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ENFORCING
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ENFORCING")]
+
+      ENFORCING = 0
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+    content.vb: >-
+      <EnumMember(Value:="ENFORCING")>
+
+      ENFORCING = 0
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ENFORCING
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.PERMISSIVE
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.PERMISSIVE
+  id: PERMISSIVE
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  langs:
+  - csharp
+  - vb
+  name: PERMISSIVE
+  nameWithType: PolicyEnforcementMode.PERMISSIVE
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.PERMISSIVE
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PERMISSIVE
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "PERMISSIVE")]
+
+      PERMISSIVE = 1
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+    content.vb: >-
+      <EnumMember(Value:="PERMISSIVE")>
+
+      PERMISSIVE = 1
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: PERMISSIVE
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.DISABLED
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.DISABLED
+  id: DISABLED
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  langs:
+  - csharp
+  - vb
+  name: DISABLED
+  nameWithType: PolicyEnforcementMode.DISABLED
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.DISABLED
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DISABLED
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/PolicyEnforcementMode.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "DISABLED")]
+
+      DISABLED = 2
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+    content.vb: >-
+      <EnumMember(Value:="DISABLED")>
+
+      DISABLED = 2
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: DISABLED
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode.html
+  name: PolicyEnforcementMode
+  nameWithType: PolicyEnforcementMode
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode

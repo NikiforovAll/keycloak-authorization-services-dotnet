@@ -1,0 +1,201 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  id: DecisionStrategy
+  parent: Keycloak.AuthServices.Sdk.Protection.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.AFFIRMATIVE
+  - Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.CONSENSUS
+  - Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.UNANIMOUS
+  langs:
+  - csharp
+  - vb
+  name: DecisionStrategy
+  nameWithType: DecisionStrategy
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DecisionStrategy
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 75
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: ''
+  example: []
+  syntax:
+    content: public enum DecisionStrategy
+    content.vb: Public Enum DecisionStrategy
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.AFFIRMATIVE
+  commentId: F:Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.AFFIRMATIVE
+  id: AFFIRMATIVE
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  langs:
+  - csharp
+  - vb
+  name: AFFIRMATIVE
+  nameWithType: DecisionStrategy.AFFIRMATIVE
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.AFFIRMATIVE
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AFFIRMATIVE
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 79
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: ''
+  example: []
+  syntax:
+    content: >-
+      [EnumMember(Value = "AFFIRMATIVE")]
+
+      AFFIRMATIVE = 0
+    return:
+      type: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+    content.vb: >-
+      <EnumMember(Value:="AFFIRMATIVE")>
+
+      AFFIRMATIVE = 0
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: AFFIRMATIVE
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.UNANIMOUS
+  commentId: F:Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.UNANIMOUS
+  id: UNANIMOUS
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  langs:
+  - csharp
+  - vb
+  name: UNANIMOUS
+  nameWithType: DecisionStrategy.UNANIMOUS
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.UNANIMOUS
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UNANIMOUS
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 84
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: ''
+  example: []
+  syntax:
+    content: UNANIMOUS = 1
+    return:
+      type: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.CONSENSUS
+  commentId: F:Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.CONSENSUS
+  id: CONSENSUS
+  parent: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  langs:
+  - csharp
+  - vb
+  name: CONSENSUS
+  nameWithType: DecisionStrategy.CONSENSUS
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.CONSENSUS
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CONSENSUS
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/Models/Policy.cs
+    startLine: 88
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection.Models
+  summary: ''
+  example: []
+  syntax:
+    content: >-
+      [EnumMember(Value = "CONSENSUS")]
+
+      CONSENSUS = 2
+    return:
+      type: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+    content.vb: >-
+      <EnumMember(Value:="CONSENSUS")>
+
+      CONSENSUS = 2
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: CONSENSUS
+references:
+- uid: Keycloak.AuthServices.Sdk.Protection.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Protection.Models
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+  parent: Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy.html
+  name: DecisionStrategy
+  nameWithType: DecisionStrategy
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy

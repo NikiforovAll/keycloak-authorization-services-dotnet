@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  id: KeyUse
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.ENC
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.SIG
+  langs:
+  - csharp
+  - vb
+  name: KeyUse
+  nameWithType: KeyUse
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/KeyUse.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeyUse
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/KeyUse.cs
+    startLine: 5
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: public enum KeyUse
+    content.vb: Public Enum KeyUse
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.SIG
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.SIG
+  id: SIG
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  langs:
+  - csharp
+  - vb
+  name: SIG
+  nameWithType: KeyUse.SIG
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.SIG
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/KeyUse.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: SIG
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/KeyUse.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "SIG")]
+
+      SIG = 0
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+    content.vb: >-
+      <EnumMember(Value:="SIG")>
+
+      SIG = 0
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: SIG
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.ENC
+  commentId: F:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.ENC
+  id: ENC
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  langs:
+  - csharp
+  - vb
+  name: ENC
+  nameWithType: KeyUse.ENC
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.ENC
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/KeyUse.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ENC
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/KeyUse.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: >-
+      [EnumMember(Value = "ENC")]
+
+      ENC = 1
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+    content.vb: >-
+      <EnumMember(Value:="ENC")>
+
+      ENC = 1
+  attributes:
+  - type: System.Runtime.Serialization.EnumMemberAttribute
+    ctor: System.Runtime.Serialization.EnumMemberAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Value
+      type: System.String
+      value: ENC
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse.html
+  name: KeyUse
+  nameWithType: KeyUse
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse

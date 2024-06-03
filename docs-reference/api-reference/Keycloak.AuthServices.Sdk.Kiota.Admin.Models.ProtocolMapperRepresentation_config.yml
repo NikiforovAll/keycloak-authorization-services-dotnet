@@ -1,0 +1,838 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  id: ProtocolMapperRepresentation_config
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.#ctor
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  langs:
+  - csharp
+  - vb
+  name: ProtocolMapperRepresentation_config
+  nameWithType: ProtocolMapperRepresentation_config
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ProtocolMapperRepresentation_config
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  syntax:
+    content: 'public class ProtocolMapperRepresentation_config : IAdditionalDataHolder, IParsable'
+    content.vb: Public Class ProtocolMapperRepresentation_config Implements IAdditionalDataHolder, IParsable
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  - Microsoft.Kiota.Abstractions.Serialization.IParsable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData
+  id: AdditionalData
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  langs:
+  - csharp
+  - vb
+  name: AdditionalData
+  nameWithType: ProtocolMapperRepresentation_config.AdditionalData
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AdditionalData
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+    startLine: 12
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+  example: []
+  syntax:
+    content: public IDictionary<string, object> AdditionalData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+    content.vb: Public Property AdditionalData As IDictionary(Of String, Object)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData*
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.#ctor
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.#ctor
+  id: '#ctor'
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  langs:
+  - csharp
+  - vb
+  name: ProtocolMapperRepresentation_config()
+  nameWithType: ProtocolMapperRepresentation_config.ProtocolMapperRepresentation_config()
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.ProtocolMapperRepresentation_config()
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+    startLine: 16
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Instantiates a new <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config" data-throw-if-not-resolved="false"></xref> and sets the default values.
+  example: []
+  syntax:
+    content: public ProtocolMapperRepresentation_config()
+    content.vb: Public Sub New()
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.#ctor*
+  nameWithType.vb: ProtocolMapperRepresentation_config.New()
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.New()
+  name.vb: New()
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  id: CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  langs:
+  - csharp
+  - vb
+  name: CreateFromDiscriminatorValue(IParseNode)
+  nameWithType: ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue(IParseNode)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue(Microsoft.Kiota.Abstractions.Serialization.IParseNode)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateFromDiscriminatorValue
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+    startLine: 25
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Creates a new instance of the appropriate class based on discriminator value
+  example: []
+  syntax:
+    content: public static ProtocolMapperRepresentation_config CreateFromDiscriminatorValue(IParseNode parseNode)
+    parameters:
+    - id: parseNode
+      type: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+      description: The parse node to use to read the discriminator value and create the object
+    return:
+      type: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+      description: A <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Shared Function CreateFromDiscriminatorValue(parseNode As IParseNode) As ProtocolMapperRepresentation_config
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue*
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers
+  id: GetFieldDeserializers
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  langs:
+  - csharp
+  - vb
+  name: GetFieldDeserializers()
+  nameWithType: ProtocolMapperRepresentation_config.GetFieldDeserializers()
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers()
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetFieldDeserializers
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+    startLine: 34
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: The deserialization information for the current model
+  example: []
+  syntax:
+    content: public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Action{Microsoft.Kiota.Abstractions.Serialization.IParseNode}}
+      description: A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;
+    content.vb: Public Overridable Function GetFieldDeserializers() As IDictionary(Of String, Action(Of IParseNode))
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers*
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  id: Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  langs:
+  - csharp
+  - vb
+  name: Serialize(ISerializationWriter)
+  nameWithType: ProtocolMapperRepresentation_config.Serialize(ISerializationWriter)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Serialize
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Models/ProtocolMapperRepresentation_config.cs
+    startLine: 44
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  summary: Serializes information the current object
+  example: []
+  syntax:
+    content: public virtual void Serialize(ISerializationWriter writer)
+    parameters:
+    - id: writer
+      type: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+      description: Serialization writer to use to serialize this model
+    content.vb: Public Overridable Sub Serialize(writer As ISerializationWriter)
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize*
+  implements:
+  - Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: IAdditionalDataHolder
+  nameWithType: IAdditionalDataHolder
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParsable
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.IParsable
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: IParsable
+  nameWithType: IParsable
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParsable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Kiota.Abstractions.Serialization
+  commentId: N:Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: Microsoft.Kiota.Abstractions.Serialization
+  nameWithType: Microsoft.Kiota.Abstractions.Serialization
+  fullName: Microsoft.Kiota.Abstractions.Serialization
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions.Serialization
+    name: Serialization
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota
+    name: Kiota
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions
+    name: Abstractions
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Kiota.Abstractions.Serialization
+    name: Serialization
+    isExternal: true
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ProtocolMapperRepresentation_config_AdditionalData
+  name: AdditionalData
+  nameWithType: ProtocolMapperRepresentation_config.AdditionalData
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.AdditionalData
+- uid: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+  commentId: P:Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+  parent: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder
+  isExternal: true
+  name: AdditionalData
+  nameWithType: IAdditionalDataHolder.AdditionalData
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder.AdditionalData
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, object>
+  nameWithType: IDictionary<string, object>
+  fullName: System.Collections.Generic.IDictionary<string, object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.html
+  name: ProtocolMapperRepresentation_config
+  nameWithType: ProtocolMapperRepresentation_config
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.#ctor
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ProtocolMapperRepresentation_config__ctor
+  name: ProtocolMapperRepresentation_config
+  nameWithType: ProtocolMapperRepresentation_config.ProtocolMapperRepresentation_config
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.ProtocolMapperRepresentation_config
+  nameWithType.vb: ProtocolMapperRepresentation_config.New
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.New
+  name.vb: New
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ProtocolMapperRepresentation_config_CreateFromDiscriminatorValue_Microsoft_Kiota_Abstractions_Serialization_IParseNode_
+  name: CreateFromDiscriminatorValue
+  nameWithType: ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.IParseNode
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: IParseNode
+  nameWithType: IParseNode
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ProtocolMapperRepresentation_config_GetFieldDeserializers
+  name: GetFieldDeserializers
+  nameWithType: ProtocolMapperRepresentation_config.GetFieldDeserializers
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.GetFieldDeserializers
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+  commentId: M:Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+  parent: Microsoft.Kiota.Abstractions.Serialization.IParsable
+  isExternal: true
+  name: GetFieldDeserializers()
+  nameWithType: IParsable.GetFieldDeserializers()
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers()
+  spec.csharp:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+    name: GetFieldDeserializers
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.GetFieldDeserializers
+    name: GetFieldDeserializers
+    isExternal: true
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IDictionary{System.String,System.Action{Microsoft.Kiota.Abstractions.Serialization.IParseNode}}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Action{Microsoft.Kiota.Abstractions.Serialization.IParseNode}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, Action<IParseNode>>
+  nameWithType: IDictionary<string, Action<IParseNode>>
+  fullName: System.Collections.Generic.IDictionary<string, System.Action<Microsoft.Kiota.Abstractions.Serialization.IParseNode>>
+  nameWithType.vb: IDictionary(Of String, Action(Of IParseNode))
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, System.Action(Of Microsoft.Kiota.Abstractions.Serialization.IParseNode))
+  name.vb: IDictionary(Of String, Action(Of IParseNode))
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+    name: IParseNode
+    isExternal: true
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParseNode
+    name: IParseNode
+    isExternal: true
+  - name: )
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Models_ProtocolMapperRepresentation_config_Serialize_Microsoft_Kiota_Abstractions_Serialization_ISerializationWriter_
+  name: Serialize
+  nameWithType: ProtocolMapperRepresentation_config.Serialize
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.Serialize
+- uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  commentId: M:Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  parent: Microsoft.Kiota.Abstractions.Serialization.IParsable
+  isExternal: true
+  name: Serialize(ISerializationWriter)
+  nameWithType: IParsable.Serialize(ISerializationWriter)
+  fullName: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+  spec.csharp:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+    name: Serialize
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+    name: ISerializationWriter
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Kiota.Abstractions.Serialization.IParsable.Serialize(Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter)
+    name: Serialize
+    isExternal: true
+  - name: (
+  - uid: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+    name: ISerializationWriter
+    isExternal: true
+  - name: )
+- uid: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+  commentId: T:Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter
+  parent: Microsoft.Kiota.Abstractions.Serialization
+  isExternal: true
+  name: ISerializationWriter
+  nameWithType: ISerializationWriter
+  fullName: Microsoft.Kiota.Abstractions.Serialization.ISerializationWriter

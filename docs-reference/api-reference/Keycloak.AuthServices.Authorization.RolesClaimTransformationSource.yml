@@ -1,0 +1,195 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  commentId: T:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  id: RolesClaimTransformationSource
+  parent: Keycloak.AuthServices.Authorization
+  children:
+  - Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.All
+  - Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.None
+  - Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.Realm
+  - Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.ResourceAccess
+  langs:
+  - csharp
+  - vb
+  name: RolesClaimTransformationSource
+  nameWithType: RolesClaimTransformationSource
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  type: Enum
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RolesClaimTransformationSource
+    path: ../src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+    startLine: 34
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: RolesClaimTransformationSource
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum RolesClaimTransformationSource
+    content.vb: >-
+      <Flags>
+
+      Public Enum RolesClaimTransformationSource
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.None
+  commentId: F:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.None
+  id: None
+  parent: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: RolesClaimTransformationSource.None
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.None
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: None
+    path: ../src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+    startLine: 40
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Specifies that no transformation should be applied from the source.
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.Realm
+  commentId: F:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.Realm
+  id: Realm
+  parent: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  langs:
+  - csharp
+  - vb
+  name: Realm
+  nameWithType: RolesClaimTransformationSource.Realm
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.Realm
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Realm
+    path: ../src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+    startLine: 45
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Specifies that transformation should be applied to the realm.
+  example: []
+  syntax:
+    content: Realm = 1
+    return:
+      type: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.ResourceAccess
+  commentId: F:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.ResourceAccess
+  id: ResourceAccess
+  parent: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  langs:
+  - csharp
+  - vb
+  name: ResourceAccess
+  nameWithType: RolesClaimTransformationSource.ResourceAccess
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.ResourceAccess
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ResourceAccess
+    path: ../src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+    startLine: 50
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Specifies that transformation should be applied to the resource access.
+  example: []
+  syntax:
+    content: ResourceAccess = 2
+    return:
+      type: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.All
+  commentId: F:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.All
+  id: All
+  parent: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: RolesClaimTransformationSource.All
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.All
+  type: Field
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: All
+    path: ../src/Keycloak.AuthServices.Authorization/KeycloakAuthorizationOptions.cs
+    startLine: 55
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Specifies that transformation should be applied to all sources.
+  example: []
+  syntax:
+    content: All = Realm | ResourceAccess
+    return:
+      type: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+    content.vb: All = Realm Or ResourceAccess
+references:
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  commentId: T:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  parent: Keycloak.AuthServices.Authorization
+  href: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.html
+  name: RolesClaimTransformationSource
+  nameWithType: RolesClaimTransformationSource
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource

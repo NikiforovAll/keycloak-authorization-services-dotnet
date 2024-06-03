@@ -1,0 +1,367 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  commentId: T:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  id: IAuthorizationServerClient
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer
+  children:
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(System.String,System.String,System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode},System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(System.String,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IAuthorizationServerClient
+  nameWithType: IAuthorizationServerClient
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  type: Interface
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/IAuthorizationServerClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IAuthorizationServerClient
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/IAuthorizationServerClient.cs
+    startLine: 5
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Keycloak AuthorizationServer API
+  example: []
+  syntax:
+    content: public interface IAuthorizationServerClient
+    content.vb: Public Interface IAuthorizationServerClient
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(System.String,System.String,System.Threading.CancellationToken)
+  id: VerifyAccessToResource(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  langs:
+  - csharp
+  - vb
+  name: VerifyAccessToResource(string, string, CancellationToken)
+  nameWithType: IAuthorizationServerClient.VerifyAccessToResource(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/IAuthorizationServerClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: VerifyAccessToResource
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/IAuthorizationServerClient.cs
+    startLine: 14
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Verifies access to the protected resource. Sends decision request to token endpoint {resource}#{scope}
+  example: []
+  syntax:
+    content: Task<bool> VerifyAccessToResource(string resource, string scope, CancellationToken cancellationToken = default)
+    parameters:
+    - id: resource
+      type: System.String
+      description: ''
+    - id: scope
+      type: System.String
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: ''
+    content.vb: Function VerifyAccessToResource(resource As String, scope As String, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource*
+  nameWithType.vb: IAuthorizationServerClient.VerifyAccessToResource(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(String, String, System.Threading.CancellationToken)
+  name.vb: VerifyAccessToResource(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(System.String,System.String,System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode},System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(System.String,System.String,System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode},System.Threading.CancellationToken)
+  id: VerifyAccessToResource(System.String,System.String,System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode},System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+  langs:
+  - csharp
+  - vb
+  name: VerifyAccessToResource(string, string, ScopesValidationMode?, CancellationToken)
+  nameWithType: IAuthorizationServerClient.VerifyAccessToResource(string, string, ScopesValidationMode?, CancellationToken)
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(string, string, Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/AuthorizationServer/IAuthorizationServerClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: VerifyAccessToResource
+    path: ../src/Keycloak.AuthServices.Authorization/AuthorizationServer/IAuthorizationServerClient.cs
+    startLine: 29
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.AuthorizationServer
+  summary: Verifies access to the protected resource. Sends decision request to token endpoint {resource}#{scope}
+  example: []
+  syntax:
+    content: Task<bool> VerifyAccessToResource(string resource, string scope, ScopesValidationMode? scopesValidationMode = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: resource
+      type: System.String
+      description: ''
+    - id: scope
+      type: System.String
+      description: ''
+    - id: scopesValidationMode
+      type: System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode}
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: ''
+    content.vb: Function VerifyAccessToResource(resource As String, scope As String, scopesValidationMode As ScopesValidationMode? = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource*
+  nameWithType.vb: IAuthorizationServerClient.VerifyAccessToResource(String, String, ScopesValidationMode?, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource(String, String, Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode?, System.Threading.CancellationToken)
+  name.vb: VerifyAccessToResource(String, String, ScopesValidationMode?, CancellationToken)
+references:
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  commentId: N:Keycloak.AuthServices.Authorization.AuthorizationServer
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  nameWithType: Keycloak.AuthServices.Authorization.AuthorizationServer
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+    name: AuthorizationServer
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.html
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource*
+  commentId: Overload:Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.html#Keycloak_AuthServices_Authorization_AuthorizationServer_IAuthorizationServerClient_VerifyAccessToResource_System_String_System_String_System_Threading_CancellationToken_
+  name: VerifyAccessToResource
+  nameWithType: IAuthorizationServerClient.VerifyAccessToResource
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient.VerifyAccessToResource
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode}
+  commentId: T:System.Nullable{Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode}
+  parent: System
+  definition: System.Nullable`1
+  href: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.html
+  name: ScopesValidationMode?
+  nameWithType: ScopesValidationMode?
+  fullName: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode?
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+    name: ScopesValidationMode
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.html
+  - name: '?'
+  spec.vb:
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+    name: ScopesValidationMode
+    href: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode.html
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

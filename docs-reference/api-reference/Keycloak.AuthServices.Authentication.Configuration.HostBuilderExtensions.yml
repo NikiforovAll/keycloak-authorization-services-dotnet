@@ -1,0 +1,424 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  id: HostBuilderExtensions
+  parent: Keycloak.AuthServices.Authentication.Configuration
+  children:
+  - Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource(Microsoft.Extensions.Hosting.IHostBuilder,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: HostBuilderExtensions
+  nameWithType: HostBuilderExtensions
+  fullName: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/Configuration/HostBuilderExtenssions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: HostBuilderExtensions
+    path: ../src/Keycloak.AuthServices.Authentication/Configuration/HostBuilderExtenssions.cs
+    startLine: 9
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication.Configuration
+  summary: HostBuilder Extensions
+  example: []
+  syntax:
+    content: public static class HostBuilderExtensions
+    content.vb: Public Module HostBuilderExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource(Microsoft.Extensions.Hosting.IHostBuilder,System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource(Microsoft.Extensions.Hosting.IHostBuilder,System.String,System.String)
+  id: ConfigureKeycloakConfigurationSource(Microsoft.Extensions.Hosting.IHostBuilder,System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: ConfigureKeycloakConfigurationSource(IHostBuilder, string, string)
+  nameWithType: HostBuilderExtensions.ConfigureKeycloakConfigurationSource(IHostBuilder, string, string)
+  fullName: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource(Microsoft.Extensions.Hosting.IHostBuilder, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/Configuration/HostBuilderExtenssions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ConfigureKeycloakConfigurationSource
+    path: ../src/Keycloak.AuthServices.Authentication/Configuration/HostBuilderExtenssions.cs
+    startLine: 18
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication.Configuration
+  summary: Adds configuration source based on adapter config.
+  example: []
+  syntax:
+    content: public static IHostBuilder ConfigureKeycloakConfigurationSource(this IHostBuilder hostBuilder, string fileName = "keycloak.json", string section = "Keycloak")
+    parameters:
+    - id: hostBuilder
+      type: Microsoft.Extensions.Hosting.IHostBuilder
+      description: ''
+    - id: fileName
+      type: System.String
+      description: ''
+    - id: section
+      type: System.String
+      description: ''
+    return:
+      type: Microsoft.Extensions.Hosting.IHostBuilder
+      description: ''
+    content.vb: Public Shared Function ConfigureKeycloakConfigurationSource(hostBuilder As IHostBuilder, fileName As String = "keycloak.json", section As String = "Keycloak") As IHostBuilder
+  overload: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource*
+  nameWithType.vb: HostBuilderExtensions.ConfigureKeycloakConfigurationSource(IHostBuilder, String, String)
+  fullName.vb: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource(Microsoft.Extensions.Hosting.IHostBuilder, String, String)
+  name.vb: ConfigureKeycloakConfigurationSource(IHostBuilder, String, String)
+references:
+- uid: Keycloak.AuthServices.Authentication.Configuration
+  commentId: N:Keycloak.AuthServices.Authentication.Configuration
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication.Configuration
+  nameWithType: Keycloak.AuthServices.Authentication.Configuration
+  fullName: Keycloak.AuthServices.Authentication.Configuration
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication.Configuration
+    name: Configuration
+    href: Keycloak.AuthServices.Authentication.Configuration.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication.Configuration
+    name: Configuration
+    href: Keycloak.AuthServices.Authentication.Configuration.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource*
+  commentId: Overload:Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource
+  href: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.html#Keycloak_AuthServices_Authentication_Configuration_HostBuilderExtensions_ConfigureKeycloakConfigurationSource_Microsoft_Extensions_Hosting_IHostBuilder_System_String_System_String_
+  name: ConfigureKeycloakConfigurationSource
+  nameWithType: HostBuilderExtensions.ConfigureKeycloakConfigurationSource
+  fullName: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions.ConfigureKeycloakConfigurationSource
+- uid: Microsoft.Extensions.Hosting.IHostBuilder
+  commentId: T:Microsoft.Extensions.Hosting.IHostBuilder
+  parent: Microsoft.Extensions.Hosting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting.ihostbuilder
+  name: IHostBuilder
+  nameWithType: IHostBuilder
+  fullName: Microsoft.Extensions.Hosting.IHostBuilder
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Extensions.Hosting
+  commentId: N:Microsoft.Extensions.Hosting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Hosting
+  nameWithType: Microsoft.Extensions.Hosting
+  fullName: Microsoft.Extensions.Hosting
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Hosting
+    name: Hosting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Hosting
+    name: Hosting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.hosting

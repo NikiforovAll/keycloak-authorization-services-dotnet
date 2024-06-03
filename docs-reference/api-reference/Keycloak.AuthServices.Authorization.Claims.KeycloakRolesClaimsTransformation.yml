@@ -1,0 +1,711 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  commentId: T:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  id: KeycloakRolesClaimsTransformation
+  parent: Keycloak.AuthServices.Authorization.Claims
+  children:
+  - Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.#ctor(System.String,Keycloak.AuthServices.Authorization.RolesClaimTransformationSource,System.String)
+  - Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  langs:
+  - csharp
+  - vb
+  name: KeycloakRolesClaimsTransformation
+  nameWithType: KeycloakRolesClaimsTransformation
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/Claims/KeycloakRolesClaimsTransformation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakRolesClaimsTransformation
+    path: ../src/Keycloak.AuthServices.Authorization/Claims/KeycloakRolesClaimsTransformation.cs
+    startLine: 24
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.Claims
+  summary: >-
+    Transforms keycloak roles in the resource_access claim to jwt role claims.
+
+    Note, realm roles are not mapped atm.
+  example:
+  - >-
+    Example of Keycloak resource_access claim
+
+    "resource_access": {
+        "api": {
+            "roles": [ "role1", "role2" ]
+        },
+        "account": {
+            "roles": [
+                "view-profile"
+            ]
+        }
+    },
+  syntax:
+    content: 'public class KeycloakRolesClaimsTransformation : IClaimsTransformation'
+    content.vb: Public Class KeycloakRolesClaimsTransformation Implements IClaimsTransformation
+  seealso:
+  - linkId: Microsoft.AspNetCore.Authentication.IClaimsTransformation
+    commentId: T:Microsoft.AspNetCore.Authentication.IClaimsTransformation
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.AspNetCore.Authentication.IClaimsTransformation
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.#ctor(System.String,Keycloak.AuthServices.Authorization.RolesClaimTransformationSource,System.String)
+  commentId: M:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.#ctor(System.String,Keycloak.AuthServices.Authorization.RolesClaimTransformationSource,System.String)
+  id: '#ctor(System.String,Keycloak.AuthServices.Authorization.RolesClaimTransformationSource,System.String)'
+  parent: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  langs:
+  - csharp
+  - vb
+  name: KeycloakRolesClaimsTransformation(string, RolesClaimTransformationSource, string)
+  nameWithType: KeycloakRolesClaimsTransformation.KeycloakRolesClaimsTransformation(string, RolesClaimTransformationSource, string)
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.KeycloakRolesClaimsTransformation(string, Keycloak.AuthServices.Authorization.RolesClaimTransformationSource, string)
+  type: Constructor
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/Claims/KeycloakRolesClaimsTransformation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: .ctor
+    path: ../src/Keycloak.AuthServices.Authorization/Claims/KeycloakRolesClaimsTransformation.cs
+    startLine: 36
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.Claims
+  summary: Initializes a new instance of the <xref href="Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public KeycloakRolesClaimsTransformation(string roleClaimType, RolesClaimTransformationSource roleSource, string resource)
+    parameters:
+    - id: roleClaimType
+      type: System.String
+      description: Type of the role claim.
+    - id: roleSource
+      type: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+      description: <xref href="Keycloak.AuthServices.Authorization.RolesClaimTransformationSource" data-throw-if-not-resolved="false"></xref>
+    - id: resource
+      type: System.String
+      description: The audience.
+    content.vb: Public Sub New(roleClaimType As String, roleSource As RolesClaimTransformationSource, resource As String)
+  overload: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.#ctor*
+  nameWithType.vb: KeycloakRolesClaimsTransformation.New(String, RolesClaimTransformationSource, String)
+  fullName.vb: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.New(String, Keycloak.AuthServices.Authorization.RolesClaimTransformationSource, String)
+  name.vb: New(String, RolesClaimTransformationSource, String)
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  id: TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  parent: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  langs:
+  - csharp
+  - vb
+  name: TransformAsync(ClaimsPrincipal)
+  nameWithType: KeycloakRolesClaimsTransformation.TransformAsync(ClaimsPrincipal)
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/Claims/KeycloakRolesClaimsTransformation.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: TransformAsync
+    path: ../src/Keycloak.AuthServices.Authorization/Claims/KeycloakRolesClaimsTransformation.cs
+    startLine: 56
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization.Claims
+  summary: >-
+    Provides a central transformation point to change the specified principal.
+
+    Note: this will be run on each AuthenticateAsync call, so its safer to
+
+    return a new ClaimsPrincipal if your transformation is not idempotent.
+  example: []
+  syntax:
+    content: public Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
+    parameters:
+    - id: principal
+      type: System.Security.Claims.ClaimsPrincipal
+      description: The <xref href="System.Security.Claims.ClaimsPrincipal" data-throw-if-not-resolved="false"></xref> to transform.
+    return:
+      type: System.Threading.Tasks.Task{System.Security.Claims.ClaimsPrincipal}
+      description: The transformed principal.
+    content.vb: Public Function TransformAsync(principal As ClaimsPrincipal) As Task(Of ClaimsPrincipal)
+  overload: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync*
+  implements:
+  - Microsoft.AspNetCore.Authentication.IClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+references:
+- uid: Microsoft.AspNetCore.Authentication.IClaimsTransformation
+  commentId: T:Microsoft.AspNetCore.Authentication.IClaimsTransformation
+  parent: Microsoft.AspNetCore.Authentication
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.iclaimstransformation
+  name: IClaimsTransformation
+  nameWithType: IClaimsTransformation
+  fullName: Microsoft.AspNetCore.Authentication.IClaimsTransformation
+- uid: Keycloak.AuthServices.Authorization.Claims
+  commentId: N:Keycloak.AuthServices.Authorization.Claims
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization.Claims
+  nameWithType: Keycloak.AuthServices.Authorization.Claims
+  fullName: Keycloak.AuthServices.Authorization.Claims
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.Claims
+    name: Claims
+    href: Keycloak.AuthServices.Authorization.Claims.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization.Claims
+    name: Claims
+    href: Keycloak.AuthServices.Authorization.Claims.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Authentication
+  commentId: N:Microsoft.AspNetCore.Authentication
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Authentication
+  nameWithType: Microsoft.AspNetCore.Authentication
+  fullName: Microsoft.AspNetCore.Authentication
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Authentication
+    name: Authentication
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Authentication
+    name: Authentication
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  commentId: T:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+  href: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.html
+  name: KeycloakRolesClaimsTransformation
+  nameWithType: KeycloakRolesClaimsTransformation
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+- uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  commentId: T:Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+  parent: Keycloak.AuthServices.Authorization
+  href: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource.html
+  name: RolesClaimTransformationSource
+  nameWithType: RolesClaimTransformationSource
+  fullName: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.#ctor*
+  commentId: Overload:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.#ctor
+  href: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.html#Keycloak_AuthServices_Authorization_Claims_KeycloakRolesClaimsTransformation__ctor_System_String_Keycloak_AuthServices_Authorization_RolesClaimTransformationSource_System_String_
+  name: KeycloakRolesClaimsTransformation
+  nameWithType: KeycloakRolesClaimsTransformation.KeycloakRolesClaimsTransformation
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.KeycloakRolesClaimsTransformation
+  nameWithType.vb: KeycloakRolesClaimsTransformation.New
+  fullName.vb: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+- uid: System.Security.Claims.ClaimsPrincipal
+  commentId: T:System.Security.Claims.ClaimsPrincipal
+  parent: System.Security.Claims
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  name: ClaimsPrincipal
+  nameWithType: ClaimsPrincipal
+  fullName: System.Security.Claims.ClaimsPrincipal
+- uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync*
+  commentId: Overload:Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync
+  href: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.html#Keycloak_AuthServices_Authorization_Claims_KeycloakRolesClaimsTransformation_TransformAsync_System_Security_Claims_ClaimsPrincipal_
+  name: TransformAsync
+  nameWithType: KeycloakRolesClaimsTransformation.TransformAsync
+  fullName: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation.TransformAsync
+- uid: Microsoft.AspNetCore.Authentication.IClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:Microsoft.AspNetCore.Authentication.IClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  parent: Microsoft.AspNetCore.Authentication.IClaimsTransformation
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.iclaimstransformation.transformasync
+  name: TransformAsync(ClaimsPrincipal)
+  nameWithType: IClaimsTransformation.TransformAsync(ClaimsPrincipal)
+  fullName: Microsoft.AspNetCore.Authentication.IClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Authentication.IClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+    name: TransformAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.iclaimstransformation.transformasync
+  - name: (
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Authentication.IClaimsTransformation.TransformAsync(System.Security.Claims.ClaimsPrincipal)
+    name: TransformAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.iclaimstransformation.transformasync
+  - name: (
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Security.Claims.ClaimsPrincipal}
+  commentId: T:System.Threading.Tasks.Task{System.Security.Claims.ClaimsPrincipal}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ClaimsPrincipal>
+  nameWithType: Task<ClaimsPrincipal>
+  fullName: System.Threading.Tasks.Task<System.Security.Claims.ClaimsPrincipal>
+  nameWithType.vb: Task(Of ClaimsPrincipal)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Security.Claims.ClaimsPrincipal)
+  name.vb: Task(Of ClaimsPrincipal)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
+- uid: System.Security.Claims
+  commentId: N:System.Security.Claims
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Security.Claims
+  nameWithType: System.Security.Claims
+  fullName: System.Security.Claims
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Security
+    name: Security
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security
+  - name: .
+  - uid: System.Security.Claims
+    name: Claims
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Security
+    name: Security
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security
+  - name: .
+  - uid: System.Security.Claims
+    name: Claims
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

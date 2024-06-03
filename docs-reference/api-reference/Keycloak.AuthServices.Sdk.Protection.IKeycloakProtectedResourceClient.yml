@@ -1,0 +1,1085 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  id: IKeycloakProtectedResourceClient
+  parent: Keycloak.AuthServices.Sdk.Protection
+  children:
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  - Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IKeycloakProtectedResourceClient
+  nameWithType: IKeycloakProtectedResourceClient
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  type: Interface
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IKeycloakProtectedResourceClient
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Must be used by the owner of the resource for whom the policy is being created.
+  example: []
+  syntax:
+    content: public interface IKeycloakProtectedResourceClient
+    content.vb: Public Interface IKeycloakProtectedResourceClient
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  id: GetResourcesIdsWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: GetResourcesIdsWithResponseAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetResourcesIdsWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 17
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Searches for resource
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> GetResourcesIdsWithResponseAsync(string realm, GetResourcesRequestParameters? parameters = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: parameters
+      type: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+      description: Optional query parameters
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function GetResourcesIdsWithResponseAsync(realm As String, parameters As GetResourcesRequestParameters = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesIdsWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  id: GetResourcesIdsAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: GetResourcesIdsAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesIdsAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetResourcesIdsAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 30
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Searches for resource
+  example: []
+  syntax:
+    content: Task<IList<string>> GetResourcesIdsAsync(string realm, GetResourcesRequestParameters? parameters = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: parameters
+      type: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+      description: Optional query parameters
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{System.String}}
+      description: ''
+    content.vb: Function GetResourcesIdsAsync(realm As String, parameters As GetResourcesRequestParameters = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IList(Of String))
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesIdsAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesIdsAsync(String, GetResourcesRequestParameters, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  id: GetResourcesWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: GetResourcesWithResponseAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetResourcesWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 53
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Searches for resources
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> GetResourcesWithResponseAsync(string realm, GetResourcesRequestParameters? parameters = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: parameters
+      type: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+      description: Optional query parameters
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function GetResourcesWithResponseAsync(realm As String, parameters As GetResourcesRequestParameters = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesWithResponseAsync(String, GetResourcesRequestParameters, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  id: GetResourcesAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: GetResourcesAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesAsync(string, GetResourcesRequestParameters?, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(string, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters?, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetResourcesAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 66
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Searches for resources
+  example: []
+  syntax:
+    content: Task<IList<ResourceResponse>> GetResourcesAsync(string realm, GetResourcesRequestParameters? parameters = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: parameters
+      type: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+      description: Optional query parameters
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IList{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}}
+      description: ''
+    content.vb: Function GetResourcesAsync(realm As String, parameters As GetResourcesRequestParameters = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IList(Of ResourceResponse))
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourcesAsync(String, GetResourcesRequestParameters, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync(String, Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters, System.Threading.CancellationToken)
+  name.vb: GetResourcesAsync(String, GetResourcesRequestParameters, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: GetResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: GetResourceWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetResourceWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 89
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Gets resource by Id
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> GetResourceWithResponseAsync(string realm, string resourceId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resourceId
+      type: System.String
+      description: Resource ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function GetResourceWithResponseAsync(realm As String, resourceId As String, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetResourceWithResponseAsync(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: GetResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: GetResourceAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.GetResourceAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetResourceAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 102
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Gets resource by Id
+  example: []
+  syntax:
+    content: Task<ResourceResponse> GetResourceAsync(string realm, string resourceId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resourceId
+      type: System.String
+      description: Resource ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}
+      description: ''
+    content.vb: Function GetResourceAsync(realm As String, resourceId As String, cancellationToken As CancellationToken = Nothing) As Task(Of ResourceResponse)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.GetResourceAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync(String, String, System.Threading.CancellationToken)
+  name.vb: GetResourceAsync(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  id: CreateResourceWithResponseAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: CreateResourceWithResponseAsync(string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateResourceWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 124
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Creates resource
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> CreateResourceWithResponseAsync(string realm, Resource resource, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resource
+      type: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function CreateResourceWithResponseAsync(realm As String, resource As Resource, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync(String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: CreateResourceWithResponseAsync(String, Resource, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  id: CreateResourceAsync(System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: CreateResourceAsync(string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.CreateResourceAsync(string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: CreateResourceAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 137
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Creates resource
+  example: []
+  syntax:
+    content: Task<ResourceResponse> CreateResourceAsync(string realm, Resource resource, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resource
+      type: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}
+      description: ''
+    content.vb: Function CreateResourceAsync(realm As String, resource As Resource, cancellationToken As CancellationToken = Nothing) As Task(Of ResourceResponse)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.CreateResourceAsync(String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync(String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: CreateResourceAsync(String, Resource, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  id: UpdateResourceWithResponseAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateResourceWithResponseAsync(string, string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(string, string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UpdateResourceWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 163
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Updates resource
+  remarks: 'Docs: https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-protection-resources-api-papi.adoc#updating-resources'
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> UpdateResourceWithResponseAsync(string realm, string resourceId, Resource resource, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resourceId
+      type: System.String
+      description: Resource ID.
+    - id: resource
+      type: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function UpdateResourceWithResponseAsync(realm As String, resourceId As String, resource As Resource, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(String, String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: UpdateResourceWithResponseAsync(String, String, Resource, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  id: UpdateResourceAsync(System.String,System.String,Keycloak.AuthServices.Sdk.Protection.Models.Resource,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: UpdateResourceAsync(string, string, Resource, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.UpdateResourceAsync(string, string, Resource, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(string, string, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UpdateResourceAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 181
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Updates resource
+  remarks: 'Docs: https://github.com/keycloak/keycloak-documentation/blob/main/authorization_services/topics/service-protection-resources-api-papi.adoc#updating-resources'
+  example: []
+  syntax:
+    content: Task UpdateResourceAsync(string realm, string resourceId, Resource resource, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resourceId
+      type: System.String
+      description: Resource ID.
+    - id: resource
+      type: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+      description: ''
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function UpdateResourceAsync(realm As String, resourceId As String, resource As Resource, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.UpdateResourceAsync(String, String, Resource, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync(String, String, Keycloak.AuthServices.Sdk.Protection.Models.Resource, System.Threading.CancellationToken)
+  name.vb: UpdateResourceAsync(String, String, Resource, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: DeleteResourceWithResponseAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteResourceWithResponseAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DeleteResourceWithResponseAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 205
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Deletes a resource
+  example: []
+  syntax:
+    content: Task<HttpResponseMessage> DeleteResourceWithResponseAsync(string realm, string resourceId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resourceId
+      type: System.String
+      description: Resource ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      description: ''
+    content.vb: Function DeleteResourceWithResponseAsync(realm As String, resourceId As String, cancellationToken As CancellationToken = Nothing) As Task(Of HttpResponseMessage)
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeleteResourceWithResponseAsync(String, String, CancellationToken)
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: DeleteResourceAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+  langs:
+  - csharp
+  - vb
+  name: DeleteResourceAsync(string, string, CancellationToken)
+  nameWithType: IKeycloakProtectedResourceClient.DeleteResourceAsync(string, string, CancellationToken)
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DeleteResourceAsync
+    path: ../src/Keycloak.AuthServices.Sdk/Protection/IKeycloakProtectedResourceClient.cs
+    startLine: 218
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Protection
+  summary: Deletes a resource
+  example: []
+  syntax:
+    content: Task DeleteResourceAsync(string realm, string resourceId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: realm
+      type: System.String
+      description: Realm name (not ID).
+    - id: resourceId
+      type: System.String
+      description: Resource ID.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function DeleteResourceAsync(realm As String, resourceId As String, cancellationToken As CancellationToken = Nothing) As Task
+  overload: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync*
+  nameWithType.vb: IKeycloakProtectedResourceClient.DeleteResourceAsync(String, String, CancellationToken)
+  fullName.vb: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeleteResourceAsync(String, String, CancellationToken)
+references:
+- uid: Keycloak.AuthServices.Sdk.Protection
+  commentId: N:Keycloak.AuthServices.Sdk.Protection
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection
+  nameWithType: Keycloak.AuthServices.Sdk.Protection
+  fullName: Keycloak.AuthServices.Sdk.Protection
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesIdsWithResponseAsync
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsWithResponseAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+  parent: Keycloak.AuthServices.Sdk.Protection.Requests
+  href: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters.html
+  name: GetResourcesRequestParameters
+  nameWithType: GetResourcesRequestParameters
+  fullName: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  commentId: T:System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<HttpResponseMessage>
+  nameWithType: Task<HttpResponseMessage>
+  fullName: System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage>
+  nameWithType.vb: Task(Of HttpResponseMessage)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Net.Http.HttpResponseMessage)
+  name.vb: Task(Of HttpResponseMessage)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.Http.HttpResponseMessage
+    name: HttpResponseMessage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Protection.Requests
+  commentId: N:Keycloak.AuthServices.Sdk.Protection.Requests
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection.Requests
+  nameWithType: Keycloak.AuthServices.Sdk.Protection.Requests
+  fullName: Keycloak.AuthServices.Sdk.Protection.Requests
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Protection.Requests.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesIdsAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesIdsAsync
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesIdsAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesIdsAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{System.String}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IList<string>>
+  nameWithType: Task<IList<string>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<string>>
+  nameWithType.vb: Task(Of IList(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of String))
+  name.vb: Task(Of IList(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesWithResponseAsync
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourcesAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Requests_GetResourcesRequestParameters_System_Threading_CancellationToken_
+  name: GetResourcesAsync
+  nameWithType: IKeycloakProtectedResourceClient.GetResourcesAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourcesAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IList{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IList{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IList<ResourceResponse>>
+  nameWithType: Task<IList<ResourceResponse>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IList<Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse>>
+  nameWithType.vb: Task(Of IList(Of ResourceResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IList(Of Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse))
+  name.vb: Task(Of IList(Of ResourceResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse
+    name: ResourceResponse
+    href: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse
+    name: ResourceResponse
+    href: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse.html
+  - name: )
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetResourceWithResponseAsync
+  nameWithType: IKeycloakProtectedResourceClient.GetResourceWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_GetResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: GetResourceAsync
+  nameWithType: IKeycloakProtectedResourceClient.GetResourceAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.GetResourceAsync
+- uid: System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}
+  commentId: T:System.Threading.Tasks.Task{Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ResourceResponse>
+  nameWithType: Task<ResourceResponse>
+  fullName: System.Threading.Tasks.Task<Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse>
+  nameWithType.vb: Task(Of ResourceResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse)
+  name.vb: Task(Of ResourceResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse
+    name: ResourceResponse
+    href: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse
+    name: ResourceResponse
+    href: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse.html
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceWithResponseAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: CreateResourceWithResponseAsync
+  nameWithType: IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  commentId: T:Keycloak.AuthServices.Sdk.Protection.Models.Resource
+  parent: Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.AuthServices.Sdk.Protection.Models.Resource.html
+  name: Resource
+  nameWithType: Resource
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+- uid: Keycloak.AuthServices.Sdk.Protection.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Protection.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Protection.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Protection.Models
+  fullName: Keycloak.AuthServices.Sdk.Protection.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection
+    name: Protection
+    href: Keycloak.AuthServices.Sdk.Protection.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Protection.Models.html
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_CreateResourceAsync_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: CreateResourceAsync
+  nameWithType: IKeycloakProtectedResourceClient.CreateResourceAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.CreateResourceAsync
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceWithResponseAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: UpdateResourceWithResponseAsync
+  nameWithType: IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_UpdateResourceAsync_System_String_System_String_Keycloak_AuthServices_Sdk_Protection_Models_Resource_System_Threading_CancellationToken_
+  name: UpdateResourceAsync
+  nameWithType: IKeycloakProtectedResourceClient.UpdateResourceAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.UpdateResourceAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceWithResponseAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeleteResourceWithResponseAsync
+  nameWithType: IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceWithResponseAsync
+- uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync
+  href: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.html#Keycloak_AuthServices_Sdk_Protection_IKeycloakProtectedResourceClient_DeleteResourceAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeleteResourceAsync
+  nameWithType: IKeycloakProtectedResourceClient.DeleteResourceAsync
+  fullName: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient.DeleteResourceAsync

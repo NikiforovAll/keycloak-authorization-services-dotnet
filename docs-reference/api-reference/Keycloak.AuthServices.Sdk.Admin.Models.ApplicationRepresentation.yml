@@ -1,0 +1,3477 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  id: ApplicationRepresentation
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope
+  - Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins
+  langs:
+  - csharp
+  - vb
+  name: ApplicationRepresentation
+  nameWithType: ApplicationRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ApplicationRepresentation
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 589
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [Obsolete]
+
+      public class ApplicationRepresentation
+    content.vb: >-
+      <Obsolete>
+
+      Public Class ApplicationRepresentation
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id
+  id: Id
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ApplicationRepresentation.Id
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Id
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 596
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("id")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? Id { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("id")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Id As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId
+  id: ClientId
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientId
+  nameWithType: ApplicationRepresentation.ClientId
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientId
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 602
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("clientId")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? ClientId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("clientId")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property ClientId As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: clientId
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description
+  id: Description
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ApplicationRepresentation.Description
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Description
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 608
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("description")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("description")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Description As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: description
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl
+  id: RootUrl
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RootUrl
+  nameWithType: ApplicationRepresentation.RootUrl
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RootUrl
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 614
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("rootUrl")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? RootUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("rootUrl")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property RootUrl As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: rootUrl
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl
+  id: AdminUrl
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AdminUrl
+  nameWithType: ApplicationRepresentation.AdminUrl
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AdminUrl
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 620
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("adminUrl")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? AdminUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("adminUrl")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property AdminUrl As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: adminUrl
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl
+  id: BaseUrl
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: BaseUrl
+  nameWithType: ApplicationRepresentation.BaseUrl
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BaseUrl
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 626
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("baseUrl")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? BaseUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("baseUrl")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property BaseUrl As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: baseUrl
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired
+  id: SurrogateAuthRequired
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: SurrogateAuthRequired
+  nameWithType: ApplicationRepresentation.SurrogateAuthRequired
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: SurrogateAuthRequired
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 632
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("surrogateAuthRequired")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? SurrogateAuthRequired { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("surrogateAuthRequired")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property SurrogateAuthRequired As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: surrogateAuthRequired
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled
+  id: Enabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: ApplicationRepresentation.Enabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Enabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 638
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("enabled")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? Enabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("enabled")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Enabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: enabled
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole
+  id: AlwaysDisplayInConsole
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AlwaysDisplayInConsole
+  nameWithType: ApplicationRepresentation.AlwaysDisplayInConsole
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AlwaysDisplayInConsole
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 644
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("alwaysDisplayInConsole")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? AlwaysDisplayInConsole { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("alwaysDisplayInConsole")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property AlwaysDisplayInConsole As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: alwaysDisplayInConsole
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType
+  id: ClientAuthenticatorType
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientAuthenticatorType
+  nameWithType: ApplicationRepresentation.ClientAuthenticatorType
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientAuthenticatorType
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 650
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("clientAuthenticatorType")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? ClientAuthenticatorType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("clientAuthenticatorType")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property ClientAuthenticatorType As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: clientAuthenticatorType
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret
+  id: Secret
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Secret
+  nameWithType: ApplicationRepresentation.Secret
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Secret
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 656
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("secret")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? Secret { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("secret")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Secret As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: secret
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken
+  id: RegistrationAccessToken
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RegistrationAccessToken
+  nameWithType: ApplicationRepresentation.RegistrationAccessToken
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RegistrationAccessToken
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 662
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("registrationAccessToken")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? RegistrationAccessToken { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("registrationAccessToken")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property RegistrationAccessToken As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: registrationAccessToken
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles
+  id: DefaultRoles
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DefaultRoles
+  nameWithType: ApplicationRepresentation.DefaultRoles
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DefaultRoles
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 668
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("defaultRoles")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public ICollection<string>? DefaultRoles { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.String}
+    content.vb: >-
+      <JsonPropertyName("defaultRoles")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property DefaultRoles As ICollection(Of String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: defaultRoles
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris
+  id: RedirectUris
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RedirectUris
+  nameWithType: ApplicationRepresentation.RedirectUris
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RedirectUris
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 675
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("redirectUris")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public ICollection<string>? RedirectUris { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.String}
+    content.vb: >-
+      <JsonPropertyName("redirectUris")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property RedirectUris As ICollection(Of String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: redirectUris
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins
+  id: WebOrigins
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: WebOrigins
+  nameWithType: ApplicationRepresentation.WebOrigins
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WebOrigins
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 681
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("webOrigins")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public ICollection<string>? WebOrigins { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.String}
+    content.vb: >-
+      <JsonPropertyName("webOrigins")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property WebOrigins As ICollection(Of String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: webOrigins
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore
+  id: NotBefore
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: NotBefore
+  nameWithType: ApplicationRepresentation.NotBefore
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: NotBefore
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 687
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("notBefore")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public int? NotBefore { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <JsonPropertyName("notBefore")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property NotBefore As Integer?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: notBefore
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly
+  id: BearerOnly
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: BearerOnly
+  nameWithType: ApplicationRepresentation.BearerOnly
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: BearerOnly
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 693
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("bearerOnly")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? BearerOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("bearerOnly")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property BearerOnly As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: bearerOnly
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired
+  id: ConsentRequired
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ConsentRequired
+  nameWithType: ApplicationRepresentation.ConsentRequired
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ConsentRequired
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 699
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("consentRequired")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? ConsentRequired { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("consentRequired")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property ConsentRequired As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: consentRequired
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled
+  id: StandardFlowEnabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: StandardFlowEnabled
+  nameWithType: ApplicationRepresentation.StandardFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: StandardFlowEnabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 705
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("standardFlowEnabled")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? StandardFlowEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("standardFlowEnabled")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property StandardFlowEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: standardFlowEnabled
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled
+  id: ImplicitFlowEnabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ImplicitFlowEnabled
+  nameWithType: ApplicationRepresentation.ImplicitFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ImplicitFlowEnabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 711
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("implicitFlowEnabled")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? ImplicitFlowEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("implicitFlowEnabled")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property ImplicitFlowEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: implicitFlowEnabled
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled
+  id: DirectAccessGrantsEnabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DirectAccessGrantsEnabled
+  nameWithType: ApplicationRepresentation.DirectAccessGrantsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DirectAccessGrantsEnabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 717
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("directAccessGrantsEnabled")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? DirectAccessGrantsEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("directAccessGrantsEnabled")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property DirectAccessGrantsEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: directAccessGrantsEnabled
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled
+  id: ServiceAccountsEnabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ServiceAccountsEnabled
+  nameWithType: ApplicationRepresentation.ServiceAccountsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ServiceAccountsEnabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 723
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("serviceAccountsEnabled")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? ServiceAccountsEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("serviceAccountsEnabled")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property ServiceAccountsEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: serviceAccountsEnabled
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled
+  id: AuthorizationServicesEnabled
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationServicesEnabled
+  nameWithType: ApplicationRepresentation.AuthorizationServicesEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthorizationServicesEnabled
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 729
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("authorizationServicesEnabled")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? AuthorizationServicesEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("authorizationServicesEnabled")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property AuthorizationServicesEnabled As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authorizationServicesEnabled
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly
+  id: DirectGrantsOnly
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DirectGrantsOnly
+  nameWithType: ApplicationRepresentation.DirectGrantsOnly
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DirectGrantsOnly
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 735
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("directGrantsOnly")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public bool? DirectGrantsOnly { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("directGrantsOnly")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property DirectGrantsOnly As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: directGrantsOnly
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient
+  id: PublicClient
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: PublicClient
+  nameWithType: ApplicationRepresentation.PublicClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: PublicClient
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 742
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("publicClient")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? PublicClient { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("publicClient")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property PublicClient As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: publicClient
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout
+  id: FrontchannelLogout
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: FrontchannelLogout
+  nameWithType: ApplicationRepresentation.FrontchannelLogout
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FrontchannelLogout
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 748
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("frontchannelLogout")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? FrontchannelLogout { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("frontchannelLogout")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property FrontchannelLogout As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: frontchannelLogout
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol
+  id: Protocol
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Protocol
+  nameWithType: ApplicationRepresentation.Protocol
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Protocol
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 754
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("protocol")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? Protocol { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("protocol")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Protocol As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: protocol
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes
+  id: Attributes
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: ApplicationRepresentation.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Attributes
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 760
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("attributes")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public IDictionary<string, string>? Attributes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: >-
+      <JsonPropertyName("attributes")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Attributes As IDictionary(Of String, String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: attributes
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  id: AuthenticationFlowBindingOverrides
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AuthenticationFlowBindingOverrides
+  nameWithType: ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthenticationFlowBindingOverrides
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 767
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("authenticationFlowBindingOverrides")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public IDictionary<string, string>? AuthenticationFlowBindingOverrides { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: >-
+      <JsonPropertyName("authenticationFlowBindingOverrides")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property AuthenticationFlowBindingOverrides As IDictionary(Of String, String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authenticationFlowBindingOverrides
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed
+  id: FullScopeAllowed
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: FullScopeAllowed
+  nameWithType: ApplicationRepresentation.FullScopeAllowed
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: FullScopeAllowed
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 776
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("fullScopeAllowed")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public bool? FullScopeAllowed { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("fullScopeAllowed")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property FullScopeAllowed As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: fullScopeAllowed
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout
+  id: NodeReRegistrationTimeout
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: NodeReRegistrationTimeout
+  nameWithType: ApplicationRepresentation.NodeReRegistrationTimeout
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: NodeReRegistrationTimeout
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 782
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("nodeReRegistrationTimeout")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public int? NodeReRegistrationTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <JsonPropertyName("nodeReRegistrationTimeout")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property NodeReRegistrationTimeout As Integer?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: nodeReRegistrationTimeout
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes
+  id: RegisteredNodes
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: RegisteredNodes
+  nameWithType: ApplicationRepresentation.RegisteredNodes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RegisteredNodes
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 788
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("registeredNodes")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public IDictionary<string, int>? RegisteredNodes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Int32}
+    content.vb: >-
+      <JsonPropertyName("registeredNodes")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property RegisteredNodes As IDictionary(Of String, Integer)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: registeredNodes
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers
+  id: ProtocolMappers
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ProtocolMappers
+  nameWithType: ApplicationRepresentation.ProtocolMappers
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ProtocolMappers
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 795
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("protocolMappers")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation}
+    content.vb: >-
+      <JsonPropertyName("protocolMappers")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property ProtocolMappers As ICollection(Of ProtocolMapperRepresentation)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: protocolMappers
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate
+  id: ClientTemplate
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: ClientTemplate
+  nameWithType: ApplicationRepresentation.ClientTemplate
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ClientTemplate
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 802
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("clientTemplate")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public string? ClientTemplate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("clientTemplate")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property ClientTemplate As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: clientTemplate
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig
+  id: UseTemplateConfig
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: UseTemplateConfig
+  nameWithType: ApplicationRepresentation.UseTemplateConfig
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseTemplateConfig
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 809
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("useTemplateConfig")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public bool? UseTemplateConfig { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("useTemplateConfig")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property UseTemplateConfig As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: useTemplateConfig
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope
+  id: UseTemplateScope
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: UseTemplateScope
+  nameWithType: ApplicationRepresentation.UseTemplateScope
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseTemplateScope
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 816
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("useTemplateScope")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public bool? UseTemplateScope { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("useTemplateScope")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property UseTemplateScope As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: useTemplateScope
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers
+  id: UseTemplateMappers
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: UseTemplateMappers
+  nameWithType: ApplicationRepresentation.UseTemplateMappers
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: UseTemplateMappers
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 823
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("useTemplateMappers")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public bool? UseTemplateMappers { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("useTemplateMappers")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property UseTemplateMappers As Boolean?
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: useTemplateMappers
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes
+  id: DefaultClientScopes
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: DefaultClientScopes
+  nameWithType: ApplicationRepresentation.DefaultClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DefaultClientScopes
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 830
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("defaultClientScopes")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public ICollection<string>? DefaultClientScopes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.String}
+    content.vb: >-
+      <JsonPropertyName("defaultClientScopes")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property DefaultClientScopes As ICollection(Of String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: defaultClientScopes
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes
+  id: OptionalClientScopes
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: OptionalClientScopes
+  nameWithType: ApplicationRepresentation.OptionalClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: OptionalClientScopes
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 837
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("optionalClientScopes")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public ICollection<string>? OptionalClientScopes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.String}
+    content.vb: >-
+      <JsonPropertyName("optionalClientScopes")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property OptionalClientScopes As ICollection(Of String)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: optionalClientScopes
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings
+  id: AuthorizationSettings
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationSettings
+  nameWithType: ApplicationRepresentation.AuthorizationSettings
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthorizationSettings
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 844
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("authorizationSettings")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public ResourceServerRepresentation? AuthorizationSettings { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Admin.Models.ResourceServerRepresentation
+    content.vb: >-
+      <JsonPropertyName("authorizationSettings")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property AuthorizationSettings As ResourceServerRepresentation
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authorizationSettings
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access
+  id: Access
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Access
+  nameWithType: ApplicationRepresentation.Access
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Access
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 850
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("access")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public IDictionary<string, bool>? Access { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Boolean}
+    content.vb: >-
+      <JsonPropertyName("access")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Access As IDictionary(Of String, Boolean)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: access
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin
+  id: Origin
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Origin
+  nameWithType: ApplicationRepresentation.Origin
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Origin
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 856
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("origin")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? Origin { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("origin")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Origin As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: origin
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name
+  id: Name
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ApplicationRepresentation.Name
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Name
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 862
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("name")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      public string? Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("name")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      Public Property Name As String
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: name
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims
+  id: Claims
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: Claims
+  nameWithType: ApplicationRepresentation.Claims
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Claims
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 868
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonPropertyName("claims")]
+
+      [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+
+      [Obsolete]
+
+      public Claims? Claims { get; set; }
+    parameters: []
+    return:
+      type: Keycloak.AuthServices.Sdk.Admin.Models.Claims
+    content.vb: >-
+      <JsonPropertyName("claims")>
+
+      <JsonIgnore(Condition:=JsonIgnoreCondition.WhenWritingDefault)>
+
+      <Obsolete>
+
+      Public Property Claims As Claims
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: claims
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Condition
+      type: System.Text.Json.Serialization.JsonIgnoreCondition
+      value: 2
+  - type: System.ObsoleteAttribute
+    ctor: System.ObsoleteAttribute.#ctor
+    arguments: []
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties
+  commentId: P:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties
+  id: AdditionalProperties
+  parent: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+  langs:
+  - csharp
+  - vb
+  name: AdditionalProperties
+  nameWithType: ApplicationRepresentation.AdditionalProperties
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AdditionalProperties
+    path: ../src/Keycloak.AuthServices.Sdk/Admin/Models/Contracts.cs
+    startLine: 877
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+  namespace: Keycloak.AuthServices.Sdk.Admin.Models
+  syntax:
+    content: >-
+      [JsonExtensionData]
+
+      public IDictionary<string, object> AdditionalProperties { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+    content.vb: >-
+      <JsonExtensionData>
+
+      Public Property AdditionalProperties As IDictionary(Of String, Object)
+  overload: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonExtensionDataAttribute
+    ctor: System.Text.Json.Serialization.JsonExtensionDataAttribute.#ctor
+    arguments: []
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin.Models
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Models
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Models
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models
+    name: Models
+    href: Keycloak.AuthServices.Sdk.Admin.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Id
+  name: Id
+  nameWithType: ApplicationRepresentation.Id
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ClientId
+  name: ClientId
+  nameWithType: ApplicationRepresentation.ClientId
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientId
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Description
+  name: Description
+  nameWithType: ApplicationRepresentation.Description
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Description
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_RootUrl
+  name: RootUrl
+  nameWithType: ApplicationRepresentation.RootUrl
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RootUrl
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_AdminUrl
+  name: AdminUrl
+  nameWithType: ApplicationRepresentation.AdminUrl
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdminUrl
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_BaseUrl
+  name: BaseUrl
+  nameWithType: ApplicationRepresentation.BaseUrl
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BaseUrl
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_SurrogateAuthRequired
+  name: SurrogateAuthRequired
+  nameWithType: ApplicationRepresentation.SurrogateAuthRequired
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.SurrogateAuthRequired
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Enabled
+  name: Enabled
+  nameWithType: ApplicationRepresentation.Enabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Enabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_AlwaysDisplayInConsole
+  name: AlwaysDisplayInConsole
+  nameWithType: ApplicationRepresentation.AlwaysDisplayInConsole
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AlwaysDisplayInConsole
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ClientAuthenticatorType
+  name: ClientAuthenticatorType
+  nameWithType: ApplicationRepresentation.ClientAuthenticatorType
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientAuthenticatorType
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Secret
+  name: Secret
+  nameWithType: ApplicationRepresentation.Secret
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Secret
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_RegistrationAccessToken
+  name: RegistrationAccessToken
+  nameWithType: ApplicationRepresentation.RegistrationAccessToken
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegistrationAccessToken
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_DefaultRoles
+  name: DefaultRoles
+  nameWithType: ApplicationRepresentation.DefaultRoles
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultRoles
+- uid: System.Collections.Generic.ICollection{System.String}
+  commentId: T:System.Collections.Generic.ICollection{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<string>
+  nameWithType: ICollection<string>
+  fullName: System.Collections.Generic.ICollection<string>
+  nameWithType.vb: ICollection(Of String)
+  fullName.vb: System.Collections.Generic.ICollection(Of String)
+  name.vb: ICollection(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_RedirectUris
+  name: RedirectUris
+  nameWithType: ApplicationRepresentation.RedirectUris
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RedirectUris
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_WebOrigins
+  name: WebOrigins
+  nameWithType: ApplicationRepresentation.WebOrigins
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.WebOrigins
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_NotBefore
+  name: NotBefore
+  nameWithType: ApplicationRepresentation.NotBefore
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NotBefore
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_BearerOnly
+  name: BearerOnly
+  nameWithType: ApplicationRepresentation.BearerOnly
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.BearerOnly
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ConsentRequired
+  name: ConsentRequired
+  nameWithType: ApplicationRepresentation.ConsentRequired
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ConsentRequired
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_StandardFlowEnabled
+  name: StandardFlowEnabled
+  nameWithType: ApplicationRepresentation.StandardFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.StandardFlowEnabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ImplicitFlowEnabled
+  name: ImplicitFlowEnabled
+  nameWithType: ApplicationRepresentation.ImplicitFlowEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ImplicitFlowEnabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_DirectAccessGrantsEnabled
+  name: DirectAccessGrantsEnabled
+  nameWithType: ApplicationRepresentation.DirectAccessGrantsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectAccessGrantsEnabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ServiceAccountsEnabled
+  name: ServiceAccountsEnabled
+  nameWithType: ApplicationRepresentation.ServiceAccountsEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ServiceAccountsEnabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_AuthorizationServicesEnabled
+  name: AuthorizationServicesEnabled
+  nameWithType: ApplicationRepresentation.AuthorizationServicesEnabled
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationServicesEnabled
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_DirectGrantsOnly
+  name: DirectGrantsOnly
+  nameWithType: ApplicationRepresentation.DirectGrantsOnly
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DirectGrantsOnly
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_PublicClient
+  name: PublicClient
+  nameWithType: ApplicationRepresentation.PublicClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.PublicClient
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_FrontchannelLogout
+  name: FrontchannelLogout
+  nameWithType: ApplicationRepresentation.FrontchannelLogout
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FrontchannelLogout
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Protocol
+  name: Protocol
+  nameWithType: ApplicationRepresentation.Protocol
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Protocol
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Attributes
+  name: Attributes
+  nameWithType: ApplicationRepresentation.Attributes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Attributes
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, string>
+  nameWithType: IDictionary<string, string>
+  fullName: System.Collections.Generic.IDictionary<string, string>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_AuthenticationFlowBindingOverrides
+  name: AuthenticationFlowBindingOverrides
+  nameWithType: ApplicationRepresentation.AuthenticationFlowBindingOverrides
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthenticationFlowBindingOverrides
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_FullScopeAllowed
+  name: FullScopeAllowed
+  nameWithType: ApplicationRepresentation.FullScopeAllowed
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.FullScopeAllowed
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_NodeReRegistrationTimeout
+  name: NodeReRegistrationTimeout
+  nameWithType: ApplicationRepresentation.NodeReRegistrationTimeout
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.NodeReRegistrationTimeout
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_RegisteredNodes
+  name: RegisteredNodes
+  nameWithType: ApplicationRepresentation.RegisteredNodes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.RegisteredNodes
+- uid: System.Collections.Generic.IDictionary{System.String,System.Int32}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, int>
+  nameWithType: IDictionary<string, int>
+  fullName: System.Collections.Generic.IDictionary<string, int>
+  nameWithType.vb: IDictionary(Of String, Integer)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Integer)
+  name.vb: IDictionary(Of String, Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ProtocolMappers
+  name: ProtocolMappers
+  nameWithType: ApplicationRepresentation.ProtocolMappers
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ProtocolMappers
+- uid: System.Collections.Generic.ICollection{Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation}
+  commentId: T:System.Collections.Generic.ICollection{Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  name: ICollection<ProtocolMapperRepresentation>
+  nameWithType: ICollection<ProtocolMapperRepresentation>
+  fullName: System.Collections.Generic.ICollection<Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation>
+  nameWithType.vb: ICollection(Of ProtocolMapperRepresentation)
+  fullName.vb: System.Collections.Generic.ICollection(Of Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation)
+  name.vb: ICollection(Of ProtocolMapperRepresentation)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation
+    name: ProtocolMapperRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation
+    name: ProtocolMapperRepresentation
+    href: Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation.html
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_ClientTemplate
+  name: ClientTemplate
+  nameWithType: ApplicationRepresentation.ClientTemplate
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.ClientTemplate
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_UseTemplateConfig
+  name: UseTemplateConfig
+  nameWithType: ApplicationRepresentation.UseTemplateConfig
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateConfig
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_UseTemplateScope
+  name: UseTemplateScope
+  nameWithType: ApplicationRepresentation.UseTemplateScope
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateScope
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_UseTemplateMappers
+  name: UseTemplateMappers
+  nameWithType: ApplicationRepresentation.UseTemplateMappers
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.UseTemplateMappers
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_DefaultClientScopes
+  name: DefaultClientScopes
+  nameWithType: ApplicationRepresentation.DefaultClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.DefaultClientScopes
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_OptionalClientScopes
+  name: OptionalClientScopes
+  nameWithType: ApplicationRepresentation.OptionalClientScopes
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.OptionalClientScopes
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_AuthorizationSettings
+  name: AuthorizationSettings
+  nameWithType: ApplicationRepresentation.AuthorizationSettings
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AuthorizationSettings
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ResourceServerRepresentation
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.ResourceServerRepresentation
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ResourceServerRepresentation.html
+  name: ResourceServerRepresentation
+  nameWithType: ResourceServerRepresentation
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ResourceServerRepresentation
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Access
+  name: Access
+  nameWithType: ApplicationRepresentation.Access
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Access
+- uid: System.Collections.Generic.IDictionary{System.String,System.Boolean}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Boolean}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, bool>
+  nameWithType: IDictionary<string, bool>
+  fullName: System.Collections.Generic.IDictionary<string, bool>
+  nameWithType.vb: IDictionary(Of String, Boolean)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Boolean)
+  name.vb: IDictionary(Of String, Boolean)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Origin
+  name: Origin
+  nameWithType: ApplicationRepresentation.Origin
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Origin
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Name
+  name: Name
+  nameWithType: ApplicationRepresentation.Name
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Name
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_Claims
+  name: Claims
+  nameWithType: ApplicationRepresentation.Claims
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.Claims
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.Claims
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Models.Claims
+  parent: Keycloak.AuthServices.Sdk.Admin.Models
+  href: Keycloak.AuthServices.Sdk.Admin.Models.Claims.html
+  name: Claims
+  nameWithType: Claims
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.Claims
+- uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties
+  href: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.html#Keycloak_AuthServices_Sdk_Admin_Models_ApplicationRepresentation_AdditionalProperties
+  name: AdditionalProperties
+  nameWithType: ApplicationRepresentation.AdditionalProperties
+  fullName: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation.AdditionalProperties
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, object>
+  nameWithType: IDictionary<string, object>
+  fullName: System.Collections.Generic.IDictionary<string, object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )

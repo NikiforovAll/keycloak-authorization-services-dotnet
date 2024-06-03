@@ -1,0 +1,682 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  commentId: T:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  id: KeycloakConfigurationSource
+  parent: Keycloak.AuthServices.Authentication.Configuration
+  children:
+  - Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  - Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix
+  langs:
+  - csharp
+  - vb
+  name: KeycloakConfigurationSource
+  nameWithType: KeycloakConfigurationSource
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/Configuration/KeycloakConfigurationSource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakConfigurationSource
+    path: ../src/Keycloak.AuthServices.Authentication/Configuration/KeycloakConfigurationSource.cs
+    startLine: 8
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication.Configuration
+  summary: Keycloak configuration provider
+  example: []
+  syntax:
+    content: 'public class KeycloakConfigurationSource : JsonConfigurationSource, IConfigurationSource'
+    content.vb: Public Class KeycloakConfigurationSource Inherits JsonConfigurationSource Implements IConfigurationSource
+  inheritance:
+  - System.Object
+  - Microsoft.Extensions.Configuration.FileConfigurationSource
+  - Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+  implements:
+  - Microsoft.Extensions.Configuration.IConfigurationSource
+  inheritedMembers:
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.EnsureDefaults(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.ResolveFileProvider
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.FileProvider
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.Path
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.Optional
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadOnChange
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadDelay
+  - Microsoft.Extensions.Configuration.FileConfigurationSource.OnLoadException
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix
+  commentId: P:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix
+  id: ConfigurationPrefix
+  parent: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationPrefix
+  nameWithType: KeycloakConfigurationSource.ConfigurationPrefix
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/Configuration/KeycloakConfigurationSource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ConfigurationPrefix
+    path: ../src/Keycloak.AuthServices.Authentication/Configuration/KeycloakConfigurationSource.cs
+    startLine: 13
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication.Configuration
+  summary: Configuration prefix for source.
+  example: []
+  syntax:
+    content: public string ConfigurationPrefix { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ConfigurationPrefix As String
+  overload: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix*
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  commentId: M:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  id: Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  parent: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+  langs:
+  - csharp
+  - vb
+  name: Build(IConfigurationBuilder)
+  nameWithType: KeycloakConfigurationSource.Build(IConfigurationBuilder)
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authentication/Configuration/KeycloakConfigurationSource.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Build
+    path: ../src/Keycloak.AuthServices.Authentication/Configuration/KeycloakConfigurationSource.cs
+    startLine: 20
+  assemblies:
+  - Keycloak.AuthServices.Authentication
+  namespace: Keycloak.AuthServices.Authentication.Configuration
+  summary: Builds the <xref href="Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider" data-throw-if-not-resolved="false"></xref> for this source.
+  example: []
+  syntax:
+    content: public override IConfigurationProvider Build(IConfigurationBuilder builder)
+    parameters:
+    - id: builder
+      type: Microsoft.Extensions.Configuration.IConfigurationBuilder
+      description: The <xref href="Microsoft.Extensions.Configuration.IConfigurationBuilder" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: Microsoft.Extensions.Configuration.IConfigurationProvider
+      description: A <xref href="Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Overrides Function Build(builder As IConfigurationBuilder) As IConfigurationProvider
+  overridden: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  overload: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build*
+references:
+- uid: Keycloak.AuthServices.Authentication.Configuration
+  commentId: N:Keycloak.AuthServices.Authentication.Configuration
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authentication.Configuration
+  nameWithType: Keycloak.AuthServices.Authentication.Configuration
+  fullName: Keycloak.AuthServices.Authentication.Configuration
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication.Configuration
+    name: Configuration
+    href: Keycloak.AuthServices.Authentication.Configuration.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication
+    name: Authentication
+    href: Keycloak.AuthServices.Authentication.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authentication.Configuration
+    name: Configuration
+    href: Keycloak.AuthServices.Authentication.Configuration.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource
+  commentId: T:Microsoft.Extensions.Configuration.FileConfigurationSource
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource
+  name: FileConfigurationSource
+  nameWithType: FileConfigurationSource
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource
+- uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+  commentId: T:Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+  parent: Microsoft.Extensions.Configuration.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource
+  name: JsonConfigurationSource
+  nameWithType: JsonConfigurationSource
+  fullName: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+- uid: Microsoft.Extensions.Configuration.IConfigurationSource
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSource
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsource
+  name: IConfigurationSource
+  nameWithType: IConfigurationSource
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSource
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.EnsureDefaults(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  commentId: M:Microsoft.Extensions.Configuration.FileConfigurationSource.EnsureDefaults(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.ensuredefaults
+  name: EnsureDefaults(IConfigurationBuilder)
+  nameWithType: FileConfigurationSource.EnsureDefaults(IConfigurationBuilder)
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.EnsureDefaults(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Configuration.FileConfigurationSource.EnsureDefaults(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+    name: EnsureDefaults
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.ensuredefaults
+  - name: (
+  - uid: Microsoft.Extensions.Configuration.IConfigurationBuilder
+    name: IConfigurationBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Configuration.FileConfigurationSource.EnsureDefaults(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+    name: EnsureDefaults
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.ensuredefaults
+  - name: (
+  - uid: Microsoft.Extensions.Configuration.IConfigurationBuilder
+    name: IConfigurationBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder
+  - name: )
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.ResolveFileProvider
+  commentId: M:Microsoft.Extensions.Configuration.FileConfigurationSource.ResolveFileProvider
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.resolvefileprovider
+  name: ResolveFileProvider()
+  nameWithType: FileConfigurationSource.ResolveFileProvider()
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.ResolveFileProvider()
+  spec.csharp:
+  - uid: Microsoft.Extensions.Configuration.FileConfigurationSource.ResolveFileProvider
+    name: ResolveFileProvider
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.resolvefileprovider
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Configuration.FileConfigurationSource.ResolveFileProvider
+    name: ResolveFileProvider
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.resolvefileprovider
+  - name: (
+  - name: )
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.FileProvider
+  commentId: P:Microsoft.Extensions.Configuration.FileConfigurationSource.FileProvider
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.fileprovider
+  name: FileProvider
+  nameWithType: FileConfigurationSource.FileProvider
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.FileProvider
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.Path
+  commentId: P:Microsoft.Extensions.Configuration.FileConfigurationSource.Path
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.path
+  name: Path
+  nameWithType: FileConfigurationSource.Path
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.Path
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.Optional
+  commentId: P:Microsoft.Extensions.Configuration.FileConfigurationSource.Optional
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.optional
+  name: Optional
+  nameWithType: FileConfigurationSource.Optional
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.Optional
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadOnChange
+  commentId: P:Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadOnChange
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.reloadonchange
+  name: ReloadOnChange
+  nameWithType: FileConfigurationSource.ReloadOnChange
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadOnChange
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadDelay
+  commentId: P:Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadDelay
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.reloaddelay
+  name: ReloadDelay
+  nameWithType: FileConfigurationSource.ReloadDelay
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.ReloadDelay
+- uid: Microsoft.Extensions.Configuration.FileConfigurationSource.OnLoadException
+  commentId: P:Microsoft.Extensions.Configuration.FileConfigurationSource.OnLoadException
+  parent: Microsoft.Extensions.Configuration.FileConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource.onloadexception
+  name: OnLoadException
+  nameWithType: FileConfigurationSource.OnLoadException
+  fullName: Microsoft.Extensions.Configuration.FileConfigurationSource.OnLoadException
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: Microsoft.Extensions.Configuration.Json
+  commentId: N:Microsoft.Extensions.Configuration.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration.Json
+  nameWithType: Microsoft.Extensions.Configuration.Json
+  fullName: Microsoft.Extensions.Configuration.Json
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  - name: .
+  - uid: Microsoft.Extensions.Configuration.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  - name: .
+  - uid: Microsoft.Extensions.Configuration.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix*
+  commentId: Overload:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix
+  href: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.html#Keycloak_AuthServices_Authentication_Configuration_KeycloakConfigurationSource_ConfigurationPrefix
+  name: ConfigurationPrefix
+  nameWithType: KeycloakConfigurationSource.ConfigurationPrefix
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.ConfigurationPrefix
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider
+  commentId: T:Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider
+  parent: Microsoft.Extensions.Configuration.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationprovider
+  name: JsonConfigurationProvider
+  nameWithType: JsonConfigurationProvider
+  fullName: Microsoft.Extensions.Configuration.Json.JsonConfigurationProvider
+- uid: Microsoft.Extensions.Configuration.IConfigurationBuilder
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationBuilder
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder
+  name: IConfigurationBuilder
+  nameWithType: IConfigurationBuilder
+  fullName: Microsoft.Extensions.Configuration.IConfigurationBuilder
+- uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  commentId: M:Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  parent: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource.build
+  name: Build(IConfigurationBuilder)
+  nameWithType: JsonConfigurationSource.Build(IConfigurationBuilder)
+  fullName: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+    name: Build
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource.build
+  - name: (
+  - uid: Microsoft.Extensions.Configuration.IConfigurationBuilder
+    name: IConfigurationBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder
+  - name: )
+  spec.vb:
+  - uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource.Build(Microsoft.Extensions.Configuration.IConfigurationBuilder)
+    name: Build
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource.build
+  - name: (
+  - uid: Microsoft.Extensions.Configuration.IConfigurationBuilder
+    name: IConfigurationBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder
+  - name: )
+- uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build*
+  commentId: Overload:Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build
+  href: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.html#Keycloak_AuthServices_Authentication_Configuration_KeycloakConfigurationSource_Build_Microsoft_Extensions_Configuration_IConfigurationBuilder_
+  name: Build
+  nameWithType: KeycloakConfigurationSource.Build
+  fullName: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource.Build
+- uid: Microsoft.Extensions.Configuration.IConfigurationProvider
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationProvider
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationprovider
+  name: IConfigurationProvider
+  nameWithType: IConfigurationProvider
+  fullName: Microsoft.Extensions.Configuration.IConfigurationProvider

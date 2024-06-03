@@ -1,0 +1,973 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  id: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  - Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  langs:
+  - csharp
+  - vb
+  name: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AdminEventsRequestBuilderGetQueryParameters
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 117
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  summary: Get admin events Returns all admin events, or filters events based on URL query parameters listed here
+  example: []
+  syntax:
+    content: public class AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+    content.vb: Public Class AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  id: AuthClient
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: AuthClient
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 121
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("authClient")]
+
+      public string? AuthClient { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("authClient")>
+
+      Public Property AuthClient As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authClient
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  id: AuthIpAddress
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: AuthIpAddress
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthIpAddress
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 130
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("authIpAddress")]
+
+      public string? AuthIpAddress { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("authIpAddress")>
+
+      Public Property AuthIpAddress As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authIpAddress
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  id: AuthRealm
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: AuthRealm
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthRealm
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 139
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("authRealm")]
+
+      public string? AuthRealm { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("authRealm")>
+
+      Public Property AuthRealm As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authRealm
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  id: AuthUser
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: AuthUser
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AuthUser
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 149
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  summary: user id
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("authUser")]
+
+      public string? AuthUser { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("authUser")>
+
+      Public Property AuthUser As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authUser
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  id: DateFrom
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: DateFrom
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DateFrom
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 158
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("dateFrom")]
+
+      public string? DateFrom { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("dateFrom")>
+
+      Public Property DateFrom As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dateFrom
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  id: DateTo
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: DateTo
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: DateTo
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 167
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("dateTo")]
+
+      public string? DateTo { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("dateTo")>
+
+      Public Property DateTo As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dateTo
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  id: First
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: First
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 174
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("first")]
+
+      public int? First { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <QueryParameter("first")>
+
+      Public Property First As Integer?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: first
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  id: Max
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: Max
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Max
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 177
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  summary: Maximum results size (defaults to 100)
+  example: []
+  syntax:
+    content: >-
+      [QueryParameter("max")]
+
+      public int? Max { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <QueryParameter("max")>
+
+      Public Property Max As Integer?
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: max
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  id: OperationTypes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: OperationTypes
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: OperationTypes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 181
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("operationTypes")]
+
+      public string[]? OperationTypes { get; set; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: >-
+      <QueryParameter("operationTypes")>
+
+      Public Property OperationTypes As String()
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: operationTypes
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  id: ResourcePath
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: ResourcePath
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ResourcePath
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 190
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("resourcePath")]
+
+      public string? ResourcePath { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <QueryParameter("resourcePath")>
+
+      Public Property ResourcePath As String
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: resourcePath
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  commentId: P:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  id: ResourceTypes
+  parent: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+  langs:
+  - csharp
+  - vb
+  name: ResourceTypes
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ResourceTypes
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/Admin/Realms/Item/AdminEvents/AdminEventsRequestBuilder.cs
+    startLine: 199
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  syntax:
+    content: >-
+      [QueryParameter("resourceTypes")]
+
+      public string[]? ResourceTypes { get; set; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: >-
+      <QueryParameter("resourceTypes")>
+
+      Public Property ResourceTypes As String()
+  overload: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes*
+  attributes:
+  - type: Microsoft.Kiota.Abstractions.QueryParameterAttribute
+    ctor: Microsoft.Kiota.Abstractions.QueryParameterAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: resourceTypes
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+    name: AdminEvents
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+    name: Realms
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+    name: Item
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+    name: AdminEvents
+    href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_AuthClient
+  name: AuthClient
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthClient
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_AuthIpAddress
+  name: AuthIpAddress
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthIpAddress
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_AuthRealm
+  name: AuthRealm
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthRealm
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_AuthUser
+  name: AuthUser
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.AuthUser
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_DateFrom
+  name: DateFrom
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateFrom
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_DateTo
+  name: DateTo
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.DateTo
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_First
+  name: First
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.First
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_Max
+  name: Max
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.Max
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_OperationTypes
+  name: OperationTypes
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.OperationTypes
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_ResourcePath
+  name: ResourcePath
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourcePath
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.html#Keycloak_AuthServices_Sdk_Kiota_Admin_Admin_Realms_Item_AdminEvents_AdminEventsRequestBuilder_AdminEventsRequestBuilderGetQueryParameters_ResourceTypes
+  name: ResourceTypes
+  nameWithType: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters.ResourceTypes

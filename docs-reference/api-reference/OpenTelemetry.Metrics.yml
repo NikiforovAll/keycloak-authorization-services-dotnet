@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: OpenTelemetry.Metrics
+  commentId: N:OpenTelemetry.Metrics
+  id: OpenTelemetry.Metrics
+  children:
+  - OpenTelemetry.Metrics.MeterProviderBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: OpenTelemetry.Metrics
+  nameWithType: OpenTelemetry.Metrics
+  fullName: OpenTelemetry.Metrics
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.OpenTelemetry
+references:
+- uid: OpenTelemetry.Metrics.MeterProviderBuilderExtensions
+  commentId: T:OpenTelemetry.Metrics.MeterProviderBuilderExtensions
+  href: OpenTelemetry.Metrics.MeterProviderBuilderExtensions.html
+  name: MeterProviderBuilderExtensions
+  nameWithType: MeterProviderBuilderExtensions
+  fullName: OpenTelemetry.Metrics.MeterProviderBuilderExtensions

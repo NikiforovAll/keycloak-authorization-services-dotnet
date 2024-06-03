@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Common.Claims
+  commentId: N:Keycloak.AuthServices.Common.Claims
+  id: Keycloak.AuthServices.Common.Claims
+  children:
+  - Keycloak.AuthServices.Common.Claims.KeycloakClaimsExtensions
+  - Keycloak.AuthServices.Common.Claims.ResourceAccess
+  - Keycloak.AuthServices.Common.Claims.ResourceAccessCollection
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Common.Claims
+  nameWithType: Keycloak.AuthServices.Common.Claims
+  fullName: Keycloak.AuthServices.Common.Claims
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Common
+references:
+- uid: Keycloak.AuthServices.Common.Claims.KeycloakClaimsExtensions
+  commentId: T:Keycloak.AuthServices.Common.Claims.KeycloakClaimsExtensions
+  href: Keycloak.AuthServices.Common.Claims.KeycloakClaimsExtensions.html
+  name: KeycloakClaimsExtensions
+  nameWithType: KeycloakClaimsExtensions
+  fullName: Keycloak.AuthServices.Common.Claims.KeycloakClaimsExtensions
+- uid: Keycloak.AuthServices.Common.Claims.ResourceAccessCollection
+  commentId: T:Keycloak.AuthServices.Common.Claims.ResourceAccessCollection
+  parent: Keycloak.AuthServices.Common.Claims
+  href: Keycloak.AuthServices.Common.Claims.ResourceAccessCollection.html
+  name: ResourceAccessCollection
+  nameWithType: ResourceAccessCollection
+  fullName: Keycloak.AuthServices.Common.Claims.ResourceAccessCollection
+- uid: Keycloak.AuthServices.Common.Claims.ResourceAccess
+  commentId: T:Keycloak.AuthServices.Common.Claims.ResourceAccess
+  parent: Keycloak.AuthServices.Common.Claims
+  href: Keycloak.AuthServices.Common.Claims.ResourceAccess.html
+  name: ResourceAccess
+  nameWithType: ResourceAccess
+  fullName: Keycloak.AuthServices.Common.Claims.ResourceAccess
+- uid: Keycloak.AuthServices.Common.Claims
+  commentId: N:Keycloak.AuthServices.Common.Claims
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Common.Claims
+  nameWithType: Keycloak.AuthServices.Common.Claims
+  fullName: Keycloak.AuthServices.Common.Claims
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common.Claims
+    name: Claims
+    href: Keycloak.AuthServices.Common.Claims.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common
+    name: Common
+    href: Keycloak.AuthServices.Common.html
+  - name: .
+  - uid: Keycloak.AuthServices.Common.Claims
+    name: Claims
+    href: Keycloak.AuthServices.Common.Claims.html

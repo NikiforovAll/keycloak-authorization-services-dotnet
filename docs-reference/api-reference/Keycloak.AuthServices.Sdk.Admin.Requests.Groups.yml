@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  id: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+  parent: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  href: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters.html
+  name: GetGroupsRequestParameters
+  nameWithType: GetGroupsRequestParameters
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  commentId: N:Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  nameWithType: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  fullName: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests
+    name: Requests
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+    name: Groups
+    href: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.html

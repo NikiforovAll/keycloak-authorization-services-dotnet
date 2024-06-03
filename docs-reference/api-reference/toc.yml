@@ -1,0 +1,2306 @@
+### YamlMime:TableOfContent
+items:
+- uid: Aspire.Hosting
+  name: Aspire.Hosting
+  items:
+  - uid: Aspire.Hosting.KeycloakBuilderExtensions
+    name: KeycloakBuilderExtensions
+  - uid: Aspire.Hosting.KeycloakRealmResource
+    name: KeycloakRealmResource
+  - uid: Aspire.Hosting.KeycloakResource
+    name: KeycloakResource
+- uid: Keycloak.AuthServices.Authentication
+  name: Keycloak.AuthServices.Authentication
+  items:
+  - uid: Keycloak.AuthServices.Authentication.KeycloakAuthenticationOptions
+    name: KeycloakAuthenticationOptions
+  - uid: Keycloak.AuthServices.Authentication.KeycloakBaseAuthenticationBuilder
+    name: KeycloakBaseAuthenticationBuilder
+  - uid: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilder
+    name: KeycloakWebApiAuthenticationBuilder
+  - uid: Keycloak.AuthServices.Authentication.KeycloakWebApiAuthenticationBuilderExtensions
+    name: KeycloakWebApiAuthenticationBuilderExtensions
+  - uid: Keycloak.AuthServices.Authentication.KeycloakWebApiServiceCollectionExtensions
+    name: KeycloakWebApiServiceCollectionExtensions
+  - uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilder
+    name: KeycloakWebAppAuthenticationBuilder
+  - uid: Keycloak.AuthServices.Authentication.KeycloakWebAppAuthenticationBuilderExtensions
+    name: KeycloakWebAppAuthenticationBuilderExtensions
+  - uid: Keycloak.AuthServices.Authentication.KeycloakWebAppServiceCollectionExtensions
+    name: KeycloakWebAppServiceCollectionExtensions
+  - uid: Keycloak.AuthServices.Authentication.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Authentication.Configuration
+  name: Keycloak.AuthServices.Authentication.Configuration
+  items:
+  - uid: Keycloak.AuthServices.Authentication.Configuration.HostBuilderExtensions
+    name: HostBuilderExtensions
+  - uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationProvider
+    name: KeycloakConfigurationProvider
+  - uid: Keycloak.AuthServices.Authentication.Configuration.KeycloakConfigurationSource
+    name: KeycloakConfigurationSource
+- uid: Keycloak.AuthServices.Authorization
+  name: Keycloak.AuthServices.Authorization
+  items:
+  - uid: Keycloak.AuthServices.Authorization.IProtectedResourceData
+    name: IProtectedResourceData
+  - uid: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+    name: IgnoreProtectedResourceAttribute
+  - uid: Keycloak.AuthServices.Authorization.KeycloakAuthorizationOptions
+    name: KeycloakAuthorizationOptions
+  - uid: Keycloak.AuthServices.Authorization.KeycloakMetrics
+    name: KeycloakMetrics
+  - uid: Keycloak.AuthServices.Authorization.MvcOptionsExtensions
+    name: MvcOptionsExtensions
+  - uid: Keycloak.AuthServices.Authorization.PoliciesBuilderExtensions
+    name: PoliciesBuilderExtensions
+  - uid: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+    name: ProtectedResourceAttribute
+  - uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+    name: ProtectedResourceEndpointConventionBuilderExtensions
+  - uid: Keycloak.AuthServices.Authorization.ProtectedResourcePolicy
+    name: ProtectedResourcePolicy
+  - uid: Keycloak.AuthServices.Authorization.ProtectedResourcePolicyProvider
+    name: ProtectedResourcePolicyProvider
+  - uid: Keycloak.AuthServices.Authorization.RolesClaimTransformationSource
+    name: RolesClaimTransformationSource
+  - uid: Keycloak.AuthServices.Authorization.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Authorization.AuthorizationServer
+  name: Keycloak.AuthServices.Authorization.AuthorizationServer
+  items:
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationExtensions
+    name: AccessTokenPropagationExtensions
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AccessTokenPropagationHandler
+    name: AccessTokenPropagationHandler
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.AuthorizationServerClient
+    name: AuthorizationServerClient
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.IAuthorizationServerClient
+    name: IAuthorizationServerClient
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.KeycloakAuthorizationServerOptions
+    name: KeycloakAuthorizationServerOptions
+  - uid: Keycloak.AuthServices.Authorization.AuthorizationServer.ScopesValidationMode
+    name: ScopesValidationMode
+- uid: Keycloak.AuthServices.Authorization.Claims
+  name: Keycloak.AuthServices.Authorization.Claims
+  items:
+  - uid: Keycloak.AuthServices.Authorization.Claims.KeycloakRolesClaimsTransformation
+    name: KeycloakRolesClaimsTransformation
+- uid: Keycloak.AuthServices.Authorization.Requirements
+  name: Keycloak.AuthServices.Authorization.Requirements
+  items:
+  - uid: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirement
+    name: DecisionRequirement
+  - uid: Keycloak.AuthServices.Authorization.Requirements.DecisionRequirementHandler
+    name: DecisionRequirementHandler
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirement
+    name: ParameterizedProtectedResourceRequirement
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ParameterizedProtectedResourceRequirementHandler
+    name: ParameterizedProtectedResourceRequirementHandler
+  - uid: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirement
+    name: RealmAccessRequirement
+  - uid: Keycloak.AuthServices.Authorization.Requirements.RealmAccessRequirementHandler
+    name: RealmAccessRequirementHandler
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirement
+    name: ResourceAccessRequirement
+  - uid: Keycloak.AuthServices.Authorization.Requirements.ResourceAccessRequirementHandler
+    name: ResourceAccessRequirementHandler
+  - uid: Keycloak.AuthServices.Authorization.Requirements.RptRequirement
+    name: RptRequirement
+  - uid: Keycloak.AuthServices.Authorization.Requirements.RptRequirementHandler
+    name: RptRequirementHandler
+- uid: Keycloak.AuthServices.Common
+  name: Keycloak.AuthServices.Common
+  items:
+  - uid: Keycloak.AuthServices.Common.ConfigurationConstants
+    name: ConfigurationConstants
+  - uid: Keycloak.AuthServices.Common.ConfigurationExtensions
+    name: ConfigurationExtensions
+  - uid: Keycloak.AuthServices.Common.KeycloakClientInstallationCredentials
+    name: KeycloakClientInstallationCredentials
+  - uid: Keycloak.AuthServices.Common.KeycloakConstants
+    name: KeycloakConstants
+  - uid: Keycloak.AuthServices.Common.KeycloakException
+    name: KeycloakException
+  - uid: Keycloak.AuthServices.Common.KeycloakFormatBinder
+    name: KeycloakFormatBinder
+  - uid: Keycloak.AuthServices.Common.KeycloakInstallationOptions
+    name: KeycloakInstallationOptions
+- uid: Keycloak.AuthServices.Common.Claims
+  name: Keycloak.AuthServices.Common.Claims
+  items:
+  - uid: Keycloak.AuthServices.Common.Claims.KeycloakClaimsExtensions
+    name: KeycloakClaimsExtensions
+  - uid: Keycloak.AuthServices.Common.Claims.ResourceAccess
+    name: ResourceAccess
+  - uid: Keycloak.AuthServices.Common.Claims.ResourceAccessCollection
+    name: ResourceAccessCollection
+- uid: Keycloak.AuthServices.Sdk
+  name: Keycloak.AuthServices.Sdk
+  items:
+  - uid: Keycloak.AuthServices.Sdk.ErrorResponse
+    name: ErrorResponse
+  - uid: Keycloak.AuthServices.Sdk.HttpResponseExtensions
+    name: HttpResponseExtensions
+  - uid: Keycloak.AuthServices.Sdk.KeycloakAdminClientOptions
+    name: KeycloakAdminClientOptions
+  - uid: Keycloak.AuthServices.Sdk.KeycloakHttpClientException
+    name: KeycloakHttpClientException
+  - uid: Keycloak.AuthServices.Sdk.KeycloakProtectionClientOptions
+    name: KeycloakProtectionClientOptions
+  - uid: Keycloak.AuthServices.Sdk.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Sdk.Admin
+  name: Keycloak.AuthServices.Sdk.Admin
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakClient
+    name: IKeycloakClient
+  - uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+    name: IKeycloakGroupClient
+  - uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+    name: IKeycloakRealmClient
+  - uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+    name: IKeycloakUserClient
+  - uid: Keycloak.AuthServices.Sdk.Admin.KeycloakClient
+    name: KeycloakClient
+- uid: Keycloak.AuthServices.Sdk.Admin.Models
+  name: Keycloak.AuthServices.Sdk.Admin.Models
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AbstractPolicyRepresentation
+    name: AbstractPolicyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Access
+    name: Access
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AccessToken
+    name: AccessToken
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AddressClaimSet
+    name: AddressClaimSet
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AdminEventRepresentation
+    name: AdminEventRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ApplicationRepresentation
+    name: ApplicationRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthDetailsRepresentation
+    name: AuthDetailsRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthenticationExecutionExportRepresentation
+    name: AuthenticationExecutionExportRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthenticationExecutionInfoRepresentation
+    name: AuthenticationExecutionInfoRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthenticationExecutionRepresentation
+    name: AuthenticationExecutionRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthenticationFlowRepresentation
+    name: AuthenticationFlowRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthenticatorConfigInfoRepresentation
+    name: AuthenticatorConfigInfoRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.AuthenticatorConfigRepresentation
+    name: AuthenticatorConfigRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Authorization
+    name: Authorization
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.CertificateRepresentation
+    name: CertificateRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClaimRepresentation
+    name: ClaimRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Claims
+    name: Claims
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Claims2
+    name: Claims2
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientInitialAccessCreatePresentation
+    name: ClientInitialAccessCreatePresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientInitialAccessPresentation
+    name: ClientInitialAccessPresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientMappingsRepresentation
+    name: ClientMappingsRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientPoliciesRepresentation
+    name: ClientPoliciesRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientPolicyConditionRepresentation
+    name: ClientPolicyConditionRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientPolicyExecutorRepresentation
+    name: ClientPolicyExecutorRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientPolicyRepresentation
+    name: ClientPolicyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientProfileRepresentation
+    name: ClientProfileRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientProfilesRepresentation
+    name: ClientProfilesRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientRepresentation
+    name: ClientRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientScopeRepresentation
+    name: ClientScopeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ClientTemplateRepresentation
+    name: ClientTemplateRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ComponentExportRepresentation
+    name: ComponentExportRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ComponentRepresentation
+    name: ComponentRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ComponentTypeRepresentation
+    name: ComponentTypeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Composites
+    name: Composites
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Config
+    name: Config
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ConfigPropertyRepresentation
+    name: ConfigPropertyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Confirmation
+    name: Confirmation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.CredentialRepresentation
+    name: CredentialRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.DecisionEffect
+    name: DecisionEffect
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.DecisionStrategy
+    name: DecisionStrategy
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.EnforcementMode
+    name: EnforcementMode
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.EvaluationResultRepresentation
+    name: EvaluationResultRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.EventRepresentation
+    name: EventRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.FederatedIdentityRepresentation
+    name: FederatedIdentityRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.FileParameter
+    name: FileParameter
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.FileResponse
+    name: FileResponse
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.GlobalRequestResult
+    name: GlobalRequestResult
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.GroupRepresentation
+    name: GroupRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.IDToken
+    name: IDToken
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.IdentityProviderMapperRepresentation
+    name: IdentityProviderMapperRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.IdentityProviderMapperTypeRepresentation
+    name: IdentityProviderMapperTypeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.IdentityProviderRepresentation
+    name: IdentityProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.InstallationAdapterConfig
+    name: InstallationAdapterConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.KeyMetadataRepresentation
+    name: KeyMetadataRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.KeyStoreConfig
+    name: KeyStoreConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.KeyUse
+    name: KeyUse
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.KeysMetadataRepresentation
+    name: KeysMetadataRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Logic
+    name: Logic
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ManagementPermissionReference
+    name: ManagementPermissionReference
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.MappingsRepresentation
+    name: MappingsRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.MethodConfig
+    name: MethodConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation
+    name: MultivaluedHashMapStringComponentExportRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.MultivaluedHashMapStringString
+    name: MultivaluedHashMapStringString
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.MultivaluedMapStringString
+    name: MultivaluedMapStringString
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.OAuthClientRepresentation
+    name: OAuthClientRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Owner
+    name: Owner
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PathCacheConfig
+    name: PathCacheConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PathConfig
+    name: PathConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PathSegment
+    name: PathSegment
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.Permission
+    name: Permission
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyEnforcementMode
+    name: PolicyEnforcementMode
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyEnforcerConfig
+    name: PolicyEnforcerConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyEvaluationRequest
+    name: PolicyEvaluationRequest
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyEvaluationResponse
+    name: PolicyEvaluationResponse
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyProviderRepresentation
+    name: PolicyProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyRepresentation
+    name: PolicyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PolicyResultRepresentation
+    name: PolicyResultRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperEvaluationRepresentation
+    name: ProtocolMapperEvaluationRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ProtocolMapperRepresentation
+    name: ProtocolMapperRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.PublishedRealmRepresentation
+    name: PublishedRealmRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RealmEventsConfigRepresentation
+    name: RealmEventsConfigRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RealmRepresentation
+    name: RealmRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RequiredActionProviderRepresentation
+    name: RequiredActionProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ResourceOwnerRepresentation
+    name: ResourceOwnerRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ResourceRepresentation
+    name: ResourceRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ResourceServerRepresentation
+    name: ResourceServerRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RoleRepresentation
+    name: RoleRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.RolesRepresentation
+    name: RolesRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeEnforcementMode
+    name: ScopeEnforcementMode
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeMappingRepresentation
+    name: ScopeMappingRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.ScopeRepresentation
+    name: ScopeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.SocialLinkRepresentation
+    name: SocialLinkRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UPAttribute
+    name: UPAttribute
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UPAttributePermissions
+    name: UPAttributePermissions
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UPAttributeRequired
+    name: UPAttributeRequired
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UPAttributeSelector
+    name: UPAttributeSelector
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UPConfig
+    name: UPConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UPGroup
+    name: UPGroup
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UnmanagedAttributePolicy
+    name: UnmanagedAttributePolicy
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserConsentRepresentation
+    name: UserConsentRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserFederationMapperRepresentation
+    name: UserFederationMapperRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserFederationProviderRepresentation
+    name: UserFederationProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserManagedAccessConfig
+    name: UserManagedAccessConfig
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserProfileAttributeGroupMetadata
+    name: UserProfileAttributeGroupMetadata
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserProfileAttributeMetadata
+    name: UserProfileAttributeMetadata
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserProfileMetadata
+    name: UserProfileMetadata
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserRepresentation
+    name: UserRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Admin.Models.UserSessionRepresentation
+    name: UserSessionRepresentation
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Groups
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Groups.GetGroupsRequestParameters
+    name: GetGroupsRequestParameters
+- uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  name: Keycloak.AuthServices.Sdk.Admin.Requests.Users
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.ExecuteActionsEmailRequest
+    name: ExecuteActionsEmailRequest
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUserGroupsRequestParameters
+    name: GetUserGroupsRequestParameters
+  - uid: Keycloak.AuthServices.Sdk.Admin.Requests.Users.GetUsersRequestParameters
+    name: GetUsersRequestParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota
+  name: Keycloak.AuthServices.Sdk.Kiota
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+    name: KeycloakAdminClientOptions
+  - uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+    name: KeycloakAdminApiClient
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder
+    name: AdminRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder
+    name: RealmsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder.RealmsRequestBuilderGetQueryParameters
+    name: RealmsRequestBuilder.RealmsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder
+    name: WithRealmItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder
+    name: AdminEventsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+    name: AdminEventsRequestBuilder.AdminEventsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.AttackDetectionRequestBuilder
+    name: AttackDetectionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.BruteForceRequestBuilder
+    name: BruteForceRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users.UsersRequestBuilder
+    name: UsersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users.Item.WithUserGetResponse
+    name: WithUserGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.BruteForce.Users.Item.WithUserItemRequestBuilder
+    name: WithUserItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticationRequestBuilder
+    name: AuthenticationRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticatorProviders
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticatorProviders
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticatorProviders.AuthenticatorProviders
+    name: AuthenticatorProviders
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticatorProviders.AuthenticatorProvidersRequestBuilder
+    name: AuthenticatorProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders.ClientAuthenticatorProviders
+    name: ClientAuthenticatorProviders
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders.ClientAuthenticatorProvidersRequestBuilder
+    name: ClientAuthenticatorProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.ConfigRequestBuilder
+    name: ConfigRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.Item.ConfigItemRequestBuilder
+    name: ConfigItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription.ConfigDescriptionRequestBuilder
+    name: ConfigDescriptionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription.Item.WithProviderItemRequestBuilder
+    name: WithProviderItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.ExecutionsRequestBuilder
+    name: ExecutionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.WithExecutionItemRequestBuilder
+    name: WithExecutionItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.Config
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.Config
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.Config.ConfigRequestBuilder
+    name: ConfigRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.Config.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.Config.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.Config.Item.ConfigItemRequestBuilder
+    name: ConfigItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.LowerPriority
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.LowerPriority
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.LowerPriority.LowerPriorityRequestBuilder
+    name: LowerPriorityRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.RaisePriority
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.RaisePriority
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.Item.RaisePriority.RaisePriorityRequestBuilder
+    name: RaisePriorityRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.FlowsRequestBuilder
+    name: FlowsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.FlowAliasItemRequestBuilder
+    name: FlowAliasItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyPostRequestBody
+    name: CopyPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Copy.CopyRequestBuilder
+    name: CopyRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.ExecutionsRequestBuilder
+    name: ExecutionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Execution
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Execution
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Execution.ExecutionPostRequestBody
+    name: ExecutionPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Execution.ExecutionRequestBuilder
+    name: ExecutionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Flow
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Flow
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Flow.FlowPostRequestBody
+    name: FlowPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.Item.Executions.Flow.FlowRequestBuilder
+    name: FlowRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormActionProviders
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormActionProviders
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormActionProviders.FormActionProviders
+    name: FormActionProviders
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormActionProviders.FormActionProvidersRequestBuilder
+    name: FormActionProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormProviders
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormProviders
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormProviders.FormProviders
+    name: FormProviders
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormProviders.FormProvidersRequestBuilder
+    name: FormProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse
+    name: PerClientConfigDescriptionGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionRequestBuilder
+    name: PerClientConfigDescriptionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionPostRequestBody
+    name: RegisterRequiredActionPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder
+    name: RegisterRequiredActionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.RequiredActionsRequestBuilder
+    name: RequiredActionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.WithAliasItemRequestBuilder
+    name: WithAliasItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.LowerPriority
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.LowerPriority
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.LowerPriority.LowerPriorityRequestBuilder
+    name: LowerPriorityRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.RaisePriority
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.RaisePriority
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.Item.RaisePriority.RaisePriorityRequestBuilder
+    name: RaisePriorityRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.UnregisteredRequiredActions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.UnregisteredRequiredActions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.UnregisteredRequiredActions.UnregisteredRequiredActions
+    name: UnregisteredRequiredActions
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.UnregisteredRequiredActions.UnregisteredRequiredActionsRequestBuilder
+    name: UnregisteredRequiredActionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescriptionConverter
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescriptionConverter
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescriptionConverter.ClientDescriptionConverterRequestBuilder
+    name: ClientDescriptionConverterRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.ClientPoliciesRequestBuilder
+    name: ClientPoliciesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Policies
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Policies
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Policies.PoliciesRequestBuilder
+    name: PoliciesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Profiles
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Profiles
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Profiles.ProfilesRequestBuilder
+    name: ProfilesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.Profiles.ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters
+    name: ProfilesRequestBuilder.ProfilesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy.ClientRegistrationPolicyRequestBuilder
+    name: ClientRegistrationPolicyRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy.Providers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy.Providers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy.Providers.ProvidersRequestBuilder
+    name: ProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.ClientScopesRequestBuilder
+    name: ClientScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ClientScopeItemRequestBuilder
+    name: ClientScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ProtocolMappersRequestBuilder
+    name: ProtocolMappersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.AddModels
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.AddModels
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.AddModels.AddModelsRequestBuilder
+    name: AddModelsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ModelsRequests
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ModelsRequests
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ModelsRequests.ModelsRequestBuilder
+    name: ModelsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ModelsRequests.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ModelsRequests.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.ModelsRequests.Item.ModelsItemRequestBuilder
+    name: ModelsItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.Protocol
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.Protocol
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.Protocol.ProtocolRequestBuilder
+    name: ProtocolRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.Protocol.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.Protocol.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ProtocolMappers.Protocol.Item.WithProtocolItemRequestBuilder
+    name: WithProtocolItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.ScopeMappingsRequestBuilder
+    name: ScopeMappingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.WithClientItemRequestBuilder
+    name: WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Clients.Item.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.Item.ScopeMappings.Realm.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStats
+    name: ClientSessionStats
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder
+    name: ClientSessionStatsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.ClientTemplatesRequestBuilder
+    name: ClientTemplatesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ClientScopeItemRequestBuilder
+    name: ClientScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ProtocolMappersRequestBuilder
+    name: ProtocolMappersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.AddModels
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.AddModels
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.AddModels.AddModelsRequestBuilder
+    name: AddModelsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ModelsRequests
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ModelsRequests
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ModelsRequests.ModelsRequestBuilder
+    name: ModelsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ModelsRequests.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ModelsRequests.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ModelsRequests.Item.ModelsItemRequestBuilder
+    name: ModelsItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.Protocol
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.Protocol
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.Protocol.ProtocolRequestBuilder
+    name: ProtocolRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.Protocol.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.Protocol.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.Protocol.Item.WithProtocolItemRequestBuilder
+    name: WithProtocolItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.ScopeMappingsRequestBuilder
+    name: ScopeMappingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.WithClientItemRequestBuilder
+    name: WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Clients.Item.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.Realm.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+    name: ClientsRequestBuilder.ClientsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientUuItemRequestBuilder
+    name: ClientUuItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.AuthzRequestBuilder
+    name: AuthzRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.ResourceServerRequestBuilder
+    name: ResourceServerRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Import
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Import
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Import.ImportRequestBuilder
+    name: ImportRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.PermissionRequestBuilder
+    name: PermissionRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.PermissionRequestBuilder.PermissionRequestBuilderGetQueryParameters
+    name: PermissionRequestBuilder.PermissionRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Evaluate
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Evaluate
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Evaluate.EvaluateRequestBuilder
+    name: EvaluateRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Providers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Providers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Providers.ProvidersRequestBuilder
+    name: ProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Search
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Search
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Search.SearchRequestBuilder
+    name: SearchRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Permission.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+    name: SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.PolicyRequestBuilder
+    name: PolicyRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.PolicyRequestBuilder.PolicyRequestBuilderGetQueryParameters
+    name: PolicyRequestBuilder.PolicyRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Evaluate
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Evaluate
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Evaluate.EvaluateRequestBuilder
+    name: EvaluateRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Providers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Providers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Providers.ProvidersRequestBuilder
+    name: ProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Search
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Search
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Search.SearchRequestBuilder
+    name: SearchRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Policy.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+    name: SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.ResourceRequestBuilder
+    name: ResourceRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters
+    name: ResourceRequestBuilder.ResourceRequestBuilderGetQueryParameters
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.ResourceRequestBuilder.ResourceRequestBuilderPostQueryParameters
+    name: ResourceRequestBuilder.ResourceRequestBuilderPostQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder
+    name: ResourceItemRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters
+    name: ResourceItemRequestBuilder.ResourceItemRequestBuilderDeleteQueryParameters
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters
+    name: ResourceItemRequestBuilder.ResourceItemRequestBuilderGetQueryParameters
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters
+    name: ResourceItemRequestBuilder.ResourceItemRequestBuilderPutQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder
+    name: AttributesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Attributes.AttributesRequestBuilder.AttributesRequestBuilderGetQueryParameters
+    name: AttributesRequestBuilder.AttributesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Permissions.PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters
+    name: PermissionsRequestBuilder.PermissionsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder
+    name: ScopesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Item.Scopes.ScopesRequestBuilder.ScopesRequestBuilderGetQueryParameters
+    name: ScopesRequestBuilder.ScopesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Search
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Search
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Search.SearchRequestBuilder
+    name: SearchRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Resource.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+    name: SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.ScopeRequestBuilder
+    name: ScopeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.ScopeRequestBuilder.ScopeRequestBuilderGetQueryParameters
+    name: ScopeRequestBuilder.ScopeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.ScopeItemRequestBuilder
+    name: ScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.Resources
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.Resources
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Item.Resources.ResourcesRequestBuilder
+    name: ResourcesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Search
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Search
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Search.SearchRequestBuilder
+    name: SearchRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Scope.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+    name: SearchRequestBuilder.SearchRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Settings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Settings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Authz.ResourceServer.Settings.SettingsRequestBuilder
+    name: SettingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.CertificatesRequestBuilder
+    name: CertificatesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.WithAttrItemRequestBuilder
+    name: WithAttrItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Download
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Download
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Download.DownloadRequestBuilder
+    name: DownloadRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Generate
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Generate
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Generate.GenerateRequestBuilder
+    name: GenerateRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.GenerateAndDownload
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.GenerateAndDownload
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.GenerateAndDownload.GenerateAndDownloadRequestBuilder
+    name: GenerateAndDownloadRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Upload
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Upload
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Upload.UploadRequestBuilder
+    name: UploadRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.UploadCertificate
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.UploadCertificate
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.UploadCertificate.UploadCertificateRequestBuilder
+    name: UploadCertificateRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientSecret
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientSecret
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientSecret.ClientSecretRequestBuilder
+    name: ClientSecretRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientSecret.Rotated
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientSecret.Rotated
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ClientSecret.Rotated.RotatedRequestBuilder
+    name: RotatedRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.DefaultClientScopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.DefaultClientScopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.DefaultClientScopes.DefaultClientScopesRequestBuilder
+    name: DefaultClientScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.DefaultClientScopes.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.DefaultClientScopes.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.DefaultClientScopes.Item.WithClientScopeItemRequestBuilder
+    name: WithClientScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.EvaluateScopesRequestBuilder
+    name: EvaluateScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken.GenerateExampleAccessTokenRequestBuilder
+    name: GenerateExampleAccessTokenRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken.GenerateExampleAccessTokenRequestBuilder.GenerateExampleAccessTokenRequestBuilderGetQueryParameters
+    name: GenerateExampleAccessTokenRequestBuilder.GenerateExampleAccessTokenRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken.GenerateExampleIdTokenRequestBuilder
+    name: GenerateExampleIdTokenRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken.GenerateExampleIdTokenRequestBuilder.GenerateExampleIdTokenRequestBuilderGetQueryParameters
+    name: GenerateExampleIdTokenRequestBuilder.GenerateExampleIdTokenRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoGetResponse
+    name: GenerateExampleUserinfoGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoRequestBuilder
+    name: GenerateExampleUserinfoRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoRequestBuilder.GenerateExampleUserinfoRequestBuilderGetQueryParameters
+    name: GenerateExampleUserinfoRequestBuilder.GenerateExampleUserinfoRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers.ProtocolMappersRequestBuilder
+    name: ProtocolMappersRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers.ProtocolMappersRequestBuilder.ProtocolMappersRequestBuilderGetQueryParameters
+    name: ProtocolMappersRequestBuilder.ProtocolMappersRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.ScopeMappingsRequestBuilder
+    name: ScopeMappingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.WithRoleContainerItemRequestBuilder
+    name: WithRoleContainerItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.Granted
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.Granted
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.Granted.GrantedRequestBuilder
+    name: GrantedRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.Granted.GrantedRequestBuilder.GrantedRequestBuilderGetQueryParameters
+    name: GrantedRequestBuilder.GrantedRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.NotGranted
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.NotGranted
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.NotGranted.NotGrantedRequestBuilder
+    name: NotGrantedRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.Item.NotGranted.NotGrantedRequestBuilder.NotGrantedRequestBuilderGetQueryParameters
+    name: NotGrantedRequestBuilder.NotGrantedRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.InstallationRequestBuilder
+    name: InstallationRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.Providers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.Providers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.Providers.ProvidersRequestBuilder
+    name: ProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.Providers.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.Providers.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Installation.Providers.Item.WithProviderItemRequestBuilder
+    name: WithProviderItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Management
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Management
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Management.ManagementRequestBuilder
+    name: ManagementRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Management.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Management.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Management.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes.NodesPostRequestBody
+    name: NodesPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes.NodesRequestBuilder
+    name: NodesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Nodes.Item.WithNodeItemRequestBuilder
+    name: WithNodeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessionCount
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessionCount
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessionCount.OfflineSessionCountGetResponse
+    name: OfflineSessionCountGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessionCount.OfflineSessionCountRequestBuilder
+    name: OfflineSessionCountRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessions.OfflineSessionsRequestBuilder
+    name: OfflineSessionsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessions.OfflineSessionsRequestBuilder.OfflineSessionsRequestBuilderGetQueryParameters
+    name: OfflineSessionsRequestBuilder.OfflineSessionsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OptionalClientScopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OptionalClientScopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OptionalClientScopes.OptionalClientScopesRequestBuilder
+    name: OptionalClientScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OptionalClientScopes.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OptionalClientScopes.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OptionalClientScopes.Item.WithClientScopeItemRequestBuilder
+    name: WithClientScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ProtocolMappersRequestBuilder
+    name: ProtocolMappersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.AddModels
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.AddModels
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.AddModels.AddModelsRequestBuilder
+    name: AddModelsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ModelsRequests
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ModelsRequests
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ModelsRequests.ModelsRequestBuilder
+    name: ModelsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ModelsRequests.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ModelsRequests.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.ModelsRequests.Item.ModelsItemRequestBuilder
+    name: ModelsItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.Protocol
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.Protocol
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.Protocol.ProtocolRequestBuilder
+    name: ProtocolRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.Protocol.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.Protocol.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ProtocolMappers.Protocol.Item.WithProtocolItemRequestBuilder
+    name: WithProtocolItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.PushRevocation
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.PushRevocation
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.PushRevocation.PushRevocationRequestBuilder
+    name: PushRevocationRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken.RegistrationAccessTokenRequestBuilder
+    name: RegistrationAccessTokenRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.RolesRequestBuilder
+    name: RolesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+    name: RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.RoleNameItemRequestBuilder
+    name: RoleNameItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.CompositesRequestBuilder
+    name: CompositesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder
+    name: ClientUuItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Composites.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups.GroupsRequestBuilder
+    name: GroupsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+    name: GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Management
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Management
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Management.ManagementRequestBuilder
+    name: ManagementRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Management.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Management.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Management.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Users
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Users
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Users.UsersRequestBuilder
+    name: UsersRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters
+    name: UsersRequestBuilder.UsersRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.ScopeMappingsRequestBuilder
+    name: ScopeMappingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.WithClientItemRequestBuilder
+    name: WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.Item.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ServiceAccountUser
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ServiceAccountUser
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ServiceAccountUser.ServiceAccountUserRequestBuilder
+    name: ServiceAccountUserRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.SessionCount
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.SessionCount
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.SessionCount.SessionCountGetResponse
+    name: SessionCountGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.SessionCount.SessionCountRequestBuilder
+    name: SessionCountRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.TestNodesAvailable
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.TestNodesAvailable
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.TestNodesAvailable.TestNodesAvailableRequestBuilder
+    name: TestNodesAvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.UserSessions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.UserSessions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.UserSessions.UserSessionsRequestBuilder
+    name: UserSessionsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.UserSessions.UserSessionsRequestBuilder.UserSessionsRequestBuilderGetQueryParameters
+    name: UserSessionsRequestBuilder.UserSessionsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess.ClientsInitialAccessRequestBuilder
+    name: ClientsInitialAccessRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess.Item.ClientsInitialAccessItemRequestBuilder
+    name: ClientsInitialAccessItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.ComponentsRequestBuilder
+    name: ComponentsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters
+    name: ComponentsRequestBuilder.ComponentsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item.ComponentsItemRequestBuilder
+    name: ComponentsItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item.SubComponentTypes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item.SubComponentTypes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item.SubComponentTypes.SubComponentTypesRequestBuilder
+    name: SubComponentTypesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.Item.SubComponentTypes.SubComponentTypesRequestBuilder.SubComponentTypesRequestBuilderGetQueryParameters
+    name: SubComponentTypesRequestBuilder.SubComponentTypesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder
+    name: CredentialRegistratorsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes.DefaultDefaultClientScopesRequestBuilder
+    name: DefaultDefaultClientScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes.Item.WithClientScopeItemRequestBuilder
+    name: WithClientScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups.DefaultGroupsRequestBuilder
+    name: DefaultGroupsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups.Item.WithGroupItemRequestBuilder
+    name: WithGroupItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes.DefaultOptionalClientScopesRequestBuilder
+    name: DefaultOptionalClientScopesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes.Item.WithClientScopeItemRequestBuilder
+    name: WithClientScopeItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.EventsRequestBuilder
+    name: EventsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters
+    name: EventsRequestBuilder.EventsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.Config
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.Config
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.Config.ConfigRequestBuilder
+    name: ConfigRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath.GroupByPathRequestBuilder
+    name: GroupByPathRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath.Item.WithPathItemRequestBuilder
+    name: WithPathItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.GroupsRequestBuilder
+    name: GroupsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+    name: GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountGetResponse
+    name: CountGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder
+    name: CountRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+    name: CountRequestBuilder.CountRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.GroupItemRequestBuilder
+    name: GroupItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Children
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Children
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Children.ChildrenRequestBuilder
+    name: ChildrenRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters
+    name: ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Management
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Management
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Management.ManagementRequestBuilder
+    name: ManagementRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Management.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Management.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Management.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Members
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Members
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Members.MembersRequestBuilder
+    name: MembersRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters
+    name: MembersRequestBuilder.MembersRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.RoleMappingsRequestBuilder
+    name: RoleMappingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+    name: WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.RoleMappings.Realm.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.IdentityProviderRequestBuilder
+    name: IdentityProviderRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig.ImportConfigPostRequestBody
+    name: ImportConfigPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig.ImportConfigPostResponse
+    name: ImportConfigPostResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig.ImportConfigRequestBuilder
+    name: ImportConfigRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.InstancesRequestBuilder
+    name: InstancesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters
+    name: InstancesRequestBuilder.InstancesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.WithAliasItemRequestBuilder
+    name: WithAliasItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Export
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Export
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Export.ExportRequestBuilder
+    name: ExportRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Export.ExportRequestBuilder.ExportRequestBuilderGetQueryParameters
+    name: ExportRequestBuilder.ExportRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Management
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Management
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Management.ManagementRequestBuilder
+    name: ManagementRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Management.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Management.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Management.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.MapperTypes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.MapperTypes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.MapperTypes.MapperTypesRequestBuilder
+    name: MapperTypesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Mappers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Mappers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Mappers.MappersRequestBuilder
+    name: MappersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Mappers.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Mappers.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.Mappers.Item.MappersItemRequestBuilder
+    name: MappersItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.ReloadKeys
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.ReloadKeys
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.Item.ReloadKeys.ReloadKeysRequestBuilder
+    name: ReloadKeysRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.ProvidersRequestBuilder
+    name: ProvidersRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.Item.WithProvider_GetResponse
+    name: WithProvider_GetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.Item.WithProvider_ItemRequestBuilder
+    name: WithProvider_ItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Keys
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Keys
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Keys.KeysRequestBuilder
+    name: KeysRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.LocalizationRequestBuilder
+    name: LocalizationRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.WithLocaleGetResponse
+    name: WithLocaleGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.WithLocaleItemRequestBuilder
+    name: WithLocaleItemRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.WithLocaleItemRequestBuilder.WithLocaleItemRequestBuilderGetQueryParameters
+    name: WithLocaleItemRequestBuilder.WithLocaleItemRequestBuilderGetQueryParameters
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.WithLocalePostRequestBody
+    name: WithLocalePostRequestBody
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.Item.Item.WithKeyItemRequestBuilder
+    name: WithKeyItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll.LogoutAllRequestBuilder
+    name: LogoutAllRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport.PartialExportRequestBuilder
+    name: PartialExportRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport.PartialExportRequestBuilder.PartialExportRequestBuilderPostQueryParameters
+    name: PartialExportRequestBuilder.PartialExportRequestBuilderPostQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder
+    name: PartialImportRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PushRevocation
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PushRevocation
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PushRevocation.PushRevocationRequestBuilder
+    name: PushRevocationRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder
+    name: RolesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+    name: RolesRequestBuilder.RolesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.RoleNameItemRequestBuilder
+    name: RoleNameItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.CompositesRequestBuilder
+    name: CompositesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder
+    name: ClientUuItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Groups
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Groups
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Groups.GroupsRequestBuilder
+    name: GroupsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+    name: GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Management
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Management
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Management.ManagementRequestBuilder
+    name: ManagementRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Management.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Management.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Management.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Users
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Users
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Users.UsersRequestBuilder
+    name: UsersRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters
+    name: UsersRequestBuilder.UsersRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.RolesByIdRequestBuilder
+    name: RolesByIdRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.RoleItemRequestBuilder
+    name: RoleItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.CompositesRequestBuilder
+    name: CompositesRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.CompositesRequestBuilder.CompositesRequestBuilderGetQueryParameters
+    name: CompositesRequestBuilder.CompositesRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Clients.Item.WithClientUuItemRequestBuilder
+    name: WithClientUuItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Composites.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Management
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Management
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Management.ManagementRequestBuilder
+    name: ManagementRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Management.Permissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Management.Permissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.Management.Permissions.PermissionsRequestBuilder
+    name: PermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.SessionsRequestBuilder
+    name: SessionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.Item.WithSessionItemRequestBuilder
+    name: WithSessionItemRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.Item.WithSessionItemRequestBuilder.WithSessionItemRequestBuilderDeleteQueryParameters
+    name: WithSessionItemRequestBuilder.WithSessionItemRequestBuilderDeleteQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection.TestSMTPConnectionPostRequestBody
+    name: TestSMTPConnectionPostRequestBody
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection.TestSMTPConnectionRequestBuilder
+    name: TestSMTPConnectionRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.UsersRequestBuilder
+    name: UsersRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters
+    name: UsersRequestBuilder.UsersRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count.CountRequestBuilder
+    name: CountRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+    name: CountRequestBuilder.CountRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.UserItemRequestBuilder
+    name: UserItemRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters
+    name: UserItemRequestBuilder.UserItemRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes.ConfiguredUserStorageCredentialTypesRequestBuilder
+    name: ConfiguredUserStorageCredentialTypesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents.Consents
+    name: Consents
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents.ConsentsRequestBuilder
+    name: ConsentsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Consents.Item.WithClientItemRequestBuilder
+    name: WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.CredentialsRequestBuilder
+    name: CredentialsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.WithCredentialItemRequestBuilder
+    name: WithCredentialItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter.MoveAfterRequestBuilder
+    name: MoveAfterRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter.Item.WithNewPreviousCredentialItemRequestBuilder
+    name: WithNewPreviousCredentialItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveToFirst
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveToFirst
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveToFirst.MoveToFirstRequestBuilder
+    name: MoveToFirstRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.UserLabel
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.UserLabel
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.UserLabel.UserLabelRequestBuilder
+    name: UserLabelRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.DisableCredentialTypes
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.DisableCredentialTypes
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.DisableCredentialTypes.DisableCredentialTypesRequestBuilder
+    name: DisableCredentialTypesRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder
+    name: ExecuteActionsEmailRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ExecuteActionsEmail.ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+    name: ExecuteActionsEmailRequestBuilder.ExecuteActionsEmailRequestBuilderPutQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.FederatedIdentity
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.FederatedIdentity
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.FederatedIdentity.FederatedIdentityRequestBuilder
+    name: FederatedIdentityRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.FederatedIdentity.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.FederatedIdentity.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.FederatedIdentity.Item.WithProviderItemRequestBuilder
+    name: WithProviderItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.GroupsRequestBuilder
+    name: GroupsRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+    name: GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Count
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Count
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Count.CountGetResponse
+    name: CountGetResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Count.CountRequestBuilder
+    name: CountRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters
+    name: CountRequestBuilder.CountRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Groups.Item.WithGroupItemRequestBuilder
+    name: WithGroupItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Impersonation
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Impersonation
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Impersonation.ImpersonationPostResponse
+    name: ImpersonationPostResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Impersonation.ImpersonationRequestBuilder
+    name: ImpersonationRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Logout
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Logout
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Logout.LogoutRequestBuilder
+    name: LogoutRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.OfflineSessionsRequestBuilder
+    name: OfflineSessionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.Item.WithClientUuItemRequestBuilder
+    name: WithClientUuItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPassword
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPassword
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPassword.ResetPasswordRequestBuilder
+    name: ResetPasswordRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPasswordEmail
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPasswordEmail
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPasswordEmail.ResetPasswordEmailRequestBuilder
+    name: ResetPasswordEmailRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPasswordEmail.ResetPasswordEmailRequestBuilder.ResetPasswordEmailRequestBuilderPutQueryParameters
+    name: ResetPasswordEmailRequestBuilder.ResetPasswordEmailRequestBuilderPutQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.RoleMappingsRequestBuilder
+    name: RoleMappingsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.ClientsRequestBuilder
+    name: ClientsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.WithClientItemRequestBuilder
+    name: WithClientItemRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Clients.Item.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.RealmRequestBuilder
+    name: RealmRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Available
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Available
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Available.AvailableRequestBuilder
+    name: AvailableRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Composite
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Composite
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Composite.CompositeRequestBuilder
+    name: CompositeRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.RoleMappings.Realm.Composite.CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+    name: CompositeRequestBuilder.CompositeRequestBuilderGetQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.SendVerifyEmail
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.SendVerifyEmail
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.SendVerifyEmail.SendVerifyEmailRequestBuilder
+    name: SendVerifyEmailRequestBuilder
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.SendVerifyEmail.SendVerifyEmailRequestBuilder.SendVerifyEmailRequestBuilderPutQueryParameters
+    name: SendVerifyEmailRequestBuilder.SendVerifyEmailRequestBuilderPutQueryParameters
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sessions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sessions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Sessions.SessionsRequestBuilder
+    name: SessionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Profile
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Profile
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Profile.ProfileRequestBuilder
+    name: ProfileRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Profile.Metadata
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Profile.Metadata
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Profile.Metadata.MetadataRequestBuilder
+    name: MetadataRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions.UsersManagementPermissionsRequestBuilder
+    name: UsersManagementPermissionsRequestBuilder
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  name: Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AbstractPolicyRepresentation
+    name: AbstractPolicyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Access
+    name: Access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken
+    name: AccessToken
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_otherClaims
+    name: AccessToken_otherClaims
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_resource_access
+    name: AccessToken_resource_access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AddressClaimSet
+    name: AddressClaimSet
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AdminEventRepresentation
+    name: AdminEventRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation
+    name: ApplicationRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation_access
+    name: ApplicationRepresentation_access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation_attributes
+    name: ApplicationRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation_authenticationFlowBindingOverrides
+    name: ApplicationRepresentation_authenticationFlowBindingOverrides
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation_claims
+    name: ApplicationRepresentation_claims
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation_registeredNodes
+    name: ApplicationRepresentation_registeredNodes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthDetailsRepresentation
+    name: AuthDetailsRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationExecutionExportRepresentation
+    name: AuthenticationExecutionExportRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationExecutionInfoRepresentation
+    name: AuthenticationExecutionInfoRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationExecutionRepresentation
+    name: AuthenticationExecutionRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationFlowRepresentation
+    name: AuthenticationFlowRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigInfoRepresentation
+    name: AuthenticatorConfigInfoRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation
+    name: AuthenticatorConfigRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation_config
+    name: AuthenticatorConfigRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization
+    name: Authorization
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CertificateRepresentation
+    name: CertificateRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClaimRepresentation
+    name: ClaimRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientInitialAccessCreatePresentation
+    name: ClientInitialAccessCreatePresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientInitialAccessPresentation
+    name: ClientInitialAccessPresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPoliciesRepresentation
+    name: ClientPoliciesRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation
+    name: ClientPolicyConditionRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyExecutorRepresentation
+    name: ClientPolicyExecutorRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyRepresentation
+    name: ClientPolicyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfileRepresentation
+    name: ClientProfileRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfilesRepresentation
+    name: ClientProfilesRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation
+    name: ClientRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_access
+    name: ClientRepresentation_access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_attributes
+    name: ClientRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_authenticationFlowBindingOverrides
+    name: ClientRepresentation_authenticationFlowBindingOverrides
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation_registeredNodes
+    name: ClientRepresentation_registeredNodes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation
+    name: ClientScopeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation_attributes
+    name: ClientScopeRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation
+    name: ClientTemplateRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation_attributes
+    name: ClientTemplateRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ComponentRepresentation
+    name: ComponentRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ComponentTypeRepresentation
+    name: ComponentTypeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ComponentTypeRepresentation_metadata
+    name: ComponentTypeRepresentation_metadata
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Composites
+    name: Composites
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Composites_application
+    name: Composites_application
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Composites_client
+    name: Composites_client
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ConfigPropertyRepresentation
+    name: ConfigPropertyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Confirmation
+    name: Confirmation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation
+    name: CredentialRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation_config
+    name: CredentialRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect
+    name: DecisionEffect
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionStrategy
+    name: DecisionStrategy
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.EvaluationResultRepresentation
+    name: EvaluationResultRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.EventRepresentation
+    name: EventRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.EventRepresentation_details
+    name: EventRepresentation_details
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.FederatedIdentityRepresentation
+    name: FederatedIdentityRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GlobalRequestResult
+    name: GlobalRequestResult
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation
+    name: GroupRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_access
+    name: GroupRepresentation_access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_attributes
+    name: GroupRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_clientRoles
+    name: GroupRepresentation_clientRoles
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IDToken
+    name: IDToken
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IDToken_otherClaims
+    name: IDToken_otherClaims
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation
+    name: IdentityProviderMapperRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation_config
+    name: IdentityProviderMapperRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation
+    name: IdentityProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation_config
+    name: IdentityProviderRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyMetadataRepresentation
+    name: KeyMetadataRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyStoreConfig
+    name: KeyStoreConfig
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeyUse
+    name: KeyUse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeysMetadataRepresentation
+    name: KeysMetadataRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.KeysMetadataRepresentation_active
+    name: KeysMetadataRepresentation_active
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Logic
+    name: Logic
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference
+    name: ManagementPermissionReference
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference_scopePermissions
+    name: ManagementPermissionReference_scopePermissions
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation
+    name: MappingsRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation_clientMappings
+    name: MappingsRepresentation_clientMappings
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation
+    name: MultivaluedHashMapStringComponentExportRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringString
+    name: MultivaluedHashMapStringString
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation
+    name: OAuthClientRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_access
+    name: OAuthClientRepresentation_access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_attributes
+    name: OAuthClientRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_authenticationFlowBindingOverrides
+    name: OAuthClientRepresentation_authenticationFlowBindingOverrides
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims
+    name: OAuthClientRepresentation_claims
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_registeredNodes
+    name: OAuthClientRepresentation_registeredNodes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission
+    name: Permission
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission_claims
+    name: Permission_claims
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEnforcementMode
+    name: PolicyEnforcementMode
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest
+    name: PolicyEvaluationRequest
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest_context
+    name: PolicyEvaluationRequest_context
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationResponse
+    name: PolicyEvaluationResponse
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyProviderRepresentation
+    name: PolicyProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation
+    name: PolicyRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation_config
+    name: PolicyRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation
+    name: PolicyResultRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperEvaluationRepresentation
+    name: ProtocolMapperEvaluationRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation
+    name: ProtocolMapperRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config
+    name: ProtocolMapperRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmEventsConfigRepresentation
+    name: RealmEventsConfigRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation
+    name: RealmRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_applicationScopeMappings
+    name: RealmRepresentation_applicationScopeMappings
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_attributes
+    name: RealmRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders
+    name: RealmRepresentation_browserSecurityHeaders
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_clientScopeMappings
+    name: RealmRepresentation_clientScopeMappings
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_localizationTexts
+    name: RealmRepresentation_localizationTexts
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer
+    name: RealmRepresentation_smtpServer
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_socialProviders
+    name: RealmRepresentation_socialProviders
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation
+    name: RequiredActionProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation_config
+    name: RequiredActionProviderRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceOwnerRepresentation
+    name: ResourceOwnerRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation
+    name: ResourceRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation_attributes
+    name: ResourceRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation_owner
+    name: ResourceRepresentation_owner
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation
+    name: ResourceServerRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation
+    name: RoleRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation_attributes
+    name: RoleRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation
+    name: RolesRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_application
+    name: RolesRepresentation_application
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_client
+    name: RolesRepresentation_client
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation
+    name: ScopeMappingRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation
+    name: ScopeRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.SocialLinkRepresentation
+    name: SocialLinkRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute
+    name: UPAttribute
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributePermissions
+    name: UPAttributePermissions
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeRequired
+    name: UPAttributeRequired
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeSelector
+    name: UPAttributeSelector
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_annotations
+    name: UPAttribute_annotations
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_validations
+    name: UPAttribute_validations
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPConfig
+    name: UPConfig
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup
+    name: UPGroup
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup_annotations
+    name: UPGroup_annotations
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy
+    name: UnmanagedAttributePolicy
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation
+    name: UserConsentRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation
+    name: UserFederationMapperRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation_config
+    name: UserFederationMapperRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation
+    name: UserFederationProviderRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation_config
+    name: UserFederationProviderRepresentation_config
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeGroupMetadata
+    name: UserProfileAttributeGroupMetadata
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeGroupMetadata_annotations
+    name: UserProfileAttributeGroupMetadata_annotations
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata
+    name: UserProfileAttributeMetadata
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations
+    name: UserProfileAttributeMetadata_annotations
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_validators
+    name: UserProfileAttributeMetadata_validators
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata
+    name: UserProfileMetadata
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation
+    name: UserRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_access
+    name: UserRepresentation_access
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_applicationRoles
+    name: UserRepresentation_applicationRoles
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_attributes
+    name: UserRepresentation_attributes
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_clientRoles
+    name: UserRepresentation_clientRoles
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation
+    name: UserSessionRepresentation
+  - uid: Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation_clients
+    name: UserSessionRepresentation_clients
+- uid: Keycloak.AuthServices.Sdk.Protection
+  name: Keycloak.AuthServices.Sdk.Protection
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakPolicyClient
+    name: IKeycloakPolicyClient
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectedResourceClient
+    name: IKeycloakProtectedResourceClient
+  - uid: Keycloak.AuthServices.Sdk.Protection.IKeycloakProtectionClient
+    name: IKeycloakProtectionClient
+  - uid: Keycloak.AuthServices.Sdk.Protection.KeycloakProtectionClient
+    name: KeycloakProtectionClient
+- uid: Keycloak.AuthServices.Sdk.Protection.Models
+  name: Keycloak.AuthServices.Sdk.Protection.Models
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.DecisionStrategy
+    name: DecisionStrategy
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Policy
+    name: Policy
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Resource
+    name: Resource
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.ResourceResponse
+    name: ResourceResponse
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.ResourceScope
+    name: ResourceScope
+  - uid: Keycloak.AuthServices.Sdk.Protection.Models.Scope
+    name: Scope
+- uid: Keycloak.AuthServices.Sdk.Protection.Requests
+  name: Keycloak.AuthServices.Sdk.Protection.Requests
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetPoliciesRequestParameters
+    name: GetPoliciesRequestParameters
+  - uid: Keycloak.AuthServices.Sdk.Protection.Requests.GetResourcesRequestParameters
+    name: GetResourcesRequestParameters
+- uid: Keycloak.AuthServices.Sdk.Utils
+  name: Keycloak.AuthServices.Sdk.Utils
+  items:
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryBuilder
+    name: QueryBuilder
+  - uid: Keycloak.AuthServices.Sdk.Utils.QueryString
+    name: QueryString
+- uid: OpenTelemetry.Metrics
+  name: OpenTelemetry.Metrics
+  items:
+  - uid: OpenTelemetry.Metrics.MeterProviderBuilderExtensions
+    name: MeterProviderBuilderExtensions
+- uid: OpenTelemetry.Trace
+  name: OpenTelemetry.Trace
+  items:
+  - uid: OpenTelemetry.Trace.TracerProviderBuilderExtensions
+    name: TracerProviderBuilderExtensions
+memberLayout: SamePage

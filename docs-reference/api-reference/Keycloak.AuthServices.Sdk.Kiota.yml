@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota
+  id: Keycloak.AuthServices.Sdk.Kiota
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+  - Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Kiota
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota
+  fullName: Keycloak.AuthServices.Sdk.Kiota
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+  parent: Keycloak.AuthServices.Sdk.Kiota
+  href: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions.html
+  name: KeycloakAdminClientOptions
+  nameWithType: KeycloakAdminClientOptions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  href: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+- uid: Keycloak.AuthServices.Sdk.Kiota
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota
+  fullName: Keycloak.AuthServices.Sdk.Kiota
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html

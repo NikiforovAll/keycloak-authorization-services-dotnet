@@ -1,0 +1,216 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData
+  commentId: T:Keycloak.AuthServices.Authorization.IProtectedResourceData
+  id: IProtectedResourceData
+  parent: Keycloak.AuthServices.Authorization
+  children:
+  - Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression
+  - Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource
+  - Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes
+  langs:
+  - csharp
+  - vb
+  name: IProtectedResourceData
+  nameWithType: IProtectedResourceData
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData
+  type: Interface
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IProtectedResourceData
+    path: ../src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+    startLine: 5
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Defines the set of data required to apply authorization rules to a resource.
+  example: []
+  syntax:
+    content: public interface IProtectedResourceData
+    content.vb: Public Interface IProtectedResourceData
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource
+  commentId: P:Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource
+  id: Resource
+  parent: Keycloak.AuthServices.Authorization.IProtectedResourceData
+  langs:
+  - csharp
+  - vb
+  name: Resource
+  nameWithType: IProtectedResourceData.Resource
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Resource
+    path: ../src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+    startLine: 10
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Gets or sets resource name
+  example: []
+  syntax:
+    content: string Resource { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Resource As String
+  overload: Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource*
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes
+  commentId: P:Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes
+  id: Scopes
+  parent: Keycloak.AuthServices.Authorization.IProtectedResourceData
+  langs:
+  - csharp
+  - vb
+  name: Scopes
+  nameWithType: IProtectedResourceData.Scopes
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes
+  type: Property
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: Scopes
+    path: ../src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+    startLine: 15
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Get or sets scopes
+  example: []
+  syntax:
+    content: string[]? Scopes { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: ReadOnly Property Scopes As String()
+  overload: Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes*
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression
+  commentId: M:Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression
+  id: GetScopesExpression
+  parent: Keycloak.AuthServices.Authorization.IProtectedResourceData
+  langs:
+  - csharp
+  - vb
+  name: GetScopesExpression()
+  nameWithType: IProtectedResourceData.GetScopesExpression()
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression()
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: GetScopesExpression
+    path: ../src/Keycloak.AuthServices.Authorization/IProtectedResourceData.cs
+    startLine: 20
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: ''
+  example: []
+  syntax:
+    content: string GetScopesExpression()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Function GetScopesExpression() As String
+  overload: Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression*
+references:
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource*
+  commentId: Overload:Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource
+  href: Keycloak.AuthServices.Authorization.IProtectedResourceData.html#Keycloak_AuthServices_Authorization_IProtectedResourceData_Resource
+  name: Resource
+  nameWithType: IProtectedResourceData.Resource
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData.Resource
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes*
+  commentId: Overload:Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes
+  href: Keycloak.AuthServices.Authorization.IProtectedResourceData.html#Keycloak_AuthServices_Authorization_IProtectedResourceData_Scopes
+  name: Scopes
+  nameWithType: IProtectedResourceData.Scopes
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData.Scopes
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression*
+  commentId: Overload:Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression
+  href: Keycloak.AuthServices.Authorization.IProtectedResourceData.html#Keycloak_AuthServices_Authorization_IProtectedResourceData_GetScopesExpression
+  name: GetScopesExpression
+  nameWithType: IProtectedResourceData.GetScopesExpression
+  fullName: Keycloak.AuthServices.Authorization.IProtectedResourceData.GetScopesExpression

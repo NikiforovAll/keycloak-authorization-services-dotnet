@@ -1,0 +1,60 @@
+### YamlMime:ManagedReference
+items:
+- uid: Aspire.Hosting
+  commentId: N:Aspire.Hosting
+  id: Aspire.Hosting
+  children:
+  - Aspire.Hosting.KeycloakBuilderExtensions
+  - Aspire.Hosting.KeycloakRealmResource
+  - Aspire.Hosting.KeycloakResource
+  langs:
+  - csharp
+  - vb
+  name: Aspire.Hosting
+  nameWithType: Aspire.Hosting
+  fullName: Aspire.Hosting
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+references:
+- uid: Aspire.Hosting.KeycloakBuilderExtensions
+  commentId: T:Aspire.Hosting.KeycloakBuilderExtensions
+  href: Aspire.Hosting.KeycloakBuilderExtensions.html
+  name: KeycloakBuilderExtensions
+  nameWithType: KeycloakBuilderExtensions
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions
+- uid: Aspire.Hosting.KeycloakResource
+  commentId: T:Aspire.Hosting.KeycloakResource
+  parent: Aspire.Hosting
+  href: Aspire.Hosting.KeycloakResource.html
+  name: KeycloakResource
+  nameWithType: KeycloakResource
+  fullName: Aspire.Hosting.KeycloakResource
+- uid: Aspire.Hosting.KeycloakRealmResource
+  commentId: T:Aspire.Hosting.KeycloakRealmResource
+  href: Aspire.Hosting.KeycloakRealmResource.html
+  name: KeycloakRealmResource
+  nameWithType: KeycloakRealmResource
+  fullName: Aspire.Hosting.KeycloakRealmResource
+- uid: Aspire.Hosting
+  commentId: N:Aspire.Hosting
+  href: Aspire.html
+  name: Aspire.Hosting
+  nameWithType: Aspire.Hosting
+  fullName: Aspire.Hosting
+  spec.csharp:
+  - uid: Aspire
+    name: Aspire
+    href: Aspire.html
+  - name: .
+  - uid: Aspire.Hosting
+    name: Hosting
+    href: Aspire.Hosting.html
+  spec.vb:
+  - uid: Aspire
+    name: Aspire
+    href: Aspire.html
+  - name: .
+  - uid: Aspire.Hosting
+    name: Hosting
+    href: Aspire.Hosting.html

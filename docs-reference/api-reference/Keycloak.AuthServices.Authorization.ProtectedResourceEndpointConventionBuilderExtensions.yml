@@ -1,0 +1,617 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  id: ProtectedResourceEndpointConventionBuilderExtensions
+  parent: Keycloak.AuthServices.Authorization
+  children:
+  - Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource``1(``0,System.String)
+  - Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources``1(``0)
+  - Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String)
+  - Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String,System.String)
+  - Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String,System.String[])
+  langs:
+  - csharp
+  - vb
+  name: ProtectedResourceEndpointConventionBuilderExtensions
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ProtectedResourceEndpointConventionBuilderExtensions
+    path: ../src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+    startLine: 9
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Authorization extension methods for <xref href="Microsoft.AspNetCore.Builder.IEndpointConventionBuilder" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class ProtectedResourceEndpointConventionBuilderExtensions
+    content.vb: Public Module ProtectedResourceEndpointConventionBuilderExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String)
+  commentId: M:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String)
+  id: RequireProtectedResource``1(``0,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RequireProtectedResource<TBuilder>(TBuilder, string)
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource<TBuilder>(TBuilder, string)
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource<TBuilder>(TBuilder, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RequireProtectedResource
+    path: ../src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+    startLine: 17
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds <xref href="Keycloak.AuthServices.Authorization.ProtectedResourceAttribute" data-throw-if-not-resolved="false"></xref> to the endpoint(s).
+  example: []
+  syntax:
+    content: 'public static TBuilder RequireProtectedResource<TBuilder>(this TBuilder builder, string resource) where TBuilder : IEndpointConventionBuilder'
+    parameters:
+    - id: builder
+      type: '{TBuilder}'
+      description: The endpoint convention builder.
+    - id: resource
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: TBuilder
+    return:
+      type: '{TBuilder}'
+      description: The original convention builder parameter.
+    content.vb: Public Shared Function RequireProtectedResource(Of TBuilder As IEndpointConventionBuilder)(builder As TBuilder, resource As String) As TBuilder
+  overload: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource*
+  nameWithType.vb: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource(Of TBuilder)(TBuilder, String)
+  fullName.vb: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource(Of TBuilder)(TBuilder, String)
+  name.vb: RequireProtectedResource(Of TBuilder)(TBuilder, String)
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String,System.String)
+  commentId: M:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String,System.String)
+  id: RequireProtectedResource``1(``0,System.String,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RequireProtectedResource<TBuilder>(TBuilder, string, string)
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource<TBuilder>(TBuilder, string, string)
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource<TBuilder>(TBuilder, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RequireProtectedResource
+    path: ../src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+    startLine: 41
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds <xref href="Keycloak.AuthServices.Authorization.ProtectedResourceAttribute" data-throw-if-not-resolved="false"></xref> to the endpoint(s).
+  example: []
+  syntax:
+    content: 'public static TBuilder RequireProtectedResource<TBuilder>(this TBuilder builder, string resource, string scope) where TBuilder : IEndpointConventionBuilder'
+    parameters:
+    - id: builder
+      type: '{TBuilder}'
+      description: The endpoint convention builder.
+    - id: resource
+      type: System.String
+      description: ''
+    - id: scope
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: TBuilder
+    return:
+      type: '{TBuilder}'
+      description: The original convention builder parameter.
+    content.vb: Public Shared Function RequireProtectedResource(Of TBuilder As IEndpointConventionBuilder)(builder As TBuilder, resource As String, scope As String) As TBuilder
+  overload: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource*
+  nameWithType.vb: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource(Of TBuilder)(TBuilder, String, String)
+  fullName.vb: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource(Of TBuilder)(TBuilder, String, String)
+  name.vb: RequireProtectedResource(Of TBuilder)(TBuilder, String, String)
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String,System.String[])
+  commentId: M:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource``1(``0,System.String,System.String[])
+  id: RequireProtectedResource``1(``0,System.String,System.String[])
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: RequireProtectedResource<TBuilder>(TBuilder, string, string[])
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource<TBuilder>(TBuilder, string, string[])
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource<TBuilder>(TBuilder, string, string[])
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: RequireProtectedResource
+    path: ../src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+    startLine: 56
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds <xref href="Keycloak.AuthServices.Authorization.ProtectedResourceAttribute" data-throw-if-not-resolved="false"></xref> to the endpoint(s).
+  example: []
+  syntax:
+    content: 'public static TBuilder RequireProtectedResource<TBuilder>(this TBuilder builder, string resource, string[] scopes) where TBuilder : IEndpointConventionBuilder'
+    parameters:
+    - id: builder
+      type: '{TBuilder}'
+      description: The endpoint convention builder.
+    - id: resource
+      type: System.String
+      description: ''
+    - id: scopes
+      type: System.String[]
+      description: ''
+    typeParameters:
+    - id: TBuilder
+    return:
+      type: '{TBuilder}'
+      description: The original convention builder parameter.
+    content.vb: Public Shared Function RequireProtectedResource(Of TBuilder As IEndpointConventionBuilder)(builder As TBuilder, resource As String, scopes As String()) As TBuilder
+  overload: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource*
+  nameWithType.vb: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource(Of TBuilder)(TBuilder, String, String())
+  fullName.vb: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource(Of TBuilder)(TBuilder, String, String())
+  name.vb: RequireProtectedResource(Of TBuilder)(TBuilder, String, String())
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource``1(``0,System.String)
+  commentId: M:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource``1(``0,System.String)
+  id: IgnoreProtectedResource``1(``0,System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: IgnoreProtectedResource<TBuilder>(TBuilder, string)
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource<TBuilder>(TBuilder, string)
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource<TBuilder>(TBuilder, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IgnoreProtectedResource
+    path: ../src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+    startLine: 81
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds <xref href="Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute" data-throw-if-not-resolved="false"></xref> to the endpoint(s).
+  example: []
+  syntax:
+    content: 'public static TBuilder IgnoreProtectedResource<TBuilder>(this TBuilder builder, string resource) where TBuilder : IEndpointConventionBuilder'
+    parameters:
+    - id: builder
+      type: '{TBuilder}'
+      description: The endpoint convention builder.
+    - id: resource
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: TBuilder
+    return:
+      type: '{TBuilder}'
+      description: The original convention builder parameter.
+    content.vb: Public Shared Function IgnoreProtectedResource(Of TBuilder As IEndpointConventionBuilder)(builder As TBuilder, resource As String) As TBuilder
+  overload: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource*
+  nameWithType.vb: ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource(Of TBuilder)(TBuilder, String)
+  fullName.vb: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource(Of TBuilder)(TBuilder, String)
+  name.vb: IgnoreProtectedResource(Of TBuilder)(TBuilder, String)
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources``1(``0)
+  commentId: M:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources``1(``0)
+  id: IgnoreProtectedResources``1(``0)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: IgnoreProtectedResources<TBuilder>(TBuilder)
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources<TBuilder>(TBuilder)
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources<TBuilder>(TBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: IgnoreProtectedResources
+    path: ../src/Keycloak.AuthServices.Authorization/ProtectedResourceEndpointConventionBuilderExtensions.cs
+    startLine: 97
+  assemblies:
+  - Keycloak.AuthServices.Authorization
+  namespace: Keycloak.AuthServices.Authorization
+  summary: Adds <xref href="Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute" data-throw-if-not-resolved="false"></xref> to the endpoint(s).
+  example: []
+  syntax:
+    content: 'public static TBuilder IgnoreProtectedResources<TBuilder>(this TBuilder builder) where TBuilder : IEndpointConventionBuilder'
+    parameters:
+    - id: builder
+      type: '{TBuilder}'
+      description: The endpoint convention builder.
+    typeParameters:
+    - id: TBuilder
+    return:
+      type: '{TBuilder}'
+      description: The original convention builder parameter.
+    content.vb: Public Shared Function IgnoreProtectedResources(Of TBuilder As IEndpointConventionBuilder)(builder As TBuilder) As TBuilder
+  overload: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources*
+  nameWithType.vb: ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources(Of TBuilder)(TBuilder)
+  fullName.vb: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources(Of TBuilder)(TBuilder)
+  name.vb: IgnoreProtectedResources(Of TBuilder)(TBuilder)
+references:
+- uid: Microsoft.AspNetCore.Builder.IEndpointConventionBuilder
+  commentId: T:Microsoft.AspNetCore.Builder.IEndpointConventionBuilder
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iendpointconventionbuilder
+  name: IEndpointConventionBuilder
+  nameWithType: IEndpointConventionBuilder
+  fullName: Microsoft.AspNetCore.Builder.IEndpointConventionBuilder
+- uid: Keycloak.AuthServices.Authorization
+  commentId: N:Keycloak.AuthServices.Authorization
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Authorization
+  nameWithType: Keycloak.AuthServices.Authorization
+  fullName: Keycloak.AuthServices.Authorization
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Authorization
+    name: Authorization
+    href: Keycloak.AuthServices.Authorization.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+  commentId: T:Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+  href: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute.html
+  name: ProtectedResourceAttribute
+  nameWithType: ProtectedResourceAttribute
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceAttribute
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource*
+  commentId: Overload:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource
+  href: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.html#Keycloak_AuthServices_Authorization_ProtectedResourceEndpointConventionBuilderExtensions_RequireProtectedResource__1___0_System_String_
+  name: RequireProtectedResource
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.RequireProtectedResource
+- uid: '{TBuilder}'
+  commentId: '!:TBuilder'
+  definition: TBuilder
+  name: TBuilder
+  nameWithType: TBuilder
+  fullName: TBuilder
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: TBuilder
+  name: TBuilder
+  nameWithType: TBuilder
+  fullName: TBuilder
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+  commentId: T:Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+  href: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute.html
+  name: IgnoreProtectedResourceAttribute
+  nameWithType: IgnoreProtectedResourceAttribute
+  fullName: Keycloak.AuthServices.Authorization.IgnoreProtectedResourceAttribute
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource*
+  commentId: Overload:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource
+  href: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.html#Keycloak_AuthServices_Authorization_ProtectedResourceEndpointConventionBuilderExtensions_IgnoreProtectedResource__1___0_System_String_
+  name: IgnoreProtectedResource
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResource
+- uid: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources*
+  commentId: Overload:Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources
+  href: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.html#Keycloak_AuthServices_Authorization_ProtectedResourceEndpointConventionBuilderExtensions_IgnoreProtectedResources__1___0_
+  name: IgnoreProtectedResources
+  nameWithType: ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources
+  fullName: Keycloak.AuthServices.Authorization.ProtectedResourceEndpointConventionBuilderExtensions.IgnoreProtectedResources

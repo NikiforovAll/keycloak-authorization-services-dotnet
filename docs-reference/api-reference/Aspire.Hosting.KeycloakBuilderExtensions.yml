@@ -1,0 +1,825 @@
+### YamlMime:ManagedReference
+items:
+- uid: Aspire.Hosting.KeycloakBuilderExtensions
+  commentId: T:Aspire.Hosting.KeycloakBuilderExtensions
+  id: KeycloakBuilderExtensions
+  parent: Aspire.Hosting
+  children:
+  - Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer(Aspire.Hosting.IDistributedApplicationBuilder,System.String,System.String,Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},System.Nullable{System.Int32})
+  - Aspire.Hosting.KeycloakBuilderExtensions.AddRealm(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.String)
+  - Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  - Aspire.Hosting.KeycloakBuilderExtensions.WithImport(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  - Aspire.Hosting.KeycloakBuilderExtensions.WithReference``1(Aspire.Hosting.ApplicationModel.IResourceBuilder{``0},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource},System.String)
+  langs:
+  - csharp
+  - vb
+  name: KeycloakBuilderExtensions
+  nameWithType: KeycloakBuilderExtensions
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: KeycloakBuilderExtensions
+    path: ../src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+    startLine: 7
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+  namespace: Aspire.Hosting
+  summary: Provides extension methods for adding Keycloak resources to an <xref href="Aspire.Hosting.IDistributedApplicationBuilder" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class KeycloakBuilderExtensions
+    content.vb: Public Module KeycloakBuilderExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer(Aspire.Hosting.IDistributedApplicationBuilder,System.String,System.String,Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},System.Nullable{System.Int32})
+  commentId: M:Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer(Aspire.Hosting.IDistributedApplicationBuilder,System.String,System.String,Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},System.Nullable{System.Int32})
+  id: AddKeycloakContainer(Aspire.Hosting.IDistributedApplicationBuilder,System.String,System.String,Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource},System.Nullable{System.Int32})
+  isExtensionMethod: true
+  parent: Aspire.Hosting.KeycloakBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakContainer(IDistributedApplicationBuilder, string, string?, IResourceBuilder<ParameterResource>?, IResourceBuilder<ParameterResource>?, int?)
+  nameWithType: KeycloakBuilderExtensions.AddKeycloakContainer(IDistributedApplicationBuilder, string, string?, IResourceBuilder<ParameterResource>?, IResourceBuilder<ParameterResource>?, int?)
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer(Aspire.Hosting.IDistributedApplicationBuilder, string, string?, Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.ApplicationModel.ParameterResource>?, Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.ApplicationModel.ParameterResource>?, int?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakContainer
+    path: ../src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+    startLine: 23
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+  namespace: Aspire.Hosting
+  summary: Adds a Keycloak resource to the application model. A container is used for local development.
+  example: []
+  syntax:
+    content: public static IResourceBuilder<KeycloakResource> AddKeycloakContainer(this IDistributedApplicationBuilder builder, string name, string? tag = null, IResourceBuilder<ParameterResource>? userName = null, IResourceBuilder<ParameterResource>? password = null, int? port = null)
+    parameters:
+    - id: builder
+      type: Aspire.Hosting.IDistributedApplicationBuilder
+      description: The <xref href="Aspire.Hosting.IDistributedApplicationBuilder" data-throw-if-not-resolved="false"></xref>.
+    - id: name
+      type: System.String
+      description: The name of the resource.
+    - id: tag
+      type: System.String
+      description: ''
+    - id: userName
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource}
+      description: The parameter used to provide the user name for the Keycloak resource.
+    - id: password
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource}
+      description: The parameter used to provide the administrator password for the Keycloak resource.
+    - id: port
+      type: System.Nullable{System.Int32}
+      description: The host port used when launching the container.
+    return:
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+      description: A reference to the <xref href="Aspire.Hosting.ApplicationModel.IResourceBuilder%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function AddKeycloakContainer(builder As IDistributedApplicationBuilder, name As String, tag As String = Nothing, userName As IResourceBuilder(Of ParameterResource) = Nothing, password As IResourceBuilder(Of ParameterResource) = Nothing, port As Integer? = Nothing) As IResourceBuilder(Of KeycloakResource)
+  overload: Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer*
+  nameWithType.vb: KeycloakBuilderExtensions.AddKeycloakContainer(IDistributedApplicationBuilder, String, String, IResourceBuilder(Of ParameterResource), IResourceBuilder(Of ParameterResource), Integer?)
+  fullName.vb: Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer(Aspire.Hosting.IDistributedApplicationBuilder, String, String, Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.ApplicationModel.ParameterResource), Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.ApplicationModel.ParameterResource), Integer?)
+  name.vb: AddKeycloakContainer(IDistributedApplicationBuilder, String, String, IResourceBuilder(Of ParameterResource), IResourceBuilder(Of ParameterResource), Integer?)
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.AddRealm(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.String)
+  commentId: M:Aspire.Hosting.KeycloakBuilderExtensions.AddRealm(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.String)
+  id: AddRealm(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.String)
+  isExtensionMethod: true
+  parent: Aspire.Hosting.KeycloakBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddRealm(IResourceBuilder<KeycloakResource>, string, string?)
+  nameWithType: KeycloakBuilderExtensions.AddRealm(IResourceBuilder<KeycloakResource>, string, string?)
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.AddRealm(Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.KeycloakResource>, string, string?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddRealm
+    path: ../src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+    startLine: 75
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+  namespace: Aspire.Hosting
+  summary: Adds a Realm to the application model.
+  example: []
+  syntax:
+    content: public static IResourceBuilder<KeycloakRealmResource> AddRealm(this IResourceBuilder<KeycloakResource> builder, string name, string? realm = null)
+    parameters:
+    - id: builder
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+      description: The Keycloak server resource builder.
+    - id: name
+      type: System.String
+      description: The name of the resource.
+    - id: realm
+      type: System.String
+      description: The name of the Realm.
+    return:
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource}
+      description: A reference to the <xref href="Aspire.Hosting.ApplicationModel.IResourceBuilder%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function AddRealm(builder As IResourceBuilder(Of KeycloakResource), name As String, realm As String = Nothing) As IResourceBuilder(Of KeycloakRealmResource)
+  overload: Aspire.Hosting.KeycloakBuilderExtensions.AddRealm*
+  nameWithType.vb: KeycloakBuilderExtensions.AddRealm(IResourceBuilder(Of KeycloakResource), String, String)
+  fullName.vb: Aspire.Hosting.KeycloakBuilderExtensions.AddRealm(Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.KeycloakResource), String, String)
+  name.vb: AddRealm(IResourceBuilder(Of KeycloakResource), String, String)
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.WithImport(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  commentId: M:Aspire.Hosting.KeycloakBuilderExtensions.WithImport(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  id: WithImport(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  isExtensionMethod: true
+  parent: Aspire.Hosting.KeycloakBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: WithImport(IResourceBuilder<KeycloakResource>, string, bool)
+  nameWithType: KeycloakBuilderExtensions.WithImport(IResourceBuilder<KeycloakResource>, string, bool)
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.WithImport(Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.KeycloakResource>, string, bool)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WithImport
+    path: ../src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+    startLine: 95
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+  namespace: Aspire.Hosting
+  summary: Adds a Realm to the application model.
+  example: []
+  syntax:
+    content: public static IResourceBuilder<KeycloakResource> WithImport(this IResourceBuilder<KeycloakResource> builder, string import, bool isReadOnly = false)
+    parameters:
+    - id: builder
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+      description: The Keycloak server resource builder.
+    - id: import
+      type: System.String
+      description: ''
+    - id: isReadOnly
+      type: System.Boolean
+      description: ''
+    return:
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+      description: A reference to the <xref href="Aspire.Hosting.ApplicationModel.IResourceBuilder%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function WithImport(builder As IResourceBuilder(Of KeycloakResource), import As String, isReadOnly As Boolean = False) As IResourceBuilder(Of KeycloakResource)
+  overload: Aspire.Hosting.KeycloakBuilderExtensions.WithImport*
+  nameWithType.vb: KeycloakBuilderExtensions.WithImport(IResourceBuilder(Of KeycloakResource), String, Boolean)
+  fullName.vb: Aspire.Hosting.KeycloakBuilderExtensions.WithImport(Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.KeycloakResource), String, Boolean)
+  name.vb: WithImport(IResourceBuilder(Of KeycloakResource), String, Boolean)
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  commentId: M:Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  id: WithDataVolume(Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource},System.String,System.Boolean)
+  isExtensionMethod: true
+  parent: Aspire.Hosting.KeycloakBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: WithDataVolume(IResourceBuilder<KeycloakResource>, string?, bool)
+  nameWithType: KeycloakBuilderExtensions.WithDataVolume(IResourceBuilder<KeycloakResource>, string?, bool)
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume(Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.KeycloakResource>, string?, bool)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WithDataVolume
+    path: ../src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+    startLine: 126
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+  namespace: Aspire.Hosting
+  summary: Adds a named volume for the data folder to a PostgreSQL container resource.
+  example: []
+  syntax:
+    content: public static IResourceBuilder<KeycloakResource> WithDataVolume(this IResourceBuilder<KeycloakResource> builder, string? name = null, bool isReadOnly = false)
+    parameters:
+    - id: builder
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+      description: The resource builder.
+    - id: name
+      type: System.String
+      description: The name of the volume. Defaults to an auto-generated name based on the application and resource names.
+    - id: isReadOnly
+      type: System.Boolean
+      description: A flag that indicates if this is a read-only volume.
+    return:
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+      description: The <xref href="Aspire.Hosting.ApplicationModel.IResourceBuilder%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Function WithDataVolume(builder As IResourceBuilder(Of KeycloakResource), name As String = Nothing, isReadOnly As Boolean = False) As IResourceBuilder(Of KeycloakResource)
+  overload: Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume*
+  nameWithType.vb: KeycloakBuilderExtensions.WithDataVolume(IResourceBuilder(Of KeycloakResource), String, Boolean)
+  fullName.vb: Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume(Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.KeycloakResource), String, Boolean)
+  name.vb: WithDataVolume(IResourceBuilder(Of KeycloakResource), String, Boolean)
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.WithReference``1(Aspire.Hosting.ApplicationModel.IResourceBuilder{``0},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource},System.String)
+  commentId: M:Aspire.Hosting.KeycloakBuilderExtensions.WithReference``1(Aspire.Hosting.ApplicationModel.IResourceBuilder{``0},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource},System.String)
+  id: WithReference``1(Aspire.Hosting.ApplicationModel.IResourceBuilder{``0},Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource},System.String)
+  isExtensionMethod: true
+  parent: Aspire.Hosting.KeycloakBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: WithReference<TResource>(IResourceBuilder<TResource>, IResourceBuilder<KeycloakRealmResource>, string)
+  nameWithType: KeycloakBuilderExtensions.WithReference<TResource>(IResourceBuilder<TResource>, IResourceBuilder<KeycloakRealmResource>, string)
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.WithReference<TResource>(Aspire.Hosting.ApplicationModel.IResourceBuilder<TResource>, Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.KeycloakRealmResource>, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: WithReference
+    path: ../src/Keycloak.AuthServices.Aspire.Hosting/KeycloakBuilderExtensions.cs
+    startLine: 149
+  assemblies:
+  - Keycloak.AuthServices.Aspire.Hosting
+  namespace: Aspire.Hosting
+  summary: Adds a reference to a Keycloak resource to the specified resource builder.
+  example: []
+  syntax:
+    content: 'public static IResourceBuilder<TResource> WithReference<TResource>(this IResourceBuilder<TResource> builder, IResourceBuilder<KeycloakRealmResource> keycloakBuilder, string configurationPrefix = "Keycloak") where TResource : IResourceWithEnvironment'
+    parameters:
+    - id: builder
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{{TResource}}
+      description: The resource builder to add the reference to.
+    - id: keycloakBuilder
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource}
+      description: The Keycloak resource builder to reference.
+    - id: configurationPrefix
+      type: System.String
+      description: ''
+    typeParameters:
+    - id: TResource
+      description: The type of the resource builder.
+    return:
+      type: Aspire.Hosting.ApplicationModel.IResourceBuilder{{TResource}}
+      description: The resource builder with the added reference.
+    content.vb: Public Shared Function WithReference(Of TResource As IResourceWithEnvironment)(builder As IResourceBuilder(Of TResource), keycloakBuilder As IResourceBuilder(Of KeycloakRealmResource), configurationPrefix As String = "Keycloak") As IResourceBuilder(Of TResource)
+  overload: Aspire.Hosting.KeycloakBuilderExtensions.WithReference*
+  nameWithType.vb: KeycloakBuilderExtensions.WithReference(Of TResource)(IResourceBuilder(Of TResource), IResourceBuilder(Of KeycloakRealmResource), String)
+  fullName.vb: Aspire.Hosting.KeycloakBuilderExtensions.WithReference(Of TResource)(Aspire.Hosting.ApplicationModel.IResourceBuilder(Of TResource), Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.KeycloakRealmResource), String)
+  name.vb: WithReference(Of TResource)(IResourceBuilder(Of TResource), IResourceBuilder(Of KeycloakRealmResource), String)
+references:
+- uid: Aspire.Hosting.IDistributedApplicationBuilder
+  commentId: T:Aspire.Hosting.IDistributedApplicationBuilder
+  parent: Aspire.Hosting
+  isExternal: true
+  name: IDistributedApplicationBuilder
+  nameWithType: IDistributedApplicationBuilder
+  fullName: Aspire.Hosting.IDistributedApplicationBuilder
+- uid: Aspire.Hosting
+  commentId: N:Aspire.Hosting
+  href: Aspire.html
+  name: Aspire.Hosting
+  nameWithType: Aspire.Hosting
+  fullName: Aspire.Hosting
+  spec.csharp:
+  - uid: Aspire
+    name: Aspire
+    href: Aspire.html
+  - name: .
+  - uid: Aspire.Hosting
+    name: Hosting
+    href: Aspire.Hosting.html
+  spec.vb:
+  - uid: Aspire
+    name: Aspire
+    href: Aspire.html
+  - name: .
+  - uid: Aspire.Hosting
+    name: Hosting
+    href: Aspire.Hosting.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+  commentId: T:Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+  isExternal: true
+  name: IResourceBuilder<T>
+  nameWithType: IResourceBuilder<T>
+  fullName: Aspire.Hosting.ApplicationModel.IResourceBuilder<T>
+  nameWithType.vb: IResourceBuilder(Of T)
+  fullName.vb: Aspire.Hosting.ApplicationModel.IResourceBuilder(Of T)
+  name.vb: IResourceBuilder(Of T)
+  spec.csharp:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer*
+  commentId: Overload:Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer
+  href: Aspire.Hosting.KeycloakBuilderExtensions.html#Aspire_Hosting_KeycloakBuilderExtensions_AddKeycloakContainer_Aspire_Hosting_IDistributedApplicationBuilder_System_String_System_String_Aspire_Hosting_ApplicationModel_IResourceBuilder_Aspire_Hosting_ApplicationModel_ParameterResource__Aspire_Hosting_ApplicationModel_IResourceBuilder_Aspire_Hosting_ApplicationModel_ParameterResource__System_Nullable_System_Int32__
+  name: AddKeycloakContainer
+  nameWithType: KeycloakBuilderExtensions.AddKeycloakContainer
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.AddKeycloakContainer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource}
+  commentId: T:Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.ApplicationModel.ParameterResource}
+  parent: Aspire.Hosting.ApplicationModel
+  definition: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+  name: IResourceBuilder<ParameterResource>
+  nameWithType: IResourceBuilder<ParameterResource>
+  fullName: Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.ApplicationModel.ParameterResource>
+  nameWithType.vb: IResourceBuilder(Of ParameterResource)
+  fullName.vb: Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.ApplicationModel.ParameterResource)
+  name.vb: IResourceBuilder(Of ParameterResource)
+  spec.csharp:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: <
+  - uid: Aspire.Hosting.ApplicationModel.ParameterResource
+    name: ParameterResource
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Aspire.Hosting.ApplicationModel.ParameterResource
+    name: ParameterResource
+    isExternal: true
+  - name: )
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+  commentId: T:Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakResource}
+  parent: Aspire.Hosting.ApplicationModel
+  definition: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+  href: Aspire.Hosting.KeycloakResource.html
+  name: IResourceBuilder<KeycloakResource>
+  nameWithType: IResourceBuilder<KeycloakResource>
+  fullName: Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.KeycloakResource>
+  nameWithType.vb: IResourceBuilder(Of KeycloakResource)
+  fullName.vb: Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.KeycloakResource)
+  name.vb: IResourceBuilder(Of KeycloakResource)
+  spec.csharp:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: <
+  - uid: Aspire.Hosting.KeycloakResource
+    name: KeycloakResource
+    href: Aspire.Hosting.KeycloakResource.html
+  - name: '>'
+  spec.vb:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Aspire.Hosting.KeycloakResource
+    name: KeycloakResource
+    href: Aspire.Hosting.KeycloakResource.html
+  - name: )
+- uid: Aspire.Hosting.ApplicationModel
+  commentId: N:Aspire.Hosting.ApplicationModel
+  isExternal: true
+  name: Aspire.Hosting.ApplicationModel
+  nameWithType: Aspire.Hosting.ApplicationModel
+  fullName: Aspire.Hosting.ApplicationModel
+  spec.csharp:
+  - uid: Aspire
+    name: Aspire
+    isExternal: true
+  - name: .
+  - uid: Aspire.Hosting
+    name: Hosting
+    isExternal: true
+  - name: .
+  - uid: Aspire.Hosting.ApplicationModel
+    name: ApplicationModel
+    isExternal: true
+  spec.vb:
+  - uid: Aspire
+    name: Aspire
+    isExternal: true
+  - name: .
+  - uid: Aspire.Hosting
+    name: Hosting
+    isExternal: true
+  - name: .
+  - uid: Aspire.Hosting.ApplicationModel
+    name: ApplicationModel
+    isExternal: true
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.AddRealm*
+  commentId: Overload:Aspire.Hosting.KeycloakBuilderExtensions.AddRealm
+  href: Aspire.Hosting.KeycloakBuilderExtensions.html#Aspire_Hosting_KeycloakBuilderExtensions_AddRealm_Aspire_Hosting_ApplicationModel_IResourceBuilder_Aspire_Hosting_KeycloakResource__System_String_System_String_
+  name: AddRealm
+  nameWithType: KeycloakBuilderExtensions.AddRealm
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.AddRealm
+- uid: Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource}
+  commentId: T:Aspire.Hosting.ApplicationModel.IResourceBuilder{Aspire.Hosting.KeycloakRealmResource}
+  parent: Aspire.Hosting.ApplicationModel
+  definition: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+  href: Aspire.Hosting.KeycloakRealmResource.html
+  name: IResourceBuilder<KeycloakRealmResource>
+  nameWithType: IResourceBuilder<KeycloakRealmResource>
+  fullName: Aspire.Hosting.ApplicationModel.IResourceBuilder<Aspire.Hosting.KeycloakRealmResource>
+  nameWithType.vb: IResourceBuilder(Of KeycloakRealmResource)
+  fullName.vb: Aspire.Hosting.ApplicationModel.IResourceBuilder(Of Aspire.Hosting.KeycloakRealmResource)
+  name.vb: IResourceBuilder(Of KeycloakRealmResource)
+  spec.csharp:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: <
+  - uid: Aspire.Hosting.KeycloakRealmResource
+    name: KeycloakRealmResource
+    href: Aspire.Hosting.KeycloakRealmResource.html
+  - name: '>'
+  spec.vb:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Aspire.Hosting.KeycloakRealmResource
+    name: KeycloakRealmResource
+    href: Aspire.Hosting.KeycloakRealmResource.html
+  - name: )
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.WithImport*
+  commentId: Overload:Aspire.Hosting.KeycloakBuilderExtensions.WithImport
+  href: Aspire.Hosting.KeycloakBuilderExtensions.html#Aspire_Hosting_KeycloakBuilderExtensions_WithImport_Aspire_Hosting_ApplicationModel_IResourceBuilder_Aspire_Hosting_KeycloakResource__System_String_System_Boolean_
+  name: WithImport
+  nameWithType: KeycloakBuilderExtensions.WithImport
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.WithImport
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume*
+  commentId: Overload:Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume
+  href: Aspire.Hosting.KeycloakBuilderExtensions.html#Aspire_Hosting_KeycloakBuilderExtensions_WithDataVolume_Aspire_Hosting_ApplicationModel_IResourceBuilder_Aspire_Hosting_KeycloakResource__System_String_System_Boolean_
+  name: WithDataVolume
+  nameWithType: KeycloakBuilderExtensions.WithDataVolume
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.WithDataVolume
+- uid: Aspire.Hosting.KeycloakBuilderExtensions.WithReference*
+  commentId: Overload:Aspire.Hosting.KeycloakBuilderExtensions.WithReference
+  href: Aspire.Hosting.KeycloakBuilderExtensions.html#Aspire_Hosting_KeycloakBuilderExtensions_WithReference__1_Aspire_Hosting_ApplicationModel_IResourceBuilder___0__Aspire_Hosting_ApplicationModel_IResourceBuilder_Aspire_Hosting_KeycloakRealmResource__System_String_
+  name: WithReference
+  nameWithType: KeycloakBuilderExtensions.WithReference
+  fullName: Aspire.Hosting.KeycloakBuilderExtensions.WithReference
+- uid: Aspire.Hosting.ApplicationModel.IResourceBuilder{{TResource}}
+  commentId: T:Aspire.Hosting.ApplicationModel.IResourceBuilder{``0}
+  parent: Aspire.Hosting.ApplicationModel
+  definition: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+  name: IResourceBuilder<TResource>
+  nameWithType: IResourceBuilder<TResource>
+  fullName: Aspire.Hosting.ApplicationModel.IResourceBuilder<TResource>
+  nameWithType.vb: IResourceBuilder(Of TResource)
+  fullName.vb: Aspire.Hosting.ApplicationModel.IResourceBuilder(Of TResource)
+  name.vb: IResourceBuilder(Of TResource)
+  spec.csharp:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: <
+  - name: TResource
+  - name: '>'
+  spec.vb:
+  - uid: Aspire.Hosting.ApplicationModel.IResourceBuilder`1
+    name: IResourceBuilder
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResource
+  - name: )

@@ -1,0 +1,93 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Admin
+  id: Keycloak.AuthServices.Sdk.Admin
+  children:
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakClient
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  - Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+  - Keycloak.AuthServices.Sdk.Admin.KeycloakClient
+  langs:
+  - csharp
+  - vb
+  name: Keycloak.AuthServices.Sdk.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Admin
+  fullName: Keycloak.AuthServices.Sdk.Admin
+  type: Namespace
+  assemblies:
+  - Keycloak.AuthServices.Sdk
+references:
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakClient.html
+  name: IKeycloakClient
+  nameWithType: IKeycloakClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakClient
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient.html
+  name: IKeycloakGroupClient
+  nameWithType: IKeycloakGroupClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakGroupClient
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient.html
+  name: IKeycloakRealmClient
+  nameWithType: IKeycloakRealmClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakRealmClient
+- uid: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+  parent: Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient.html
+  name: IKeycloakUserClient
+  nameWithType: IKeycloakUserClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.IKeycloakUserClient
+- uid: Keycloak.AuthServices.Sdk.Admin.KeycloakClient
+  commentId: T:Keycloak.AuthServices.Sdk.Admin.KeycloakClient
+  href: Keycloak.AuthServices.Sdk.Admin.KeycloakClient.html
+  name: KeycloakClient
+  nameWithType: KeycloakClient
+  fullName: Keycloak.AuthServices.Sdk.Admin.KeycloakClient
+- uid: Keycloak.AuthServices.Sdk.Admin
+  commentId: N:Keycloak.AuthServices.Sdk.Admin
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Admin
+  nameWithType: Keycloak.AuthServices.Sdk.Admin
+  fullName: Keycloak.AuthServices.Sdk.Admin
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Admin
+    name: Admin
+    href: Keycloak.AuthServices.Sdk.Admin.html

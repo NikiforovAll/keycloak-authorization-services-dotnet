@@ -1,0 +1,870 @@
+### YamlMime:ManagedReference
+items:
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: Keycloak.AuthServices.Sdk.Kiota
+  children:
+  - Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions,System.Action{System.Net.Http.HttpClient})
+  - Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  - Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  - Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions},System.Action{System.Net.Http.HttpClient})
+  - Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: ServiceCollectionExtensions
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+    startLine: 13
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota
+  summary: Adds HTTP Client SDKs
+  example: []
+  syntax:
+    content: public static class ServiceCollectionExtensions
+    content.vb: Public Module ServiceCollectionExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  id: AddKiotaKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKiotaKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action<HttpClient>?, string)
+  nameWithType: ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action<HttpClient>?, string)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action<System.Net.Http.HttpClient>?, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKiotaKeycloakAdminHttpClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+    startLine: 24
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota
+  summary: Adds <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient" data-throw-if-not-resolved="false"></xref> for Keycloak Admin API alias for <xref href="Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection%2cMicrosoft.Extensions.Configuration.IConfiguration%2cSystem.Action%7bSystem.Net.Http.HttpClient%7d%2cSystem.String)" data-throw-if-not-resolved="false"></xref>. You can use it to resolve possible namespaces issues.
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddKiotaKeycloakAdminHttpClient(this IServiceCollection services, IConfiguration configuration, Action<HttpClient>? configureClient = null, string keycloakClientSectionName = "Keycloak")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The IServiceCollection to add the HttpClient to.
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The IConfiguration instance to bind the Keycloak options from.
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: An optional action to configure the HttpClient.
+    - id: keycloakClientSectionName
+      type: System.String
+      description: The name of the configuration section containing the Keycloak client options.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: The IHttpClientBuilder for further configuration.
+    content.vb: Public Shared Function AddKiotaKeycloakAdminHttpClient(services As IServiceCollection, configuration As IConfiguration, configureClient As Action(Of HttpClient) = Nothing, keycloakClientSectionName As String = "Keycloak") As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient*
+  nameWithType.vb: ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action(Of System.Net.Http.HttpClient), String)
+  name.vb: AddKiotaKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  id: AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action<HttpClient>?, string)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action<HttpClient>?, string)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action<System.Net.Http.HttpClient>?, string)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAdminHttpClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+    startLine: 45
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota
+  summary: Adds <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient" data-throw-if-not-resolved="false"></xref> for Keycloak Admin API.
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddKeycloakAdminHttpClient(this IServiceCollection services, IConfiguration configuration, Action<HttpClient>? configureClient = null, string keycloakClientSectionName = "Keycloak")
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The IServiceCollection to add the HttpClient to.
+    - id: configuration
+      type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The IConfiguration instance to bind the Keycloak options from.
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: An optional action to configure the HttpClient.
+    - id: keycloakClientSectionName
+      type: System.String
+      description: The name of the configuration section containing the Keycloak client options.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: The IHttpClientBuilder for further configuration.
+    content.vb: Public Shared Function AddKeycloakAdminHttpClient(services As IServiceCollection, configuration As IConfiguration, configureClient As Action(Of HttpClient) = Nothing, keycloakClientSectionName As String = "Keycloak") As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient*
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action(Of System.Net.Http.HttpClient), String)
+  name.vb: AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  id: AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfigurationSection,System.Action{System.Net.Http.HttpClient})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAdminHttpClient(IServiceCollection, IConfigurationSection, Action<HttpClient>?)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, IConfigurationSection, Action<HttpClient>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection, System.Action<System.Net.Http.HttpClient>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAdminHttpClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+    startLine: 63
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota
+  summary: Adds <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient" data-throw-if-not-resolved="false"></xref> for Keycloak Admin API.
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddKeycloakAdminHttpClient(this IServiceCollection services, IConfigurationSection configurationSection, Action<HttpClient>? configureClient = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The IServiceCollection to add the HttpClient to.
+    - id: configurationSection
+      type: Microsoft.Extensions.Configuration.IConfigurationSection
+      description: The IConfigurationSection to bind the Keycloak options from.
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: An optional action to configure the HttpClient.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: The IHttpClientBuilder for further configuration.
+    content.vb: Public Shared Function AddKeycloakAdminHttpClient(services As IServiceCollection, configurationSection As IConfigurationSection, configureClient As Action(Of HttpClient) = Nothing) As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient*
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, IConfigurationSection, Action(Of HttpClient))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfigurationSection, System.Action(Of System.Net.Http.HttpClient))
+  name.vb: AddKeycloakAdminHttpClient(IServiceCollection, IConfigurationSection, Action(Of HttpClient))
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions},System.Action{System.Net.Http.HttpClient})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions},System.Action{System.Net.Http.HttpClient})
+  id: AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions},System.Action{System.Net.Http.HttpClient})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAdminHttpClient(IServiceCollection, Action<KeycloakAdminClientOptions>, Action<HttpClient>?)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, Action<KeycloakAdminClientOptions>, Action<HttpClient>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions>, System.Action<System.Net.Http.HttpClient>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAdminHttpClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+    startLine: 80
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota
+  summary: Adds <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient" data-throw-if-not-resolved="false"></xref> for Keycloak Admin API.
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddKeycloakAdminHttpClient(this IServiceCollection services, Action<KeycloakAdminClientOptions> configureKeycloakOptions, Action<HttpClient>? configureClient = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The IServiceCollection to add the HttpClient to.
+    - id: configureKeycloakOptions
+      type: System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions}
+      description: An action to configure the Keycloak client options.
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: An optional action to configure the HttpClient.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: The IHttpClientBuilder for further configuration.
+    content.vb: Public Shared Function AddKeycloakAdminHttpClient(services As IServiceCollection, configureKeycloakOptions As Action(Of KeycloakAdminClientOptions), configureClient As Action(Of HttpClient) = Nothing) As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient*
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, Action(Of KeycloakAdminClientOptions), Action(Of HttpClient))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions), System.Action(Of System.Net.Http.HttpClient))
+  name.vb: AddKeycloakAdminHttpClient(IServiceCollection, Action(Of KeycloakAdminClientOptions), Action(Of HttpClient))
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions,System.Action{System.Net.Http.HttpClient})
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions,System.Action{System.Net.Http.HttpClient})
+  id: AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions,System.Action{System.Net.Http.HttpClient})
+  isExtensionMethod: true
+  parent: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddKeycloakAdminHttpClient(IServiceCollection, KeycloakAdminClientOptions, Action<HttpClient>?)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, KeycloakAdminClientOptions, Action<HttpClient>?)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions, System.Action<System.Net.Http.HttpClient>?)
+  type: Method
+  source:
+    remote:
+      path: src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+      branch: 107-docfx-documentation
+      repo: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet
+    id: AddKeycloakAdminHttpClient
+    path: ../src/Keycloak.AuthServices.Sdk.Kiota/ServiceCollectionExtensions.cs
+    startLine: 131
+  assemblies:
+  - Keycloak.AuthServices.Sdk.Kiota
+  namespace: Keycloak.AuthServices.Sdk.Kiota
+  summary: Adds <xref href="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient" data-throw-if-not-resolved="false"></xref> for Keycloak Admin API.
+  example: []
+  syntax:
+    content: public static IHttpClientBuilder AddKeycloakAdminHttpClient(this IServiceCollection services, KeycloakAdminClientOptions keycloakOptions, Action<HttpClient>? configureClient = null)
+    parameters:
+    - id: services
+      type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The IServiceCollection to add the HttpClient to.
+    - id: keycloakOptions
+      type: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+      description: The Keycloak client options.
+    - id: configureClient
+      type: System.Action{System.Net.Http.HttpClient}
+      description: An optional action to configure the HttpClient.
+    return:
+      type: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+      description: The IHttpClientBuilder for further configuration.
+    content.vb: Public Shared Function AddKeycloakAdminHttpClient(services As IServiceCollection, keycloakOptions As KeycloakAdminClientOptions, configureClient As Action(Of HttpClient) = Nothing) As IHttpClientBuilder
+  overload: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient*
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, KeycloakAdminClientOptions, Action(Of HttpClient))
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions, System.Action(Of System.Net.Http.HttpClient))
+  name.vb: AddKeycloakAdminHttpClient(IServiceCollection, KeycloakAdminClientOptions, Action(Of HttpClient))
+references:
+- uid: Keycloak.AuthServices.Sdk.Kiota
+  commentId: N:Keycloak.AuthServices.Sdk.Kiota
+  href: Keycloak.html
+  name: Keycloak.AuthServices.Sdk.Kiota
+  nameWithType: Keycloak.AuthServices.Sdk.Kiota
+  fullName: Keycloak.AuthServices.Sdk.Kiota
+  spec.csharp:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+  spec.vb:
+  - uid: Keycloak
+    name: Keycloak
+    href: Keycloak.html
+  - name: .
+  - uid: Keycloak.AuthServices
+    name: AuthServices
+    href: Keycloak.AuthServices.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk
+    name: Sdk
+    href: Keycloak.AuthServices.Sdk.html
+  - name: .
+  - uid: Keycloak.AuthServices.Sdk.Kiota
+    name: Kiota
+    href: Keycloak.AuthServices.Sdk.Kiota.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+  href: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient.html
+  name: KeycloakAdminApiClient
+  nameWithType: KeycloakAdminApiClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  commentId: M:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+  isExternal: true
+  href: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html#Keycloak_AuthServices_Sdk_Kiota_ServiceCollectionExtensions_AddKeycloakAdminHttpClient_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_Action_System_Net_Http_HttpClient__System_String_
+  name: AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action<HttpClient>, string)
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action<HttpClient>, string)
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action<System.Net.Http.HttpClient>, string)
+  nameWithType.vb: ServiceCollectionExtensions.AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+  fullName.vb: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, System.Action(Of System.Net.Http.HttpClient), String)
+  name.vb: AddKeycloakAdminHttpClient(IServiceCollection, IConfiguration, Action(Of HttpClient), String)
+  spec.csharp:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+    name: AddKeycloakAdminHttpClient
+    href: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html#Keycloak_AuthServices_Sdk_Kiota_ServiceCollectionExtensions_AddKeycloakAdminHttpClient_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_Action_System_Net_Http_HttpClient__System_String_
+  - name: (
+  - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    name: IServiceCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Configuration.IConfiguration
+    name: IConfiguration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Net.Http.HttpClient
+    name: HttpClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Action{System.Net.Http.HttpClient},System.String)
+    name: AddKeycloakAdminHttpClient
+    href: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html#Keycloak_AuthServices_Sdk_Kiota_ServiceCollectionExtensions_AddKeycloakAdminHttpClient_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_Action_System_Net_Http_HttpClient__System_String_
+  - name: (
+  - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    name: IServiceCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Configuration.IConfiguration
+    name: IConfiguration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.Http.HttpClient
+    name: HttpClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient
+  href: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html#Keycloak_AuthServices_Sdk_Kiota_ServiceCollectionExtensions_AddKiotaKeycloakAdminHttpClient_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_Action_System_Net_Http_HttpClient__System_String_
+  name: AddKiotaKeycloakAdminHttpClient
+  nameWithType: ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKiotaKeycloakAdminHttpClient
+- uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+  commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: System.Action{System.Net.Http.HttpClient}
+  commentId: T:System.Action{System.Net.Http.HttpClient}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<HttpClient>
+  nameWithType: Action<HttpClient>
+  fullName: System.Action<System.Net.Http.HttpClient>
+  nameWithType.vb: Action(Of HttpClient)
+  fullName.vb: System.Action(Of System.Net.Http.HttpClient)
+  name.vb: Action(Of HttpClient)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Net.Http.HttpClient
+    name: HttpClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.Http.HttpClient
+    name: HttpClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+  commentId: T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+  parent: Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder
+  name: IHttpClientBuilder
+  nameWithType: IHttpClientBuilder
+  fullName: Microsoft.Extensions.DependencyInjection.IHttpClientBuilder
+- uid: Microsoft.Extensions.DependencyInjection
+  commentId: N:Microsoft.Extensions.DependencyInjection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.DependencyInjection
+  nameWithType: Microsoft.Extensions.DependencyInjection
+  fullName: Microsoft.Extensions.DependencyInjection
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.DependencyInjection
+    name: DependencyInjection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient*
+  commentId: Overload:Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient
+  href: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.html#Keycloak_AuthServices_Sdk_Kiota_ServiceCollectionExtensions_AddKeycloakAdminHttpClient_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_Action_System_Net_Http_HttpClient__System_String_
+  name: AddKeycloakAdminHttpClient
+  nameWithType: ServiceCollectionExtensions.AddKeycloakAdminHttpClient
+  fullName: Keycloak.AuthServices.Sdk.Kiota.ServiceCollectionExtensions.AddKeycloakAdminHttpClient
+- uid: Microsoft.Extensions.Configuration.IConfigurationSection
+  commentId: T:Microsoft.Extensions.Configuration.IConfigurationSection
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfigurationsection
+  name: IConfigurationSection
+  nameWithType: IConfigurationSection
+  fullName: Microsoft.Extensions.Configuration.IConfigurationSection
+- uid: System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions}
+  commentId: T:System.Action{Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<KeycloakAdminClientOptions>
+  nameWithType: Action<KeycloakAdminClientOptions>
+  fullName: System.Action<Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions>
+  nameWithType.vb: Action(Of KeycloakAdminClientOptions)
+  fullName.vb: System.Action(Of Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions)
+  name.vb: Action(Of KeycloakAdminClientOptions)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+    name: KeycloakAdminClientOptions
+    href: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+    name: KeycloakAdminClientOptions
+    href: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions.html
+  - name: )
+- uid: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+  commentId: T:Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
+  parent: Keycloak.AuthServices.Sdk.Kiota
+  href: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions.html
+  name: KeycloakAdminClientOptions
+  nameWithType: KeycloakAdminClientOptions
+  fullName: Keycloak.AuthServices.Sdk.Kiota.KeycloakAdminClientOptions
