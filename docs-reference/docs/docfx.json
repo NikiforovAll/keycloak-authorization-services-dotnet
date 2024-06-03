@@ -1,0 +1,29 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../../src",
+          "files": ["**.csproj"],
+          "exclude": ["**/bin/**", "**/obj/**", "**/[Tt]ests/**"]
+        }
+      ],
+      "dest": "./Artefacts",
+      "includePrivateMembers": false,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "noRestore": false,
+      "namespaceLayout": "flattened"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "*.{md,yml}"
+        ]
+      }
+    ],
+    "dest": "_site"
+  }
+}
