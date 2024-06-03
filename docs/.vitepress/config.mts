@@ -17,8 +17,9 @@ export default withMermaid({
         nav: [
             { text: 'Home', link: '/' },
             { text: 'Getting Started', link: '/introduction' },
-            { text: 'Migration', link: '/migration' },
             { text: 'Examples', link: 'examples/auth-getting-started' },
+            { text: 'Migration', link: '/migration' },
+            { text: 'API Reference', link: 'https://nikiforovall.github.io/keycloak-authorization-services-dotnet-docs/' },
             { text: 'Blog', link: 'blogs' },
             { text: 'Join Chat', link: 'https://discord.gg/S449PhBPRQ' },
         ],

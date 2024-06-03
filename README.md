@@ -24,7 +24,11 @@ Easy Authentication and Authorization with Keycloak in .NET.
 
 ## Documentation
 
-See the docs: <https://nikiforovall.github.io/keycloak-authorization-services-dotnet>
+For Developer Documentation see: <https://nikiforovall.github.io/keycloak-authorization-services-dotnet>
+
+### API Reference
+
+See: <https://nikiforovall.github.io/keycloak-authorization-services-dotnet-docs>
 
 ## Getting Started
 
