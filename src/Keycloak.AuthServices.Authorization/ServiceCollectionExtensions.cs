@@ -94,6 +94,8 @@ public static class ServiceCollectionExtensions
 
         services.AddSingleton<KeycloakMetrics>();
 
+        services.AddMetrics();
+
         services.AddTransient<IClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<
