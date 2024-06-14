@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\credential-registrators
     /// </summary>
-    public class CredentialRegistratorsRequestBuilder : BaseRequestBuilder 
+    public class CredentialRegistratorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CredentialRegistratorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CredentialRegistratorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -64,11 +65,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CredentialRegistratorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CredentialRegistratorsRequestBuilder WithUrl(string rawUrl)
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new CredentialRegistratorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

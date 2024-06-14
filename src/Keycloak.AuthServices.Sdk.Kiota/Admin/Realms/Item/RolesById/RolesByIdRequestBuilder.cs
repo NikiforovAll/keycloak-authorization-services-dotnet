@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\roles-by-id
     /// </summary>
-    public class RolesByIdRequestBuilder : BaseRequestBuilder 
+    public class RolesByIdRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item.rolesById.item collection</summary>
         /// <param name="position">id of role</param>
-        /// <returns>A <see cref="RoleItemRequestBuilder"/></returns>
-        public RoleItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.RoleItemRequestBuilder"/></returns>
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.RoleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("role%2Did", position);
-                return new RoleItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.Item.RoleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RolesByIdRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.RolesByIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RolesByIdRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.RolesByIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

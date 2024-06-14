@@ -9,26 +9,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms
     /// </summary>
-    public class RealmsRequestBuilder : BaseRequestBuilder 
+    public class RealmsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item collection</summary>
         /// <param name="position">realm name (not id!)</param>
-        /// <returns>A <see cref="WithRealmItemRequestBuilder"/></returns>
-        public WithRealmItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder"/></returns>
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("realm", position);
-                return new WithRealmItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RealmsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +37,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RealmsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,20 +47,20 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms {
         /// <summary>
         /// Get accessible realms Returns a list of accessible realms. The list is filtered based on what realms the caller is allowed to view.
         /// </summary>
-        /// <returns>A List&lt;RealmRepresentation&gt;</returns>
+        /// <returns>A List&lt;Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RealmRepresentation>?> GetAsync(Action<RequestConfiguration<RealmsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation>?> GetAsync(Action<RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder.RealmsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<RealmRepresentation>> GetAsync(Action<RequestConfiguration<RealmsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation>> GetAsync(Action<RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder.RealmsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<RealmRepresentation>(requestInfo, RealmRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation>(requestInfo, Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -88,11 +89,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RealmsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder.RealmsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RealmsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder.RealmsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -124,11 +125,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RealmsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RealmsRequestBuilder WithUrl(string rawUrl)
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder WithUrl(string rawUrl)
         {
-            return new RealmsRequestBuilder(rawUrl, RequestAdapter);
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get accessible realms Returns a list of accessible realms. The list is filtered based on what realms the caller is allowed to view.

@@ -8,29 +8,30 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\identity-provider
     /// </summary>
-    public class IdentityProviderRequestBuilder : BaseRequestBuilder 
+    public class IdentityProviderRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The importConfig property</summary>
-        public ImportConfigRequestBuilder ImportConfig
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig.ImportConfigRequestBuilder ImportConfig
         {
-            get => new ImportConfigRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.ImportConfig.ImportConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The instances property</summary>
-        public InstancesRequestBuilder Instances
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.InstancesRequestBuilder Instances
         {
-            get => new InstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The providers property</summary>
-        public ProvidersRequestBuilder Providers
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.ProvidersRequestBuilder Providers
         {
-            get => new ProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.Providers.ProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="IdentityProviderRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.IdentityProviderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +39,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvid
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IdentityProviderRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.IdentityProviderRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

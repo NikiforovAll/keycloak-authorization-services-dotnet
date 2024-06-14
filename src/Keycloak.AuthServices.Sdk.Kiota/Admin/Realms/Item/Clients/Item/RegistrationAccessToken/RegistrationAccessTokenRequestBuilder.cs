@@ -8,14 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\registration-access-token
     /// </summary>
-    public class RegistrationAccessTokenRequestBuilder : BaseRequestBuilder 
+    public class RegistrationAccessTokenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RegistrationAccessTokenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken.RegistrationAccessTokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -23,7 +24,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RegistrationAccessTokenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken.RegistrationAccessTokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,20 +34,20 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         /// <summary>
         /// Generate a new registration access token for the client
         /// </summary>
-        /// <returns>A <see cref="ClientRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ClientRepresentation?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ClientRepresentation> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ClientRepresentation>(requestInfo, ClientRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation>(requestInfo, Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generate a new registration access token for the client
@@ -70,11 +71,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RegistrationAccessTokenRequestBuilder"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken.RegistrationAccessTokenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RegistrationAccessTokenRequestBuilder WithUrl(string rawUrl)
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken.RegistrationAccessTokenRequestBuilder WithUrl(string rawUrl)
         {
-            return new RegistrationAccessTokenRequestBuilder(rawUrl, RequestAdapter);
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.RegistrationAccessToken.RegistrationAccessTokenRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     [Obsolete("")]
     #pragma warning disable CS1591
-    public class OAuthClientRepresentation_claims : ClaimRepresentation, IParsable 
+    public class OAuthClientRepresentation_claims : Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClaimRepresentation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OAuthClientRepresentation_claims"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OAuthClientRepresentation_claims CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OAuthClientRepresentation_claims();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ManagementPermissionReference : IAdditionalDataHolder, IParsable 
+    public class ManagementPermissionReference : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -24,13 +25,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The scopePermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagementPermissionReference_scopePermissions? ScopePermissions { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference_scopePermissions? ScopePermissions { get; set; }
 #nullable restore
 #else
-        public ManagementPermissionReference_scopePermissions ScopePermissions { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference_scopePermissions ScopePermissions { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagementPermissionReference"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference"/> and sets the default values.
         /// </summary>
         public ManagementPermissionReference()
         {
@@ -39,12 +40,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementPermissionReference"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagementPermissionReference CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementPermissionReference();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,9 +55,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"resource", n => { Resource = n.GetStringValue(); } },
-                {"scopePermissions", n => { ScopePermissions = n.GetObjectValue<ManagementPermissionReference_scopePermissions>(ManagementPermissionReference_scopePermissions.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "resource", n => { Resource = n.GetStringValue(); } },
+                { "scopePermissions", n => { ScopePermissions = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference_scopePermissions>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference_scopePermissions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +69,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("resource", Resource);
-            writer.WriteObjectValue<ManagementPermissionReference_scopePermissions>("scopePermissions", ScopePermissions);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference_scopePermissions>("scopePermissions", ScopePermissions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -6,26 +6,27 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\offline-sessions
     /// </summary>
-    public class OfflineSessionsRequestBuilder : BaseRequestBuilder 
+    public class OfflineSessionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item.users.item.offlineSessions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="WithClientUuItemRequestBuilder"/></returns>
-        public WithClientUuItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.Item.WithClientUuItemRequestBuilder"/></returns>
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.Item.WithClientUuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("clientUuid", position);
-                return new WithClientUuItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.Item.WithClientUuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OfflineSessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.OfflineSessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,7 +34,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Off
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OfflineSessionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.OfflineSessions.OfflineSessionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

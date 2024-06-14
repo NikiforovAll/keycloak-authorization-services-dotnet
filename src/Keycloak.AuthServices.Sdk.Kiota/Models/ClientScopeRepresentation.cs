@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ClientScopeRepresentation : IAdditionalDataHolder, IParsable 
+    public class ClientScopeRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClientScopeRepresentation_attributes? Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public ClientScopeRepresentation_attributes Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation_attributes Attributes { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,13 +55,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The protocolMappers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
 #nullable restore
 #else
-        public List<ProtocolMapperRepresentation> ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation> ProtocolMappers { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClientScopeRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation"/> and sets the default values.
         /// </summary>
         public ClientScopeRepresentation()
         {
@@ -69,12 +70,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClientScopeRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClientScopeRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClientScopeRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,12 +85,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributes", n => { Attributes = n.GetObjectValue<ClientScopeRepresentation_attributes>(ClientScopeRepresentation_attributes.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"protocol", n => { Protocol = n.GetStringValue(); } },
-                {"protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<ProtocolMapperRepresentation>(ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation_attributes.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -99,12 +100,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ClientScopeRepresentation_attributes>("attributes", Attributes);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation_attributes>("attributes", Attributes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("protocol", Protocol);
-            writer.WriteCollectionOfObjectValues<ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

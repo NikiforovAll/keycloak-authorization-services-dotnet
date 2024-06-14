@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class PolicyEvaluationRequest : IAdditionalDataHolder, IParsable 
+    public class PolicyEvaluationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -22,20 +23,20 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PolicyEvaluationRequest_context? Context { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest_context? Context { get; set; }
 #nullable restore
 #else
-        public PolicyEvaluationRequest_context Context { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest_context Context { get; set; }
 #endif
         /// <summary>The entitlements property</summary>
         public bool? Entitlements { get; set; }
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceRepresentation>? Resources { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>? Resources { get; set; }
 #nullable restore
 #else
-        public List<ResourceRepresentation> Resources { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation> Resources { get; set; }
 #endif
         /// <summary>The roleIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +55,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string UserId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PolicyEvaluationRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest"/> and sets the default values.
         /// </summary>
         public PolicyEvaluationRequest()
         {
@@ -63,12 +64,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyEvaluationRequest"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PolicyEvaluationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PolicyEvaluationRequest();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,12 +79,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientId", n => { ClientId = n.GetStringValue(); } },
-                {"context", n => { Context = n.GetObjectValue<PolicyEvaluationRequest_context>(PolicyEvaluationRequest_context.CreateFromDiscriminatorValue); } },
-                {"entitlements", n => { Entitlements = n.GetBoolValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<ResourceRepresentation>(ResourceRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roleIds", n => { RoleIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "context", n => { Context = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest_context>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest_context.CreateFromDiscriminatorValue); } },
+                { "entitlements", n => { Entitlements = n.GetBoolValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleIds", n => { RoleIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,9 +95,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientId", ClientId);
-            writer.WriteObjectValue<PolicyEvaluationRequest_context>("context", Context);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyEvaluationRequest_context>("context", Context);
             writer.WriteBoolValue("entitlements", Entitlements);
-            writer.WriteCollectionOfObjectValues<ResourceRepresentation>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>("resources", Resources);
             writer.WriteCollectionOfPrimitiveValues<string>("roleIds", RoleIds);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);

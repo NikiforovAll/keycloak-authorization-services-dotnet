@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ResourceOwnerRepresentation : IAdditionalDataHolder, IParsable 
+    public class ResourceOwnerRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,7 +29,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string Name { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ResourceOwnerRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceOwnerRepresentation"/> and sets the default values.
         /// </summary>
         public ResourceOwnerRepresentation()
         {
@@ -37,12 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResourceOwnerRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceOwnerRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ResourceOwnerRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceOwnerRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResourceOwnerRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceOwnerRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,8 +53,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

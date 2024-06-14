@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ClientInitialAccessCreatePresentation : IAdditionalDataHolder, IParsable 
+    public class ClientInitialAccessCreatePresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -16,7 +17,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The expiration property</summary>
         public int? Expiration { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="ClientInitialAccessCreatePresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientInitialAccessCreatePresentation"/> and sets the default values.
         /// </summary>
         public ClientInitialAccessCreatePresentation()
         {
@@ -25,12 +26,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClientInitialAccessCreatePresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientInitialAccessCreatePresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClientInitialAccessCreatePresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientInitialAccessCreatePresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClientInitialAccessCreatePresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientInitialAccessCreatePresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,8 +41,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"count", n => { Count = n.GetIntValue(); } },
-                {"expiration", n => { Expiration = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetIntValue(); } },
+                { "expiration", n => { Expiration = n.GetIntValue(); } },
             };
         }
         /// <summary>

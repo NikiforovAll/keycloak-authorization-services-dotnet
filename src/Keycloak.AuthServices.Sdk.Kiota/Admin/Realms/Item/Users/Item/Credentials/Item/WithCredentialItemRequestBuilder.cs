@@ -10,29 +10,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\credentials\{credentialId}
     /// </summary>
-    public class WithCredentialItemRequestBuilder : BaseRequestBuilder 
+    public class WithCredentialItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The moveAfter property</summary>
-        public MoveAfterRequestBuilder MoveAfter
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter.MoveAfterRequestBuilder MoveAfter
         {
-            get => new MoveAfterRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveAfter.MoveAfterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The moveToFirst property</summary>
-        public MoveToFirstRequestBuilder MoveToFirst
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveToFirst.MoveToFirstRequestBuilder MoveToFirst
         {
-            get => new MoveToFirstRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.MoveToFirst.MoveToFirstRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The userLabel property</summary>
-        public UserLabelRequestBuilder UserLabel
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.UserLabel.UserLabelRequestBuilder UserLabel
         {
-            get => new UserLabelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.UserLabel.UserLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCredentialItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.WithCredentialItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -40,7 +41,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Cre
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCredentialItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.WithCredentialItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,11 +86,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Cre
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithCredentialItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.WithCredentialItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithCredentialItemRequestBuilder WithUrl(string rawUrl)
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.WithCredentialItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithCredentialItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Credentials.Item.WithCredentialItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

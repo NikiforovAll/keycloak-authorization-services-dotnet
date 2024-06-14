@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UPConfig : IAdditionalDataHolder, IParsable 
+    public class UPConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,23 +15,23 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UPAttribute>? Attributes { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute>? Attributes { get; set; }
 #nullable restore
 #else
-        public List<UPAttribute> Attributes { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute> Attributes { get; set; }
 #endif
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UPGroup>? Groups { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup>? Groups { get; set; }
 #nullable restore
 #else
-        public List<UPGroup> Groups { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup> Groups { get; set; }
 #endif
         /// <summary>The unmanagedAttributePolicy property</summary>
         public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy? UnmanagedAttributePolicy { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="UPConfig"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPConfig"/> and sets the default values.
         /// </summary>
         public UPConfig()
         {
@@ -39,12 +40,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UPConfig"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UPConfig CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UPConfig();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,9 +55,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributes", n => { Attributes = n.GetCollectionOfObjectValues<UPAttribute>(UPAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groups", n => { Groups = n.GetCollectionOfObjectValues<UPGroup>(UPGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"unmanagedAttributePolicy", n => { UnmanagedAttributePolicy = n.GetEnumValue<UnmanagedAttributePolicy>(); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unmanagedAttributePolicy", n => { UnmanagedAttributePolicy = n.GetEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy>(); } },
             };
         }
         /// <summary>
@@ -66,9 +67,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<UPAttribute>("attributes", Attributes);
-            writer.WriteCollectionOfObjectValues<UPGroup>("groups", Groups);
-            writer.WriteEnumValue<UnmanagedAttributePolicy>("unmanagedAttributePolicy", UnmanagedAttributePolicy);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPGroup>("groups", Groups);
+            writer.WriteEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UnmanagedAttributePolicy>("unmanagedAttributePolicy", UnmanagedAttributePolicy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

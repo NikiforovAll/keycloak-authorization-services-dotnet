@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UserFederationProviderRepresentation : IAdditionalDataHolder, IParsable 
+    public class UserFederationProviderRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -16,10 +17,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserFederationProviderRepresentation_config? Config { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation_config? Config { get; set; }
 #nullable restore
 #else
-        public UserFederationProviderRepresentation_config Config { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation_config Config { get; set; }
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,7 +53,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string ProviderName { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserFederationProviderRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation"/> and sets the default values.
         /// </summary>
         public UserFederationProviderRepresentation()
         {
@@ -61,12 +62,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserFederationProviderRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserFederationProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserFederationProviderRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,14 +77,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"changedSyncPeriod", n => { ChangedSyncPeriod = n.GetIntValue(); } },
-                {"config", n => { Config = n.GetObjectValue<UserFederationProviderRepresentation_config>(UserFederationProviderRepresentation_config.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"fullSyncPeriod", n => { FullSyncPeriod = n.GetIntValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"lastSync", n => { LastSync = n.GetIntValue(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"providerName", n => { ProviderName = n.GetStringValue(); } },
+                { "changedSyncPeriod", n => { ChangedSyncPeriod = n.GetIntValue(); } },
+                { "config", n => { Config = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation_config>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation_config.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "fullSyncPeriod", n => { FullSyncPeriod = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "lastSync", n => { LastSync = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "providerName", n => { ProviderName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,7 +95,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("changedSyncPeriod", ChangedSyncPeriod);
-            writer.WriteObjectValue<UserFederationProviderRepresentation_config>("config", Config);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation_config>("config", Config);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("fullSyncPeriod", FullSyncPeriod);
             writer.WriteStringValue("id", Id);

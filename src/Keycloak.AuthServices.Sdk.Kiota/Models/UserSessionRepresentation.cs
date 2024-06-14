@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UserSessionRepresentation : IAdditionalDataHolder, IParsable 
+    public class UserSessionRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The clients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserSessionRepresentation_clients? Clients { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation_clients? Clients { get; set; }
 #nullable restore
 #else
-        public UserSessionRepresentation_clients Clients { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation_clients Clients { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,6 +42,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public bool? RememberMe { get; set; }
         /// <summary>The start property</summary>
         public long? Start { get; set; }
+        /// <summary>The transientUser property</summary>
+        public bool? TransientUser { get; set; }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +61,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string Username { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserSessionRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation"/> and sets the default values.
         /// </summary>
         public UserSessionRepresentation()
         {
@@ -67,12 +70,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSessionRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserSessionRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSessionRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,14 +85,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clients", n => { Clients = n.GetObjectValue<UserSessionRepresentation_clients>(UserSessionRepresentation_clients.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"lastAccess", n => { LastAccess = n.GetLongValue(); } },
-                {"rememberMe", n => { RememberMe = n.GetBoolValue(); } },
-                {"start", n => { Start = n.GetLongValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"username", n => { Username = n.GetStringValue(); } },
+                { "clients", n => { Clients = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation_clients>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation_clients.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "lastAccess", n => { LastAccess = n.GetLongValue(); } },
+                { "rememberMe", n => { RememberMe = n.GetBoolValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
+                { "transientUser", n => { TransientUser = n.GetBoolValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -99,12 +103,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UserSessionRepresentation_clients>("clients", Clients);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation_clients>("clients", Clients);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteLongValue("lastAccess", LastAccess);
             writer.WriteBoolValue("rememberMe", RememberMe);
             writer.WriteLongValue("start", Start);
+            writer.WriteBoolValue("transientUser", TransientUser);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("username", Username);
             writer.WriteAdditionalData(AdditionalData);

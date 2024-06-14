@@ -4,36 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class GroupRepresentation : IAdditionalDataHolder, IParsable 
+    public class GroupRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupRepresentation_access? Access { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_access? Access { get; set; }
 #nullable restore
 #else
-        public GroupRepresentation_access Access { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_access Access { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupRepresentation_attributes? Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public GroupRepresentation_attributes Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_attributes Attributes { get; set; }
 #endif
         /// <summary>The clientRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupRepresentation_clientRoles? ClientRoles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_clientRoles? ClientRoles { get; set; }
 #nullable restore
 #else
-        public GroupRepresentation_clientRoles ClientRoles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_clientRoles ClientRoles { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,13 +81,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The subGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupRepresentation>? SubGroups { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>? SubGroups { get; set; }
 #nullable restore
 #else
-        public List<GroupRepresentation> SubGroups { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation> SubGroups { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GroupRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation"/> and sets the default values.
         /// </summary>
         public GroupRepresentation()
         {
@@ -95,12 +96,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GroupRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,16 +111,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"access", n => { Access = n.GetObjectValue<GroupRepresentation_access>(GroupRepresentation_access.CreateFromDiscriminatorValue); } },
-                {"attributes", n => { Attributes = n.GetObjectValue<GroupRepresentation_attributes>(GroupRepresentation_attributes.CreateFromDiscriminatorValue); } },
-                {"clientRoles", n => { ClientRoles = n.GetObjectValue<GroupRepresentation_clientRoles>(GroupRepresentation_clientRoles.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"parentId", n => { ParentId = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"realmRoles", n => { RealmRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"subGroupCount", n => { SubGroupCount = n.GetLongValue(); } },
-                {"subGroups", n => { SubGroups = n.GetCollectionOfObjectValues<GroupRepresentation>(GroupRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "access", n => { Access = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_access>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_access.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_attributes.CreateFromDiscriminatorValue); } },
+                { "clientRoles", n => { ClientRoles = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_clientRoles>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_clientRoles.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "parentId", n => { ParentId = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "realmRoles", n => { RealmRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "subGroupCount", n => { SubGroupCount = n.GetLongValue(); } },
+                { "subGroups", n => { SubGroups = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -129,16 +130,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<GroupRepresentation_access>("access", Access);
-            writer.WriteObjectValue<GroupRepresentation_attributes>("attributes", Attributes);
-            writer.WriteObjectValue<GroupRepresentation_clientRoles>("clientRoles", ClientRoles);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_access>("access", Access);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_attributes>("attributes", Attributes);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation_clientRoles>("clientRoles", ClientRoles);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("path", Path);
             writer.WriteCollectionOfPrimitiveValues<string>("realmRoles", RealmRoles);
             writer.WriteLongValue("subGroupCount", SubGroupCount);
-            writer.WriteCollectionOfObjectValues<GroupRepresentation>("subGroups", SubGroups);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>("subGroups", SubGroups);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,74 +17,75 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\authentication
     /// </summary>
-    public class AuthenticationRequestBuilder : BaseRequestBuilder 
+    public class AuthenticationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The authenticatorProviders property</summary>
-        public AuthenticatorProvidersRequestBuilder AuthenticatorProviders
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticatorProviders.AuthenticatorProvidersRequestBuilder AuthenticatorProviders
         {
-            get => new AuthenticatorProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticatorProviders.AuthenticatorProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientAuthenticatorProviders property</summary>
-        public ClientAuthenticatorProvidersRequestBuilder ClientAuthenticatorProviders
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders.ClientAuthenticatorProvidersRequestBuilder ClientAuthenticatorProviders
         {
-            get => new ClientAuthenticatorProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders.ClientAuthenticatorProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The config property</summary>
-        public ConfigRequestBuilder Config
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.ConfigRequestBuilder Config
         {
-            get => new ConfigRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.ConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The configDescription property</summary>
-        public ConfigDescriptionRequestBuilder ConfigDescription
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription.ConfigDescriptionRequestBuilder ConfigDescription
         {
-            get => new ConfigDescriptionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ConfigDescription.ConfigDescriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The executions property</summary>
-        public ExecutionsRequestBuilder Executions
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.ExecutionsRequestBuilder Executions
         {
-            get => new ExecutionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Executions.ExecutionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The flows property</summary>
-        public FlowsRequestBuilder Flows
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.FlowsRequestBuilder Flows
         {
-            get => new FlowsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Flows.FlowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The formActionProviders property</summary>
-        public FormActionProvidersRequestBuilder FormActionProviders
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormActionProviders.FormActionProvidersRequestBuilder FormActionProviders
         {
-            get => new FormActionProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormActionProviders.FormActionProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The formProviders property</summary>
-        public FormProvidersRequestBuilder FormProviders
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormProviders.FormProvidersRequestBuilder FormProviders
         {
-            get => new FormProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.FormProviders.FormProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The perClientConfigDescription property</summary>
-        public PerClientConfigDescriptionRequestBuilder PerClientConfigDescription
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionRequestBuilder PerClientConfigDescription
         {
-            get => new PerClientConfigDescriptionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registerRequiredAction property</summary>
-        public RegisterRequiredActionRequestBuilder RegisterRequiredAction
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder RegisterRequiredAction
         {
-            get => new RegisterRequiredActionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RegisterRequiredAction.RegisterRequiredActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The requiredActions property</summary>
-        public RequiredActionsRequestBuilder RequiredActions
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.RequiredActionsRequestBuilder RequiredActions
         {
-            get => new RequiredActionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.RequiredActions.RequiredActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unregisteredRequiredActions property</summary>
-        public UnregisteredRequiredActionsRequestBuilder UnregisteredRequiredActions
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.UnregisteredRequiredActions.UnregisteredRequiredActionsRequestBuilder UnregisteredRequiredActions
         {
-            get => new UnregisteredRequiredActionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.UnregisteredRequiredActions.UnregisteredRequiredActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -92,7 +93,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

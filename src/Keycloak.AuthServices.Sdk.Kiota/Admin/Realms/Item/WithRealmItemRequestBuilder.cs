@@ -8,6 +8,7 @@ using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistration
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates;
+using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTypes;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components;
@@ -40,174 +41,180 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}
     /// </summary>
-    public class WithRealmItemRequestBuilder : BaseRequestBuilder 
+    public class WithRealmItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The adminEvents property</summary>
-        public AdminEventsRequestBuilder AdminEvents
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder AdminEvents
         {
-            get => new AdminEventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AdminEvents.AdminEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attackDetection property</summary>
-        public AttackDetectionRequestBuilder AttackDetection
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.AttackDetectionRequestBuilder AttackDetection
         {
-            get => new AttackDetectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.AttackDetection.AttackDetectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The authentication property</summary>
-        public AuthenticationRequestBuilder Authentication
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticationRequestBuilder Authentication
         {
-            get => new AuthenticationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.AuthenticationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientDescriptionConverter property</summary>
-        public ClientDescriptionConverterRequestBuilder ClientDescriptionConverter
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescriptionConverter.ClientDescriptionConverterRequestBuilder ClientDescriptionConverter
         {
-            get => new ClientDescriptionConverterRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientDescriptionConverter.ClientDescriptionConverterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientPolicies property</summary>
-        public ClientPoliciesRequestBuilder ClientPolicies
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.ClientPoliciesRequestBuilder ClientPolicies
         {
-            get => new ClientPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies.ClientPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientRegistrationPolicy property</summary>
-        public ClientRegistrationPolicyRequestBuilder ClientRegistrationPolicy
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy.ClientRegistrationPolicyRequestBuilder ClientRegistrationPolicy
         {
-            get => new ClientRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientRegistrationPolicy.ClientRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clients property</summary>
-        public ClientsRequestBuilder Clients
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder Clients
         {
-            get => new ClientsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.ClientsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientScopes property</summary>
-        public ClientScopesRequestBuilder ClientScopes
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.ClientScopesRequestBuilder ClientScopes
         {
-            get => new ClientScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientScopes.ClientScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientSessionStats property</summary>
-        public ClientSessionStatsRequestBuilder ClientSessionStats
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder ClientSessionStats
         {
-            get => new ClientSessionStatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientSessionStats.ClientSessionStatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientsInitialAccess property</summary>
-        public ClientsInitialAccessRequestBuilder ClientsInitialAccess
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess.ClientsInitialAccessRequestBuilder ClientsInitialAccess
         {
-            get => new ClientsInitialAccessRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientsInitialAccess.ClientsInitialAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientTemplates property</summary>
-        public ClientTemplatesRequestBuilder ClientTemplates
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.ClientTemplatesRequestBuilder ClientTemplates
         {
-            get => new ClientTemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.ClientTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The clientTypes property</summary>
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTypes.ClientTypesRequestBuilder ClientTypes
+        {
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTypes.ClientTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The components property</summary>
-        public ComponentsRequestBuilder Components
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.ComponentsRequestBuilder Components
         {
-            get => new ComponentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Components.ComponentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The credentialRegistrators property</summary>
-        public CredentialRegistratorsRequestBuilder CredentialRegistrators
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder CredentialRegistrators
         {
-            get => new CredentialRegistratorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.CredentialRegistrators.CredentialRegistratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultDefaultClientScopes property</summary>
-        public DefaultDefaultClientScopesRequestBuilder DefaultDefaultClientScopes
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes.DefaultDefaultClientScopesRequestBuilder DefaultDefaultClientScopes
         {
-            get => new DefaultDefaultClientScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultDefaultClientScopes.DefaultDefaultClientScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultGroups property</summary>
-        public DefaultGroupsRequestBuilder DefaultGroups
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups.DefaultGroupsRequestBuilder DefaultGroups
         {
-            get => new DefaultGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultGroups.DefaultGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultOptionalClientScopes property</summary>
-        public DefaultOptionalClientScopesRequestBuilder DefaultOptionalClientScopes
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes.DefaultOptionalClientScopesRequestBuilder DefaultOptionalClientScopes
         {
-            get => new DefaultOptionalClientScopesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.DefaultOptionalClientScopes.DefaultOptionalClientScopesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
-        public EventsRequestBuilder Events
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.EventsRequestBuilder Events
         {
-            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groupByPath property</summary>
-        public GroupByPathRequestBuilder GroupByPath
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath.GroupByPathRequestBuilder GroupByPath
         {
-            get => new GroupByPathRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.GroupByPath.GroupByPathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groups property</summary>
-        public GroupsRequestBuilder Groups
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.GroupsRequestBuilder Groups
         {
-            get => new GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The identityProvider property</summary>
-        public IdentityProviderRequestBuilder IdentityProvider
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.IdentityProviderRequestBuilder IdentityProvider
         {
-            get => new IdentityProviderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider.IdentityProviderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
-        public KeysRequestBuilder Keys
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Keys.KeysRequestBuilder Keys
         {
-            get => new KeysRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Keys.KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The localization property</summary>
-        public LocalizationRequestBuilder Localization
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.LocalizationRequestBuilder Localization
         {
-            get => new LocalizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.LocalizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logoutAll property</summary>
-        public LogoutAllRequestBuilder LogoutAll
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll.LogoutAllRequestBuilder LogoutAll
         {
-            get => new LogoutAllRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll.LogoutAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The partialExport property</summary>
-        public PartialExportRequestBuilder PartialExport
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport.PartialExportRequestBuilder PartialExport
         {
-            get => new PartialExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport.PartialExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The partialImport property</summary>
-        public PartialImportRequestBuilder PartialImport
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder PartialImport
         {
-            get => new PartialImportRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport.PartialImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pushRevocation property</summary>
-        public PushRevocationRequestBuilder PushRevocation
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PushRevocation.PushRevocationRequestBuilder PushRevocation
         {
-            get => new PushRevocationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PushRevocation.PushRevocationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The roles property</summary>
-        public RolesRequestBuilder Roles
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder Roles
         {
-            get => new RolesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.RolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rolesById property</summary>
-        public RolesByIdRequestBuilder RolesById
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.RolesByIdRequestBuilder RolesById
         {
-            get => new RolesByIdRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.RolesById.RolesByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sessions property</summary>
-        public SessionsRequestBuilder Sessions
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.SessionsRequestBuilder Sessions
         {
-            get => new SessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The testSMTPConnection property</summary>
-        public TestSMTPConnectionRequestBuilder TestSMTPConnection
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection.TestSMTPConnectionRequestBuilder TestSMTPConnection
         {
-            get => new TestSMTPConnectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection.TestSMTPConnectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public UsersRequestBuilder Users
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The usersManagementPermissions property</summary>
-        public UsersManagementPermissionsRequestBuilder UsersManagementPermissions
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions.UsersManagementPermissionsRequestBuilder UsersManagementPermissions
         {
-            get => new UsersManagementPermissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions.UsersManagementPermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRealmItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -215,7 +222,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRealmItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -242,20 +249,20 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <summary>
         /// Get the top-level representation of the realm It will not include nested information like User and Client representations.
         /// </summary>
-        /// <returns>A <see cref="RealmRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RealmRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RealmRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<RealmRepresentation>(requestInfo, RealmRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation>(requestInfo, Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This will only update top-level attributes of the realm.
@@ -266,11 +273,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -322,11 +329,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -338,11 +345,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithRealmItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithRealmItemRequestBuilder WithUrl(string rawUrl)
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithRealmItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

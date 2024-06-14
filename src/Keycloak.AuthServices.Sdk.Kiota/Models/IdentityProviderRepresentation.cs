@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class IdentityProviderRepresentation : IAdditionalDataHolder, IParsable 
+    public class IdentityProviderRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,10 +27,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityProviderRepresentation_config? Config { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation_config? Config { get; set; }
 #nullable restore
 #else
-        public IdentityProviderRepresentation_config Config { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation_config Config { get; set; }
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +93,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string UpdateProfileFirstLoginMode { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IdentityProviderRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation"/> and sets the default values.
         /// </summary>
         public IdentityProviderRepresentation()
         {
@@ -101,12 +102,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityProviderRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IdentityProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IdentityProviderRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,21 +117,21 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addReadTokenRoleOnCreate", n => { AddReadTokenRoleOnCreate = n.GetBoolValue(); } },
-                {"alias", n => { Alias = n.GetStringValue(); } },
-                {"authenticateByDefault", n => { AuthenticateByDefault = n.GetBoolValue(); } },
-                {"config", n => { Config = n.GetObjectValue<IdentityProviderRepresentation_config>(IdentityProviderRepresentation_config.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"firstBrokerLoginFlowAlias", n => { FirstBrokerLoginFlowAlias = n.GetStringValue(); } },
-                {"internalId", n => { InternalId = n.GetStringValue(); } },
-                {"linkOnly", n => { LinkOnly = n.GetBoolValue(); } },
-                {"postBrokerLoginFlowAlias", n => { PostBrokerLoginFlowAlias = n.GetStringValue(); } },
-                {"providerId", n => { ProviderId = n.GetStringValue(); } },
-                {"storeToken", n => { StoreToken = n.GetBoolValue(); } },
-                {"trustEmail", n => { TrustEmail = n.GetBoolValue(); } },
-                {"updateProfileFirstLogin", n => { UpdateProfileFirstLogin = n.GetBoolValue(); } },
-                {"updateProfileFirstLoginMode", n => { UpdateProfileFirstLoginMode = n.GetStringValue(); } },
+                { "addReadTokenRoleOnCreate", n => { AddReadTokenRoleOnCreate = n.GetBoolValue(); } },
+                { "alias", n => { Alias = n.GetStringValue(); } },
+                { "authenticateByDefault", n => { AuthenticateByDefault = n.GetBoolValue(); } },
+                { "config", n => { Config = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation_config>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation_config.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "firstBrokerLoginFlowAlias", n => { FirstBrokerLoginFlowAlias = n.GetStringValue(); } },
+                { "internalId", n => { InternalId = n.GetStringValue(); } },
+                { "linkOnly", n => { LinkOnly = n.GetBoolValue(); } },
+                { "postBrokerLoginFlowAlias", n => { PostBrokerLoginFlowAlias = n.GetStringValue(); } },
+                { "providerId", n => { ProviderId = n.GetStringValue(); } },
+                { "storeToken", n => { StoreToken = n.GetBoolValue(); } },
+                { "trustEmail", n => { TrustEmail = n.GetBoolValue(); } },
+                { "updateProfileFirstLogin", n => { UpdateProfileFirstLogin = n.GetBoolValue(); } },
+                { "updateProfileFirstLoginMode", n => { UpdateProfileFirstLoginMode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -143,7 +144,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteBoolValue("addReadTokenRoleOnCreate", AddReadTokenRoleOnCreate);
             writer.WriteStringValue("alias", Alias);
             writer.WriteBoolValue("authenticateByDefault", AuthenticateByDefault);
-            writer.WriteObjectValue<IdentityProviderRepresentation_config>("config", Config);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation_config>("config", Config);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("firstBrokerLoginFlowAlias", FirstBrokerLoginFlowAlias);

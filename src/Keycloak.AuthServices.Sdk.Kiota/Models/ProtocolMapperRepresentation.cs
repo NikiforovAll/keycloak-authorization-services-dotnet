@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ProtocolMapperRepresentation : IAdditionalDataHolder, IParsable 
+    public class ProtocolMapperRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProtocolMapperRepresentation_config? Config { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config? Config { get; set; }
 #nullable restore
 #else
-        public ProtocolMapperRepresentation_config Config { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config Config { get; set; }
 #endif
         /// <summary>The consentRequired property</summary>
         [Obsolete("")]
@@ -64,7 +65,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string ProtocolMapper { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProtocolMapperRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation"/> and sets the default values.
         /// </summary>
         public ProtocolMapperRepresentation()
         {
@@ -73,12 +74,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProtocolMapperRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProtocolMapperRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProtocolMapperRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,13 +89,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"config", n => { Config = n.GetObjectValue<ProtocolMapperRepresentation_config>(ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue); } },
-                {"consentRequired", n => { ConsentRequired = n.GetBoolValue(); } },
-                {"consentText", n => { ConsentText = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"protocol", n => { Protocol = n.GetStringValue(); } },
-                {"protocolMapper", n => { ProtocolMapper = n.GetStringValue(); } },
+                { "config", n => { Config = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config.CreateFromDiscriminatorValue); } },
+                { "consentRequired", n => { ConsentRequired = n.GetBoolValue(); } },
+                { "consentText", n => { ConsentText = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "protocolMapper", n => { ProtocolMapper = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -104,7 +105,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ProtocolMapperRepresentation_config>("config", Config);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation_config>("config", Config);
             writer.WriteBoolValue("consentRequired", ConsentRequired);
             writer.WriteStringValue("consentText", ConsentText);
             writer.WriteStringValue("id", Id);

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UserProfileAttributeMetadata : IAdditionalDataHolder, IParsable 
+    public class UserProfileAttributeMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserProfileAttributeMetadata_annotations? Annotations { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations? Annotations { get; set; }
 #nullable restore
 #else
-        public UserProfileAttributeMetadata_annotations Annotations { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations Annotations { get; set; }
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,13 +53,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The validators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserProfileAttributeMetadata_validators? Validators { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_validators? Validators { get; set; }
 #nullable restore
 #else
-        public UserProfileAttributeMetadata_validators Validators { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_validators Validators { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserProfileAttributeMetadata"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata"/> and sets the default values.
         /// </summary>
         public UserProfileAttributeMetadata()
         {
@@ -67,12 +68,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserProfileAttributeMetadata"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserProfileAttributeMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserProfileAttributeMetadata();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,14 +83,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"annotations", n => { Annotations = n.GetObjectValue<UserProfileAttributeMetadata_annotations>(UserProfileAttributeMetadata_annotations.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"group", n => { Group = n.GetStringValue(); } },
-                {"multivalued", n => { Multivalued = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"readOnly", n => { ReadOnly = n.GetBoolValue(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
-                {"validators", n => { Validators = n.GetObjectValue<UserProfileAttributeMetadata_validators>(UserProfileAttributeMetadata_validators.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetStringValue(); } },
+                { "multivalued", n => { Multivalued = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "readOnly", n => { ReadOnly = n.GetBoolValue(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "validators", n => { Validators = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_validators>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_validators.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -99,14 +100,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UserProfileAttributeMetadata_annotations>("annotations", Annotations);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations>("annotations", Annotations);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("group", Group);
             writer.WriteBoolValue("multivalued", Multivalued);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("readOnly", ReadOnly);
             writer.WriteBoolValue("required", Required);
-            writer.WriteObjectValue<UserProfileAttributeMetadata_validators>("validators", Validators);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_validators>("validators", Validators);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

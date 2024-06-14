@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ScopeRepresentation : IAdditionalDataHolder, IParsable 
+    public class ScopeRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,21 +47,21 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicyRepresentation>? Policies { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation>? Policies { get; set; }
 #nullable restore
 #else
-        public List<PolicyRepresentation> Policies { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation> Policies { get; set; }
 #endif
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceRepresentation>? Resources { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>? Resources { get; set; }
 #nullable restore
 #else
-        public List<ResourceRepresentation> Resources { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation> Resources { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ScopeRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation"/> and sets the default values.
         /// </summary>
         public ScopeRepresentation()
         {
@@ -69,12 +70,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScopeRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ScopeRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScopeRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,12 +85,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"iconUri", n => { IconUri = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"policies", n => { Policies = n.GetCollectionOfObjectValues<PolicyRepresentation>(PolicyRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<ResourceRepresentation>(ResourceRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "iconUri", n => { IconUri = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -103,8 +104,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteStringValue("iconUri", IconUri);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<PolicyRepresentation>("policies", Policies);
-            writer.WriteCollectionOfObjectValues<ResourceRepresentation>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -4,19 +4,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     [Obsolete("")]
     #pragma warning disable CS1591
-    public class OAuthClientRepresentation : IAdditionalDataHolder, IParsable 
+    public class OAuthClientRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OAuthClientRepresentation_access? Access { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_access? Access { get; set; }
 #nullable restore
 #else
-        public OAuthClientRepresentation_access Access { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_access Access { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -33,28 +34,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OAuthClientRepresentation_attributes? Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public OAuthClientRepresentation_attributes Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_attributes Attributes { get; set; }
 #endif
         /// <summary>The authenticationFlowBindingOverrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OAuthClientRepresentation_authenticationFlowBindingOverrides? AuthenticationFlowBindingOverrides { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_authenticationFlowBindingOverrides? AuthenticationFlowBindingOverrides { get; set; }
 #nullable restore
 #else
-        public OAuthClientRepresentation_authenticationFlowBindingOverrides AuthenticationFlowBindingOverrides { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_authenticationFlowBindingOverrides AuthenticationFlowBindingOverrides { get; set; }
 #endif
         /// <summary>The authorizationServicesEnabled property</summary>
         public bool? AuthorizationServicesEnabled { get; set; }
         /// <summary>The authorizationSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResourceServerRepresentation? AuthorizationSettings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation? AuthorizationSettings { get; set; }
 #nullable restore
 #else
-        public ResourceServerRepresentation AuthorizationSettings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation AuthorizationSettings { get; set; }
 #endif
         /// <summary>The baseUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,10 +71,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OAuthClientRepresentation_claims? Claims { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims? Claims { get; set; }
 #nullable restore
 #else
-        public OAuthClientRepresentation_claims Claims { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims Claims { get; set; }
 #endif
         /// <summary>The clientAuthenticatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,10 +188,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The protocolMappers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
 #nullable restore
 #else
-        public List<ProtocolMapperRepresentation> ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation> ProtocolMappers { get; set; }
 #endif
         /// <summary>The publicClient property</summary>
         public bool? PublicClient { get; set; }
@@ -205,10 +206,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The registeredNodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OAuthClientRepresentation_registeredNodes? RegisteredNodes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_registeredNodes? RegisteredNodes { get; set; }
 #nullable restore
 #else
-        public OAuthClientRepresentation_registeredNodes RegisteredNodes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_registeredNodes RegisteredNodes { get; set; }
 #endif
         /// <summary>The registrationAccessToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,6 +241,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public bool? StandardFlowEnabled { get; set; }
         /// <summary>The surrogateAuthRequired property</summary>
         public bool? SurrogateAuthRequired { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>The useTemplateConfig property</summary>
         [Obsolete("")]
         public bool? UseTemplateConfig { get; set; }
@@ -258,7 +267,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public List<string> WebOrigins { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OAuthClientRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation"/> and sets the default values.
         /// </summary>
         public OAuthClientRepresentation()
         {
@@ -267,12 +276,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OAuthClientRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OAuthClientRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OAuthClientRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -282,50 +291,51 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"access", n => { Access = n.GetObjectValue<OAuthClientRepresentation_access>(OAuthClientRepresentation_access.CreateFromDiscriminatorValue); } },
-                {"adminUrl", n => { AdminUrl = n.GetStringValue(); } },
-                {"alwaysDisplayInConsole", n => { AlwaysDisplayInConsole = n.GetBoolValue(); } },
-                {"attributes", n => { Attributes = n.GetObjectValue<OAuthClientRepresentation_attributes>(OAuthClientRepresentation_attributes.CreateFromDiscriminatorValue); } },
-                {"authenticationFlowBindingOverrides", n => { AuthenticationFlowBindingOverrides = n.GetObjectValue<OAuthClientRepresentation_authenticationFlowBindingOverrides>(OAuthClientRepresentation_authenticationFlowBindingOverrides.CreateFromDiscriminatorValue); } },
-                {"authorizationServicesEnabled", n => { AuthorizationServicesEnabled = n.GetBoolValue(); } },
-                {"authorizationSettings", n => { AuthorizationSettings = n.GetObjectValue<ResourceServerRepresentation>(ResourceServerRepresentation.CreateFromDiscriminatorValue); } },
-                {"baseUrl", n => { BaseUrl = n.GetStringValue(); } },
-                {"bearerOnly", n => { BearerOnly = n.GetBoolValue(); } },
-                {"claims", n => { Claims = n.GetObjectValue<OAuthClientRepresentation_claims>(OAuthClientRepresentation_claims.CreateFromDiscriminatorValue); } },
-                {"clientAuthenticatorType", n => { ClientAuthenticatorType = n.GetStringValue(); } },
-                {"clientId", n => { ClientId = n.GetStringValue(); } },
-                {"clientTemplate", n => { ClientTemplate = n.GetStringValue(); } },
-                {"consentRequired", n => { ConsentRequired = n.GetBoolValue(); } },
-                {"defaultClientScopes", n => { DefaultClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defaultRoles", n => { DefaultRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"directAccessGrantsEnabled", n => { DirectAccessGrantsEnabled = n.GetBoolValue(); } },
-                {"directGrantsOnly", n => { DirectGrantsOnly = n.GetBoolValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"frontchannelLogout", n => { FrontchannelLogout = n.GetBoolValue(); } },
-                {"fullScopeAllowed", n => { FullScopeAllowed = n.GetBoolValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"implicitFlowEnabled", n => { ImplicitFlowEnabled = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"nodeReRegistrationTimeout", n => { NodeReRegistrationTimeout = n.GetIntValue(); } },
-                {"notBefore", n => { NotBefore = n.GetIntValue(); } },
-                {"optionalClientScopes", n => { OptionalClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"origin", n => { Origin = n.GetStringValue(); } },
-                {"protocol", n => { Protocol = n.GetStringValue(); } },
-                {"protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<ProtocolMapperRepresentation>(ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"publicClient", n => { PublicClient = n.GetBoolValue(); } },
-                {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"registeredNodes", n => { RegisteredNodes = n.GetObjectValue<OAuthClientRepresentation_registeredNodes>(OAuthClientRepresentation_registeredNodes.CreateFromDiscriminatorValue); } },
-                {"registrationAccessToken", n => { RegistrationAccessToken = n.GetStringValue(); } },
-                {"rootUrl", n => { RootUrl = n.GetStringValue(); } },
-                {"secret", n => { Secret = n.GetStringValue(); } },
-                {"serviceAccountsEnabled", n => { ServiceAccountsEnabled = n.GetBoolValue(); } },
-                {"standardFlowEnabled", n => { StandardFlowEnabled = n.GetBoolValue(); } },
-                {"surrogateAuthRequired", n => { SurrogateAuthRequired = n.GetBoolValue(); } },
-                {"useTemplateConfig", n => { UseTemplateConfig = n.GetBoolValue(); } },
-                {"useTemplateMappers", n => { UseTemplateMappers = n.GetBoolValue(); } },
-                {"useTemplateScope", n => { UseTemplateScope = n.GetBoolValue(); } },
-                {"webOrigins", n => { WebOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "access", n => { Access = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_access>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_access.CreateFromDiscriminatorValue); } },
+                { "adminUrl", n => { AdminUrl = n.GetStringValue(); } },
+                { "alwaysDisplayInConsole", n => { AlwaysDisplayInConsole = n.GetBoolValue(); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_attributes.CreateFromDiscriminatorValue); } },
+                { "authenticationFlowBindingOverrides", n => { AuthenticationFlowBindingOverrides = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_authenticationFlowBindingOverrides>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_authenticationFlowBindingOverrides.CreateFromDiscriminatorValue); } },
+                { "authorizationServicesEnabled", n => { AuthorizationServicesEnabled = n.GetBoolValue(); } },
+                { "authorizationSettings", n => { AuthorizationSettings = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation.CreateFromDiscriminatorValue); } },
+                { "baseUrl", n => { BaseUrl = n.GetStringValue(); } },
+                { "bearerOnly", n => { BearerOnly = n.GetBoolValue(); } },
+                { "claims", n => { Claims = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims.CreateFromDiscriminatorValue); } },
+                { "clientAuthenticatorType", n => { ClientAuthenticatorType = n.GetStringValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "clientTemplate", n => { ClientTemplate = n.GetStringValue(); } },
+                { "consentRequired", n => { ConsentRequired = n.GetBoolValue(); } },
+                { "defaultClientScopes", n => { DefaultClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defaultRoles", n => { DefaultRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "directAccessGrantsEnabled", n => { DirectAccessGrantsEnabled = n.GetBoolValue(); } },
+                { "directGrantsOnly", n => { DirectGrantsOnly = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "frontchannelLogout", n => { FrontchannelLogout = n.GetBoolValue(); } },
+                { "fullScopeAllowed", n => { FullScopeAllowed = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "implicitFlowEnabled", n => { ImplicitFlowEnabled = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "nodeReRegistrationTimeout", n => { NodeReRegistrationTimeout = n.GetIntValue(); } },
+                { "notBefore", n => { NotBefore = n.GetIntValue(); } },
+                { "optionalClientScopes", n => { OptionalClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publicClient", n => { PublicClient = n.GetBoolValue(); } },
+                { "redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "registeredNodes", n => { RegisteredNodes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_registeredNodes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_registeredNodes.CreateFromDiscriminatorValue); } },
+                { "registrationAccessToken", n => { RegistrationAccessToken = n.GetStringValue(); } },
+                { "rootUrl", n => { RootUrl = n.GetStringValue(); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "serviceAccountsEnabled", n => { ServiceAccountsEnabled = n.GetBoolValue(); } },
+                { "standardFlowEnabled", n => { StandardFlowEnabled = n.GetBoolValue(); } },
+                { "surrogateAuthRequired", n => { SurrogateAuthRequired = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "useTemplateConfig", n => { UseTemplateConfig = n.GetBoolValue(); } },
+                { "useTemplateMappers", n => { UseTemplateMappers = n.GetBoolValue(); } },
+                { "useTemplateScope", n => { UseTemplateScope = n.GetBoolValue(); } },
+                { "webOrigins", n => { WebOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -335,16 +345,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<OAuthClientRepresentation_access>("access", Access);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_access>("access", Access);
             writer.WriteStringValue("adminUrl", AdminUrl);
             writer.WriteBoolValue("alwaysDisplayInConsole", AlwaysDisplayInConsole);
-            writer.WriteObjectValue<OAuthClientRepresentation_attributes>("attributes", Attributes);
-            writer.WriteObjectValue<OAuthClientRepresentation_authenticationFlowBindingOverrides>("authenticationFlowBindingOverrides", AuthenticationFlowBindingOverrides);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_attributes>("attributes", Attributes);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_authenticationFlowBindingOverrides>("authenticationFlowBindingOverrides", AuthenticationFlowBindingOverrides);
             writer.WriteBoolValue("authorizationServicesEnabled", AuthorizationServicesEnabled);
-            writer.WriteObjectValue<ResourceServerRepresentation>("authorizationSettings", AuthorizationSettings);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceServerRepresentation>("authorizationSettings", AuthorizationSettings);
             writer.WriteStringValue("baseUrl", BaseUrl);
             writer.WriteBoolValue("bearerOnly", BearerOnly);
-            writer.WriteObjectValue<OAuthClientRepresentation_claims>("claims", Claims);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_claims>("claims", Claims);
             writer.WriteStringValue("clientAuthenticatorType", ClientAuthenticatorType);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientTemplate", ClientTemplate);
@@ -365,16 +375,17 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("optionalClientScopes", OptionalClientScopes);
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("protocol", Protocol);
-            writer.WriteCollectionOfObjectValues<ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
             writer.WriteBoolValue("publicClient", PublicClient);
             writer.WriteCollectionOfPrimitiveValues<string>("redirectUris", RedirectUris);
-            writer.WriteObjectValue<OAuthClientRepresentation_registeredNodes>("registeredNodes", RegisteredNodes);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation_registeredNodes>("registeredNodes", RegisteredNodes);
             writer.WriteStringValue("registrationAccessToken", RegistrationAccessToken);
             writer.WriteStringValue("rootUrl", RootUrl);
             writer.WriteStringValue("secret", Secret);
             writer.WriteBoolValue("serviceAccountsEnabled", ServiceAccountsEnabled);
             writer.WriteBoolValue("standardFlowEnabled", StandardFlowEnabled);
             writer.WriteBoolValue("surrogateAuthRequired", SurrogateAuthRequired);
+            writer.WriteStringValue("type", Type);
             writer.WriteBoolValue("useTemplateConfig", UseTemplateConfig);
             writer.WriteBoolValue("useTemplateMappers", UseTemplateMappers);
             writer.WriteBoolValue("useTemplateScope", UseTemplateScope);

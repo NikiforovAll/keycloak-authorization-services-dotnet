@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class PolicyResultRepresentation : IAdditionalDataHolder, IParsable 
+    public class PolicyResultRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,18 +15,18 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The associatedPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicyResultRepresentation>? AssociatedPolicies { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation>? AssociatedPolicies { get; set; }
 #nullable restore
 #else
-        public List<PolicyResultRepresentation> AssociatedPolicies { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation> AssociatedPolicies { get; set; }
 #endif
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PolicyRepresentation? Policy { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation? Policy { get; set; }
 #nullable restore
 #else
-        public PolicyRepresentation Policy { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation Policy { get; set; }
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,9 +37,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public List<string> Scopes { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public DecisionEffect? Status { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect? Status { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="PolicyResultRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation"/> and sets the default values.
         /// </summary>
         public PolicyResultRepresentation()
         {
@@ -47,12 +48,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyResultRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PolicyResultRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PolicyResultRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,10 +63,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"associatedPolicies", n => { AssociatedPolicies = n.GetCollectionOfObjectValues<PolicyResultRepresentation>(PolicyResultRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"policy", n => { Policy = n.GetObjectValue<PolicyRepresentation>(PolicyRepresentation.CreateFromDiscriminatorValue); } },
-                {"scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<DecisionEffect>(); } },
+                { "associatedPolicies", n => { AssociatedPolicies = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policy", n => { Policy = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect>(); } },
             };
         }
         /// <summary>
@@ -75,10 +76,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<PolicyResultRepresentation>("associatedPolicies", AssociatedPolicies);
-            writer.WriteObjectValue<PolicyRepresentation>("policy", Policy);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyResultRepresentation>("associatedPolicies", AssociatedPolicies);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.PolicyRepresentation>("policy", Policy);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
-            writer.WriteEnumValue<DecisionEffect>("status", Status);
+            writer.WriteEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionEffect>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

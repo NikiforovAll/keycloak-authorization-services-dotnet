@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ProtocolMapperEvaluationRepresentation : IAdditionalDataHolder, IParsable 
+    public class ProtocolMapperEvaluationRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,7 +61,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string ProtocolMapper { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProtocolMapperEvaluationRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperEvaluationRepresentation"/> and sets the default values.
         /// </summary>
         public ProtocolMapperEvaluationRepresentation()
         {
@@ -69,12 +70,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProtocolMapperEvaluationRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperEvaluationRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProtocolMapperEvaluationRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperEvaluationRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProtocolMapperEvaluationRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperEvaluationRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,12 +85,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"containerId", n => { ContainerId = n.GetStringValue(); } },
-                {"containerName", n => { ContainerName = n.GetStringValue(); } },
-                {"containerType", n => { ContainerType = n.GetStringValue(); } },
-                {"mapperId", n => { MapperId = n.GetStringValue(); } },
-                {"mapperName", n => { MapperName = n.GetStringValue(); } },
-                {"protocolMapper", n => { ProtocolMapper = n.GetStringValue(); } },
+                { "containerId", n => { ContainerId = n.GetStringValue(); } },
+                { "containerName", n => { ContainerName = n.GetStringValue(); } },
+                { "containerType", n => { ContainerType = n.GetStringValue(); } },
+                { "mapperId", n => { MapperId = n.GetStringValue(); } },
+                { "mapperName", n => { MapperName = n.GetStringValue(); } },
+                { "protocolMapper", n => { ProtocolMapper = n.GetStringValue(); } },
             };
         }
         /// <summary>

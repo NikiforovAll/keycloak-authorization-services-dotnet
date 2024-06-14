@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class Permission : IAdditionalDataHolder, IParsable 
+    public class Permission : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The claims property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Permission_claims? Claims { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission_claims? Claims { get; set; }
 #nullable restore
 #else
-        public Permission_claims Claims { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission_claims Claims { get; set; }
 #endif
         /// <summary>The rsid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +45,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public List<string> Scopes { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Permission"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission"/> and sets the default values.
         /// </summary>
         public Permission()
         {
@@ -53,12 +54,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Permission"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Permission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Permission();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,10 +69,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"claims", n => { Claims = n.GetObjectValue<Permission_claims>(Permission_claims.CreateFromDiscriminatorValue); } },
-                {"rsid", n => { Rsid = n.GetStringValue(); } },
-                {"rsname", n => { Rsname = n.GetStringValue(); } },
-                {"scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "claims", n => { Claims = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission_claims>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission_claims.CreateFromDiscriminatorValue); } },
+                { "rsid", n => { Rsid = n.GetStringValue(); } },
+                { "rsname", n => { Rsname = n.GetStringValue(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -81,7 +82,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Permission_claims>("claims", Claims);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Permission_claims>("claims", Claims);
             writer.WriteStringValue("rsid", Rsid);
             writer.WriteStringValue("rsname", Rsname);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
