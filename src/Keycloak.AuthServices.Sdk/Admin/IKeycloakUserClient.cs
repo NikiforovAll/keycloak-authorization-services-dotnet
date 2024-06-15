@@ -41,6 +41,41 @@ public interface IKeycloakUserClient
     }
 
     /// <summary>
+    /// Get the integer amount of users on the realm that match the provided <see cref="GetUserCountRequestParameters"/>.
+    ///
+    /// Note that the response is not JSON, but simply the integer value as a string.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>An integer amount of users</returns>
+    Task<HttpResponseMessage> GetUserCountWithResponseAsync(
+        string realm,
+        GetUserCountRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Get the integer amount of users on the realm that match the provided <see cref="GetUserCountRequestParameters"/>.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>An integer amount of users</returns>
+    async Task<int> GetUserCountAsync(
+        string realm,
+        GetUserCountRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetUserCountWithResponseAsync(realm, parameters, cancellationToken);
+        var stringContent = await response.Content.ReadAsStringAsync(cancellationToken);
+#pragma warning disable CA1305 // Specify IFormatProvider
+        return Convert.ToInt32(stringContent);
+#pragma warning restore CA1305 // Specify IFormatProvider
+    }
+
+    /// <summary>
     /// Get representation of a user.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>

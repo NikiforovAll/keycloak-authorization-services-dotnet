@@ -11,7 +11,7 @@ using Keycloak.AuthServices.Sdk.Utils;
 /// <summary>
 /// Represents a client for interacting with the Keycloak Admin API.
 /// </summary>
-public partial class KeycloakClient : IKeycloakClient
+public class KeycloakClient : IKeycloakClient
 {
     private readonly HttpClient httpClient;
 
@@ -94,7 +94,42 @@ public partial class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.GetAsync(path + query, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetUserCountWithResponseAsync(
+        string realm,
+        GetUserCountRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetUserCount.WithRealm(realm);
+
+        var query = string.Empty;
+
+        if (parameters is not null)
+        {
+            var queryParameters = new List<KeyValuePair<string, string?>>()
+            {
+                new("email", parameters.Email),
+                new("emailVerified", parameters.EmailVerified?.ToString()),
+                new("enabled", parameters.Enabled?.ToString()),
+                new("firstName", parameters.FirstName),
+                new("lastName", parameters.LastName),
+                new("q", parameters.Query),
+                new("search", parameters.Search),
+                new("username", parameters.Username)
+            };
+
+            query = new QueryBuilder(queryParameters.Where(q => q.Value is not null)!)
+                .ToQueryString()
+                .ToString();
+        }
+
+        var responseMessage = await this.httpClient.GetAsync(path + query, cancellationToken);
+
+        return responseMessage;
     }
 
     /// <inheritdoc/>
