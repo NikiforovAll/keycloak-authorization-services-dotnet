@@ -190,7 +190,10 @@ public class KeycloakUserClientTests
         this.handler.Expect(HttpMethod.Get, url + queryBuilder.ToQueryString())
             .Respond(HttpStatusCode.BadRequest, PlaintextMediaType, response);
 
-        _ = await this.keycloakUserClient.GetUserCountAsync("master", getUserCountRequestParameters);
+        _ = await this.keycloakUserClient.GetUserCountAsync(
+            "master",
+            getUserCountRequestParameters
+        );
 
         this.handler.VerifyNoOutstandingExpectation();
     }

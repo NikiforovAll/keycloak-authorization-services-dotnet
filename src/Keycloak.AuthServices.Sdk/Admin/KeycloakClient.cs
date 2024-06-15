@@ -209,11 +209,7 @@ public class KeycloakClient : IKeycloakClient
         var url = path + queryBuilder.ToQueryString();
 
         using var content = new StringContent(string.Empty);
-        var responseMessage = await this.httpClient.PutAsync(
-            url,
-            content,
-            cancellationToken
-        );
+        var responseMessage = await this.httpClient.PutAsync(url, content, cancellationToken);
 
         return responseMessage!;
     }
@@ -307,11 +303,7 @@ public class KeycloakClient : IKeycloakClient
             .Replace("{groupId}", groupId);
 
         using var content = new StringContent(string.Empty);
-        var responseMessage = await this.httpClient.PutAsync(
-            path,
-            content,
-            cancellationToken
-        );
+        var responseMessage = await this.httpClient.PutAsync(path, content, cancellationToken);
 
         return responseMessage!;
     }

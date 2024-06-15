@@ -68,7 +68,11 @@ public interface IKeycloakUserClient
         CancellationToken cancellationToken = default
     )
     {
-        var response = await this.GetUserCountWithResponseAsync(realm, parameters, cancellationToken);
+        var response = await this.GetUserCountWithResponseAsync(
+            realm,
+            parameters,
+            cancellationToken
+        );
         var stringContent = await response.Content.ReadAsStringAsync(cancellationToken);
 #pragma warning disable CA1305 // Specify IFormatProvider
         return Convert.ToInt32(stringContent);
