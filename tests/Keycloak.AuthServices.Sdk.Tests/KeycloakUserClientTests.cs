@@ -12,8 +12,7 @@ using RichardSzalay.MockHttp;
 public class KeycloakUserClientTests
 {
     private const string BaseAddress = "http://localhost:8080";
-    private const string JsonMediaType = "application/json";
-    private const string PlaintextMediaType = "text/plain";
+    private const string MediaType = "application/json";
     private readonly MockHttpMessageHandler handler = new();
     private readonly IKeycloakUserClient keycloakUserClient;
 
@@ -31,7 +30,7 @@ public class KeycloakUserClientTests
         var userId = userFixture.Id;
 
         this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/users/{userId}")
-            .Respond(HttpStatusCode.OK, JsonMediaType, JsonSerializer.Serialize(userFixture));
+            .Respond(HttpStatusCode.OK, MediaType, JsonSerializer.Serialize(userFixture));
 
         var user = await this.keycloakUserClient.GetUserAsync("master", userId!.ToString());
 
@@ -47,7 +46,7 @@ public class KeycloakUserClientTests
             "{\"error\":\"User not found\"}";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users/{userId}")
-            .Respond(HttpStatusCode.NotFound, JsonMediaType, errorMessage);
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(() => this.keycloakUserClient.GetUserAsync("master", userId.ToString()))
@@ -75,7 +74,7 @@ public class KeycloakUserClientTests
         var response = $"[{string.Join(",", users.Select(u => u.Representation))}]";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users")
-            .Respond(HttpStatusCode.OK, JsonMediaType, response);
+            .Respond(HttpStatusCode.OK, MediaType, response);
 
         var result = await this.keycloakUserClient.GetUsersAsync("master");
 
@@ -126,7 +125,7 @@ public class KeycloakUserClientTests
         var response = $"[{GetUserRepresentation(Guid.NewGuid())}]";
 
         this.handler.Expect(HttpMethod.Get, url + queryBuilder.ToQueryString())
-            .Respond(HttpStatusCode.OK, JsonMediaType, response);
+            .Respond(HttpStatusCode.OK, MediaType, response);
 
         _ = await this.keycloakUserClient.GetUsersAsync("master", getUsersRequestParameters);
 
@@ -149,7 +148,7 @@ public class KeycloakUserClientTests
 #pragma warning restore CA1305 // use locale provider
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users/count")
-            .Respond(HttpStatusCode.OK, PlaintextMediaType, response);
+            .Respond(HttpStatusCode.OK, MediaType, response);
 
         var result = await this.keycloakUserClient.GetUserCountAsync("master");
 
@@ -188,7 +187,7 @@ public class KeycloakUserClientTests
         const string response = "0";
 
         this.handler.Expect(HttpMethod.Get, url + queryBuilder.ToQueryString())
-            .Respond(HttpStatusCode.BadRequest, PlaintextMediaType, response);
+            .Respond(HttpStatusCode.BadRequest, MediaType, response);
 
         _ = await this.keycloakUserClient.GetUserCountAsync(
             "master",
@@ -219,7 +218,7 @@ public class KeycloakUserClientTests
             "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Post, $"/admin/realms/master/users")
-            .Respond(HttpStatusCode.BadRequest, JsonMediaType, errorMessage);
+            .Respond(HttpStatusCode.BadRequest, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(
@@ -261,7 +260,7 @@ public class KeycloakUserClientTests
             "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Put, $"/admin/realms/master/users/{userId}")
-            .Respond(HttpStatusCode.NotFound, JsonMediaType, errorMessage);
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(
@@ -301,7 +300,7 @@ public class KeycloakUserClientTests
             "{\"errorMessage\":\"User name is missing\"}";
 
         this.handler.Expect(HttpMethod.Delete, $"/admin/realms/master/users/{userId}")
-            .Respond(HttpStatusCode.NotFound, JsonMediaType, errorMessage);
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(() => this.keycloakUserClient.DeleteUserAsync("master", userId))
@@ -369,7 +368,7 @@ public class KeycloakUserClientTests
                 HttpMethod.Put,
                 $"/admin/realms/master/users/{userId}/send-verify-email"
             )
-            .Respond(HttpStatusCode.NotFound, JsonMediaType, errorMessage);
+            .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
             .Invoking(
@@ -421,7 +420,7 @@ public class KeycloakUserClientTests
         this.handler.Expect(HttpMethod.Get, expectedUrl)
             .Respond(
                 HttpStatusCode.OK,
-                JsonMediaType,
+                MediaType,
                 JsonSerializer.Serialize(Array.Empty<GroupRepresentation>())
             );
 
