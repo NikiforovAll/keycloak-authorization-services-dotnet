@@ -2,8 +2,29 @@ namespace Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 
 /// <summary>
 /// Optional request parameters for the <see cref="IKeycloakClient.GetUserCountAsync"/> endpoint.
-/// If these are not specified, the total amount of users in the provided realm will be returned, otherwise, the amount
-/// of users in the realm that match the criteria defined in these parameters will be returned.
+/// It can be called in three different ways.
+/// <list type="number">
+///     <item>
+///         <description>
+///             Don’t specify any criteria. The number of all users within that realm will be returned, not limited by
+///             pagination.
+///         </description>
+///     </item>
+///     <item>
+///         <description>
+///             If <see cref="Search"/> is specified, other criteria such as <see cref="LastName"/> will be ignored
+///             even though you set them. The <see cref="Search"/> string will be matched against the first and last
+///             name, the username and the email of a user.
+///         </description>
+///     </item>
+///     <item>
+///         <description>
+///             If <see cref="Search"/> is unspecified but any of <see cref="LastName"/>, <see cref="FirstName"/>,
+///             <see cref="Email"/> or <see cref="Username"/>, those criteria are matched against their respective
+///             fields on a user entity. Combined with a logical and.
+///         </description>
+///     </item>
+/// </list>
 /// </summary>
 public class GetUserCountRequestParameters
 {
