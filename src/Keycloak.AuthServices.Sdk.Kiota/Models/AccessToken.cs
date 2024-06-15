@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class AccessToken : IAdditionalDataHolder, IParsable 
+    public class AccessToken : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acr property</summary>
@@ -22,10 +23,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AddressClaimSet? Address { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AddressClaimSet? Address { get; set; }
 #nullable restore
 #else
-        public AddressClaimSet Address { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AddressClaimSet Address { get; set; }
 #endif
         /// <summary>The allowedOrigins property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,8 +44,6 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
 #else
         public string AtHash { get; set; }
 #endif
-        /// <summary>The auth_time property</summary>
-        public long? Auth_time { get; set; }
         /// <summary>The authorization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,9 +52,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
 #else
         public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization Authorization { get; set; }
 #endif
-        /// <summary>The authTime property</summary>
-        [Obsolete("")]
-        public int? AuthTime { get; set; }
+        /// <summary>The auth_time property</summary>
+        public long? AuthTime { get; set; }
         /// <summary>The azp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,10 +89,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The cnf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Confirmation? Cnf { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Confirmation? Cnf { get; set; }
 #nullable restore
 #else
-        public Confirmation Cnf { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Confirmation Cnf { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,10 +193,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The otherClaims property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessToken_otherClaims? OtherClaims { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_otherClaims? OtherClaims { get; set; }
 #nullable restore
 #else
-        public AccessToken_otherClaims OtherClaims { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_otherClaims OtherClaims { get; set; }
 #endif
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -237,18 +235,18 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The realm_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Access? RealmAccess { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Access? RealmAccess { get; set; }
 #nullable restore
 #else
-        public Access RealmAccess { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Access RealmAccess { get; set; }
 #endif
         /// <summary>The resource_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessToken_resource_access? ResourceAccess { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_resource_access? ResourceAccess { get; set; }
 #nullable restore
 #else
-        public AccessToken_resource_access ResourceAccess { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_resource_access ResourceAccess { get; set; }
 #endif
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -257,14 +255,6 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
 #nullable restore
 #else
         public string Scope { get; set; }
-#endif
-        /// <summary>The session_state property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionState { get; set; }
-#nullable restore
-#else
-        public string SessionState { get; set; }
 #endif
         /// <summary>The s_hash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -325,7 +315,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string Zoneinfo { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccessToken"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken"/> and sets the default values.
         /// </summary>
         public AccessToken()
         {
@@ -334,12 +324,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessToken"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccessToken CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessToken();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -349,51 +339,49 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"acr", n => { Acr = n.GetStringValue(); } },
-                {"address", n => { Address = n.GetObjectValue<AddressClaimSet>(AddressClaimSet.CreateFromDiscriminatorValue); } },
-                {"allowed-origins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"at_hash", n => { AtHash = n.GetStringValue(); } },
-                {"authTime", n => { AuthTime = n.GetIntValue(); } },
-                {"authorization", n => { Authorization = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization.CreateFromDiscriminatorValue); } },
-                {"azp", n => { Azp = n.GetStringValue(); } },
-                {"birthdate", n => { Birthdate = n.GetStringValue(); } },
-                {"c_hash", n => { CHash = n.GetStringValue(); } },
-                {"claims_locales", n => { ClaimsLocales = n.GetStringValue(); } },
-                {"cnf", n => { Cnf = n.GetObjectValue<Confirmation>(Confirmation.CreateFromDiscriminatorValue); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"email_verified", n => { EmailVerified = n.GetBoolValue(); } },
-                {"exp", n => { Exp = n.GetLongValue(); } },
-                {"family_name", n => { FamilyName = n.GetStringValue(); } },
-                {"gender", n => { Gender = n.GetStringValue(); } },
-                {"given_name", n => { GivenName = n.GetStringValue(); } },
-                {"iat", n => { Iat = n.GetLongValue(); } },
-                {"iss", n => { Iss = n.GetStringValue(); } },
-                {"jti", n => { Jti = n.GetStringValue(); } },
-                {"locale", n => { Locale = n.GetStringValue(); } },
-                {"middle_name", n => { MiddleName = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"nbf", n => { Nbf = n.GetLongValue(); } },
-                {"nickname", n => { Nickname = n.GetStringValue(); } },
-                {"nonce", n => { Nonce = n.GetStringValue(); } },
-                {"otherClaims", n => { OtherClaims = n.GetObjectValue<AccessToken_otherClaims>(AccessToken_otherClaims.CreateFromDiscriminatorValue); } },
-                {"phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                {"phone_number_verified", n => { PhoneNumberVerified = n.GetBoolValue(); } },
-                {"picture", n => { Picture = n.GetStringValue(); } },
-                {"preferred_username", n => { PreferredUsername = n.GetStringValue(); } },
-                {"profile", n => { Profile = n.GetStringValue(); } },
-                {"realm_access", n => { RealmAccess = n.GetObjectValue<Access>(Access.CreateFromDiscriminatorValue); } },
-                {"resource_access", n => { ResourceAccess = n.GetObjectValue<AccessToken_resource_access>(AccessToken_resource_access.CreateFromDiscriminatorValue); } },
-                {"s_hash", n => { SHash = n.GetStringValue(); } },
-                {"scope", n => { Scope = n.GetStringValue(); } },
-                {"session_state", n => { SessionState = n.GetStringValue(); } },
-                {"sid", n => { Sid = n.GetStringValue(); } },
-                {"sub", n => { Sub = n.GetStringValue(); } },
-                {"trusted-certs", n => { TrustedCerts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"typ", n => { Typ = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetLongValue(); } },
-                {"website", n => { Website = n.GetStringValue(); } },
-                {"zoneinfo", n => { Zoneinfo = n.GetStringValue(); } },
-                {"auth_time", n => { Auth_time = n.GetLongValue(); } },
+                { "acr", n => { Acr = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AddressClaimSet>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AddressClaimSet.CreateFromDiscriminatorValue); } },
+                { "allowed-origins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "at_hash", n => { AtHash = n.GetStringValue(); } },
+                { "auth_time", n => { AuthTime = n.GetLongValue(); } },
+                { "authorization", n => { Authorization = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization.CreateFromDiscriminatorValue); } },
+                { "azp", n => { Azp = n.GetStringValue(); } },
+                { "birthdate", n => { Birthdate = n.GetStringValue(); } },
+                { "c_hash", n => { CHash = n.GetStringValue(); } },
+                { "claims_locales", n => { ClaimsLocales = n.GetStringValue(); } },
+                { "cnf", n => { Cnf = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Confirmation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Confirmation.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "email_verified", n => { EmailVerified = n.GetBoolValue(); } },
+                { "exp", n => { Exp = n.GetLongValue(); } },
+                { "family_name", n => { FamilyName = n.GetStringValue(); } },
+                { "gender", n => { Gender = n.GetStringValue(); } },
+                { "given_name", n => { GivenName = n.GetStringValue(); } },
+                { "iat", n => { Iat = n.GetLongValue(); } },
+                { "iss", n => { Iss = n.GetStringValue(); } },
+                { "jti", n => { Jti = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "middle_name", n => { MiddleName = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "nbf", n => { Nbf = n.GetLongValue(); } },
+                { "nickname", n => { Nickname = n.GetStringValue(); } },
+                { "nonce", n => { Nonce = n.GetStringValue(); } },
+                { "otherClaims", n => { OtherClaims = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_otherClaims>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_otherClaims.CreateFromDiscriminatorValue); } },
+                { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
+                { "phone_number_verified", n => { PhoneNumberVerified = n.GetBoolValue(); } },
+                { "picture", n => { Picture = n.GetStringValue(); } },
+                { "preferred_username", n => { PreferredUsername = n.GetStringValue(); } },
+                { "profile", n => { Profile = n.GetStringValue(); } },
+                { "realm_access", n => { RealmAccess = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Access>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Access.CreateFromDiscriminatorValue); } },
+                { "resource_access", n => { ResourceAccess = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_resource_access>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_resource_access.CreateFromDiscriminatorValue); } },
+                { "s_hash", n => { SHash = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "sid", n => { Sid = n.GetStringValue(); } },
+                { "sub", n => { Sub = n.GetStringValue(); } },
+                { "trusted-certs", n => { TrustedCerts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "typ", n => { Typ = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetLongValue(); } },
+                { "website", n => { Website = n.GetStringValue(); } },
+                { "zoneinfo", n => { Zoneinfo = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -404,17 +392,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("acr", Acr);
-            writer.WriteObjectValue<AddressClaimSet>("address", Address);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AddressClaimSet>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("allowed-origins", AllowedOrigins);
             writer.WriteStringValue("at_hash", AtHash);
-            writer.WriteLongValue("auth_time", Auth_time);
             writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization>("authorization", Authorization);
-            writer.WriteIntValue("authTime", AuthTime);
+            writer.WriteLongValue("auth_time", AuthTime);
             writer.WriteStringValue("azp", Azp);
             writer.WriteStringValue("birthdate", Birthdate);
             writer.WriteStringValue("c_hash", CHash);
             writer.WriteStringValue("claims_locales", ClaimsLocales);
-            writer.WriteObjectValue<Confirmation>("cnf", Cnf);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Confirmation>("cnf", Cnf);
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("email_verified", EmailVerified);
             writer.WriteLongValue("exp", Exp);
@@ -430,16 +417,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteLongValue("nbf", Nbf);
             writer.WriteStringValue("nickname", Nickname);
             writer.WriteStringValue("nonce", Nonce);
-            writer.WriteObjectValue<AccessToken_otherClaims>("otherClaims", OtherClaims);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_otherClaims>("otherClaims", OtherClaims);
             writer.WriteStringValue("phone_number", PhoneNumber);
             writer.WriteBoolValue("phone_number_verified", PhoneNumberVerified);
             writer.WriteStringValue("picture", Picture);
             writer.WriteStringValue("preferred_username", PreferredUsername);
             writer.WriteStringValue("profile", Profile);
-            writer.WriteObjectValue<Access>("realm_access", RealmAccess);
-            writer.WriteObjectValue<AccessToken_resource_access>("resource_access", ResourceAccess);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Access>("realm_access", RealmAccess);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AccessToken_resource_access>("resource_access", ResourceAccess);
             writer.WriteStringValue("scope", Scope);
-            writer.WriteStringValue("session_state", SessionState);
             writer.WriteStringValue("s_hash", SHash);
             writer.WriteStringValue("sid", Sid);
             writer.WriteStringValue("sub", Sub);

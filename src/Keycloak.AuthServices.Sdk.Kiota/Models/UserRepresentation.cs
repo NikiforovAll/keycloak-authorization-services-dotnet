@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UserRepresentation : IAdditionalDataHolder, IParsable 
+    public class UserRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserRepresentation_access? Access { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_access? Access { get; set; }
 #nullable restore
 #else
-        public UserRepresentation_access Access { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_access Access { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -23,44 +24,44 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserRepresentation_applicationRoles? ApplicationRoles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_applicationRoles? ApplicationRoles { get; set; }
 #nullable restore
 #else
-        public UserRepresentation_applicationRoles ApplicationRoles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_applicationRoles ApplicationRoles { get; set; }
 #endif
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserRepresentation_attributes? Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public UserRepresentation_attributes Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_attributes Attributes { get; set; }
 #endif
         /// <summary>The clientConsents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserConsentRepresentation>? ClientConsents { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation>? ClientConsents { get; set; }
 #nullable restore
 #else
-        public List<UserConsentRepresentation> ClientConsents { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation> ClientConsents { get; set; }
 #endif
         /// <summary>The clientRoles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserRepresentation_clientRoles? ClientRoles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_clientRoles? ClientRoles { get; set; }
 #nullable restore
 #else
-        public UserRepresentation_clientRoles ClientRoles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_clientRoles ClientRoles { get; set; }
 #endif
         /// <summary>The createdTimestamp property</summary>
         public long? CreatedTimestamp { get; set; }
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CredentialRepresentation>? Credentials { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation>? Credentials { get; set; }
 #nullable restore
 #else
-        public List<CredentialRepresentation> Credentials { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation> Credentials { get; set; }
 #endif
         /// <summary>The disableableCredentialTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,10 +86,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The federatedIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FederatedIdentityRepresentation>? FederatedIdentities { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.FederatedIdentityRepresentation>? FederatedIdentities { get; set; }
 #nullable restore
 #else
-        public List<FederatedIdentityRepresentation> FederatedIdentities { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.FederatedIdentityRepresentation> FederatedIdentities { get; set; }
 #endif
         /// <summary>The federationLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -176,10 +177,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SocialLinkRepresentation>? SocialLinks { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.SocialLinkRepresentation>? SocialLinks { get; set; }
 #nullable restore
 #else
-        public List<SocialLinkRepresentation> SocialLinks { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.SocialLinkRepresentation> SocialLinks { get; set; }
 #endif
         /// <summary>The totp property</summary>
         public bool? Totp { get; set; }
@@ -200,7 +201,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata UserProfileMetadata { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation"/> and sets the default values.
         /// </summary>
         public UserRepresentation()
         {
@@ -209,12 +210,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -224,33 +225,33 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"access", n => { Access = n.GetObjectValue<UserRepresentation_access>(UserRepresentation_access.CreateFromDiscriminatorValue); } },
-                {"applicationRoles", n => { ApplicationRoles = n.GetObjectValue<UserRepresentation_applicationRoles>(UserRepresentation_applicationRoles.CreateFromDiscriminatorValue); } },
-                {"attributes", n => { Attributes = n.GetObjectValue<UserRepresentation_attributes>(UserRepresentation_attributes.CreateFromDiscriminatorValue); } },
-                {"clientConsents", n => { ClientConsents = n.GetCollectionOfObjectValues<UserConsentRepresentation>(UserConsentRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"clientRoles", n => { ClientRoles = n.GetObjectValue<UserRepresentation_clientRoles>(UserRepresentation_clientRoles.CreateFromDiscriminatorValue); } },
-                {"createdTimestamp", n => { CreatedTimestamp = n.GetLongValue(); } },
-                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<CredentialRepresentation>(CredentialRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"disableableCredentialTypes", n => { DisableableCredentialTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"emailVerified", n => { EmailVerified = n.GetBoolValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"federatedIdentities", n => { FederatedIdentities = n.GetCollectionOfObjectValues<FederatedIdentityRepresentation>(FederatedIdentityRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"federationLink", n => { FederationLink = n.GetStringValue(); } },
-                {"firstName", n => { FirstName = n.GetStringValue(); } },
-                {"groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"lastName", n => { LastName = n.GetStringValue(); } },
-                {"notBefore", n => { NotBefore = n.GetIntValue(); } },
-                {"origin", n => { Origin = n.GetStringValue(); } },
-                {"realmRoles", n => { RealmRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"requiredActions", n => { RequiredActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"self", n => { Self = n.GetStringValue(); } },
-                {"serviceAccountClientId", n => { ServiceAccountClientId = n.GetStringValue(); } },
-                {"socialLinks", n => { SocialLinks = n.GetCollectionOfObjectValues<SocialLinkRepresentation>(SocialLinkRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"totp", n => { Totp = n.GetBoolValue(); } },
-                {"userProfileMetadata", n => { UserProfileMetadata = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata.CreateFromDiscriminatorValue); } },
-                {"username", n => { Username = n.GetStringValue(); } },
+                { "access", n => { Access = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_access>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_access.CreateFromDiscriminatorValue); } },
+                { "applicationRoles", n => { ApplicationRoles = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_applicationRoles>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_applicationRoles.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_attributes.CreateFromDiscriminatorValue); } },
+                { "clientConsents", n => { ClientConsents = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clientRoles", n => { ClientRoles = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_clientRoles>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_clientRoles.CreateFromDiscriminatorValue); } },
+                { "createdTimestamp", n => { CreatedTimestamp = n.GetLongValue(); } },
+                { "credentials", n => { Credentials = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "disableableCredentialTypes", n => { DisableableCredentialTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "emailVerified", n => { EmailVerified = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "federatedIdentities", n => { FederatedIdentities = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.FederatedIdentityRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.FederatedIdentityRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "federationLink", n => { FederationLink = n.GetStringValue(); } },
+                { "firstName", n => { FirstName = n.GetStringValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "lastName", n => { LastName = n.GetStringValue(); } },
+                { "notBefore", n => { NotBefore = n.GetIntValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "realmRoles", n => { RealmRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "requiredActions", n => { RequiredActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "self", n => { Self = n.GetStringValue(); } },
+                { "serviceAccountClientId", n => { ServiceAccountClientId = n.GetStringValue(); } },
+                { "socialLinks", n => { SocialLinks = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.SocialLinkRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.SocialLinkRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "totp", n => { Totp = n.GetBoolValue(); } },
+                { "userProfileMetadata", n => { UserProfileMetadata = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata.CreateFromDiscriminatorValue); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -260,18 +261,18 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UserRepresentation_access>("access", Access);
-            writer.WriteObjectValue<UserRepresentation_applicationRoles>("applicationRoles", ApplicationRoles);
-            writer.WriteObjectValue<UserRepresentation_attributes>("attributes", Attributes);
-            writer.WriteCollectionOfObjectValues<UserConsentRepresentation>("clientConsents", ClientConsents);
-            writer.WriteObjectValue<UserRepresentation_clientRoles>("clientRoles", ClientRoles);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_access>("access", Access);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_applicationRoles>("applicationRoles", ApplicationRoles);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_attributes>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation>("clientConsents", ClientConsents);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation_clientRoles>("clientRoles", ClientRoles);
             writer.WriteLongValue("createdTimestamp", CreatedTimestamp);
-            writer.WriteCollectionOfObjectValues<CredentialRepresentation>("credentials", Credentials);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.CredentialRepresentation>("credentials", Credentials);
             writer.WriteCollectionOfPrimitiveValues<string>("disableableCredentialTypes", DisableableCredentialTypes);
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("emailVerified", EmailVerified);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<FederatedIdentityRepresentation>("federatedIdentities", FederatedIdentities);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.FederatedIdentityRepresentation>("federatedIdentities", FederatedIdentities);
             writer.WriteStringValue("federationLink", FederationLink);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteCollectionOfPrimitiveValues<string>("groups", Groups);
@@ -283,7 +284,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("requiredActions", RequiredActions);
             writer.WriteStringValue("self", Self);
             writer.WriteStringValue("serviceAccountClientId", ServiceAccountClientId);
-            writer.WriteCollectionOfObjectValues<SocialLinkRepresentation>("socialLinks", SocialLinks);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.SocialLinkRepresentation>("socialLinks", SocialLinks);
             writer.WriteBoolValue("totp", Totp);
             writer.WriteStringValue("username", Username);
             writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata>("userProfileMetadata", UserProfileMetadata);

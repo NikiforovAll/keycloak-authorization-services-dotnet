@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class AbstractPolicyRepresentation : IAdditionalDataHolder, IParsable 
+    public class AbstractPolicyRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -66,10 +67,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The resourcesData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceRepresentation>? ResourcesData { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>? ResourcesData { get; set; }
 #nullable restore
 #else
-        public List<ResourceRepresentation> ResourcesData { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation> ResourcesData { get; set; }
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,10 +83,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The scopesData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScopeRepresentation>? ScopesData { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation>? ScopesData { get; set; }
 #nullable restore
 #else
-        public List<ScopeRepresentation> ScopesData { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation> ScopesData { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +97,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string Type { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AbstractPolicyRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AbstractPolicyRepresentation"/> and sets the default values.
         /// </summary>
         public AbstractPolicyRepresentation()
         {
@@ -105,12 +106,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AbstractPolicyRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AbstractPolicyRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AbstractPolicyRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AbstractPolicyRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AbstractPolicyRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AbstractPolicyRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,18 +121,18 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"decisionStrategy", n => { DecisionStrategy = n.GetEnumValue<DecisionStrategy>(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"logic", n => { Logic = n.GetEnumValue<Logic>(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"policies", n => { Policies = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"resources", n => { Resources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"resourcesData", n => { ResourcesData = n.GetCollectionOfObjectValues<ResourceRepresentation>(ResourceRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"scopesData", n => { ScopesData = n.GetCollectionOfObjectValues<ScopeRepresentation>(ScopeRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "decisionStrategy", n => { DecisionStrategy = n.GetEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionStrategy>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "logic", n => { Logic = n.GetEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Logic>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "policies", n => { Policies = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "resourcesData", n => { ResourcesData = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "scopesData", n => { ScopesData = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -141,17 +142,17 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DecisionStrategy>("decisionStrategy", DecisionStrategy);
+            writer.WriteEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.DecisionStrategy>("decisionStrategy", DecisionStrategy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<Logic>("logic", Logic);
+            writer.WriteEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Logic>("logic", Logic);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
             writer.WriteCollectionOfPrimitiveValues<string>("policies", Policies);
             writer.WriteCollectionOfPrimitiveValues<string>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<ResourceRepresentation>("resourcesData", ResourcesData);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation>("resourcesData", ResourcesData);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
-            writer.WriteCollectionOfObjectValues<ScopeRepresentation>("scopesData", ScopesData);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeRepresentation>("scopesData", ScopesData);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

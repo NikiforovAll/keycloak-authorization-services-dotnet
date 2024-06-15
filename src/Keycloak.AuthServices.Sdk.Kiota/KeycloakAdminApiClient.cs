@@ -11,19 +11,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin
+{
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class KeycloakAdminApiClient : BaseRequestBuilder 
+    public class KeycloakAdminApiClient : BaseRequestBuilder
     {
         /// <summary>The admin property</summary>
-        public AdminRequestBuilder Admin
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder Admin
         {
-            get => new AdminRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="KeycloakAdminApiClient"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public KeycloakAdminApiClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UserConsentRepresentation : IAdditionalDataHolder, IParsable 
+    public class UserConsentRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,7 +42,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The lastUpdatedDate property</summary>
         public long? LastUpdatedDate { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="UserConsentRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation"/> and sets the default values.
         /// </summary>
         public UserConsentRepresentation()
         {
@@ -50,12 +51,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserConsentRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserConsentRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserConsentRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserConsentRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,11 +66,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientId", n => { ClientId = n.GetStringValue(); } },
-                {"createdDate", n => { CreatedDate = n.GetLongValue(); } },
-                {"grantedClientScopes", n => { GrantedClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"grantedRealmRoles", n => { GrantedRealmRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"lastUpdatedDate", n => { LastUpdatedDate = n.GetLongValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "createdDate", n => { CreatedDate = n.GetLongValue(); } },
+                { "grantedClientScopes", n => { GrantedClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "grantedRealmRoles", n => { GrantedRealmRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "lastUpdatedDate", n => { LastUpdatedDate = n.GetLongValue(); } },
             };
         }
         /// <summary>

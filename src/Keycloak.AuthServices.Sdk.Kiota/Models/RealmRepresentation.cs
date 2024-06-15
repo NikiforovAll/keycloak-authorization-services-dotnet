@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class RealmRepresentation : IAdditionalDataHolder, IParsable 
+    public class RealmRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessCodeLifespan property</summary>
@@ -49,43 +50,43 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApplicationRepresentation>? Applications { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation>? Applications { get; set; }
 #nullable restore
 #else
-        public List<ApplicationRepresentation> Applications { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation> Applications { get; set; }
 #endif
         /// <summary>The applicationScopeMappings property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_applicationScopeMappings? ApplicationScopeMappings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_applicationScopeMappings? ApplicationScopeMappings { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_applicationScopeMappings ApplicationScopeMappings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_applicationScopeMappings ApplicationScopeMappings { get; set; }
 #endif
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_attributes? Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_attributes Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_attributes Attributes { get; set; }
 #endif
         /// <summary>The authenticationFlows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationFlowRepresentation>? AuthenticationFlows { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationFlowRepresentation>? AuthenticationFlows { get; set; }
 #nullable restore
 #else
-        public List<AuthenticationFlowRepresentation> AuthenticationFlows { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationFlowRepresentation> AuthenticationFlows { get; set; }
 #endif
         /// <summary>The authenticatorConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticatorConfigRepresentation>? AuthenticatorConfig { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation>? AuthenticatorConfig { get; set; }
 #nullable restore
 #else
-        public List<AuthenticatorConfigRepresentation> AuthenticatorConfig { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation> AuthenticatorConfig { get; set; }
 #endif
         /// <summary>The browserFlow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,10 +99,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The browserSecurityHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_browserSecurityHeaders? BrowserSecurityHeaders { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders? BrowserSecurityHeaders { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_browserSecurityHeaders BrowserSecurityHeaders { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders BrowserSecurityHeaders { get; set; }
 #endif
         /// <summary>The bruteForceProtected property</summary>
         public bool? BruteForceProtected { get; set; }
@@ -129,42 +130,42 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The clientPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClientPoliciesRepresentation? ClientPolicies { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPoliciesRepresentation? ClientPolicies { get; set; }
 #nullable restore
 #else
-        public ClientPoliciesRepresentation ClientPolicies { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPoliciesRepresentation ClientPolicies { get; set; }
 #endif
         /// <summary>The clientProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClientProfilesRepresentation? ClientProfiles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfilesRepresentation? ClientProfiles { get; set; }
 #nullable restore
 #else
-        public ClientProfilesRepresentation ClientProfiles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfilesRepresentation ClientProfiles { get; set; }
 #endif
         /// <summary>The clients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClientRepresentation>? Clients { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation>? Clients { get; set; }
 #nullable restore
 #else
-        public List<ClientRepresentation> Clients { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation> Clients { get; set; }
 #endif
         /// <summary>The clientScopeMappings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_clientScopeMappings? ClientScopeMappings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_clientScopeMappings? ClientScopeMappings { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_clientScopeMappings ClientScopeMappings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_clientScopeMappings ClientScopeMappings { get; set; }
 #endif
         /// <summary>The clientScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClientScopeRepresentation>? ClientScopes { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation>? ClientScopes { get; set; }
 #nullable restore
 #else
-        public List<ClientScopeRepresentation> ClientScopes { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation> ClientScopes { get; set; }
 #endif
         /// <summary>The clientSessionIdleTimeout property</summary>
         public int? ClientSessionIdleTimeout { get; set; }
@@ -174,10 +175,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClientTemplateRepresentation>? ClientTemplates { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation>? ClientTemplates { get; set; }
 #nullable restore
 #else
-        public List<ClientTemplateRepresentation> ClientTemplates { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation> ClientTemplates { get; set; }
 #endif
         /// <summary>The codeSecret property</summary>
         [Obsolete("")]
@@ -191,10 +192,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The components property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MultivaluedHashMapStringComponentExportRepresentation? Components { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation? Components { get; set; }
 #nullable restore
 #else
-        public MultivaluedHashMapStringComponentExportRepresentation Components { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation Components { get; set; }
 #endif
         /// <summary>The defaultDefaultClientScopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -231,10 +232,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The defaultRole property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RoleRepresentation? DefaultRole { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation? DefaultRole { get; set; }
 #nullable restore
 #else
-        public RoleRepresentation DefaultRole { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation DefaultRole { get; set; }
 #endif
         /// <summary>The defaultRoles property</summary>
         [Obsolete("")]
@@ -324,10 +325,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The federatedUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserRepresentation>? FederatedUsers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>? FederatedUsers { get; set; }
 #nullable restore
 #else
-        public List<UserRepresentation> FederatedUsers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation> FederatedUsers { get; set; }
 #endif
         /// <summary>The firstBrokerLoginFlow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -340,10 +341,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupRepresentation>? Groups { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>? Groups { get; set; }
 #nullable restore
 #else
-        public List<GroupRepresentation> Groups { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation> Groups { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -356,18 +357,18 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The identityProviderMappers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityProviderMapperRepresentation>? IdentityProviderMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation>? IdentityProviderMappers { get; set; }
 #nullable restore
 #else
-        public List<IdentityProviderMapperRepresentation> IdentityProviderMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation> IdentityProviderMappers { get; set; }
 #endif
         /// <summary>The identityProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityProviderRepresentation>? IdentityProviders { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>? IdentityProviders { get; set; }
 #nullable restore
 #else
-        public List<IdentityProviderRepresentation> IdentityProviders { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation> IdentityProviders { get; set; }
 #endif
         /// <summary>The internationalizationEnabled property</summary>
         public bool? InternationalizationEnabled { get; set; }
@@ -382,10 +383,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The localizationTexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_localizationTexts? LocalizationTexts { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_localizationTexts? LocalizationTexts { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_localizationTexts LocalizationTexts { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_localizationTexts LocalizationTexts { get; set; }
 #endif
         /// <summary>The loginTheme property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -415,10 +416,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OAuthClientRepresentation>? OauthClients { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation>? OauthClients { get; set; }
 #nullable restore
 #else
-        public List<OAuthClientRepresentation> OauthClients { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation> OauthClients { get; set; }
 #endif
         /// <summary>The offlineSessionIdleTimeout property</summary>
         public int? OfflineSessionIdleTimeout { get; set; }
@@ -426,6 +427,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public int? OfflineSessionMaxLifespan { get; set; }
         /// <summary>The offlineSessionMaxLifespanEnabled property</summary>
         public bool? OfflineSessionMaxLifespanEnabled { get; set; }
+        /// <summary>The organizations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation>? Organizations { get; set; }
+#nullable restore
+#else
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation> Organizations { get; set; }
+#endif
+        /// <summary>The organizationsEnabled property</summary>
+        public bool? OrganizationsEnabled { get; set; }
         /// <summary>The otpPolicyAlgorithm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -485,10 +496,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The protocolMappers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
 #nullable restore
 #else
-        public List<ProtocolMapperRepresentation> ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation> ProtocolMappers { get; set; }
 #endif
         /// <summary>The publicKey property</summary>
         [Obsolete("")]
@@ -535,10 +546,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The requiredActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RequiredActionProviderRepresentation>? RequiredActions { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation>? RequiredActions { get; set; }
 #nullable restore
 #else
-        public List<RequiredActionProviderRepresentation> RequiredActions { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation> RequiredActions { get; set; }
 #endif
         /// <summary>The requiredCredentials property</summary>
         [Obsolete("")]
@@ -564,26 +575,26 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RolesRepresentation? Roles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation? Roles { get; set; }
 #nullable restore
 #else
-        public RolesRepresentation Roles { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation Roles { get; set; }
 #endif
         /// <summary>The scopeMappings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScopeMappingRepresentation>? ScopeMappings { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation>? ScopeMappings { get; set; }
 #nullable restore
 #else
-        public List<ScopeMappingRepresentation> ScopeMappings { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation> ScopeMappings { get; set; }
 #endif
         /// <summary>The smtpServer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_smtpServer? SmtpServer { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer? SmtpServer { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_smtpServer SmtpServer { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer SmtpServer { get; set; }
 #endif
         /// <summary>The social property</summary>
         [Obsolete("")]
@@ -592,10 +603,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RealmRepresentation_socialProviders? SocialProviders { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_socialProviders? SocialProviders { get; set; }
 #nullable restore
 #else
-        public RealmRepresentation_socialProviders SocialProviders { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_socialProviders SocialProviders { get; set; }
 #endif
         /// <summary>The sslRequired property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -630,28 +641,28 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The userFederationMappers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserFederationMapperRepresentation>? UserFederationMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation>? UserFederationMappers { get; set; }
 #nullable restore
 #else
-        public List<UserFederationMapperRepresentation> UserFederationMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation> UserFederationMappers { get; set; }
 #endif
         /// <summary>The userFederationProviders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserFederationProviderRepresentation>? UserFederationProviders { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation>? UserFederationProviders { get; set; }
 #nullable restore
 #else
-        public List<UserFederationProviderRepresentation> UserFederationProviders { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation> UserFederationProviders { get; set; }
 #endif
         /// <summary>The userManagedAccessAllowed property</summary>
         public bool? UserManagedAccessAllowed { get; set; }
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserRepresentation>? Users { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>? Users { get; set; }
 #nullable restore
 #else
-        public List<UserRepresentation> Users { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation> Users { get; set; }
 #endif
         /// <summary>The verifyEmail property</summary>
         public bool? VerifyEmail { get; set; }
@@ -810,7 +821,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public string WebAuthnPolicyUserVerificationRequirement { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RealmRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation"/> and sets the default values.
         /// </summary>
         public RealmRepresentation()
         {
@@ -819,12 +830,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RealmRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RealmRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RealmRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -834,151 +845,153 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessCodeLifespan", n => { AccessCodeLifespan = n.GetIntValue(); } },
-                {"accessCodeLifespanLogin", n => { AccessCodeLifespanLogin = n.GetIntValue(); } },
-                {"accessCodeLifespanUserAction", n => { AccessCodeLifespanUserAction = n.GetIntValue(); } },
-                {"accessTokenLifespan", n => { AccessTokenLifespan = n.GetIntValue(); } },
-                {"accessTokenLifespanForImplicitFlow", n => { AccessTokenLifespanForImplicitFlow = n.GetIntValue(); } },
-                {"accountTheme", n => { AccountTheme = n.GetStringValue(); } },
-                {"actionTokenGeneratedByAdminLifespan", n => { ActionTokenGeneratedByAdminLifespan = n.GetIntValue(); } },
-                {"actionTokenGeneratedByUserLifespan", n => { ActionTokenGeneratedByUserLifespan = n.GetIntValue(); } },
-                {"adminEventsDetailsEnabled", n => { AdminEventsDetailsEnabled = n.GetBoolValue(); } },
-                {"adminEventsEnabled", n => { AdminEventsEnabled = n.GetBoolValue(); } },
-                {"adminTheme", n => { AdminTheme = n.GetStringValue(); } },
-                {"applicationScopeMappings", n => { ApplicationScopeMappings = n.GetObjectValue<RealmRepresentation_applicationScopeMappings>(RealmRepresentation_applicationScopeMappings.CreateFromDiscriminatorValue); } },
-                {"applications", n => { Applications = n.GetCollectionOfObjectValues<ApplicationRepresentation>(ApplicationRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"attributes", n => { Attributes = n.GetObjectValue<RealmRepresentation_attributes>(RealmRepresentation_attributes.CreateFromDiscriminatorValue); } },
-                {"authenticationFlows", n => { AuthenticationFlows = n.GetCollectionOfObjectValues<AuthenticationFlowRepresentation>(AuthenticationFlowRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"authenticatorConfig", n => { AuthenticatorConfig = n.GetCollectionOfObjectValues<AuthenticatorConfigRepresentation>(AuthenticatorConfigRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"browserFlow", n => { BrowserFlow = n.GetStringValue(); } },
-                {"browserSecurityHeaders", n => { BrowserSecurityHeaders = n.GetObjectValue<RealmRepresentation_browserSecurityHeaders>(RealmRepresentation_browserSecurityHeaders.CreateFromDiscriminatorValue); } },
-                {"bruteForceProtected", n => { BruteForceProtected = n.GetBoolValue(); } },
-                {"certificate", n => { Certificate = n.GetStringValue(); } },
-                {"clientAuthenticationFlow", n => { ClientAuthenticationFlow = n.GetStringValue(); } },
-                {"clientOfflineSessionIdleTimeout", n => { ClientOfflineSessionIdleTimeout = n.GetIntValue(); } },
-                {"clientOfflineSessionMaxLifespan", n => { ClientOfflineSessionMaxLifespan = n.GetIntValue(); } },
-                {"clientPolicies", n => { ClientPolicies = n.GetObjectValue<ClientPoliciesRepresentation>(ClientPoliciesRepresentation.CreateFromDiscriminatorValue); } },
-                {"clientProfiles", n => { ClientProfiles = n.GetObjectValue<ClientProfilesRepresentation>(ClientProfilesRepresentation.CreateFromDiscriminatorValue); } },
-                {"clientScopeMappings", n => { ClientScopeMappings = n.GetObjectValue<RealmRepresentation_clientScopeMappings>(RealmRepresentation_clientScopeMappings.CreateFromDiscriminatorValue); } },
-                {"clientScopes", n => { ClientScopes = n.GetCollectionOfObjectValues<ClientScopeRepresentation>(ClientScopeRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"clientSessionIdleTimeout", n => { ClientSessionIdleTimeout = n.GetIntValue(); } },
-                {"clientSessionMaxLifespan", n => { ClientSessionMaxLifespan = n.GetIntValue(); } },
-                {"clientTemplates", n => { ClientTemplates = n.GetCollectionOfObjectValues<ClientTemplateRepresentation>(ClientTemplateRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"clients", n => { Clients = n.GetCollectionOfObjectValues<ClientRepresentation>(ClientRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"codeSecret", n => { CodeSecret = n.GetStringValue(); } },
-                {"components", n => { Components = n.GetObjectValue<MultivaluedHashMapStringComponentExportRepresentation>(MultivaluedHashMapStringComponentExportRepresentation.CreateFromDiscriminatorValue); } },
-                {"defaultDefaultClientScopes", n => { DefaultDefaultClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defaultGroups", n => { DefaultGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
-                {"defaultOptionalClientScopes", n => { DefaultOptionalClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defaultRole", n => { DefaultRole = n.GetObjectValue<RoleRepresentation>(RoleRepresentation.CreateFromDiscriminatorValue); } },
-                {"defaultRoles", n => { DefaultRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"defaultSignatureAlgorithm", n => { DefaultSignatureAlgorithm = n.GetStringValue(); } },
-                {"directGrantFlow", n => { DirectGrantFlow = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"displayNameHtml", n => { DisplayNameHtml = n.GetStringValue(); } },
-                {"dockerAuthenticationFlow", n => { DockerAuthenticationFlow = n.GetStringValue(); } },
-                {"duplicateEmailsAllowed", n => { DuplicateEmailsAllowed = n.GetBoolValue(); } },
-                {"editUsernameAllowed", n => { EditUsernameAllowed = n.GetBoolValue(); } },
-                {"emailTheme", n => { EmailTheme = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"enabledEventTypes", n => { EnabledEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"eventsEnabled", n => { EventsEnabled = n.GetBoolValue(); } },
-                {"eventsExpiration", n => { EventsExpiration = n.GetLongValue(); } },
-                {"eventsListeners", n => { EventsListeners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"failureFactor", n => { FailureFactor = n.GetIntValue(); } },
-                {"federatedUsers", n => { FederatedUsers = n.GetCollectionOfObjectValues<UserRepresentation>(UserRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"firstBrokerLoginFlow", n => { FirstBrokerLoginFlow = n.GetStringValue(); } },
-                {"groups", n => { Groups = n.GetCollectionOfObjectValues<GroupRepresentation>(GroupRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"identityProviderMappers", n => { IdentityProviderMappers = n.GetCollectionOfObjectValues<IdentityProviderMapperRepresentation>(IdentityProviderMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderRepresentation>(IdentityProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"internationalizationEnabled", n => { InternationalizationEnabled = n.GetBoolValue(); } },
-                {"keycloakVersion", n => { KeycloakVersion = n.GetStringValue(); } },
-                {"localizationTexts", n => { LocalizationTexts = n.GetObjectValue<RealmRepresentation_localizationTexts>(RealmRepresentation_localizationTexts.CreateFromDiscriminatorValue); } },
-                {"loginTheme", n => { LoginTheme = n.GetStringValue(); } },
-                {"loginWithEmailAllowed", n => { LoginWithEmailAllowed = n.GetBoolValue(); } },
-                {"maxDeltaTimeSeconds", n => { MaxDeltaTimeSeconds = n.GetIntValue(); } },
-                {"maxFailureWaitSeconds", n => { MaxFailureWaitSeconds = n.GetIntValue(); } },
-                {"maxTemporaryLockouts", n => { MaxTemporaryLockouts = n.GetIntValue(); } },
-                {"minimumQuickLoginWaitSeconds", n => { MinimumQuickLoginWaitSeconds = n.GetIntValue(); } },
-                {"notBefore", n => { NotBefore = n.GetIntValue(); } },
-                {"oauth2DeviceCodeLifespan", n => { Oauth2DeviceCodeLifespan = n.GetIntValue(); } },
-                {"oauth2DevicePollingInterval", n => { Oauth2DevicePollingInterval = n.GetIntValue(); } },
-                {"oauthClients", n => { OauthClients = n.GetCollectionOfObjectValues<OAuthClientRepresentation>(OAuthClientRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"offlineSessionIdleTimeout", n => { OfflineSessionIdleTimeout = n.GetIntValue(); } },
-                {"offlineSessionMaxLifespan", n => { OfflineSessionMaxLifespan = n.GetIntValue(); } },
-                {"offlineSessionMaxLifespanEnabled", n => { OfflineSessionMaxLifespanEnabled = n.GetBoolValue(); } },
-                {"otpPolicyAlgorithm", n => { OtpPolicyAlgorithm = n.GetStringValue(); } },
-                {"otpPolicyCodeReusable", n => { OtpPolicyCodeReusable = n.GetBoolValue(); } },
-                {"otpPolicyDigits", n => { OtpPolicyDigits = n.GetIntValue(); } },
-                {"otpPolicyInitialCounter", n => { OtpPolicyInitialCounter = n.GetIntValue(); } },
-                {"otpPolicyLookAheadWindow", n => { OtpPolicyLookAheadWindow = n.GetIntValue(); } },
-                {"otpPolicyPeriod", n => { OtpPolicyPeriod = n.GetIntValue(); } },
-                {"otpPolicyType", n => { OtpPolicyType = n.GetStringValue(); } },
-                {"otpSupportedApplications", n => { OtpSupportedApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"passwordCredentialGrantAllowed", n => { PasswordCredentialGrantAllowed = n.GetBoolValue(); } },
-                {"passwordPolicy", n => { PasswordPolicy = n.GetStringValue(); } },
-                {"permanentLockout", n => { PermanentLockout = n.GetBoolValue(); } },
-                {"privateKey", n => { PrivateKey = n.GetStringValue(); } },
-                {"protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<ProtocolMapperRepresentation>(ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"publicKey", n => { PublicKey = n.GetStringValue(); } },
-                {"quickLoginCheckMilliSeconds", n => { QuickLoginCheckMilliSeconds = n.GetLongValue(); } },
-                {"realm", n => { Realm = n.GetStringValue(); } },
-                {"realmCacheEnabled", n => { RealmCacheEnabled = n.GetBoolValue(); } },
-                {"oAuth2DeviceCodeLifespan", n => { RealmRepresentationOAuth2DeviceCodeLifespan = n.GetIntValue(); } },
-                {"oAuth2DevicePollingInterval", n => { RealmRepresentationOAuth2DevicePollingInterval = n.GetIntValue(); } },
-                {"refreshTokenMaxReuse", n => { RefreshTokenMaxReuse = n.GetIntValue(); } },
-                {"registrationAllowed", n => { RegistrationAllowed = n.GetBoolValue(); } },
-                {"registrationEmailAsUsername", n => { RegistrationEmailAsUsername = n.GetBoolValue(); } },
-                {"registrationFlow", n => { RegistrationFlow = n.GetStringValue(); } },
-                {"rememberMe", n => { RememberMe = n.GetBoolValue(); } },
-                {"requiredActions", n => { RequiredActions = n.GetCollectionOfObjectValues<RequiredActionProviderRepresentation>(RequiredActionProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requiredCredentials", n => { RequiredCredentials = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"resetCredentialsFlow", n => { ResetCredentialsFlow = n.GetStringValue(); } },
-                {"resetPasswordAllowed", n => { ResetPasswordAllowed = n.GetBoolValue(); } },
-                {"revokeRefreshToken", n => { RevokeRefreshToken = n.GetBoolValue(); } },
-                {"roles", n => { Roles = n.GetObjectValue<RolesRepresentation>(RolesRepresentation.CreateFromDiscriminatorValue); } },
-                {"scopeMappings", n => { ScopeMappings = n.GetCollectionOfObjectValues<ScopeMappingRepresentation>(ScopeMappingRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"smtpServer", n => { SmtpServer = n.GetObjectValue<RealmRepresentation_smtpServer>(RealmRepresentation_smtpServer.CreateFromDiscriminatorValue); } },
-                {"social", n => { Social = n.GetBoolValue(); } },
-                {"socialProviders", n => { SocialProviders = n.GetObjectValue<RealmRepresentation_socialProviders>(RealmRepresentation_socialProviders.CreateFromDiscriminatorValue); } },
-                {"sslRequired", n => { SslRequired = n.GetStringValue(); } },
-                {"ssoSessionIdleTimeout", n => { SsoSessionIdleTimeout = n.GetIntValue(); } },
-                {"ssoSessionIdleTimeoutRememberMe", n => { SsoSessionIdleTimeoutRememberMe = n.GetIntValue(); } },
-                {"ssoSessionMaxLifespan", n => { SsoSessionMaxLifespan = n.GetIntValue(); } },
-                {"ssoSessionMaxLifespanRememberMe", n => { SsoSessionMaxLifespanRememberMe = n.GetIntValue(); } },
-                {"supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"updateProfileOnInitialSocialLogin", n => { UpdateProfileOnInitialSocialLogin = n.GetBoolValue(); } },
-                {"userCacheEnabled", n => { UserCacheEnabled = n.GetBoolValue(); } },
-                {"userFederationMappers", n => { UserFederationMappers = n.GetCollectionOfObjectValues<UserFederationMapperRepresentation>(UserFederationMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userFederationProviders", n => { UserFederationProviders = n.GetCollectionOfObjectValues<UserFederationProviderRepresentation>(UserFederationProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userManagedAccessAllowed", n => { UserManagedAccessAllowed = n.GetBoolValue(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<UserRepresentation>(UserRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"verifyEmail", n => { VerifyEmail = n.GetBoolValue(); } },
-                {"waitIncrementSeconds", n => { WaitIncrementSeconds = n.GetIntValue(); } },
-                {"webAuthnPolicyAcceptableAaguids", n => { WebAuthnPolicyAcceptableAaguids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"webAuthnPolicyAttestationConveyancePreference", n => { WebAuthnPolicyAttestationConveyancePreference = n.GetStringValue(); } },
-                {"webAuthnPolicyAuthenticatorAttachment", n => { WebAuthnPolicyAuthenticatorAttachment = n.GetStringValue(); } },
-                {"webAuthnPolicyAvoidSameAuthenticatorRegister", n => { WebAuthnPolicyAvoidSameAuthenticatorRegister = n.GetBoolValue(); } },
-                {"webAuthnPolicyCreateTimeout", n => { WebAuthnPolicyCreateTimeout = n.GetIntValue(); } },
-                {"webAuthnPolicyExtraOrigins", n => { WebAuthnPolicyExtraOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"webAuthnPolicyPasswordlessAcceptableAaguids", n => { WebAuthnPolicyPasswordlessAcceptableAaguids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"webAuthnPolicyPasswordlessAttestationConveyancePreference", n => { WebAuthnPolicyPasswordlessAttestationConveyancePreference = n.GetStringValue(); } },
-                {"webAuthnPolicyPasswordlessAuthenticatorAttachment", n => { WebAuthnPolicyPasswordlessAuthenticatorAttachment = n.GetStringValue(); } },
-                {"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister", n => { WebAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister = n.GetBoolValue(); } },
-                {"webAuthnPolicyPasswordlessCreateTimeout", n => { WebAuthnPolicyPasswordlessCreateTimeout = n.GetIntValue(); } },
-                {"webAuthnPolicyPasswordlessExtraOrigins", n => { WebAuthnPolicyPasswordlessExtraOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"webAuthnPolicyPasswordlessRequireResidentKey", n => { WebAuthnPolicyPasswordlessRequireResidentKey = n.GetStringValue(); } },
-                {"webAuthnPolicyPasswordlessRpEntityName", n => { WebAuthnPolicyPasswordlessRpEntityName = n.GetStringValue(); } },
-                {"webAuthnPolicyPasswordlessRpId", n => { WebAuthnPolicyPasswordlessRpId = n.GetStringValue(); } },
-                {"webAuthnPolicyPasswordlessSignatureAlgorithms", n => { WebAuthnPolicyPasswordlessSignatureAlgorithms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"webAuthnPolicyPasswordlessUserVerificationRequirement", n => { WebAuthnPolicyPasswordlessUserVerificationRequirement = n.GetStringValue(); } },
-                {"webAuthnPolicyRequireResidentKey", n => { WebAuthnPolicyRequireResidentKey = n.GetStringValue(); } },
-                {"webAuthnPolicyRpEntityName", n => { WebAuthnPolicyRpEntityName = n.GetStringValue(); } },
-                {"webAuthnPolicyRpId", n => { WebAuthnPolicyRpId = n.GetStringValue(); } },
-                {"webAuthnPolicySignatureAlgorithms", n => { WebAuthnPolicySignatureAlgorithms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"webAuthnPolicyUserVerificationRequirement", n => { WebAuthnPolicyUserVerificationRequirement = n.GetStringValue(); } },
+                { "accessCodeLifespan", n => { AccessCodeLifespan = n.GetIntValue(); } },
+                { "accessCodeLifespanLogin", n => { AccessCodeLifespanLogin = n.GetIntValue(); } },
+                { "accessCodeLifespanUserAction", n => { AccessCodeLifespanUserAction = n.GetIntValue(); } },
+                { "accessTokenLifespan", n => { AccessTokenLifespan = n.GetIntValue(); } },
+                { "accessTokenLifespanForImplicitFlow", n => { AccessTokenLifespanForImplicitFlow = n.GetIntValue(); } },
+                { "accountTheme", n => { AccountTheme = n.GetStringValue(); } },
+                { "actionTokenGeneratedByAdminLifespan", n => { ActionTokenGeneratedByAdminLifespan = n.GetIntValue(); } },
+                { "actionTokenGeneratedByUserLifespan", n => { ActionTokenGeneratedByUserLifespan = n.GetIntValue(); } },
+                { "adminEventsDetailsEnabled", n => { AdminEventsDetailsEnabled = n.GetBoolValue(); } },
+                { "adminEventsEnabled", n => { AdminEventsEnabled = n.GetBoolValue(); } },
+                { "adminTheme", n => { AdminTheme = n.GetStringValue(); } },
+                { "applicationScopeMappings", n => { ApplicationScopeMappings = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_applicationScopeMappings>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_applicationScopeMappings.CreateFromDiscriminatorValue); } },
+                { "applications", n => { Applications = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_attributes.CreateFromDiscriminatorValue); } },
+                { "authenticationFlows", n => { AuthenticationFlows = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationFlowRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationFlowRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticatorConfig", n => { AuthenticatorConfig = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "browserFlow", n => { BrowserFlow = n.GetStringValue(); } },
+                { "browserSecurityHeaders", n => { BrowserSecurityHeaders = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders.CreateFromDiscriminatorValue); } },
+                { "bruteForceProtected", n => { BruteForceProtected = n.GetBoolValue(); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "clientAuthenticationFlow", n => { ClientAuthenticationFlow = n.GetStringValue(); } },
+                { "clientOfflineSessionIdleTimeout", n => { ClientOfflineSessionIdleTimeout = n.GetIntValue(); } },
+                { "clientOfflineSessionMaxLifespan", n => { ClientOfflineSessionMaxLifespan = n.GetIntValue(); } },
+                { "clientPolicies", n => { ClientPolicies = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPoliciesRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPoliciesRepresentation.CreateFromDiscriminatorValue); } },
+                { "clientProfiles", n => { ClientProfiles = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfilesRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfilesRepresentation.CreateFromDiscriminatorValue); } },
+                { "clientScopeMappings", n => { ClientScopeMappings = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_clientScopeMappings>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_clientScopeMappings.CreateFromDiscriminatorValue); } },
+                { "clientScopes", n => { ClientScopes = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clientSessionIdleTimeout", n => { ClientSessionIdleTimeout = n.GetIntValue(); } },
+                { "clientSessionMaxLifespan", n => { ClientSessionMaxLifespan = n.GetIntValue(); } },
+                { "clientTemplates", n => { ClientTemplates = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clients", n => { Clients = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "codeSecret", n => { CodeSecret = n.GetStringValue(); } },
+                { "components", n => { Components = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation.CreateFromDiscriminatorValue); } },
+                { "defaultDefaultClientScopes", n => { DefaultDefaultClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defaultGroups", n => { DefaultGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
+                { "defaultOptionalClientScopes", n => { DefaultOptionalClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defaultRole", n => { DefaultRole = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.CreateFromDiscriminatorValue); } },
+                { "defaultRoles", n => { DefaultRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defaultSignatureAlgorithm", n => { DefaultSignatureAlgorithm = n.GetStringValue(); } },
+                { "directGrantFlow", n => { DirectGrantFlow = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "displayNameHtml", n => { DisplayNameHtml = n.GetStringValue(); } },
+                { "dockerAuthenticationFlow", n => { DockerAuthenticationFlow = n.GetStringValue(); } },
+                { "duplicateEmailsAllowed", n => { DuplicateEmailsAllowed = n.GetBoolValue(); } },
+                { "editUsernameAllowed", n => { EditUsernameAllowed = n.GetBoolValue(); } },
+                { "emailTheme", n => { EmailTheme = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enabledEventTypes", n => { EnabledEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "eventsEnabled", n => { EventsEnabled = n.GetBoolValue(); } },
+                { "eventsExpiration", n => { EventsExpiration = n.GetLongValue(); } },
+                { "eventsListeners", n => { EventsListeners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "failureFactor", n => { FailureFactor = n.GetIntValue(); } },
+                { "federatedUsers", n => { FederatedUsers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "firstBrokerLoginFlow", n => { FirstBrokerLoginFlow = n.GetStringValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "identityProviderMappers", n => { IdentityProviderMappers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "internationalizationEnabled", n => { InternationalizationEnabled = n.GetBoolValue(); } },
+                { "keycloakVersion", n => { KeycloakVersion = n.GetStringValue(); } },
+                { "localizationTexts", n => { LocalizationTexts = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_localizationTexts>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_localizationTexts.CreateFromDiscriminatorValue); } },
+                { "loginTheme", n => { LoginTheme = n.GetStringValue(); } },
+                { "loginWithEmailAllowed", n => { LoginWithEmailAllowed = n.GetBoolValue(); } },
+                { "maxDeltaTimeSeconds", n => { MaxDeltaTimeSeconds = n.GetIntValue(); } },
+                { "maxFailureWaitSeconds", n => { MaxFailureWaitSeconds = n.GetIntValue(); } },
+                { "maxTemporaryLockouts", n => { MaxTemporaryLockouts = n.GetIntValue(); } },
+                { "minimumQuickLoginWaitSeconds", n => { MinimumQuickLoginWaitSeconds = n.GetIntValue(); } },
+                { "notBefore", n => { NotBefore = n.GetIntValue(); } },
+                { "oauth2DeviceCodeLifespan", n => { Oauth2DeviceCodeLifespan = n.GetIntValue(); } },
+                { "oauth2DevicePollingInterval", n => { Oauth2DevicePollingInterval = n.GetIntValue(); } },
+                { "oauthClients", n => { OauthClients = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "offlineSessionIdleTimeout", n => { OfflineSessionIdleTimeout = n.GetIntValue(); } },
+                { "offlineSessionMaxLifespan", n => { OfflineSessionMaxLifespan = n.GetIntValue(); } },
+                { "offlineSessionMaxLifespanEnabled", n => { OfflineSessionMaxLifespanEnabled = n.GetBoolValue(); } },
+                { "organizations", n => { Organizations = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "organizationsEnabled", n => { OrganizationsEnabled = n.GetBoolValue(); } },
+                { "otpPolicyAlgorithm", n => { OtpPolicyAlgorithm = n.GetStringValue(); } },
+                { "otpPolicyCodeReusable", n => { OtpPolicyCodeReusable = n.GetBoolValue(); } },
+                { "otpPolicyDigits", n => { OtpPolicyDigits = n.GetIntValue(); } },
+                { "otpPolicyInitialCounter", n => { OtpPolicyInitialCounter = n.GetIntValue(); } },
+                { "otpPolicyLookAheadWindow", n => { OtpPolicyLookAheadWindow = n.GetIntValue(); } },
+                { "otpPolicyPeriod", n => { OtpPolicyPeriod = n.GetIntValue(); } },
+                { "otpPolicyType", n => { OtpPolicyType = n.GetStringValue(); } },
+                { "otpSupportedApplications", n => { OtpSupportedApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "passwordCredentialGrantAllowed", n => { PasswordCredentialGrantAllowed = n.GetBoolValue(); } },
+                { "passwordPolicy", n => { PasswordPolicy = n.GetStringValue(); } },
+                { "permanentLockout", n => { PermanentLockout = n.GetBoolValue(); } },
+                { "privateKey", n => { PrivateKey = n.GetStringValue(); } },
+                { "protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publicKey", n => { PublicKey = n.GetStringValue(); } },
+                { "quickLoginCheckMilliSeconds", n => { QuickLoginCheckMilliSeconds = n.GetLongValue(); } },
+                { "realm", n => { Realm = n.GetStringValue(); } },
+                { "realmCacheEnabled", n => { RealmCacheEnabled = n.GetBoolValue(); } },
+                { "oAuth2DeviceCodeLifespan", n => { RealmRepresentationOAuth2DeviceCodeLifespan = n.GetIntValue(); } },
+                { "oAuth2DevicePollingInterval", n => { RealmRepresentationOAuth2DevicePollingInterval = n.GetIntValue(); } },
+                { "refreshTokenMaxReuse", n => { RefreshTokenMaxReuse = n.GetIntValue(); } },
+                { "registrationAllowed", n => { RegistrationAllowed = n.GetBoolValue(); } },
+                { "registrationEmailAsUsername", n => { RegistrationEmailAsUsername = n.GetBoolValue(); } },
+                { "registrationFlow", n => { RegistrationFlow = n.GetStringValue(); } },
+                { "rememberMe", n => { RememberMe = n.GetBoolValue(); } },
+                { "requiredActions", n => { RequiredActions = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requiredCredentials", n => { RequiredCredentials = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "resetCredentialsFlow", n => { ResetCredentialsFlow = n.GetStringValue(); } },
+                { "resetPasswordAllowed", n => { ResetPasswordAllowed = n.GetBoolValue(); } },
+                { "revokeRefreshToken", n => { RevokeRefreshToken = n.GetBoolValue(); } },
+                { "roles", n => { Roles = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation.CreateFromDiscriminatorValue); } },
+                { "scopeMappings", n => { ScopeMappings = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "smtpServer", n => { SmtpServer = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer.CreateFromDiscriminatorValue); } },
+                { "social", n => { Social = n.GetBoolValue(); } },
+                { "socialProviders", n => { SocialProviders = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_socialProviders>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_socialProviders.CreateFromDiscriminatorValue); } },
+                { "sslRequired", n => { SslRequired = n.GetStringValue(); } },
+                { "ssoSessionIdleTimeout", n => { SsoSessionIdleTimeout = n.GetIntValue(); } },
+                { "ssoSessionIdleTimeoutRememberMe", n => { SsoSessionIdleTimeoutRememberMe = n.GetIntValue(); } },
+                { "ssoSessionMaxLifespan", n => { SsoSessionMaxLifespan = n.GetIntValue(); } },
+                { "ssoSessionMaxLifespanRememberMe", n => { SsoSessionMaxLifespanRememberMe = n.GetIntValue(); } },
+                { "supportedLocales", n => { SupportedLocales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "updateProfileOnInitialSocialLogin", n => { UpdateProfileOnInitialSocialLogin = n.GetBoolValue(); } },
+                { "userCacheEnabled", n => { UserCacheEnabled = n.GetBoolValue(); } },
+                { "userFederationMappers", n => { UserFederationMappers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userFederationProviders", n => { UserFederationProviders = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userManagedAccessAllowed", n => { UserManagedAccessAllowed = n.GetBoolValue(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "verifyEmail", n => { VerifyEmail = n.GetBoolValue(); } },
+                { "waitIncrementSeconds", n => { WaitIncrementSeconds = n.GetIntValue(); } },
+                { "webAuthnPolicyAcceptableAaguids", n => { WebAuthnPolicyAcceptableAaguids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "webAuthnPolicyAttestationConveyancePreference", n => { WebAuthnPolicyAttestationConveyancePreference = n.GetStringValue(); } },
+                { "webAuthnPolicyAuthenticatorAttachment", n => { WebAuthnPolicyAuthenticatorAttachment = n.GetStringValue(); } },
+                { "webAuthnPolicyAvoidSameAuthenticatorRegister", n => { WebAuthnPolicyAvoidSameAuthenticatorRegister = n.GetBoolValue(); } },
+                { "webAuthnPolicyCreateTimeout", n => { WebAuthnPolicyCreateTimeout = n.GetIntValue(); } },
+                { "webAuthnPolicyExtraOrigins", n => { WebAuthnPolicyExtraOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "webAuthnPolicyPasswordlessAcceptableAaguids", n => { WebAuthnPolicyPasswordlessAcceptableAaguids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "webAuthnPolicyPasswordlessAttestationConveyancePreference", n => { WebAuthnPolicyPasswordlessAttestationConveyancePreference = n.GetStringValue(); } },
+                { "webAuthnPolicyPasswordlessAuthenticatorAttachment", n => { WebAuthnPolicyPasswordlessAuthenticatorAttachment = n.GetStringValue(); } },
+                { "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister", n => { WebAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister = n.GetBoolValue(); } },
+                { "webAuthnPolicyPasswordlessCreateTimeout", n => { WebAuthnPolicyPasswordlessCreateTimeout = n.GetIntValue(); } },
+                { "webAuthnPolicyPasswordlessExtraOrigins", n => { WebAuthnPolicyPasswordlessExtraOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "webAuthnPolicyPasswordlessRequireResidentKey", n => { WebAuthnPolicyPasswordlessRequireResidentKey = n.GetStringValue(); } },
+                { "webAuthnPolicyPasswordlessRpEntityName", n => { WebAuthnPolicyPasswordlessRpEntityName = n.GetStringValue(); } },
+                { "webAuthnPolicyPasswordlessRpId", n => { WebAuthnPolicyPasswordlessRpId = n.GetStringValue(); } },
+                { "webAuthnPolicyPasswordlessSignatureAlgorithms", n => { WebAuthnPolicyPasswordlessSignatureAlgorithms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "webAuthnPolicyPasswordlessUserVerificationRequirement", n => { WebAuthnPolicyPasswordlessUserVerificationRequirement = n.GetStringValue(); } },
+                { "webAuthnPolicyRequireResidentKey", n => { WebAuthnPolicyRequireResidentKey = n.GetStringValue(); } },
+                { "webAuthnPolicyRpEntityName", n => { WebAuthnPolicyRpEntityName = n.GetStringValue(); } },
+                { "webAuthnPolicyRpId", n => { WebAuthnPolicyRpId = n.GetStringValue(); } },
+                { "webAuthnPolicySignatureAlgorithms", n => { WebAuthnPolicySignatureAlgorithms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "webAuthnPolicyUserVerificationRequirement", n => { WebAuthnPolicyUserVerificationRequirement = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -999,33 +1012,33 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteBoolValue("adminEventsDetailsEnabled", AdminEventsDetailsEnabled);
             writer.WriteBoolValue("adminEventsEnabled", AdminEventsEnabled);
             writer.WriteStringValue("adminTheme", AdminTheme);
-            writer.WriteCollectionOfObjectValues<ApplicationRepresentation>("applications", Applications);
-            writer.WriteObjectValue<RealmRepresentation_applicationScopeMappings>("applicationScopeMappings", ApplicationScopeMappings);
-            writer.WriteObjectValue<RealmRepresentation_attributes>("attributes", Attributes);
-            writer.WriteCollectionOfObjectValues<AuthenticationFlowRepresentation>("authenticationFlows", AuthenticationFlows);
-            writer.WriteCollectionOfObjectValues<AuthenticatorConfigRepresentation>("authenticatorConfig", AuthenticatorConfig);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ApplicationRepresentation>("applications", Applications);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_applicationScopeMappings>("applicationScopeMappings", ApplicationScopeMappings);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_attributes>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticationFlowRepresentation>("authenticationFlows", AuthenticationFlows);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthenticatorConfigRepresentation>("authenticatorConfig", AuthenticatorConfig);
             writer.WriteStringValue("browserFlow", BrowserFlow);
-            writer.WriteObjectValue<RealmRepresentation_browserSecurityHeaders>("browserSecurityHeaders", BrowserSecurityHeaders);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders>("browserSecurityHeaders", BrowserSecurityHeaders);
             writer.WriteBoolValue("bruteForceProtected", BruteForceProtected);
             writer.WriteStringValue("certificate", Certificate);
             writer.WriteStringValue("clientAuthenticationFlow", ClientAuthenticationFlow);
             writer.WriteIntValue("clientOfflineSessionIdleTimeout", ClientOfflineSessionIdleTimeout);
             writer.WriteIntValue("clientOfflineSessionMaxLifespan", ClientOfflineSessionMaxLifespan);
-            writer.WriteObjectValue<ClientPoliciesRepresentation>("clientPolicies", ClientPolicies);
-            writer.WriteObjectValue<ClientProfilesRepresentation>("clientProfiles", ClientProfiles);
-            writer.WriteCollectionOfObjectValues<ClientRepresentation>("clients", Clients);
-            writer.WriteObjectValue<RealmRepresentation_clientScopeMappings>("clientScopeMappings", ClientScopeMappings);
-            writer.WriteCollectionOfObjectValues<ClientScopeRepresentation>("clientScopes", ClientScopes);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPoliciesRepresentation>("clientPolicies", ClientPolicies);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientProfilesRepresentation>("clientProfiles", ClientProfiles);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientRepresentation>("clients", Clients);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_clientScopeMappings>("clientScopeMappings", ClientScopeMappings);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientScopeRepresentation>("clientScopes", ClientScopes);
             writer.WriteIntValue("clientSessionIdleTimeout", ClientSessionIdleTimeout);
             writer.WriteIntValue("clientSessionMaxLifespan", ClientSessionMaxLifespan);
-            writer.WriteCollectionOfObjectValues<ClientTemplateRepresentation>("clientTemplates", ClientTemplates);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation>("clientTemplates", ClientTemplates);
             writer.WriteStringValue("codeSecret", CodeSecret);
-            writer.WriteObjectValue<MultivaluedHashMapStringComponentExportRepresentation>("components", Components);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringComponentExportRepresentation>("components", Components);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultDefaultClientScopes", DefaultDefaultClientScopes);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultGroups", DefaultGroups);
             writer.WriteStringValue("defaultLocale", DefaultLocale);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultOptionalClientScopes", DefaultOptionalClientScopes);
-            writer.WriteObjectValue<RoleRepresentation>("defaultRole", DefaultRole);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>("defaultRole", DefaultRole);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultRoles", DefaultRoles);
             writer.WriteStringValue("defaultSignatureAlgorithm", DefaultSignatureAlgorithm);
             writer.WriteStringValue("directGrantFlow", DirectGrantFlow);
@@ -1041,15 +1054,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteLongValue("eventsExpiration", EventsExpiration);
             writer.WriteCollectionOfPrimitiveValues<string>("eventsListeners", EventsListeners);
             writer.WriteIntValue("failureFactor", FailureFactor);
-            writer.WriteCollectionOfObjectValues<UserRepresentation>("federatedUsers", FederatedUsers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>("federatedUsers", FederatedUsers);
             writer.WriteStringValue("firstBrokerLoginFlow", FirstBrokerLoginFlow);
-            writer.WriteCollectionOfObjectValues<GroupRepresentation>("groups", Groups);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>("groups", Groups);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<IdentityProviderMapperRepresentation>("identityProviderMappers", IdentityProviderMappers);
-            writer.WriteCollectionOfObjectValues<IdentityProviderRepresentation>("identityProviders", IdentityProviders);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderMapperRepresentation>("identityProviderMappers", IdentityProviderMappers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>("identityProviders", IdentityProviders);
             writer.WriteBoolValue("internationalizationEnabled", InternationalizationEnabled);
             writer.WriteStringValue("keycloakVersion", KeycloakVersion);
-            writer.WriteObjectValue<RealmRepresentation_localizationTexts>("localizationTexts", LocalizationTexts);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_localizationTexts>("localizationTexts", LocalizationTexts);
             writer.WriteStringValue("loginTheme", LoginTheme);
             writer.WriteBoolValue("loginWithEmailAllowed", LoginWithEmailAllowed);
             writer.WriteIntValue("maxDeltaTimeSeconds", MaxDeltaTimeSeconds);
@@ -1059,10 +1072,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteIntValue("notBefore", NotBefore);
             writer.WriteIntValue("oauth2DeviceCodeLifespan", Oauth2DeviceCodeLifespan);
             writer.WriteIntValue("oauth2DevicePollingInterval", Oauth2DevicePollingInterval);
-            writer.WriteCollectionOfObjectValues<OAuthClientRepresentation>("oauthClients", OauthClients);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OAuthClientRepresentation>("oauthClients", OauthClients);
             writer.WriteIntValue("offlineSessionIdleTimeout", OfflineSessionIdleTimeout);
             writer.WriteIntValue("offlineSessionMaxLifespan", OfflineSessionMaxLifespan);
             writer.WriteBoolValue("offlineSessionMaxLifespanEnabled", OfflineSessionMaxLifespanEnabled);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation>("organizations", Organizations);
+            writer.WriteBoolValue("organizationsEnabled", OrganizationsEnabled);
             writer.WriteStringValue("otpPolicyAlgorithm", OtpPolicyAlgorithm);
             writer.WriteBoolValue("otpPolicyCodeReusable", OtpPolicyCodeReusable);
             writer.WriteIntValue("otpPolicyDigits", OtpPolicyDigits);
@@ -1075,7 +1090,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteStringValue("passwordPolicy", PasswordPolicy);
             writer.WriteBoolValue("permanentLockout", PermanentLockout);
             writer.WriteStringValue("privateKey", PrivateKey);
-            writer.WriteCollectionOfObjectValues<ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
             writer.WriteStringValue("publicKey", PublicKey);
             writer.WriteLongValue("quickLoginCheckMilliSeconds", QuickLoginCheckMilliSeconds);
             writer.WriteStringValue("realm", Realm);
@@ -1087,16 +1102,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteBoolValue("registrationEmailAsUsername", RegistrationEmailAsUsername);
             writer.WriteStringValue("registrationFlow", RegistrationFlow);
             writer.WriteBoolValue("rememberMe", RememberMe);
-            writer.WriteCollectionOfObjectValues<RequiredActionProviderRepresentation>("requiredActions", RequiredActions);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RequiredActionProviderRepresentation>("requiredActions", RequiredActions);
             writer.WriteCollectionOfPrimitiveValues<string>("requiredCredentials", RequiredCredentials);
             writer.WriteStringValue("resetCredentialsFlow", ResetCredentialsFlow);
             writer.WriteBoolValue("resetPasswordAllowed", ResetPasswordAllowed);
             writer.WriteBoolValue("revokeRefreshToken", RevokeRefreshToken);
-            writer.WriteObjectValue<RolesRepresentation>("roles", Roles);
-            writer.WriteCollectionOfObjectValues<ScopeMappingRepresentation>("scopeMappings", ScopeMappings);
-            writer.WriteObjectValue<RealmRepresentation_smtpServer>("smtpServer", SmtpServer);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation>("roles", Roles);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation>("scopeMappings", ScopeMappings);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer>("smtpServer", SmtpServer);
             writer.WriteBoolValue("social", Social);
-            writer.WriteObjectValue<RealmRepresentation_socialProviders>("socialProviders", SocialProviders);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_socialProviders>("socialProviders", SocialProviders);
             writer.WriteStringValue("sslRequired", SslRequired);
             writer.WriteIntValue("ssoSessionIdleTimeout", SsoSessionIdleTimeout);
             writer.WriteIntValue("ssoSessionIdleTimeoutRememberMe", SsoSessionIdleTimeoutRememberMe);
@@ -1105,10 +1120,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("supportedLocales", SupportedLocales);
             writer.WriteBoolValue("updateProfileOnInitialSocialLogin", UpdateProfileOnInitialSocialLogin);
             writer.WriteBoolValue("userCacheEnabled", UserCacheEnabled);
-            writer.WriteCollectionOfObjectValues<UserFederationMapperRepresentation>("userFederationMappers", UserFederationMappers);
-            writer.WriteCollectionOfObjectValues<UserFederationProviderRepresentation>("userFederationProviders", UserFederationProviders);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationMapperRepresentation>("userFederationMappers", UserFederationMappers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserFederationProviderRepresentation>("userFederationProviders", UserFederationProviders);
             writer.WriteBoolValue("userManagedAccessAllowed", UserManagedAccessAllowed);
-            writer.WriteCollectionOfObjectValues<UserRepresentation>("users", Users);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>("users", Users);
             writer.WriteBoolValue("verifyEmail", VerifyEmail);
             writer.WriteIntValue("waitIncrementSeconds", WaitIncrementSeconds);
             writer.WriteCollectionOfPrimitiveValues<string>("webAuthnPolicyAcceptableAaguids", WebAuthnPolicyAcceptableAaguids);

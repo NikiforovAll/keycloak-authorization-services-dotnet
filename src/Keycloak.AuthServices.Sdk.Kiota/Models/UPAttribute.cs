@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UPAttribute : IAdditionalDataHolder, IParsable 
+    public class UPAttribute : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UPAttribute_annotations? Annotations { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_annotations? Annotations { get; set; }
 #nullable restore
 #else
-        public UPAttribute_annotations Annotations { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_annotations Annotations { get; set; }
 #endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,37 +49,37 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UPAttributePermissions? Permissions { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributePermissions? Permissions { get; set; }
 #nullable restore
 #else
-        public UPAttributePermissions Permissions { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributePermissions Permissions { get; set; }
 #endif
         /// <summary>The required property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UPAttributeRequired? Required { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeRequired? Required { get; set; }
 #nullable restore
 #else
-        public UPAttributeRequired Required { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeRequired Required { get; set; }
 #endif
         /// <summary>The selector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UPAttributeSelector? Selector { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeSelector? Selector { get; set; }
 #nullable restore
 #else
-        public UPAttributeSelector Selector { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeSelector Selector { get; set; }
 #endif
         /// <summary>The validations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UPAttribute_validations? Validations { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_validations? Validations { get; set; }
 #nullable restore
 #else
-        public UPAttribute_validations Validations { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_validations Validations { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UPAttribute"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute"/> and sets the default values.
         /// </summary>
         public UPAttribute()
         {
@@ -87,12 +88,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UPAttribute"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UPAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UPAttribute();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,15 +103,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"annotations", n => { Annotations = n.GetObjectValue<UPAttribute_annotations>(UPAttribute_annotations.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"group", n => { Group = n.GetStringValue(); } },
-                {"multivalued", n => { Multivalued = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetObjectValue<UPAttributePermissions>(UPAttributePermissions.CreateFromDiscriminatorValue); } },
-                {"required", n => { Required = n.GetObjectValue<UPAttributeRequired>(UPAttributeRequired.CreateFromDiscriminatorValue); } },
-                {"selector", n => { Selector = n.GetObjectValue<UPAttributeSelector>(UPAttributeSelector.CreateFromDiscriminatorValue); } },
-                {"validations", n => { Validations = n.GetObjectValue<UPAttribute_validations>(UPAttribute_validations.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_annotations>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_annotations.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetStringValue(); } },
+                { "multivalued", n => { Multivalued = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributePermissions>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributePermissions.CreateFromDiscriminatorValue); } },
+                { "required", n => { Required = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeRequired>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeRequired.CreateFromDiscriminatorValue); } },
+                { "selector", n => { Selector = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeSelector>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeSelector.CreateFromDiscriminatorValue); } },
+                { "validations", n => { Validations = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_validations>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_validations.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -120,15 +121,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UPAttribute_annotations>("annotations", Annotations);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_annotations>("annotations", Annotations);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("group", Group);
             writer.WriteBoolValue("multivalued", Multivalued);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UPAttributePermissions>("permissions", Permissions);
-            writer.WriteObjectValue<UPAttributeRequired>("required", Required);
-            writer.WriteObjectValue<UPAttributeSelector>("selector", Selector);
-            writer.WriteObjectValue<UPAttribute_validations>("validations", Validations);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributePermissions>("permissions", Permissions);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeRequired>("required", Required);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttributeSelector>("selector", Selector);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UPAttribute_validations>("validations", Validations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

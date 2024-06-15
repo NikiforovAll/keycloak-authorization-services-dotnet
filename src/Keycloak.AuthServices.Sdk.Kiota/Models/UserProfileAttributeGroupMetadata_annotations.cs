@@ -4,15 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class UserProfileAttributeGroupMetadata_annotations : IAdditionalDataHolder, IParsable 
+    public class UserProfileAttributeGroupMetadata_annotations : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="UserProfileAttributeGroupMetadata_annotations"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeGroupMetadata_annotations"/> and sets the default values.
         /// </summary>
         public UserProfileAttributeGroupMetadata_annotations()
         {
@@ -21,12 +22,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserProfileAttributeGroupMetadata_annotations"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeGroupMetadata_annotations"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserProfileAttributeGroupMetadata_annotations CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeGroupMetadata_annotations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserProfileAttributeGroupMetadata_annotations();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeGroupMetadata_annotations();
         }
         /// <summary>
         /// The deserialization information for the current model

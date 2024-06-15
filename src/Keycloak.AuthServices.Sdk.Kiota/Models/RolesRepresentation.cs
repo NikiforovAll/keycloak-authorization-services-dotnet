@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class RolesRepresentation : IAdditionalDataHolder, IParsable 
+    public class RolesRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -15,29 +16,29 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RolesRepresentation_application? Application { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_application? Application { get; set; }
 #nullable restore
 #else
-        public RolesRepresentation_application Application { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_application Application { get; set; }
 #endif
         /// <summary>The client property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RolesRepresentation_client? Client { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_client? Client { get; set; }
 #nullable restore
 #else
-        public RolesRepresentation_client Client { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_client Client { get; set; }
 #endif
         /// <summary>The realm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleRepresentation>? Realm { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>? Realm { get; set; }
 #nullable restore
 #else
-        public List<RoleRepresentation> Realm { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation> Realm { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RolesRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation"/> and sets the default values.
         /// </summary>
         public RolesRepresentation()
         {
@@ -46,12 +47,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RolesRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RolesRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RolesRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,9 +62,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"application", n => { Application = n.GetObjectValue<RolesRepresentation_application>(RolesRepresentation_application.CreateFromDiscriminatorValue); } },
-                {"client", n => { Client = n.GetObjectValue<RolesRepresentation_client>(RolesRepresentation_client.CreateFromDiscriminatorValue); } },
-                {"realm", n => { Realm = n.GetCollectionOfObjectValues<RoleRepresentation>(RoleRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "application", n => { Application = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_application>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_application.CreateFromDiscriminatorValue); } },
+                { "client", n => { Client = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_client>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_client.CreateFromDiscriminatorValue); } },
+                { "realm", n => { Realm = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,9 +74,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<RolesRepresentation_application>("application", Application);
-            writer.WriteObjectValue<RolesRepresentation_client>("client", Client);
-            writer.WriteCollectionOfObjectValues<RoleRepresentation>("realm", Realm);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_application>("application", Application);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation_client>("client", Client);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>("realm", Realm);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

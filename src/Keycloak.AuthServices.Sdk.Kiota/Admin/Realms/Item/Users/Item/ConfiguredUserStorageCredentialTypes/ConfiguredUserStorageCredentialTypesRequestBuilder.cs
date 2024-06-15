@@ -7,14 +7,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\users\{user-id}\configured-user-storage-credential-types
     /// </summary>
-    public class ConfiguredUserStorageCredentialTypesRequestBuilder : BaseRequestBuilder 
+    public class ConfiguredUserStorageCredentialTypesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="ConfiguredUserStorageCredentialTypesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes.ConfiguredUserStorageCredentialTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -22,7 +23,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Con
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfiguredUserStorageCredentialTypesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes.ConfiguredUserStorageCredentialTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -70,11 +71,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.Con
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ConfiguredUserStorageCredentialTypesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes.ConfiguredUserStorageCredentialTypesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConfiguredUserStorageCredentialTypesRequestBuilder WithUrl(string rawUrl)
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes.ConfiguredUserStorageCredentialTypesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ConfiguredUserStorageCredentialTypesRequestBuilder(rawUrl, RequestAdapter);
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ConfiguredUserStorageCredentialTypes.ConfiguredUserStorageCredentialTypesRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

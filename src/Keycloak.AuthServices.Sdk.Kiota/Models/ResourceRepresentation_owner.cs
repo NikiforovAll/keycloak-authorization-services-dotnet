@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ResourceRepresentation_owner : ResourceOwnerRepresentation, IParsable 
+    public class ResourceRepresentation_owner : Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceOwnerRepresentation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ResourceRepresentation_owner"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation_owner"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ResourceRepresentation_owner CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation_owner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ResourceRepresentation_owner();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ResourceRepresentation_owner();
         }
         /// <summary>
         /// The deserialization information for the current model

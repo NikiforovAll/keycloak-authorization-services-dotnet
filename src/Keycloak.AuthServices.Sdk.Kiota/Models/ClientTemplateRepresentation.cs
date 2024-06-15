@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     [Obsolete("")]
     #pragma warning disable CS1591
-    public class ClientTemplateRepresentation : IAdditionalDataHolder, IParsable 
+    public class ClientTemplateRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -15,10 +16,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClientTemplateRepresentation_attributes? Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation_attributes? Attributes { get; set; }
 #nullable restore
 #else
-        public ClientTemplateRepresentation_attributes Attributes { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation_attributes Attributes { get; set; }
 #endif
         /// <summary>The bearerOnly property</summary>
         public bool? BearerOnly { get; set; }
@@ -67,10 +68,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The protocolMappers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>? ProtocolMappers { get; set; }
 #nullable restore
 #else
-        public List<ProtocolMapperRepresentation> ProtocolMappers { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation> ProtocolMappers { get; set; }
 #endif
         /// <summary>The publicClient property</summary>
         public bool? PublicClient { get; set; }
@@ -79,7 +80,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The standardFlowEnabled property</summary>
         public bool? StandardFlowEnabled { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="ClientTemplateRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation"/> and sets the default values.
         /// </summary>
         public ClientTemplateRepresentation()
         {
@@ -88,12 +89,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClientTemplateRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClientTemplateRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClientTemplateRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +104,21 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributes", n => { Attributes = n.GetObjectValue<ClientTemplateRepresentation_attributes>(ClientTemplateRepresentation_attributes.CreateFromDiscriminatorValue); } },
-                {"bearerOnly", n => { BearerOnly = n.GetBoolValue(); } },
-                {"consentRequired", n => { ConsentRequired = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"directAccessGrantsEnabled", n => { DirectAccessGrantsEnabled = n.GetBoolValue(); } },
-                {"frontchannelLogout", n => { FrontchannelLogout = n.GetBoolValue(); } },
-                {"fullScopeAllowed", n => { FullScopeAllowed = n.GetBoolValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"implicitFlowEnabled", n => { ImplicitFlowEnabled = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"protocol", n => { Protocol = n.GetStringValue(); } },
-                {"protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<ProtocolMapperRepresentation>(ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"publicClient", n => { PublicClient = n.GetBoolValue(); } },
-                {"serviceAccountsEnabled", n => { ServiceAccountsEnabled = n.GetBoolValue(); } },
-                {"standardFlowEnabled", n => { StandardFlowEnabled = n.GetBoolValue(); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation_attributes.CreateFromDiscriminatorValue); } },
+                { "bearerOnly", n => { BearerOnly = n.GetBoolValue(); } },
+                { "consentRequired", n => { ConsentRequired = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "directAccessGrantsEnabled", n => { DirectAccessGrantsEnabled = n.GetBoolValue(); } },
+                { "frontchannelLogout", n => { FrontchannelLogout = n.GetBoolValue(); } },
+                { "fullScopeAllowed", n => { FullScopeAllowed = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "implicitFlowEnabled", n => { ImplicitFlowEnabled = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
+                { "protocolMappers", n => { ProtocolMappers = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publicClient", n => { PublicClient = n.GetBoolValue(); } },
+                { "serviceAccountsEnabled", n => { ServiceAccountsEnabled = n.GetBoolValue(); } },
+                { "standardFlowEnabled", n => { StandardFlowEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -127,7 +128,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ClientTemplateRepresentation_attributes>("attributes", Attributes);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTemplateRepresentation_attributes>("attributes", Attributes);
             writer.WriteBoolValue("bearerOnly", BearerOnly);
             writer.WriteBoolValue("consentRequired", ConsentRequired);
             writer.WriteStringValue("description", Description);
@@ -138,7 +139,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
             writer.WriteBoolValue("implicitFlowEnabled", ImplicitFlowEnabled);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("protocol", Protocol);
-            writer.WriteCollectionOfObjectValues<ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ProtocolMapperRepresentation>("protocolMappers", ProtocolMappers);
             writer.WriteBoolValue("publicClient", PublicClient);
             writer.WriteBoolValue("serviceAccountsEnabled", ServiceAccountsEnabled);
             writer.WriteBoolValue("standardFlowEnabled", StandardFlowEnabled);

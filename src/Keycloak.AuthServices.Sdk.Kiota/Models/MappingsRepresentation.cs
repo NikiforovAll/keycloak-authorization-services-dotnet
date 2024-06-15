@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class MappingsRepresentation : IAdditionalDataHolder, IParsable 
+    public class MappingsRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,21 +15,21 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The clientMappings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MappingsRepresentation_clientMappings? ClientMappings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation_clientMappings? ClientMappings { get; set; }
 #nullable restore
 #else
-        public MappingsRepresentation_clientMappings ClientMappings { get; set; }
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation_clientMappings ClientMappings { get; set; }
 #endif
         /// <summary>The realmMappings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleRepresentation>? RealmMappings { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>? RealmMappings { get; set; }
 #nullable restore
 #else
-        public List<RoleRepresentation> RealmMappings { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation> RealmMappings { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MappingsRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation"/> and sets the default values.
         /// </summary>
         public MappingsRepresentation()
         {
@@ -37,12 +38,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MappingsRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MappingsRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MappingsRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,8 +53,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientMappings", n => { ClientMappings = n.GetObjectValue<MappingsRepresentation_clientMappings>(MappingsRepresentation_clientMappings.CreateFromDiscriminatorValue); } },
-                {"realmMappings", n => { RealmMappings = n.GetCollectionOfObjectValues<RoleRepresentation>(RoleRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clientMappings", n => { ClientMappings = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation_clientMappings>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation_clientMappings.CreateFromDiscriminatorValue); } },
+                { "realmMappings", n => { RealmMappings = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,8 +64,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MappingsRepresentation_clientMappings>("clientMappings", ClientMappings);
-            writer.WriteCollectionOfObjectValues<RoleRepresentation>("realmMappings", RealmMappings);
+            writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MappingsRepresentation_clientMappings>("clientMappings", ClientMappings);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation>("realmMappings", RealmMappings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

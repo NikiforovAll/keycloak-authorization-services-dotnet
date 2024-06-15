@@ -6,19 +6,20 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin
+{
     /// <summary>
     /// Builds and executes requests for operations under \admin
     /// </summary>
-    public class AdminRequestBuilder : BaseRequestBuilder 
+    public class AdminRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The realms property</summary>
-        public RealmsRequestBuilder Realms
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder Realms
         {
-            get => new RealmsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.RealmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdminRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +27,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AdminRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

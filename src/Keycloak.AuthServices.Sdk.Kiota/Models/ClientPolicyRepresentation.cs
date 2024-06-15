@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
+{
     #pragma warning disable CS1591
-    public class ClientPolicyRepresentation : IAdditionalDataHolder, IParsable 
+    public class ClientPolicyRepresentation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -14,10 +15,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClientPolicyConditionRepresentation>? Conditions { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation>? Conditions { get; set; }
 #nullable restore
 #else
-        public List<ClientPolicyConditionRepresentation> Conditions { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation> Conditions { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +47,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public List<string> Profiles { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClientPolicyRepresentation"/> and sets the default values.
+        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyRepresentation"/> and sets the default values.
         /// </summary>
         public ClientPolicyRepresentation()
         {
@@ -55,12 +56,12 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClientPolicyRepresentation"/></returns>
+        /// <returns>A <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyRepresentation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClientPolicyRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClientPolicyRepresentation();
+            return new Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyRepresentation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,11 +71,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"conditions", n => { Conditions = n.GetCollectionOfObjectValues<ClientPolicyConditionRepresentation>(ClientPolicyConditionRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"profiles", n => { Profiles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "profiles", n => { Profiles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -84,7 +85,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ClientPolicyConditionRepresentation>("conditions", Conditions);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("name", Name);
