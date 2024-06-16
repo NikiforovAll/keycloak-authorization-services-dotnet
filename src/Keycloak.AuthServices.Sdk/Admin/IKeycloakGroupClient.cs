@@ -1,5 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using Keycloak.AuthServices.Sdk.Admin.Models;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 
@@ -8,6 +10,40 @@ using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 /// </summary>
 public interface IKeycloakGroupClient
 {
+    /// <summary>
+    /// Gets the integer amount of groups in the realm matching the given <see cref="GetGroupCountRequestParameters"/>.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The amount of groups in the realm</returns>
+    Task<HttpResponseMessage> GetGroupCountWithResponseAsync(
+        string realm,
+        GetGroupCountRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Gets the integer amount of groups in the realm matching the given <see cref="GetGroupCountRequestParameters"/>.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The amount of groups in the realm</returns>
+    async Task<int> GetGroupCountAsync(
+        string realm,
+        GetGroupCountRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetGroupCountWithResponseAsync(realm, parameters, cancellationToken);
+
+        var json = await response.Content.ReadAsStringAsync(cancellationToken);
+        var jsonNode = JsonSerializer.Deserialize<JsonNode>(json);
+
+        return jsonNode!.AsObject()["count"]!.GetValue<int>();
+    }
+
     /// <summary>
     /// Get a collection of groups on the realm.
     /// </summary>
@@ -70,6 +106,42 @@ public interface IKeycloakGroupClient
         var response = await this.GetGroupWithResponseAsync(realm, groupId, cancellationToken);
 
         return await response.GetResponseAsync<GroupRepresentation>(cancellationToken) ?? new();
+    }
+
+    /// <summary>
+    /// Gets all members of a given group.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The stream of users (<see cref="UserRepresentation"/>s)</returns>
+    Task<HttpResponseMessage> GetGroupMembersWithResponseAsync(
+        string realm,
+        string groupId,
+        GetGroupMembersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Gets all members of a given group.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="groupId">Group ID.</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The stream of users (<see cref="UserRepresentation"/>s)</returns>
+    async Task<IEnumerable<UserRepresentation>> GetGroupMembersAsync(
+        string realm,
+        string groupId,
+        GetGroupMembersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetGroupMembersWithResponseAsync(realm, groupId, parameters, cancellationToken);
+
+        return await response.GetResponseAsync<IEnumerable<UserRepresentation>>(cancellationToken)
+               ?? Enumerable.Empty<UserRepresentation>();
     }
 
     /// <summary>
