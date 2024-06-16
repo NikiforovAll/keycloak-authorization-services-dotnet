@@ -133,6 +133,71 @@ public class KeycloakUserClientTests
     }
 
     [Fact]
+    public async Task GetUserCountShouldCallCorrectEndpoint()
+    {
+        const int userAmount = 5;
+
+        for (var i = 0; i < userAmount; ++i)
+        {
+            var id = Guid.NewGuid();
+            GetUserRepresentation(id);
+        }
+
+#pragma warning disable CA1305 // use locale provider
+        var response = userAmount.ToString();
+#pragma warning restore CA1305 // use locale provider
+
+        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/users/count")
+            .Respond(HttpStatusCode.OK, MediaType, response);
+
+        var result = await this.keycloakUserClient.GetUserCountAsync("master");
+
+        result.Should().Be(userAmount);
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task GetUserCountShouldCallCorrectEndpointWithOptionalQueryParameters()
+    {
+        var getUserCountRequestParameters = new GetUserCountRequestParameters
+        {
+            Email = "email",
+            EmailVerified = false,
+            Enabled = false,
+            FirstName = "firstName",
+            LastName = "lastName",
+            Query = "query",
+            Search = "search",
+            Username = "username"
+        };
+
+        const string url = "/admin/realms/master/users/count";
+        var queryBuilder = new QueryBuilder
+        {
+            { "email", "email" },
+            { "emailVerified", "False" },
+            { "enabled", "False" },
+            { "firstName", "firstName" },
+            { "lastName", "lastName" },
+            { "q", "query" },
+            { "search", "search" },
+            { "username", "username" }
+        };
+
+        const string response = "0";
+
+        this.handler.Expect(HttpMethod.Get, url + queryBuilder.ToQueryString())
+            .Respond(HttpStatusCode.BadRequest, MediaType, response);
+
+        _ = await this.keycloakUserClient.GetUserCountAsync(
+            "master",
+            getUserCountRequestParameters
+        );
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
     public async Task CreateUserShouldCallCorrectEndpoint()
     {
         this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/users")

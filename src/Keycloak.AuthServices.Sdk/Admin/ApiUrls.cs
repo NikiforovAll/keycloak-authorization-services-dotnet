@@ -19,6 +19,8 @@ internal static class ApiUrls
 
     internal const string GetUser = $"{GetRealm}/users/{{id}}";
 
+    internal const string GetUserCount = $"{GetRealm}/users/count";
+
     internal const string CreateUser = $"{GetRealm}/users";
 
     internal const string UpdateUser = $"{GetRealm}/users/{{id}}";
