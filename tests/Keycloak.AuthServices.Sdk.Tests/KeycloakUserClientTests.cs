@@ -9,7 +9,7 @@ using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 using Keycloak.AuthServices.Sdk.Utils;
 using RichardSzalay.MockHttp;
 
-public class KeycloakUserClientTests
+public class KeycloakUserClientTests : IDisposable
 {
     private const string BaseAddress = "http://localhost:8080";
     private const string MediaType = "application/json";
@@ -491,4 +491,6 @@ public class KeycloakUserClientTests
                 }
             }
             """.Replace("{userId}", userId.ToString());
+
+    public void Dispose() => this.handler.Dispose();
 }

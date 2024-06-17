@@ -7,7 +7,7 @@ using Keycloak.AuthServices.Sdk.Protection.Requests;
 using Keycloak.AuthServices.Sdk.Utils;
 using RichardSzalay.MockHttp;
 
-public class KeycloakProtectedResourceClientTests
+public class KeycloakProtectedResourceClientTests : IDisposable
 {
     private const string BaseAddress = "http://localhost:8080";
 
@@ -309,4 +309,6 @@ public class KeycloakProtectedResourceClientTests
             Type = "http://www.example.com/rsrcs/socialstream/140-compatible",
             Attributes = { { "my_custom_attribute_key", "my_custom_attribute_value" } }
         };
+
+    public void Dispose() => this.handler.Dispose();
 }
