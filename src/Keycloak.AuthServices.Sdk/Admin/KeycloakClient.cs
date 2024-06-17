@@ -329,6 +329,35 @@ public class KeycloakClient : IKeycloakClient
 
     #region GroupRegion
 
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetGroupCountWithResponseAsync(
+        string realm,
+        GetGroupCountRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetGroupCount.WithRealm(realm);
+
+        var query = string.Empty;
+
+        if (parameters is not null)
+        {
+            var queryParameters = new List<KeyValuePair<string, string?>>()
+            {
+                new("search", parameters.Search),
+                new("top", parameters.Top?.ToString())
+            };
+
+            query = new QueryBuilder(queryParameters.Where(q => q.Value is not null)!)
+                .ToQueryString()
+                .ToString();
+        }
+
+        var responseMessage = await this.httpClient.GetAsync(path + query, cancellationToken);
+
+        return responseMessage;
+    }
+
     ///<inheritdoc/>
     public async Task<HttpResponseMessage> GetGroupsWithResponseAsync(
         string realm,
@@ -388,6 +417,39 @@ public class KeycloakClient : IKeycloakClient
         var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
 
         return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetGroupMembersWithResponseAsync(
+        string realm,
+        string groupId,
+        GetGroupMembersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetGroupMembers.WithRealm(realm).Replace("{id}", groupId);
+
+        var query = string.Empty;
+
+        if (parameters is not null)
+        {
+            var queryParameters = new List<KeyValuePair<string, string?>>
+            {
+                new("briefRepresentation", parameters.BriefRepresentation?.ToString()),
+#pragma warning disable CA1305 // use IFormatProvider
+                new("first", parameters.First?.ToString()),
+                new("max", parameters.Max?.ToString())
+#pragma warning restore CA1305 // use IFormatProvider
+            };
+
+            query = new QueryBuilder(queryParameters.Where(q => q.Value is not null)!)
+                .ToQueryString()
+                .ToString();
+        }
+
+        var responseMessage = await this.httpClient.GetAsync(path + query, cancellationToken);
+
+        return responseMessage;
     }
 
     ///<inheritdoc/>

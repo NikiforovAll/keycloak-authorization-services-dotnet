@@ -7,7 +7,7 @@ using Keycloak.AuthServices.Sdk.Protection.Requests;
 using Keycloak.AuthServices.Sdk.Utils;
 using RichardSzalay.MockHttp;
 
-public class KeycloakPolicyClientTests
+public class KeycloakPolicyClientTests : IDisposable
 {
     private const string BaseAddress = "http://localhost:8080";
     private const string CurrentRealm = "master";
@@ -238,4 +238,6 @@ public class KeycloakPolicyClientTests
         ""id"":""{id}"",
         ""name"":""{name}""
     }}";
+
+    public void Dispose() => this.handler.Dispose();
 }

@@ -5,7 +5,7 @@ using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Admin;
 using RichardSzalay.MockHttp;
 
-public class KeycloakRealmClientTests
+public class KeycloakRealmClientTests : IDisposable
 {
     private const string BaseAddress = "http://localhost:8080";
 
@@ -50,4 +50,6 @@ public class KeycloakRealmClientTests
 
         this.handler.VerifyNoOutstandingExpectation();
     }
+
+    public void Dispose() => this.handler.Dispose();
 }
