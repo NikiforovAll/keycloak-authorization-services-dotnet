@@ -47,7 +47,7 @@ internal static class ApiUrls
 
     internal const string UpdateGroup = $"{GetRealm}/groups/{{id}}";
 
-    internal const string DeleteGroup = $"{GetRealm}/groups";
+    internal const string DeleteGroup = $"{GetRealm}/groups/{{id}}";
 
     internal const string CreateChildGroup = $"{GetRealm}/groups/{{id}}/children";
 
