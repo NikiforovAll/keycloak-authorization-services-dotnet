@@ -4,10 +4,10 @@ using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Evalu
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes
@@ -15,35 +15,36 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
     /// <summary>
     /// Builds and executes requests for operations under \admin\realms\{realm}\clients\{client-uuid}\evaluate-scopes
     /// </summary>
-    public class EvaluateScopesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    public partial class EvaluateScopesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The generateExampleAccessToken property</summary>
-        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken.GenerateExampleAccessTokenRequestBuilder GenerateExampleAccessToken
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken.GenerateExampleAccessTokenRequestBuilder GenerateExampleAccessToken
         {
-            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken.GenerateExampleAccessTokenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleAccessToken.GenerateExampleAccessTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateExampleIdToken property</summary>
-        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken.GenerateExampleIdTokenRequestBuilder GenerateExampleIdToken
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken.GenerateExampleIdTokenRequestBuilder GenerateExampleIdToken
         {
-            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken.GenerateExampleIdTokenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleIdToken.GenerateExampleIdTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateExampleUserinfo property</summary>
-        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoRequestBuilder GenerateExampleUserinfo
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoRequestBuilder GenerateExampleUserinfo
         {
-            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.GenerateExampleUserinfo.GenerateExampleUserinfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocolMappers property</summary>
-        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers.ProtocolMappersRequestBuilder ProtocolMappers
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers.ProtocolMappersRequestBuilder ProtocolMappers
         {
-            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers.ProtocolMappersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ProtocolMappers.ProtocolMappersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scopeMappings property</summary>
-        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.ScopeMappingsRequestBuilder ScopeMappings
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.ScopeMappingsRequestBuilder ScopeMappings
         {
-            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.ScopeMappingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.ScopeMappings.ScopeMappingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.EvaluateScopesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.EvaluateScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,7 +52,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.E
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.EvaluateScopesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.EvaluateScopes.EvaluateScopesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
