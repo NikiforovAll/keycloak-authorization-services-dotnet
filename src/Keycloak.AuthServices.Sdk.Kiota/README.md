@@ -3,7 +3,7 @@
 ## Generate Client
 
 ```bash
-export KEYCLOAK_API_VERSION=24.0.1
+export KEYCLOAK_API_VERSION=25.0.2
 kiota generate -l CSharp \
     --log-level trace \
     --output ./ \

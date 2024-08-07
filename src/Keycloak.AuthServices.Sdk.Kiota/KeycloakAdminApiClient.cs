@@ -8,7 +8,6 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
 namespace Keycloak.AuthServices.Sdk.Kiota.Admin
@@ -16,15 +15,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class KeycloakAdminApiClient : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    public partial class KeycloakAdminApiClient : BaseRequestBuilder
     {
         /// <summary>The admin property</summary>
-        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder Admin
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder Admin
         {
-            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.AdminRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.KeycloakAdminApiClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public KeycloakAdminApiClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())
