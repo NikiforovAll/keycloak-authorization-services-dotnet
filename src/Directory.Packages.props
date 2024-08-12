@@ -16,9 +16,9 @@
     <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="8.0.1" />
   </ItemGroup>
   <ItemGroup Label="Kiota">
-    <PackageVersion Include="Microsoft.Kiota.Abstractions" Version="1.8.4" />
+    <PackageVersion Include="Microsoft.Kiota.Abstractions" Version="1.9.12" />
     <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.1.5" />
-    <PackageVersion Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.4.0" />
+    <PackageVersion Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.4.3" />
     <PackageVersion Include="Microsoft.Kiota.Serialization.Form" Version="1.1.6" />
     <PackageVersion Include="Microsoft.Kiota.Serialization.Json" Version="1.2.3" />
     <PackageVersion Include="Microsoft.Kiota.Serialization.Multipart" Version="1.1.4" />
