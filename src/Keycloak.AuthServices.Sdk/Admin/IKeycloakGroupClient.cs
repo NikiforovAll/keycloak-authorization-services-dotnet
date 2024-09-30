@@ -41,7 +41,6 @@ public interface IKeycloakGroupClient
             ?? Enumerable.Empty<GroupRepresentation>();
     }
 
-
     /// <summary>
     /// Get a collection of sub groups by parent's id on the realm.
     /// </summary>
@@ -77,7 +76,6 @@ public interface IKeycloakGroupClient
             ?? Enumerable.Empty<GroupRepresentation>();
     }
 
-
     /// <summary>
     /// Get representation of a Group.
     /// </summary>
@@ -90,9 +88,6 @@ public interface IKeycloakGroupClient
         string groupId,
         CancellationToken cancellationToken = default
     );
-
-    
-
 
     /// <summary>
     /// Get representation of a Group.
