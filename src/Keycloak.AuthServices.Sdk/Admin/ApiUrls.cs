@@ -41,6 +41,8 @@ internal static class ApiUrls
 
     internal const string GetGroups = $"{GetRealm}/groups";
 
+    internal const string GetSubGroups = $"{GetRealm}/groups/{{id}}/children";
+
     internal const string CreateGroup = $"{GetRealm}/groups";
 
     internal const string GetGroup = $"{GetRealm}/groups/{{id}}";
