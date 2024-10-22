@@ -4,6 +4,7 @@
     <IsPackable>false</IsPackable>
     <RootNamespace>BlazorSample</RootNamespace>
     <NoWarn>CS7022</NoWarn>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
