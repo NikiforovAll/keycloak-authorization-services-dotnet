@@ -33,7 +33,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvid
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/identity-provider/instances{?briefRepresentation*,first*,max*,search*}", pathParameters)
+        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/identity-provider/instances{?briefRepresentation*,first*,max*,realmOnly*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvid
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/identity-provider/instances{?briefRepresentation*,first*,max*,search*}", rawUrl)
+        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/identity-provider/instances{?briefRepresentation*,first*,max*,realmOnly*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,6 +146,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvid
             /// <summary>Maximum results size (defaults to 100)</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }
+            /// <summary>Boolean which defines if only realm-level IDPs (not associated with orgs) should be returned (default: false)</summary>
+            [QueryParameter("realmOnly")]
+            public bool? RealmOnly { get; set; }
             /// <summary>Filter specific providers by name. Search can be prefix (name*), contains (*name*) or exact (&quot;name&quot;). Default prefixed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
