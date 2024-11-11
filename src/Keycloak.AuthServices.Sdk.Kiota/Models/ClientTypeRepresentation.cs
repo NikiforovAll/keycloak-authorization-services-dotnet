@@ -28,6 +28,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The parent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Parent { get; set; }
+#nullable restore
+#else
+        public string Parent { get; set; }
+#endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +71,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             {
                 { "config", n => { Config = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTypeRepresentation_config>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTypeRepresentation_config.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "parent", n => { Parent = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
             };
         }
@@ -75,6 +84,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientTypeRepresentation_config>("config", Config);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("parent", Parent);
             writer.WriteStringValue("provider", Provider);
             writer.WriteAdditionalData(AdditionalData);
         }

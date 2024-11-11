@@ -23,6 +23,7 @@ using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.IdentityProvider;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Keys;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll;
+using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialImport;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PushRevocation;
@@ -167,6 +168,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
         public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll.LogoutAllRequestBuilder LogoutAll
         {
             get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.LogoutAll.LogoutAllRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizations property</summary>
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.OrganizationsRequestBuilder Organizations
+        {
+            get => new Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The partialExport property</summary>
         public Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport.PartialExportRequestBuilder PartialExport

@@ -50,6 +50,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public string FirstBrokerLoginFlowAlias { get; set; }
 #endif
+        /// <summary>The hideOnLogin property</summary>
+        public bool? HideOnLogin { get; set; }
         /// <summary>The internalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +62,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #endif
         /// <summary>The linkOnly property</summary>
         public bool? LinkOnly { get; set; }
+        /// <summary>The organizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId { get; set; }
+#nullable restore
+#else
+        public string OrganizationId { get; set; }
+#endif
         /// <summary>The postBrokerLoginFlowAlias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,8 +134,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "firstBrokerLoginFlowAlias", n => { FirstBrokerLoginFlowAlias = n.GetStringValue(); } },
+                { "hideOnLogin", n => { HideOnLogin = n.GetBoolValue(); } },
                 { "internalId", n => { InternalId = n.GetStringValue(); } },
                 { "linkOnly", n => { LinkOnly = n.GetBoolValue(); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "postBrokerLoginFlowAlias", n => { PostBrokerLoginFlowAlias = n.GetStringValue(); } },
                 { "providerId", n => { ProviderId = n.GetStringValue(); } },
                 { "storeToken", n => { StoreToken = n.GetBoolValue(); } },
@@ -148,8 +160,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("firstBrokerLoginFlowAlias", FirstBrokerLoginFlowAlias);
+            writer.WriteBoolValue("hideOnLogin", HideOnLogin);
             writer.WriteStringValue("internalId", InternalId);
             writer.WriteBoolValue("linkOnly", LinkOnly);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("postBrokerLoginFlowAlias", PostBrokerLoginFlowAlias);
             writer.WriteStringValue("providerId", ProviderId);
             writer.WriteBoolValue("storeToken", StoreToken);

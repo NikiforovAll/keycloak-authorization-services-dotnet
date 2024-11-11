@@ -20,7 +20,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Use
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles/{role%2Dname}/users{?first*,max*}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles/{role%2Dname}/users{?briefRepresentation*,first*,max*}", pathParameters)
         {
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Use
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles/{role%2Dname}/users{?first*,max*}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles/{role%2Dname}/users{?briefRepresentation*,first*,max*}", rawUrl)
         {
         }
         /// <summary>
@@ -83,6 +83,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Use
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters 
         {
+            /// <summary>Boolean which defines whether brief representations are returned (default: false)</summary>
+            [QueryParameter("briefRepresentation")]
+            public bool? BriefRepresentation { get; set; }
             /// <summary>first result to return. Ignored if negative or {@code null}.</summary>
             [QueryParameter("first")]
             public int? First { get; set; }
