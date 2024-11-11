@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+namespace Keycloak.AuthServices.Sdk.Admin;
 
 using System;
 using System.Globalization;
@@ -337,6 +337,54 @@ public class KeycloakClient : IKeycloakClient
     )
     {
         var path = ApiUrls.GetGroups.WithRealm(realm);
+
+        var queryBuilder = new QueryBuilder();
+
+        parameters ??= new();
+        if (parameters.BriefRepresentation.HasValue)
+        {
+            queryBuilder.Add(
+                "briefRepresentation",
+                parameters.BriefRepresentation?.ToString(CultureInfo.InvariantCulture)!
+            );
+        }
+
+        if (parameters.First.HasValue)
+        {
+            queryBuilder.Add("first", parameters.First?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Exact.HasValue)
+        {
+            queryBuilder.Add("exact", parameters.Exact?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Max.HasValue)
+        {
+            queryBuilder.Add("max", parameters.Max?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Search is not null)
+        {
+            queryBuilder.Add("search", parameters.Search.ToString()!);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> GetSubGroupsWithResponseAsync(
+        string realm,
+        string parentGroupId,
+        GetGroupsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetSubGroups.WithRealm(realm).Replace("{id}", parentGroupId);
 
         var queryBuilder = new QueryBuilder();
 
