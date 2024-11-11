@@ -1,0 +1,34 @@
+{
+  "descriptionHash": "E8553E46AC96B701DD0D0BB114ABB7656D18CFF1DE9CDC2296A915241D8125538958071A716580F7D97B0FD4F1131EEFC029F0E5593E7AB219FF54F036E61D83",
+  "descriptionLocation": "https://www.keycloak.org/docs-api/26.0.5/rest-api/openapi.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.20.0",
+  "clientClassName": "KeycloakAdminApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "Keycloak.AuthServices.Sdk.Kiota.Admin",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
