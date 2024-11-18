@@ -5,7 +5,7 @@ namespace Keycloak.AuthServices.Sdk.Admin;
 /// </summary>
 internal static class ApiUrls
 {
-    private const string AdminApiBase = "/admin";
+    private const string AdminApiBase = "admin";
 
     private const string RealmParam = "{realm}";
 
