@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Sdk.Admin;
+namespace Keycloak.AuthServices.Sdk.Admin;
 
 using Keycloak.AuthServices.Sdk.Admin.Models;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
@@ -36,6 +36,41 @@ public interface IKeycloakGroupClient
     )
     {
         var response = await this.GetGroupsWithResponseAsync(realm, parameters, cancellationToken);
+
+        return await response.GetResponseAsync<IEnumerable<GroupRepresentation>>(cancellationToken)
+            ?? Enumerable.Empty<GroupRepresentation>();
+    }
+
+    /// <summary>
+    /// Get a collection of sub groups by parent's id on the realm.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parentGroupId">Parent Group ID.</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> GetSubGroupsWithResponseAsync(
+        string realm,
+        string parentGroupId,
+        GetGroupsRequestParameters? parameters = null,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Get group hierarchy. Only name and ids are returned.
+    /// </summary>
+    /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parameters">Optional query parameters.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns>A stream of groups, filtered according to query parameters.</returns>
+    async Task<IEnumerable<GroupRepresentation>> GetSubGroupsAsync(
+        string realm,
+        string parentGroupId,
+        GetGroupsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetSubGroupsWithResponseAsync(realm, parentGroupId, parameters, cancellationToken);
 
         return await response.GetResponseAsync<IEnumerable<GroupRepresentation>>(cancellationToken)
             ?? Enumerable.Empty<GroupRepresentation>();
@@ -225,4 +260,5 @@ public interface IKeycloakGroupClient
 
         await response.EnsureResponseAsync(cancellationToken);
     }
+
 }
