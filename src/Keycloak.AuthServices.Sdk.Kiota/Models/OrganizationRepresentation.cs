@@ -12,6 +12,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The alias property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Alias { get; set; }
+#nullable restore
+#else
+        public string Alias { get; set; }
+#endif
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,10 +65,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <summary>The members property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>? Members { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation>? Members { get; set; }
 #nullable restore
 #else
-        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation> Members { get; set; }
+        public List<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation> Members { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,6 +77,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The redirectUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RedirectUrl { get; set; }
+#nullable restore
+#else
+        public string RedirectUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation"/> and sets the default values.
@@ -95,14 +111,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alias", n => { Alias = n.GetStringValue(); } },
                 { "attributes", n => { Attributes = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation_attributes>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation_attributes.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "domains", n => { Domains = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationDomainRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationDomainRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "members", n => { Members = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "redirectUrl", n => { RedirectUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,14 +130,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("alias", Alias);
             writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationRepresentation_attributes>("attributes", Attributes);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationDomainRepresentation>("domains", Domains);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>("identityProviders", IdentityProviders);
-            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>("members", Members);
+            writer.WriteCollectionOfObjectValues<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation>("members", Members);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("redirectUrl", RedirectUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

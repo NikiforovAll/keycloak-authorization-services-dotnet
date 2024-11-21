@@ -106,6 +106,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #endif
         /// <summary>The bruteForceProtected property</summary>
         public bool? BruteForceProtected { get; set; }
+        /// <summary>The bruteForceStrategy property</summary>
+        public Keycloak.AuthServices.Sdk.Kiota.Admin.Models.BruteForceStrategy? BruteForceStrategy { get; set; }
         /// <summary>The certificate property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -864,6 +866,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "browserFlow", n => { BrowserFlow = n.GetStringValue(); } },
                 { "browserSecurityHeaders", n => { BrowserSecurityHeaders = n.GetObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders>(Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders.CreateFromDiscriminatorValue); } },
                 { "bruteForceProtected", n => { BruteForceProtected = n.GetBoolValue(); } },
+                { "bruteForceStrategy", n => { BruteForceStrategy = n.GetEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.BruteForceStrategy>(); } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
                 { "clientAuthenticationFlow", n => { ClientAuthenticationFlow = n.GetStringValue(); } },
                 { "clientOfflineSessionIdleTimeout", n => { ClientOfflineSessionIdleTimeout = n.GetIntValue(); } },
@@ -1020,6 +1023,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteStringValue("browserFlow", BrowserFlow);
             writer.WriteObjectValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_browserSecurityHeaders>("browserSecurityHeaders", BrowserSecurityHeaders);
             writer.WriteBoolValue("bruteForceProtected", BruteForceProtected);
+            writer.WriteEnumValue<Keycloak.AuthServices.Sdk.Kiota.Admin.Models.BruteForceStrategy>("bruteForceStrategy", BruteForceStrategy);
             writer.WriteStringValue("certificate", Certificate);
             writer.WriteStringValue("clientAuthenticationFlow", ClientAuthenticationFlow);
             writer.WriteIntValue("clientOfflineSessionIdleTimeout", ClientOfflineSessionIdleTimeout);
