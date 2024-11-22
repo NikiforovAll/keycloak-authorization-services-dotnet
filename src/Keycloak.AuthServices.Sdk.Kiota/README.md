@@ -3,7 +3,7 @@
 ## Generate Client
 
 ```bash
-export KEYCLOAK_API_VERSION=24.0.1
+export KEYCLOAK_API_VERSION=26.0.5
 kiota generate -l CSharp \
     --log-level trace \
     --output ./ \
@@ -12,4 +12,3 @@ kiota generate -l CSharp \
     --exclude-backward-compatible \
     --openapi https://www.keycloak.org/docs-api/$KEYCLOAK_API_VERSION/rest-api/openapi.json
 ```
-q
