@@ -8,7 +8,7 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nikiforovall/keycloak-authorization-services-dotnet/blob/main/LICENSE.md)
 
-Easy Authentication and Authorization with Keycloak in .NET.
+🔐 Easy Authentication and Authorization with Keycloak in .NET.
 
 | Package                                | Version                                                                                                                                              | Description                                                  |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -18,9 +18,6 @@ Easy Authentication and Authorization with Keycloak in .NET.
 | `Keycloak.AuthServices.Sdk.Kiota`      | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Sdk.Kiota.svg)](https://nuget.org/packages/Keycloak.AuthServices.Sdk.Kiota)           | HTTP API integration with Keycloak based on OpenAPI          |
 | `Keycloak.AuthServices.OpenTelemetry`  | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.OpenTelemetry.svg)](https://nuget.org/packages/Keycloak.AuthServices.OpenTelemetry)   | OpenTelemetry support                                        |
 | `Keycloak.AuthServices.Templates`      | [![Nuget](https://img.shields.io/nuget/v/Keycloak.AuthServices.Templates.svg)](https://nuget.org/packages/Keycloak.AuthServices.Templates)           | `dotnet new` templates                                       |
-
-
-[![GitHub Actions Build History](https://buildstats.info/github/chart/nikiforovall/keycloak-authorization-services-dotnet?branch=main&includeBuildsFromPullRequest=false)](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions)
 
 ## Documentation
 
@@ -36,7 +33,6 @@ Install packages:
 
 ```bash
 dotnet add package Keycloak.AuthServices.Authentication
-dotnet add package Keycloak.AuthServices.Common
 ```
 
 ```csharp
