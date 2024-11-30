@@ -76,7 +76,7 @@ public static class ServiceCollectionExtensions
                         IOptions<KeycloakAdminClientOptions>
                     >();
 
-                    http.BaseAddress = new Uri(keycloakOptions.Value.KeycloakUrlRealm);
+                    http.BaseAddress = new Uri(keycloakOptions.Value.AuthServerUrl!);
                     configureClient?.Invoke(http);
                 }
             )
@@ -178,7 +178,7 @@ public static class ServiceCollectionExtensions
                         IOptions<KeycloakProtectionClientOptions>
                     >();
 
-                    http.BaseAddress = new Uri(keycloakOptions.Value.KeycloakUrlRealm);
+                    http.BaseAddress = new Uri(keycloakOptions.Value.AuthServerUrl!);
                     configureClient?.Invoke(http);
                 }
             )
