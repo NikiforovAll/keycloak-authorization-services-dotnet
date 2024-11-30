@@ -38,11 +38,7 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     )
     {
         ArgumentNullException.ThrowIfNull(configuration);
-
-        if (string.IsNullOrEmpty(configSectionName))
-        {
-            throw new ArgumentException(null, nameof(configSectionName));
-        }
+        ArgumentException.ThrowIfNullOrEmpty(configSectionName);
 
         var configurationSection = configuration.GetSection(configSectionName);
 
