@@ -6,7 +6,7 @@ namespace Keycloak.AuthServices.Sdk.Protection;
 internal static class ApiUrls
 {
     #region ProtectedResource
-    internal const string GetResources = "/realms/{realm}/authz/protection/resource_set";
+    internal const string GetResources = "realms/{realm}/authz/protection/resource_set";
 
     internal const string GetResource = $"{GetResources}/{{id}}";
 
@@ -18,7 +18,7 @@ internal static class ApiUrls
     #endregion
 
     #region Policy
-    internal const string GetPolicies = "/realms/{realm}/authz/protection/uma-policy";
+    internal const string GetPolicies = "realms/{realm}/authz/protection/uma-policy";
 
     internal const string GetPolicy = $"{GetPolicies}/{{id}}";
 
