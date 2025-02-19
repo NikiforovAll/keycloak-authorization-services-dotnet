@@ -1,15 +1,16 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+namespace Keycloak.AuthServices.Authentication;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 /// <summary>
 /// Represents a base class for configuring Keycloak authentication in an application.
 /// </summary>
 public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBuilder
 {
-    private readonly Action<JwtBearerOptions>? configureJwtBearerOptions;
+    private readonly Action<JwtBearerOptions, IServiceProvider>? configureJwtBearerOptions;
 
     /// <summary>
     /// Constructor.
@@ -24,8 +25,8 @@ public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBui
     internal KeycloakWebApiAuthenticationBuilder(
         IServiceCollection services,
         string jwtBearerAuthenticationScheme,
-        Action<JwtBearerOptions>? configureJwtBearerOptions,
-        Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
+        Action<JwtBearerOptions, IServiceProvider>? configureJwtBearerOptions,
+        Action<KeycloakAuthenticationOptions, IServiceProvider> configureKeycloakOptions,
         IConfigurationSection? configurationSection
     )
         : base(services, configurationSection)
@@ -34,8 +35,8 @@ public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBui
         this.configureJwtBearerOptions = configureJwtBearerOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
-        this.Services.AddOptions<KeycloakAuthenticationOptions>(jwtBearerAuthenticationScheme)
-            .Configure(configureKeycloakOptions);
+        this.Services.AddSingleton<IConfigureOptions<KeycloakAuthenticationOptions>>(serviceProvider =>
+            new ConfigureNamedOptions<KeycloakAuthenticationOptions>(jwtBearerAuthenticationScheme, options => configureKeycloakOptions(options, serviceProvider)));
     }
 
     /// <summary>

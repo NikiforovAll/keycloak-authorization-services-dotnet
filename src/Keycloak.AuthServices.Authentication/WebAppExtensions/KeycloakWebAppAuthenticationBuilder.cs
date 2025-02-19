@@ -1,15 +1,16 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+namespace Keycloak.AuthServices.Authentication;
 
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 /// <summary>
 /// Authentication builder specific for Microsoft identity platform.
 /// </summary>
 public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBuilder
 {
-    private readonly Action<OpenIdConnectOptions>? configureOpenIdConnectOptions;
+    private readonly Action<OpenIdConnectOptions, IServiceProvider>? configureOpenIdConnectOptions;
 
     /// <summary>
     ///  Constructor.
@@ -23,8 +24,8 @@ public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBui
     internal KeycloakWebAppAuthenticationBuilder(
         IServiceCollection services,
         string openIdConnectScheme,
-        Action<OpenIdConnectOptions>? configureOpenIdConnectOptions,
-        Action<KeycloakAuthenticationOptions> configureKeycloakOptions,
+        Action<OpenIdConnectOptions, IServiceProvider>? configureOpenIdConnectOptions,
+        Action<KeycloakAuthenticationOptions, IServiceProvider> configureKeycloakOptions,
         IConfigurationSection? configurationSection
     )
         : base(services, configurationSection)
@@ -33,8 +34,8 @@ public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBui
         this.configureOpenIdConnectOptions = configureOpenIdConnectOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
-        this.Services.AddOptions<KeycloakAuthenticationOptions>(openIdConnectScheme)
-            .Configure(configureKeycloakOptions);
+        this.Services.AddSingleton<IConfigureOptions<KeycloakAuthenticationOptions>>(serviceProvider =>
+            new ConfigureNamedOptions<KeycloakAuthenticationOptions>(openIdConnectScheme, options => configureKeycloakOptions(options, serviceProvider)));
     }
 
     /// <summary>
