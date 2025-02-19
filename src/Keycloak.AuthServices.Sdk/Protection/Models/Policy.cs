@@ -81,7 +81,8 @@ public enum DecisionStrategy
     AFFIRMATIVE,
 
     /// <summary>
-    /// </summary>    [EnumMember(Value = "UNANIMOUS")]
+    /// </summary>
+    [EnumMember(Value = "UNANIMOUS")]
     UNANIMOUS,
 
     /// <summary>
