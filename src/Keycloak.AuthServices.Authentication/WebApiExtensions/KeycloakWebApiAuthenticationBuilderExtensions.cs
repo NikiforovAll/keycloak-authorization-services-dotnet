@@ -1,4 +1,4 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+namespace Keycloak.AuthServices.Authentication;
 
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
@@ -69,6 +69,36 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
     /// <summary>
     /// Protects the web API with Keycloak
+    /// This method expects the configuration file will have a section, named "Keycloak" as default, with the necessary settings to initialize authentication options.
+    /// </summary>
+    /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
+    /// <param name="configuration">The configuration instance.</param>
+    /// <param name="configureJwtBearerOptions"></param>
+    /// <param name="configSectionName">The configuration section with the necessary settings to initialize authentication options.</param>
+    /// <param name="jwtBearerScheme">The JWT bearer scheme name to be used. By default it uses "Bearer".</param>
+    /// <returns>The authentication builder to chain.</returns>
+    public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
+        this AuthenticationBuilder builder,
+        IConfiguration configuration,
+        Action<JwtBearerOptions, IServiceProvider>? configureJwtBearerOptions,
+        string configSectionName = KeycloakAuthenticationOptions.Section,
+        string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
+    )
+    {
+        ArgumentNullException.ThrowIfNull(configuration);
+        ArgumentNullException.ThrowIfNull(configSectionName);
+
+        var configurationSection = configuration.GetSection(configSectionName);
+
+        return builder.AddKeycloakWebApi(
+            configurationSection,
+            configureJwtBearerOptions,
+            jwtBearerScheme
+        );
+    }
+
+    /// <summary>
+    /// Protects the web API with Keycloak
     /// </summary>
     /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
     /// <param name="configurationSection">The configuration second from which to fill-in the options.</param>
@@ -83,9 +113,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
         ArgumentNullException.ThrowIfNull(builder);
 
-#pragma warning disable IDE0039 // Use local function
-        Action<JwtBearerOptions> configureJwtBearerOptions = _ => { };
-#pragma warning restore IDE0039 // Use local function
+        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptions = (_, _) => { };
 
         AddKeycloakWebApiImplementation(
             builder: builder,
@@ -97,7 +125,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptions,
-            configureKeycloakOptions: options => configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }
@@ -117,7 +145,38 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
-        configureJwtBearerOptions ??= _ => { };
+        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback =
+            (options, _) => configureJwtBearerOptions?.Invoke(options);
+
+        ArgumentNullException.ThrowIfNull(builder);
+
+        AddKeycloakWebApiImplementation(builder, configureJwtBearerOptionsCallback, jwtBearerScheme);
+
+        return new KeycloakWebApiAuthenticationBuilder(
+            services: builder.Services,
+            jwtBearerAuthenticationScheme: jwtBearerScheme,
+            configureJwtBearerOptions: configureJwtBearerOptionsCallback,
+            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
+            configurationSection: configurationSection
+        );
+    }
+
+    /// <summary>
+    /// Protects the web API with Keycloak
+    /// </summary>
+    /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
+    /// <param name="configurationSection">The configuration second from which to fill-in the options.</param>
+    /// <param name="configureJwtBearerOptions"></param>
+    /// <param name="jwtBearerScheme">The JWT bearer scheme name to be used. By default it uses "Bearer".</param>
+    /// <returns>The authentication builder to chain.</returns>
+    public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
+        this AuthenticationBuilder builder,
+        IConfigurationSection configurationSection,
+        Action<JwtBearerOptions, IServiceProvider>? configureJwtBearerOptions,
+        string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
+    )
+    {
+        configureJwtBearerOptions ??= (_, _) => { };
         ArgumentNullException.ThrowIfNull(builder);
 
         AddKeycloakWebApiImplementation(builder, configureJwtBearerOptions, jwtBearerScheme);
@@ -126,7 +185,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptions,
-            configureKeycloakOptions: options => configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }
@@ -146,7 +205,39 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
-        configureJwtBearerOptions ??= _ => { };
+        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback =
+            (options, _) => configureJwtBearerOptions?.Invoke(options);
+
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
+
+        AddKeycloakWebApiImplementation(builder, configureJwtBearerOptionsCallback, jwtBearerScheme);
+
+        return new KeycloakWebApiAuthenticationBuilder(
+            services: builder.Services,
+            jwtBearerAuthenticationScheme: jwtBearerScheme,
+            configureJwtBearerOptions: configureJwtBearerOptionsCallback,
+            configureKeycloakOptions: (options, _) => configureKeycloakOptions?.Invoke(options),
+            configurationSection: null
+        );
+    }
+
+    /// <summary>
+    /// Protects the web API with Keycloak
+    /// </summary>
+    /// <param name="builder">The <see cref="AuthenticationBuilder"/> to which to add this configuration.</param>
+    /// <param name="configureJwtBearerOptions">The action to configure <see cref="JwtBearerOptions"/>.</param>
+    /// <param name="configureKeycloakOptions">The action to configure the <see cref="KeycloakAuthenticationOptions"/>.</param>
+    /// <param name="jwtBearerScheme">The JWT bearer scheme name to be used. By default it uses "Bearer".</param>
+    /// <returns>The authentication builder to chain.</returns>
+    public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApi(
+        this AuthenticationBuilder builder,
+        Action<KeycloakAuthenticationOptions, IServiceProvider> configureKeycloakOptions,
+        Action<JwtBearerOptions, IServiceProvider>? configureJwtBearerOptions = default,
+        string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
+    )
+    {
+        configureJwtBearerOptions ??= (_, _) => { };
         ArgumentNullException.ThrowIfNull(builder);
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
@@ -163,7 +254,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
     private static void AddKeycloakWebApiImplementation(
         AuthenticationBuilder builder,
-        Action<JwtBearerOptions> configureJwtBearerOptions,
+        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptions,
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
@@ -202,7 +293,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
                     options.Events ??= new JwtBearerEvents();
 
-                    configureJwtBearerOptions?.Invoke(options);
+                    configureJwtBearerOptions?.Invoke(options, serviceProvider);
                 }
             );
     }
