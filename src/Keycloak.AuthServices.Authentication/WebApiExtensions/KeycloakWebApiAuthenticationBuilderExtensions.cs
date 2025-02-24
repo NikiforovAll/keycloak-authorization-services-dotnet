@@ -113,9 +113,7 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
         ArgumentNullException.ThrowIfNull(builder);
 
-#pragma warning disable IDE0039 // Use local function
         Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptions = (_, _) => { };
-#pragma warning restore IDE0039 // Use local function
 
         AddKeycloakWebApiImplementation(
             builder: builder,
@@ -147,10 +145,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
-#pragma warning disable IDE0039 // Use local function
         Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback =
             (options, _) => configureJwtBearerOptions?.Invoke(options);
-#pragma warning restore IDE0039 // Use local function
 
         ArgumentNullException.ThrowIfNull(builder);
 
@@ -209,10 +205,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
-#pragma warning disable IDE0039 // Use local function
         Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback =
             (options, _) => configureJwtBearerOptions?.Invoke(options);
-#pragma warning restore IDE0039 // Use local function
 
         ArgumentNullException.ThrowIfNull(builder);
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
