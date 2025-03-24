@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "E8553E46AC96B701DD0D0BB114ABB7656D18CFF1DE9CDC2296A915241D8125538958071A716580F7D97B0FD4F1131EEFC029F0E5593E7AB219FF54F036E61D83",
-  "descriptionLocation": "https://www.keycloak.org/docs-api/26.0.5/rest-api/openapi.json",
+  "descriptionHash": "4F901FB5B294E305A6CF6F09FE59FB0F95C93A1CF782976553A2E7B2F5077263F3DFD4BA39598164837B04383D60708A2B3A0BA7885C6EBC01028C682B4DD0F3",
+  "descriptionLocation": "https://www.keycloak.org/docs-api/26.1.3/rest-api/openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.20.0",
+  "kiotaVersion": "1.24.1",
   "clientClassName": "KeycloakAdminApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Keycloak.AuthServices.Sdk.Kiota.Admin",
