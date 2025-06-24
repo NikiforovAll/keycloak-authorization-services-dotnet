@@ -1,0 +1,34 @@
+{
+  "descriptionHash": "C4270C7AD080ABDFDA705EBA12D92E55DF6194482C1DCFFBCD96BAD50AE12DD0FEBC0302CE3E4227F7B74FCFFFAB525F84F4541D729D54159E4024390576C867",
+  "descriptionLocation": "https://raw.githubusercontent.com/p2-inc/phasetwo-docs/main/openapi.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.20.0",
+  "clientClassName": "PhaseTwoAdminApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "PhaseTwo.AuthServices.Sdk.Kiota.Admin",
+  "language": "CSharp",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
