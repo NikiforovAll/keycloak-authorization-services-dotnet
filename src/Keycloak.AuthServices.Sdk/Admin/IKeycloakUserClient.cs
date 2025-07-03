@@ -434,4 +434,112 @@ public interface IKeycloakUserClient
 
         await response.EnsureResponseAsync(cancellationToken);
     }
+
+
+    /// <summary>
+    /// Set up a new password for the user
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="credential">Credential representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> ResetPasswordWithResponseAsync(
+        string realm,
+        string userId,
+        CredentialRepresentation credential,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Set up a new password for the user
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID.</param>
+    /// <param name="credential">Credential representation.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task ResetPasswordAsync(
+        string realm,
+        string userId,
+        CredentialRepresentation credential,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.ResetPasswordWithResponseAsync(
+            realm,
+            userId,
+            credential,
+            cancellationToken
+        );
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Remove a credential for a user
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID</param>
+    /// <param name="credentialId">Credential ID</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> DeleteCredentialWithResponseAsync(
+        string realm,
+        string userId,
+        string credentialId,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Remove a credential for a user
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID</param>
+    /// <param name="credentialId">Credential ID</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task DeleteCredentialAsync(
+        string realm,
+        string userId,
+        string credentialId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.DeleteCredentialWithResponseAsync(realm, userId, credentialId, cancellationToken);
+
+        await response.EnsureResponseAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Get a user's credentials.
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<HttpResponseMessage> GetCredentialsWithResponseAsync(
+        string realm,
+        string userId,
+        CancellationToken cancellationToken = default
+    );
+
+    /// <summary>
+    /// Get a user's credentials.
+    /// </summary>
+    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="userId">User ID</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    async Task<IEnumerable<CredentialRepresentation>> GetCredentialsAsync(
+        string realm,
+        string userId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var response = await this.GetCredentialsWithResponseAsync(realm, userId, cancellationToken);
+
+        return await response.GetResponseAsync<IEnumerable<CredentialRepresentation>>(cancellationToken)
+            ?? Enumerable.Empty<CredentialRepresentation>();
+    }
 }

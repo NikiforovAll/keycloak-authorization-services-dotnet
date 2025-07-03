@@ -467,6 +467,64 @@ public class KeycloakUserClientTests
         this.handler.VerifyNoOutstandingExpectation();
     }
 
+    [Fact]
+    public async Task ResetPasswordAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var realm = "master";
+        var credential = new CredentialRepresentation() { Value = "123456" };
+        var expectedUrl = $"/admin/realms/{realm}/users/{userId}/reset-password";
+
+        this.handler.Expect(HttpMethod.Put, expectedUrl).Respond(HttpStatusCode.NoContent);
+
+        // Act
+        await this.keycloakUserClient.ResetPasswordWithResponseAsync(realm, userId, credential);
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task RemoveCredentialAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var credentialId = Guid.NewGuid().ToString();
+        var realm = "master";
+        var expectedUrl = $"/admin/realms/{realm}/users/{userId}/credentials/{credentialId}";
+
+        this.handler.Expect(HttpMethod.Delete, expectedUrl).Respond(HttpStatusCode.NoContent);
+
+        // Act
+        await this.keycloakUserClient.DeleteCredentialAsync(realm, userId, credentialId);
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task GetCredentialsAsyncShouldCallCorrectEndpoint()
+    {
+        // Arrange
+        var userId = Guid.NewGuid().ToString();
+        var realm = "master";
+        var expectedUrl = $"/admin/realms/{realm}/users/{userId}/credentials";
+
+        this.handler.Expect(HttpMethod.Get, expectedUrl)
+            .Respond(
+                HttpStatusCode.OK,
+                MediaType,
+                JsonSerializer.Serialize(Array.Empty<GroupRepresentation>())
+            );
+
+        // Act
+        await this.keycloakUserClient.GetCredentialsAsync(realm, userId, new());
+
+        // Assert
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
     private static string GetUserRepresentation(Guid userId) =>
         /*lang=json,strict*/"""
             {

@@ -496,5 +496,46 @@ public class KeycloakClient : IKeycloakClient
         return responseMessage!;
     }
 
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> ResetPasswordWithResponseAsync(
+        string realm,
+        string userId,
+        CredentialRepresentation credential,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.ResetPassword.WithRealm(realm).Replace("{id}", userId);
+
+        var responseMessage = await this.httpClient.PutAsJsonAsync(path, credential, cancellationToken);
+
+        return responseMessage;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> DeleteCredentialWithResponseAsync(
+        string realm,
+        string userId,
+        string credentialId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.DeleteCredential.WithRealm(realm).Replace("{id}", userId).Replace("{credentialId}", credentialId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> GetCredentialsWithResponseAsync(
+        string realm,
+        string userId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetCredentials.WithRealm(realm).Replace("{id}", userId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
     #endregion
 }
