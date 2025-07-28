@@ -100,4 +100,28 @@ public static partial class KeycloakWebApiServiceCollectionExtensions
             jwtBearerScheme
         );
     }
+
+    /// <summary>
+    /// Protects the web API with Keycloak.
+    /// </summary>
+    /// <param name="services">The service collection to which to add authentication.</param>
+    /// <param name="configureKeycloakOptions"></param>
+    /// <param name="configureJwtBearerOptions"></param>
+    /// <param name="jwtBearerScheme">The JwtBearer scheme name to be used. Default value is "JwtBearerDefaults.AuthenticationScheme".</param>
+    /// <returns>The authentication builder to chain extension methods.</returns>
+    public static KeycloakWebApiAuthenticationBuilder AddKeycloakWebApiAuthentication(
+        this IServiceCollection services,
+        Action<KeycloakAuthenticationOptions, IServiceProvider> configureKeycloakOptions,
+        Action<JwtBearerOptions, IServiceProvider>? configureJwtBearerOptions = default,
+        string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
+    )
+    {
+        var builder = services.AddAuthentication(jwtBearerScheme);
+
+        return builder.AddKeycloakWebApi(
+            configureKeycloakOptions,
+            configureJwtBearerOptions,
+            jwtBearerScheme
+        );
+    }
 }
