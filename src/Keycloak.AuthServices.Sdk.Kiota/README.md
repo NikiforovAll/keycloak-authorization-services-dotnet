@@ -2,6 +2,10 @@
 
 ## Generate Client
 
+Before generating the client, delete 
+- Admin and Models directory
+- KeycloakAdminApiClient.cs
+
 ```bash
 export KEYCLOAK_API_VERSION=26.3.3
 kiota generate -l CSharp \
@@ -26,3 +30,5 @@ docker run -v ${PWD}:/app/output `
     --exclude-backward-compatible `
     --openapi https://www.keycloak.org/docs-api/$KEYCLOAK_API_VERSION/rest-api/openapi.json
 ```
+
+Update `Keycloak.Authservices.Sdk.Kiota.csproj` and set `VersionPrefix` to the Keycloak api version
