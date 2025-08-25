@@ -40,34 +40,15 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse?> GetAsPerClientConfigDescriptionGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse> GetAsPerClientConfigDescriptionGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse>(requestInfo, global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get configuration descriptions for all clients
-        /// </summary>
-        /// <returns>A <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsPerClientConfigDescriptionGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionResponse>(requestInfo, global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get configuration descriptions for all clients
@@ -96,14 +77,6 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.PerClientConfigDescription.PerClientConfigDescriptionRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PerClientConfigDescriptionRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

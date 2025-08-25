@@ -23,5 +23,6 @@ docker run -v ${PWD}:/app/output `
     generate --language CSharp `
     --namespace-name Keycloak.AuthServices.Sdk.Kiota.Admin `
     --class-name KeycloakAdminApiClient `
+    --exclude-backward-compatible `
     --openapi https://www.keycloak.org/docs-api/$KEYCLOAK_API_VERSION/rest-api/openapi.json
 ```

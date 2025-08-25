@@ -8,7 +8,7 @@
   "clientNamespaceName": "Keycloak.AuthServices.Sdk.Kiota.Admin",
   "language": "CSharp",
   "usesBackingStore": false,
-  "excludeBackwardCompatible": false,
+  "excludeBackwardCompatible": true,
   "includeAdditionalData": true,
   "disableSSLValidation": false,
   "serializers": [
