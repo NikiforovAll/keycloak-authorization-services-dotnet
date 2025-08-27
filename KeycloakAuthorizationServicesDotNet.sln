@@ -82,6 +82,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Aspir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keycloak.AuthServices.Templates", "src\Keycloak.AuthServices.Templates\Keycloak.AuthServices.Templates.csproj", "{EFF07507-0C96-49BD-8D66-0E2B05DA0BDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhaseTwo.AuthServices.Sdk.Kiota", "src\PhaseTwo.AuthServices.Sdk.Kiota\PhaseTwo.AuthServices.Sdk.Kiota.csproj", "{41428F35-FD23-4448-9EBD-7992BE40C9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -184,6 +186,10 @@ Global
 		{EFF07507-0C96-49BD-8D66-0E2B05DA0BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF07507-0C96-49BD-8D66-0E2B05DA0BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF07507-0C96-49BD-8D66-0E2B05DA0BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41428F35-FD23-4448-9EBD-7992BE40C9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41428F35-FD23-4448-9EBD-7992BE40C9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41428F35-FD23-4448-9EBD-7992BE40C9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41428F35-FD23-4448-9EBD-7992BE40C9AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -214,6 +220,7 @@ Global
 		{4AF4CE52-F007-4FEE-9324-7E52314398FF} = {AEBE10B1-96B1-4060-B8C1-1F9BFA7A586C}
 		{0943D3CE-5B15-46F8-9B0C-0C2911FD70A3} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
 		{EFF07507-0C96-49BD-8D66-0E2B05DA0BDD} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
+		{41428F35-FD23-4448-9EBD-7992BE40C9AB} = {F9D5C5B8-9933-4AE0-ADAC-6B8C15F7552A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E1907BFD-C144-4B48-AA40-972F499D4E08}
