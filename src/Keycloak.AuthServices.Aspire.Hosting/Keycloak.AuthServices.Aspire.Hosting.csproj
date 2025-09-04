@@ -9,7 +9,7 @@
     <Description>Aspire support for Keycloak</Description>
     <PackageTags>$(PackageTags);aspire;cloud-native</PackageTags>
     <MinVerSkip>true</MinVerSkip>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.2.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
   </PropertyGroup>
 
