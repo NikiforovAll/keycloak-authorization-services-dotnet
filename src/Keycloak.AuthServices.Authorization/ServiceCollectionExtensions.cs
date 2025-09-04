@@ -202,12 +202,12 @@ public static class ServiceCollectionExtensions
 
         services.AddHttpContextAccessor();
 
-        services.AddAuthorization(options =>
-            options.AddPolicy(
+        services
+            .AddAuthorizationBuilder()
+            .AddPolicy(
                 ParameterizedProtectedResourceRequirement.DynamicProtectedResourcePolicy,
                 p => p.AddRequirements(new ParameterizedProtectedResourceRequirement())
-            )
-        );
+            );
 
         services.AddScoped<
             IAuthorizationHandler,
