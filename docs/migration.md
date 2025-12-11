@@ -20,7 +20,7 @@
 
 ```json
 {
-  // new default
+  // old default (kebab-case)
   "Keycloak1": {
     "realm": "Test",
     "auth-server-url": "http://localhost:8080/",
@@ -31,7 +31,7 @@
       "secret": "secret"
     }
   },
-  // old default
+  // new default (PascalCase)
   "Keycloak2": {
     "Realm": "Test",
     "AuthServerUrl": "http://localhost:8080/",
