@@ -60,15 +60,14 @@ In this example, configuration is based on `appsettings.json`.
 //appsettings.json
 {
     "Keycloak": {
-        "realm": "Test",
-        "auth-server-url": "http://localhost:8080/",
-        "ssl-required": "none",
-        "resource": "test-client",
-        "verify-token-audience": false,
-        "credentials": {
-        "secret": ""
-        },
-        "confidential-port": 0
+        "Realm": "Test",
+        "AuthServerUrl": "http://localhost:8080/",
+        "SslRequired": "none",
+        "Resource": "test-client",
+        "VerifyTokenAudience": true,
+        "Credentials": {
+        "Secret": "secret"
+        }
     }
 }
 ```
