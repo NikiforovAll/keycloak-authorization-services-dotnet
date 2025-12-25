@@ -3,7 +3,7 @@ namespace Microsoft.Extensions.DependencyInjection;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 public static partial class ServiceCollectionExtensions
 {
@@ -21,11 +21,6 @@ public static partial class ServiceCollectionExtensions
             {
                 Name = "Auth",
                 Type = SecuritySchemeType.OAuth2,
-                Reference = new OpenApiReference
-                {
-                    Id = JwtBearerDefaults.AuthenticationScheme,
-                    Type = ReferenceType.SecurityScheme
-                },
                 Flows = new OpenApiOAuthFlows
                 {
                     Implicit = new OpenApiOAuthFlow
@@ -37,13 +32,19 @@ public static partial class ServiceCollectionExtensions
                             $"{options.KeycloakUrlRealm}/protocol/openid-connect/token"
                         ),
                         Scopes = new Dictionary<string, string>(),
-                    }
-                }
+                    },
+                },
             };
-            c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
-            c.AddSecurityRequirement(
-                new OpenApiSecurityRequirement { { securityScheme, Array.Empty<string>() } }
-            );
+            c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, securityScheme);
+            c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+            {
+                [
+                    new OpenApiSecuritySchemeReference(
+                        JwtBearerDefaults.AuthenticationScheme,
+                        document
+                    )
+                ] = [],
+            });
         });
         return services;
     }

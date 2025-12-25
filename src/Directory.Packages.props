@@ -1,29 +1,29 @@
 <Project>
   <ItemGroup Label="Core">
-    <PackageVersion Include="Aspire.Hosting" Version="9.4.2" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.8" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.19" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.19" />
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics" Version="9.0.8" />
-    <PackageVersion Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.14.0" />
-    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.8" />
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.8" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="6.0.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.8" />
-    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.19.1" />
-    <PackageVersion Include="OpenTelemetry" Version="1.12.0" />
-    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="9.0.8" />
+    <PackageVersion Include="Aspire.Hosting" Version="13.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.15.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.1" />
+    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.21.1" />
+    <PackageVersion Include="OpenTelemetry" Version="1.14.0" />
+    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.1" />
   </ItemGroup>
   <ItemGroup Label="Kiota">
-    <PackageVersion Include="Microsoft.Kiota.Abstractions" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Serialization.Form" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Serialization.Json" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Serialization.Multipart" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Kiota.Serialization.Text" Version="1.15.2" />
+    <PackageVersion Include="Microsoft.Kiota.Abstractions" Version="1.21.1" />
+    <PackageVersion Include="Microsoft.Kiota.Authentication.Azure" Version="1.21.1" />
+    <PackageVersion Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.21.1" />
+    <PackageVersion Include="Microsoft.Kiota.Serialization.Form" Version="1.21.1" />
+    <PackageVersion Include="Microsoft.Kiota.Serialization.Json" Version="1.21.1" />
+    <PackageVersion Include="Microsoft.Kiota.Serialization.Multipart" Version="1.21.1" />
+    <PackageVersion Include="Microsoft.Kiota.Serialization.Text" Version="1.21.1" />
   </ItemGroup>
   <ItemGroup Label="Release">
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />

@@ -2,7 +2,7 @@ namespace Api;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 public static class ServiceCollectionExtensions
 {
@@ -16,18 +16,18 @@ public static class ServiceCollectionExtensions
                 Description = "Enter JWT Bearer token **_only_**",
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.Http,
-                Scheme = "bearer", // must be lower case
+                Scheme = "bearer",
                 BearerFormat = "JWT",
-                Reference = new OpenApiReference
-                {
-                    Id = JwtBearerDefaults.AuthenticationScheme,
-                    Type = ReferenceType.SecurityScheme
-                }
             };
-            c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, securityScheme);
+            c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
             {
-                {securityScheme, Array.Empty<string>()}
+                [
+                    new OpenApiSecuritySchemeReference(
+                        JwtBearerDefaults.AuthenticationScheme,
+                        document
+                    )
+                ] = [],
             });
         });
         return services;

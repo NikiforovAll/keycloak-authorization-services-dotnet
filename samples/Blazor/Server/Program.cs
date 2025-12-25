@@ -1,6 +1,6 @@
 using System.Globalization;
 using Keycloak.AuthServices.Authentication;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 using Serilog;
 using Serilog.Events;
 
@@ -12,7 +12,8 @@ services.AddControllersWithViews();
 services.AddRazorPages();
 
 services.AddEndpointsApiExplorer();
-var openIdConnectUrl = $"{configuration["Keycloak:auth-server-url"]}realms/{configuration["Keycloak:realm"]}/.well-known/openid-configuration";
+var openIdConnectUrl =
+    $"{configuration["Keycloak:auth-server-url"]}realms/{configuration["Keycloak:realm"]}/.well-known/openid-configuration";
 
 services.AddSwaggerGen(c =>
 {
@@ -24,16 +25,11 @@ services.AddSwaggerGen(c =>
         OpenIdConnectUrl = new Uri(openIdConnectUrl),
         Scheme = "bearer",
         BearerFormat = "JWT",
-        Reference = new OpenApiReference
-        {
-            Id = "Bearer",
-            Type = ReferenceType.SecurityScheme
-        }
     };
-    c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    c.AddSecurityDefinition("Bearer", securityScheme);
+    c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
     {
-        {securityScheme, Array.Empty<string>()}
+        [new OpenApiSecuritySchemeReference("Bearer", document)] = [],
     });
 });
 
@@ -42,7 +38,8 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console(
         outputTemplate: "[{Level:u4}] | {Message:lj}{NewLine}{Exception}",
         restrictedToMinimumLevel: LogEventLevel.Information,
-        formatProvider: CultureInfo.InvariantCulture)
+        formatProvider: CultureInfo.InvariantCulture
+    )
     .CreateBootstrapLogger();
 
 builder.Host.UseSerilog();

@@ -1,10 +1,10 @@
 <Project>
   <ItemGroup>
-    <PackageVersion Include="Keycloak.AuthServices.Aspire.Hosting" Version="0.1.0-preview1" />
-    <PackageVersion Include="Keycloak.AuthServices.Authentication" Version="2.5.0" />
-    <PackageVersion Include="Keycloak.AuthServices.Common" Version="2.5.0" />
+    <PackageVersion Include="Keycloak.AuthServices.Aspire.Hosting" Version="0.2.0" />
+    <PackageVersion Include="Keycloak.AuthServices.Authentication" Version="2.5.3" />
+    <PackageVersion Include="Keycloak.AuthServices.Common" Version="2.5.3" />
     <PackageVersion Include="Keycloak.AuthServices.OpenTelemetry" Version="1.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6" />
-    <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="10.1.0" />
   </ItemGroup>
 </Project>

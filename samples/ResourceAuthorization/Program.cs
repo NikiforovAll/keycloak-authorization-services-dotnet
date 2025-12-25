@@ -1,3 +1,4 @@
+using Duende.AccessTokenManagement;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Common;
@@ -51,9 +52,7 @@ services
     .AddAuthorizationBuilder()
     .AddDefaultPolicy("", policy => policy.RequireRealmRoles("Admin", "Reader"));
 
-services
-    .AddKeycloakAuthorization()
-    .AddAuthorizationServer(builder.Configuration);
+services.AddKeycloakAuthorization().AddAuthorizationServer(builder.Configuration);
 
 var adminSection = "KeycloakAdmin";
 
@@ -64,14 +63,14 @@ AddAccessTokenManagement(builder, services);
 
 services
     .AddKiotaKeycloakAdminHttpClient(builder.Configuration, keycloakClientSectionName: adminSection)
-    .AddClientCredentialsTokenHandler(adminClient);
+    .AddClientCredentialsTokenHandler(ClientCredentialsClientName.Parse(adminClient));
 
 services
     .AddKeycloakProtectionHttpClient(
         builder.Configuration,
         keycloakClientSectionName: KeycloakProtectionClientOptions.Section
     )
-    .AddClientCredentialsTokenHandler(protectionClient);
+    .AddClientCredentialsTokenHandler(ClientCredentialsClientName.Parse(protectionClient));
 
 services.AddScoped<WorkspaceService>();
 
@@ -96,28 +95,28 @@ void AddAccessTokenManagement(WebApplicationBuilder builder, IServiceCollection 
     services
         .AddClientCredentialsTokenManagement()
         .AddClient(
-            adminClient,
+            ClientCredentialsClientName.Parse(adminClient),
             client =>
             {
                 var options = builder.Configuration.GetKeycloakOptions<KeycloakAdminClientOptions>(
                     adminSection
                 )!;
 
-                client.ClientId = options.Resource;
-                client.ClientSecret = options.Credentials.Secret;
-                client.TokenEndpoint = options.KeycloakTokenEndpoint;
+                client.ClientId = ClientId.Parse(options.Resource);
+                client.ClientSecret = ClientSecret.Parse(options.Credentials.Secret);
+                client.TokenEndpoint = new Uri(options.KeycloakTokenEndpoint);
             }
         )
         .AddClient(
-            protectionClient,
+            ClientCredentialsClientName.Parse(protectionClient),
             client =>
             {
                 var options =
                     builder.Configuration.GetKeycloakOptions<KeycloakProtectionClientOptions>()!;
 
-                client.ClientId = options.Resource;
-                client.ClientSecret = options.Credentials.Secret;
-                client.TokenEndpoint = options.KeycloakTokenEndpoint;
+                client.ClientId = ClientId.Parse(options.Resource);
+                client.ClientSecret = ClientSecret.Parse(options.Credentials.Secret);
+                client.TokenEndpoint = new Uri(options.KeycloakTokenEndpoint);
             }
         );
 }
