@@ -36,19 +36,19 @@ dotnet add package Keycloak.AuthServices.Authentication
 
 ```csharp
 // Program.cs
-using Keycloak.AuthServices.Authentication; 
+using Keycloak.AuthServices.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration); 
-builder.Services.AddAuthorization(); 
+builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseAuthentication(); 
-app.UseAuthorization(); 
+app.UseAuthentication();
+app.UseAuthorization();
 
-app.MapGet("/", () => "Hello World!").RequireAuthorization(); 
+app.MapGet("/", () => "Hello World!").RequireAuthorization();
 
 app.Run();
 ```
@@ -65,7 +65,7 @@ In this example, configuration is based on `appsettings.json`.
         "resource": "test-client",
         "verify-token-audience": false,
         "credentials": {
-        "secret": ""
+            "secret": ""
         },
         "confidential-port": 0
     }
