@@ -9,7 +9,7 @@
     <PackageVersion Include="AutoFixture.Xunit2" Version="4.18.1" />
   </ItemGroup>
   <ItemGroup Label="Integration Test Dependencies">
-    <PackageVersion Include="Alba" Version="8.1.2" />
+    <PackageVersion Include="Alba" Version="8.2.0" />
     <PackageVersion Include="Duende.AccessTokenManagement" Version="4.1.0" />
     <PackageVersion Include="Meziantou.Extensions.Logging.Xunit" Version="1.0.17" />
     <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
@@ -17,8 +17,6 @@
     <PackageVersion Include="Testcontainers.Keycloak" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup Label="Compatibility">
-    <PackageVersion Include="System.Text.RegularExpressions" Version="4.3.1" />
-    <PackageVersion Include="System.Net.Http" Version="4.3.4" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.1" />
   </ItemGroup>
 </Project>

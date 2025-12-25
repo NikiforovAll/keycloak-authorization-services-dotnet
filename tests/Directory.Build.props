@@ -21,8 +21,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="FluentAssertions" />
-    <PackageReference Include="System.Text.RegularExpressions" />
-    <PackageReference Include="System.Net.Http" />
   </ItemGroup>
 
   <ItemGroup Label="Global Usings">
