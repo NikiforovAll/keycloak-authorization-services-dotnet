@@ -57,6 +57,26 @@ Task("Test")
             });
     });
 
+Task("IntegrationTest")
+    .Description("Runs integration tests using Testcontainers (requires Docker).")
+    .DoesForEach(GetFiles("./tests/**/*.csproj").Where(file => file.ToString().Contains("Integration")), project =>
+    {
+        DotNetTest(
+            project.ToString(),
+            new DotNetTestSettings()
+            {
+                Configuration = configuration,
+                Loggers = new string[]
+                {
+                    $"trx;LogFileName={project.GetFilenameWithoutExtension()}.trx",
+                    $"html;LogFileName={project.GetFilenameWithoutExtension()}.html",
+                },
+                NoBuild = false,
+                NoRestore = false,
+                ResultsDirectory = artefactsDirectory,
+            });
+    });
+
 Task("Pack")
     .Description("Creates NuGet packages and outputs them to the artefacts directory.")
     .Does(() =>

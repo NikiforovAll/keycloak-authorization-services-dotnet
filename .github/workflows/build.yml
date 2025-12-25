@@ -55,6 +55,29 @@ jobs:
           name: ${{matrix.os}}
           path: "./Artefacts"
 
+  integration-tests:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4.2.2
+        with:
+          lfs: true
+          fetch-depth: 0
+      - name: "Install .NET SDK"
+        uses: actions/setup-dotnet@v4.1.0
+        with:
+          dotnet-version: 10.0.x
+      - name: "Dotnet Tool Restore"
+        run: dotnet tool restore
+        shell: pwsh
+      - name: "Dotnet Cake Build"
+        run: dotnet cake --target=Build
+        shell: pwsh
+      - name: "Dotnet Cake Integration Test"
+        run: dotnet cake --target=IntegrationTest
+        shell: pwsh
+
   push-github-packages:
     name: "Push GitHub Packages"
     needs: build
