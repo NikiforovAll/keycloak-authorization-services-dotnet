@@ -15,6 +15,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
     : AuthenticationScenario(fixture)
 {
     private static readonly string AppSettings = "appsettings.json";
+    private string BaseAddress => fixture.BaseAddress;
 
     [Fact]
     public async Task RequireRealmRoles_AdminRole_Verified()
@@ -24,7 +25,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -46,12 +47,12 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                         #endregion RequireRealmRoles_AdminRole_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>
@@ -77,7 +78,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -103,12 +104,12 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                         #endregion RequireClientRoles_TestClientRole_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>
@@ -134,7 +135,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -158,12 +159,12 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                         #endregion RequireClientRoles_TestClientRoleWithInlineConfiguration_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>
@@ -189,7 +190,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -211,12 +212,12 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                         #endregion RequireClientRoles_TestClientRoleWithConfiguration_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>
@@ -242,7 +243,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -269,12 +270,12 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                         #endregion RequireRealmRoles_AdminRoleWithMapping_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>
@@ -300,7 +301,7 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -327,12 +328,12 @@ public class PolicyTests(KeycloakFixture fixture, ITestOutputHelper testOutputHe
                         #endregion RequireClientRoles_TestClientRoleWithMapping_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>

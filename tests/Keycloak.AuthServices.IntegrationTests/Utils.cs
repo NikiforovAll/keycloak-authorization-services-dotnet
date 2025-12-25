@@ -1,6 +1,7 @@
 ﻿namespace Keycloak.AuthServices.IntegrationTests;
 
 using Alba.Security;
+using Duende.AccessTokenManagement;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.Sdk;
@@ -23,6 +24,23 @@ public static class Utils
             x.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), fileName), optional: false)
         );
 
+    public static IWebHostBuilder WithKeycloakConfiguration(
+        this IWebHostBuilder hostBuilder,
+        string fileName,
+        string baseAddress
+    ) =>
+        hostBuilder.ConfigureAppConfiguration(x =>
+        {
+            x.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), fileName), optional: false);
+            x.AddInMemoryCollection(
+                new Dictionary<string, string?>
+                {
+                    ["Keycloak:auth-server-url"] = baseAddress,
+                    ["Keycloak:AuthServerUrl"] = baseAddress,
+                }
+            );
+        });
+
     public static IWebHostBuilder WithLogging(
         this IWebHostBuilder hostBuilder,
         ITestOutputHelper testOutputHelper
@@ -38,7 +56,7 @@ public static class Utils
                     {
                         IncludeScopes = true,
                         IncludeCategory = true,
-                        IncludeLogLevel = true
+                        IncludeLogLevel = true,
                     }
                 )
             );
@@ -99,7 +117,7 @@ public static class Utils
     {
         var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
 
-        var tokenClientName = "keycloak_admin_api_token";
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_admin_api_token");
         var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAdminClientOptions>()!;
 
         services.AddDistributedMemoryCache();
@@ -114,6 +132,30 @@ public static class Utils
         return (services, configuration);
     }
 
+    public static (IServiceCollection services, IConfiguration configuration) AdminHttpClientSetup(
+        string fileName,
+        ITestOutputHelper testOutputHelper,
+        string baseAddress
+    )
+    {
+        var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
+
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_admin_api_token");
+        var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAdminClientOptions>()!;
+        keycloakOptions.AuthServerUrl = baseAddress;
+
+        services.AddDistributedMemoryCache();
+        services
+            .AddClientCredentialsTokenManagement()
+            .AddClient(tokenClientName, client => BindKeycloak(client, keycloakOptions));
+
+        services
+            .AddKeycloakAdminHttpClient(keycloakOptions)
+            .AddClientCredentialsTokenHandler(tokenClientName);
+
+        return (services, configuration);
+    }
+
     public static (
         IServiceCollection services,
         IConfiguration configuration
@@ -121,7 +163,7 @@ public static class Utils
     {
         var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
 
-        var tokenClientName = "keycloak_protection_api_token";
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_protection_api_token");
         var keycloakOptions = configuration.GetKeycloakOptions<KeycloakProtectionClientOptions>()!;
 
         services.AddDistributedMemoryCache();
@@ -136,24 +178,51 @@ public static class Utils
         return (services, configuration);
     }
 
-    private static void BindKeycloak(
-        Duende.AccessTokenManagement.ClientCredentialsClient client,
-        KeycloakAdminClientOptions keycloakOptions
+    public static (
+        IServiceCollection services,
+        IConfiguration configuration
+    ) ProtectionHttpClientSetup(
+        string fileName,
+        ITestOutputHelper testOutputHelper,
+        string baseAddress
     )
     {
-        client.ClientId = keycloakOptions.Resource;
-        client.ClientSecret = keycloakOptions.Credentials.Secret;
-        client.TokenEndpoint = keycloakOptions.KeycloakTokenEndpoint;
+        var (services, configuration) = KeycloakSetup(fileName, testOutputHelper);
+
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_protection_api_token");
+        var keycloakOptions = configuration.GetKeycloakOptions<KeycloakProtectionClientOptions>()!;
+        keycloakOptions.AuthServerUrl = baseAddress;
+
+        services.AddDistributedMemoryCache();
+        services
+            .AddClientCredentialsTokenManagement()
+            .AddClient(tokenClientName, client => BindKeycloak(client, keycloakOptions));
+
+        services
+            .AddKeycloakProtectionHttpClient(keycloakOptions)
+            .AddClientCredentialsTokenHandler(tokenClientName);
+
+        return (services, configuration);
     }
 
     private static void BindKeycloak(
-        Duende.AccessTokenManagement.ClientCredentialsClient client,
+        ClientCredentialsClient client,
+        KeycloakAdminClientOptions keycloakOptions
+    )
+    {
+        client.ClientId = ClientId.Parse(keycloakOptions.Resource);
+        client.ClientSecret = ClientSecret.Parse(keycloakOptions.Credentials.Secret);
+        client.TokenEndpoint = new Uri(keycloakOptions.KeycloakTokenEndpoint);
+    }
+
+    private static void BindKeycloak(
+        ClientCredentialsClient client,
         KeycloakProtectionClientOptions keycloakOptions
     )
     {
-        client.ClientId = keycloakOptions.Resource;
-        client.ClientSecret = keycloakOptions.Credentials.Secret;
-        client.TokenEndpoint = keycloakOptions.KeycloakTokenEndpoint;
+        client.ClientId = ClientId.Parse(keycloakOptions.Resource);
+        client.ClientSecret = ClientSecret.Parse(keycloakOptions.Credentials.Secret);
+        client.TokenEndpoint = new Uri(keycloakOptions.KeycloakTokenEndpoint);
     }
 
     public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(string fileName)
@@ -170,6 +239,16 @@ public static class Utils
         return keycloakAuthenticationOptions;
     }
 
+    public static KeycloakAuthenticationOptions ReadKeycloakAuthenticationOptions(
+        string fileName,
+        string baseAddress
+    )
+    {
+        var options = ReadKeycloakAuthenticationOptions(fileName);
+        options.AuthServerUrl = baseAddress;
+        return options;
+    }
+
     public static OpenConnectUserPassword UserPasswordFlow(
         KeycloakAuthenticationOptions keycloakAuthenticationOptions
     ) =>
@@ -180,4 +259,19 @@ public static class Utils
             UserName = TestUsers.Tester.UserName,
             Password = TestUsers.Tester.Password,
         };
+
+    public static OpenConnectUserPassword UserPasswordFlow(
+        KeycloakAuthenticationOptions keycloakAuthenticationOptions,
+        string baseAddress
+    )
+    {
+        keycloakAuthenticationOptions.AuthServerUrl = baseAddress;
+        return new OpenConnectUserPassword
+        {
+            ClientId = keycloakAuthenticationOptions.Resource,
+            ClientSecret = keycloakAuthenticationOptions.Credentials.Secret,
+            UserName = TestUsers.Tester.UserName,
+            Password = TestUsers.Tester.Password,
+        };
+    }
 }

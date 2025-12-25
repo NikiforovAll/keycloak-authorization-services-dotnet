@@ -16,6 +16,7 @@ public class AuthorizationServerPolicyTests(
 ) : AuthenticationScenario(fixture)
 {
     private static readonly string AppSettings = "appsettings.json";
+    private string BaseAddress => fixture.BaseAddress;
 
     [Fact]
     public async Task RequireProtectedResource_DefaultResource_Verified()
@@ -25,7 +26,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -54,12 +55,12 @@ public class AuthorizationServerPolicyTests(
                         #endregion RequireProtectedResource_DefaultResource_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithKeycloakFixture(this.Keycloak)
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         await host.Scenario(_ =>
@@ -85,7 +86,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -113,12 +114,12 @@ public class AuthorizationServerPolicyTests(
                         #endregion RequireProtectedResource_Scopes_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithLocalKeycloakInstallation()
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
         #region RequireProtectedResource_Scopes_Verified_Assertion
 
@@ -146,7 +147,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -175,12 +176,12 @@ public class AuthorizationServerPolicyTests(
                         #endregion RequireProtectedResource_MultipleScopesAllOf_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithLocalKeycloakInstallation()
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
         await host.Scenario(_ =>
         {
@@ -205,7 +206,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -234,12 +235,12 @@ public class AuthorizationServerPolicyTests(
                         #endregion RequireProtectedResource_MultipleScopesAnyOf_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithLocalKeycloakInstallation()
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
         await host.Scenario(_ =>
         {
@@ -264,7 +265,7 @@ public class AuthorizationServerPolicyTests(
             x =>
             {
                 x.WithLogging(testOutputHelper);
-                x.WithConfiguration(AppSettings);
+                x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
                 x.ConfigureServices(
                     (context, services) =>
@@ -287,7 +288,7 @@ public class AuthorizationServerPolicyTests(
                                         [
                                             "workspace:read",
                                             "workspace:delete",
-                                            "workspace:unknown"
+                                            "workspace:unknown",
                                         ],
                                         scopesValidationMode: ScopesValidationMode.AllOf
                                     )
@@ -298,12 +299,12 @@ public class AuthorizationServerPolicyTests(
                         #endregion RequireProtectedResource_MultipleScopesMissingScope_Verified
 
                         services.PostConfigure<JwtBearerOptions>(options =>
-                            options.WithLocalKeycloakInstallation()
+                            options.RequireHttpsMetadata = false
                         );
                     }
                 );
             },
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
         await host.Scenario(_ =>
         {

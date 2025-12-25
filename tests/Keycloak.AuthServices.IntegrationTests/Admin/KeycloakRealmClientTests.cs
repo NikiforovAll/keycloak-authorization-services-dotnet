@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.IntegrationTests;
 
+using Duende.AccessTokenManagement;
 using Keycloak.AuthServices.Common;
 using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Admin;
@@ -11,10 +12,11 @@ using static Keycloak.AuthServices.IntegrationTests.Utils;
 /// <remarks>
 /// Used for demonstration/docs, this is why this class is so verbose
 /// </remarks>
-public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
-    : AuthenticationScenarioNoKeycloak()
+public class KeycloakRealmClientTests(KeycloakFixture fixture, ITestOutputHelper testOutputHelper)
+    : AuthenticationScenario(fixture)
 {
     private static readonly string AppSettings = "appsettings.Master.json";
+    private string BaseAddress => fixture.BaseAddress;
 
     [Fact]
     public async Task GetRealmAsync_RealmExistsInlineConfiguration_Success()
@@ -22,13 +24,14 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
         var (services, _) = KeycloakSetup(string.Empty, testOutputHelper);
 
         #region GetRealmAsync_RealmExistsInlineConfiguration_Success
-        var tokenClientName = "keycloak_admin_api_token";
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_admin_api_token");
 
         var keycloakOptions = new KeycloakAdminClientOptions
         {
-            AuthServerUrl = "http://localhost:8080/",
+            AuthServerUrl = this.BaseAddress,
             Realm = "master",
             Resource = "admin-api",
+            Credentials = new() { Secret = "k9LYTWKfbNOyfzFt2ZZsFl3Z4x4aAecf" },
         };
 
         services.AddDistributedMemoryCache();
@@ -51,13 +54,13 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
         realm.Should().NotBeNull();
 
         static void BindKeycloak(
-            Duende.AccessTokenManagement.ClientCredentialsClient client,
+            ClientCredentialsClient client,
             KeycloakAdminClientOptions adminClientOptions
         )
         {
-            client.ClientId = adminClientOptions.Resource;
-            client.ClientSecret = adminClientOptions.Credentials.Secret;
-            client.TokenEndpoint = adminClientOptions.KeycloakTokenEndpoint;
+            client.ClientId = ClientId.Parse(adminClientOptions.Resource);
+            client.ClientSecret = ClientSecret.Parse(adminClientOptions.Credentials.Secret);
+            client.TokenEndpoint = new Uri(adminClientOptions.KeycloakTokenEndpoint);
         }
         #endregion GetRealmAsync_RealmExistsInlineConfiguration_Success
     }
@@ -66,10 +69,11 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
     public async Task GetRealmAsync_RealmExists_Success()
     {
         var (services, configuration) = KeycloakSetup(AppSettings, testOutputHelper);
-        var tokenClientName = "keycloak_admin_api_token";
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_admin_api_token");
 
         #region GetRealmAsync_RealmExists_Success
         var options = configuration.GetKeycloakOptions<KeycloakAdminClientOptions>()!;
+        options.AuthServerUrl = this.BaseAddress;
 
         services.AddDistributedMemoryCache();
         services
@@ -78,14 +82,14 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
                 tokenClientName,
                 client =>
                 {
-                    client.ClientId = options.Resource;
-                    client.ClientSecret = options.Credentials.Secret;
-                    client.TokenEndpoint = options.KeycloakTokenEndpoint;
+                    client.ClientId = ClientId.Parse(options.Resource);
+                    client.ClientSecret = ClientSecret.Parse(options.Credentials.Secret);
+                    client.TokenEndpoint = new Uri(options.KeycloakTokenEndpoint);
                 }
             );
 
         services
-            .AddKeycloakAdminHttpClient(configuration)
+            .AddKeycloakAdminHttpClient(options)
             .AddClientCredentialsTokenHandler(tokenClientName);
 
         var sp = services.BuildServiceProvider();
@@ -101,10 +105,11 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
     public async Task GetRealmAsync_NoRealmExists_ExceptionThrown()
     {
         var (services, configuration) = KeycloakSetup(AppSettings, testOutputHelper);
-        var tokenClientName = "keycloak_admin_api_token";
+        var tokenClientName = ClientCredentialsClientName.Parse("keycloak_admin_api_token");
 
         #region GetRealmAsync_NoRealmExists_ExceptionThrown
         var options = configuration.GetKeycloakOptions<KeycloakAdminClientOptions>()!;
+        options.AuthServerUrl = this.BaseAddress;
 
         services.AddDistributedMemoryCache();
         services
@@ -113,9 +118,9 @@ public class KeycloakRealmClientTests(ITestOutputHelper testOutputHelper)
                 tokenClientName,
                 client =>
                 {
-                    client.ClientId = options.Resource;
-                    client.ClientSecret = options.Credentials.Secret;
-                    client.TokenEndpoint = options.KeycloakTokenEndpoint;
+                    client.ClientId = ClientId.Parse(options.Resource);
+                    client.ClientSecret = ClientSecret.Parse(options.Credentials.Secret);
+                    client.TokenEndpoint = new Uri(options.KeycloakTokenEndpoint);
                 }
             );
 

@@ -10,17 +10,20 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
 
-public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
-    : AuthenticationScenarioNoKeycloak
+public class ProtectedResourcePolicyTests(
+    KeycloakFixture fixture,
+    ITestOutputHelper testOutputHelper
+) : AuthenticationScenario(fixture)
 {
     private static readonly string AppSettings = "appsettings.json";
+    private string BaseAddress => fixture.BaseAddress;
 
     [Fact]
     public async Task RequireProtectedResource_SingleResourceSingleScopeSingleEndpoint_Verified()
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         var requestUrl = RunEndpoint(
@@ -47,7 +50,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         var requestUrl = RunEndpoint(
@@ -75,7 +78,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         var requestUrl = RunEndpoint(
@@ -103,7 +106,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         // tests/TestWebApi/Program.cs#MultipleResourcesMultipleScopesSingleEndpoint
@@ -132,7 +135,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         // tests/TestWebApi/Program.cs#MultipleResourcesMultipleScopesEndpointHierarchy
@@ -161,7 +164,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         // tests/TestWebApi/Program.cs#SingleResourceIgnoreProtectedResourceEndpointHierarchy
@@ -207,7 +210,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
     {
         await using var host = await AlbaHost.For<Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         // tests/TestWebApi/Program.cs#MultipleResourcesMultipleScopesEndpointHierarchy
@@ -230,13 +233,11 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
         });
     }
 
-    private static Action<IWebHostBuilder> SetupAuthorizationServer(
-        ITestOutputHelper testOutputHelper
-    ) =>
+    private Action<IWebHostBuilder> SetupAuthorizationServer(ITestOutputHelper testOutputHelper) =>
         x =>
         {
             x.WithLogging(testOutputHelper);
-            x.WithConfiguration(AppSettings);
+            x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
             x.ConfigureServices(
                 (context, services) =>
@@ -250,7 +251,7 @@ public class ProtectedResourcePolicyTests(ITestOutputHelper testOutputHelper)
                     services.AddAuthorizationServer(context.Configuration);
 
                     services.PostConfigure<JwtBearerOptions>(options =>
-                        options.WithLocalKeycloakInstallation()
+                        options.RequireHttpsMetadata = false
                     );
                 }
             );

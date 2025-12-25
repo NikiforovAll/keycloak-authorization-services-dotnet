@@ -10,17 +10,20 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
 
-public class ProtectedResourceWithControllersPolicyTests(ITestOutputHelper testOutputHelper)
-    : AuthenticationScenarioNoKeycloak
+public class ProtectedResourceWithControllersPolicyTests(
+    KeycloakFixture fixture,
+    ITestOutputHelper testOutputHelper
+) : AuthenticationScenario(fixture)
 {
     private static readonly string AppSettings = "appsettings.json";
+    private string BaseAddress => fixture.BaseAddress;
 
     [Fact]
     public async Task ProtectedResourceAttribute_DeleteWorkspaceAndAccessPublic_Verified()
     {
         await using var host = await AlbaHost.For<TestWebApiWithControllers.Program>(
             SetupAuthorizationServer(testOutputHelper),
-            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings))
+            UserPasswordFlow(ReadKeycloakAuthenticationOptions(AppSettings), this.BaseAddress)
         );
 
         var requestUrl = "/workspaces/my-workspace";
@@ -55,13 +58,11 @@ public class ProtectedResourceWithControllersPolicyTests(ITestOutputHelper testO
         });
     }
 
-    private static Action<IWebHostBuilder> SetupAuthorizationServer(
-        ITestOutputHelper testOutputHelper
-    ) =>
+    private Action<IWebHostBuilder> SetupAuthorizationServer(ITestOutputHelper testOutputHelper) =>
         x =>
         {
             x.WithLogging(testOutputHelper);
-            x.WithConfiguration(AppSettings);
+            x.WithKeycloakConfiguration(AppSettings, this.BaseAddress);
 
             x.ConfigureServices(
                 (context, services) =>
@@ -80,7 +81,7 @@ public class ProtectedResourceWithControllersPolicyTests(ITestOutputHelper testO
                     #endregion SetupProtectedResourcesMVC
 
                     services.PostConfigure<JwtBearerOptions>(options =>
-                        options.WithLocalKeycloakInstallation()
+                        options.RequireHttpsMetadata = false
                     );
                 }
             );

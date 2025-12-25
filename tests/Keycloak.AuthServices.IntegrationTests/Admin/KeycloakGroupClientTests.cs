@@ -4,15 +4,16 @@ using Keycloak.AuthServices.Sdk.Admin;
 using Microsoft.Extensions.DependencyInjection;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
 
-public class KeycloakGroupClientTests(ITestOutputHelper testOutputHelper)
-    : AuthenticationScenarioNoKeycloak()
+public class KeycloakGroupClientTests(KeycloakFixture fixture, ITestOutputHelper testOutputHelper)
+    : AuthenticationScenario(fixture)
 {
     private static readonly string AppSettings = "appsettings.Master.json";
+    private string BaseAddress => fixture.BaseAddress;
 
     [Fact]
     public async Task GetGroupsAsync_RealmExists_Success()
     {
-        var (services, _) = AdminHttpClientSetup(AppSettings, testOutputHelper);
+        var (services, _) = AdminHttpClientSetup(AppSettings, testOutputHelper, this.BaseAddress);
 
         #region GetGroupsAsync_RealmExists_Success
 
@@ -29,7 +30,7 @@ public class KeycloakGroupClientTests(ITestOutputHelper testOutputHelper)
     [Theory, AutoData]
     public async Task CreateGroupAsync_NewGroup_Success(string groupName)
     {
-        var (services, _) = AdminHttpClientSetup(AppSettings, testOutputHelper);
+        var (services, _) = AdminHttpClientSetup(AppSettings, testOutputHelper, this.BaseAddress);
 
         #region CreateGroupAsync_NewGroup_Success
 
@@ -39,7 +40,7 @@ public class KeycloakGroupClientTests(ITestOutputHelper testOutputHelper)
 
         await client.CreateGroupAsync("Test", new() { Name = groupName });
 
-        var groups = await client.GetGroupsAsync("Test", new() { Search = groupName, });
+        var groups = await client.GetGroupsAsync("Test", new() { Search = groupName });
 
         var group = await client.GetGroupAsync("Test", groups.First().Id!);
 

@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <PackageReference Include="Alba" Version="8.2.1" />
-    <PackageReference Include="Duende.AccessTokenManagement" Version="3.2.0" />
-    <PackageReference Include="Meziantou.Extensions.Logging.Xunit" Version="1.0.17" />
-    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.8.0" />
-    <PackageReference Include="Testcontainers" Version="4.7.0" />
-    <PackageReference Include="Testcontainers.Keycloak" Version="4.7.0" />
-    <PackageReference Include="AutoFixture.Xunit2" Version="4.18.1" />
+    <PackageReference Include="Alba" />
+    <PackageReference Include="Duende.AccessTokenManagement" />
+    <PackageReference Include="Meziantou.Extensions.Logging.Xunit" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
+    <PackageReference Include="Testcontainers" />
+    <PackageReference Include="Testcontainers.Keycloak" />
+    <PackageReference Include="AutoFixture.Xunit2" />
   </ItemGroup>
 
   <ItemGroup>
