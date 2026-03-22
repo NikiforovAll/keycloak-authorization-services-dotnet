@@ -92,6 +92,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         public bool? StoreToken { get; set; }
         /// <summary>The trustEmail property</summary>
         public bool? TrustEmail { get; set; }
+        /// <summary>The types property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Types { get; set; }
+#nullable restore
+#else
+        public List<string> Types { get; set; }
+#endif
         /// <summary>The updateProfileFirstLogin property</summary>
         [Obsolete("")]
         public bool? UpdateProfileFirstLogin { get; set; }
@@ -118,7 +126,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation();
         }
         /// <summary>
@@ -144,6 +152,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "providerId", n => { ProviderId = n.GetStringValue(); } },
                 { "storeToken", n => { StoreToken = n.GetBoolValue(); } },
                 { "trustEmail", n => { TrustEmail = n.GetBoolValue(); } },
+                { "types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updateProfileFirstLogin", n => { UpdateProfileFirstLogin = n.GetBoolValue(); } },
                 { "updateProfileFirstLoginMode", n => { UpdateProfileFirstLoginMode = n.GetStringValue(); } },
             };
@@ -154,7 +163,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("addReadTokenRoleOnCreate", AddReadTokenRoleOnCreate);
             writer.WriteStringValue("alias", Alias);
             writer.WriteBoolValue("authenticateByDefault", AuthenticateByDefault);
@@ -170,6 +179,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteStringValue("providerId", ProviderId);
             writer.WriteBoolValue("storeToken", StoreToken);
             writer.WriteBoolValue("trustEmail", TrustEmail);
+            writer.WriteCollectionOfPrimitiveValues<string>("types", Types);
             writer.WriteBoolValue("updateProfileFirstLogin", UpdateProfileFirstLogin);
             writer.WriteStringValue("updateProfileFirstLoginMode", UpdateProfileFirstLoginMode);
             writer.WriteAdditionalData(AdditionalData);

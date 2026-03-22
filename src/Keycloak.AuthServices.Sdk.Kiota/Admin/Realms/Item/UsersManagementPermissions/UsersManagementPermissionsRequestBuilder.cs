@@ -61,7 +61,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagemen
         public async Task<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference> PutAsync(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference>(requestInfo, global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -93,7 +93,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagemen
         public RequestInformation ToPutRequestInformation(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ManagementPermissionReference body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

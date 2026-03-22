@@ -34,6 +34,7 @@ using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions;
+using Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Workflows;
 using Keycloak.AuthServices.Sdk.Kiota.Admin.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -221,6 +222,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.UsersManagementPermissions.UsersManagementPermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The workflows property</summary>
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Workflows.WorkflowsRequestBuilder Workflows
+        {
+            get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Workflows.WorkflowsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.WithRealmItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -287,7 +293,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
         public async Task PutAsync(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -343,7 +349,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
         public RequestInformation ToPutRequestInformation(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

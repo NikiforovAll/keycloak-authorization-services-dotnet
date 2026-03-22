@@ -21,7 +21,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/count{?email*,emailVerified*,enabled*,firstName*,lastName*,q*,search*,username*}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/count{?email*,emailVerified*,enabled*,exact*,firstName*,idpAlias*,idpUserId*,lastName*,q*,search*,username*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/count{?email*,emailVerified*,enabled*,firstName*,lastName*,q*,search*,username*}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users/count{?email*,emailVerified*,enabled*,exact*,firstName*,idpAlias*,idpUserId*,lastName*,q*,search*,username*}", rawUrl)
         {
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CountRequestBuilderGetQueryParameters 
         {
-            /// <summary>email filter</summary>
+            /// <summary>A String contained in email, or the complete email, if param &quot;exact&quot; is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("email")]
@@ -94,12 +94,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
             [QueryParameter("email")]
             public string Email { get; set; }
 #endif
+            /// <summary>whether the email has been verified</summary>
             [QueryParameter("emailVerified")]
             public bool? EmailVerified { get; set; }
             /// <summary>Boolean representing if user is enabled or not</summary>
             [QueryParameter("enabled")]
             public bool? Enabled { get; set; }
-            /// <summary>first name filter</summary>
+            /// <summary>Boolean which defines whether the params &quot;last&quot;, &quot;first&quot;, &quot;email&quot; and &quot;username&quot; must match exactly</summary>
+            [QueryParameter("exact")]
+            public bool? Exact { get; set; }
+            /// <summary>A String contained in firstName, or the complete firstName, if param &quot;exact&quot; is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("firstName")]
@@ -109,7 +113,27 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
             [QueryParameter("firstName")]
             public string FirstName { get; set; }
 #endif
-            /// <summary>last name filter</summary>
+            /// <summary>The alias of an Identity Provider linked to the user</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("idpAlias")]
+            public string? IdpAlias { get; set; }
+#nullable restore
+#else
+            [QueryParameter("idpAlias")]
+            public string IdpAlias { get; set; }
+#endif
+            /// <summary>The userId at an Identity Provider linked to the user</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("idpUserId")]
+            public string? IdpUserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("idpUserId")]
+            public string IdpUserId { get; set; }
+#endif
+            /// <summary>A String contained in lastName, or the complete lastName, if param &quot;exact&quot; is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("lastName")]
@@ -119,6 +143,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
             [QueryParameter("lastName")]
             public string LastName { get; set; }
 #endif
+            /// <summary>A query to search for custom attributes, in the format &apos;key1:value2 key2:value2&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("q")]
@@ -128,7 +153,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
             [QueryParameter("q")]
             public string Q { get; set; }
 #endif
-            /// <summary>arbitrary search string for all the fields below. Default search behavior is prefix-based (e.g., foo or foo*). Use *foo* for infix search and &quot;foo&quot; for exact search.</summary>
+            /// <summary>A String contained in username, first or last name, or email. Default search behavior is prefix-based (e.g., foo or foo*). Use *foo* for infix search and &quot;foo&quot; for exact search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -138,7 +163,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Count
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>username filter</summary>
+            /// <summary>A String contained in username, or the complete username, if param &quot;exact&quot; is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("username")]

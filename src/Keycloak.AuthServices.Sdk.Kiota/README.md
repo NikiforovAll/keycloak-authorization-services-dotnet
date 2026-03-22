@@ -7,7 +7,7 @@ Before generating the client, delete
 - KeycloakAdminApiClient.cs
 
 ```bash
-export KEYCLOAK_API_VERSION=26.3.3
+export KEYCLOAK_API_VERSION=26.5.6
 kiota generate -l CSharp \
     --log-level trace \
     --output ./ \
@@ -20,7 +20,7 @@ kiota generate -l CSharp \
 Sample script with powershell and docker
 
 ```powershell
-$KIOTA_VERSION="1.28.0"
+$KIOTA_VERSION="1.30.0"
 $KEYCLOAK_API_VERSION="26.3.3"
 docker run -v ${PWD}:/app/output `
     mcr.microsoft.com/openapi/kiota:$KIOTA_VERSION `

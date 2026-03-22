@@ -22,6 +22,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations Annotations { get; set; }
 #endif
+        /// <summary>The defaultValue property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultValue { get; set; }
+#nullable restore
+#else
+        public string DefaultValue { get; set; }
+#endif
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +82,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata();
         }
         /// <summary>
@@ -86,6 +94,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "group", n => { Group = n.GetStringValue(); } },
                 { "multivalued", n => { Multivalued = n.GetBoolValue(); } },
@@ -101,8 +110,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileAttributeMetadata_annotations>("annotations", Annotations);
+            writer.WriteStringValue("defaultValue", DefaultValue);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("group", Group);
             writer.WriteBoolValue("multivalued", Multivalued);
