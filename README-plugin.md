@@ -7,6 +7,7 @@ AI coding agent skills for Keycloak administration and Keycloak.AuthServices .NE
 | Skill | Description |
 |-------|-------------|
 | `/keycloak-authservices:keycloak-administration` | Keycloak IAM administration — realms, clients, SSO, RBAC, troubleshooting |
+| `/keycloak-authservices:keycloak-auth-services` | Keycloak.AuthServices .NET library — authentication, authorization, Admin SDK, Protection API |
 
 ## Installation
 
@@ -39,10 +40,11 @@ claude --plugin-dir ./path/to/keycloak-authorization-services-dotnet
 
 ### Verify Installation
 
-After installation, run `/reload-plugins` and the skill becomes available:
+After installation, run `/reload-plugins` and skills become available:
 
 ```
 /keycloak-authservices:keycloak-administration
+/keycloak-authservices:keycloak-auth-services
 ```
 
 ## Plugin Structure
@@ -53,7 +55,7 @@ After installation, run `/reload-plugins` and the skill becomes available:
   marketplace.json                     # Marketplace catalog
 skills/
   keycloak-administration/
-    SKILL.md                           # Main skill instructions
+    SKILL.md                           # Keycloak IAM administration guide
     references/
       realm-management.md              # Realms, users, groups, sessions
       client-configuration.md          # OIDC/SAML clients, scopes, mappers
@@ -64,6 +66,17 @@ skills/
       ha-scalability.md                # Clustering, monitoring, backup/DR
       troubleshooting.md               # Diagnostics and common issues
       integration-examples.md          # .NET, Spring Boot, Node.js examples
+  keycloak-auth-services/
+    SKILL.md                           # .NET library implementation guide
+    references/
+      authentication.md                # JWT Bearer, OIDC, adapter file
+      authorization.md                 # RBAC, realm/client roles, claims
+      resource-protection.md           # Authorization Server, Protected Resource Builder
+      admin-sdk.md                     # Admin REST API (hand-written + Kiota)
+      protection-api.md                # UMA Protection API
+      devex.md                         # Aspire, templates, OpenTelemetry
+      configuration.md                 # All configuration options
+      troubleshooting.md               # Recipes, debugging, migration
 ```
 
 ## License
