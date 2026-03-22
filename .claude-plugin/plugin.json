@@ -1,0 +1,10 @@
+{
+  "name": "keycloak-authservices",
+  "description": "Keycloak administration and Keycloak.AuthServices .NET library development skills",
+  "version": "1.0.0",
+  "author": {
+    "name": "Oleksii Nikiforov"
+  },
+  "homepage": "https://github.com/NikiforovAll/keycloak-authorization-services-dotnet",
+  "license": "MIT"
+}
