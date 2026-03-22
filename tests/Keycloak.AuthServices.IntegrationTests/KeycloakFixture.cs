@@ -13,7 +13,7 @@ public class KeycloakFixture : IAsyncLifetime
 
     public KeycloakContainer Keycloak { get; } =
         new KeycloakBuilder()
-            .WithImage("quay.io/keycloak/keycloak:26.4.2")
+            .WithImage("quay.io/keycloak/keycloak:26.5.6")
             .WithBindMount(
                 Path.Combine(Directory.GetCurrentDirectory(), "KeycloakConfiguration"),
                 "/opt/keycloak/data/import/"
