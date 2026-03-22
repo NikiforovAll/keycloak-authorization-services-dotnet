@@ -1,3 +1,4 @@
 [submodule "docs-reference"]
 	path = docs-reference
 	url = https://github.com/NikiforovAll/keycloak-authorization-services-dotnet-docs
+	branch = main
