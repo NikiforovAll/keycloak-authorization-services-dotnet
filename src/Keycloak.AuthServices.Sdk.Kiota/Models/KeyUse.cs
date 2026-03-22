@@ -16,5 +16,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         #pragma warning disable CS1591
         ENC,
         #pragma warning restore CS1591
+        [EnumMember(Value = "JWT_SVID")]
+        #pragma warning disable CS1591
+        JWT_SVID,
+        #pragma warning restore CS1591
     }
 }

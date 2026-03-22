@@ -537,10 +537,6 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <summary>The realmCacheEnabled property</summary>
         [Obsolete("")]
         public bool? RealmCacheEnabled { get; set; }
-        /// <summary>The oAuth2DeviceCodeLifespan property</summary>
-        public int? RealmRepresentationOAuth2DeviceCodeLifespan { get; set; }
-        /// <summary>The oAuth2DevicePollingInterval property</summary>
-        public int? RealmRepresentationOAuth2DevicePollingInterval { get; set; }
         /// <summary>The refreshTokenMaxReuse property</summary>
         public int? RefreshTokenMaxReuse { get; set; }
         /// <summary>The registrationAllowed property</summary>
@@ -852,7 +848,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation();
         }
         /// <summary>
@@ -960,8 +956,6 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "quickLoginCheckMilliSeconds", n => { QuickLoginCheckMilliSeconds = n.GetLongValue(); } },
                 { "realm", n => { Realm = n.GetStringValue(); } },
                 { "realmCacheEnabled", n => { RealmCacheEnabled = n.GetBoolValue(); } },
-                { "oAuth2DeviceCodeLifespan", n => { RealmRepresentationOAuth2DeviceCodeLifespan = n.GetIntValue(); } },
-                { "oAuth2DevicePollingInterval", n => { RealmRepresentationOAuth2DevicePollingInterval = n.GetIntValue(); } },
                 { "refreshTokenMaxReuse", n => { RefreshTokenMaxReuse = n.GetIntValue(); } },
                 { "registrationAllowed", n => { RegistrationAllowed = n.GetBoolValue(); } },
                 { "registrationEmailAsUsername", n => { RegistrationEmailAsUsername = n.GetBoolValue(); } },
@@ -1023,7 +1017,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("accessCodeLifespan", AccessCodeLifespan);
             writer.WriteIntValue("accessCodeLifespanLogin", AccessCodeLifespanLogin);
             writer.WriteIntValue("accessCodeLifespanUserAction", AccessCodeLifespanUserAction);
@@ -1121,8 +1115,6 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteLongValue("quickLoginCheckMilliSeconds", QuickLoginCheckMilliSeconds);
             writer.WriteStringValue("realm", Realm);
             writer.WriteBoolValue("realmCacheEnabled", RealmCacheEnabled);
-            writer.WriteIntValue("oAuth2DeviceCodeLifespan", RealmRepresentationOAuth2DeviceCodeLifespan);
-            writer.WriteIntValue("oAuth2DevicePollingInterval", RealmRepresentationOAuth2DevicePollingInterval);
             writer.WriteIntValue("refreshTokenMaxReuse", RefreshTokenMaxReuse);
             writer.WriteBoolValue("registrationAllowed", RegistrationAllowed);
             writer.WriteBoolValue("registrationEmailAsUsername", RegistrationEmailAsUsername);

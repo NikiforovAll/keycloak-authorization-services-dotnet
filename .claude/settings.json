@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "keycloak-authservices": {
+      "source": {
+        "source": "github",
+        "repo": "NikiforovAll/keycloak-authorization-services-dotnet"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "keycloak-authservices@keycloak-authservices": true
+  }
+}

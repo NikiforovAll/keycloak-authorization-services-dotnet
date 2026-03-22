@@ -1,0 +1,17 @@
+{
+  "name": "keycloak-authservices",
+  "owner": {
+    "name": "Oleksii Nikiforov"
+  },
+  "metadata": {
+    "description": "Keycloak administration and Keycloak.AuthServices .NET library development skills"
+  },
+  "plugins": [
+    {
+      "name": "keycloak-authservices",
+      "source": "./",
+      "description": "Keycloak administration and Keycloak.AuthServices .NET library development skills",
+      "version": "1.0.0"
+    }
+  ]
+}
