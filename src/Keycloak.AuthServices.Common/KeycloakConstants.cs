@@ -10,11 +10,10 @@ public static class KeycloakConstants
     /// </summary>
     public const string TokenEndpointPath = "protocol/openid-connect/token";
 
-   ///  <summary>
-   /// OpenIdConnect configuration endpoint
-   ///  </summary>
+    ///  <summary>
+    /// OpenIdConnect configuration endpoint
+    ///  </summary>
     public const string OpenIdConnectConfigurationPath = ".well-known/openid-configuration";
-
 
     /// <summary>
     /// Token Claim - Resource Access
@@ -35,4 +34,9 @@ public static class KeycloakConstants
     /// Name Claim
     /// </summary>
     public const string NameClaimType = "preferred_username";
+
+    /// <summary>
+    /// Token Claim - Organization
+    /// </summary>
+    public const string OrganizationClaimType = "organization";
 }

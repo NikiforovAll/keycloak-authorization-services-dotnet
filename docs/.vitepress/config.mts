@@ -63,6 +63,9 @@ export default withMermaid({
                             ]
                         },
                         {
+                            text: 'Organization Authorization', link: '/authorization/organizations'
+                        },
+                        {
                             text: 'Use Authorization Client', link: '/authorization/resources-client',
                             collapsed: true,
                             items: [
@@ -132,6 +135,7 @@ export default withMermaid({
                         { text: 'Clean Architecture', link: '/examples/auth-clean-arch' },
                         { text: 'Web App MVC', link: '/examples/web-app-mvc' },
                         { text: 'Web API + Blazor', link: '/examples/web-api-blazor' },
+                        { text: 'Organization Authorization', link: '/examples/organization-authorization' },
                     ]
                 }
             ]

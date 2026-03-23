@@ -153,6 +153,87 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
     }
 
     /// <summary>
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s) with a custom <see cref="IParameterResolver"/>.
+    /// </summary>
+    /// <typeparam name="TBuilder">The type of endpoint convention builder.</typeparam>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <param name="resolverType">The type of <see cref="IParameterResolver"/> to use.</param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder RequireProtectedResource<TBuilder>(
+        this TBuilder builder,
+        string resource,
+        Type resolverType
+    )
+        where TBuilder : IEndpointConventionBuilder
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+        ValidateResolverType(resolverType);
+
+        RequireAuthorizationCore(
+            builder,
+            new ProtectedResourceAttribute[]
+            {
+                new(resource, string.Empty) { ResolverType = resolverType },
+            }
+        );
+
+        return builder;
+    }
+
+    /// <summary>
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s) with a custom <see cref="IParameterResolver"/>.
+    /// </summary>
+    /// <typeparam name="TBuilder">The type of endpoint convention builder.</typeparam>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <param name="scope"></param>
+    /// <param name="resolverType">The type of <see cref="IParameterResolver"/> to use.</param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder RequireProtectedResource<TBuilder>(
+        this TBuilder builder,
+        string resource,
+        string scope,
+        Type resolverType
+    )
+        where TBuilder : IEndpointConventionBuilder =>
+        builder.RequireProtectedResource(resource, [scope], resolverType);
+
+    /// <summary>
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s) with a custom <see cref="IParameterResolver"/>.
+    /// </summary>
+    /// <typeparam name="TBuilder">The type of endpoint convention builder.</typeparam>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <param name="scopes"></param>
+    /// <param name="resolverType">The type of <see cref="IParameterResolver"/> to use.</param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder RequireProtectedResource<TBuilder>(
+        this TBuilder builder,
+        string resource,
+        string[] scopes,
+        Type resolverType
+    )
+        where TBuilder : IEndpointConventionBuilder
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+        ArgumentNullException.ThrowIfNull(scopes);
+        ValidateResolverType(resolverType);
+
+        RequireAuthorizationCore(
+            builder,
+            new ProtectedResourceAttribute[]
+            {
+                new(resource, scopes) { ResolverType = resolverType },
+            }
+        );
+
+        return builder;
+    }
+
+    /// <summary>
     /// Adds <see cref="IgnoreProtectedResourceAttribute"/> to the endpoint(s).
     /// </summary>
     /// <param name="builder">The endpoint convention builder.</param>
@@ -198,6 +279,19 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
                 endpointBuilder.Metadata.Add(data);
             }
         });
+
+    private static void ValidateResolverType(Type resolverType)
+    {
+        ArgumentNullException.ThrowIfNull(resolverType);
+
+        if (!typeof(IParameterResolver).IsAssignableFrom(resolverType))
+        {
+            throw new ArgumentException(
+                $"Type '{resolverType}' does not implement {nameof(IParameterResolver)}.",
+                nameof(resolverType)
+            );
+        }
+    }
 
     private static void AddProtectedResourcePolicy(EndpointBuilder endpointBuilder)
     {

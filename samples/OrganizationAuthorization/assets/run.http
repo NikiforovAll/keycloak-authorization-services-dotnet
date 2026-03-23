@@ -1,0 +1,77 @@
+@host = http://localhost:5098
+@token = {{$dotenv TOKEN}}
+
+## ─── Declarative: Any Organization ───
+
+### List user organizations (expects: acme-corp, startup-co)
+GET {{host}}/orgs
+Authorization: Bearer {{token}}
+
+### No token → 401 Unauthorized
+GET {{host}}/orgs
+
+## ─── Declarative: Route-Based ───
+
+### Get projects for member org (expects: 200)
+GET {{host}}/orgs/acme-corp/projects
+Authorization: Bearer {{token}}
+
+### Get projects for non-member org (expects: 403)
+GET {{host}}/orgs/partner-inc/projects
+Authorization: Bearer {{token}}
+
+### Get projects for startup-co (expects: 200, user is member)
+GET {{host}}/orgs/startup-co/projects
+Authorization: Bearer {{token}}
+
+## ─── Declarative: Static Org ───
+
+### Access acme settings (expects: 200)
+GET {{host}}/acme/settings
+Authorization: Bearer {{token}}
+
+## ─── Declarative: Policy-Based ───
+
+### Acme admin (policy: org + realm role, expects: 200)
+GET {{host}}/acme/admin
+Authorization: Bearer {{token}}
+
+## ─── Declarative: Header-Based ───
+
+### Header-based: org resolved from X-Organization header (expects: 200)
+GET {{host}}/tenant/projects
+Authorization: Bearer {{token}}
+X-Organization: acme-corp
+
+### Header-based: non-member org (expects: 403)
+GET {{host}}/tenant/projects
+Authorization: Bearer {{token}}
+X-Organization: partner-inc
+
+### Header-based: missing header (expects: 403)
+GET {{host}}/tenant/projects
+Authorization: Bearer {{token}}
+
+## ─── Imperative: Single Check ───
+
+### Check access to member org (expects: 200, access=true)
+GET {{host}}/check/acme-corp
+Authorization: Bearer {{token}}
+
+### Check access to another member org (expects: 200, access=true)
+GET {{host}}/check/startup-co
+Authorization: Bearer {{token}}
+
+### Check access to non-member org (expects: 403)
+GET {{host}}/check/partner-inc
+Authorization: Bearer {{token}}
+
+### Check access to unknown org (expects: 403)
+GET {{host}}/check/unknown-org
+Authorization: Bearer {{token}}
+
+## ─── Imperative: Filtering ───
+
+### Filter workspaces by org membership (expects: Acme Platform + Startup MVP, NOT Partner Portal)
+GET {{host}}/workspaces
+Authorization: Bearer {{token}}
