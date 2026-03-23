@@ -92,6 +92,20 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAuthorizationHandler, RptRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, RealmAccessRequirementHandler>();
         services.AddSingleton<IAuthorizationHandler, ResourceAccessRequirementHandler>();
+        services.AddSingleton<IAuthorizationHandler, OrganizationRequirementHandler>();
+
+        services.AddHttpContextAccessor();
+
+        services.TryAddSingleton<RouteParameterResolver>();
+        services.TryAddSingleton<HeaderParameterResolver>();
+        services.TryAddSingleton<QueryParameterResolver>();
+
+        services
+            .AddAuthorizationBuilder()
+            .AddPolicy(
+                OrganizationRequirement.OrganizationPolicy,
+                p => p.AddRequirements(new OrganizationRequirement())
+            );
 
         services.AddSingleton<KeycloakMetrics>();
 

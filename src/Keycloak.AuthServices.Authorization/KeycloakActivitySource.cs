@@ -12,8 +12,10 @@ internal static class KeycloakActivitySource
     /// <summary>
     /// Gets the default activity source instance for Keycloak.AuthServices.Authorization.
     /// </summary>
-    public static readonly ActivitySource Default =
-        new("Keycloak.AuthServices.Authorization", Version);
+    public static readonly ActivitySource Default = new(
+        "Keycloak.AuthServices.Authorization",
+        Version
+    );
 }
 
 internal static class ActivityConstants
@@ -48,6 +50,10 @@ internal static class ActivityConstants
 
         public const string DecisionRequirement = "ProtectedResource";
 
+        /// <summary>
+        /// Represents the activity for organization requirement evaluation.
+        /// </summary>
+        public const string OrganizationRequirement = "OrganizationRequirement";
     }
 
     public static class Tags

@@ -118,9 +118,51 @@ public static class PoliciesBuilderExtensions
         return builder.AddRequirements(
             new DecisionRequirement(resource, scopes)
             {
-                ScopesValidationMode = scopesValidationMode
+                ScopesValidationMode = scopesValidationMode,
             }
         );
     }
     #endregion RequireProtectedResourceScopes
+
+    #region RequireOrganizationMembership
+    /// <summary>
+    /// Adds organization membership requirement to builder. Requires the user to be a member of any Keycloak organization.
+    /// </summary>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <returns>The modified authorization policy builder.</returns>
+    public static AuthorizationPolicyBuilder RequireOrganizationMembership(
+        this AuthorizationPolicyBuilder builder
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+
+        return builder.RequireOrganizationMembership(new OrganizationRequirement());
+    }
+
+    /// <summary>
+    /// Adds organization membership requirement to builder. Requires the user to be a member of the specified organization.
+    /// </summary>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <param name="organization">The organization alias or identifier.</param>
+    /// <returns>The modified authorization policy builder.</returns>
+    public static AuthorizationPolicyBuilder RequireOrganizationMembership(
+        this AuthorizationPolicyBuilder builder,
+        string organization
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(organization);
+
+        return builder.RequireOrganizationMembership(new OrganizationRequirement(organization));
+    }
+
+    private static AuthorizationPolicyBuilder RequireOrganizationMembership(
+        this AuthorizationPolicyBuilder builder,
+        OrganizationRequirement requirement
+    ) =>
+        builder
+            .RequireAuthenticatedUser()
+            .RequireClaim(KeycloakConstants.OrganizationClaimType)
+            .AddRequirements(requirement);
+    #endregion RequireOrganizationMembership
 }
