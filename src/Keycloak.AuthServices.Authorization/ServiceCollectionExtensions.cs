@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Requirements;
 
@@ -201,6 +202,10 @@ public static class ServiceCollectionExtensions
         services.Configure(configureKeycloakOptions);
 
         services.AddHttpContextAccessor();
+
+        services.TryAddSingleton<RouteParameterResolver>();
+        services.TryAddSingleton<HeaderParameterResolver>();
+        services.TryAddSingleton<QueryParameterResolver>();
 
         services
             .AddAuthorizationBuilder()

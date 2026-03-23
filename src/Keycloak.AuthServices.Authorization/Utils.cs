@@ -1,35 +1,55 @@
 namespace Keycloak.AuthServices.Authorization;
 
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
 
-internal static class Utils
+internal static partial class Utils
 {
-    public static string ResolveResource(string resource, HttpContext? httpContext)
+    [GeneratedRegex(@"\{([^}]+)\}")]
+    private static partial Regex ParameterPlaceholderRegex();
+
+    public static string ResolveResource(
+        string resource,
+        HttpContext httpContext,
+        IParameterResolver resolver,
+        IServiceProvider serviceProvider
+    )
     {
-        if (httpContext is null)
+        if (!resource.Contains('{') || !resource.Contains('}'))
         {
             return resource;
         }
 
-        var pathParameters = httpContext.GetRouteData()?.Values;
-
-        if (pathParameters != null && resource.Contains('}') && resource.Contains('{'))
-        {
-            foreach (var parameter in pathParameters)
-            {
-                var parameterName = parameter.Key;
-
-                if (resource.Contains($"{{{parameterName}}}"))
+        return ParameterPlaceholderRegex()
+            .Replace(
+                resource,
+                match =>
                 {
-                    var parameterValue = parameter.Value?.ToString();
-                    resource = resource.Replace($"{{{parameterName}}}", parameterValue);
+                    var parameterName = match.Groups[1].Value;
+                    return resolver.Resolve(parameterName, httpContext, serviceProvider)
+                        ?? match.Value;
                 }
-            }
+            );
+    }
+
+    public static string ResolveResource(
+        IProtectedResourceData resourceData,
+        IHttpContextAccessor httpContextAccessor,
+        IServiceProvider serviceProvider
+    )
+    {
+        var httpContext = httpContextAccessor.HttpContext;
+        if (httpContext is null)
+        {
+            return resourceData.Resource;
         }
 
-        return resource;
+        var resolverType = resourceData.ResolverType ?? typeof(RouteParameterResolver);
+        var resolver = (IParameterResolver)serviceProvider.GetRequiredService(resolverType);
+
+        return ResolveResource(resourceData.Resource, httpContext, resolver, serviceProvider);
     }
 
     public static bool IsAuthenticated(this ClaimsPrincipal? principal) =>

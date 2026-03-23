@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="Keycloak.AuthServices.Authorization.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" PrivateAssets="All" />
   </ItemGroup>
 

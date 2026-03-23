@@ -8,12 +8,18 @@ public interface IProtectedResourceData
     /// <summary>
     /// Gets or sets resource name
     /// </summary>
-    string Resource { get; }
+    public string Resource { get; }
 
     /// <summary>
     /// Get or sets scopes
     /// </summary>
-    string[]? Scopes { get; }
+    public string[]? Scopes { get; }
+
+    /// <summary>
+    /// Gets the type of <see cref="IParameterResolver"/> used to resolve resource template parameters.
+    /// When <c>null</c>, the default <c>RouteParameterResolver</c> is used.
+    /// </summary>
+    public Type? ResolverType => null;
 
     /// <summary>
     /// </summary>
