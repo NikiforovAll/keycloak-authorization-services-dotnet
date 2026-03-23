@@ -240,3 +240,5 @@ Artefacts
 
 docs/.vitepress/dist
 docs/.vitepress/cache
+
+**/.env
