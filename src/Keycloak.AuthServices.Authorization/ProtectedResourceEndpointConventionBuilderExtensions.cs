@@ -45,7 +45,7 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
         string scope
     )
         where TBuilder : IEndpointConventionBuilder =>
-        builder.RequireProtectedResource(resource, new string[] { scope });
+        builder.RequireProtectedResource(resource, [scope]);
 
     /// <summary>
     /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s).
@@ -68,6 +68,85 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
         RequireAuthorizationCore(
             builder,
             new ProtectedResourceAttribute[] { new(resource, scopes) }
+        );
+
+        return builder;
+    }
+
+    /// <summary>
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s) with a custom <see cref="IParameterResolver"/>.
+    /// </summary>
+    /// <typeparam name="TBuilder">The type of endpoint convention builder.</typeparam>
+    /// <typeparam name="TResolver">The type of <see cref="IParameterResolver"/> to use for resolving resource template parameters.</typeparam>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder RequireProtectedResource<TBuilder, TResolver>(
+        this TBuilder builder,
+        string resource
+    )
+        where TBuilder : IEndpointConventionBuilder
+        where TResolver : IParameterResolver
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+
+        RequireAuthorizationCore(
+            builder,
+            new ProtectedResourceAttribute[]
+            {
+                new(resource, string.Empty) { ResolverType = typeof(TResolver) },
+            }
+        );
+
+        return builder;
+    }
+
+    /// <summary>
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s) with a custom <see cref="IParameterResolver"/>.
+    /// </summary>
+    /// <typeparam name="TBuilder">The type of endpoint convention builder.</typeparam>
+    /// <typeparam name="TResolver">The type of <see cref="IParameterResolver"/> to use for resolving resource template parameters.</typeparam>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <param name="scope"></param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder RequireProtectedResource<TBuilder, TResolver>(
+        this TBuilder builder,
+        string resource,
+        string scope
+    )
+        where TBuilder : IEndpointConventionBuilder
+        where TResolver : IParameterResolver =>
+        builder.RequireProtectedResource<TBuilder, TResolver>(resource, new string[] { scope });
+
+    /// <summary>
+    /// Adds <see cref="ProtectedResourceAttribute"/> to the endpoint(s) with a custom <see cref="IParameterResolver"/>.
+    /// </summary>
+    /// <typeparam name="TBuilder">The type of endpoint convention builder.</typeparam>
+    /// <typeparam name="TResolver">The type of <see cref="IParameterResolver"/> to use for resolving resource template parameters.</typeparam>
+    /// <param name="builder">The endpoint convention builder.</param>
+    /// <param name="resource"></param>
+    /// <param name="scopes"></param>
+    /// <returns>The original convention builder parameter.</returns>
+    public static TBuilder RequireProtectedResource<TBuilder, TResolver>(
+        this TBuilder builder,
+        string resource,
+        string[] scopes
+    )
+        where TBuilder : IEndpointConventionBuilder
+        where TResolver : IParameterResolver
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(resource);
+        ArgumentNullException.ThrowIfNull(scopes);
+
+        RequireAuthorizationCore(
+            builder,
+            new ProtectedResourceAttribute[]
+            {
+                new(resource, scopes) { ResolverType = typeof(TResolver) },
+            }
         );
 
         return builder;
@@ -100,10 +179,7 @@ public static class ProtectedResourceEndpointConventionBuilderExtensions
     {
         ArgumentNullException.ThrowIfNull(builder);
 
-        RequireAuthorizationCore(
-            builder,
-            new IgnoreProtectedResourceAttribute[] { new() }
-        );
+        RequireAuthorizationCore(builder, new IgnoreProtectedResourceAttribute[] { new() });
 
         return builder;
     }

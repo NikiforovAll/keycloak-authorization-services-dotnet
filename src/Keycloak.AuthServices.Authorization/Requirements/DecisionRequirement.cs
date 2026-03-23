@@ -63,34 +63,31 @@ public class DecisionRequirement : IAuthorizationRequirement, IProtectedResource
 }
 
 /// <summary>
+/// Authorization handler for <see cref="DecisionRequirement"/>
 /// </summary>
-public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequirement>
+/// <param name="client"></param>
+/// <param name="httpContextAccessor"></param>
+/// <param name="serviceProvider"></param>
+/// <param name="metrics"></param>
+/// <param name="logger"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class DecisionRequirementHandler(
+    IAuthorizationServerClient client,
+    IHttpContextAccessor httpContextAccessor,
+    IServiceProvider serviceProvider,
+    KeycloakMetrics metrics,
+    ILogger<DecisionRequirementHandler> logger
+) : AuthorizationHandler<DecisionRequirement>
 {
-    private readonly IAuthorizationServerClient client;
-    private readonly IHttpContextAccessor httpContextAccessor;
-    private readonly KeycloakMetrics metrics;
-    private readonly ILogger<DecisionRequirementHandler> logger;
-
-    /// <summary>
-    /// </summary>
-    /// <param name="client"></param>
-    /// <param name="httpContextAccessor"></param>
-    /// <param name="metrics"></param>
-    /// <param name="logger"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public DecisionRequirementHandler(
-        IAuthorizationServerClient client,
-        IHttpContextAccessor httpContextAccessor,
-        KeycloakMetrics metrics,
-        ILogger<DecisionRequirementHandler> logger
-    )
-    {
-        this.client = client ?? throw new ArgumentNullException(nameof(client));
-        this.httpContextAccessor =
-            httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
-        this.metrics = metrics;
-        this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
-    }
+    private readonly IAuthorizationServerClient client =
+        client ?? throw new ArgumentNullException(nameof(client));
+    private readonly IHttpContextAccessor httpContextAccessor =
+        httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+    private readonly IServiceProvider serviceProvider =
+        serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+    private readonly KeycloakMetrics metrics = metrics;
+    private readonly ILogger<DecisionRequirementHandler> logger =
+        logger ?? throw new ArgumentNullException(nameof(logger));
 
     /// <inheritdoc/>
     protected override async Task HandleRequirementAsync(
@@ -117,8 +114,9 @@ public class DecisionRequirementHandler : AuthorizationHandler<DecisionRequireme
         }
 
         var resource = Utils.ResolveResource(
-            requirement.Resource,
-            this.httpContextAccessor.HttpContext
+            requirement,
+            this.httpContextAccessor,
+            this.serviceProvider
         );
         this.logger.LogResourceResolved(requirement.Resource, resource);
 

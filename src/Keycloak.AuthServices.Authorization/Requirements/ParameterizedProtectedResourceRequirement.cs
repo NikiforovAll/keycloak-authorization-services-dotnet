@@ -19,34 +19,32 @@ public class ParameterizedProtectedResourceRequirement : IAuthorizationRequireme
 }
 
 /// <summary>
+/// Authorization handler for <see cref="ParameterizedProtectedResourceRequirement"/>
 /// </summary>
-public class ParameterizedProtectedResourceRequirementHandler
-    : AuthorizationHandler<ParameterizedProtectedResourceRequirement>
+/// <param name="client"></param>
+/// <param name="httpContextAccessor"></param>
+/// <param name="serviceProvider"></param>
+/// <param name="metrics"></param>
+/// <param name="logger"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class ParameterizedProtectedResourceRequirementHandler(
+    IAuthorizationServerClient client,
+    IHttpContextAccessor httpContextAccessor,
+    IServiceProvider serviceProvider,
+    KeycloakMetrics metrics,
+    ILogger<ParameterizedProtectedResourceRequirementHandler> logger
+) : AuthorizationHandler<ParameterizedProtectedResourceRequirement>
 {
-    private readonly IAuthorizationServerClient client;
-    private readonly IHttpContextAccessor httpContextAccessor;
-    private readonly KeycloakMetrics metrics;
-    private readonly ILogger<ParameterizedProtectedResourceRequirementHandler> logger;
-
-    /// <summary>
-    /// </summary>
-    /// <param name="client"></param>
-    /// <param name="httpContextAccessor"></param>
-    /// <param name="metrics"></param>
-    /// <param name="logger"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public ParameterizedProtectedResourceRequirementHandler(
-        IAuthorizationServerClient client,
-        IHttpContextAccessor httpContextAccessor,
-        KeycloakMetrics metrics,
-        ILogger<ParameterizedProtectedResourceRequirementHandler> logger
-    )
-    {
-        this.client = client;
-        this.httpContextAccessor = httpContextAccessor;
-        this.metrics = metrics;
-        this.logger = logger;
-    }
+    private readonly IAuthorizationServerClient client =
+        client ?? throw new ArgumentNullException(nameof(client));
+    private readonly IHttpContextAccessor httpContextAccessor =
+        httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+    private readonly IServiceProvider serviceProvider =
+        serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+    private readonly KeycloakMetrics metrics =
+        metrics ?? throw new ArgumentNullException(nameof(metrics));
+    private readonly ILogger<ParameterizedProtectedResourceRequirementHandler> logger =
+        logger ?? throw new ArgumentNullException(nameof(logger));
 
     /// <inheritdoc/>
     protected override async Task HandleRequirementAsync(
@@ -75,8 +73,7 @@ public class ParameterizedProtectedResourceRequirementHandler
         var endpoint = this.httpContextAccessor.HttpContext?.GetEndpoint();
 
         var requirementData =
-            endpoint?.Metadata?.GetOrderedMetadata<IProtectedResourceData>()
-            ?? Array.Empty<IProtectedResourceData>();
+            endpoint?.Metadata?.GetOrderedMetadata<IProtectedResourceData>() ?? [];
 
         var verificationPlan = new VerificationPlan(requirementData);
         this.logger.LogVerificationPlan(verificationPlan.ToString(), userName);
@@ -87,8 +84,9 @@ public class ParameterizedProtectedResourceRequirementHandler
         {
             var scopes = entry.GetScopesExpression();
             var resource = Utils.ResolveResource(
-                entry.Resource,
-                this.httpContextAccessor.HttpContext
+                entry,
+                this.httpContextAccessor,
+                this.serviceProvider
             );
             this.logger.LogResourceResolved(entry.Resource, resource);
 
