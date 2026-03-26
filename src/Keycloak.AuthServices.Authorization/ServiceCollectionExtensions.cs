@@ -2,12 +2,14 @@
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Claims;
+using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Requirements;
 
@@ -111,17 +113,39 @@ public static class ServiceCollectionExtensions
 
         services.AddMetrics();
 
-        services.AddTransient<IClaimsTransformation>(sp =>
+        services.AddTransient<KeycloakRolesClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<
                 IOptionsMonitor<KeycloakAuthorizationOptions>
             >().CurrentValue;
 
+            var logger = sp.GetRequiredService<ILogger<KeycloakRolesClaimsTransformation>>();
+            var introspectionEnabled =
+                sp.GetService<IKeycloakTokenIntrospectionClient>() is not null;
+
             return new KeycloakRolesClaimsTransformation(
                 keycloakOptions.RoleClaimType,
                 keycloakOptions.EnableRolesMapping,
-                keycloakOptions.RolesResource ?? keycloakOptions.Resource
+                keycloakOptions.RolesResource ?? keycloakOptions.Resource,
+                logger,
+                introspectionEnabled
             );
+        });
+
+        // Composite: runs all keycloak transformations in order (introspection first if registered, then roles)
+        services.AddTransient<IClaimsTransformation>(sp =>
+        {
+            var transformations = new List<IClaimsTransformation>();
+
+            var introspection = sp.GetService<KeycloakTokenIntrospectionClaimsTransformation>();
+            if (introspection is not null)
+            {
+                transformations.Add(introspection);
+            }
+
+            transformations.Add(sp.GetRequiredService<KeycloakRolesClaimsTransformation>());
+
+            return new CompositeClaimsTransformation(transformations);
         });
 
         return services;
@@ -277,6 +301,116 @@ public static class ServiceCollectionExtensions
                 {
                     var keycloakOptions = serviceProvider
                         .GetService<IOptions<KeycloakAuthorizationServerOptions>>()
+                        ?.Value;
+
+                    if (!string.IsNullOrWhiteSpace(keycloakOptions?.KeycloakUrlRealm))
+                    {
+                        client.BaseAddress = new Uri(keycloakOptions.KeycloakUrlRealm);
+                    }
+
+                    configureClient?.Invoke(client);
+                }
+            );
+    }
+
+    /// <summary>
+    /// Adds Keycloak token introspection support for lightweight access tokens.
+    /// Call this method <b>before</b> <see cref="AddKeycloakAuthorization(IServiceCollection, Action{KeycloakAuthorizationOptions}?)"/>
+    /// to ensure introspected claims are available for role mapping.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <param name="configuration">The configuration instance.</param>
+    /// <param name="configureClient">Optional HTTP client configuration.</param>
+    /// <param name="configSectionName">Configuration section name. Defaults to "Keycloak".</param>
+    /// <returns>An <see cref="IHttpClientBuilder"/> for further HTTP client configuration (e.g. resilience policies).</returns>
+    public static IHttpClientBuilder AddKeycloakTokenIntrospection(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string configSectionName = KeycloakTokenIntrospectionOptions.Section
+    )
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configuration);
+
+        if (string.IsNullOrEmpty(configSectionName))
+        {
+            throw new ArgumentException(
+                $"'{nameof(configSectionName)}' cannot be null or empty.",
+                nameof(configSectionName)
+            );
+        }
+
+        return services.AddKeycloakTokenIntrospection(
+            configuration.GetSection(configSectionName),
+            configureClient
+        );
+    }
+
+    /// <summary>
+    /// Adds Keycloak token introspection support for lightweight access tokens.
+    /// Call this method <b>before</b> <see cref="AddKeycloakAuthorization(IServiceCollection, Action{KeycloakAuthorizationOptions}?)"/>
+    /// to ensure introspected claims are available for role mapping.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <param name="configurationSection">The configuration section.</param>
+    /// <param name="configureClient">Optional HTTP client configuration.</param>
+    /// <returns>An <see cref="IHttpClientBuilder"/> for further HTTP client configuration (e.g. resilience policies).</returns>
+    public static IHttpClientBuilder AddKeycloakTokenIntrospection(
+        this IServiceCollection services,
+        IConfigurationSection configurationSection,
+        Action<HttpClient>? configureClient = default
+    )
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configurationSection);
+
+        return services.AddKeycloakTokenIntrospection(
+            options => configurationSection.BindKeycloakOptions(options),
+            configureClient
+        );
+    }
+
+    /// <summary>
+    /// Adds Keycloak token introspection support for lightweight access tokens.
+    /// Call this method <b>before</b> <see cref="AddKeycloakAuthorization(IServiceCollection, Action{KeycloakAuthorizationOptions}?)"/>
+    /// to ensure introspected claims are available for role mapping.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <param name="configureOptions">Options configuration delegate.</param>
+    /// <param name="configureClient">Optional HTTP client configuration.</param>
+    /// <returns>An <see cref="IHttpClientBuilder"/> for further HTTP client configuration (e.g. resilience policies).</returns>
+    public static IHttpClientBuilder AddKeycloakTokenIntrospection(
+        this IServiceCollection services,
+        Action<KeycloakTokenIntrospectionOptions> configureOptions,
+        Action<HttpClient>? configureClient = default
+    )
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configureOptions);
+
+        services
+            .AddOptions<KeycloakTokenIntrospectionOptions>()
+            .Configure(configureOptions)
+            .ValidateOnStart();
+
+        services.AddSingleton<
+            IValidateOptions<KeycloakTokenIntrospectionOptions>,
+            KeycloakTokenIntrospectionOptionsValidator
+        >();
+
+        services.AddHybridCache();
+        services.AddHttpContextAccessor();
+
+        services.AddTransient<KeycloakTokenIntrospectionClaimsTransformation>();
+
+        return services
+            .AddHttpClient<IKeycloakTokenIntrospectionClient, KeycloakTokenIntrospectionClient>()
+            .ConfigureHttpClient(
+                (serviceProvider, client) =>
+                {
+                    var keycloakOptions = serviceProvider
+                        .GetService<IOptions<KeycloakTokenIntrospectionOptions>>()
                         ?.Value;
 
                     if (!string.IsNullOrWhiteSpace(keycloakOptions?.KeycloakUrlRealm))

@@ -125,4 +125,41 @@ internal static partial class LoggerExtensions
         string resource,
         string resourceValue
     );
+
+    [LoggerMessage(113, LogLevel.Debug, "Introspecting token for user '{UserName}'")]
+    public static partial void LogIntrospectingToken(this ILogger logger, string? userName);
+
+    [LoggerMessage(114, LogLevel.Debug, "Token introspection cache hit for '{CacheKey}'")]
+    public static partial void LogTokenIntrospectionCacheHit(this ILogger logger, string cacheKey);
+
+    [LoggerMessage(115, LogLevel.Error, "Token introspection failed")]
+    public static partial void LogTokenIntrospectionFailed(
+        this ILogger logger,
+        Exception exception
+    );
+
+    [LoggerMessage(116, LogLevel.Warning, "Introspected token is not active for user '{UserName}'")]
+    public static partial void LogTokenNotActive(this ILogger logger, string? userName);
+
+    [LoggerMessage(
+        117,
+        LogLevel.Debug,
+        "Enriched ClaimsPrincipal with {ClaimCount} claims from token introspection"
+    )]
+    public static partial void LogTokenIntrospectionEnrichedClaims(
+        this ILogger logger,
+        int claimCount
+    );
+
+    [LoggerMessage(
+        118,
+        LogLevel.Warning,
+        "EnableRolesMapping is configured but '{ClaimType}' claim is missing from the token. "
+            + "Consider enabling token introspection for lightweight access tokens. "
+            + "See: https://nikiforovall.github.io/keycloak-authorization-services-dotnet/configuration/configuration-authorization.html#token-introspection"
+    )]
+    public static partial void LogRolesMappingMissingClaimsNoIntrospection(
+        this ILogger logger,
+        string claimType
+    );
 }
