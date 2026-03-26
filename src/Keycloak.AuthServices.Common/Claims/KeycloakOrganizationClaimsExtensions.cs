@@ -13,13 +13,15 @@ public static class KeycloakOrganizationClaimsExtensions
     /// Gets the list of organizations the user is a member of.
     /// </summary>
     /// <param name="principal">The claims principal.</param>
+    /// <param name="claimType">Optional claim type override. Defaults to <see cref="KeycloakConstants.OrganizationClaimType"/>.</param>
     /// <returns>A list of organization memberships. Empty if no organization claim is present.</returns>
     public static IReadOnlyList<OrganizationMembership> GetOrganizations(
-        this ClaimsPrincipal principal
+        this ClaimsPrincipal principal,
+        string? claimType = null
     )
     {
         ArgumentNullException.ThrowIfNull(principal);
-        return principal.Claims.GetOrganizations();
+        return GetOrganizations(principal.Claims, claimType);
     }
 
     /// <summary>
@@ -27,14 +29,18 @@ public static class KeycloakOrganizationClaimsExtensions
     /// </summary>
     /// <param name="principal">The claims principal.</param>
     /// <param name="organizationAlias">The organization alias.</param>
+    /// <param name="claimType">Optional claim type override. Defaults to <see cref="KeycloakConstants.OrganizationClaimType"/>.</param>
     /// <returns><c>true</c> if the user is a member of the organization; otherwise, <c>false</c>.</returns>
-    public static bool IsMemberOf(this ClaimsPrincipal principal, string organizationAlias)
+    public static bool IsMemberOf(
+        this ClaimsPrincipal principal,
+        string organizationAlias,
+        string? claimType = null
+    )
     {
         ArgumentNullException.ThrowIfNull(principal);
         ArgumentNullException.ThrowIfNull(organizationAlias);
 
-        return principal
-            .Claims.GetOrganizations()
+        return GetOrganizations(principal.Claims, claimType)
             .Any(o => o.Alias.Equals(organizationAlias, StringComparison.OrdinalIgnoreCase));
     }
 
@@ -43,14 +49,18 @@ public static class KeycloakOrganizationClaimsExtensions
     /// </summary>
     /// <param name="principal">The claims principal.</param>
     /// <param name="organizationId">The organization identifier.</param>
+    /// <param name="claimType">Optional claim type override. Defaults to <see cref="KeycloakConstants.OrganizationClaimType"/>.</param>
     /// <returns><c>true</c> if the user is a member of the organization; otherwise, <c>false</c>.</returns>
-    public static bool IsMemberOfById(this ClaimsPrincipal principal, string organizationId)
+    public static bool IsMemberOfById(
+        this ClaimsPrincipal principal,
+        string organizationId,
+        string? claimType = null
+    )
     {
         ArgumentNullException.ThrowIfNull(principal);
         ArgumentNullException.ThrowIfNull(organizationId);
 
-        return principal
-            .Claims.GetOrganizations()
+        return GetOrganizations(principal.Claims, claimType)
             .Any(o =>
                 o.Id != null && o.Id.Equals(organizationId, StringComparison.OrdinalIgnoreCase)
             );
@@ -77,13 +87,16 @@ public static class KeycloakOrganizationClaimsExtensions
     /// </list>
     /// </remarks>
     /// <param name="claims">The claims collection.</param>
+    /// <param name="claimType">Optional claim type override. Defaults to <see cref="KeycloakConstants.OrganizationClaimType"/>.</param>
     /// <returns>A list of organization memberships. Empty if no organization claim is present.</returns>
     public static IReadOnlyList<OrganizationMembership> GetOrganizations(
-        this IEnumerable<Claim> claims
+        this IEnumerable<Claim> claims,
+        string? claimType = null
     )
     {
+        var effectiveClaimType = claimType ?? OrganizationClaimType;
         var orgClaims = claims
-            .Where(c => c.Type.Equals(OrganizationClaimType, StringComparison.OrdinalIgnoreCase))
+            .Where(c => c.Type.Equals(effectiveClaimType, StringComparison.OrdinalIgnoreCase))
             .ToList();
 
         if (orgClaims.Count == 0)

@@ -298,19 +298,76 @@ public class OrganizationClaimsExtensionsTests
         principal.IsMemberOf("acme-corp").Should().BeTrue();
     }
 
-    private static ClaimsPrincipal CreatePrincipal(string organizationClaimValue) =>
+    [Fact]
+    public void GetOrganizations_CustomClaimType_ParsesCorrectly()
+    {
+        var principal = CreatePrincipal(
+            /*lang=json,strict*/
+            """
+            {
+                "acme-corp": { "id": "uuid-1" }
+            }
+            """,
+            claimType: "tenant"
+        );
+
+        var orgs = principal.GetOrganizations("tenant");
+
+        orgs.Should().HaveCount(1);
+        orgs[0].Alias.Should().Be("acme-corp");
+        orgs[0].Id.Should().Be("uuid-1");
+    }
+
+    [Fact]
+    public void GetOrganizations_CustomClaimType_DefaultDoesNotMatch()
+    {
+        var principal = CreatePrincipal(
+            /*lang=json,strict*/
+            """
+            {
+                "acme-corp": {}
+            }
+            """,
+            claimType: "tenant"
+        );
+
+        var orgs = principal.GetOrganizations();
+
+        orgs.Should().BeEmpty();
+    }
+
+    [Fact]
+    public void IsMemberOf_CustomClaimType_ReturnsTrue()
+    {
+        var principal = CreatePrincipalWithStringClaims(["acme-corp"], claimType: "org");
+
+        principal.IsMemberOf("acme-corp", "org").Should().BeTrue();
+    }
+
+    [Fact]
+    public void IsMemberOf_CustomClaimType_DefaultDoesNotMatch()
+    {
+        var principal = CreatePrincipalWithStringClaims(["acme-corp"], claimType: "org");
+
+        principal.IsMemberOf("acme-corp").Should().BeFalse();
+    }
+
+    private static ClaimsPrincipal CreatePrincipal(
+        string organizationClaimValue,
+        string claimType = "organization"
+    ) =>
         new(
             new ClaimsIdentity(
-                [new Claim("organization", organizationClaimValue, JsonValueType, Issuer, Issuer)],
+                [new Claim(claimType, organizationClaimValue, JsonValueType, Issuer, Issuer)],
                 "Bearer"
             )
         );
 
     private static ClaimsPrincipal CreatePrincipalWithStringClaims(params string[] orgAliases) =>
-        new(
-            new ClaimsIdentity(
-                orgAliases.Select(alias => new Claim("organization", alias)),
-                "Bearer"
-            )
-        );
+        CreatePrincipalWithStringClaims(orgAliases, claimType: "organization");
+
+    private static ClaimsPrincipal CreatePrincipalWithStringClaims(
+        string[] orgAliases,
+        string claimType = "organization"
+    ) => new(new ClaimsIdentity(orgAliases.Select(alias => new Claim(claimType, alias)), "Bearer"));
 }

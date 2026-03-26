@@ -27,6 +27,11 @@ public class KeycloakAuthorizationOptions : KeycloakInstallationOptions
     /// Gets or sets the claim type used for roles.
     /// </summary>
     public string RoleClaimType { get; set; } = KeycloakConstants.RoleClaimType;
+
+    /// <summary>
+    /// Gets or sets the claim type used for organization membership.
+    /// </summary>
+    public string OrganizationClaimType { get; set; } = KeycloakConstants.OrganizationClaimType;
 }
 
 /// <summary>
@@ -53,5 +58,5 @@ public enum RolesClaimTransformationSource
     /// <summary>
     /// Specifies that transformation should be applied to all sources.
     /// </summary>
-    All = Realm | ResourceAccess
+    All = Realm | ResourceAccess,
 }
