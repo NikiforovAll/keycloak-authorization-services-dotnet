@@ -159,10 +159,6 @@ public static class PoliciesBuilderExtensions
     private static AuthorizationPolicyBuilder RequireOrganizationMembership(
         this AuthorizationPolicyBuilder builder,
         OrganizationRequirement requirement
-    ) =>
-        builder
-            .RequireAuthenticatedUser()
-            .RequireClaim(KeycloakConstants.OrganizationClaimType)
-            .AddRequirements(requirement);
+    ) => builder.RequireAuthenticatedUser().AddRequirements(requirement);
     #endregion RequireOrganizationMembership
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Options;
 
 public class OrganizationRequirementHandlerTests
 {
@@ -161,18 +162,64 @@ public class OrganizationRequirementHandlerTests
         context.HasSucceeded.Should().BeFalse();
     }
 
-    private static OrganizationRequirementHandler CreateHandler(HttpContext? httpContext = null)
+    [Fact]
+    public async Task CustomClaimType_UserHasOrgs_Succeeds()
     {
-        var httpContextAccessor = new HttpContextAccessor { HttpContext = httpContext };
-        var metrics = new KeycloakMetrics(new TestMeterFactory());
-        var logger = NullLogger<OrganizationRequirementHandler>.Instance;
-        return new OrganizationRequirementHandler(httpContextAccessor, metrics, logger);
+        var requirement = new OrganizationRequirement();
+        var principal = CreatePrincipal(
+            /*lang=json,strict*/
+            """{"acme-corp": {}}""",
+            claimType: "tenant"
+        );
+        var handler = CreateHandler(
+            authorizationOptions: new KeycloakAuthorizationOptions
+            {
+                OrganizationClaimType = "tenant",
+            }
+        );
+
+        var context = new AuthorizationHandlerContext([requirement], principal, null);
+        await handler.HandleAsync(context);
+
+        context.HasSucceeded.Should().BeTrue();
     }
 
-    private static ClaimsPrincipal CreatePrincipal(string organizationClaimValue) =>
+    [Fact]
+    public async Task CustomClaimType_DefaultClaimType_Fails()
+    {
+        var requirement = new OrganizationRequirement();
+        var principal = CreatePrincipal(
+            /*lang=json,strict*/
+            """{"acme-corp": {}}""",
+            claimType: "tenant"
+        );
+        var handler = CreateHandler();
+
+        var context = new AuthorizationHandlerContext([requirement], principal, null);
+        await handler.HandleAsync(context);
+
+        context.HasSucceeded.Should().BeFalse();
+    }
+
+    private static OrganizationRequirementHandler CreateHandler(
+        HttpContext? httpContext = null,
+        KeycloakAuthorizationOptions? authorizationOptions = null
+    )
+    {
+        var httpContextAccessor = new HttpContextAccessor { HttpContext = httpContext };
+        var options = Options.Create(authorizationOptions ?? new KeycloakAuthorizationOptions());
+        var metrics = new KeycloakMetrics(new TestMeterFactory());
+        var logger = NullLogger<OrganizationRequirementHandler>.Instance;
+        return new OrganizationRequirementHandler(httpContextAccessor, options, metrics, logger);
+    }
+
+    private static ClaimsPrincipal CreatePrincipal(
+        string organizationClaimValue,
+        string claimType = "organization"
+    ) =>
         new(
             new ClaimsIdentity(
-                [new Claim("organization", organizationClaimValue, JsonValueType, Issuer, Issuer)],
+                [new Claim(claimType, organizationClaimValue, JsonValueType, Issuer, Issuer)],
                 "Bearer"
             )
         );

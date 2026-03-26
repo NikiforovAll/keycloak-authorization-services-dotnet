@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 /// <summary>
 /// Authorization requirement that validates the user's membership in a Keycloak organization.
@@ -59,6 +60,7 @@ public class OrganizationRequirement : IAuthorizationRequirement, IAuthorization
 public class OrganizationRequirementHandler : AuthorizationHandler<OrganizationRequirement>
 {
     private readonly IHttpContextAccessor httpContextAccessor;
+    private readonly IOptions<KeycloakAuthorizationOptions> options;
     private readonly KeycloakMetrics metrics;
     private readonly ILogger<OrganizationRequirementHandler> logger;
 
@@ -66,15 +68,18 @@ public class OrganizationRequirementHandler : AuthorizationHandler<OrganizationR
     /// Initializes a new instance of the <see cref="OrganizationRequirementHandler"/> class.
     /// </summary>
     /// <param name="httpContextAccessor">The HTTP context accessor.</param>
+    /// <param name="options">The Keycloak authorization options.</param>
     /// <param name="metrics">The Keycloak metrics tracker.</param>
     /// <param name="logger">The logger.</param>
     public OrganizationRequirementHandler(
         IHttpContextAccessor httpContextAccessor,
+        IOptions<KeycloakAuthorizationOptions> options,
         KeycloakMetrics metrics,
         ILogger<OrganizationRequirementHandler> logger
     )
     {
         this.httpContextAccessor = httpContextAccessor;
+        this.options = options;
         this.metrics = metrics;
         this.logger = logger;
     }
@@ -101,7 +106,8 @@ public class OrganizationRequirementHandler : AuthorizationHandler<OrganizationR
             return Task.CompletedTask;
         }
 
-        var organizations = context.User.GetOrganizations();
+        var organizationClaimType = this.options.Value.OrganizationClaimType;
+        var organizations = context.User.GetOrganizations(organizationClaimType);
 
         bool success;
 
