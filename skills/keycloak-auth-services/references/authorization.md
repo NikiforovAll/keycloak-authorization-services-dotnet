@@ -119,3 +119,47 @@ Keycloak JWT tokens contain roles in two locations:
 ```
 
 `RequireRealmRoles` checks `realm_access.roles`, `RequireResourceRoles` checks `resource_access.{client}.roles`.
+
+## Token Introspection (Lightweight Access Tokens)
+
+Keycloak 24+ lightweight access tokens lack `realm_access`/`resource_access` claims. Use `AddKeycloakTokenIntrospection()` to resolve them via the introspection endpoint.
+
+```csharp
+// Must be registered BEFORE AddKeycloakAuthorization
+builder.Services.AddKeycloakTokenIntrospection(builder.Configuration);
+
+builder.Services.AddKeycloakAuthorization(options =>
+{
+    builder.Configuration.GetSection("Keycloak").Bind(options);
+    options.EnableRolesMapping = RolesClaimTransformationSource.All;
+});
+```
+
+Requirements: confidential client with `credentials.secret` in config.
+
+Features:
+- `HybridCache`-based caching per token (`jti` or SHA256 hash), configurable `CacheDuration` (default 60s)
+- Returns `IHttpClientBuilder` for resilience policy chaining (e.g. `.AddStandardResilienceHandler()`)
+- Startup validation — fails fast if client credentials missing
+- `OnTokenIntrospected` delegate for custom claim processing after default enrichment
+- Skips introspection if `realm_access`/`resource_access` already present (not a lightweight token)
+
+### Default Claim Mapping
+
+Skipped claims (infrastructure): `active`, `iat`, `exp`, `nbf`, `iss`, `sub`, `aud`, `jti`, `typ`, `azp`, `auth_time`, `session_state`, `acr`, `sid`
+
+JSON claims (stored as `ValueType="JSON"`): `resource_access`, `realm_access`, `organization`
+
+### Extending Introspection
+
+```csharp
+builder.Services.AddKeycloakTokenIntrospection(options =>
+{
+    builder.Configuration.GetSection("Keycloak").Bind(options);
+    options.OnTokenIntrospected = (identity, claims) =>
+    {
+        if (claims.TryGetValue("department", out var dept))
+            identity.AddClaim(new Claim("department", dept.GetString()!));
+    };
+});
+```

@@ -26,6 +26,7 @@ Choose your task and load the appropriate reference:
 7. **Developer Experience (Aspire, Templates)** → Load [devex.md](references/devex.md)
 8. **Configuration Reference** → Load [configuration.md](references/configuration.md)
 9. **Recipes & Troubleshooting** → Load [troubleshooting.md](references/troubleshooting.md)
+10. **Token Introspection (Lightweight Tokens)** → Load [authorization.md](references/authorization.md) (see "Token Introspection" section)
 
 ## Packages Overview
 
