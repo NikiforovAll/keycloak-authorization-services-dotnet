@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Authorization.Tests;
 
 using Keycloak.AuthServices.Authorization.Requirements;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
 public class DefaultProtectedResourcePolicyBuilderTests
@@ -107,7 +108,67 @@ public class ProtectedResourcePolicyProviderTests
         builder.LastPolicyName.Should().BeNull();
     }
 
-    private sealed class FakePolicyBuilder(AuthorizationPolicy? result)
+    [Fact]
+    public void AddAuthorizationServer_WithPolicyProvider_RegistersDefaultBuilder()
+    {
+        var services = new ServiceCollection();
+        services.AddLogging();
+
+        services.AddAuthorizationServer(options =>
+        {
+            options.UseProtectedResourcePolicyProvider = true;
+            options.AuthServerUrl = "http://localhost:8080/";
+            options.Realm = "test";
+        });
+
+        using var sp = services.BuildServiceProvider();
+        var builder = sp.GetService<IProtectedResourcePolicyBuilder>();
+        var policyProvider = sp.GetService<IAuthorizationPolicyProvider>();
+
+        builder.Should().NotBeNull().And.BeOfType<DefaultProtectedResourcePolicyBuilder>();
+        policyProvider.Should().NotBeNull().And.BeOfType<ProtectedResourcePolicyProvider>();
+    }
+
+    [Fact]
+    public void AddAuthorizationServer_WithCustomBuilder_OverridesDefault()
+    {
+        var services = new ServiceCollection();
+        services.AddLogging();
+        services.AddSingleton<IProtectedResourcePolicyBuilder, FakePolicyBuilder>();
+
+        services.AddAuthorizationServer(options =>
+        {
+            options.UseProtectedResourcePolicyProvider = true;
+            options.AuthServerUrl = "http://localhost:8080/";
+            options.Realm = "test";
+        });
+
+        using var sp = services.BuildServiceProvider();
+        var builder = sp.GetService<IProtectedResourcePolicyBuilder>();
+
+        builder.Should().NotBeNull().And.BeOfType<FakePolicyBuilder>();
+    }
+
+    [Fact]
+    public void AddAuthorizationServer_WithoutPolicyProvider_DoesNotRegisterBuilder()
+    {
+        var services = new ServiceCollection();
+        services.AddLogging();
+
+        services.AddAuthorizationServer(options =>
+        {
+            options.UseProtectedResourcePolicyProvider = false;
+            options.AuthServerUrl = "http://localhost:8080/";
+            options.Realm = "test";
+        });
+
+        using var sp = services.BuildServiceProvider();
+        var builder = sp.GetService<IProtectedResourcePolicyBuilder>();
+
+        builder.Should().BeNull();
+    }
+
+    private sealed class FakePolicyBuilder(AuthorizationPolicy? result = null)
         : IProtectedResourcePolicyBuilder
     {
         public string? LastPolicyName { get; private set; }
