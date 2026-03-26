@@ -36,3 +36,32 @@ app.MapGet("/", () => "Hello World!")
 
 app.Run();
 ```
+
+## Extensibility
+
+The `ProtectedResourcePolicyProvider` delegates policy construction to `IProtectedResourcePolicyBuilder`. A `DefaultProtectedResourcePolicyBuilder` is registered automatically, but you can replace it with your own implementation — for example, to add caching:
+
+```csharp
+public class CachingPolicyBuilder : IProtectedResourcePolicyBuilder
+{
+    private readonly ConcurrentDictionary<string, AuthorizationPolicy?> cache = new();
+    private readonly DefaultProtectedResourcePolicyBuilder inner = new();
+
+    public AuthorizationPolicy? Build(string policyName) =>
+        cache.GetOrAdd(policyName, inner.Build);
+}
+```
+
+Register it before calling `AddAuthorizationServer`:
+
+```csharp
+services.AddSingleton<IProtectedResourcePolicyBuilder, CachingPolicyBuilder>();
+
+services.AddAuthorizationServer(options =>
+{
+    configuration.BindKeycloakOptions(options);
+    options.UseProtectedResourcePolicyProvider = true;
+});
+```
+
+Because `DefaultProtectedResourcePolicyBuilder` is registered with `TryAddSingleton`, your registration takes precedence.

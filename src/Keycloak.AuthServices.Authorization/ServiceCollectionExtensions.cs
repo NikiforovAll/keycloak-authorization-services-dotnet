@@ -241,6 +241,10 @@ public static class ServiceCollectionExtensions
 
         if (keycloakOptions.UseProtectedResourcePolicyProvider)
         {
+            services.TryAddSingleton<
+                IProtectedResourcePolicyBuilder,
+                DefaultProtectedResourcePolicyBuilder
+            >();
             services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
         }
 

@@ -1,18 +1,27 @@
-﻿namespace Keycloak.AuthServices.Authorization;
+namespace Keycloak.AuthServices.Authorization;
 
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
-using Requirements;
 
 /// <summary>
+/// Dynamically provides authorization policies for protected resources based on policy name conventions.
 /// </summary>
 public class ProtectedResourcePolicyProvider : DefaultAuthorizationPolicyProvider
 {
+    private readonly IProtectedResourcePolicyBuilder builder;
+
     /// <summary>
     /// </summary>
     /// <param name="options"></param>
-    public ProtectedResourcePolicyProvider(IOptions<AuthorizationOptions> options)
-        : base(options) { }
+    /// <param name="builder"></param>
+    public ProtectedResourcePolicyProvider(
+        IOptions<AuthorizationOptions> options,
+        IProtectedResourcePolicyBuilder? builder = null
+    )
+        : base(options)
+    {
+        this.builder = builder ?? new DefaultProtectedResourcePolicyBuilder();
+    }
 
     /// <inheritdoc />
     public override async Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
@@ -23,19 +32,6 @@ public class ProtectedResourcePolicyProvider : DefaultAuthorizationPolicyProvide
             return registeredPolicy;
         }
 
-        // Policy should be cached and managed properly, probably not production ready
-        // https://0xnf.github.io/posts/oauthserver/15/#dynamically-handling-policies
-        var builder = new AuthorizationPolicyBuilder();
-        var tokens = policyName.Split('#');
-
-        if (tokens is not { Length: 2 })
-        {
-            return default;
-        }
-
-        var authorizationRequirement = new DecisionRequirement(tokens[0], tokens[1]);
-        builder.AddRequirements(authorizationRequirement);
-
-        return builder.Build();
+        return this.builder.Build(policyName);
     }
 }
