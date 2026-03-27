@@ -128,6 +128,13 @@ export default withMermaid({
                     ]
                 },
                 {
+                    text: 'AI 🤖',
+                    collapsed: false,
+                    items: [
+                        { text: 'Claude Code Skills', link: '/ai/skills' },
+                    ]
+                },
+                {
                     text: 'Examples',
                     collapsed: false,
                     items: [
