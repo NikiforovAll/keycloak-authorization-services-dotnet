@@ -125,7 +125,6 @@ Keycloak JWT tokens contain roles in two locations:
 Keycloak 24+ lightweight access tokens lack `realm_access`/`resource_access` claims. Use `AddKeycloakTokenIntrospection()` to resolve them via the introspection endpoint.
 
 ```csharp
-// Must be registered BEFORE AddKeycloakAuthorization
 builder.Services.AddKeycloakTokenIntrospection(builder.Configuration);
 
 builder.Services.AddKeycloakAuthorization(options =>

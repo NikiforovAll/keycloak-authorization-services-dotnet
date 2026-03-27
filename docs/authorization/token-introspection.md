@@ -18,7 +18,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);
 
-// Register introspection BEFORE authorization
 builder.Services.AddKeycloakTokenIntrospection(builder.Configuration);
 
 builder.Services
@@ -30,9 +29,6 @@ builder.Services
     .AddAuthorizationBuilder()
     .AddPolicy("AdminOnly", policy => policy.RequireRealmRoles("Admin"));
 ```
-
-> [!IMPORTANT]
-> `AddKeycloakTokenIntrospection()` must be called **before** `AddKeycloakAuthorization()` so that introspected claims are available when role mapping runs.
 
 ## Configuration
 

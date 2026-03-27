@@ -159,7 +159,6 @@ If you use [lightweight access tokens](https://www.keycloak.org/docs/latest/serv
 Enable token introspection to resolve the full claim set from the Keycloak the introspection endpoint:
 
 ```csharp
-// Register BEFORE AddKeycloakAuthorization
 builder.Services.AddKeycloakTokenIntrospection(builder.Configuration);
 ```
 

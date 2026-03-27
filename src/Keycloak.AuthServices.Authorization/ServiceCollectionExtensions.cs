@@ -132,7 +132,30 @@ public static class ServiceCollectionExtensions
             );
         });
 
-        // Composite: runs all keycloak transformations in order (introspection first if registered, then roles)
+        // Preserve user-registered IClaimsTransformation so the composite can chain them
+        var userDescriptors = services
+            .Where(d =>
+                d.ServiceType == typeof(IClaimsTransformation)
+                && d.ImplementationType != typeof(CompositeClaimsTransformation)
+            )
+            .ToList();
+
+        services.RemoveAll<IClaimsTransformation>();
+
+        foreach (var descriptor in userDescriptors)
+        {
+            if (descriptor.ImplementationType is not null)
+            {
+                services.Add(
+                    new ServiceDescriptor(
+                        descriptor.ImplementationType,
+                        descriptor.ImplementationType,
+                        descriptor.Lifetime
+                    )
+                );
+            }
+        }
+
         services.AddTransient<IClaimsTransformation>(sp =>
         {
             var transformations = new List<IClaimsTransformation>();
@@ -144,6 +167,33 @@ public static class ServiceCollectionExtensions
             }
 
             transformations.Add(sp.GetRequiredService<KeycloakRolesClaimsTransformation>());
+
+            foreach (var descriptor in userDescriptors)
+            {
+                if (
+                    descriptor.ImplementationType is not null
+                    && sp.GetService(descriptor.ImplementationType)
+                        is IClaimsTransformation userTransformation
+                )
+                {
+                    transformations.Add(userTransformation);
+                }
+                else if (
+                    descriptor.ImplementationFactory is not null
+                    && descriptor.ImplementationFactory(sp)
+                        is IClaimsTransformation factoryTransformation
+                )
+                {
+                    transformations.Add(factoryTransformation);
+                }
+                else if (
+                    descriptor.ImplementationInstance
+                    is IClaimsTransformation instanceTransformation
+                )
+                {
+                    transformations.Add(instanceTransformation);
+                }
+            }
 
             return new CompositeClaimsTransformation(transformations);
         });
