@@ -1,64 +1,36 @@
 using System.Security.Claims;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
 var services = builder.Services;
-var mode = configuration["Mode"] ?? "introspection-last";
+var useCustomTransform = configuration.GetValue<bool>("CustomTransform");
 
 services.AddKeycloakWebApiAuthentication(configuration);
 
-switch (mode)
+if (useCustomTransform)
 {
-    case "introspection-first":
-        services.AddKeycloakTokenIntrospection(configuration);
-        services
-            .AddKeycloakAuthorization(options =>
-            {
-                configuration.GetSection("Keycloak").Bind(options);
-                options.EnableRolesMapping = RolesClaimTransformationSource.All;
-            })
-            .AddAuthorizationBuilder()
-            .AddPolicy("AdminOnly", policy => policy.RequireRealmRoles("Admin"));
-        break;
-
-    case "introspection-last":
-        services
-            .AddKeycloakAuthorization(options =>
-            {
-                configuration.GetSection("Keycloak").Bind(options);
-                options.EnableRolesMapping = RolesClaimTransformationSource.All;
-            })
-            .AddAuthorizationBuilder()
-            .AddPolicy("AdminOnly", policy => policy.RequireRealmRoles("Admin"));
-        services.AddKeycloakTokenIntrospection(configuration);
-        break;
-
-    case "with-custom-transform":
-        services.AddTransient<IClaimsTransformation, CustomClaimsTransformation>();
-        services
-            .AddKeycloakAuthorization(options =>
-            {
-                configuration.GetSection("Keycloak").Bind(options);
-                options.EnableRolesMapping = RolesClaimTransformationSource.All;
-            })
-            .AddAuthorizationBuilder()
-            .AddPolicy("AdminOnly", policy => policy.RequireRealmRoles("Admin"));
-        services.AddKeycloakTokenIntrospection(configuration);
-        break;
-
-    default:
-        throw new ArgumentException($"Unknown mode: {mode}");
+    services.AddTransient<IClaimsTransformation, CustomClaimsTransformation>();
 }
+
+services
+    .AddKeycloakAuthorization(options =>
+    {
+        configuration.GetSection("Keycloak").Bind(options);
+        options.EnableRolesMapping = RolesClaimTransformationSource.All;
+    })
+    .AddAuthorizationBuilder()
+    .AddPolicy("AdminOnly", policy => policy.RequireRealmRoles("Admin"));
+
+services.AddKeycloakTokenIntrospection(configuration);
 
 var app = builder.Build();
 
 app.UseAuthentication().UseAuthorization();
-
-app.MapGet("/mode", () => Results.Ok(new { Mode = mode }));
 
 app.MapGet(
         "/me",

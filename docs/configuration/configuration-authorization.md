@@ -156,7 +156,7 @@ The target claim can be configured `KeycloakAuthorizationOptions.RoleClaimType`,
 
 If you use [lightweight access tokens](https://www.keycloak.org/docs/latest/server_admin/#_using_lightweight_access_token) (Keycloak 24+), the JWT will not contain `realm_access` or `resource_access` claims, causing role-based authorization to silently fail (403).
 
-Enable token introspection to resolve the full claim set from the Keycloak the introspection endpoint:
+Enable token introspection to resolve the full claim set from the Keycloak introspection endpoint:
 
 ```csharp
 builder.Services.AddKeycloakTokenIntrospection(builder.Configuration);

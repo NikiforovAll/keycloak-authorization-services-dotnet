@@ -14,7 +14,7 @@ Demonstrates Keycloak token introspection for lightweight access tokens using `K
 # 1. Start Keycloak
 docker compose up -d
 
-# 2. Seed: configure client to issue lightweight tokens (removes role mappers)
+# 2. Seed: configure client to issue lightweight tokens (disables role mappers in access token)
 bash ./assets/seed.sh
 
 # 3. Get a bearer token and save to .env
@@ -26,7 +26,7 @@ dotnet run
 
 ## What Happens
 
-The seed script removes `realm roles` and `client roles` protocol mappers from the test-client, simulating lightweight access tokens. The resulting JWT will **not** contain `realm_access` or `resource_access` claims.
+The seed script updates `realm roles` and `client roles` protocol mappers on the test-client, setting `access.token.claim=false` and `introspection.token.claim=true` to simulate lightweight access tokens. The resulting JWT will **not** contain `realm_access` or `resource_access` claims.
 
 Without introspection, role-based authorization would silently fail (403 Forbidden). With `AddKeycloakTokenIntrospection()`, the library calls the Keycloak introspection endpoint to resolve the full claim set, and role mapping works transparently.
 
@@ -37,7 +37,7 @@ Without introspection, role-based authorization would silently fail (403 Forbidd
 | Realm | `Test` |
 | Client | `test-client` (confidential, direct access grants) |
 | Users | `test` / `test` (Reader role), `testadminuser` / `test` (Admin role + TestClientRole) |
-| Mappers | `realm roles` and `client roles` mappers removed → lightweight tokens |
+| Mappers | `realm roles` and `client roles` mappers updated (`access.token.claim=false`) → lightweight tokens |
 
 ## Endpoints
 
@@ -52,15 +52,15 @@ Test with `assets/run.http` (VS Code REST Client) or curl.
 ## How It Works
 
 ```csharp
-// Program.cs — key registration order:
-services.AddKeycloakTokenIntrospection(configuration);  // 1. Introspect lightweight tokens
-services.AddKeycloakAuthorization(options =>     // 2. Map roles from enriched claims
+services.AddKeycloakAuthorization(options =>
 {
     options.EnableRolesMapping = RolesClaimTransformationSource.All;
 });
+
+services.AddKeycloakTokenIntrospection(configuration);
 ```
 
-The introspection transformation runs **before** the roles transformation because `IClaimsTransformation` instances execute in registration order. This ensures `realm_access` and `resource_access` claims are available when role mapping runs.
+Without introspection, role-based authorization would silently fail (403 Forbidden) because the JWT lacks `realm_access` and `resource_access` claims.
 
 ## Token Comparison
 

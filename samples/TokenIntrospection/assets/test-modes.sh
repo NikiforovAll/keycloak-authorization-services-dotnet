@@ -38,28 +38,25 @@ assert_claim() {
     fi
 }
 
-run_mode() {
-    local mode="$1"
+run_test() {
+    local label="$1"
+    shift
     echo ""
-    echo "🔄 Testing mode: $mode"
+    echo "🔄 Testing: $label"
 
-    dotnet run --project "$PROJECT_DIR" -p:WarningLevel=0 -- --Mode "$mode" > /dev/null 2>&1 &
+    dotnet run --project "$PROJECT_DIR" -p:WarningLevel=0 -- "$@" > /dev/null 2>&1 &
     local pid=$!
 
     for i in $(seq 1 20); do
-        curl -sf "$BASE_URL/mode" > /dev/null 2>&1 && break
+        curl -sf "$BASE_URL/me" > /dev/null 2>&1 && break
         sleep 1
     done
-
-    local current_mode
-    current_mode=$(curl -sf "$BASE_URL/mode" | grep -o '"Mode":"[^"]*"' | cut -d'"' -f4)
-    echo "  Running in mode: $current_mode"
 
     assert_status "/admin (admin)" "200" "$BASE_URL/admin" "$ADMIN_TOKEN"
     assert_status "/admin (reader)" "403" "$BASE_URL/admin" "$READER_TOKEN"
     assert_claim "/roles (admin has Admin)" "Admin" "$BASE_URL/roles" "$ADMIN_TOKEN"
 
-    if [ "$mode" = "with-custom-transform" ]; then
+    if echo "$@" | grep -q "CustomTransform"; then
         assert_claim "/me (custom_marker)" "custom_marker" "$BASE_URL/me" "$ADMIN_TOKEN"
     fi
 
@@ -71,9 +68,8 @@ run_mode() {
 echo "🧪 Token Introspection E2E Tests"
 echo "================================"
 
-run_mode "introspection-first"
-run_mode "introspection-last"
-run_mode "with-custom-transform"
+run_test "default (introspection + roles)"
+run_test "with custom claims transformation" --CustomTransform true
 
 echo ""
 echo "================================"
