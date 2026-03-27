@@ -36,6 +36,18 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
             : $"{this.KeycloakUrlRealm}{KeycloakConstants.OpenIdConnectConfigurationPath}";
 
     /// <summary>
+    /// Gets or sets the metadata address used for server metadata discovery.
+    /// When set, overrides the default OIDC discovery path derived from Authority.
+    /// Use <see cref="KeycloakConstants.OAuthAuthorizationServerMetadataPath"/> for RFC 8414 discovery.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// options.MetadataAddress = KeycloakConstants.OAuthAuthorizationServerMetadataPath;
+    /// </code>
+    /// </example>
+    public string? MetadataAddress { get; set; }
+
+    /// <summary>
     /// Gets or sets the roles mapping from access_token mapping
     /// </summary>
     public bool DisableRolesAccessTokenMapping { get; set; }
