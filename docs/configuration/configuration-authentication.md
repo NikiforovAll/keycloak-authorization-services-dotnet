@@ -190,6 +190,9 @@ services.AddKeycloakWebApiAuthentication(configuration, options =>
 > [!NOTE]
 > The default OIDC discovery works for the vast majority of use cases. Only switch to RFC 8414 when you have a specific reason to.
 
+> [!TIP]
+> See the self-contained [OAuthServerMetadata sample](https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/tree/main/samples/OAuthServerMetadata) for a runnable demo with docker-compose and Keycloak.
+
 ## Adapter File Configuration Provider
 
 Using *appsettings.json* is a recommended and it is an idiomatic approach for .NET, but if you want a standalone "adapter" (installation) file - *keycloak.json*. You can use `ConfigureKeycloakConfigurationSource`. It adds dedicated configuration source.
