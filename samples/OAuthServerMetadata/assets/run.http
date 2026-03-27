@@ -1,0 +1,24 @@
+@host = http://localhost:5099
+@token = {{$dotenv TOKEN}}
+
+## ─── Protected Endpoint ───
+
+### Authenticated request (expects: 200)
+GET {{host}}/
+Authorization: Bearer {{token}}
+
+### No token (expects: 401)
+GET {{host}}/
+
+## ─── Metadata Info ───
+
+### Show active metadata configuration (no auth required)
+GET {{host}}/metadata-info
+
+## ─── Keycloak Discovery Endpoints (direct) ───
+
+### OIDC Discovery
+GET http://localhost:8080/realms/Test/.well-known/openid-configuration
+
+### RFC 8414 OAuth Authorization Server Metadata
+GET http://localhost:8080/realms/Test/.well-known/oauth-authorization-server
