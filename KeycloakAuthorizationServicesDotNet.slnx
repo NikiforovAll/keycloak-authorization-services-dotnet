@@ -1,0 +1,53 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/build/">
+    <File Path=".github/workflows/build.yml" />
+    <File Path="build.cake" />
+    <File Path="dotnet-tools.json" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/AuthGettingStarted/AuthGettingStarted.csproj" />
+    <Project Path="samples/AuthorizationAndCleanArchitecture/AuthorizationAndCleanArchitecture.csproj" />
+    <Project Path="samples/AuthorizationGettingStarted/AuthorizationGettingStarted.csproj" />
+    <Project Path="samples/GettingStarted/GettingStarted.csproj" />
+    <Project Path="samples/ResourceAuthorization/ResourceAuthorization.csproj" />
+    <Project Path="samples/WebApp/WebApp.csproj" />
+  </Folder>
+  <Folder Name="/samples/BlazorWASM/">
+    <File Path="samples/Blazor/docker-compose.yml" />
+    <Project Path="samples/Blazor/Client/Blazor.Client.csproj" />
+    <Project Path="samples/Blazor/Server/Blazor.Server.csproj" />
+    <Project Path="samples/Blazor/Shared/Blazor.Shared.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <File Path="src/Directory.Build.props" />
+    <File Path="src/Directory.Packages.props" />
+    <Project Path="src/Keycloak.AuthServices.Aspire.Hosting/Keycloak.AuthServices.Aspire.Hosting.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Authentication/Keycloak.AuthServices.Authentication.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Authorization.TokenIntrospection/Keycloak.AuthServices.Authorization.TokenIntrospection.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Authorization/Keycloak.AuthServices.Authorization.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Common/Keycloak.AuthServices.Common.csproj" />
+    <Project Path="src/Keycloak.AuthServices.OpenTelemetry/Keycloak.AuthServices.OpenTelemetry.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Sdk.Kiota/Keycloak.AuthServices.Sdk.Kiota.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Sdk/Keycloak.AuthServices.Sdk.csproj" />
+    <Project Path="src/Keycloak.AuthServices.Templates/Keycloak.AuthServices.Templates.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/Directory.Build.props" />
+    <Project Path="tests/Keycloak.AuthServices.Authentication.Tests/Keycloak.AuthServices.Authentication.Tests.csproj" />
+    <Project Path="tests/Keycloak.AuthServices.Authorization.Tests/Keycloak.AuthServices.Authorization.Tests.csproj" />
+    <Project Path="tests/Keycloak.AuthServices.Common.Tests/Keycloak.AuthServices.Common.Tests.csproj" />
+    <Project Path="tests/Keycloak.AuthServices.IntegrationTests/Keycloak.AuthServices.IntegrationTests.csproj" />
+    <Project Path="tests/Keycloak.AuthServices.Sdk.Tests/Keycloak.AuthServices.Sdk.Tests.csproj" />
+    <Project Path="tests/TestWebApi/TestWebApi.csproj" />
+    <Project Path="tests/TestWebApiWithControllers/TestWebApiWithControllers.csproj" />
+  </Folder>
+</Solution>
