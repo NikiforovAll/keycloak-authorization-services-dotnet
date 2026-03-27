@@ -10,7 +10,7 @@ Keycloak 24+ supports [lightweight access tokens](https://www.keycloak.org/docs/
 ## Setup
 
 ```bash
-dotnet add package Keycloak.AuthServices.Authorization
+dotnet add package Keycloak.AuthServices.Authorization.TokenIntrospection
 ```
 
 ```csharp

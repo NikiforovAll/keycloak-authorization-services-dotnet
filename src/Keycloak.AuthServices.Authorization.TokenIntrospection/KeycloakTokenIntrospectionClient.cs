@@ -1,6 +1,5 @@
 namespace Keycloak.AuthServices.Authorization.TokenIntrospection;
 
-using System.Net.Http.Json;
 using System.Text.Json;
 using Keycloak.AuthServices.Common;
 using Microsoft.Extensions.Logging;
@@ -52,7 +51,11 @@ public class KeycloakTokenIntrospectionClient : IKeycloakTokenIntrospectionClien
             cancellationToken
         );
 
-        response.EnsureSuccessStatusCode();
+        if (!response.IsSuccessStatusCode)
+        {
+            this.logger.LogTokenIntrospectionRequestFailed(response.StatusCode);
+            return null;
+        }
 
         using var document = await JsonDocument.ParseAsync(
             await response.Content.ReadAsStreamAsync(cancellationToken),

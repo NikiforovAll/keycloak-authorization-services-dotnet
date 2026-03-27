@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
+    <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization.TokenIntrospection\Keycloak.AuthServices.Authorization.TokenIntrospection.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" />
   </ItemGroup>
 

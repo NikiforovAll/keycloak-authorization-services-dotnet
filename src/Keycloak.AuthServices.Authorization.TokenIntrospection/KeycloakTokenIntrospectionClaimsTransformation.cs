@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Logging;
@@ -15,7 +14,8 @@ using Microsoft.Extensions.Options;
 /// resolved from the Keycloak token introspection endpoint.
 /// Designed for use with lightweight access tokens that lack business claims.
 /// </summary>
-public class KeycloakTokenIntrospectionClaimsTransformation : IClaimsTransformation
+public class KeycloakTokenIntrospectionClaimsTransformation
+    : IKeycloakTokenIntrospectionTransformation
 {
     private static readonly HashSet<string> SkipClaims = new(StringComparer.OrdinalIgnoreCase)
     {
