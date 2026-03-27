@@ -27,14 +27,7 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services);
         ArgumentNullException.ThrowIfNull(configuration);
-
-        if (string.IsNullOrEmpty(configSectionName))
-        {
-            throw new ArgumentException(
-                $"'{nameof(configSectionName)}' cannot be null or empty.",
-                nameof(configSectionName)
-            );
-        }
+        ArgumentException.ThrowIfNullOrEmpty(configSectionName);
 
         return services.AddKeycloakTokenIntrospection(
             configuration.GetSection(configSectionName),

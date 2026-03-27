@@ -45,7 +45,7 @@ public class KeycloakTokenIntrospectionClient : IKeycloakTokenIntrospectionClien
             }
         );
 
-        var response = await this.httpClient.PostAsync(
+        using var response = await this.httpClient.PostAsync(
             KeycloakConstants.TokenIntrospectionEndpointPath,
             content,
             cancellationToken

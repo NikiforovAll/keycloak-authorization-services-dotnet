@@ -16,7 +16,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     [Fact]
     public async Task TransformAsync_SkipsUnauthenticatedPrincipal()
     {
-        var sut = CreateSut(out _);
+        var sut = CreateSut();
         var principal = new ClaimsPrincipal(new ClaimsIdentity());
 
         var result = await sut.TransformAsync(principal);
@@ -27,7 +27,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     [Fact]
     public async Task TransformAsync_SkipsWhenResourceAccessPresent()
     {
-        var sut = CreateSut(out _);
+        var sut = CreateSut();
         var identity = new ClaimsIdentity("Bearer");
         identity.AddClaim(new Claim("resource_access", "{}", "JSON"));
         var principal = new ClaimsPrincipal(identity);
@@ -40,7 +40,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     [Fact]
     public async Task TransformAsync_SkipsWhenRealmAccessPresent()
     {
-        var sut = CreateSut(out _);
+        var sut = CreateSut();
         var identity = new ClaimsIdentity("Bearer");
         identity.AddClaim(new Claim("realm_access", "{}", "JSON"));
         var principal = new ClaimsPrincipal(identity);
@@ -53,7 +53,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     [Fact]
     public async Task TransformAsync_SkipsWhenNoHttpContext()
     {
-        var sut = CreateSut(out _, httpContext: null);
+        var sut = CreateSut(httpContext: null);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -65,7 +65,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     public async Task TransformAsync_SkipsWhenNoBearerToken()
     {
         var httpContext = new DefaultHttpContext();
-        var sut = CreateSut(out _, httpContext: httpContext);
+        var sut = CreateSut(httpContext: httpContext);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -78,7 +78,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     {
         var httpContext = CreateHttpContextWithBearer();
         var client = new FakeIntrospectionClient(new TokenIntrospectionResponse { Active = false });
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -99,7 +99,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             new TokenIntrospectionResponse { Active = true, Claims = claims }
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -123,7 +123,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             new TokenIntrospectionResponse { Active = true, Claims = claims }
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -147,7 +147,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             new TokenIntrospectionResponse { Active = true, Claims = claims }
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -172,7 +172,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             new TokenIntrospectionResponse { Active = true, Claims = claims }
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -196,7 +196,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             new TokenIntrospectionResponse { Active = true, Claims = claims }
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var identity = new ClaimsIdentity("Bearer");
         identity.AddClaim(new Claim("sub", "user-123"));
         identity.AddClaim(new Claim("existing_claim", "original_value"));
@@ -234,7 +234,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
                 identity.AddClaim(new Claim("callback_marker", "true"));
             },
         };
-        var sut = CreateSut(out _, httpContext: httpContext, client: client, options: options);
+        var sut = CreateSut(httpContext: httpContext, client: client, options: options);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -261,7 +261,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             }
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
 
         var identity = new ClaimsIdentity("Bearer");
         identity.AddClaim(new Claim("sub", "user-123"));
@@ -287,7 +287,7 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
             exception: new HttpRequestException("Connection refused")
         );
         var httpContext = CreateHttpContextWithBearer();
-        var sut = CreateSut(out _, httpContext: httpContext, client: client);
+        var sut = CreateSut(httpContext: httpContext, client: client);
         var principal = CreateLightweightPrincipal();
 
         var result = await sut.TransformAsync(principal);
@@ -313,7 +313,6 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
     }
 
     private static KeycloakTokenIntrospectionClaimsTransformation CreateSut(
-        out ServiceProvider serviceProvider,
         DefaultHttpContext? httpContext = null,
         IKeycloakTokenIntrospectionClient? client = null,
         KeycloakTokenIntrospectionOptions? options = null
@@ -335,11 +334,11 @@ public class KeycloakTokenIntrospectionClaimsTransformationTests
 
         var services = new ServiceCollection();
         services.AddHybridCache();
-        serviceProvider = services.BuildServiceProvider();
+        var sp = services.BuildServiceProvider();
 
         return new KeycloakTokenIntrospectionClaimsTransformation(
             client,
-            serviceProvider.GetRequiredService<HybridCache>(),
+            sp.GetRequiredService<HybridCache>(),
             httpContextAccessor,
             Options.Create(options),
             NullLogger<KeycloakTokenIntrospectionClaimsTransformation>.Instance

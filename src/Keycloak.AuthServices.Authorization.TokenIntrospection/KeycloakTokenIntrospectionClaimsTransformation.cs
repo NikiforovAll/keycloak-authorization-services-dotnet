@@ -43,6 +43,8 @@ public class KeycloakTokenIntrospectionClaimsTransformation
         "organization",
     };
 
+    private const string CacheKeyPrefix = "keycloak:introspect:";
+
     private readonly IKeycloakTokenIntrospectionClient introspectionClient;
     private readonly HybridCache cache;
     private readonly IHttpContextAccessor httpContextAccessor;
@@ -110,16 +112,17 @@ public class KeycloakTokenIntrospectionClaimsTransformation
         try
         {
             var opts = this.options.Value;
-            var cacheOptions = new HybridCacheEntryOptions { Expiration = opts.CacheDuration };
 
             var response = await this.cache.GetOrCreateAsync(
                 cacheKey,
                 async ct => await this.introspectionClient.IntrospectTokenAsync(token, ct),
-                cacheOptions
+                new HybridCacheEntryOptions { Expiration = opts.CacheDuration }
             );
 
             if (response is null)
             {
+                // Don't cache null (transient failure) — evict so the next request retries
+                await this.cache.RemoveAsync(cacheKey);
                 return principal;
             }
 
@@ -147,11 +150,11 @@ public class KeycloakTokenIntrospectionClaimsTransformation
         var jti = principal.FindFirst("jti")?.Value;
         if (!string.IsNullOrEmpty(jti))
         {
-            return $"keycloak:introspect:{jti}";
+            return $"{CacheKeyPrefix}{jti}";
         }
 
         var hash = SHA256.HashData(Encoding.UTF8.GetBytes(token));
-        return $"keycloak:introspect:{Convert.ToHexStringLower(hash)}";
+        return $"{CacheKeyPrefix}{Convert.ToHexStringLower(hash)}";
     }
 
     private static int EnrichPrincipal(
