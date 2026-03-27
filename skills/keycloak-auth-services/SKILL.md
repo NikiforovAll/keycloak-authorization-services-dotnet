@@ -1,13 +1,6 @@
 ---
 name: keycloak-auth-services
-description: >-
-  Implementation guide for Keycloak.AuthServices .NET library — authentication (JWT Bearer, OIDC),
-  authorization (RBAC, resource protection, Authorization Server), Admin REST API SDK,
-  Protection API SDK, and developer experience tooling (.NET Aspire, templates, OpenTelemetry).
-  Use when implementing Keycloak integration in .NET apps, configuring authentication/authorization,
-  using the Admin or Protection API, or troubleshooting Keycloak.AuthServices issues.
-  Trigger phrases include "Keycloak.AuthServices", "AddKeycloakWebApiAuthentication",
-  "ProtectedResource", "Admin SDK", "Protection API", "Keycloak .NET".
+description: "Implementation guide for Keycloak.AuthServices .NET library — authentication (JWT Bearer, OIDC, RFC 8414), authorization (RBAC, resource protection, Authorization Server, organizations, multi-tenancy), Admin REST API SDK, Protection API SDK, and developer experience tooling (.NET Aspire, templates, OpenTelemetry). Trigger phrases include Keycloak.AuthServices, ProtectedResource, Admin SDK, Protection API, organization, RFC 8414, token introspection."
 user-invocable: true
 ---
 
@@ -27,13 +20,18 @@ Choose your task and load the appropriate reference:
 8. **Configuration Reference** → Load [configuration.md](references/configuration.md)
 9. **Recipes & Troubleshooting** → Load [troubleshooting.md](references/troubleshooting.md)
 10. **Token Introspection (Lightweight Tokens)** → Load [authorization.md](references/authorization.md) (see "Token Introspection" section)
+11. **Organization Authorization (Multi-Tenancy)** → Load [organization-authorization.md](references/organization-authorization.md)
+12. **RFC 8414 Server Metadata Discovery** → Load [authentication.md](references/authentication.md) (see "Server Metadata Discovery" section)
+13. **Custom Token Provider (IKeycloakAccessTokenProvider)** → Load [resource-protection.md](references/resource-protection.md) (see "IKeycloakAccessTokenProvider" section)
+14. **Extensible Policy Builder (IProtectedResourcePolicyBuilder)** → Load [resource-protection.md](references/resource-protection.md) (see "IProtectedResourcePolicyBuilder" section)
+15. **Pluggable Parameter Resolvers** → Load [resource-protection.md](references/resource-protection.md) (see "Pluggable Parameter Resolvers" section)
 
 ## Packages Overview
 
 | Package | Purpose |
 |---------|---------|
 | `Keycloak.AuthServices.Authentication` | JWT Bearer (Web API) and OpenID Connect (Web App) authentication |
-| `Keycloak.AuthServices.Authorization` | RBAC (realm/client roles), Authorization Server client, `[ProtectedResource]` attribute |
+| `Keycloak.AuthServices.Authorization` | RBAC (realm/client roles), Authorization Server client, `[ProtectedResource]` attribute, organization authorization |
 | `Keycloak.AuthServices.Sdk` | Hand-written Admin REST API + Protection API HTTP clients |
 | `Keycloak.AuthServices.Sdk.Kiota` | Auto-generated (Kiota) Admin REST API client — full API coverage |
 | `Keycloak.AuthServices.Common` | Shared configuration (`KeycloakInstallationOptions`), claims utilities |
@@ -142,9 +140,10 @@ app.MapGet("/users", async (IKeycloakUserClient client) =>
 
 ## Reference Documentation
 
-- [authentication.md](references/authentication.md) — JWT Bearer and OIDC setup, all overloads, adapter file config
-- [authorization.md](references/authorization.md) — RBAC, realm/client roles, role claims transformation
-- [resource-protection.md](references/resource-protection.md) — Authorization Server, Protected Resource Builder, dynamic resources, policy provider
+- [authentication.md](references/authentication.md) — JWT Bearer and OIDC setup, all overloads, adapter file config, RFC 8414 server metadata discovery
+- [authorization.md](references/authorization.md) — RBAC, realm/client roles, role claims transformation, token introspection
+- [organization-authorization.md](references/organization-authorization.md) — Organization-based multi-tenancy, membership requirements, parameter resolvers
+- [resource-protection.md](references/resource-protection.md) — Authorization Server, Protected Resource Builder, dynamic resources, policy provider, IKeycloakAccessTokenProvider, IProtectedResourcePolicyBuilder, pluggable parameter resolvers
 - [admin-sdk.md](references/admin-sdk.md) — Admin REST API (hand-written + Kiota), access token management
 - [protection-api.md](references/protection-api.md) — UMA Protection API, resource/permission/policy management
 - [devex.md](references/devex.md) — .NET Aspire, templates, OpenTelemetry

@@ -170,6 +170,29 @@ builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);
 }
 ```
 
+## Server Metadata Discovery (RFC 8414)
+
+By default, the library uses OIDC discovery (`.well-known/openid-configuration`). For pure OAuth 2.0 scenarios, switch to RFC 8414 metadata:
+
+```csharp
+using Keycloak.AuthServices.Common;
+
+builder.Services.AddKeycloakWebApiAuthentication(options =>
+{
+    options.MetadataAddress = KeycloakConstants.OAuthAuthorizationServerMetadataPath;
+});
+```
+
+The constant resolves to `.well-known/oauth-authorization-server`.
+
+**When to use RFC 8414:**
+- Machine-to-machine flows (client credentials) with no OIDC/ID token involved
+- MCP (Model Context Protocol) authorization server support
+- OAuth 2.0-only clients that look for RFC 8414 metadata, not OIDC
+- Protocol correctness when the consumer is a pure OAuth 2.0 resource server
+
+For most use cases, the default OIDC discovery works fine — only switch to RFC 8414 when you have a specific reason.
+
 ## Audience Mapper
 
 By default, `Keycloak.AuthServices.Authentication` validates that the token audience matches the `resource` (client ID). If you get **401 Unauthorized**, either:

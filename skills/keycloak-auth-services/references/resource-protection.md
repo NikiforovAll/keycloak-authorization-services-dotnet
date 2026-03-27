@@ -28,7 +28,28 @@ builder.Services
     .AddAuthorizationServer(builder.Configuration);
 ```
 
-Authorization Server calls are made on behalf of the user via header propagation. `AddAuthorizationServer` adds `AccessTokenPropagationHandler` that reads the user's JWT from `IHttpContextAccessor`.
+Authorization Server calls are made on behalf of the user via header propagation. `AddAuthorizationServer` adds `AccessTokenPropagationHandler` that uses `IKeycloakAccessTokenProvider` to obtain the user's token.
+
+### IKeycloakAccessTokenProvider
+
+The default `HttpContextAccessTokenProvider` reads the JWT from the current `HttpContext`. Override it for custom token sourcing (e.g., SignalR, long-lived connections):
+
+```csharp
+public interface IKeycloakAccessTokenProvider
+{
+    Task<string?> GetAccessTokenAsync(CancellationToken cancellationToken = default);
+}
+```
+
+Register a custom implementation before `AddAuthorizationServer`:
+
+```csharp
+services.AddScoped<IKeycloakAccessTokenProvider, MyCustomTokenProvider>();
+```
+
+Configuration options on `KeycloakAuthorizationServerOptions`:
+- `SourceAuthenticationScheme` — auth scheme for token extraction (default: `"Bearer"`)
+- `SourceTokenName` — token name (default: `"access_token"`)
 
 ## Protected Resource Builder
 
@@ -123,6 +144,67 @@ builder.Services.AddAuthorizationServer(options =>
 app.MapGet("/", () => "Hello")
     .RequireAuthorization("my-workspace#workspaces:read");
 ```
+
+### IProtectedResourcePolicyBuilder (Extensible Policy Construction)
+
+The `ProtectedResourcePolicyProvider` delegates policy construction to `IProtectedResourcePolicyBuilder`. The default implementation parses the `<resource>#<scope1>,<scope2>` format:
+
+```csharp
+public interface IProtectedResourcePolicyBuilder
+{
+    AuthorizationPolicy? Build(string policyName);
+}
+```
+
+Override with a custom implementation (e.g., caching):
+
+```csharp
+public class CachingPolicyBuilder : IProtectedResourcePolicyBuilder
+{
+    private readonly ConcurrentDictionary<string, AuthorizationPolicy?> cache = new();
+    private readonly DefaultProtectedResourcePolicyBuilder inner = new();
+
+    public AuthorizationPolicy? Build(string policyName) =>
+        cache.GetOrAdd(policyName, inner.Build);
+}
+
+// Register before AddAuthorizationServer
+services.AddSingleton<IProtectedResourcePolicyBuilder, CachingPolicyBuilder>();
+```
+
+## Pluggable Parameter Resolvers
+
+The `{parameter}` syntax in `RequireProtectedResource("resource/{id}", ...)` is resolved by `IParameterResolver` implementations. All three built-in resolvers are registered automatically by `AddKeycloakAuthorization()`.
+
+```csharp
+public interface IParameterResolver
+{
+    string? Resolve(string parameter, HttpContext httpContext, IServiceProvider serviceProvider);
+}
+```
+
+**Built-in resolvers:**
+
+| Resolver | Source | Example |
+|----------|--------|---------|
+| `RouteParameterResolver` (default) | Route values | `{id}` from `/workspaces/{id}` |
+| `HeaderParameterResolver` | HTTP headers | `{X-Tenant}` from request header |
+| `QueryParameterResolver` | Query string | `{tenant}` from `?tenant=acme` |
+
+**Custom resolver:**
+
+```csharp
+public class ServiceResolver : IParameterResolver
+{
+    public string? Resolve(string parameter, HttpContext httpContext, IServiceProvider serviceProvider)
+    {
+        var tenantConfig = serviceProvider.GetService<TenantConfig>();
+        return tenantConfig?.TenantId;
+    }
+}
+```
+
+Resolvers are used by both resource protection (`RequireProtectedResource`) and organization authorization (`RequireOrganizationMembership`). See [organization-authorization.md](organization-authorization.md) for resolver usage with organizations.
 
 ## ProtectedResource Attribute (Controllers)
 
