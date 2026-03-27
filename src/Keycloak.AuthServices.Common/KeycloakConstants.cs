@@ -46,4 +46,9 @@ public static class KeycloakConstants
     /// Token Claim - Organization
     /// </summary>
     public const string OrganizationClaimType = "organization";
+
+    /// <summary>
+    /// Token introspection endpoint
+    /// </summary>
+    public const string TokenIntrospectionEndpointPath = "protocol/openid-connect/token/introspect";
 }

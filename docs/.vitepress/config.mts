@@ -66,6 +66,9 @@ export default withMermaid({
                             text: 'Organization Authorization', link: '/authorization/organizations'
                         },
                         {
+                            text: 'Token Introspection', link: '/authorization/token-introspection'
+                        },
+                        {
                             text: 'Use Authorization Client', link: '/authorization/resources-client',
                             collapsed: true,
                             items: [
@@ -136,6 +139,7 @@ export default withMermaid({
                         { text: 'Web App MVC', link: '/examples/web-app-mvc' },
                         { text: 'Web API + Blazor', link: '/examples/web-api-blazor' },
                         { text: 'Organization Authorization', link: '/examples/organization-authorization' },
+                        { text: 'Token Introspection', link: '/examples/token-introspection' },
                     ]
                 }
             ]

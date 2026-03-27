@@ -3,6 +3,8 @@ namespace Keycloak.AuthServices.Authorization.Claims;
 using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 
 /// <summary>
 /// Transforms keycloak roles in the resource_access claim to jwt role claims.
@@ -27,6 +29,8 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     private readonly string roleClaimType;
     private readonly RolesClaimTransformationSource roleSource;
     private readonly string audience;
+    private readonly ILogger logger;
+    private readonly bool tokenIntrospectionEnabled;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KeycloakRolesClaimsTransformation"/> class.
@@ -34,15 +38,21 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
     /// <param name="roleClaimType">Type of the role claim.</param>
     /// <param name="roleSource"><see cref="RolesClaimTransformationSource"/></param>
     /// <param name="resource">The audience.</param>
+    /// <param name="logger">Optional logger for diagnostics.</param>
+    /// <param name="tokenIntrospectionEnabled">Whether token introspection is registered.</param>
     public KeycloakRolesClaimsTransformation(
         string roleClaimType,
         RolesClaimTransformationSource roleSource,
-        string resource
+        string resource,
+        ILogger<KeycloakRolesClaimsTransformation>? logger = null,
+        bool tokenIntrospectionEnabled = false
     )
     {
         this.roleClaimType = roleClaimType;
         this.roleSource = roleSource;
         this.audience = resource;
+        this.logger = logger ?? NullLogger<KeycloakRolesClaimsTransformation>.Instance;
+        this.tokenIntrospectionEnabled = tokenIntrospectionEnabled;
     }
 
     /// <summary>
@@ -93,7 +103,11 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                             claim.Type.Equals(
                                 this.roleClaimType,
                                 StringComparison.InvariantCultureIgnoreCase
-                            ) && claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)
+                            )
+                            && claim.Value.Equals(
+                                value,
+                                StringComparison.InvariantCultureIgnoreCase
+                            )
                         );
 
                         if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
@@ -102,6 +116,10 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                         }
                     }
                 }
+            }
+            else if (!this.tokenIntrospectionEnabled)
+            {
+                this.logger.LogRolesMappingMissingClaimsNoIntrospection("resource_access");
             }
         }
 
@@ -127,7 +145,11 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                             claim.Type.Equals(
                                 this.roleClaimType,
                                 StringComparison.InvariantCultureIgnoreCase
-                            ) && claim.Value.Equals(value, StringComparison.InvariantCultureIgnoreCase)
+                            )
+                            && claim.Value.Equals(
+                                value,
+                                StringComparison.InvariantCultureIgnoreCase
+                            )
                         );
 
                         if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
@@ -136,6 +158,10 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
                         }
                     }
                 }
+            }
+            else if (!this.tokenIntrospectionEnabled)
+            {
+                this.logger.LogRolesMappingMissingClaimsNoIntrospection("realm_access");
             }
         }
 
