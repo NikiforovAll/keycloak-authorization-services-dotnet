@@ -33,4 +33,47 @@ public interface IAuthorizationServerClient
         ScopesValidationMode? scopesValidationMode = default,
         CancellationToken cancellationToken = default
     );
+
+    /// <summary>
+    /// Verifies access to the protected resource using an explicit access token.
+    /// Use this overload in SignalR or other long-lived connection scenarios
+    /// where the token from <see cref="Microsoft.AspNetCore.Http.HttpContext"/> may be stale.
+    /// </summary>
+    /// <param name="resource"></param>
+    /// <param name="scope"></param>
+    /// <param name="accessToken">The access token to use for the authorization request.</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<bool> VerifyAccessToResource(
+        string resource,
+        string scope,
+        string accessToken,
+        CancellationToken cancellationToken = default
+    ) =>
+        this.VerifyAccessToResource(
+            resource,
+            scope,
+            accessToken,
+            ScopesValidationMode.AllOf,
+            cancellationToken
+        );
+
+    /// <summary>
+    /// Verifies access to the protected resource using an explicit access token.
+    /// Use this overload in SignalR or other long-lived connection scenarios
+    /// where the token from <see cref="Microsoft.AspNetCore.Http.HttpContext"/> may be stale.
+    /// </summary>
+    /// <param name="resource"></param>
+    /// <param name="scope"></param>
+    /// <param name="accessToken">The access token to use for the authorization request.</param>
+    /// <param name="scopesValidationMode"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<bool> VerifyAccessToResource(
+        string resource,
+        string scope,
+        string accessToken,
+        ScopesValidationMode? scopesValidationMode = default,
+        CancellationToken cancellationToken = default
+    );
 }

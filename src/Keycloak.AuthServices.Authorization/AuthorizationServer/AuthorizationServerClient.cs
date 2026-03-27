@@ -1,5 +1,6 @@
 namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 using Keycloak.AuthServices.Common;
@@ -43,14 +44,67 @@ public class AuthorizationServerClient : IAuthorizationServerClient
 
         this.logger.LogVerifyingAccess(resource, scope);
 
+        return await this.SendVerificationRequestAsync(
+            resource,
+            scope,
+            accessToken: null,
+            scopesValidationMode,
+            cancellationToken
+        );
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> VerifyAccessToResource(
+        string resource,
+        string scope,
+        string accessToken,
+        ScopesValidationMode? scopesValidationMode = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        ArgumentNullException.ThrowIfNull(resource);
+        ArgumentNullException.ThrowIfNull(scope);
+        ArgumentNullException.ThrowIfNull(accessToken);
+
+        this.logger.LogVerifyingAccessWithTokenOverride(resource, scope);
+
+        return await this.SendVerificationRequestAsync(
+            resource,
+            scope,
+            accessToken,
+            scopesValidationMode,
+            cancellationToken
+        );
+    }
+
+    private async Task<bool> SendVerificationRequestAsync(
+        string resource,
+        string scope,
+        string? accessToken,
+        ScopesValidationMode? scopesValidationMode,
+        CancellationToken cancellationToken
+    )
+    {
         try
         {
             using var content = new FormUrlEncodedContent(this.PrepareRequest(resource, scope));
-            var response = await this.httpClient.PostAsync(
-                KeycloakConstants.TokenEndpointPath,
-                content,
-                cancellationToken
-            );
+            using var request = new HttpRequestMessage(
+                HttpMethod.Post,
+                KeycloakConstants.TokenEndpointPath
+            )
+            {
+                Content = content,
+            };
+
+            if (accessToken is not null)
+            {
+                request.Headers.Authorization = new AuthenticationHeaderValue(
+                    this.options.Value.SourceAuthenticationScheme,
+                    accessToken
+                );
+            }
+
+            var response = await this.httpClient.SendAsync(request, cancellationToken);
 
             return await this.HandleResponse(
                 response,
@@ -78,7 +132,7 @@ public class AuthorizationServerClient : IAuthorizationServerClient
             { "grant_type", "urn:ietf:params:oauth:grant-type:uma-ticket" },
             { "response_mode", responseMode },
             { "audience", audience },
-            { "permission", permission }
+            { "permission", permission },
         };
     }
 

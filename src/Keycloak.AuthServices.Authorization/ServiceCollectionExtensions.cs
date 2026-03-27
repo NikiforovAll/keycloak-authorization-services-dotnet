@@ -248,6 +248,8 @@ public static class ServiceCollectionExtensions
             services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
         }
 
+        services.TryAddScoped<IKeycloakAccessTokenProvider, HttpContextAccessTokenProvider>();
+
         var builder = services.AddAuthorizationServerClient(configureClient);
 
         if (!KeycloakAuthorizationServerOptions.DisableHeaderPropagation)

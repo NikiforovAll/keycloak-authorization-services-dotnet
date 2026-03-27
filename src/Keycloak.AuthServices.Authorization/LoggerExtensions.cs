@@ -125,4 +125,15 @@ internal static partial class LoggerExtensions
         string resource,
         string resourceValue
     );
+
+    [LoggerMessage(
+        113,
+        LogLevel.Debug,
+        "Verifying access to resource '{Resource}' with scope '{Scope}' using explicit token override"
+    )]
+    public static partial void LogVerifyingAccessWithTokenOverride(
+        this ILogger logger,
+        string resource,
+        string scope
+    );
 }

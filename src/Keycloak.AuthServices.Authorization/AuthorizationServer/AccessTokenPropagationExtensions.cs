@@ -1,6 +1,5 @@
 ﻿namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -19,11 +18,11 @@ public static class AccessTokenPropagationExtensions
         builder.AddHttpMessageHandler(
             (sp) =>
             {
-                var contextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+                var tokenProvider = sp.GetRequiredService<IKeycloakAccessTokenProvider>();
                 var options = sp.GetRequiredService<IOptions<KeycloakAuthorizationServerOptions>>();
                 var logger = sp.GetRequiredService<ILogger<AccessTokenPropagationHandler>>();
 
-                return new AccessTokenPropagationHandler(contextAccessor, options, logger);
+                return new AccessTokenPropagationHandler(tokenProvider, options, logger);
             }
         );
 }
