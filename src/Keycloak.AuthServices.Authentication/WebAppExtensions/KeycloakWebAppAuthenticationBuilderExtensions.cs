@@ -78,9 +78,12 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
 
         return builder.AddKeycloakWebAppWithConfiguration(
-            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
-            configureCookieAuthenticationOptions: (options, _) => configureCookieAuthenticationOptions?.Invoke(options),
-            configureOpenIdConnectOptions: (options, _) => configureOpenIdConnectOptions?.Invoke(options),
+            configureKeycloakOptions: (options, _) =>
+                configurationSection.BindKeycloakOptions(options),
+            configureCookieAuthenticationOptions: (options, _) =>
+                configureCookieAuthenticationOptions?.Invoke(options),
+            configureOpenIdConnectOptions: (options, _) =>
+                configureOpenIdConnectOptions?.Invoke(options),
             openIdConnectScheme: openIdConnectScheme,
             cookieScheme: cookieScheme,
             displayName: displayName,
@@ -103,7 +106,10 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(
         this AuthenticationBuilder builder,
         IConfigurationSection configurationSection,
-        Action<CookieAuthenticationOptions, IServiceProvider>? configureCookieAuthenticationOptions = null,
+        Action<
+            CookieAuthenticationOptions,
+            IServiceProvider
+        >? configureCookieAuthenticationOptions = null,
         Action<OpenIdConnectOptions, IServiceProvider>? configureOpenIdConnectOptions = null,
         string openIdConnectScheme = OpenIdConnectDefaults.AuthenticationScheme,
         string? cookieScheme = CookieAuthenticationDefaults.AuthenticationScheme,
@@ -114,7 +120,8 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
         ArgumentNullException.ThrowIfNull(configurationSection);
 
         return builder.AddKeycloakWebAppWithConfiguration(
-            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: (options, _) =>
+                configurationSection.BindKeycloakOptions(options),
             configureCookieAuthenticationOptions: configureCookieAuthenticationOptions,
             configureOpenIdConnectOptions: configureOpenIdConnectOptions,
             openIdConnectScheme: openIdConnectScheme,
@@ -171,7 +178,10 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
     public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebApp(
         this AuthenticationBuilder builder,
         Action<KeycloakAuthenticationOptions, IServiceProvider> configureKeycloakOptions,
-        Action<CookieAuthenticationOptions, IServiceProvider>? configureCookieAuthenticationOptions = null,
+        Action<
+            CookieAuthenticationOptions,
+            IServiceProvider
+        >? configureCookieAuthenticationOptions = null,
         Action<OpenIdConnectOptions, IServiceProvider>? configureOpenIdConnectOptions = null,
         string openIdConnectScheme = OpenIdConnectDefaults.AuthenticationScheme,
         string? cookieScheme = CookieAuthenticationDefaults.AuthenticationScheme,
@@ -287,15 +297,23 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
 
         configureCookieAuthenticationOptions ??= (_, _) => { };
 
-        builder.Services.AddSingleton<IConfigureOptions<CookieAuthenticationOptions>>(serviceProvider =>
-            new ConfigureNamedOptions<CookieAuthenticationOptions>(openIdConnectScheme, options => configureCookieAuthenticationOptions(options, serviceProvider)));
+        builder.Services.AddSingleton<IConfigureOptions<CookieAuthenticationOptions>>(
+            serviceProvider => new ConfigureNamedOptions<CookieAuthenticationOptions>(
+                openIdConnectScheme,
+                options => configureCookieAuthenticationOptions(options, serviceProvider)
+            )
+        );
 
         if (!string.IsNullOrEmpty(cookieScheme))
         {
             builder.AddCookie(cookieScheme);
 
-            builder.Services.AddSingleton<IConfigureOptions<CookieAuthenticationOptions>>(serviceProvider =>
-                new ConfigureNamedOptions<CookieAuthenticationOptions>(cookieScheme, options => configureCookieAuthenticationOptions(options, serviceProvider)));
+            builder.Services.AddSingleton<IConfigureOptions<CookieAuthenticationOptions>>(
+                serviceProvider => new ConfigureNamedOptions<CookieAuthenticationOptions>(
+                    cookieScheme,
+                    options => configureCookieAuthenticationOptions(options, serviceProvider)
+                )
+            );
         }
 
         if (!string.IsNullOrEmpty(displayName))
@@ -317,6 +335,12 @@ public static class KeycloakWebAppAuthenticationBuilderExtensions
                     if (!string.IsNullOrWhiteSpace(keycloakOptions.KeycloakUrlRealm))
                     {
                         options.Authority = keycloakOptions.KeycloakUrlRealm;
+
+                        if (!string.IsNullOrWhiteSpace(keycloakOptions.MetadataAddress))
+                        {
+                            options.MetadataAddress =
+                                $"{keycloakOptions.KeycloakUrlRealm}{keycloakOptions.MetadataAddress}";
+                        }
                     }
 
                     if (!string.IsNullOrEmpty(cookieScheme))

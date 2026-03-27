@@ -168,6 +168,28 @@ See [source code](https://github.com/NikiforovAll/keycloak-authorization-service
 > [!TIP]
 > See an example of how to use `AddKeycloakWebApp` in MVC application - [Web App MVC](/examples/web-app-mvc)
 
+## Server Metadata Discovery
+
+By default, the library uses OpenID Connect discovery (`/.well-known/openid-configuration`) to resolve server metadata from Keycloak. Since **Keycloak 26.4**, the OAuth 2.0 Authorization Server Metadata endpoint ([RFC 8414](https://datatracker.ietf.org/doc/html/rfc8414)) is also available at `/.well-known/oauth-authorization-server`.
+
+You can switch to RFC 8414 discovery by setting `MetadataAddress`:
+
+```csharp
+services.AddKeycloakWebApiAuthentication(configuration, options =>
+{
+    options.MetadataAddress = KeycloakConstants.OAuthAuthorizationServerMetadataPath;
+});
+```
+
+**When to use RFC 8414 discovery:**
+- Machine-to-machine flows (client credentials) with no OIDC/ID token involved
+- MCP (Model Context Protocol) authorization server support
+- OAuth 2.0-only clients that look for RFC 8414 metadata, not OIDC
+- Protocol correctness when the consumer is a pure OAuth 2.0 resource server
+
+> [!NOTE]
+> The default OIDC discovery works for the vast majority of use cases. Only switch to RFC 8414 when you have a specific reason to.
+
 ## Adapter File Configuration Provider
 
 Using *appsettings.json* is a recommended and it is an idiomatic approach for .NET, but if you want a standalone "adapter" (installation) file - *keycloak.json*. You can use `ConfigureKeycloakConfigurationSource`. It adds dedicated configuration source.
