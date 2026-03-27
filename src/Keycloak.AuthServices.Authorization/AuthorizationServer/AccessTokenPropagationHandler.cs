@@ -1,8 +1,6 @@
-﻿namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
+namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
 using System.Net.Http.Headers;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -11,23 +9,23 @@ using Microsoft.Extensions.Options;
 /// </summary>
 public class AccessTokenPropagationHandler : DelegatingHandler
 {
-    private readonly IHttpContextAccessor contextAccessor;
+    private readonly IKeycloakAccessTokenProvider tokenProvider;
     private readonly ILogger<AccessTokenPropagationHandler> logger;
     private readonly KeycloakAuthorizationServerOptions options;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AccessTokenPropagationHandler"/> class.
     /// </summary>
-    /// <param name="contextAccessor">The HTTP context accessor.</param>
+    /// <param name="tokenProvider">The access token provider.</param>
     /// <param name="options">The Keycloak client options.</param>
     /// <param name="logger"></param>
     public AccessTokenPropagationHandler(
-        IHttpContextAccessor contextAccessor,
+        IKeycloakAccessTokenProvider tokenProvider,
         IOptions<KeycloakAuthorizationServerOptions> options,
         ILogger<AccessTokenPropagationHandler> logger
     )
     {
-        this.contextAccessor = contextAccessor;
+        this.tokenProvider = tokenProvider;
         this.logger = logger;
         ArgumentNullException.ThrowIfNull(options);
         this.options = options.Value;
@@ -41,19 +39,12 @@ public class AccessTokenPropagationHandler : DelegatingHandler
     {
         ArgumentNullException.ThrowIfNull(request);
 
-        if (this.contextAccessor.HttpContext == null)
+        if (request.Headers.Authorization is not null)
         {
-            this.logger.LogHttpContextIsNull();
-
             return await Continue();
         }
 
-        var httpContext = this.contextAccessor.HttpContext;
-
-        var token = await httpContext.GetTokenAsync(
-            this.options.SourceAuthenticationScheme,
-            this.options.SourceTokenName
-        );
+        var token = await this.tokenProvider.GetAccessTokenAsync(cancellationToken);
 
         if (!string.IsNullOrEmpty(token))
         {
@@ -61,10 +52,6 @@ public class AccessTokenPropagationHandler : DelegatingHandler
                 this.options.SourceAuthenticationScheme,
                 token
             );
-        }
-        else
-        {
-            this.logger.LogTokenIsEmpty();
         }
 
         return await Continue();

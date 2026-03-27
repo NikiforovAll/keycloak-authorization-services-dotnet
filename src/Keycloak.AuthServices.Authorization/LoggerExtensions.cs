@@ -127,6 +127,17 @@ internal static partial class LoggerExtensions
     );
 
     [LoggerMessage(
+        113,
+        LogLevel.Debug,
+        "Verifying access to resource '{Resource}' with scope '{Scope}' using explicit token override"
+    )]
+    public static partial void LogVerifyingAccessWithTokenOverride(
+        this ILogger logger,
+        string resource,
+        string scope
+    );
+
+    [LoggerMessage(
         118,
         LogLevel.Warning,
         "EnableRolesMapping is configured but '{ClaimType}' claim is missing from the token. "
