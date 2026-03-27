@@ -1,6 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -14,8 +15,15 @@ public static class AccessTokenPropagationExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <returns></returns>
-    public static IHttpClientBuilder AddHeaderPropagation(this IHttpClientBuilder builder) =>
-        builder.AddHttpMessageHandler(
+    public static IHttpClientBuilder AddHeaderPropagation(this IHttpClientBuilder builder)
+    {
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.TryAddScoped<
+            IKeycloakAccessTokenProvider,
+            HttpContextAccessTokenProvider
+        >();
+
+        return builder.AddHttpMessageHandler(
             (sp) =>
             {
                 var tokenProvider = sp.GetRequiredService<IKeycloakAccessTokenProvider>();
@@ -25,4 +33,5 @@ public static class AccessTokenPropagationExtensions
                 return new AccessTokenPropagationHandler(tokenProvider, options, logger);
             }
         );
+    }
 }

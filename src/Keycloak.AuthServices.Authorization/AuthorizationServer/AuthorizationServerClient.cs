@@ -64,7 +64,7 @@ public class AuthorizationServerClient : IAuthorizationServerClient
     {
         ArgumentNullException.ThrowIfNull(resource);
         ArgumentNullException.ThrowIfNull(scope);
-        ArgumentNullException.ThrowIfNull(accessToken);
+        ArgumentException.ThrowIfNullOrWhiteSpace(accessToken);
 
         this.logger.LogVerifyingAccessWithTokenOverride(resource, scope);
 
@@ -104,7 +104,7 @@ public class AuthorizationServerClient : IAuthorizationServerClient
                 );
             }
 
-            var response = await this.httpClient.SendAsync(request, cancellationToken);
+            using var response = await this.httpClient.SendAsync(request, cancellationToken);
 
             return await this.HandleResponse(
                 response,

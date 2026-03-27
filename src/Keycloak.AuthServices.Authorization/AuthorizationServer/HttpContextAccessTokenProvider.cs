@@ -27,7 +27,9 @@ public class HttpContextAccessTokenProvider : IKeycloakAccessTokenProvider
         ILogger<HttpContextAccessTokenProvider> logger
     )
     {
+        ArgumentNullException.ThrowIfNull(contextAccessor);
         ArgumentNullException.ThrowIfNull(options);
+        ArgumentNullException.ThrowIfNull(logger);
         this.contextAccessor = contextAccessor;
         this.options = options.Value;
         this.logger = logger;

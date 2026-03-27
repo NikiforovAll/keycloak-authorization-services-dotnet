@@ -130,7 +130,22 @@ public class AuthorizationServerClientTests
 
         var act = () => client.VerifyAccessToResource("workspace", "read", (string)null!);
 
-        await act.Should().ThrowAsync<ArgumentNullException>();
+        await act.Should().ThrowAsync<ArgumentException>();
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async Task VerifyAccessToResource_WithExplicitToken_EmptyOrWhitespace_Throws(
+        string token
+    )
+    {
+        var mockHttp = new MockHttpMessageHandler();
+        var client = CreateClient(mockHttp);
+
+        var act = () => client.VerifyAccessToResource("workspace", "read", token);
+
+        await act.Should().ThrowAsync<ArgumentException>();
     }
 
     private static AuthorizationServerClient CreateClient(
