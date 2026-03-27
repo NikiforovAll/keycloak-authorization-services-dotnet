@@ -125,7 +125,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptions,
-            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: (options, _) =>
+                configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }
@@ -145,18 +146,25 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
-        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback =
-            (options, _) => configureJwtBearerOptions?.Invoke(options);
+        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback = (
+            options,
+            _
+        ) => configureJwtBearerOptions?.Invoke(options);
 
         ArgumentNullException.ThrowIfNull(builder);
 
-        AddKeycloakWebApiImplementation(builder, configureJwtBearerOptionsCallback, jwtBearerScheme);
+        AddKeycloakWebApiImplementation(
+            builder,
+            configureJwtBearerOptionsCallback,
+            jwtBearerScheme
+        );
 
         return new KeycloakWebApiAuthenticationBuilder(
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptionsCallback,
-            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: (options, _) =>
+                configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }
@@ -185,7 +193,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
             services: builder.Services,
             jwtBearerAuthenticationScheme: jwtBearerScheme,
             configureJwtBearerOptions: configureJwtBearerOptions,
-            configureKeycloakOptions: (options, _) => configurationSection.BindKeycloakOptions(options),
+            configureKeycloakOptions: (options, _) =>
+                configurationSection.BindKeycloakOptions(options),
             configurationSection: configurationSection
         );
     }
@@ -205,13 +214,19 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
         string jwtBearerScheme = JwtBearerDefaults.AuthenticationScheme
     )
     {
-        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback =
-            (options, _) => configureJwtBearerOptions?.Invoke(options);
+        Action<JwtBearerOptions, IServiceProvider> configureJwtBearerOptionsCallback = (
+            options,
+            _
+        ) => configureJwtBearerOptions?.Invoke(options);
 
         ArgumentNullException.ThrowIfNull(builder);
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
-        AddKeycloakWebApiImplementation(builder, configureJwtBearerOptionsCallback, jwtBearerScheme);
+        AddKeycloakWebApiImplementation(
+            builder,
+            configureJwtBearerOptionsCallback,
+            jwtBearerScheme
+        );
 
         return new KeycloakWebApiAuthenticationBuilder(
             services: builder.Services,
@@ -270,6 +285,12 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                     if (!string.IsNullOrWhiteSpace(keycloakOptions.KeycloakUrlRealm))
                     {
                         options.Authority = keycloakOptions.KeycloakUrlRealm;
+
+                        if (!string.IsNullOrWhiteSpace(keycloakOptions.MetadataAddress))
+                        {
+                            options.MetadataAddress =
+                                $"{keycloakOptions.KeycloakUrlRealm}{keycloakOptions.MetadataAddress}";
+                        }
                     }
 
                     var sslRequired =

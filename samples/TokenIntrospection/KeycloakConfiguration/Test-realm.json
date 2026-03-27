@@ -1,0 +1,57 @@
+{
+  "realm": "Test",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "roles": {
+    "realm": [
+      {
+        "name": "Admin",
+        "description": "Administrator role"
+      },
+      {
+        "name": "Reader",
+        "description": "Reader role"
+      },
+      {
+        "name": "default-roles-test",
+        "description": "${role_default-roles}",
+        "composite": true,
+        "composites": {
+          "realm": ["offline_access", "uma_authorization"]
+        }
+      },
+      {
+        "name": "offline_access",
+        "description": "${role_offline-access}"
+      },
+      {
+        "name": "uma_authorization",
+        "description": "${role_uma_authorization}"
+      }
+    ],
+    "client": {
+      "test-client": [
+        {
+          "name": "TestClientRole",
+          "description": "Test client role"
+        }
+      ]
+    }
+  },
+  "clients": [
+    {
+      "clientId": "test-client",
+      "name": "Test Client",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "RjTaASm7XpaKiJjB4JLJnJIwWU2XPCZE",
+      "directAccessGrantsEnabled": true,
+      "standardFlowEnabled": true,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": false,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"]
+    }
+  ]
+}

@@ -136,4 +136,16 @@ internal static partial class LoggerExtensions
         string resource,
         string scope
     );
+
+    [LoggerMessage(
+        118,
+        LogLevel.Warning,
+        "EnableRolesMapping is configured but '{ClaimType}' claim is missing from the token. "
+            + "Consider enabling token introspection for lightweight access tokens. "
+            + "See: https://nikiforovall.github.io/keycloak-authorization-services-dotnet/configuration/configuration-authorization.html#token-introspection"
+    )]
+    public static partial void LogRolesMappingMissingClaimsNoIntrospection(
+        this ILogger logger,
+        string claimType
+    );
 }

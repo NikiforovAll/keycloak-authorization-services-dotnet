@@ -16,6 +16,13 @@ public static class KeycloakConstants
     public const string OpenIdConnectConfigurationPath = ".well-known/openid-configuration";
 
     /// <summary>
+    /// OAuth 2.0 Authorization Server Metadata endpoint (RFC 8414).
+    /// Available in Keycloak 26.4+.
+    /// </summary>
+    public const string OAuthAuthorizationServerMetadataPath =
+        ".well-known/oauth-authorization-server";
+
+    /// <summary>
     /// Token Claim - Resource Access
     /// </summary>
     public const string ResourceAccessClaimType = "resource_access";
@@ -39,4 +46,9 @@ public static class KeycloakConstants
     /// Token Claim - Organization
     /// </summary>
     public const string OrganizationClaimType = "organization";
+
+    /// <summary>
+    /// Token introspection endpoint
+    /// </summary>
+    public const string TokenIntrospectionEndpointPath = "protocol/openid-connect/token/introspect";
 }

@@ -2,12 +2,14 @@
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Claims;
+using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Requirements;
 
@@ -111,17 +113,89 @@ public static class ServiceCollectionExtensions
 
         services.AddMetrics();
 
-        services.AddTransient<IClaimsTransformation>(sp =>
+        services.AddTransient<KeycloakRolesClaimsTransformation>(sp =>
         {
             var keycloakOptions = sp.GetRequiredService<
                 IOptionsMonitor<KeycloakAuthorizationOptions>
             >().CurrentValue;
 
+            var logger = sp.GetRequiredService<ILogger<KeycloakRolesClaimsTransformation>>();
+            var introspectionEnabled =
+                sp.GetService<IKeycloakTokenIntrospectionTransformation>() is not null;
+
             return new KeycloakRolesClaimsTransformation(
                 keycloakOptions.RoleClaimType,
                 keycloakOptions.EnableRolesMapping,
-                keycloakOptions.RolesResource ?? keycloakOptions.Resource
+                keycloakOptions.RolesResource ?? keycloakOptions.Resource,
+                logger,
+                introspectionEnabled
             );
+        });
+
+        // Preserve user-registered IClaimsTransformation so the composite can chain them
+        var userDescriptors = services
+            .Where(d =>
+                d.ServiceType == typeof(IClaimsTransformation)
+                && d.ImplementationType != typeof(CompositeClaimsTransformation)
+            )
+            .ToList();
+
+        services.RemoveAll<IClaimsTransformation>();
+
+        foreach (var descriptor in userDescriptors)
+        {
+            if (descriptor.ImplementationType is not null)
+            {
+                services.Add(
+                    new ServiceDescriptor(
+                        descriptor.ImplementationType,
+                        descriptor.ImplementationType,
+                        descriptor.Lifetime
+                    )
+                );
+            }
+        }
+
+        services.AddTransient<IClaimsTransformation>(sp =>
+        {
+            var transformations = new List<IClaimsTransformation>();
+
+            var introspection = sp.GetService<IKeycloakTokenIntrospectionTransformation>();
+            if (introspection is not null)
+            {
+                transformations.Add(introspection);
+            }
+
+            transformations.Add(sp.GetRequiredService<KeycloakRolesClaimsTransformation>());
+
+            foreach (var descriptor in userDescriptors)
+            {
+                if (
+                    descriptor.ImplementationType is not null
+                    && sp.GetService(descriptor.ImplementationType)
+                        is IClaimsTransformation userTransformation
+                )
+                {
+                    transformations.Add(userTransformation);
+                }
+                else if (
+                    descriptor.ImplementationFactory is not null
+                    && descriptor.ImplementationFactory(sp)
+                        is IClaimsTransformation factoryTransformation
+                )
+                {
+                    transformations.Add(factoryTransformation);
+                }
+                else if (
+                    descriptor.ImplementationInstance
+                    is IClaimsTransformation instanceTransformation
+                )
+                {
+                    transformations.Add(instanceTransformation);
+                }
+            }
+
+            return new CompositeClaimsTransformation(transformations);
         });
 
         return services;

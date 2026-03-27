@@ -1,0 +1,23 @@
+@host = http://localhost:5098
+@token = {{$dotenv TOKEN}}
+
+## ─── Basic: Identity ───
+
+### Get current user info (expects: 200 with enriched claims from introspection)
+GET {{host}}/me
+Authorization: Bearer {{token}}
+
+### No token → 401 Unauthorized
+GET {{host}}/me
+
+## ─── Roles: Introspection-Dependent ───
+
+### Get roles (expects: roles resolved via introspection even though token is lightweight)
+GET {{host}}/roles
+Authorization: Bearer {{token}}
+
+## ─── Policy: Admin Role ───
+
+### Admin endpoint with admin user (expects: 200 — Admin role resolved via introspection)
+GET {{host}}/admin
+Authorization: Bearer {{token}}

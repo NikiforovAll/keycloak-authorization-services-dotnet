@@ -8,6 +8,7 @@ using Keycloak.AuthServices.IntegrationTests;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeycloak
@@ -15,14 +16,13 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
     private const string Endpoint1 = "/endpoints/1";
     private static readonly string AppSettings = "appsettings.json";
 
-    private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions =
-        new()
-        {
-            Authority = "http://localhost:8080/realms/Test/",
-            Audience = "test-client",
-            RequireHttpsMetadata = false,
-            TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
-        };
+    private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions = new()
+    {
+        Authority = "http://localhost:8080/realms/Test/",
+        Audience = "test-client",
+        RequireHttpsMetadata = false,
+        TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
+    };
 
     private static readonly string AppSettingsWithOverrides = "appsettings.with-overrides.json";
 
@@ -120,8 +120,8 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
                 RequireHttpsMetadata = false,
                 TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateAudience = true
-                }
+                    ValidateAudience = true,
+                },
             }
         );
 
@@ -257,5 +257,53 @@ public class AddKeycloakWebApiAuthenticationTests : AuthenticationScenarioNoKeyc
             configuration.GetSection(KeycloakAuthenticationOptions.Section)
         );
         // #endregion AddKeycloakWebApiAuthentication_FromConfigurationSection
+    }
+
+    [Fact]
+    public async Task AddKeycloakWebApiAuthentication_DefaultMetadataAddress_UsesOidcDiscovery()
+    {
+        await using var host = await AlbaHost.For<Program>(x =>
+        {
+            x.WithConfiguration(AppSettings);
+            x.ConfigureServices(
+                (context, services) =>
+                    services.AddKeycloakWebApiAuthentication(context.Configuration)
+            );
+        });
+
+        var bearerOptions = host
+            .Services.GetRequiredService<IOptionsMonitor<JwtBearerOptions>>()
+            .Get(JwtBearerDefaults.AuthenticationScheme);
+
+        bearerOptions
+            .MetadataAddress.Should()
+            .Be("http://localhost:8080/realms/Test/.well-known/openid-configuration");
+    }
+
+    [Fact]
+    public async Task AddKeycloakWebApiAuthentication_WithOAuthMetadataPath_SetsMetadataAddress()
+    {
+        await using var host = await AlbaHost.For<Program>(x =>
+        {
+            x.WithConfiguration(AppSettings);
+            x.ConfigureServices(
+                (context, services) =>
+                    services.AddKeycloakWebApiAuthentication(options =>
+                    {
+                        context.Configuration.BindKeycloakOptions(options);
+                        options.MetadataAddress =
+                            KeycloakConstants.OAuthAuthorizationServerMetadataPath;
+                    })
+            );
+        });
+
+        var bearerOptions = host
+            .Services.GetRequiredService<IOptionsMonitor<JwtBearerOptions>>()
+            .Get(JwtBearerDefaults.AuthenticationScheme);
+
+        bearerOptions
+            .MetadataAddress.Should()
+            .Be("http://localhost:8080/realms/Test/.well-known/oauth-authorization-server");
+        bearerOptions.Authority.Should().Be("http://localhost:8080/realms/Test/");
     }
 }

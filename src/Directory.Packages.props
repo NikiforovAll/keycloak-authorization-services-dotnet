@@ -14,6 +14,7 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.5" />
     <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.22.1" />
     <PackageVersion Include="OpenTelemetry" Version="1.15.0" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.4.0" />
     <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.5" />
   </ItemGroup>
   <ItemGroup Label="Release">
