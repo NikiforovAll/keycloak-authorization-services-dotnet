@@ -44,10 +44,15 @@ public class HttpContextAccessTokenProvider : IKeycloakAccessTokenProvider
             return null;
         }
 
-        var token = await this.contextAccessor.HttpContext.GetTokenAsync(
-            this.options.SourceAuthenticationScheme,
-            this.options.SourceTokenName
-        );
+        var retrievalScheme = this.options.SourceTokenRetrievalScheme
+            ?? this.options.SourceAuthenticationScheme;
+
+        var token = string.IsNullOrEmpty(retrievalScheme)
+            ? await this.contextAccessor.HttpContext.GetTokenAsync(this.options.SourceTokenName)
+            : await this.contextAccessor.HttpContext.GetTokenAsync(
+                retrievalScheme,
+                this.options.SourceTokenName
+            );
 
         if (string.IsNullOrEmpty(token))
         {
