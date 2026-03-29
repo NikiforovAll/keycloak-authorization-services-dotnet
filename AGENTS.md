@@ -66,3 +66,12 @@ dotnet cake
 - 4 spaces indentation, file-scoped namespaces
 - Expression-bodied members preferred
 - XML documentation on public APIs
+
+## KeyBot (Agentic Workflow)
+
+- KeyBot is an automated repository assistant running as a GitHub Agentic Workflow
+- PRs from KeyBot have `[KeyBot]` title prefix and `automation`/`keybot` labels
+- KeyBot uses persistent repo memory on `memory/keybot` branch
+- To trigger on-demand: comment `/keybot <instructions>` on any issue or PR
+- Workflow spec: `.github/workflows/keybot.md`
+- Domain knowledge: `.github/agents/keycloak-expert.md` + `skills/` directory
