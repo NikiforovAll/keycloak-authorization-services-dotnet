@@ -105,7 +105,7 @@ public partial class ResourceAccessRequirementHandler
             && resourcesAccess.TryGetValue(clientId, out var resourceAccess)
         )
         {
-            success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
+            success = requirement.Roles.Any(resourceAccess.Roles.Contains);
         }
 
         this.logger.LogAuthorizationResult(requirement.ToString()!, success, userName);
