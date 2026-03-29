@@ -74,4 +74,4 @@ dotnet cake
 - KeyBot uses persistent repo memory on `memory/keybot` branch
 - To trigger on-demand: comment `/keybot <instructions>` on any issue or PR
 - Workflow spec: `.github/workflows/keybot.md`
-- Domain knowledge: `.github/agents/keycloak-expert.md` + `skills/` directory
+- Domain knowledge: `.github/agents/keycloak-expert.agent.md` + `skills/` directory

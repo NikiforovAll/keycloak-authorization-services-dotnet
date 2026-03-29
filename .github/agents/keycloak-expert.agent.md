@@ -51,26 +51,6 @@ Key properties: `realm`, `auth-server-url`, `resource` (client ID), `verify-toke
 - **Resource/Scope/Policy/Permission**: Fine-grained authorization model (Authorization Server)
 - **PEP**: Your app (enforces decisions) — **PDP**: Keycloak (evaluates policies)
 
-## Common Issues
-
-**401 Unauthorized**: Missing audience mapper (Client Scopes → `{client-id}-dedicated` → Add "Audience" mapper), or set `verify-token-audience: false`. Check `Authorization: Bearer <token>` header. Debug: `"Keycloak.AuthServices": "Debug"` in logging config.
-
-**403 Forbidden**: For RBAC — verify roles in token claims and `EnableRolesMapping` config (`"All"` / `"Realm"` / `"ResourceAccess"`). For Authorization Server — enable Authorization tab on Keycloak client, define resources/scopes/policies.
-
-**Token Validation**: Check issuer match (`{auth-server-url}/realms/{realm}`), JWKS endpoint, clock skew, token expiration.
-
-**Role Mapping**: Enable `"EnableRolesMapping": "All"` to combine realm + resource roles. Roles must be assigned to user directly or via groups.
-
-## Organization Authorization (Multi-Tenancy, KC 26+)
-
-```csharp
-.RequireOrganizationMembership("{orgId}")  // Route-based
-user.GetOrganizations()                     // Imperative
-user.IsMemberOf("acme-corp")               // Check membership
-```
-
-Auto-detects vanilla string array or rich JSON token claim formats.
-
 ## Deep Reference
 
 For detailed documentation, read files in `skills/keycloak-administration/references/` and `skills/keycloak-auth-services/references/`. Use the `keycloak-docs` tool to look up specific topics.

@@ -223,7 +223,7 @@ Always be:
 
 ## Domain Expertise
 
-**Before starting any work, read `.github/agents/keycloak-expert.md`** for condensed Keycloak domain knowledge covering packages, configuration patterns, setup methods, and common issues.
+**Before starting any work, read `.github/agents/keycloak-expert.agent.md`** for condensed Keycloak domain knowledge covering packages, configuration patterns, setup methods, and common issues.
 
 You have deep knowledge of Keycloak and the Keycloak.AuthServices .NET library ecosystem. Use this expertise when:
 - Triaging issues: understand whether a problem is a Keycloak configuration issue, a library bug, or a user misunderstanding
