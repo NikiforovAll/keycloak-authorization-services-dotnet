@@ -34,7 +34,7 @@
 #
 # Source: githubnext/agentics/workflows/repo-assist.md@1f672aef974f4246124860fc532f82fe8a93a57e
 #
-# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"4dcd7afa13b5857765253c885742444ec4116296cd9b26fd28396e48b2de2dd0","compiler_version":"v0.64.2","strict":true,"agent_id":"copilot"}
+# gh-aw-metadata: {"schema_version":"v3","frontmatter_hash":"b5d04aa2a3ec2d4422a520fd15b4372fd21cce12c82ab7545950dc25808c6e2b","compiler_version":"v0.64.2","strict":true,"agent_id":"copilot"}
 
 name: "KeyBot"
 "on":
@@ -211,21 +211,21 @@ jobs:
         run: |
           bash ${RUNNER_TEMP}/gh-aw/actions/create_prompt_first.sh
           {
-          cat << 'GH_AW_PROMPT_46b0b438f794e8b8_EOF'
+          cat << 'GH_AW_PROMPT_4af3c4327c7fbaa2_EOF'
           <system>
-          GH_AW_PROMPT_46b0b438f794e8b8_EOF
+          GH_AW_PROMPT_4af3c4327c7fbaa2_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/xpia.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/temp_folder_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/markdown.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/repo_memory_prompt.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_prompt.md"
-          cat << 'GH_AW_PROMPT_46b0b438f794e8b8_EOF'
+          cat << 'GH_AW_PROMPT_4af3c4327c7fbaa2_EOF'
           <safe-output-tools>
           Tools: add_comment(max:10), create_issue(max:4), update_issue, create_pull_request(max:4), add_labels(max:30), remove_labels(max:5), push_to_pull_request_branch(max:4), missing_tool, missing_data, noop
-          GH_AW_PROMPT_46b0b438f794e8b8_EOF
+          GH_AW_PROMPT_4af3c4327c7fbaa2_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_create_pull_request.md"
           cat "${RUNNER_TEMP}/gh-aw/prompts/safe_outputs_push_to_pr_branch.md"
-          cat << 'GH_AW_PROMPT_46b0b438f794e8b8_EOF'
+          cat << 'GH_AW_PROMPT_4af3c4327c7fbaa2_EOF'
           </safe-output-tools>
           <github-context>
           The following GitHub context information is available for this workflow:
@@ -258,17 +258,17 @@ jobs:
             - **Note**: If a branch you need is not in the list above and is not listed as an additional fetched ref, it has NOT been checked out. For private repositories you cannot fetch it without proper authentication. If the branch is required and not available, exit with an error and ask the user to add it to the `fetch:` option of the `checkout:` configuration (e.g., `fetch: ["refs/pulls/open/*"]` for all open PR refs, or `fetch: ["main", "feature/my-branch"]` for specific branches).
           </github-context>
           
-          GH_AW_PROMPT_46b0b438f794e8b8_EOF
+          GH_AW_PROMPT_4af3c4327c7fbaa2_EOF
           cat "${RUNNER_TEMP}/gh-aw/prompts/github_mcp_tools_with_safeoutputs_prompt.md"
           if [ "$GITHUB_EVENT_NAME" = "issue_comment" ] && [ -n "$GH_AW_IS_PR_COMMENT" ] || [ "$GITHUB_EVENT_NAME" = "pull_request_review_comment" ] || [ "$GITHUB_EVENT_NAME" = "pull_request_review" ]; then
             cat "${RUNNER_TEMP}/gh-aw/prompts/pr_context_prompt.md"
           fi
-          cat << 'GH_AW_PROMPT_46b0b438f794e8b8_EOF'
+          cat << 'GH_AW_PROMPT_4af3c4327c7fbaa2_EOF'
           </system>
-          GH_AW_PROMPT_46b0b438f794e8b8_EOF
-          cat << 'GH_AW_PROMPT_46b0b438f794e8b8_EOF'
+          GH_AW_PROMPT_4af3c4327c7fbaa2_EOF
+          cat << 'GH_AW_PROMPT_4af3c4327c7fbaa2_EOF'
           {{#runtime-import .github/workflows/keybot.md}}
-          GH_AW_PROMPT_46b0b438f794e8b8_EOF
+          GH_AW_PROMPT_4af3c4327c7fbaa2_EOF
           } > "$GH_AW_PROMPT"
       - name: Interpolate variables and render templates
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
@@ -411,9 +411,10 @@ jobs:
         run: |
           bash ${RUNNER_TEMP}/gh-aw/actions/start_difc_proxy.sh '{"allow-only":{"min-integrity":"none","repos":"all"}}' 'ghcr.io/github/gh-aw-mcpg:v0.2.6'
       - env:
+          GH_REPO: ${{ github.repository }}
           GH_TOKEN: ${{ github.token }}
         name: Fetch repo data for task weighting
-        run: "mkdir -p /tmp/gh-aw\n\n# Fetch open issues with labels (up to 500)\ngh issue list --state open --limit 500 --json number,labels > /tmp/gh-aw/issues.json\n\n# Fetch open PRs with titles (up to 200)\ngh pr list --state open --limit 200 --json number,title > /tmp/gh-aw/prs.json\n\n# Compute task weights and select two tasks for this run\npython3 - << 'EOF'\nimport json, random, os\n\nwith open('/tmp/gh-aw/issues.json') as f:\n    issues = json.load(f)\nwith open('/tmp/gh-aw/prs.json') as f:\n    prs = json.load(f)\n\nopen_issues     = len(issues)\nunlabelled      = sum(1 for i in issues if not i.get('labels'))\nkeybot_prs      = sum(1 for p in prs if p['title'].startswith('[KeyBot]'))\nother_prs       = sum(1 for p in prs if not p['title'].startswith('[KeyBot]'))\n\ntask_names = {\n    1:  'Issue Labelling',\n    2:  'Issue Investigation and Comment',\n    3:  'Issue Investigation and Fix',\n    4:  'Engineering Investments',\n    5:  'Coding Improvements',\n    6:  'Maintain KeyBot PRs',\n    7:  'Stale PR Nudges',\n    8:  'Performance Improvements',\n    9:  'Testing Improvements',\n    10: 'Take the Repository Forward',\n}\n\nweights = {\n    1:  1   + 3 * unlabelled,\n    2:  3   + 1 * open_issues,\n    3:  3   + 0.7 * open_issues,\n    4:  5   + 0.2 * open_issues,\n    5:  5   + 0.1 * open_issues,\n    6:  float(keybot_prs),\n    7:  0.1 * other_prs,\n    8:  3   + 0.05 * open_issues,\n    9:  3   + 0.05 * open_issues,\n    10: 3   + 0.05 * open_issues,\n}\n\nrun_id = int(os.environ.get('GITHUB_RUN_ID', '0'))\nrng = random.Random(run_id)\n\ntask_ids     = list(weights.keys())\ntask_weights = [weights[t] for t in task_ids]\n\nchosen, seen = [], set()\nfor t in rng.choices(task_ids, weights=task_weights, k=30):\n    if t not in seen:\n        seen.add(t)\n        chosen.append(t)\n    if len(chosen) == 2:\n        break\n\nprint('=== KeyBot Task Selection ===')\nprint(f'Open issues       : {open_issues}')\nprint(f'Unlabelled issues : {unlabelled}')\nprint(f'KeyBot PRs        : {keybot_prs}')\nprint(f'Other open PRs    : {other_prs}')\nprint()\nprint('Task weights:')\nfor t, w in weights.items():\n    tag = ' <-- SELECTED' if t in chosen else ''\n    print(f'  Task {t:2d} ({task_names[t]}): weight {w:6.1f}{tag}')\nprint()\nprint(f'Selected tasks for this run: Task {chosen[0]} ({task_names[chosen[0]]}) and Task {chosen[1]} ({task_names[chosen[1]]})')\n\nresult = {\n    'open_issues': open_issues, 'unlabelled_issues': unlabelled,\n    'keybot_prs': keybot_prs, 'other_prs': other_prs,\n    'task_names': task_names,\n    'weights': {str(k): round(v, 2) for k, v in weights.items()},\n    'selected_tasks': chosen,\n}\nwith open('/tmp/gh-aw/task_selection.json', 'w') as f:\n    json.dump(result, f, indent=2)\nEOF\n"
+        run: "mkdir -p /tmp/gh-aw\n\n# Fetch open issues with labels (up to 500)\ngh issue list --repo \"$GH_REPO\" --state open --limit 500 --json number,labels > /tmp/gh-aw/issues.json\n\n# Fetch open PRs with titles (up to 200)\ngh pr list --repo \"$GH_REPO\" --state open --limit 200 --json number,title > /tmp/gh-aw/prs.json\n\n# Compute task weights and select two tasks for this run\npython3 - << 'EOF'\nimport json, random, os\n\nwith open('/tmp/gh-aw/issues.json') as f:\n    issues = json.load(f)\nwith open('/tmp/gh-aw/prs.json') as f:\n    prs = json.load(f)\n\nopen_issues     = len(issues)\nunlabelled      = sum(1 for i in issues if not i.get('labels'))\nkeybot_prs      = sum(1 for p in prs if p['title'].startswith('[KeyBot]'))\nother_prs       = sum(1 for p in prs if not p['title'].startswith('[KeyBot]'))\n\ntask_names = {\n    1:  'Issue Labelling',\n    2:  'Issue Investigation and Comment',\n    3:  'Issue Investigation and Fix',\n    4:  'Engineering Investments',\n    5:  'Coding Improvements',\n    6:  'Maintain KeyBot PRs',\n    7:  'Stale PR Nudges',\n    8:  'Performance Improvements',\n    9:  'Testing Improvements',\n    10: 'Take the Repository Forward',\n}\n\nweights = {\n    1:  1   + 3 * unlabelled,\n    2:  3   + 1 * open_issues,\n    3:  3   + 0.7 * open_issues,\n    4:  5   + 0.2 * open_issues,\n    5:  5   + 0.1 * open_issues,\n    6:  float(keybot_prs),\n    7:  0.1 * other_prs,\n    8:  3   + 0.05 * open_issues,\n    9:  3   + 0.05 * open_issues,\n    10: 3   + 0.05 * open_issues,\n}\n\nrun_id = int(os.environ.get('GITHUB_RUN_ID', '0'))\nrng = random.Random(run_id)\n\ntask_ids     = list(weights.keys())\ntask_weights = [weights[t] for t in task_ids]\n\nchosen, seen = [], set()\nfor t in rng.choices(task_ids, weights=task_weights, k=30):\n    if t not in seen:\n        seen.add(t)\n        chosen.append(t)\n    if len(chosen) == 2:\n        break\n\nprint('=== KeyBot Task Selection ===')\nprint(f'Open issues       : {open_issues}')\nprint(f'Unlabelled issues : {unlabelled}')\nprint(f'KeyBot PRs        : {keybot_prs}')\nprint(f'Other open PRs    : {other_prs}')\nprint()\nprint('Task weights:')\nfor t, w in weights.items():\n    tag = ' <-- SELECTED' if t in chosen else ''\n    print(f'  Task {t:2d} ({task_names[t]}): weight {w:6.1f}{tag}')\nprint()\nprint(f'Selected tasks for this run: Task {chosen[0]} ({task_names[chosen[0]]}) and Task {chosen[1]} ({task_names[chosen[1]]})')\n\nresult = {\n    'open_issues': open_issues, 'unlabelled_issues': unlabelled,\n    'keybot_prs': keybot_prs, 'other_prs': other_prs,\n    'task_names': task_names,\n    'weights': {str(k): round(v, 2) for k, v in weights.items()},\n    'selected_tasks': chosen,\n}\nwith open('/tmp/gh-aw/task_selection.json', 'w') as f:\n    json.dump(result, f, indent=2)\nEOF\n"
 
       # Repo memory git-based storage configuration from frontmatter processed below
       - name: Clone repo-memory branch (default)
@@ -474,12 +475,12 @@ jobs:
           mkdir -p ${RUNNER_TEMP}/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/safeoutputs
           mkdir -p /tmp/gh-aw/mcp-logs/safeoutputs
-          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_c33f0e3c31cc709f_EOF'
+          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/config.json << 'GH_AW_SAFE_OUTPUTS_CONFIG_cf0640cb654da210_EOF'
           {"add_comment":{"hide_older_comments":true,"max":10,"target":"*"},"add_labels":{"allowed":["bug","enhancement","help wanted","good first issue","documentation","question","duplicate","wontfix","needs triage","needs investigation","performance","security","maintenance","waiting for feedback"],"max":30,"target":"*"},"create_issue":{"labels":["automation","keybot"],"max":4,"title_prefix":"[KeyBot] "},"create_pull_request":{"draft":true,"labels":["automation","keybot"],"max":4,"max_patch_size":1024,"protected_files":["package.json","bun.lockb","bunfig.toml","deno.json","deno.jsonc","deno.lock","global.json","NuGet.Config","Directory.Packages.props","mix.exs","mix.lock","go.mod","go.sum","stack.yaml","stack.yaml.lock","pom.xml","build.gradle","build.gradle.kts","settings.gradle","settings.gradle.kts","gradle.properties","package-lock.json","yarn.lock","pnpm-lock.yaml","npm-shrinkwrap.json","requirements.txt","Pipfile","Pipfile.lock","pyproject.toml","setup.py","setup.cfg","Gemfile","Gemfile.lock","uv.lock","CODEOWNERS"],"protected_files_policy":"fallback-to-issue","protected_path_prefixes":[".github/",".agents/"],"title_prefix":"[KeyBot] "},"missing_data":{},"missing_tool":{},"noop":{"max":1,"report-as-issue":"true"},"push_repo_memory":{"memories":[{"dir":"/tmp/gh-aw/repo-memory/default","id":"default","max_file_count":100,"max_file_size":10240,"max_patch_size":10240}]},"push_to_pull_request_branch":{"if_no_changes":"warn","max":4,"max_patch_size":1024,"protected_files":["package.json","bun.lockb","bunfig.toml","deno.json","deno.jsonc","deno.lock","global.json","NuGet.Config","Directory.Packages.props","mix.exs","mix.lock","go.mod","go.sum","stack.yaml","stack.yaml.lock","pom.xml","build.gradle","build.gradle.kts","settings.gradle","settings.gradle.kts","gradle.properties","package-lock.json","yarn.lock","pnpm-lock.yaml","npm-shrinkwrap.json","requirements.txt","Pipfile","Pipfile.lock","pyproject.toml","setup.py","setup.cfg","Gemfile","Gemfile.lock","uv.lock","CODEOWNERS"],"protected_path_prefixes":[".github/",".agents/"],"target":"*","title_prefix":"[KeyBot] "},"remove_labels":{"allowed":["bug","enhancement","help wanted","good first issue","documentation","question","duplicate","wontfix","needs triage","needs investigation","performance","security","maintenance","waiting for feedback"],"max":5,"target":"*"},"update_issue":{"allow_body":true,"max":1,"target":"*","title_prefix":"[KeyBot] "}}
-          GH_AW_SAFE_OUTPUTS_CONFIG_c33f0e3c31cc709f_EOF
+          GH_AW_SAFE_OUTPUTS_CONFIG_cf0640cb654da210_EOF
       - name: Write Safe Outputs Tools
         run: |
-          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/tools_meta.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_META_2a7c1267ed657962_EOF'
+          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/tools_meta.json << 'GH_AW_SAFE_OUTPUTS_TOOLS_META_61bab2736def8dc3_EOF'
           {
             "description_suffixes": {
               "add_comment": " CONSTRAINTS: Maximum 10 comment(s) can be added. Target: *.",
@@ -493,8 +494,8 @@ jobs:
             "repo_params": {},
             "dynamic_tools": []
           }
-          GH_AW_SAFE_OUTPUTS_TOOLS_META_2a7c1267ed657962_EOF
-          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/validation.json << 'GH_AW_SAFE_OUTPUTS_VALIDATION_0e273ee52f743541_EOF'
+          GH_AW_SAFE_OUTPUTS_TOOLS_META_61bab2736def8dc3_EOF
+          cat > ${RUNNER_TEMP}/gh-aw/safeoutputs/validation.json << 'GH_AW_SAFE_OUTPUTS_VALIDATION_b5a4227ba0360ab5_EOF'
           {
             "add_comment": {
               "defaultMax": 1,
@@ -753,7 +754,7 @@ jobs:
               "customValidation": "requiresOneOf:status,title,body"
             }
           }
-          GH_AW_SAFE_OUTPUTS_VALIDATION_0e273ee52f743541_EOF
+          GH_AW_SAFE_OUTPUTS_VALIDATION_b5a4227ba0360ab5_EOF
           node ${RUNNER_TEMP}/gh-aw/actions/generate_safe_outputs_tools.cjs
       - name: Generate Safe Outputs MCP Server Config
         id: safe-outputs-config
@@ -796,7 +797,7 @@ jobs:
       - name: Setup MCP Scripts Config
         run: |
           mkdir -p ${RUNNER_TEMP}/gh-aw/mcp-scripts/logs
-          cat > ${RUNNER_TEMP}/gh-aw/mcp-scripts/tools.json << 'GH_AW_MCP_SCRIPTS_TOOLS_b2bdadfb4f70a984_EOF'
+          cat > ${RUNNER_TEMP}/gh-aw/mcp-scripts/tools.json << 'GH_AW_MCP_SCRIPTS_TOOLS_42ae676363caf787_EOF'
           {
             "serverName": "mcpscripts",
             "version": "1.0.0",
@@ -819,8 +820,8 @@ jobs:
               }
             ]
           }
-          GH_AW_MCP_SCRIPTS_TOOLS_b2bdadfb4f70a984_EOF
-          cat > ${RUNNER_TEMP}/gh-aw/mcp-scripts/mcp-server.cjs << 'GH_AW_MCP_SCRIPTS_SERVER_c65d56dc4e024467_EOF'
+          GH_AW_MCP_SCRIPTS_TOOLS_42ae676363caf787_EOF
+          cat > ${RUNNER_TEMP}/gh-aw/mcp-scripts/mcp-server.cjs << 'GH_AW_MCP_SCRIPTS_SERVER_338ba14e4992415c_EOF'
             const path = require("path");
             const { startHttpServer } = require("./mcp_scripts_mcp_server_http.cjs");
             const configPath = path.join(__dirname, "tools.json");
@@ -834,12 +835,12 @@ jobs:
               console.error("Failed to start mcp-scripts HTTP server:", error);
               process.exit(1);
             });
-          GH_AW_MCP_SCRIPTS_SERVER_c65d56dc4e024467_EOF
+          GH_AW_MCP_SCRIPTS_SERVER_338ba14e4992415c_EOF
           chmod +x ${RUNNER_TEMP}/gh-aw/mcp-scripts/mcp-server.cjs
           
       - name: Setup MCP Scripts Tool Files
         run: |
-          cat > ${RUNNER_TEMP}/gh-aw/mcp-scripts/keycloak-docs.sh << 'GH_AW_MCP_SCRIPTS_SH_KEYCLOAK-DOCS_5d441e1047efa87b_EOF'
+          cat > ${RUNNER_TEMP}/gh-aw/mcp-scripts/keycloak-docs.sh << 'GH_AW_MCP_SCRIPTS_SH_KEYCLOAK-DOCS_d997f935f4cbb2b8_EOF'
           #!/bin/bash
           # Auto-generated mcp-script tool: keycloak-docs
           # Look up Keycloak and Keycloak.AuthServices documentation from the skills directory. Returns relevant reference content for a given topic.
@@ -862,7 +863,7 @@ jobs:
           fi
           
           
-          GH_AW_MCP_SCRIPTS_SH_KEYCLOAK-DOCS_5d441e1047efa87b_EOF
+          GH_AW_MCP_SCRIPTS_SH_KEYCLOAK-DOCS_d997f935f4cbb2b8_EOF
           chmod +x ${RUNNER_TEMP}/gh-aw/mcp-scripts/keycloak-docs.sh
           
       - name: Generate MCP Scripts Server Config
@@ -925,7 +926,7 @@ jobs:
           export MCP_GATEWAY_DOCKER_COMMAND='docker run -i --rm --network host -v /var/run/docker.sock:/var/run/docker.sock -e MCP_GATEWAY_PORT -e MCP_GATEWAY_DOMAIN -e MCP_GATEWAY_API_KEY -e MCP_GATEWAY_PAYLOAD_DIR -e MCP_GATEWAY_PAYLOAD_SIZE_THRESHOLD -e DEBUG -e MCP_GATEWAY_LOG_DIR -e GH_AW_MCP_LOG_DIR -e GH_AW_SAFE_OUTPUTS -e GH_AW_SAFE_OUTPUTS_CONFIG_PATH -e GH_AW_SAFE_OUTPUTS_TOOLS_PATH -e GH_AW_ASSETS_BRANCH -e GH_AW_ASSETS_MAX_SIZE_KB -e GH_AW_ASSETS_ALLOWED_EXTS -e DEFAULT_BRANCH -e GITHUB_MCP_SERVER_TOKEN -e GITHUB_MCP_GUARD_MIN_INTEGRITY -e GITHUB_MCP_GUARD_REPOS -e GITHUB_REPOSITORY -e GITHUB_SERVER_URL -e GITHUB_SHA -e GITHUB_WORKSPACE -e GITHUB_TOKEN -e GITHUB_RUN_ID -e GITHUB_RUN_NUMBER -e GITHUB_RUN_ATTEMPT -e GITHUB_JOB -e GITHUB_ACTION -e GITHUB_EVENT_NAME -e GITHUB_EVENT_PATH -e GITHUB_ACTOR -e GITHUB_ACTOR_ID -e GITHUB_TRIGGERING_ACTOR -e GITHUB_WORKFLOW -e GITHUB_WORKFLOW_REF -e GITHUB_WORKFLOW_SHA -e GITHUB_REF -e GITHUB_REF_NAME -e GITHUB_REF_TYPE -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GH_AW_MCP_SCRIPTS_PORT -e GH_AW_MCP_SCRIPTS_API_KEY -e GH_AW_SAFE_OUTPUTS_PORT -e GH_AW_SAFE_OUTPUTS_API_KEY -v /tmp/gh-aw/mcp-payloads:/tmp/gh-aw/mcp-payloads:rw -v /opt:/opt:ro -v /tmp:/tmp:rw -v '"${GITHUB_WORKSPACE}"':'"${GITHUB_WORKSPACE}"':rw ghcr.io/github/gh-aw-mcpg:v0.2.6'
           
           mkdir -p /home/runner/.copilot
-          cat << GH_AW_MCP_CONFIG_04702b322a4d99cf_EOF | bash ${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.sh
+          cat << GH_AW_MCP_CONFIG_5a1d7aa6fe9dec5e_EOF | bash ${RUNNER_TEMP}/gh-aw/actions/start_mcp_gateway.sh
           {
             "mcpServers": {
               "github": {
@@ -982,7 +983,7 @@ jobs:
               "payloadDir": "${MCP_GATEWAY_PAYLOAD_DIR}"
             }
           }
-          GH_AW_MCP_CONFIG_04702b322a4d99cf_EOF
+          GH_AW_MCP_CONFIG_5a1d7aa6fe9dec5e_EOF
       - name: Download activation artifact
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
