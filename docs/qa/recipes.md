@@ -109,6 +109,75 @@ app.Run();
 
 :::
 
+## How to connect a containerized API to Keycloak?
+
+When running your .NET API inside a Docker container alongside a Keycloak container, you may see:
+
+```
+WWW-Authenticate: Bearer error="invalid_token", error_description="The issuer 'http://localhost:8080/realms/my-realm' is invalid"
+```
+
+### Root Cause
+
+Keycloak embeds its own URL in every token's `iss` (issuer) claim. In dev mode, the issuer is derived from the URL used when the token was obtained. Your containerized API fetches OIDC metadata from a different base URL (e.g., `host.docker.internal`) than the one used to issue the token (e.g., `localhost`), causing an issuer mismatch.
+
+### Solution 1 — Pin Keycloak's hostname (recommended)
+
+Set `KC_HOSTNAME` so Keycloak always issues tokens with a fixed base URL regardless of how it is accessed:
+
+```bash
+docker run -p 8080:8080 \
+  -e KEYCLOAK_ADMIN=admin \
+  -e KEYCLOAK_ADMIN_PASSWORD=admin \
+  -e KC_HOSTNAME=http://localhost:8080/ \
+  quay.io/keycloak/keycloak:26.4.2 start-dev
+```
+
+Then configure your API to fetch OIDC metadata from `host.docker.internal` (reachable from inside the container) while validating tokens against the fixed issuer:
+
+```json
+{
+  "Keycloak": {
+    "realm": "my-realm",
+    "auth-server-url": "http://host.docker.internal:8080/",
+    "ssl-required": "none",
+    "resource": "my-client"
+  }
+}
+```
+
+```csharp
+builder.Services.AddKeycloakWebApiAuthentication(configuration, options =>
+{
+    // Tokens are issued with localhost:8080 as issuer (from KC_HOSTNAME)
+    options.TokenValidationParameters.ValidIssuer = "http://localhost:8080/realms/my-realm";
+    options.RequireHttpsMetadata = false;
+});
+```
+
+### Solution 2 — Use `host.docker.internal` everywhere
+
+Obtain tokens using `http://host.docker.internal:8080` (configure your HTTP client or Postman to use this URL) and set `auth-server-url` to the same value. Both the token issuer and the API's authority will match automatically.
+
+### Solution 3 — Accept multiple valid issuers
+
+For maximum flexibility during local development, accept tokens from multiple issuers:
+
+```csharp
+builder.Services.AddKeycloakWebApiAuthentication(configuration, options =>
+{
+    options.TokenValidationParameters.ValidIssuers = new[]
+    {
+        "http://localhost:8080/realms/my-realm",
+        "http://host.docker.internal:8080/realms/my-realm"
+    };
+    options.RequireHttpsMetadata = false;
+});
+```
+
+> [!TIP]
+> For production, always set `KC_HOSTNAME` to a stable public URL and ensure `auth-server-url` in your API configuration points to a URL that is reachable from inside the container.
+
 ## How to setup resiliency to HTTP Clients?
 
 Every HTTP Client provided by `Keycloak.AuthServices` expose `IHttpClientBuilder`. It a standard way to extend behavior of `HttpClient`. We can use it to our advantage!
