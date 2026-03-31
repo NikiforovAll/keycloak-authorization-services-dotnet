@@ -62,9 +62,7 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 
         if (!context.User.IsAuthenticated())
         {
-            this.logger.LogRequirementSkipped(
-                nameof(RptRequirementHandler)
-            );
+            this.logger.LogRequirementSkipped(nameof(RptRequirementHandler));
 
             return Task.CompletedTask;
         }
@@ -92,20 +90,26 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
             ]
         }
         */
-        var json = JsonDocument.Parse(authorizationClaim);
-        var permissions = json.RootElement.GetProperty("permissions");
+        using var json = JsonDocument.Parse(authorizationClaim);
+
+        if (!json.RootElement.TryGetProperty("permissions", out var permissions))
+        {
+            return Task.CompletedTask;
+        }
+
         foreach (var permission in permissions.EnumerateArray())
         {
-            if (permission.GetProperty("rsname").GetString() != requirement.Resource)
+            if (
+                !permission.TryGetProperty("rsname", out var rsnameProp)
+                || rsnameProp.GetString() != requirement.Resource
+            )
             {
                 continue;
             }
 
             if (
-                permission
-                    .GetProperty("scopes")
-                    .EnumerateArray()
-                    .All(scope => scope.GetString() != requirement.Scope)
+                !permission.TryGetProperty("scopes", out var scopesProp)
+                || scopesProp.EnumerateArray().All(scope => scope.GetString() != requirement.Scope)
             )
             {
                 continue;
