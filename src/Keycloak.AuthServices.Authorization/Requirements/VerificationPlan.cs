@@ -75,7 +75,7 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
         {
             this.resourceToScopes = new();
             this.resourceToOutcomes = new();
-            this.Resources.RemoveAll(_ => true);
+            this.Resources.Clear();
 
             return true;
         }
@@ -101,7 +101,7 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     /// <returns>A string representation of the verification plan.</returns>
     public override string ToString()
     {
-        if (!this.Any())
+        if (this.Resources.Count == 0)
         {
             return "<empty>";
         }
@@ -129,14 +129,13 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     /// <inheritdoc/>
     public IEnumerator<IProtectedResourceData> GetEnumerator()
     {
-        var resources = new List<ProtectedResourceAttribute>();
-
         foreach (var resource in this.Resources)
         {
-            resources.Add(new(resource, this.resourceToScopes[resource].ToArray()));
+            yield return new ProtectedResourceAttribute(
+                resource,
+                this.resourceToScopes[resource].ToArray()
+            );
         }
-
-        return resources.GetEnumerator();
     }
 
     /// <inheritdoc/>
