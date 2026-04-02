@@ -39,6 +39,7 @@ public class ResourceAccessRequirement : IAuthorizationRequirement
 }
 
 /// <summary>
+/// Handles <see cref="ResourceAccessRequirement"/> by checking the user's resource (client) roles.
 /// </summary>
 public partial class ResourceAccessRequirementHandler
     : AuthorizationHandler<ResourceAccessRequirement>
@@ -48,10 +49,11 @@ public partial class ResourceAccessRequirementHandler
     private readonly ILogger<ResourceAccessRequirementHandler> logger;
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="ResourceAccessRequirementHandler"/> class.
     /// </summary>
-    /// <param name="keycloakOptions"></param>
-    /// <param name="metrics"></param>
-    /// <param name="logger"></param>
+    /// <param name="keycloakOptions">The Keycloak authorization options.</param>
+    /// <param name="metrics">The Keycloak metrics tracker.</param>
+    /// <param name="logger">The logger.</param>
     public ResourceAccessRequirementHandler(
         IOptions<KeycloakAuthorizationOptions> keycloakOptions,
         KeycloakMetrics metrics,
@@ -76,10 +78,8 @@ public partial class ResourceAccessRequirementHandler
 
         if (!context.User.IsAuthenticated())
         {
-            this.metrics.SkipRequirement(nameof(RealmAccessRequirement));
-            this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler)
-            );
+            this.metrics.SkipRequirement(nameof(ResourceAccessRequirement));
+            this.logger.LogRequirementSkipped(nameof(ResourceAccessRequirementHandler));
 
             return Task.CompletedTask;
         }

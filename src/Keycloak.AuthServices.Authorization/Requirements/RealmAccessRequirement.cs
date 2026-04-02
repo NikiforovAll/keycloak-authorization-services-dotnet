@@ -27,6 +27,7 @@ public class RealmAccessRequirement : IAuthorizationRequirement
 }
 
 /// <summary>
+/// Handles <see cref="RealmAccessRequirement"/> by checking the user's realm roles.
 /// </summary>
 public class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessRequirement>
 {
@@ -34,9 +35,10 @@ public class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessReq
     private readonly ILogger<RealmAccessRequirementHandler> logger;
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="RealmAccessRequirementHandler"/> class.
     /// </summary>
-    /// <param name="metrics"></param>
-    /// <param name="logger"></param>
+    /// <param name="metrics">The Keycloak metrics tracker.</param>
+    /// <param name="logger">The logger.</param>
     public RealmAccessRequirementHandler(
         KeycloakMetrics metrics,
         ILogger<RealmAccessRequirementHandler> logger
@@ -60,9 +62,7 @@ public class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessReq
         if (!context.User.IsAuthenticated())
         {
             this.metrics.SkipRequirement(nameof(RealmAccessRequirement));
-            this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler)
-            );
+            this.logger.LogRequirementSkipped(nameof(RealmAccessRequirementHandler));
 
             return Task.CompletedTask;
         }
