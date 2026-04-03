@@ -22,9 +22,10 @@ public class RptRequirement : IAuthorizationRequirement
     public string Scope { get; }
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="RptRequirement"/> class.
     /// </summary>
-    /// <param name="resource"></param>
-    /// <param name="scope"></param>
+    /// <param name="resource">The resource name.</param>
+    /// <param name="scope">The resource scope.</param>
     public RptRequirement(string resource, string scope)
     {
         this.Resource = resource;
@@ -36,22 +37,19 @@ public class RptRequirement : IAuthorizationRequirement
 }
 
 /// <summary>
+/// Handles <see cref="RptRequirement"/> by inspecting the RPT (Requesting Party Token) authorization claim.
 /// </summary>
 public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 {
     private readonly ILogger<RptRequirementHandler> logger;
 
     /// <summary>
-    ///
+    /// Initializes a new instance of the <see cref="RptRequirementHandler"/> class.
     /// </summary>
-    /// <param name="logger"></param>
+    /// <param name="logger">The logger.</param>
     public RptRequirementHandler(ILogger<RptRequirementHandler> logger) => this.logger = logger;
 
-    /// <summary>
-    /// </summary>
-    /// <param name="context"></param>
-    /// <param name="requirement"></param>
-    /// <returns></returns>
+    /// <inheritdoc/>
     protected override Task HandleRequirementAsync(
         AuthorizationHandlerContext context,
         RptRequirement requirement
@@ -62,9 +60,7 @@ public class RptRequirementHandler : AuthorizationHandler<RptRequirement>
 
         if (!context.User.IsAuthenticated())
         {
-            this.logger.LogRequirementSkipped(
-                nameof(RptRequirementHandler)
-            );
+            this.logger.LogRequirementSkipped(nameof(RptRequirementHandler));
 
             return Task.CompletedTask;
         }
