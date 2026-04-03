@@ -21,8 +21,32 @@ env:
   MINVERBUILDMETADATA: build.${{github.run_number}}
 
 jobs:
+  changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4.2.2
+      - name: "Path Filter"
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'src/**'
+              - 'tests/**'
+              - 'build/**'
+              - 'build.cake'
+              - '*.sln'
+              - 'Directory.*.props'
+              - '.github/workflows/build.yml'
+
   build:
     name: Build-${{matrix.os}}
+    needs: changes
+    if: needs.changes.outputs.src == 'true' || github.event_name == 'release' || github.event_name == 'workflow_dispatch'
     runs-on: ${{matrix.os}}
     strategy:
       matrix:
@@ -57,6 +81,8 @@ jobs:
 
   integration-tests:
     name: Integration Tests
+    needs: changes
+    if: needs.changes.outputs.src == 'true' || github.event_name == 'release' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
