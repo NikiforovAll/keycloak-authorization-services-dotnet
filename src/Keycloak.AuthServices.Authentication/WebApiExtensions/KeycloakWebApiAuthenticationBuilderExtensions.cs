@@ -301,7 +301,9 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                         );
                     options.RequireHttpsMetadata = sslRequired;
 
-                    options.Audience = keycloakOptions.Audience ?? keycloakOptions.Resource;
+                    var primaryAudience = keycloakOptions.Audience ?? keycloakOptions.Resource;
+                    options.Audience = primaryAudience;
+
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ClockSkew = keycloakOptions.TokenClockSkew,
@@ -310,6 +312,14 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                         NameClaimType = keycloakOptions.NameClaimType,
                         RoleClaimType = keycloakOptions.RoleClaimType,
                     };
+
+                    if (keycloakOptions.AdditionalAudiences is { Length: > 0 })
+                    {
+                        options.TokenValidationParameters.ValidAudiences = primaryAudience
+                            is not null
+                            ? [primaryAudience, .. keycloakOptions.AdditionalAudiences]
+                            : keycloakOptions.AdditionalAudiences;
+                    }
                     options.SaveToken = true;
 
                     options.Events ??= new JwtBearerEvents();

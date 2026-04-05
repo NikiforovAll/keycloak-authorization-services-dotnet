@@ -18,6 +18,22 @@ public class KeycloakAuthenticationOptions : KeycloakInstallationOptions
     public string? Audience { get; set; }
 
     /// <summary>
+    /// Gets or sets additional valid audiences accepted during JWT validation.
+    /// Combined with the primary audience (<see cref="Audience"/> or <see cref="KeycloakInstallationOptions.Resource"/>)
+    /// to validate tokens issued for multiple clients within the same realm.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// services.AddKeycloakWebApiAuthentication(options =>
+    /// {
+    ///     options.Resource = "api-client";
+    ///     options.AdditionalAudiences = ["billing-service", "reporting-service"];
+    /// });
+    /// </code>
+    /// </example>
+    public string[]? AdditionalAudiences { get; set; }
+
+    /// <summary>
     /// Gets or sets the claim type used for roles.
     /// </summary>
     public string RoleClaimType { get; set; } = KeycloakConstants.RoleClaimType;
