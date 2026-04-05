@@ -1,9 +1,9 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-04
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/23988925727
-- Tasks: Task 9 (Testing Improvements), Task 4 (Engineering Investments), Task 11 (Monthly Summary)
+- Date: 2026-04-05
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24011900358
+- Tasks: Task 2 (Issue Investigation & Comment), Task 3 (Issue Investigation & Fix), Task 11 (Monthly Summary)
 
 ## Monthly Summary Issue
 - Issue #220: "[KeyBot] Monthly Activity 2026-03" — CLOSED (superseded)
@@ -15,7 +15,8 @@
 - #224 (open, draft): `docs: add recipe for connecting containerized API to Keycloak` — closes #115
 - #225 (open, draft): `fix: robustify RptRequirementHandler JSON parsing`
 - #230 (open, draft): `feat(aspire): add IKeycloakDbAdapter and WithDatabase extension` — closes #113
-- (new, draft): `test: add WebApiAuthenticationRegistrationTests` — branch: keybot/test-authentication-registration-20260404
+- #233 (open, draft): `test: add WebApiAuthenticationRegistrationTests` — branch: keybot/test-authentication-registration-20260404
+- (new, draft): `feat: add AdditionalAudiences to KeycloakAuthenticationOptions` — branch: keybot/feat-additional-audiences-135 — partially closes #135
 
 ## Merged PRs (previously open)
 - #226: `refactor: improve VerificationPlan enumerator and clear logic` — MERGED
@@ -34,6 +35,7 @@
 - #115: Docker issuer mismatch (2026-03-30) — KC_HOSTNAME, host.docker.internal, ValidIssuers
 - #135: Multi-client guidance (2026-03-29) — Keycloak audience mappers, ValidAudiences, multiple schemes
 - #198: DPoP support (2026-04-01) — Phase 1 actionable via Duende, Phase 2 blocked on dotnet/aspnetcore#58016
+- #174: Signed JWT client auth (2026-04-05) — implementation roadmap provided; two paths: client_secret_jwt (HS256) vs private_key_jwt (Duende-native)
 
 ## Technical Notes
 - KeycloakUrlRealm includes trailing slash: "https://keycloak.example.com/realms/test/"
@@ -44,6 +46,6 @@
 ## Backlog / Ideas
 - #96: UMA Permission Ticket API — Phase 1 roadmap identified, good candidate for next Task 3
 - #198: DPoP support — Phase 1 (client-side) actionable, Phase 2 blocked on ecosystem
-- #174: Signed JWT client auth — awaiting user feedback on use case
-- Add WebAppAuthenticationRegistrationTests (similar to new WebApi tests)
+- #174: Signed JWT client auth — implementation roadmap commented (2026-04-05); private_key_jwt via Duende is recommended path
+- Add WebAppAuthenticationRegistrationTests (similar to PR #233 tests)
 - Consider additive AddAuthorizationServerForWebApp() convenience extension
