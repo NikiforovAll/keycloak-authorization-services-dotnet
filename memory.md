@@ -1,9 +1,9 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-06
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24054391232
-- Tasks: Task 4 (Engineering Investments - NuGet CI cache), Task 5 (Coding Improvements - XML docs), Task 11 (Monthly Summary)
+- Date: 2026-04-07
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24107564096
+- Tasks: Task 8 (Performance), Task 3 (Issue Investigation & Fix - no new fix found), Task 11 (Monthly Summary)
 
 ## Monthly Summary Issue
 - Issue #234: "[KeyBot] Monthly Activity 2026-04" — OPEN
@@ -16,8 +16,8 @@
 - #230: `feat(aspire): add IKeycloakDbAdapter and WithDatabase extension` — closes #113
 - #233: `test: add WebApiAuthenticationRegistrationTests`
 - #235: `feat: add AdditionalAudiences to KeycloakAuthenticationOptions` — partially closes #135
-- (new, draft): `eng: add NuGet package caching to CI workflows` — branch: keybot/eng-nuget-cache-ci-20260406
-- (new, draft): `docs: improve XML documentation in PoliciesBuilderExtensions and KeycloakAuthorizationServerOptions` — branch: keybot/improve-xml-docs-20260406
+- #237: `docs: improve XML documentation in PoliciesBuilderExtensions and KeycloakAuthorizationServerOptions`
+- (new, draft): `perf: single-pass org claims scan and avoid ToArray in VerificationPlan` — branch: keybot/perf-single-pass-org-claims-verificationplan-20260407
 
 ## Merged PRs
 - #226: `refactor: improve VerificationPlan enumerator and clear logic` — MERGED
@@ -42,6 +42,7 @@
 - HttpContextAccessTokenProvider fix (#104): SourceTokenRetrievalScheme (nullable) controls which auth scheme is used
 - ClaimsPrincipal.Clone() does a SHALLOW copy of ClaimsIdentity in practice (same identity reference)
 - Project uses Central Package Management (no packages.lock.json); use Directory.Packages.props for NuGet cache keys
+- PR #226 (MERGED): improved VerificationPlan enumerator with yield return; my new PR further removes ToArray() via string[] storage
 
 ## Backlog / Ideas
 - #96: UMA Permission Ticket API — Phase 1 roadmap identified; good candidate for next Task 3
