@@ -95,33 +95,49 @@ public static class KeycloakOrganizationClaimsExtensions
     )
     {
         var effectiveClaimType = claimType ?? OrganizationClaimType;
-        var orgClaims = claims
-            .Where(c => c.Type.Equals(effectiveClaimType, StringComparison.OrdinalIgnoreCase))
-            .ToList();
 
-        if (orgClaims.Count == 0)
+        // Single pass: look for JSON claim or collect vanilla string aliases.
+        // JSON claim takes priority — as soon as one is found we can stop scanning.
+        Claim? jsonClaim = null;
+        List<string>? stringAliases = null;
+
+        foreach (var c in claims)
         {
-            return [];
-        }
+            if (!c.Type.Equals(effectiveClaimType, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
 
-        // Rich JSON format: single claim with JSON value type
-        var jsonClaim = orgClaims.FirstOrDefault(c =>
-            c.ValueType.Equals(
-                KeycloakClaimsExtensions.JsonClaimValueType,
-                StringComparison.OrdinalIgnoreCase
+            if (
+                c.ValueType.Equals(
+                    KeycloakClaimsExtensions.JsonClaimValueType,
+                    StringComparison.OrdinalIgnoreCase
+                )
             )
-        );
+            {
+                jsonClaim = c;
+                break;
+            }
+
+            if (!string.IsNullOrEmpty(c.Value))
+            {
+                stringAliases ??= [];
+                stringAliases.Add(c.Value);
+            }
+        }
 
         if (jsonClaim is not null)
         {
             return ParseJsonOrganizationClaim(jsonClaim.Value);
         }
 
+        if (stringAliases is null)
+        {
+            return [];
+        }
+
         // Vanilla format: multiple string claims (one per org alias)
-        return orgClaims
-            .Where(c => !string.IsNullOrEmpty(c.Value))
-            .Select(c => new OrganizationMembership { Alias = c.Value })
-            .ToList();
+        return stringAliases.Select(alias => new OrganizationMembership { Alias = alias }).ToList();
     }
 
     private static IReadOnlyList<OrganizationMembership> ParseJsonOrganizationClaim(
