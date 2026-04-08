@@ -1,9 +1,9 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-07
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24107564096
-- Tasks: Task 8 (Performance), Task 3 (Issue Investigation & Fix - no new fix found), Task 11 (Monthly Summary)
+- Date: 2026-04-08
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24162040250
+- Tasks: Task 2 (Issue Investigation & Comment), Task 4 (Engineering Investments), Task 11 (Monthly Summary)
 
 ## Monthly Summary Issue
 - Issue #234: "[KeyBot] Monthly Activity 2026-04" — OPEN
@@ -17,7 +17,8 @@
 - #233: `test: add WebApiAuthenticationRegistrationTests`
 - #235: `feat: add AdditionalAudiences to KeycloakAuthenticationOptions` — partially closes #135
 - #237: `docs: improve XML documentation in PoliciesBuilderExtensions and KeycloakAuthorizationServerOptions`
-- (new, draft): `perf: single-pass org claims scan and avoid ToArray in VerificationPlan` — branch: keybot/perf-single-pass-org-claims-verificationplan-20260407
+- (new): `perf: single-pass org claims scan and avoid ToArray in VerificationPlan` — branch: keybot/perf-single-pass-org-claims-verificationplan-20260407
+- (new): `eng: add startup validators for Keycloak SDK client options` — branch: keybot/eng-sdk-options-validators-20260408
 
 ## Merged PRs
 - #226: `refactor: improve VerificationPlan enumerator and clear logic` — MERGED
@@ -33,6 +34,7 @@
 - #115: Docker issuer mismatch (2026-03-30)
 - #135: Multi-client guidance (2026-03-29)
 - #174: Signed JWT client auth (2026-04-05)
+- #196: Organization-scoped token exchange (2026-04-08)
 - #198: DPoP support (2026-04-01)
 
 ## Technical Notes
@@ -42,7 +44,7 @@
 - HttpContextAccessTokenProvider fix (#104): SourceTokenRetrievalScheme (nullable) controls which auth scheme is used
 - ClaimsPrincipal.Clone() does a SHALLOW copy of ClaimsIdentity in practice (same identity reference)
 - Project uses Central Package Management (no packages.lock.json); use Directory.Packages.props for NuGet cache keys
-- PR #226 (MERGED): improved VerificationPlan enumerator with yield return; my new PR further removes ToArray() via string[] storage
+- AuthServerUrl setter in KeycloakInstallationOptions normalizes "" → "/" and "  " → "  /", so use Uri.TryCreate(UriKind.Absolute) not IsNullOrWhiteSpace in validators
 
 ## Backlog / Ideas
 - #96: UMA Permission Ticket API — Phase 1 roadmap identified; good candidate for next Task 3
