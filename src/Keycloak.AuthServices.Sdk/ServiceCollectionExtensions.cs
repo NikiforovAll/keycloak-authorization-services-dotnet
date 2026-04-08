@@ -61,7 +61,15 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
-        services.Configure(configureKeycloakOptions);
+        services
+            .AddOptions<KeycloakAdminClientOptions>()
+            .Configure(configureKeycloakOptions)
+            .ValidateOnStart();
+
+        services.AddSingleton<
+            IValidateOptions<KeycloakAdminClientOptions>,
+            KeycloakAdminClientOptionsValidator
+        >();
 
         services.AddTransient<IKeycloakRealmClient>(sp => sp.GetRequiredService<IKeycloakClient>());
         services.AddTransient<IKeycloakUserClient>(sp => sp.GetRequiredService<IKeycloakClient>());
@@ -160,7 +168,15 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
-        services.Configure(configureKeycloakOptions);
+        services
+            .AddOptions<KeycloakProtectionClientOptions>()
+            .Configure(configureKeycloakOptions)
+            .ValidateOnStart();
+
+        services.AddSingleton<
+            IValidateOptions<KeycloakProtectionClientOptions>,
+            KeycloakProtectionClientOptionsValidator
+        >();
 
         services.AddTransient<IKeycloakProtectedResourceClient>(sp =>
             sp.GetRequiredService<IKeycloakProtectionClient>()
