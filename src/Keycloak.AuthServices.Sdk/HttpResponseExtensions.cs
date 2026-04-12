@@ -52,19 +52,37 @@ public static class HttpResponseExtensions
         {
             var body = await response.Content.ReadAsStringAsync(cancellationToken);
 
-            var error = string.IsNullOrWhiteSpace(body)
-                ? new ErrorResponse()
+            ErrorResponse? error = null;
+            if (!string.IsNullOrWhiteSpace(body))
+            {
+                try
                 {
-                    Error = "Something went wrong",
-                    ErrorDescription = string.Empty,
+                    error = JsonSerializer.Deserialize<ErrorResponse>(body);
                 }
-                : JsonSerializer.Deserialize<ErrorResponse>(body);
+                catch (JsonException)
+                {
+                    // Body is not valid JSON (e.g. HTML error page from a proxy).
+                    // Surface the raw body as the error description so callers still
+                    // receive a KeycloakHttpClientException rather than a JsonException.
+                    error = new ErrorResponse
+                    {
+                        Error = response.StatusCode.ToString(),
+                        ErrorDescription = body,
+                    };
+                }
+            }
+
+            error ??= new ErrorResponse
+            {
+                Error = "Something went wrong",
+                ErrorDescription = string.Empty,
+            };
 
             throw new KeycloakHttpClientException(
-                message: $"Unable to submit the request - '{error?.Error}'",
+                message: $"Unable to submit the request - '{error.Error}'",
                 statusCode: (int)response.StatusCode,
                 httpResponse: body,
-                response: error!,
+                response: error,
                 innerException: exception
             );
         }
