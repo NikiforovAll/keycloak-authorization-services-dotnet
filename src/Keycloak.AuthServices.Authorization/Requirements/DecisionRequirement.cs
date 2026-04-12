@@ -105,10 +105,8 @@ public class DecisionRequirementHandler(
 
         if (!context.User.IsAuthenticated())
         {
-            this.metrics.SkipRequirement(nameof(ParameterizedProtectedResourceRequirement));
-            this.logger.LogRequirementSkipped(
-                nameof(ParameterizedProtectedResourceRequirementHandler)
-            );
+            this.metrics.SkipRequirement(nameof(DecisionRequirement));
+            this.logger.LogRequirementSkipped(nameof(DecisionRequirementHandler));
 
             return;
         }
@@ -134,11 +132,7 @@ public class DecisionRequirementHandler(
 
         activity?.AddTag(Tags.Outcome, success);
 
-        this.logger.LogAuthorizationResult(
-            nameof(ParameterizedProtectedResourceRequirementHandler),
-            success,
-            userName
-        );
+        this.logger.LogAuthorizationResult(nameof(DecisionRequirementHandler), success, userName);
 
         if (success)
         {
