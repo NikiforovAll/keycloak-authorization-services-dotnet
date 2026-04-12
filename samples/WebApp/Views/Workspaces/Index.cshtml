@@ -1,0 +1,34 @@
+@model IEnumerable<WebApp_OpenIDConnect_DotNet.Controllers.Workspace>
+@{
+    ViewData["Title"] = "Workspaces";
+}
+
+<h2>Workspaces</h2>
+<p class="text-muted">
+    This page requires the <strong>Admin</strong> role and is protected by Keycloak's
+    Authorization Server via RPT (<code>workspace:list</code> scope).
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var workspace in Model)
+        {
+            <tr>
+                <td>@workspace.Id</td>
+                <td>@workspace.Name</td>
+                <td>@workspace.Description</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@workspace.Id" class="btn btn-sm btn-primary">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,24 +2,81 @@
 
 ## Scenario
 
-This sample shows how to build a .NET Core MVC Web app that uses OpenID Connect to sign in users. In a typical cookie-based authentication scenario using OpenID Connect, the following components and flow are involved:
+This sample shows how to build a .NET Core MVC Web app that uses OpenID Connect to sign in users. It demonstrates:
 
-Components:
+- Cookie-based authentication via OIDC (`AddKeycloakWebAppAuthentication`)
+- Authorization policies based on Keycloak realm roles
+- **Cookie-based access token retrieval** — the `CookieAccessTokenProvider` is auto-detected at startup and retrieves the access token from the cookie session (stored via `SaveTokens = true`), enabling `[ProtectedResource]` and `IAuthorizationServerClient` to work in a Web App context without requiring a Bearer token in request headers.
+- **Protected resources via Keycloak Authorization Server** — the `[ProtectedResource]` attribute triggers an RPT (Requesting Party Token) evaluation against Keycloak, demonstrating fine-grained resource-scope authorization.
 
-* User: The end-user who wants to authenticate.
-* Client: The application that wants to authenticate the user (e.g., a web application).
-* Authorization Server: The server that performs the authentication and issues tokens (e.g., Google, Facebook).
-* Resource Server: The server hosting the protected resources that the client wants to access.
+### Authentication Flow
 
-Authentication Flow:
+1. User accesses the app → redirected to Keycloak login page
+2. User authenticates → Keycloak issues authorization code
+3. App exchanges code for ID token + access token at Keycloak's token endpoint
+4. App validates the ID token and creates a cookie session (`SaveTokens = true` persists the tokens in the cookie)
+5. Subsequent requests use the session cookie — no Bearer header needed
+6. When calling protected APIs, `CookieAccessTokenProvider` reads the access token from the cookie
 
-* Step 1: The user accesses the client application and requests to log in.
-* Step 2: The client redirects the user to the authorization server's login page, where the user enters their credentials.
-* Step 3: Upon successful authentication, the authorization server redirects the user back to the client application with an authorization code.
-* Step 4: The client exchanges the authorization code for an ID token and an access token at the authorization server's token endpoint.
-* Step 5: The authorization server validates the authorization code, and if valid, issues the ID token and access token.
-* Step 6: The client validates the ID token and retrieves the user's identity information.
-* Step 7: The client creates a session for the user and stores the session identifier in a secure, HTTP-only cookie.
-* Step 8: The user's subsequent requests to the client include the session cookie, which the client uses to identify the user and maintain the authenticated session.
-* Step 9: If the client needs to access protected resources from a resource server, it can use the access token to authenticate the requests.
+## Getting Started
+
+### 1. Start Keycloak
+
+```bash
+docker compose up -d
+```
+
+This starts Keycloak at `http://localhost:8080` and automatically imports the `Test` realm with a pre-configured `test-client` and test users.
+
+### 2. Run the application
+
+```bash
+dotnet run
+```
+
+Or press **F5** in Visual Studio / Rider. The app listens on `https://localhost:44321`.
+
+### 3. Test users
+
+| Username | Password | Realm Role | Can access           |
+|----------|----------|------------|----------------------|
+| `admin`  | `test`   | `Admin`    | All pages            |
+| `user`   | `test`   | _(none)_   | Home/Index only      |
+
+### 4. Try the flows
+
+| Page | URL | Access |
+|------|-----|--------|
+| Public | `/Home/Public` | Anyone |
+| Home (requires login) | `/` | Any authenticated user |
+| Privacy (requires Admin role) | `/Home/Privacy` | `admin` only |
+| Workspaces list (RPT: `workspace:list`) | `/Workspaces` | `admin` only |
+| Workspace details (RPT: `workspace:read`) | `/Workspaces/Details/1` | `admin` only |
+| Sign in | `/Account/SignIn` | Redirects to Keycloak |
+| Sign out | `/Account/SignOut` | Ends session and redirects |
+
+Log in as `user` and navigate to **Privacy** or **Workspaces** — you'll see the Access Denied page.
+Log in as `admin` and navigate to **Privacy** or **Workspaces** — access is granted.
+
+The Workspaces pages use `[ProtectedResource("workspace", "workspace:list")]` / `[ProtectedResource("workspace", "workspace:read")]`
+which cause the middleware to call Keycloak's Authorization Server, exchange the cookie access token for an RPT, and evaluate the resource policies before granting access.
+
+## Keycloak Configuration
+
+The realm is imported automatically from `KeycloakConfiguration/`:
+
+| File | Contents |
+|------|----------|
+| `Test-realm.json` | Realm settings, `test-client` (confidential, authorization services enabled), `Admin` role, `workspace` resource with `workspace:list`/`workspace:read` scopes and role-based policies |
+| `Test-users-0.json` | Test users with plaintext passwords (dev only) |
+
+To export updated realm config from inside the running container:
+
+```bash
+docker exec -it <container-id> /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm Test
+```
+
+## Keycloak Admin Console
+
+Open `http://localhost:8080` and log in with `admin` / `admin`.
 

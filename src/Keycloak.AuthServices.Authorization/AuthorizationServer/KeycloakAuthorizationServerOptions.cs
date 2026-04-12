@@ -17,15 +17,6 @@ public sealed class KeycloakAuthorizationServerOptions : KeycloakInstallationOpt
     /// </summary>
     public string SourceAuthenticationScheme { get; set; } = "Bearer";
 
-    /// <summary>
-    /// Gets or sets the authentication scheme used to retrieve the access token from the current
-    /// HTTP context. When <see langword="null"/> (the default), falls back to
-    /// <see cref="SourceAuthenticationScheme"/> — appropriate for JWT Bearer APIs.
-    /// For cookie-based Web Apps with <c>SaveTokens = true</c>, set this to
-    /// <c>CookieAuthenticationDefaults.AuthenticationScheme</c> ("Cookies").
-    /// </summary>
-    public string? SourceTokenRetrievalScheme { get; set; }
-
     /// Gets or sets the token named used by <see cref="AccessTokenPropagationHandler"/>
     public string SourceTokenName { get; set; } = "access_token";
 

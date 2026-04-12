@@ -5,16 +5,15 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
-using Microsoft.Extensions.Options;
 
-public class HttpContextAccessTokenProviderTests
+public class CookieAccessTokenProviderTests
 {
     private const string TestToken = "test-access-token";
 
     [Fact]
     public async Task GetAccessTokenAsync_NullHttpContext_ReturnsNull()
     {
-        var (provider, _) = CreateProvider(new KeycloakAuthorizationServerOptions(), null);
+        var provider = CreateProvider(null);
 
         var token = await provider.GetAccessTokenAsync();
 
@@ -22,13 +21,9 @@ public class HttpContextAccessTokenProviderTests
     }
 
     [Fact]
-    public async Task GetAccessTokenAsync_UsesSourceAuthenticationScheme()
+    public async Task GetAccessTokenAsync_TokenStoredUnderCookieScheme_ReturnsToken()
     {
-        var options = new KeycloakAuthorizationServerOptions
-        {
-            SourceAuthenticationScheme = "Bearer",
-        };
-        var (provider, _) = CreateProvider(options, BuildHttpContext("Bearer", "access_token", TestToken));
+        var provider = CreateProvider(BuildHttpContext("Cookies", "access_token", TestToken));
 
         var token = await provider.GetAccessTokenAsync();
 
@@ -36,14 +31,50 @@ public class HttpContextAccessTokenProviderTests
     }
 
     [Fact]
-    public async Task GetAccessTokenAsync_WrongScheme_ReturnsNull()
+    public async Task GetAccessTokenAsync_DefaultSchemeIsCookies()
     {
-        var options = new KeycloakAuthorizationServerOptions
-        {
-            SourceAuthenticationScheme = "Bearer",
-        };
-        // Token stored under "Cookies" but provider looks under "Bearer"
-        var (provider, _) = CreateProvider(options, BuildHttpContext("Cookies", "access_token", TestToken));
+        // Default constructor uses CookieAuthenticationDefaults.AuthenticationScheme = "Cookies"
+        var provider = CreateProvider(
+            BuildHttpContext("Cookies", "access_token", TestToken),
+            cookieScheme: "Cookies"
+        );
+
+        var token = await provider.GetAccessTokenAsync();
+
+        token.Should().Be(TestToken);
+    }
+
+    [Fact]
+    public async Task GetAccessTokenAsync_CustomCookieScheme_UsesCustomScheme()
+    {
+        var provider = CreateProvider(
+            BuildHttpContext("MyCustomCookies", "access_token", TestToken),
+            cookieScheme: "MyCustomCookies"
+        );
+
+        var token = await provider.GetAccessTokenAsync();
+
+        token.Should().Be(TestToken);
+    }
+
+    [Fact]
+    public async Task GetAccessTokenAsync_CustomTokenName_UsesCustomTokenName()
+    {
+        var provider = CreateProvider(
+            BuildHttpContext("Cookies", "my_token", TestToken),
+            tokenName: "my_token"
+        );
+
+        var token = await provider.GetAccessTokenAsync();
+
+        token.Should().Be(TestToken);
+    }
+
+    [Fact]
+    public async Task GetAccessTokenAsync_TokenNotStoredUnderScheme_ReturnsNull()
+    {
+        // Token is stored under "Bearer" but provider looks under "Cookies"
+        var provider = CreateProvider(BuildHttpContext("Bearer", "access_token", TestToken));
 
         var token = await provider.GetAccessTokenAsync();
 
@@ -51,31 +82,32 @@ public class HttpContextAccessTokenProviderTests
     }
 
     [Fact]
-    public async Task GetAccessTokenAsync_CustomSourceAuthenticationScheme_UsesIt()
+    public async Task GetAccessTokenAsync_DoesNotUseBearer_WhenCookieSchemeConfigured()
     {
-        var options = new KeycloakAuthorizationServerOptions
-        {
-            SourceAuthenticationScheme = "CustomScheme",
-        };
-        var (provider, _) = CreateProvider(options, BuildHttpContext("CustomScheme", "access_token", TestToken));
+        // Sanity: cookie provider must not fall back to Bearer scheme
+        var provider = CreateProvider(
+            BuildHttpContext("Bearer", "access_token", TestToken),
+            cookieScheme: "Cookies"
+        );
 
         var token = await provider.GetAccessTokenAsync();
 
-        token.Should().Be(TestToken);
+        token.Should().BeNull();
     }
 
-    private static (HttpContextAccessTokenProvider, IHttpContextAccessor) CreateProvider(
-        KeycloakAuthorizationServerOptions options,
-        HttpContext? httpContext
+    private static CookieAccessTokenProvider CreateProvider(
+        HttpContext? httpContext,
+        string cookieScheme = "Cookies",
+        string tokenName = "access_token"
     )
     {
         var accessor = new FakeHttpContextAccessor(httpContext);
-        var provider = new HttpContextAccessTokenProvider(
+        return new CookieAccessTokenProvider(
             accessor,
-            Options.Create(options),
-            NullLogger<HttpContextAccessTokenProvider>.Instance
+            NullLogger<CookieAccessTokenProvider>.Instance,
+            cookieScheme,
+            tokenName
         );
-        return (provider, accessor);
     }
 
     private static HttpContext BuildHttpContext(string scheme, string tokenName, string token)
@@ -107,7 +139,9 @@ public class HttpContextAccessTokenProviderTests
     ) : IAuthenticationService
     {
         public Task<AuthenticateResult> AuthenticateAsync(HttpContext context, string? scheme) =>
-            Task.FromResult(scheme == expectedScheme ? result : AuthenticateResult.NoResult());
+            Task.FromResult(
+                scheme == expectedScheme ? result : AuthenticateResult.NoResult()
+            );
 
         public Task ChallengeAsync(HttpContext context, string? scheme, AuthenticationProperties? properties) => Task.CompletedTask;
         public Task ForbidAsync(HttpContext context, string? scheme, AuthenticationProperties? properties) => Task.CompletedTask;

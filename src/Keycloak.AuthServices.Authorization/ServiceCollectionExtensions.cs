@@ -5,7 +5,9 @@ using Keycloak.AuthServices.Authorization.Claims;
 using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -322,7 +324,33 @@ public static class ServiceCollectionExtensions
             services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
         }
 
-        services.TryAddScoped<IKeycloakAccessTokenProvider, HttpContextAccessTokenProvider>();
+        services.TryAddScoped<IKeycloakAccessTokenProvider>(static sp =>
+        {
+            var logger = sp.GetRequiredService<ILoggerFactory>()
+                .CreateLogger(typeof(ServiceCollectionExtensions).FullName!);
+
+            var authOptions = sp.GetService<IOptionsMonitor<AuthenticationOptions>>();
+            var cookieScheme = authOptions?.CurrentValue.Schemes
+                .FirstOrDefault(s => s.HandlerType == typeof(CookieAuthenticationHandler))
+                ?.Name;
+
+            if (cookieScheme is not null)
+            {
+                logger.LogCookieProviderAutoDetected(cookieScheme);
+                return new CookieAccessTokenProvider(
+                    sp.GetRequiredService<IHttpContextAccessor>(),
+                    sp.GetRequiredService<ILogger<CookieAccessTokenProvider>>(),
+                    cookieScheme
+                );
+            }
+
+            logger.LogDefaultProviderSelected();
+            return new HttpContextAccessTokenProvider(
+                sp.GetRequiredService<IHttpContextAccessor>(),
+                sp.GetRequiredService<IOptions<KeycloakAuthorizationServerOptions>>(),
+                sp.GetRequiredService<ILogger<HttpContextAccessTokenProvider>>()
+            );
+        });
 
         var builder = services.AddAuthorizationServerClient(configureClient);
 
