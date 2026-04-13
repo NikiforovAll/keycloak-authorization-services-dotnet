@@ -1,0 +1,108 @@
+{
+  "realm": "Test",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "roles": {
+    "realm": [
+      {
+        "name": "Admin",
+        "description": "Administrator role — grants access to Privacy and Workspaces pages"
+      },
+      {
+        "name": "default-roles-test",
+        "description": "${role_default-roles}",
+        "composite": true,
+        "composites": {
+          "realm": ["offline_access", "uma_authorization"]
+        }
+      },
+      {
+        "name": "offline_access",
+        "description": "${role_offline-access}"
+      },
+      {
+        "name": "uma_authorization",
+        "description": "${role_uma_authorization}"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "test-client",
+      "name": "Test Client (Web App)",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "test-client-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "redirectUris": [
+        "https://localhost:44321/*",
+        "http://localhost:3110/*"
+      ],
+      "webOrigins": [
+        "https://localhost:44321",
+        "http://localhost:3110"
+      ],
+      "attributes": {
+        "post.logout.redirect.uris": "https://localhost:44321/*##http://localhost:3110/*"
+      },
+      "authorizationSettings": {
+        "allowRemoteResourceManagement": true,
+        "policyEnforcementMode": "ENFORCING",
+        "decisionStrategy": "AFFIRMATIVE",
+        "resources": [
+          {
+            "name": "workspace",
+            "type": "urn:webapp:workspace",
+            "ownerManagedAccess": false,
+            "uris": [],
+            "scopes": [
+              { "name": "workspace:list" },
+              { "name": "workspace:read" }
+            ]
+          }
+        ],
+        "policies": [
+          {
+            "name": "Is Admin",
+            "type": "role",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "roles": "[{\"id\":\"Admin\",\"required\":true}]"
+            }
+          },
+          {
+            "name": "Can List Workspaces",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "resources": "[\"workspace\"]",
+              "scopes": "[\"workspace:list\"]",
+              "applyPolicies": "[\"Is Admin\"]"
+            }
+          },
+          {
+            "name": "Can Read Workspace",
+            "type": "scope",
+            "logic": "POSITIVE",
+            "decisionStrategy": "UNANIMOUS",
+            "config": {
+              "resources": "[\"workspace\"]",
+              "scopes": "[\"workspace:read\"]",
+              "applyPolicies": "[\"Is Admin\"]"
+            }
+          }
+        ],
+        "scopes": [
+          { "name": "workspace:list" },
+          { "name": "workspace:read" }
+        ]
+      }
+    }
+  ]
+}

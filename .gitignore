@@ -30,6 +30,9 @@ Obj/
 # Jetbrains Rider cache/options directory
 .idea/
 
+# Language server cache files (C# Dev Kit / Roslyn LSP)
+*.lscache
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*

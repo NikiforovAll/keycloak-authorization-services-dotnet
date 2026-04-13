@@ -1,5 +1,6 @@
 ﻿using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
@@ -38,7 +39,16 @@ builder
     .AddAuthorizationBuilder()
     .AddPolicy("PrivacyAccess", policy => policy.RequireRealmRoles("Admin"));
 
-builder.Services.AddControllersWithViews();
+// AddAuthorizationServer registers IKeycloakAccessTokenProvider with auto-detection:
+// - If cookie auth is registered → CookieAccessTokenProvider (for Web Apps with SaveTokens = true)
+// - Otherwise → HttpContextAccessTokenProvider (for Web APIs with Bearer tokens)
+// UseProtectedResourcePolicyProvider enables dynamic [ProtectedResource] policy resolution.
+builder.Services.AddAuthorizationServer(builder.Configuration);
+builder.Services.Configure<KeycloakAuthorizationServerOptions>(
+    options => options.UseProtectedResourcePolicyProvider = true
+);
+
+builder.Services.AddControllersWithViews(options => options.AddProtectedResources());
 
 builder.Services.AddRazorPages();
 

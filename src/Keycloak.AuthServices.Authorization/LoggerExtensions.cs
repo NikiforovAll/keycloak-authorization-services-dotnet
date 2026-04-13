@@ -148,4 +148,18 @@ internal static partial class LoggerExtensions
         this ILogger logger,
         string claimType
     );
+
+    [LoggerMessage(
+        114,
+        LogLevel.Debug,
+        "Auto-detected cookie authentication scheme '{CookieScheme}'. Using CookieAccessTokenProvider."
+    )]
+    public static partial void LogCookieProviderAutoDetected(this ILogger logger, string cookieScheme);
+
+    [LoggerMessage(
+        115,
+        LogLevel.Debug,
+        "No cookie authentication scheme detected. Using default HttpContextAccessTokenProvider."
+    )]
+    public static partial void LogDefaultProviderSelected(this ILogger logger);
 }

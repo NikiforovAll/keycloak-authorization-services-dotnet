@@ -1,0 +1,37 @@
+{
+  "realm": "Test",
+  "users": [
+    {
+      "username": "admin",
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@test.com",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "test",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["default-roles-test", "Admin"]
+    },
+    {
+      "username": "user",
+      "firstName": "Regular",
+      "lastName": "User",
+      "email": "user@test.com",
+      "emailVerified": true,
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "test",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["default-roles-test"]
+    }
+  ]
+}

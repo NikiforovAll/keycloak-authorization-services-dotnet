@@ -1,6 +1,7 @@
 ﻿namespace WebApp_OpenIDConnect_DotNet.Controllers;
 
 using System.Diagnostics;
+using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebApp_OpenIDConnect_DotNet.Models;
@@ -8,7 +9,19 @@ using WebApp_OpenIDConnect_DotNet.Models;
 [Authorize]
 public class HomeController : Controller
 {
-    public IActionResult Index() => this.View();
+    private readonly IKeycloakAccessTokenProvider tokenProvider;
+
+    public HomeController(IKeycloakAccessTokenProvider tokenProvider) =>
+        this.tokenProvider = tokenProvider;
+
+    public async Task<IActionResult> Index()
+    {
+        // Resolving the token here triggers the auto-detection log on the first request.
+        // In a real app, the token would be used to call a downstream API.
+        var token = await this.tokenProvider.GetAccessTokenAsync();
+        this.ViewData["HasToken"] = !string.IsNullOrEmpty(token);
+        return this.View();
+    }
 
     [Authorize(Policy = "PrivacyAccess")]
     public IActionResult Privacy() => this.View();
