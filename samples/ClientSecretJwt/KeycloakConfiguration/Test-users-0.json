@@ -1,0 +1,20 @@
+{
+  "realm": "Test",
+  "users": [
+    {
+      "username": "service-account-api-client",
+      "enabled": true,
+      "totp": false,
+      "emailVerified": false,
+      "serviceAccountClientId": "api-client",
+      "clientRoles": {
+        "realm-management": [
+          "view-realm",
+          "view-users",
+          "query-users",
+          "query-realms"
+        ]
+      }
+    }
+  ]
+}

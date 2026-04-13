@@ -147,6 +147,7 @@ export default withMermaid({
                         { text: 'Web API + Blazor', link: '/examples/web-api-blazor' },
                         { text: 'Organization Authorization', link: '/examples/organization-authorization' },
                         { text: 'Token Introspection', link: '/examples/token-introspection' },
+                        { text: 'Client Secret JWT', link: '/examples/client-secret-jwt' },
                     ]
                 }
             ]

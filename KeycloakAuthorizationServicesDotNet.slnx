@@ -17,6 +17,7 @@
     <Project Path="samples/AuthGettingStarted/AuthGettingStarted.csproj" />
     <Project Path="samples/AuthorizationAndCleanArchitecture/AuthorizationAndCleanArchitecture.csproj" />
     <Project Path="samples/AuthorizationGettingStarted/AuthorizationGettingStarted.csproj" />
+    <Project Path="samples/ClientSecretJwt/ClientSecretJwt.csproj" />
     <Project Path="samples/GettingStarted/GettingStarted.csproj" />
     <Project Path="samples/ResourceAuthorization/ResourceAuthorization.csproj" />
     <Project Path="samples/WebApp/WebApp.csproj" />

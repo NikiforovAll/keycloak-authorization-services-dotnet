@@ -1,0 +1,16 @@
+@host = http://localhost:5099
+
+## ─── Realm Info ───
+
+### Get Test realm details (expects: 200 with realm JSON)
+GET {{host}}/realm
+
+## ─── Users ───
+
+### List users in Test realm (expects: 200 with users array)
+GET {{host}}/users
+
+## ─── Keycloak Token Endpoint (direct) ───
+
+### Verify token endpoint is alive
+GET http://localhost:8080/realms/Test/.well-known/openid-configuration

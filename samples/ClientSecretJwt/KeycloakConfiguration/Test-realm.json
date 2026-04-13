@@ -1,0 +1,19 @@
+{
+  "realm": "Test",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "clients": [
+    {
+      "clientId": "api-client",
+      "name": "API Client (client_secret_jwt)",
+      "enabled": true,
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret-jwt",
+      "secret": "s3cr3t-f0r-signing-jwt-ass3rtion",
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false
+    }
+  ]
+}
