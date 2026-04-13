@@ -7,6 +7,9 @@ using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authorization;
 
 /// <summary>
+/// Extension methods for <see cref="AuthorizationPolicyBuilder"/> to add Keycloak-specific
+/// authorization requirements such as realm roles, resource roles, protected resources,
+/// and organization membership checks.
 /// </summary>
 public static class PoliciesBuilderExtensions
 {
@@ -14,9 +17,9 @@ public static class PoliciesBuilderExtensions
     /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
     /// Note, make sure role source is configure. See documentation for more details.
     /// </summary>
-    /// <param name="builder"></param>
-    /// <param name="roles"></param>
-    /// <returns></returns>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <param name="roles">The resource roles to require. At least one must match.</param>
+    /// <returns>The authorization policy builder.</returns>
     public static AuthorizationPolicyBuilder RequireResourceRoles(
         this AuthorizationPolicyBuilder builder,
         params string[] roles
@@ -33,10 +36,10 @@ public static class PoliciesBuilderExtensions
     /// <summary>
     /// Adds resource role requirement to builder. Ensures that at least one resource role is present in resource claims.
     /// </summary>
-    /// <param name="builder"></param>
-    /// <param name="client"></param>
-    /// <param name="roles"></param>
-    /// <returns></returns>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <param name="client">The Keycloak client (resource) name to check roles against.</param>
+    /// <param name="roles">The resource roles to require. At least one must match.</param>
+    /// <returns>The authorization policy builder.</returns>
     public static AuthorizationPolicyBuilder RequireResourceRolesForClient(
         this AuthorizationPolicyBuilder builder,
         string client,
@@ -56,9 +59,9 @@ public static class PoliciesBuilderExtensions
     /// <summary>
     /// Adds realm role requirement to builder. Ensures that at least one realm role is present in realm claims.
     /// </summary>
-    /// <param name="builder"></param>
-    /// <param name="roles"></param>
-    /// <returns></returns>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <param name="roles">The realm roles to require. At least one must match.</param>
+    /// <returns>The authorization policy builder.</returns>
     public static AuthorizationPolicyBuilder RequireRealmRoles(
         this AuthorizationPolicyBuilder builder,
         params string[] roles
@@ -77,10 +80,10 @@ public static class PoliciesBuilderExtensions
     /// <summary>
     /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
-    /// <param name="builder"></param>
-    /// <param name="resource"></param>
-    /// <param name="scope"></param>
-    /// <returns></returns>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <param name="resource">The protected resource name.</param>
+    /// <param name="scope">The required scope for the resource.</param>
+    /// <returns>The authorization policy builder.</returns>
     public static AuthorizationPolicyBuilder RequireProtectedResource(
         this AuthorizationPolicyBuilder builder,
         string resource,
@@ -99,11 +102,14 @@ public static class PoliciesBuilderExtensions
     /// <summary>
     /// Adds protected resource requirement to builder. Makes outgoing HTTP requests to Authorization Server.
     /// </summary>
-    /// <param name="builder"></param>
-    /// <param name="resource"></param>
-    /// <param name="scopes"></param>
-    /// <param name="scopesValidationMode"></param>
-    /// <returns></returns>
+    /// <param name="builder">The authorization policy builder.</param>
+    /// <param name="resource">The protected resource name.</param>
+    /// <param name="scopes">The required scopes for the resource.</param>
+    /// <param name="scopesValidationMode">
+    /// Controls whether all scopes (<see cref="ScopesValidationMode.AllOf"/>) or at least one scope
+    /// (<see cref="ScopesValidationMode.AnyOf"/>) must be granted. Defaults to the server-level setting.
+    /// </param>
+    /// <returns>The authorization policy builder.</returns>
     public static AuthorizationPolicyBuilder RequireProtectedResource(
         this AuthorizationPolicyBuilder builder,
         string resource,
