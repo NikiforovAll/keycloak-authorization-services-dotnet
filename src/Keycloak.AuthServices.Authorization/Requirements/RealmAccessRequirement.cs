@@ -71,7 +71,7 @@ public class RealmAccessRequirementHandler : AuthorizationHandler<RealmAccessReq
 
         if (context.User.Claims.TryGetRealmResource(out var resourceAccess))
         {
-            success = resourceAccess.Roles.Intersect(requirement.Roles).Any();
+            success = requirement.Roles.Any(resourceAccess.Roles.Contains);
         }
 
         this.logger.LogAuthorizationResult(requirement.ToString()!, success, userName);
