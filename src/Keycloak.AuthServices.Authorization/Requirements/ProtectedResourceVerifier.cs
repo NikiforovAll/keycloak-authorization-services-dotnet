@@ -5,28 +5,22 @@ using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Microsoft.Extensions.Logging;
 using static Keycloak.AuthServices.Authorization.ActivityConstants;
 
-internal sealed class ProtectedResourceVerifier
+internal sealed class ProtectedResourceVerifier(
+    IAuthorizationServerClient client,
+    KeycloakMetrics metrics,
+    ILogger logger
+)
 {
-    private readonly IAuthorizationServerClient client;
-    private readonly KeycloakMetrics metrics;
-    private readonly ILogger logger;
-
-    public ProtectedResourceVerifier(
-        IAuthorizationServerClient client,
-        KeycloakMetrics metrics,
-        ILogger logger
-    )
-    {
-        this.client = client;
-        this.metrics = metrics;
-        this.logger = logger;
-    }
+    private readonly IAuthorizationServerClient client = client;
+    private readonly KeycloakMetrics metrics = metrics;
+    private readonly ILogger logger = logger;
 
     public async Task<bool> Verify(
         string resource,
         string scopes,
         string requirement,
         ScopesValidationMode? scopesValidationMode = default,
+        string? audience = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -46,6 +40,7 @@ internal sealed class ProtectedResourceVerifier
                 resource,
                 scopes,
                 scopesValidationMode,
+                audience,
                 cancellationToken
             );
         }

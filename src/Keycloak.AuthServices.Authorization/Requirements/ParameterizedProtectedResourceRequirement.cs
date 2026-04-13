@@ -96,6 +96,7 @@ public class ParameterizedProtectedResourceRequirementHandler(
                 resource,
                 scopes,
                 nameof(ParameterizedProtectedResourceRequirement),
+                audience: entry.Audience,
                 cancellationToken: CancellationToken.None
             );
             verificationPlan.Complete(entry.Resource, success);

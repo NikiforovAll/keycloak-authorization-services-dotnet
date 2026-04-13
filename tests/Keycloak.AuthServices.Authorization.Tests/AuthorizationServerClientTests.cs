@@ -148,6 +148,62 @@ public class AuthorizationServerClientTests
         await act.Should().ThrowAsync<ArgumentException>();
     }
 
+    [Fact]
+    public async Task VerifyAccessToResource_WithAudienceOverride_UsesAudienceInsteadOfConfig()
+    {
+        string? capturedBody = null;
+
+        var mockHttp = new MockHttpMessageHandler();
+        mockHttp
+            .When(HttpMethod.Post, $"*/{TokenEndpoint}")
+            .With(req =>
+            {
+                capturedBody = req.Content!.ReadAsStringAsync().GetAwaiter().GetResult();
+                return true;
+            })
+            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+
+        var client = CreateClient(mockHttp);
+
+        var result = await client.VerifyAccessToResource(
+            "invoice",
+            "read",
+            scopesValidationMode: null,
+            audience: "billing-api"
+        );
+
+        result.Should().BeTrue();
+        capturedBody.Should().Contain("audience=billing-api");
+        capturedBody.Should().NotContain("audience=test-client");
+    }
+
+    [Fact]
+    public async Task VerifyAccessToResource_NullAudience_FallsBackToConfigResource()
+    {
+        string? capturedBody = null;
+
+        var mockHttp = new MockHttpMessageHandler();
+        mockHttp
+            .When(HttpMethod.Post, $"*/{TokenEndpoint}")
+            .With(req =>
+            {
+                capturedBody = req.Content!.ReadAsStringAsync().GetAwaiter().GetResult();
+                return true;
+            })
+            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+
+        var client = CreateClient(mockHttp);
+
+        await client.VerifyAccessToResource(
+            "invoice",
+            "read",
+            scopesValidationMode: null,
+            audience: null
+        );
+
+        capturedBody.Should().Contain("audience=test-client");
+    }
+
     private static AuthorizationServerClient CreateClient(
         MockHttpMessageHandler mockHttp,
         KeycloakAuthorizationServerOptions? options = null

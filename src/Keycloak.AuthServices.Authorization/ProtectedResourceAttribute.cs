@@ -27,6 +27,9 @@ public sealed class ProtectedResourceAttribute(string resource, string[] scopes)
     /// <inheritdoc/>
     public string[]? Scopes { get; } = scopes;
 
+    /// <inheritdoc/>
+    public string? Audience { get; set; }
+
     /// <summary>
     /// Gets or sets the type of <see cref="IParameterResolver"/> used to resolve resource template parameters.
     /// When <c>null</c>, the default <c>RouteParameterResolver</c> is used.
