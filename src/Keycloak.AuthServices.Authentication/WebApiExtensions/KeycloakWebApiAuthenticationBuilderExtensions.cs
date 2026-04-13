@@ -302,7 +302,6 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                     options.RequireHttpsMetadata = sslRequired;
 
                     var primaryAudience = keycloakOptions.Audience ?? keycloakOptions.Resource;
-                    options.Audience = primaryAudience;
 
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
@@ -315,10 +314,13 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
                     if (keycloakOptions.AdditionalAudiences is { Length: > 0 })
                     {
-                        options.TokenValidationParameters.ValidAudiences = primaryAudience
-                            is not null
+                        options.TokenValidationParameters.ValidAudiences = primaryAudience is not null
                             ? [primaryAudience, .. keycloakOptions.AdditionalAudiences]
                             : keycloakOptions.AdditionalAudiences;
+                    }
+                    else
+                    {
+                        options.TokenValidationParameters.ValidAudience = primaryAudience;
                     }
                     options.SaveToken = true;
 

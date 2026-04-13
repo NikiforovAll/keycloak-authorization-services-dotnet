@@ -31,15 +31,16 @@ public class AdditionalAudiencesTests
     }
 
     [Fact]
-    public void AdditionalAudiences_WhenNotSet_ValidAudiencesIsNull()
+    public void AdditionalAudiences_WhenNotSet_SetsValidAudienceOnTvp()
     {
         var opts = BuildOptions(o => o.Resource = "primary-api");
 
+        opts.TokenValidationParameters.ValidAudience.Should().Be("primary-api");
         opts.TokenValidationParameters.ValidAudiences.Should().BeNull();
     }
 
     [Fact]
-    public void AdditionalAudiences_WhenEmpty_ValidAudiencesIsNull()
+    public void AdditionalAudiences_WhenEmpty_SetsValidAudienceOnTvp()
     {
         var opts = BuildOptions(o =>
         {
@@ -47,6 +48,7 @@ public class AdditionalAudiencesTests
             o.AdditionalAudiences = [];
         });
 
+        opts.TokenValidationParameters.ValidAudience.Should().Be("primary-api");
         opts.TokenValidationParameters.ValidAudiences.Should().BeNull();
     }
 
@@ -76,5 +78,44 @@ public class AdditionalAudiencesTests
         });
 
         opts.TokenValidationParameters.ValidAudiences.Should().BeEquivalentTo(["extra-service"]);
+    }
+
+    // Regression tests: previously options.Audience was set before TokenValidationParameters was
+    // replaced with `new TokenValidationParameters { ... }`, causing the audience to be silently
+    // lost because JwtBearerOptions.Audience is a pass-through to TVP.ValidAudience on the old instance.
+
+    [Fact]
+    public void Regression_AudienceFromResource_NotLostAfterTvpReplacement()
+    {
+        var opts = BuildOptions(o => o.Resource = "my-client");
+
+        // Would be null under the old buggy ordering
+        opts.TokenValidationParameters.ValidAudience.Should().Be("my-client");
+    }
+
+    [Fact]
+    public void Regression_AudienceFromAudienceProperty_NotLostAfterTvpReplacement()
+    {
+        var opts = BuildOptions(o =>
+        {
+            o.Audience = "my-audience";
+            o.Resource = "my-client";
+        });
+
+        // Audience takes precedence over Resource; would be null under old buggy ordering
+        opts.TokenValidationParameters.ValidAudience.Should().Be("my-audience");
+    }
+
+    [Fact]
+    public void Regression_AudienceValidationEnabled_WhenVerifyTokenAudienceTrue()
+    {
+        var opts = BuildOptions(o =>
+        {
+            o.Resource = "my-client";
+            o.VerifyTokenAudience = true;
+        });
+
+        opts.TokenValidationParameters.ValidateAudience.Should().BeTrue();
+        opts.TokenValidationParameters.ValidAudience.Should().Be("my-client");
     }
 }
