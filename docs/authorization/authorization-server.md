@@ -32,4 +32,49 @@ Here is how to use `AuthorizationBuilder` to define policy for a protected resou
 <<< @/../tests/Keycloak.AuthServices.IntegrationTests/AuthorizationServerPolicyTests.cs#RequireProtectedResource_DefaultResource_Verified
 
 > [!Note]
-> The calls to Authorization Servers are made on behalf of a user based on header propagation. We are taking user's *access_token* (JWT Bearer Token) from `IHttpContextAccessor`. `AddHeaderPropagation` adds `AccessTokenPropagationHandler` delegating handler to `IAuthorizationServerClient` responsible for header propagation.
+> The calls to Authorization Servers are made on behalf of a user based on header propagation. `AddHeaderPropagation` adds `AccessTokenPropagationHandler` delegating handler to `IAuthorizationServerClient` responsible for header propagation. The access token is retrieved via `IKeycloakAccessTokenProvider` — see [Token Retrieval](#token-retrieval) below.
+
+## Token Retrieval
+
+`AddAuthorizationServer` resolves access tokens through `IKeycloakAccessTokenProvider`. The correct provider is **auto-detected** at startup based on which authentication handlers are registered:
+
+| App type | Provider selected | Notes |
+|---|---|---|
+| Web API (JWT Bearer) | `HttpContextAccessTokenProvider` | Reads token from the `Bearer` scheme — unchanged behavior |
+| Web App (OIDC + Cookie) | `CookieAccessTokenProvider` | Reads token stored in the cookie session (`SaveTokens = true` required) |
+
+### Default setup for Web APIs
+
+For JWT Bearer apps, `HttpContextAccessTokenProvider` is used automatically. It reads the access token from the `Bearer` scheme via `IHttpContextAccessor`:
+
+```csharp
+builder.Services.AddKeycloakWebApiAuthentication(config);
+builder.Services.AddAuthorizationServer(config); // HttpContextAccessTokenProvider auto-selected
+```
+
+### Zero-config setup for Web Apps
+
+No extra registration is needed — just ensure `SaveTokens = true`:
+
+```csharp
+builder.Services.AddKeycloakWebAppAuthentication(config, o => o.SaveTokens = true);
+builder.Services.AddAuthorizationServer(config); // CookieAccessTokenProvider auto-selected
+```
+
+### Explicit opt-in
+
+If auto-detection doesn't fit your setup, you can register `CookieAccessTokenProvider` explicitly:
+
+```csharp
+services.AddCookieAccessTokenProvider();               // uses default cookie scheme
+services.AddCookieAccessTokenProvider("MyCookieScheme"); // custom scheme
+```
+
+### Custom provider
+
+Register your own `IKeycloakAccessTokenProvider` **before** calling `AddAuthorizationServer` and it will not be overwritten:
+
+```csharp
+services.AddScoped<IKeycloakAccessTokenProvider, MyCustomProvider>();
+services.AddAuthorizationServer(config); // TryAdd won't overwrite your registration
+```
