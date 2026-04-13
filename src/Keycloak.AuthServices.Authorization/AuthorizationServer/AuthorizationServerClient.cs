@@ -8,34 +8,29 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 /// <inheritdoc />
-public class AuthorizationServerClient : IAuthorizationServerClient
+/// <summary>
+/// </summary>
+/// <param name="httpClient"></param>
+/// <param name="clientOptions"></param>
+/// <param name="logger"></param>
+/// <exception cref="ArgumentNullException"></exception>
+public class AuthorizationServerClient(
+    HttpClient httpClient,
+    IOptions<KeycloakAuthorizationServerOptions> clientOptions,
+    ILogger<AuthorizationServerClient> logger
+) : IAuthorizationServerClient
 {
-    private readonly HttpClient httpClient;
-    private readonly IOptions<KeycloakAuthorizationServerOptions> options;
-    private readonly ILogger<AuthorizationServerClient> logger;
-
-    /// <summary>
-    /// </summary>
-    /// <param name="httpClient"></param>
-    /// <param name="clientOptions"></param>
-    /// <param name="logger"></param>
-    /// <exception cref="ArgumentNullException"></exception>
-    public AuthorizationServerClient(
-        HttpClient httpClient,
-        IOptions<KeycloakAuthorizationServerOptions> clientOptions,
-        ILogger<AuthorizationServerClient> logger
-    )
-    {
-        this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
-        this.options = clientOptions;
-        this.logger = logger;
-    }
+    private readonly HttpClient httpClient =
+        httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    private readonly IOptions<KeycloakAuthorizationServerOptions> options = clientOptions;
+    private readonly ILogger<AuthorizationServerClient> logger = logger;
 
     /// <inheritdoc />
     public async Task<bool> VerifyAccessToResource(
         string resource,
         string scope,
         ScopesValidationMode? scopesValidationMode = default,
+        string? audience = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -48,6 +43,7 @@ public class AuthorizationServerClient : IAuthorizationServerClient
             resource,
             scope,
             accessToken: null,
+            audience,
             scopesValidationMode,
             cancellationToken
         );
@@ -72,6 +68,7 @@ public class AuthorizationServerClient : IAuthorizationServerClient
             resource,
             scope,
             accessToken,
+            audience: null,
             scopesValidationMode,
             cancellationToken
         );
@@ -81,13 +78,16 @@ public class AuthorizationServerClient : IAuthorizationServerClient
         string resource,
         string scope,
         string? accessToken,
+        string? audience,
         ScopesValidationMode? scopesValidationMode,
         CancellationToken cancellationToken
     )
     {
         try
         {
-            using var content = new FormUrlEncodedContent(this.PrepareRequest(resource, scope));
+            using var content = new FormUrlEncodedContent(
+                this.PrepareRequest(resource, scope, audience)
+            );
             using var request = new HttpRequestMessage(
                 HttpMethod.Post,
                 KeycloakConstants.TokenEndpointPath
@@ -121,17 +121,21 @@ public class AuthorizationServerClient : IAuthorizationServerClient
         }
     }
 
-    private Dictionary<string, string> PrepareRequest(string resource, string scope)
+    private Dictionary<string, string> PrepareRequest(
+        string resource,
+        string scope,
+        string? audience = null
+    )
     {
         var permission = string.IsNullOrWhiteSpace(scope) ? resource : $"{resource}#{scope}";
-        var audience = this.options.Value.Resource ?? string.Empty;
+        var resolvedAudience = audience ?? this.options.Value.Resource ?? string.Empty;
         var responseMode = scope.Contains(',') ? "permissions" : "decision";
 
         return new Dictionary<string, string>
         {
             { "grant_type", "urn:ietf:params:oauth:grant-type:uma-ticket" },
             { "response_mode", responseMode },
-            { "audience", audience },
+            { "audience", resolvedAudience },
             { "permission", permission },
         };
     }

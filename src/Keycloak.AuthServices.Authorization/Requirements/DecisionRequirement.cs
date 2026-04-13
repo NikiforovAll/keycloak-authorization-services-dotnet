@@ -27,6 +27,12 @@ public class DecisionRequirement : IAuthorizationRequirement, IProtectedResource
     public ScopesValidationMode? ScopesValidationMode { get; set; }
 
     /// <summary>
+    /// Gets or sets the Keycloak client ID of the resource server to use as the UMA <c>audience</c> parameter.
+    /// When <c>null</c>, the global <c>KeycloakAuthorizationServerOptions.Resource</c> value is used.
+    /// </summary>
+    public string? Audience { get; set; }
+
+    /// <summary>
     /// Constructs requirement
     /// </summary>
     /// <param name="resource"></param>
@@ -34,7 +40,7 @@ public class DecisionRequirement : IAuthorizationRequirement, IProtectedResource
     public DecisionRequirement(string resource, string scope)
     {
         this.Resource = resource;
-        this.Scopes = new[] { scope };
+        this.Scopes = [scope];
     }
 
     /// <summary>
@@ -127,6 +133,7 @@ public class DecisionRequirementHandler(
             scopes,
             nameof(DecisionRequirement),
             requirement.ScopesValidationMode,
+            requirement.Audience,
             CancellationToken.None
         );
 

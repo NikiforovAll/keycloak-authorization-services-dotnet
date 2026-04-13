@@ -16,6 +16,12 @@ public interface IProtectedResourceData
     public string[]? Scopes { get; }
 
     /// <summary>
+    /// Gets the Keycloak client ID of the resource server to use as the UMA <c>audience</c> parameter.
+    /// When <c>null</c>, the global <c>KeycloakAuthorizationServerOptions.Resource</c> value is used.
+    /// </summary>
+    public string? Audience => null;
+
+    /// <summary>
     /// Gets the type of <see cref="IParameterResolver"/> used to resolve resource template parameters.
     /// When <c>null</c>, the default <c>RouteParameterResolver</c> is used.
     /// </summary>
