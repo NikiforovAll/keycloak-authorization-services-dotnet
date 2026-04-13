@@ -81,8 +81,9 @@ public class AdditionalAudiencesTests
     }
 
     // Regression tests: previously options.Audience was set before TokenValidationParameters was
-    // replaced with `new TokenValidationParameters { ... }`, causing the audience to be silently
-    // lost because JwtBearerOptions.Audience is a pass-through to TVP.ValidAudience on the old instance.
+    // replaced with `new TokenValidationParameters { ... }`, causing ValidAudience to be silently
+    // lost on the new TVP instance. The fix sets ValidAudience directly in the TVP initializer
+    // and also sets options.Audience after TVP replacement for API consistency.
 
     [Fact]
     public void Regression_AudienceFromResource_NotLostAfterTvpReplacement()
@@ -91,6 +92,7 @@ public class AdditionalAudiencesTests
 
         // Would be null under the old buggy ordering
         opts.TokenValidationParameters.ValidAudience.Should().Be("my-client");
+        opts.Audience.Should().Be("my-client");
     }
 
     [Fact]
@@ -104,6 +106,7 @@ public class AdditionalAudiencesTests
 
         // Audience takes precedence over Resource; would be null under old buggy ordering
         opts.TokenValidationParameters.ValidAudience.Should().Be("my-audience");
+        opts.Audience.Should().Be("my-audience");
     }
 
     [Fact]
@@ -117,5 +120,6 @@ public class AdditionalAudiencesTests
 
         opts.TokenValidationParameters.ValidateAudience.Should().BeTrue();
         opts.TokenValidationParameters.ValidAudience.Should().Be("my-client");
+        opts.Audience.Should().Be("my-client");
     }
 }

@@ -310,17 +310,18 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
                         ValidateIssuer = true,
                         NameClaimType = keycloakOptions.NameClaimType,
                         RoleClaimType = keycloakOptions.RoleClaimType,
+                        ValidAudience = primaryAudience, // set in initializer to avoid ordering issues
                     };
+
+                    // also set options.Audience (the JwtBearerOptions convenience property) after TVP
+                    // replacement so it reflects the current value regardless of implementation details
+                    options.Audience = primaryAudience;
 
                     if (keycloakOptions.AdditionalAudiences is { Length: > 0 })
                     {
                         options.TokenValidationParameters.ValidAudiences = primaryAudience is not null
                             ? [primaryAudience, .. keycloakOptions.AdditionalAudiences]
                             : keycloakOptions.AdditionalAudiences;
-                    }
-                    else
-                    {
-                        options.TokenValidationParameters.ValidAudience = primaryAudience;
                     }
                     options.SaveToken = true;
 
