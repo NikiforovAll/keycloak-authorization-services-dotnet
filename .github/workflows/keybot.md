@@ -132,6 +132,9 @@ steps:
       keybot_prs      = sum(1 for p in prs if p['title'].startswith('[KeyBot]'))
       other_prs       = sum(1 for p in prs if not p['title'].startswith('[KeyBot]'))
 
+      MAX_KEYBOT_PRS = 5
+      at_pr_cap = keybot_prs >= MAX_KEYBOT_PRS
+
       task_names = {
           1:  'Issue Labelling',
           2:  'Issue Investigation and Comment',
@@ -158,6 +161,13 @@ steps:
           10: 3   + 0.05 * open_issues,
       }
 
+      # When open KeyBot PRs reach the cap, suppress all PR-creating tasks
+      # and boost Task 6 so the bot focuses on landing existing work first.
+      if at_pr_cap:
+          for t in [3, 4, 5, 8, 9, 10]:
+              weights[t] = 0.0
+          weights[6] = max(weights[6], 10.0)
+
       run_id = int(os.environ.get('GITHUB_RUN_ID', '0'))
       rng = random.Random(run_id)
 
@@ -177,6 +187,7 @@ steps:
       print(f'Unlabelled issues : {unlabelled}')
       print(f'KeyBot PRs        : {keybot_prs}')
       print(f'Other open PRs    : {other_prs}')
+      print(f'PR cap ({MAX_KEYBOT_PRS})        : {"⛔ REACHED — PR-creating tasks suppressed" if at_pr_cap else f"✅ OK ({keybot_prs}/{MAX_KEYBOT_PRS})"}')
       print()
       print('Task weights:')
       for t, w in weights.items():
@@ -188,6 +199,8 @@ steps:
       result = {
           'open_issues': open_issues, 'unlabelled_issues': unlabelled,
           'keybot_prs': keybot_prs, 'other_prs': other_prs,
+          'max_keybot_prs': MAX_KEYBOT_PRS,
+          'at_pr_cap': at_pr_cap,
           'task_names': task_names,
           'weights': {str(k): round(v, 2) for k, v in weights.items()},
           'selected_tasks': chosen,
@@ -260,6 +273,8 @@ Read memory at the **start** of every run; update it at the **end**.
 ## Workflow
 
 Each run, the deterministic pre-step collects live repo data and selects **two tasks** for this run using weighted probability. Read `/tmp/gh-aw/task_selection.json` at the start and execute those two tasks (plus mandatory Task 11).
+
+**PR Cap**: Check `at_pr_cap` in `/tmp/gh-aw/task_selection.json`. If it is `true`, do **not** create any new pull requests this run (tasks 3, 4, 5, 8, 9, 10). Instead, focus on Task 6 (Maintain KeyBot PRs) to land existing work, and non-PR tasks (1, 2, 7, 11). The cap is `max_keybot_prs` open `[KeyBot]` PRs.
 
 Always do Task 11 (Update Monthly Activity Summary Issue) every run. In all comments and PR descriptions, identify yourself as "KeyBot". When engaging with first-time contributors, welcome them warmly and point them to README and documentation at https://nikiforovall.github.io/keycloak-authorization-services-dotnet/.
 
