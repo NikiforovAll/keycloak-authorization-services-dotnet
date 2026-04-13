@@ -18,7 +18,7 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     /// Gets the list of resources in the verification plan.
     /// </summary>
     public List<string> Resources { get; } = new();
-    private Dictionary<string, List<string>> resourceToScopes = new();
+    private Dictionary<string, string[]> resourceToScopes = new();
     private Dictionary<string, bool> resourceToOutcomes = new();
 
     /// <summary>
@@ -49,16 +49,19 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     {
         if (this.resourceToScopes.TryGetValue(resource, out var registeredScopes))
         {
-            if (!registeredScopes.Contains(scopes))
+            if (!Array.Exists(registeredScopes, s => s == scopes))
             {
-                registeredScopes.Add(scopes);
+                var expanded = new string[registeredScopes.Length + 1];
+                registeredScopes.CopyTo(expanded, 0);
+                expanded[registeredScopes.Length] = scopes;
+                this.resourceToScopes[resource] = expanded;
             }
         }
         else
         {
             this.Resources.Add(resource);
 
-            this.resourceToScopes[resource] = new List<string>() { scopes };
+            this.resourceToScopes[resource] = [scopes];
         }
     }
 
@@ -131,10 +134,7 @@ internal sealed class VerificationPlan : IEnumerable<IProtectedResourceData>
     {
         foreach (var resource in this.Resources)
         {
-            yield return new ProtectedResourceAttribute(
-                resource,
-                this.resourceToScopes[resource].ToArray()
-            );
+            yield return new ProtectedResourceAttribute(resource, this.resourceToScopes[resource]);
         }
     }
 
