@@ -12,7 +12,10 @@ public static class UmaUtils
     /// <returns>The ticket string, or <c>null</c> if not found.</returns>
     public static string? ExtractUmaTicket(string wwwAuthenticateHeader)
     {
-        if (string.IsNullOrEmpty(wwwAuthenticateHeader) || !wwwAuthenticateHeader.Contains("UMA"))
+        if (
+            string.IsNullOrEmpty(wwwAuthenticateHeader)
+            || !wwwAuthenticateHeader.Contains("UMA", StringComparison.OrdinalIgnoreCase)
+        )
         {
             return null;
         }

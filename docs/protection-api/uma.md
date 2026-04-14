@@ -4,6 +4,20 @@
 
 [[toc]]
 
+## Demo
+
+### Login & Resource Owner Access
+
+![Login and Resource Owner Access](../assets/uma-resource-sharing-login.gif)
+
+### Request Access & Owner Approval
+
+![Request Access and Owner Approval](../assets/uma-resource-sharing-approve.gif)
+
+### Access Denied (Insufficient Permissions)
+
+![Access Denied](../assets/uma-resource-sharing-denied.gif)
+
 ## Key Concepts
 
 | Concept | Description |
@@ -257,7 +271,7 @@ var ticket = new PermissionTicket
     ScopeName = "read",
     Granted = false,
 };
-await protectionClient.CreatePermissionTicketWithResponseAsync(realm, ticket);
+await protectionClient.CreateStoredPermissionTicketWithResponseAsync(realm, ticket);
 
 // List pending tickets
 var tickets = await protectionClient.GetPermissionTicketsAsync(realm,

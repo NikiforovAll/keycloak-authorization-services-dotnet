@@ -388,7 +388,7 @@ public partial class KeycloakProtectionClient(HttpClient httpClient) : IKeycloak
     }
 
     ///<inheritdoc/>
-    public async Task<HttpResponseMessage> CreatePermissionTicketWithResponseAsync(
+    public async Task<HttpResponseMessage> CreateStoredPermissionTicketWithResponseAsync(
         string realm,
         PermissionTicket ticket,
         CancellationToken cancellationToken = default

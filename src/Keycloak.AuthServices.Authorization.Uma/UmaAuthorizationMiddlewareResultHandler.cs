@@ -2,6 +2,7 @@ namespace Keycloak.AuthServices.Authorization.Uma;
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Requirements;
+using Keycloak.AuthServices.Sdk;
 using Keycloak.AuthServices.Sdk.Protection;
 using Keycloak.AuthServices.Sdk.Protection.Models;
 using Keycloak.AuthServices.Sdk.Protection.Requests;
@@ -172,11 +173,11 @@ public class UmaAuthorizationMiddlewareResultHandler(
             var result = await protectionClient.CreatePermissionTicketAsync(realm, permissions);
             return result.Ticket;
         }
-        catch (HttpRequestException ex)
+        catch (KeycloakHttpClientException ex)
         {
             logger.LogPermissionTicketCreationFailed(
                 resourceData.Resource,
-                ex.StatusCode ?? System.Net.HttpStatusCode.InternalServerError
+                (System.Net.HttpStatusCode)ex.StatusCode
             );
             return null;
         }

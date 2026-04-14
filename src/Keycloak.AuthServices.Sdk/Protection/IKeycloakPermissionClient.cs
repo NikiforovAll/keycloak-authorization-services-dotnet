@@ -159,7 +159,7 @@ public interface IKeycloakPermissionClient
     /// <param name="ticket">The permission ticket to create.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The HttpResponseMessage of the request.</returns>
-    public Task<HttpResponseMessage> CreatePermissionTicketWithResponseAsync(
+    public Task<HttpResponseMessage> CreateStoredPermissionTicketWithResponseAsync(
         string realm,
         PermissionTicket ticket,
         CancellationToken cancellationToken = default
@@ -179,7 +179,7 @@ public interface IKeycloakPermissionClient
         CancellationToken cancellationToken = default
     )
     {
-        var response = await this.CreatePermissionTicketWithResponseAsync(
+        var response = await this.CreateStoredPermissionTicketWithResponseAsync(
             realm,
             ticket,
             cancellationToken

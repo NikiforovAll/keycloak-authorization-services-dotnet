@@ -45,6 +45,12 @@ public class UmaTokenHandler(
             return response;
         }
 
+        if (string.IsNullOrEmpty(accessToken))
+        {
+            logger.LogRptExchangeFailedInHandler();
+            return response;
+        }
+
         var wwwAuthenticate = response.Headers.WwwAuthenticate.ToString();
         var ticket = UmaUtils.ExtractUmaTicket(wwwAuthenticate);
 
@@ -55,11 +61,7 @@ public class UmaTokenHandler(
 
         logger.LogUmaChallengeReceived();
 
-        var rpt = await umaClient.ExchangeTicketForRptAsync(
-            accessToken!,
-            ticket,
-            cancellationToken
-        );
+        var rpt = await umaClient.ExchangeTicketForRptAsync(accessToken, ticket, cancellationToken);
 
         if (rpt is null)
         {
