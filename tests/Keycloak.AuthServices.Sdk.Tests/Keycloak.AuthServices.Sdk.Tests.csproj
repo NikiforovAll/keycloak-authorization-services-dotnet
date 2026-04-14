@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <ItemGroup>
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
   </ItemGroup>
@@ -11,5 +10,4 @@
   <ItemGroup Label="Global Usings">
     <Using Include="AutoFixture.Xunit2" />
   </ItemGroup>
-
 </Project>

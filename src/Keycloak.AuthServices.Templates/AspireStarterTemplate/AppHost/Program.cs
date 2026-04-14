@@ -7,9 +7,7 @@ var keycloak = builder
     .WithImport("./KeycloakConfiguration/Test-realm.json")
     .WithImport("./KeycloakConfiguration/Test-users-0.json");
 #else
-var keycloak = builder
-    .AddKeycloakContainer("keycloak")
-    .WithDataVolume();
+var keycloak = builder.AddKeycloakContainer("keycloak").WithDataVolume();
 #endif
 
 var realm = keycloak.AddRealm("Test");

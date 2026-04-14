@@ -100,7 +100,7 @@ public class KeycloakUserClientTests
             Max = 1,
             Query = "key1:value2 key2:value2",
             Search = "search",
-            Username = "username"
+            Username = "username",
         };
 
         var url = $"/admin/realms/master/users";
@@ -119,7 +119,7 @@ public class KeycloakUserClientTests
             { "max", "1" },
             { "q", "key1:value2 key2:value2" },
             { "search", "search" },
-            { "username", "username" }
+            { "username", "username" },
         };
 
         var response = $"[{GetUserRepresentation(Guid.NewGuid())}]";
@@ -168,7 +168,7 @@ public class KeycloakUserClientTests
             LastName = "lastName",
             Query = "query",
             Search = "search",
-            Username = "username"
+            Username = "username",
         };
 
         const string url = "/admin/realms/master/users/count";
@@ -181,7 +181,7 @@ public class KeycloakUserClientTests
             { "lastName", "lastName" },
             { "q", "query" },
             { "search", "search" },
-            { "username", "username" }
+            { "username", "username" },
         };
 
         const string response = "0";
@@ -221,8 +221,8 @@ public class KeycloakUserClientTests
             .Respond(HttpStatusCode.BadRequest, MediaType, errorMessage);
 
         var exception = await FluentActions
-            .Invoking(
-                () => this.keycloakUserClient.CreateUserAsync("master", new UserRepresentation())
+            .Invoking(() =>
+                this.keycloakUserClient.CreateUserAsync("master", new UserRepresentation())
             )
             .Should()
             .ThrowAsync<KeycloakHttpClientException>();
@@ -263,13 +263,8 @@ public class KeycloakUserClientTests
             .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
-            .Invoking(
-                () =>
-                    this.keycloakUserClient.UpdateUserAsync(
-                        "master",
-                        userId,
-                        new UserRepresentation()
-                    )
+            .Invoking(() =>
+                this.keycloakUserClient.UpdateUserAsync("master", userId, new UserRepresentation())
             )
             .Should()
             .ThrowAsync<KeycloakHttpClientException>();
@@ -371,8 +366,8 @@ public class KeycloakUserClientTests
             .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions
-            .Invoking(
-                () => this.keycloakUserClient.SendVerifyEmailAsync("master", userId.ToString())
+            .Invoking(() =>
+                this.keycloakUserClient.SendVerifyEmailAsync("master", userId.ToString())
             )
             .Should()
             .ThrowAsync<KeycloakHttpClientException>();
@@ -397,7 +392,7 @@ public class KeycloakUserClientTests
             ClientId = "client-id",
             Lifespan = 1800,
             RedirectUri = "http://localhost:3000/callback",
-            Actions = actions
+            Actions = actions,
         };
 
         this.handler.Expect(HttpMethod.Put, expectedUrl).Respond(HttpStatusCode.OK);

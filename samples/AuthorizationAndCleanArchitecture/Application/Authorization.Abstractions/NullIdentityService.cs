@@ -12,6 +12,9 @@ public class NullIdentityService : IIdentityService
     public ClaimsPrincipal Principal => default!;
 
     public Task<bool> AuthorizeAsync(string policyName) => throw new NotImplementedException();
-    public Task<bool> AuthorizeAsync(object resource, string policyName) => throw new NotImplementedException();
+
+    public Task<bool> AuthorizeAsync(object resource, string policyName) =>
+        throw new NotImplementedException();
+
     public bool IsInRoleAsync(string role) => throw new NotImplementedException();
 }

@@ -16,7 +16,8 @@ public class AuthorizeProtectedResourceAttribute : AuthorizeAttribute
     public AuthorizeProtectedResourceAttribute(
         string resource,
         string scope,
-        ResourceAuthorizationMode mode = ResourceAuthorizationMode.Resource)
+        ResourceAuthorizationMode mode = ResourceAuthorizationMode.Resource
+    )
     {
         this.mode = mode;
         this.Resource = resource;
@@ -38,9 +39,14 @@ public class AuthorizeProtectedResourceAttribute : AuthorizeAttribute
 
     public override string? Policy
     {
-        get => this.mode == ResourceAuthorizationMode.ResourceFromRequest
-            ? ProtectedResourcePolicy.From(this.Resource, this.ResourceId ?? string.Empty, this.Scope)
-            : ProtectedResourcePolicy.From(this.Resource, this.Scope);
+        get =>
+            this.mode == ResourceAuthorizationMode.ResourceFromRequest
+                ? ProtectedResourcePolicy.From(
+                    this.Resource,
+                    this.ResourceId ?? string.Empty,
+                    this.Scope
+                )
+                : ProtectedResourcePolicy.From(this.Resource, this.Scope);
         set
         {
             // skip
@@ -51,5 +57,5 @@ public class AuthorizeProtectedResourceAttribute : AuthorizeAttribute
 public enum ResourceAuthorizationMode
 {
     Resource,
-    ResourceFromRequest
+    ResourceFromRequest,
 }

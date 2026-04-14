@@ -1,11 +1,12 @@
 namespace Api.Data;
+
 public class Workspace
 {
     public Guid Id { get; set; }
 
     public string? Name { get; set; }
 
-    public IList<Project> Projects { get; set; } = new List<Project>();
+    public IList<Project> Projects { get; set; } = [];
 }
 
 public class Project

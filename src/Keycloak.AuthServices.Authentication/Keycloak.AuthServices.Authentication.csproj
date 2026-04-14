@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <RootNamespace>Keycloak.AuthServices.Authentication</RootNamespace>
   </PropertyGroup>
@@ -15,12 +14,14 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect"/>
-    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect"/>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" PrivateAssets="All" />
+    <ProjectReference
+      Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj"
+      PrivateAssets="All"
+    />
   </ItemGroup>
-
 </Project>

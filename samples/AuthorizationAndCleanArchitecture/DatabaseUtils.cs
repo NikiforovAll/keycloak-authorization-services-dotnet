@@ -12,25 +12,24 @@ public static class DatabaseUtils
         {
             return;
         }
-        context.Workspaces.AddRange(new()
-        {
-            Id = Guid.NewGuid(),
-            Name = "Default Workspace",
-            Projects = new List<Project>()
+        context.Workspaces.AddRange(
+            new()
             {
-                new() { Id = Guid.NewGuid(), Alias = "Project One" },
-                new() { Id = Guid.NewGuid(), Alias = "Project Two" },
-            }
-        },
-        new()
-        {
-            Id = Guid.NewGuid(),
-            Name = "Extra Workspace",
-            Projects = new List<Project>()
+                Id = Guid.NewGuid(),
+                Name = "Default Workspace",
+                Projects =
+                [
+                    new() { Id = Guid.NewGuid(), Alias = "Project One" },
+                    new() { Id = Guid.NewGuid(), Alias = "Project Two" },
+                ],
+            },
+            new()
             {
-                new() { Id = Guid.NewGuid(), Alias = "Project Three" },
+                Id = Guid.NewGuid(),
+                Name = "Extra Workspace",
+                Projects = [new() { Id = Guid.NewGuid(), Alias = "Project Three" }],
             }
-        });
+        );
 
         context.SaveChanges();
     }

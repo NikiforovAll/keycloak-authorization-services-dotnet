@@ -35,8 +35,12 @@ public class KeycloakWebApiAuthenticationBuilder : KeycloakBaseAuthenticationBui
         this.configureJwtBearerOptions = configureJwtBearerOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
-        this.Services.AddSingleton<IConfigureOptions<KeycloakAuthenticationOptions>>(serviceProvider =>
-            new ConfigureNamedOptions<KeycloakAuthenticationOptions>(jwtBearerAuthenticationScheme, options => configureKeycloakOptions(options, serviceProvider)));
+        this.Services.AddSingleton<IConfigureOptions<KeycloakAuthenticationOptions>>(
+            serviceProvider => new ConfigureNamedOptions<KeycloakAuthenticationOptions>(
+                jwtBearerAuthenticationScheme,
+                options => configureKeycloakOptions(options, serviceProvider)
+            )
+        );
     }
 
     /// <summary>

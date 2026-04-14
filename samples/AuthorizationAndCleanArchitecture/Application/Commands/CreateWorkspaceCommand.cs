@@ -35,7 +35,7 @@ public class CreateWorkspaceCommandHandler : IRequestHandler<CreateWorkspaceComm
     {
         var (name, projects) = request;
 
-        var workspace = new Workspace { Name = name, Projects = projects ?? new List<Project>() };
+        var workspace = new Workspace { Name = name, Projects = projects ?? [] };
         this.db.Workspaces.Add(workspace);
         await this.db.SaveChangesAsync(cancellationToken);
 

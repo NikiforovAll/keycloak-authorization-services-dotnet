@@ -17,7 +17,13 @@ public interface IAuthorizationServerClient
         string scope,
         CancellationToken cancellationToken = default
     ) =>
-        this.VerifyAccessToResource(resource, scope, ScopesValidationMode.AllOf, audience: null, cancellationToken);
+        this.VerifyAccessToResource(
+            resource,
+            scope,
+            ScopesValidationMode.AllOf,
+            audience: null,
+            cancellationToken
+        );
 
     /// <summary>
     /// Verifies access to the protected resource. Sends decision request to token endpoint {resource}#{scope}

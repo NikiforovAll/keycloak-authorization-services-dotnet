@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <RootNamespace>Keycloak.AuthServices.Authorization.TokenIntrospection</RootNamespace>
   </PropertyGroup>
@@ -11,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-      <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,7 +19,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
-    <ProjectReference Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj" PrivateAssets="All" />
+    <ProjectReference
+      Include="..\Keycloak.AuthServices.Common\Keycloak.AuthServices.Common.csproj"
+      PrivateAssets="All"
+    />
   </ItemGroup>
-
 </Project>

@@ -23,7 +23,7 @@ public class WorkspaceService(
         "workspace:delete",
         "workspace:list-users",
         "workspace:add-user",
-        "workspace:remove-user"
+        "workspace:remove-user",
     ];
 
     private const string WorkspaceType = "urn:workspaces";
@@ -94,14 +94,14 @@ public class WorkspaceService(
     {
         await adminApiClient
             .Admin.Realms[DefaultRealm]
-            .Groups.PostAsync(new GroupRepresentation() { Name = workspace.Name, });
+            .Groups.PostAsync(new GroupRepresentation() { Name = workspace.Name });
 
         var resource = await protectedResourceClient.CreateResourceAsync(
             DefaultRealm,
             new Resource(WorkspaceResourceId(workspace.Name), Scopes)
             {
                 Type = WorkspaceType,
-                OwnerManagedAccess = true
+                OwnerManagedAccess = true,
             }
         );
 
@@ -114,7 +114,7 @@ public class WorkspaceService(
                 {
                     Name = $"Allow read access to group [{workspace.Name}]",
                     Scopes = ["workspace:read", "workspace:list-users"],
-                    Groups = [workspace.Name]
+                    Groups = [workspace.Name],
                 }
             );
         }
@@ -215,7 +215,7 @@ public class WorkspaceService(
     {
         var resources = await protectedResourceClient.GetResourcesAsync(
             DefaultRealm,
-            new GetResourcesRequestParameters { ExactName = true, Name = name, }
+            new GetResourcesRequestParameters { ExactName = true, Name = name }
         );
 
         return resources!;

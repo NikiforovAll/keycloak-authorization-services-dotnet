@@ -13,7 +13,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Api\Api.csproj" />
-    <ProjectReference Include="..\..\..\src\Keycloak.AuthServices.Aspire.Hosting\Keycloak.AuthServices.Aspire.Hosting.csproj" IsAspireProjectResource="false" />
+    <ProjectReference
+      Include="..\..\..\src\Keycloak.AuthServices.Aspire.Hosting\Keycloak.AuthServices.Aspire.Hosting.csproj"
+      IsAspireProjectResource="false"
+    />
   </ItemGroup>
-
 </Project>

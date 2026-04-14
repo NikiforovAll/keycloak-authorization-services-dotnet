@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>
@@ -16,5 +15,4 @@
   <ItemGroup>
     <PackageReference Include="Aspire.Hosting" />
   </ItemGroup>
-
 </Project>

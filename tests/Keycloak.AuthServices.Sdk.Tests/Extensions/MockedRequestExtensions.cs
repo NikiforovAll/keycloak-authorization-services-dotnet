@@ -12,7 +12,7 @@ public static class MockedRequestExtensions
             new Dictionary<string, string>
             {
                 ["Accept"] = "application/json",
-                ["Content-Type"] = "application/json"
+                ["Content-Type"] = "application/json",
             }
         );
 }

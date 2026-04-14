@@ -12,7 +12,8 @@ public static class ApplicationLogger
             .MinimumLevel.Verbose()
             .WriteTo.Console(
                 outputTemplate: "[{Level:u4}] |{SourceContext,30}({EventId})| {Message:lj}{NewLine}{Exception}",
-                restrictedToMinimumLevel: LogEventLevel.Debug)
+                restrictedToMinimumLevel: LogEventLevel.Debug
+            )
             .CreateBootstrapLogger();
 #pragma warning restore CA1305 // Specify IFormatProvider
 

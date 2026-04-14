@@ -38,7 +38,7 @@ public class HomeController : Controller
         this.View(
             new ErrorViewModel
             {
-                RequestId = Activity.Current?.Id ?? this.HttpContext.TraceIdentifier
+                RequestId = Activity.Current?.Id ?? this.HttpContext.TraceIdentifier,
             }
         );
 }

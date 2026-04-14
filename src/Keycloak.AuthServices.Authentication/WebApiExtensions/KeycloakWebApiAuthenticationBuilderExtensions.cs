@@ -319,7 +319,8 @@ public static class KeycloakWebApiAuthenticationBuilderExtensions
 
                     if (keycloakOptions.AdditionalAudiences is { Length: > 0 })
                     {
-                        options.TokenValidationParameters.ValidAudiences = primaryAudience is not null
+                        options.TokenValidationParameters.ValidAudiences = primaryAudience
+                            is not null
                             ? [primaryAudience, .. keycloakOptions.AdditionalAudiences]
                             : keycloakOptions.AdditionalAudiences;
                     }

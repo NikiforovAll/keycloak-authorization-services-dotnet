@@ -14,5 +14,4 @@
     <ProjectReference Include="..\..\..\src\Keycloak.AuthServices.Authentication\Keycloak.AuthServices.Authentication.csproj" />
     <ProjectReference Include="..\..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
   </ItemGroup>
-
 </Project>

@@ -23,14 +23,24 @@ public class KeycloakRolesClaimsTransformationTests
             {
                 case RolesClaimTransformationSource.Realm:
                     claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleUserClaim).Should().BeTrue();
-                    claimsPrincipal.HasClaim(ClaimTypes.Role, RealmRoleSuperUserClaim).Should().BeTrue();
+                    claimsPrincipal
+                        .HasClaim(ClaimTypes.Role, RealmRoleSuperUserClaim)
+                        .Should()
+                        .BeTrue();
                     break;
                 case RolesClaimTransformationSource.ResourceAccess:
                     claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleUserClaim).Should().BeTrue();
-                    claimsPrincipal.HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim).Should().BeTrue();
+                    claimsPrincipal
+                        .HasClaim(ClaimTypes.Role, AppRoleSuperUserClaim)
+                        .Should()
+                        .BeTrue();
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(roleSource), roleSource, "Unexpected role source");
+                    throw new ArgumentOutOfRangeException(
+                        nameof(roleSource),
+                        roleSource,
+                        "Unexpected role source"
+                    );
             }
             claimsPrincipal.Claims.Count(item => ClaimTypes.Role == item.Type).Should().Be(2);
         }
@@ -196,8 +206,6 @@ public class KeycloakRolesClaimsTransformationTests
     // Get a claims principal that has all the appropriate claim details required for testing
     private static ClaimsPrincipal GetClaimsPrincipalClaim(string claimValue) =>
         new(
-            new ClaimsIdentity(
-                [new Claim(RealmClaimType, claimValue, JsonValueType, MyUrl, MyUrl),]
-            )
+            new ClaimsIdentity([new Claim(RealmClaimType, claimValue, JsonValueType, MyUrl, MyUrl)])
         );
 }
