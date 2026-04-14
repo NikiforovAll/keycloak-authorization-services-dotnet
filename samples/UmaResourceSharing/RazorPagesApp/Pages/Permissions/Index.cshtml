@@ -1,0 +1,53 @@
+@page
+@model RazorPagesApp.Pages.Permissions.IndexModel
+@{
+    ViewData["Title"] = "Pending Permissions";
+}
+
+<h3>Pending Permission Requests</h3>
+<p>As a resource owner, review and approve or deny access requests from other users.</p>
+
+@if (Model.Message is not null)
+{
+    <div class="alert alert-@(Model.IsError ? "danger" : "success") alert-dismissible fade show">
+        @Model.Message
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (Model.Tickets.Count == 0)
+{
+    <div class="alert alert-info">No pending permission requests.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Requester</th>
+                <th>Resource</th>
+                <th>Scope</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ticket in Model.Tickets)
+            {
+                <tr>
+                    <td><span class="badge bg-secondary">@(ticket.RequesterName ?? ticket.Requester)</span></td>
+                    <td>@(ticket.ResourceName ?? ticket.Resource)</td>
+                    <td><code>@(ticket.ScopeName ?? ticket.Scope)</code></td>
+                    <td>
+                        <form method="post" class="d-inline">
+                            <input type="hidden" name="ticketId" value="@ticket.Id" />
+                            <button type="submit" asp-page-handler="Approve" class="btn btn-success btn-sm">Approve</button>
+                            <button type="submit" asp-page-handler="Deny" class="btn btn-danger btn-sm">Deny</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-page="/Documents/Index" class="btn btn-outline-primary mt-2">&larr; Back to Documents</a>

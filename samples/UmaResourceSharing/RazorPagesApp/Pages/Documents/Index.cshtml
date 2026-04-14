@@ -1,0 +1,41 @@
+@page
+@model RazorPagesApp.Pages.Documents.IndexModel
+@{
+    ViewData["Title"] = "Documents";
+}
+
+<h3>Protected Documents</h3>
+<p>Try accessing the UMA-protected document. The authorization middleware will handle the permission check inline.</p>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <strong>shared-document</strong>
+        <span class="badge bg-info ms-2">ownerManagedAccess</span>
+    </div>
+    <div class="card-body">
+        <p>Scopes: <code>read</code>, <code>write</code></p>
+
+        <h6>Access (UMA authorization check)</h6>
+        <div class="mb-3">
+            <a asp-page="Details" asp-route-name="shared-document" asp-route-scope="read" class="btn btn-primary btn-sm">Access (read)</a>
+            <a asp-page="Details" asp-route-name="shared-document" asp-route-scope="write" class="btn btn-secondary btn-sm">Access (write)</a>
+        </div>
+
+        <h6>Request Access (submit for owner approval)</h6>
+        <div class="mb-3">
+            <form method="post" asp-page-handler="RequestAccess" class="d-inline">
+                <input type="hidden" name="scope" value="read" />
+                <button type="submit" class="btn btn-outline-primary btn-sm">Request Access (read)</button>
+            </form>
+            <form method="post" asp-page-handler="RequestAccess" class="d-inline">
+                <input type="hidden" name="scope" value="write" />
+                <button type="submit" class="btn btn-outline-secondary btn-sm">Request Access (write)</button>
+            </form>
+        </div>
+
+        @if (Model.Message is not null)
+        {
+            <div class="alert alert-@(Model.IsError ? "danger" : "info") mt-3">@Model.Message</div>
+        }
+    </div>
+</div>

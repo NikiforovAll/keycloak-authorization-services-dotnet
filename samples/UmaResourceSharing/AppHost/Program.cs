@@ -19,4 +19,11 @@ builder
     .WithReference(realm)
     .WithReference(resourceServer);
 
+builder
+    .AddProject<Projects.RazorPagesApp>("razor-pages-app")
+    .WithExternalHttpEndpoints()
+    .WithReference(keycloak)
+    .WithReference(realm)
+    .WithReference(resourceServer);
+
 builder.Build().Run();

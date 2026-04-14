@@ -2,5 +2,6 @@
     <Project Path="AppHost/AppHost.csproj" />
     <Project Path="ResourceServer/ResourceServer.csproj" />
     <Project Path="ClientApp/ClientApp.csproj" />
+    <Project Path="RazorPagesApp/RazorPagesApp.csproj" />
     <Project Path="ServiceDefaults/ServiceDefaults.csproj" />
 </Solution>

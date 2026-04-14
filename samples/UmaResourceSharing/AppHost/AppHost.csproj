@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ResourceServer\ResourceServer.csproj" />
     <ProjectReference Include="..\ClientApp\ClientApp.csproj" />
+    <ProjectReference Include="..\RazorPagesApp\RazorPagesApp.csproj" />
     <ProjectReference
       Include="..\..\..\src\Keycloak.AuthServices.Aspire.Hosting\Keycloak.AuthServices.Aspire.Hosting.csproj"
       IsAspireProjectResource="false"
