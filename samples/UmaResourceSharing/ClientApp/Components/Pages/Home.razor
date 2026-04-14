@@ -6,8 +6,9 @@
     <MudText Typo="Typo.h3" GutterBottom="true">UMA Resource Sharing Demo</MudText>
 
     <MudText Typo="Typo.body1" Class="mb-4">
-        This sample demonstrates the UMA (User-Managed Access) permission ticket flow
-        using Keycloak Authorization Services.
+        This sample demonstrates the UMA 2.0 (User-Managed Access) async approval flow
+        using Keycloak Authorization Services. Users can request access to protected resources,
+        and resource owners approve or deny those requests.
     </MudText>
 
     <MudCard Class="mb-4">
@@ -25,11 +26,15 @@
                     <strong>401</strong> with a <code>WWW-Authenticate: UMA</code> header containing a permission ticket
                 </MudListItem>
                 <MudListItem Icon="@Icons.Material.Filled.Looks3">
-                    The Client App intercepts the 401, extracts the ticket, and exchanges it for an
-                    <strong>RPT</strong> (Requesting Party Token) at the Keycloak token endpoint
+                    Users can request access via the Protection API &mdash;
+                    this creates a pending permission ticket for the resource owner to review
                 </MudListItem>
                 <MudListItem Icon="@Icons.Material.Filled.Looks4">
-                    If the user has been granted access, the RPT is used to retry the request successfully
+                    The resource owner sees pending requests and can <strong>approve</strong> or <strong>deny</strong> them
+                </MudListItem>
+                <MudListItem Icon="@Icons.Material.Filled.Looks5">
+                    After approval, the requesting party retries and receives an
+                    <strong>RPT</strong> (Requesting Party Token) to access the resource
                 </MudListItem>
             </MudList>
         </MudCardContent>

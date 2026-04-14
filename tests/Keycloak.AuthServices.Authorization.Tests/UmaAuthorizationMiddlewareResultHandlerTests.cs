@@ -4,6 +4,7 @@ using System.Net;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Requirements;
 using Keycloak.AuthServices.Authorization.Uma;
+using Keycloak.AuthServices.Sdk.Protection;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
@@ -26,19 +27,27 @@ public class UmaAuthorizationMiddlewareResultHandlerTests
     {
         handler ??= this.mockHttp;
 
-        var httpClientFactory = new TestHttpClientFactory(handler, AuthServerUrl);
+        var httpClient = handler.ToHttpClient();
+        httpClient.BaseAddress = new Uri(AuthServerUrl);
+        var protectionClient = new KeycloakProtectionClient(httpClient);
+
         var options = Options.Create(
             new KeycloakAuthorizationServerOptions { Realm = Realm, AuthServerUrl = AuthServerUrl }
         );
         var logger = NullLogger<UmaAuthorizationMiddlewareResultHandler>.Instance;
 
-        return new UmaAuthorizationMiddlewareResultHandler(httpClientFactory, options, logger);
+        return new UmaAuthorizationMiddlewareResultHandler(protectionClient, options, logger);
     }
 
     [Fact]
     public async Task HandleAsync_WhenForbiddenWithDecisionRequirement_ReturnsUmaChallenge()
     {
         var ticketValue = "test-ticket-123";
+        this.mockHttp.Expect(
+                HttpMethod.Get,
+                $"{AuthServerUrl}realms/{Realm}/authz/protection/resource_set*"
+            )
+            .Respond(HttpStatusCode.OK, "application/json", """["res-id-001"]""");
         this.mockHttp.Expect(
                 HttpMethod.Post,
                 $"{AuthServerUrl}realms/{Realm}/authz/protection/permission"
@@ -70,6 +79,11 @@ public class UmaAuthorizationMiddlewareResultHandlerTests
     public async Task HandleAsync_WhenExplicitFailWithDecisionInPolicy_ReturnsUmaChallenge()
     {
         var ticketValue = "test-ticket-456";
+        this.mockHttp.Expect(
+                HttpMethod.Get,
+                $"{AuthServerUrl}realms/{Realm}/authz/protection/resource_set*"
+            )
+            .Respond(HttpStatusCode.OK, "application/json", """["res-id-001"]""");
         this.mockHttp.Expect(
                 HttpMethod.Post,
                 $"{AuthServerUrl}realms/{Realm}/authz/protection/permission"
@@ -132,6 +146,11 @@ public class UmaAuthorizationMiddlewareResultHandlerTests
     public async Task HandleAsync_WhenPermissionTicketCreationFails_DelegatesToDefault()
     {
         this.mockHttp.Expect(
+                HttpMethod.Get,
+                $"{AuthServerUrl}realms/{Realm}/authz/protection/resource_set*"
+            )
+            .Respond(HttpStatusCode.OK, "application/json", """["res-id-001"]""");
+        this.mockHttp.Expect(
                 HttpMethod.Post,
                 $"{AuthServerUrl}realms/{Realm}/authz/protection/permission"
             )
@@ -140,6 +159,28 @@ public class UmaAuthorizationMiddlewareResultHandlerTests
         var handler = this.CreateHandler();
         var httpContext = CreateHttpContextWithServices();
         var requirement = new DecisionRequirement("workspaces", "read");
+        var failure = AuthorizationFailure.Failed(new[] { requirement });
+        var authorizeResult = PolicyAuthorizationResult.Forbid(failure);
+        var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+
+        await handler.HandleAsync(_ => Task.CompletedTask, httpContext, policy, authorizeResult);
+
+        httpContext.Response.StatusCode.Should().Be(StatusCodes.Status403Forbidden);
+        this.mockHttp.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task HandleAsync_WhenResourceNotFound_DelegatesToDefault()
+    {
+        this.mockHttp.Expect(
+                HttpMethod.Get,
+                $"{AuthServerUrl}realms/{Realm}/authz/protection/resource_set*"
+            )
+            .Respond(HttpStatusCode.OK, "application/json", """[]""");
+
+        var handler = this.CreateHandler();
+        var httpContext = CreateHttpContextWithServices();
+        var requirement = new DecisionRequirement("unknown-resource", "read");
         var failure = AuthorizationFailure.Failed(new[] { requirement });
         var authorizeResult = PolicyAuthorizationResult.Forbid(failure);
         var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
@@ -175,24 +216,5 @@ public class UmaAuthorizationMiddlewareResultHandlerTests
 
         protected override Task<AuthenticateResult> HandleAuthenticateAsync() =>
             Task.FromResult(AuthenticateResult.NoResult());
-    }
-
-    private sealed class TestHttpClientFactory : IHttpClientFactory
-    {
-        private readonly MockHttpMessageHandler handler;
-        private readonly string baseAddress;
-
-        public TestHttpClientFactory(MockHttpMessageHandler handler, string baseAddress)
-        {
-            this.handler = handler;
-            this.baseAddress = baseAddress;
-        }
-
-        public HttpClient CreateClient(string name)
-        {
-            var client = this.handler.ToHttpClient();
-            client.BaseAddress = new Uri(this.baseAddress);
-            return client;
-        }
     }
 }

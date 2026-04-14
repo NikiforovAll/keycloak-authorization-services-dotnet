@@ -6,7 +6,7 @@ using Alba.Security;
 using Duende.AccessTokenManagement;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Authorization.Uma;
+using Keycloak.AuthServices.Sdk;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using static Keycloak.AuthServices.IntegrationTests.Utils;
@@ -41,6 +41,7 @@ public class UmaPermissionTicketChallengeTests(
                         services
                             .AddAuthorization()
                             .AddKeycloakAuthorization()
+                            .AddUmaPermissionTicketChallenge()
                             .AddAuthorizationBuilder()
                             .AddPolicy(
                                 "UmaProtected",
@@ -69,7 +70,7 @@ public class UmaPermissionTicketChallengeTests(
                             );
 
                         services
-                            .AddUmaPermissionTicketChallenge()
+                            .AddKeycloakProtectionHttpClient(context.Configuration)
                             .AddClientCredentialsTokenHandler(tokenClientName);
 
                         services.PostConfigure<JwtBearerOptions>(options =>

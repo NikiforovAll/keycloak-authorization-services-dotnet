@@ -228,4 +228,74 @@ public static class ServiceCollectionExtensions
 
         return services.AddKeycloakProtectionHttpClient(configureKeycloakOptions, configureClient);
     }
+
+    /// <summary>
+    /// Adds <see cref="IUmaTicketExchangeClient"/> HTTP client for UMA ticket exchange at the Keycloak token endpoint.
+    /// </summary>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configuration">The IConfiguration instance to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <param name="keycloakClientSectionName">The name of the configuration section containing the Keycloak client options.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
+    public static IHttpClientBuilder AddKeycloakUmaTicketExchangeHttpClient(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        Action<HttpClient>? configureClient = default,
+        string keycloakClientSectionName = KeycloakProtectionClientOptions.Section
+    ) =>
+        services.AddKeycloakUmaTicketExchangeHttpClient(
+            options => configuration.BindKeycloakOptions(options, keycloakClientSectionName),
+            configureClient
+        );
+
+    /// <summary>
+    /// Adds <see cref="IUmaTicketExchangeClient"/> HTTP client for UMA ticket exchange at the Keycloak token endpoint.
+    /// </summary>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configurationSection">The IConfigurationSection to bind the Keycloak options from.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
+    public static IHttpClientBuilder AddKeycloakUmaTicketExchangeHttpClient(
+        this IServiceCollection services,
+        IConfigurationSection configurationSection,
+        Action<HttpClient>? configureClient = default
+    ) =>
+        services.AddKeycloakUmaTicketExchangeHttpClient(
+            options => configurationSection.BindKeycloakOptions(options),
+            configureClient
+        );
+
+    /// <summary>
+    /// Adds <see cref="IUmaTicketExchangeClient"/> HTTP client for UMA ticket exchange at the Keycloak token endpoint.
+    /// </summary>
+    /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
+    /// <param name="configureKeycloakOptions">An action to configure the Keycloak client options.</param>
+    /// <param name="configureClient">An optional action to configure the HttpClient.</param>
+    /// <returns>The IHttpClientBuilder for further configuration.</returns>
+    public static IHttpClientBuilder AddKeycloakUmaTicketExchangeHttpClient(
+        this IServiceCollection services,
+        Action<KeycloakProtectionClientOptions> configureKeycloakOptions,
+        Action<HttpClient>? configureClient = default
+    )
+    {
+        services
+            .AddOptions<KeycloakProtectionClientOptions>()
+            .Configure(configureKeycloakOptions)
+            .ValidateOnStart();
+
+        services.AddSingleton<
+            IValidateOptions<KeycloakProtectionClientOptions>,
+            KeycloakProtectionClientOptionsValidator
+        >();
+
+        return services
+            .AddHttpClient(
+                "keycloak_uma_ticket_exchange",
+                (sp, http) =>
+                {
+                    configureClient?.Invoke(http);
+                }
+            )
+            .AddTypedClient<IUmaTicketExchangeClient, UmaTicketExchangeClient>();
+    }
 }

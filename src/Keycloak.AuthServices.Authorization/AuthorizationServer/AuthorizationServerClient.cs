@@ -129,7 +129,7 @@ public class AuthorizationServerClient(
     {
         var permission = string.IsNullOrWhiteSpace(scope) ? resource : $"{resource}#{scope}";
         var resolvedAudience = audience ?? this.options.Value.Resource ?? string.Empty;
-        var responseMode = scope.Contains(',') ? "permissions" : "decision";
+        var responseMode = string.IsNullOrWhiteSpace(scope) ? "decision" : "permissions";
 
         return new Dictionary<string, string>
         {
@@ -179,7 +179,7 @@ public class AuthorizationServerClient(
     {
         var scopes = scope.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
 
-        if (scopes is { Count: <= 1 })
+        if (scopes.Count == 0)
         {
             return true;
         }
@@ -198,7 +198,7 @@ public class AuthorizationServerClient(
         ScopesValidationMode? scopesValidationMode
     )
     {
-        scopeResponse ??= Array.Empty<ScopeResponse>();
+        scopeResponse ??= [];
 
         var resourceToValidate = Array.Find(
             scopeResponse,
@@ -217,14 +217,14 @@ public class AuthorizationServerClient(
         if (scopesValidationMode == ScopesValidationMode.AllOf)
         {
             var resourceScopes = resourceToValidate.Scopes;
-            var allScopesPresent = scopesToValidate.TrueForAll(s => resourceScopes.Contains(s));
+            var allScopesPresent = scopesToValidate.TrueForAll(resourceScopes.Contains);
 
             return allScopesPresent;
         }
         else if (scopesValidationMode == ScopesValidationMode.AnyOf)
         {
             var resourceScopes = resourceToValidate.Scopes;
-            var anyScopePresent = scopesToValidate.Exists(s => resourceScopes.Contains(s));
+            var anyScopePresent = scopesToValidate.Exists(resourceScopes.Contains);
 
             return anyScopePresent;
         }

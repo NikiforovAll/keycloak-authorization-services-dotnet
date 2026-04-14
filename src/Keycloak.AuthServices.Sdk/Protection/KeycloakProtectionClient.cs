@@ -9,15 +9,13 @@ using Keycloak.AuthServices.Sdk.Utils;
 /// <summary>
 /// Represents a client for interacting with Keycloak Protection API services.
 /// </summary>
-public partial class KeycloakProtectionClient : IKeycloakProtectionClient
+/// <remarks>
+/// Initializes a new instance of the <see cref="KeycloakProtectionClient"/> class.
+/// </remarks>
+/// <param name="httpClient">The HTTP client used for making requests.</param>
+public partial class KeycloakProtectionClient(HttpClient httpClient) : IKeycloakProtectionClient
 {
-    private readonly HttpClient httpClient;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="KeycloakProtectionClient"/> class.
-    /// </summary>
-    /// <param name="httpClient">The HTTP client used for making requests.</param>
-    public KeycloakProtectionClient(HttpClient httpClient) => this.httpClient = httpClient;
+    private readonly HttpClient httpClient = httpClient;
 
     #region IKeycloakProtectedResourceClient
     ///<inheritdoc/>
@@ -35,7 +33,7 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
             cancellationToken
         );
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -267,6 +265,144 @@ public partial class KeycloakProtectionClient : IKeycloakProtectionClient
         var responseMessage = await this.httpClient.PutAsJsonAsync(path, policy, cancellationToken);
 
         return responseMessage!;
+    }
+
+    #endregion
+
+    #region IKeycloakPermissionClient
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> CreatePermissionTicketWithResponseAsync(
+        string realm,
+        IList<PermissionTicketRequest> permissions,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.CreatePermissionTicket.WithRealm(realm);
+
+        var responseMessage = await this.httpClient.PostAsJsonAsync(
+            path,
+            permissions,
+            cancellationToken
+        );
+
+        return responseMessage;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> GetPermissionTicketsWithResponseAsync(
+        string realm,
+        GetPermissionTicketsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetPermissionTickets.WithRealm(realm);
+
+        var queryBuilder = new QueryBuilder();
+
+        parameters ??= new();
+        if (parameters.Granted.HasValue)
+        {
+            queryBuilder.Add(
+                "granted",
+                parameters.Granted.Value.ToString(CultureInfo.InvariantCulture).ToLowerInvariant()
+            );
+        }
+
+        if (!string.IsNullOrEmpty(parameters.Requester))
+        {
+            queryBuilder.Add("requester", parameters.Requester);
+        }
+
+        if (!string.IsNullOrEmpty(parameters.ResourceId))
+        {
+            queryBuilder.Add("resourceId", parameters.ResourceId);
+        }
+
+        if (!string.IsNullOrEmpty(parameters.ScopeId))
+        {
+            queryBuilder.Add("scopeId", parameters.ScopeId);
+        }
+
+        if (!string.IsNullOrEmpty(parameters.Owner))
+        {
+            queryBuilder.Add("owner", parameters.Owner);
+        }
+
+        if (parameters.ReturnNames.HasValue)
+        {
+            queryBuilder.Add(
+                "returnNames",
+                parameters
+                    .ReturnNames.Value.ToString(CultureInfo.InvariantCulture)
+                    .ToLowerInvariant()
+            );
+        }
+
+        if (parameters.First.HasValue)
+        {
+            queryBuilder.Add(
+                "first",
+                parameters.First.Value.ToString(CultureInfo.InvariantCulture)
+            );
+        }
+
+        if (parameters.Max.HasValue)
+        {
+            queryBuilder.Add("max", parameters.Max.Value.ToString(CultureInfo.InvariantCulture));
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
+
+        return responseMessage;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> UpdatePermissionTicketWithResponseAsync(
+        string realm,
+        PermissionTicket ticket,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.UpdatePermissionTicket.WithRealm(realm);
+
+        var responseMessage = await this.httpClient.PutAsJsonAsync(path, ticket, cancellationToken);
+
+        return responseMessage;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> DeletePermissionTicketWithResponseAsync(
+        string realm,
+        string ticketId,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.DeletePermissionTicket.WithRealm(realm).Replace("{id}", ticketId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage;
+    }
+
+    ///<inheritdoc/>
+    public async Task<HttpResponseMessage> CreatePermissionTicketWithResponseAsync(
+        string realm,
+        PermissionTicket ticket,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetPermissionTickets.WithRealm(realm);
+
+        var responseMessage = await this.httpClient.PostAsJsonAsync(
+            path,
+            ticket,
+            cancellationToken
+        );
+
+        return responseMessage;
     }
 
     #endregion

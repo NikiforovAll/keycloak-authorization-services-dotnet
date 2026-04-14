@@ -12,6 +12,9 @@ public class AuthorizationServerClientTests
     private const string TokenEndpoint = "protocol/openid-connect/token";
     private const string DecisionResponse = """{"result": true}""";
 
+    private static string PermissionsResponse(string resource, string scope) =>
+        $$"""[{"rsid": "test-id", "rsname": "{{resource}}", "scopes": ["{{scope}}"]}]""";
+
     [Fact]
     public async Task VerifyAccessToResource_WithExplicitToken_SetsAuthorizationHeader()
     {
@@ -25,7 +28,11 @@ public class AuthorizationServerClientTests
                 capturedAuth = req.Headers.Authorization;
                 return true;
             })
-            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+            .Respond(
+                HttpStatusCode.OK,
+                "application/json",
+                PermissionsResponse("workspace", "read")
+            );
 
         var client = CreateClient(mockHttp);
 
@@ -50,7 +57,11 @@ public class AuthorizationServerClientTests
                 capturedAuth = req.Headers.Authorization;
                 return true;
             })
-            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+            .Respond(
+                HttpStatusCode.OK,
+                "application/json",
+                PermissionsResponse("workspace", "read")
+            );
 
         var options = new KeycloakAuthorizationServerOptions
         {
@@ -77,7 +88,11 @@ public class AuthorizationServerClientTests
                 capturedBody = req.Content!.ReadAsStringAsync().GetAwaiter().GetResult();
                 return true;
             })
-            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+            .Respond(
+                HttpStatusCode.OK,
+                "application/json",
+                PermissionsResponse("workspace", "read")
+            );
 
         var client = CreateClient(mockHttp);
 
@@ -86,6 +101,7 @@ public class AuthorizationServerClientTests
         capturedBody.Should().Contain("grant_type=urn");
         capturedBody.Should().Contain("permission=workspace%23read");
         capturedBody.Should().Contain("audience=test-client");
+        capturedBody.Should().Contain("response_mode=permissions");
     }
 
     [Fact]
@@ -113,7 +129,11 @@ public class AuthorizationServerClientTests
         var mockHttp = new MockHttpMessageHandler();
         mockHttp
             .When(HttpMethod.Post, $"*/{TokenEndpoint}")
-            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+            .Respond(
+                HttpStatusCode.OK,
+                "application/json",
+                PermissionsResponse("workspace", "read")
+            );
 
         var client = CreateClient(mockHttp);
 
@@ -161,7 +181,7 @@ public class AuthorizationServerClientTests
                 capturedBody = req.Content!.ReadAsStringAsync().GetAwaiter().GetResult();
                 return true;
             })
-            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+            .Respond(HttpStatusCode.OK, "application/json", PermissionsResponse("invoice", "read"));
 
         var client = CreateClient(mockHttp);
 
@@ -190,7 +210,7 @@ public class AuthorizationServerClientTests
                 capturedBody = req.Content!.ReadAsStringAsync().GetAwaiter().GetResult();
                 return true;
             })
-            .Respond(HttpStatusCode.OK, "application/json", DecisionResponse);
+            .Respond(HttpStatusCode.OK, "application/json", PermissionsResponse("invoice", "read"));
 
         var client = CreateClient(mockHttp);
 

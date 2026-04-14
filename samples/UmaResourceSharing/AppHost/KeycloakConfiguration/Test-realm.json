@@ -96,9 +96,9 @@
         } ]
       } ],
       "policies" : [ {
-        "id" : "f1000001-0000-0000-0000-000000000001",
+        "id" : "d1000001-0000-0000-0000-000000000010",
         "name" : "owner-policy",
-        "description" : "Grants access to the resource owner (alice)",
+        "description" : "Grants access to alice (resource owner)",
         "type" : "user",
         "logic" : "POSITIVE",
         "decisionStrategy" : "UNANIMOUS",
@@ -106,15 +106,25 @@
           "users" : "[\"e1000001-0000-0000-0000-000000000001\"]"
         }
       }, {
-        "id" : "f1000001-0000-0000-0000-000000000002",
-        "name" : "owner-permission",
-        "description" : "Owner has full access to shared-document",
+        "id" : "d1000001-0000-0000-0000-000000000011",
+        "name" : "owner-read-permission",
         "type" : "scope",
         "logic" : "POSITIVE",
         "decisionStrategy" : "UNANIMOUS",
         "config" : {
-          "resources" : "[\"shared-document\"]",
-          "scopes" : "[\"read\",\"write\"]",
+          "resources" : "[\"c1000001-0000-0000-0000-000000000001\"]",
+          "scopes" : "[\"d1000001-0000-0000-0000-000000000001\"]",
+          "applyPolicies" : "[\"owner-policy\"]"
+        }
+      }, {
+        "id" : "d1000001-0000-0000-0000-000000000012",
+        "name" : "owner-write-permission",
+        "type" : "scope",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "resources" : "[\"c1000001-0000-0000-0000-000000000001\"]",
+          "scopes" : "[\"d1000001-0000-0000-0000-000000000002\"]",
           "applyPolicies" : "[\"owner-policy\"]"
         }
       } ],
@@ -169,8 +179,18 @@
         "introspection.token.claim" : "true",
         "access.token.claim" : "true"
       }
+    }, {
+      "id" : "b1000002-0000-0000-0000-000000000002",
+      "name" : "subject",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-sub-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "introspection.token.claim" : "true",
+        "access.token.claim" : "true"
+      }
     } ],
-    "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email" ],
+    "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email", "basic" ],
     "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
   } ]
 }
