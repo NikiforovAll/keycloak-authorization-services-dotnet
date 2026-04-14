@@ -8,15 +8,15 @@
 
 ### Login & Resource Owner Access
 
-![Login and Resource Owner Access](../assets/uma-resource-sharing-login.gif)
+![Login and Resource Owner Access](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/assets/uma-resource-sharing-login.gif)
 
 ### Request Access & Owner Approval
 
-![Request Access and Owner Approval](../assets/uma-resource-sharing-approve.gif)
+![Request Access and Owner Approval](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/assets/uma-resource-sharing-approve.gif)
 
 ### Access Denied (Insufficient Permissions)
 
-![Access Denied](../assets/uma-resource-sharing-denied.gif)
+![Access Denied](https://media.githubusercontent.com/media/NikiforovAll/keycloak-authorization-services-dotnet/main/docs/assets/uma-resource-sharing-denied.gif)
 
 ## Key Concepts
 
