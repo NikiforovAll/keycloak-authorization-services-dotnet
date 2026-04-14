@@ -1,8 +1,7 @@
 namespace Microsoft.Extensions.DependencyInjection;
 
-using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
-using static AuthorizationConstants;
+using static Microsoft.Extensions.DependencyInjection.AuthorizationConstants;
 
 public static partial class ServiceCollectionExtensions
 {

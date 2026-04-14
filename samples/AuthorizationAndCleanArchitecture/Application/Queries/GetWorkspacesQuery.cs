@@ -2,8 +2,8 @@ namespace Api.Application.Queries;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Data;
 using Authorization;
+using Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,9 +18,10 @@ public class GetWorkspacesQueryHandler : IRequestHandler<GetWorkspacesQuery, IEn
 
     public async Task<IEnumerable<Workspace>> Handle(
         GetWorkspacesQuery request,
-        CancellationToken cancellationToken) =>
-            await this.db
-                .Workspaces
-                .Include(w => w.Projects)
-                .AsNoTracking().ToListAsync(cancellationToken);
+        CancellationToken cancellationToken
+    ) =>
+        await this
+            .db.Workspaces.Include(w => w.Projects)
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
 }

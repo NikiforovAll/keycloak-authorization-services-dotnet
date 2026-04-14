@@ -2,9 +2,9 @@ namespace Api.Application.Queries;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Authorization;
-using Authorization.Abstractions;
-using Data;
+using Api.Application.Authorization;
+using Api.Application.Authorization.Abstractions;
+using Api.Data;
 using Keycloak.AuthServices.Authorization;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -16,8 +16,7 @@ public class GetWorkspaceByIdQueryHandler : IRequestHandler<GetWorkspaceByIdQuer
     private readonly IApplicationDbContext db;
     private readonly IIdentityService identityService;
 
-    public GetWorkspaceByIdQueryHandler(
-        IApplicationDbContext db, IIdentityService identityService)
+    public GetWorkspaceByIdQueryHandler(IApplicationDbContext db, IIdentityService identityService)
     {
         this.db = db;
         this.identityService = identityService;
@@ -25,19 +24,20 @@ public class GetWorkspaceByIdQueryHandler : IRequestHandler<GetWorkspaceByIdQuer
 
     public async Task<Workspace> Handle(
         GetWorkspaceByIdQuery request,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken
+    )
     {
         var authorized = await this.identityService.AuthorizeAsync(
-            ProtectedResourcePolicy.From("workspaces", request.Id.ToString(), "workspaces:read"));
+            ProtectedResourcePolicy.From("workspaces", request.Id.ToString(), "workspaces:read")
+        );
 
         if (!authorized)
         {
             throw new ForbiddenAccessException();
         }
 
-        var workspace = await this.db
-            .Workspaces
-            .Include(w => w.Projects)
+        var workspace = await this
+            .db.Workspaces.Include(w => w.Projects)
             .FirstAsync(x => x.Id == request.Id, cancellationToken);
 
         return workspace;

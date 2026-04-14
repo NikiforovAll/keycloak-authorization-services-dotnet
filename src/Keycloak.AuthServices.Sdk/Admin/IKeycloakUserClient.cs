@@ -15,7 +15,7 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
-    Task<HttpResponseMessage> GetUsersWithResponseAsync(
+    public Task<HttpResponseMessage> GetUsersWithResponseAsync(
         string realm,
         GetUsersRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -28,7 +28,7 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
-    async Task<IEnumerable<UserRepresentation>> GetUsersAsync(
+    public async Task<IEnumerable<UserRepresentation>> GetUsersAsync(
         string realm,
         GetUsersRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -49,7 +49,7 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>An integer amount of users</returns>
-    Task<HttpResponseMessage> GetUserCountWithResponseAsync(
+    public Task<HttpResponseMessage> GetUserCountWithResponseAsync(
         string realm,
         GetUserCountRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -62,7 +62,7 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>An integer amount of users</returns>
-    async Task<int> GetUserCountAsync(
+    public async Task<int> GetUserCountAsync(
         string realm,
         GetUserCountRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -87,7 +87,7 @@ public interface IKeycloakUserClient
     /// <param name="includeUserProfileMetadata"> Indicates if the user profile metadata should be added to the response.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The user representation.</returns>
-    async Task<UserRepresentation> GetUserAsync(
+    public async Task<UserRepresentation> GetUserAsync(
         string realm,
         string userId,
         bool includeUserProfileMetadata = false,
@@ -112,7 +112,7 @@ public interface IKeycloakUserClient
     /// <param name="includeUserProfileMetadata"> Indicates if the user profile metadata should be added to the response.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The user representation.</returns>
-    Task<HttpResponseMessage> GetUserWithResponseAsync(
+    public Task<HttpResponseMessage> GetUserWithResponseAsync(
         string realm,
         string userId,
         bool includeUserProfileMetadata = false,
@@ -129,7 +129,7 @@ public interface IKeycloakUserClient
     /// <param name="user">User representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> CreateUserWithResponseAsync(
+    public Task<HttpResponseMessage> CreateUserWithResponseAsync(
         string realm,
         UserRepresentation user,
         CancellationToken cancellationToken = default
@@ -145,7 +145,7 @@ public interface IKeycloakUserClient
     /// <param name="user">User representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task CreateUserAsync(
+    public async Task CreateUserAsync(
         string realm,
         UserRepresentation user,
         CancellationToken cancellationToken = default
@@ -164,7 +164,7 @@ public interface IKeycloakUserClient
     /// <param name="user">User representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> UpdateUserWithResponseAsync(
+    public Task<HttpResponseMessage> UpdateUserWithResponseAsync(
         string realm,
         string userId,
         UserRepresentation user,
@@ -179,7 +179,7 @@ public interface IKeycloakUserClient
     /// <param name="user">User representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task UpdateUserAsync(
+    public async Task UpdateUserAsync(
         string realm,
         string userId,
         UserRepresentation user,
@@ -203,7 +203,7 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> DeleteUserWithResponseAsync(
+    public Task<HttpResponseMessage> DeleteUserWithResponseAsync(
         string realm,
         string userId,
         CancellationToken cancellationToken = default
@@ -216,7 +216,7 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task DeleteUserAsync(
+    public async Task DeleteUserAsync(
         string realm,
         string userId,
         CancellationToken cancellationToken = default
@@ -238,7 +238,7 @@ public interface IKeycloakUserClient
     /// <param name="clientId">Client ID.</param>
     /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
     /// <param name="cancellationToken"></param>
-    Task<HttpResponseMessage> SendVerifyEmailWithResponseAsync(
+    public Task<HttpResponseMessage> SendVerifyEmailWithResponseAsync(
         string realm,
         string userId,
         string? clientId = default,
@@ -257,7 +257,7 @@ public interface IKeycloakUserClient
     /// <param name="clientId">Client ID.</param>
     /// <param name="redirectUri">Redirect URI. The default for the redirect is the account client.</param>
     /// <param name="cancellationToken"></param>
-    async Task SendVerifyEmailAsync(
+    public async Task SendVerifyEmailAsync(
         string realm,
         string userId,
         string? clientId = default,
@@ -283,7 +283,7 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID.</param>
     /// <param name="request"></param>
     /// <param name="cancellationToken"></param>
-    Task<HttpResponseMessage> ExecuteActionsEmailWithResponseAsync(
+    public Task<HttpResponseMessage> ExecuteActionsEmailWithResponseAsync(
         string realm,
         string userId,
         ExecuteActionsEmailRequest request,
@@ -297,7 +297,7 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID.</param>
     /// <param name="request"></param>
     /// <param name="cancellationToken"></param>
-    async Task ExecuteActionsEmailAsync(
+    public async Task ExecuteActionsEmailAsync(
         string realm,
         string userId,
         ExecuteActionsEmailRequest request,
@@ -322,7 +322,7 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
-    Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
+    public Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
         string realm,
         string userId,
         GetUserGroupsRequestParameters? parameters = default,
@@ -337,7 +337,7 @@ public interface IKeycloakUserClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of users, filtered according to query parameters.</returns>
-    async Task<IEnumerable<GroupRepresentation>> GetUserGroupsAsync(
+    public async Task<IEnumerable<GroupRepresentation>> GetUserGroupsAsync(
         string realm,
         string userId,
         GetUserGroupsRequestParameters? parameters = default,
@@ -363,7 +363,7 @@ public interface IKeycloakUserClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> JoinGroupWithResponseAsync(
+    public Task<HttpResponseMessage> JoinGroupWithResponseAsync(
         string realm,
         string userId,
         string groupId,
@@ -378,7 +378,7 @@ public interface IKeycloakUserClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task JoinGroupAsync(
+    public async Task JoinGroupAsync(
         string realm,
         string userId,
         string groupId,
@@ -403,7 +403,7 @@ public interface IKeycloakUserClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> LeaveGroupWithResponseAsync(
+    public Task<HttpResponseMessage> LeaveGroupWithResponseAsync(
         string realm,
         string userId,
         string groupId,
@@ -418,7 +418,7 @@ public interface IKeycloakUserClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task LeaveGroupAsync(
+    public async Task LeaveGroupAsync(
         string realm,
         string userId,
         string groupId,
@@ -435,7 +435,6 @@ public interface IKeycloakUserClient
         await response.EnsureResponseAsync(cancellationToken);
     }
 
-
     /// <summary>
     /// Set up a new password for the user
     /// </summary>
@@ -444,7 +443,7 @@ public interface IKeycloakUserClient
     /// <param name="credential">Credential representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> ResetPasswordWithResponseAsync(
+    public Task<HttpResponseMessage> ResetPasswordWithResponseAsync(
         string realm,
         string userId,
         CredentialRepresentation credential,
@@ -459,7 +458,7 @@ public interface IKeycloakUserClient
     /// <param name="credential">Credential representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task ResetPasswordAsync(
+    public async Task ResetPasswordAsync(
         string realm,
         string userId,
         CredentialRepresentation credential,
@@ -484,7 +483,7 @@ public interface IKeycloakUserClient
     /// <param name="credentialId">Credential ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> DeleteCredentialWithResponseAsync(
+    public Task<HttpResponseMessage> DeleteCredentialWithResponseAsync(
         string realm,
         string userId,
         string credentialId,
@@ -499,14 +498,19 @@ public interface IKeycloakUserClient
     /// <param name="credentialId">Credential ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task DeleteCredentialAsync(
+    public async Task DeleteCredentialAsync(
         string realm,
         string userId,
         string credentialId,
         CancellationToken cancellationToken = default
     )
     {
-        var response = await this.DeleteCredentialWithResponseAsync(realm, userId, credentialId, cancellationToken);
+        var response = await this.DeleteCredentialWithResponseAsync(
+            realm,
+            userId,
+            credentialId,
+            cancellationToken
+        );
 
         await response.EnsureResponseAsync(cancellationToken);
     }
@@ -518,7 +522,7 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> GetCredentialsWithResponseAsync(
+    public Task<HttpResponseMessage> GetCredentialsWithResponseAsync(
         string realm,
         string userId,
         CancellationToken cancellationToken = default
@@ -531,7 +535,7 @@ public interface IKeycloakUserClient
     /// <param name="userId">User ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task<IEnumerable<CredentialRepresentation>> GetCredentialsAsync(
+    public async Task<IEnumerable<CredentialRepresentation>> GetCredentialsAsync(
         string realm,
         string userId,
         CancellationToken cancellationToken = default
@@ -539,7 +543,8 @@ public interface IKeycloakUserClient
     {
         var response = await this.GetCredentialsWithResponseAsync(realm, userId, cancellationToken);
 
-        return await response.GetResponseAsync<IEnumerable<CredentialRepresentation>>(cancellationToken)
-            ?? Enumerable.Empty<CredentialRepresentation>();
+        return await response.GetResponseAsync<IEnumerable<CredentialRepresentation>>(
+                cancellationToken
+            ) ?? Enumerable.Empty<CredentialRepresentation>();
     }
 }

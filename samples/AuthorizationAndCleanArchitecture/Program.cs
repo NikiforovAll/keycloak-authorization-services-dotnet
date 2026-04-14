@@ -1,10 +1,8 @@
 using Api;
 using Api.Filters;
-using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authentication.Configuration;
 using Keycloak.AuthServices.Authorization;
 using Microsoft.AspNetCore.Authorization;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,52 +19,57 @@ services.AddInfrastructure(configuration);
 DatabaseUtils.MigrateDatabase(services.BuildServiceProvider());
 #pragma warning restore ASP0000
 
-services
-    .AddApplication()
-    .AddSwagger();
+services.AddApplication().AddSwagger();
 
 // adds client resource claims transformation
-services.AddKeycloakWebApiAuthentication(configuration, o =>
-{
-    o.RequireHttpsMetadata = false;
-});
-
-services.AddAuthorization(o =>
-{
-    o.FallbackPolicy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .Build();
-
-    o.AddPolicy(PolicyConstants.MyCustomPolicy, b =>
+services.AddKeycloakWebApiAuthentication(
+    configuration,
+    o =>
     {
-        // b.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
-        b.RequireProtectedResource("workspaces", "workspaces:read");
-    });
+        o.RequireHttpsMetadata = false;
+    }
+);
 
-    o.AddPolicy(PolicyConstants.CanDeleteAllWorkspaces, b =>
+services
+    .AddAuthorization(o =>
     {
-        b.RequireRealmRoles("SuperManager");
-    });
+        o.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
 
-    o.AddPolicy(PolicyConstants.AccessManagement, b =>
-    {
-        b.RequireResourceRoles("Manager");
-    });
-}).AddKeycloakAuthorization()
-.AddAuthorizationServer(configuration);
+        o.AddPolicy(
+            PolicyConstants.MyCustomPolicy,
+            b =>
+            {
+                // b.AddRequirements(new DecisionRequirement("workspaces", "workspaces:read"));
+                b.RequireProtectedResource("workspaces", "workspaces:read");
+            }
+        );
+
+        o.AddPolicy(
+            PolicyConstants.CanDeleteAllWorkspaces,
+            b =>
+            {
+                b.RequireRealmRoles("SuperManager");
+            }
+        );
+
+        o.AddPolicy(
+            PolicyConstants.AccessManagement,
+            b =>
+            {
+                b.RequireResourceRoles("Manager");
+            }
+        );
+    })
+    .AddKeycloakAuthorization()
+    .AddAuthorizationServer(configuration);
 
 services.AddSingleton<IAuthorizationPolicyProvider, ProtectedResourcePolicyProvider>();
 
-services.AddControllers(options =>
-    options.Filters.Add<ApiExceptionFilterAttribute>());
+services.AddControllers(options => options.Filters.Add<ApiExceptionFilterAttribute>());
 
 var app = builder.Build();
 
-app
-    .UseSwagger()
-    .UseSwaggerUI()
-    .UseAuthentication()
-    .UseAuthorization();
+app.UseSwagger().UseSwaggerUI().UseAuthentication().UseAuthorization();
 
 app.MapControllers();
 

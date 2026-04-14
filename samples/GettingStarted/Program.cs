@@ -1,5 +1,3 @@
-using Keycloak.AuthServices.Authentication;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);

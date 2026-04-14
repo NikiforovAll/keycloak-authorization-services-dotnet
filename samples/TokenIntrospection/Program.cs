@@ -1,7 +1,5 @@
 using System.Security.Claims;
-using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
-using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,7 +36,7 @@ app.MapGet(
             Results.Ok(
                 new
                 {
-                    Name = user.Identity?.Name,
+                    user.Identity?.Name,
                     Claims = user.Claims.Select(c => new { c.Type, c.Value }),
                 }
             )

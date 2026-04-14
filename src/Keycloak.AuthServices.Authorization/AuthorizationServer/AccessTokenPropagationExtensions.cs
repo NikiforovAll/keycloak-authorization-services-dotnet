@@ -1,6 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Authorization.AuthorizationServer;
 
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
@@ -64,14 +65,12 @@ public static class AccessTokenPropagationExtensions
         ArgumentNullException.ThrowIfNull(services);
 
         services.AddHttpContextAccessor();
-        services.AddScoped<IKeycloakAccessTokenProvider>(sp =>
-            new CookieAccessTokenProvider(
-                sp.GetRequiredService<Microsoft.AspNetCore.Http.IHttpContextAccessor>(),
-                sp.GetRequiredService<ILogger<CookieAccessTokenProvider>>(),
-                cookieScheme,
-                tokenName
-            )
-        );
+        services.AddScoped<IKeycloakAccessTokenProvider>(sp => new CookieAccessTokenProvider(
+            sp.GetRequiredService<IHttpContextAccessor>(),
+            sp.GetRequiredService<ILogger<CookieAccessTokenProvider>>(),
+            cookieScheme,
+            tokenName
+        ));
 
         return services;
     }

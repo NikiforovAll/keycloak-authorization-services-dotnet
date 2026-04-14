@@ -1,6 +1,6 @@
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -21,28 +21,16 @@ services.AddSwaggerGen(c =>
         {
             Name = "oauth2",
             Type = SecuritySchemeType.OpenIdConnect,
-            OpenIdConnectUrl = new Uri(keycloakOptions.OpenIdConnectUrl!)
+            OpenIdConnectUrl = new Uri(keycloakOptions.OpenIdConnectUrl!),
         }
     );
 
-    c.AddSecurityRequirement(
-        new OpenApiSecurityRequirement
-        {
-            {
-                new OpenApiSecurityScheme
-                {
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "oidc"
-                    }
-                },
-                Array.Empty<string>()
-            }
-        }
-    );
+    c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+    {
+        [new OpenApiSecuritySchemeReference("oidc", document)] = [],
+    });
 
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = $"API (v1)", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API (v1)", Version = "v1" });
 });
 
 services.AddKeycloakWebApiAuthentication(

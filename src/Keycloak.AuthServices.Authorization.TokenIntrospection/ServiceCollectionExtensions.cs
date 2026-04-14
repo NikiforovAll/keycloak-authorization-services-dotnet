@@ -1,8 +1,8 @@
-namespace Keycloak.AuthServices.Authorization.TokenIntrospection;
+namespace Microsoft.Extensions.DependencyInjection;
 
+using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Keycloak.AuthServices.Common;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
 /// <summary>

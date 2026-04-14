@@ -14,7 +14,7 @@ public interface IKeycloakRealmClient
     /// <param name="realm"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task<RealmRepresentation> GetRealmAsync(
+    public async Task<RealmRepresentation> GetRealmAsync(
         string realm,
         CancellationToken cancellationToken = default
     )
@@ -30,7 +30,7 @@ public interface IKeycloakRealmClient
     /// <param name="realm"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> GetRealmWithResponseAsync(
+    public Task<HttpResponseMessage> GetRealmWithResponseAsync(
         string realm,
         CancellationToken cancellationToken = default
     );

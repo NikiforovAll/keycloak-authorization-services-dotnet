@@ -21,7 +21,7 @@ public interface IKeycloakPolicyClient
     /// <param name="parameters"></param>
     /// <param name="cancellationToken"></param>
     /// <returns>The HttpResponseMessage of the request</returns>
-    Task<HttpResponseMessage> GetPoliciesWithResponseAsync(
+    public Task<HttpResponseMessage> GetPoliciesWithResponseAsync(
         string realm,
         GetPoliciesRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -37,7 +37,7 @@ public interface IKeycloakPolicyClient
     /// <param name="parameters"></param>
     /// <param name="cancellationToken"></param>
     /// <returns>A list of policy representations <see cref="Policy"/></returns>
-    async Task<IEnumerable<Policy>> GetPoliciesAsync(
+    public async Task<IEnumerable<Policy>> GetPoliciesAsync(
         string realm,
         GetPoliciesRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -60,7 +60,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policyId">Policy ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The HttpResponseMessage of the request</returns>
-    Task<HttpResponseMessage> GetPolicyWithResponseAsync(
+    public Task<HttpResponseMessage> GetPolicyWithResponseAsync(
         string realm,
         string policyId,
         CancellationToken cancellationToken = default
@@ -73,7 +73,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policyId">Policy ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The policy representation <see cref="Policy"/></returns>
-    async Task<Policy> GetPolicyAsync(
+    public async Task<Policy> GetPolicyAsync(
         string realm,
         string policyId,
         CancellationToken cancellationToken = default
@@ -92,7 +92,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policy">Policy representation</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The HttpResponseMessage of the request</returns>
-    Task<HttpResponseMessage> CreatePolicyWithResponseAsync(
+    public Task<HttpResponseMessage> CreatePolicyWithResponseAsync(
         string realm,
         string resourceId,
         Policy policy,
@@ -107,7 +107,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policy">Policy representation</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The created policy representation <see cref="Policy"/></returns>
-    async Task CreatePolicyAsync(
+    public async Task CreatePolicyAsync(
         string realm,
         string resourceId,
         Policy policy,
@@ -135,7 +135,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policy">Policy object.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> UpdatePolicyWithResponseAsync(
+    public Task<HttpResponseMessage> UpdatePolicyWithResponseAsync(
         string realm,
         string policyId,
         Policy policy,
@@ -153,7 +153,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policy">Policy object.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task UpdatePolicyAsync(
+    public async Task UpdatePolicyAsync(
         string realm,
         string policyId,
         Policy policy,
@@ -180,7 +180,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policyId">Policy ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> DeletePolicyWithResponseAsync(
+    public Task<HttpResponseMessage> DeletePolicyWithResponseAsync(
         string realm,
         string policyId,
         CancellationToken cancellationToken = default
@@ -196,7 +196,7 @@ public interface IKeycloakPolicyClient
     /// <param name="policyId">Policy ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task DeletePolicyAsync(
+    public async Task DeletePolicyAsync(
         string realm,
         string policyId,
         CancellationToken cancellationToken = default
