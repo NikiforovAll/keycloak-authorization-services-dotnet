@@ -56,6 +56,11 @@ public class Policy
     public string[]? Scopes { get; init; }
 
     /// <summary>
+    /// Gets or sets the users associated with the policy.
+    /// </summary>
+    public string[]? Users { get; init; }
+
+    /// <summary>
     /// Gets or sets the groups associated with the policy.
     /// </summary>
     public string[]? Groups { get; set; }

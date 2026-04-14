@@ -1,0 +1,53 @@
+@page
+@model RazorPagesApp.Pages.Documents.DetailsModel
+@{
+    ViewData["Title"] = Model.AccessGranted ? "Document Details" : "Access Denied";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-page="Index">Documents</a></li>
+        <li class="breadcrumb-item active">@Model.DocumentName</li>
+    </ol>
+</nav>
+
+@if (Model.AccessGranted)
+{
+    <div class="card">
+        <div class="card-header">
+            <strong>@Model.DocumentName</strong>
+            <span class="badge bg-success ms-2">Access Granted</span>
+            <span class="badge bg-secondary ms-1">scope: @Model.Scope</span>
+        </div>
+        <div class="card-body">
+            <p>@Model.Content</p>
+        </div>
+    </div>
+
+    <div class="alert alert-success mt-3">
+        <strong>UMA authorization succeeded.</strong> Keycloak granted the
+        <code>@Model.Scope</code> scope on <code>@Model.DocumentName</code>.
+    </div>
+}
+else
+{
+    <div class="card border-danger">
+        <div class="card-header text-bg-danger">
+            <strong>@Model.DocumentName</strong>
+            <span class="badge bg-dark ms-2">Access Denied</span>
+            <span class="badge bg-dark ms-1">scope: @Model.Scope</span>
+        </div>
+        <div class="card-body">
+            <p>You don't have the <code>@Model.Scope</code> permission on this resource.</p>
+            <p>Use the <strong>Request Access</strong> button on the Documents page to submit an access request for owner approval.</p>
+        </div>
+    </div>
+
+    <div class="alert alert-warning mt-3">
+        <strong>UMA authorization failed.</strong> The Keycloak Authorization Server denied
+        the <code>@Model.Scope</code> scope. The resource owner can grant access via the
+        Permissions page.
+    </div>
+}
+
+<a asp-page="Index" class="btn btn-outline-primary mt-2">&larr; Back to Documents</a>

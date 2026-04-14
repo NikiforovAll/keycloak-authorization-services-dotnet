@@ -1,0 +1,196 @@
+{
+  "realm" : "Test",
+  "enabled" : true,
+  "sslRequired" : "none",
+  "registrationAllowed" : false,
+  "loginWithEmailAllowed" : true,
+  "duplicateEmailsAllowed" : false,
+  "resetPasswordAllowed" : false,
+  "editUsernameAllowed" : false,
+  "bruteForceProtected" : false,
+  "roles" : {
+    "realm" : [ {
+      "id" : "f1a1b1c1-0001-0001-0001-000000000001",
+      "name" : "default-roles-test",
+      "composite" : true,
+      "composites" : {
+        "realm" : [ "offline_access", "uma_authorization" ],
+        "client" : {
+          "account" : [ "manage-account", "view-profile" ]
+        }
+      }
+    }, {
+      "id" : "f1a1b1c1-0001-0001-0001-000000000002",
+      "name" : "offline_access",
+      "description" : "${role_offline-access}"
+    }, {
+      "id" : "f1a1b1c1-0001-0001-0001-000000000003",
+      "name" : "uma_authorization",
+      "description" : "${role_uma_authorization}"
+    } ]
+  },
+  "defaultRole" : {
+    "id" : "f1a1b1c1-0001-0001-0001-000000000001",
+    "name" : "default-roles-test",
+    "composite" : true
+  },
+  "clients" : [ {
+    "id" : "a1000001-0000-0000-0000-000000000001",
+    "clientId" : "uma-resource-server",
+    "name" : "UMA Resource Server",
+    "description" : "Resource server with UMA protection and authorization services",
+    "enabled" : true,
+    "clientAuthenticatorType" : "client-secret",
+    "secret" : "uma-resource-server-secret",
+    "redirectUris" : [ "*" ],
+    "webOrigins" : [ "*" ],
+    "bearerOnly" : false,
+    "consentRequired" : false,
+    "standardFlowEnabled" : true,
+    "implicitFlowEnabled" : false,
+    "directAccessGrantsEnabled" : true,
+    "serviceAccountsEnabled" : true,
+    "authorizationServicesEnabled" : true,
+    "publicClient" : false,
+    "frontchannelLogout" : true,
+    "protocol" : "openid-connect",
+    "attributes" : {
+      "oidc.ciba.grant.enabled" : "false",
+      "backchannel.logout.session.required" : "true",
+      "oauth2.device.authorization.grant.enabled" : "false",
+      "display.on.consent.screen" : "false",
+      "backchannel.logout.revoke.offline.tokens" : "false"
+    },
+    "fullScopeAllowed" : true,
+    "nodeReRegistrationTimeout" : -1,
+    "protocolMappers" : [ {
+      "id" : "b1000001-0000-0000-0000-000000000001",
+      "name" : "audience",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-audience-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "included.client.audience" : "uma-resource-server",
+        "id.token.claim" : "false",
+        "lightweight.claim" : "false",
+        "introspection.token.claim" : "true",
+        "access.token.claim" : "true"
+      }
+    } ],
+    "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email" ],
+    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ],
+    "authorizationSettings" : {
+      "allowRemoteResourceManagement" : true,
+      "policyEnforcementMode" : "ENFORCING",
+      "resources" : [ {
+        "name" : "shared-document",
+        "type" : "urn:documents",
+        "ownerManagedAccess" : true,
+        "displayName" : "Shared Document",
+        "_id" : "c1000001-0000-0000-0000-000000000001",
+        "uris" : [ ],
+        "scopes" : [ {
+          "name" : "read"
+        }, {
+          "name" : "write"
+        } ]
+      } ],
+      "policies" : [ {
+        "id" : "d1000001-0000-0000-0000-000000000010",
+        "name" : "owner-policy",
+        "description" : "Grants access to alice (resource owner)",
+        "type" : "user",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "users" : "[\"e1000001-0000-0000-0000-000000000001\"]"
+        }
+      }, {
+        "id" : "d1000001-0000-0000-0000-000000000011",
+        "name" : "owner-read-permission",
+        "type" : "scope",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "resources" : "[\"c1000001-0000-0000-0000-000000000001\"]",
+          "scopes" : "[\"d1000001-0000-0000-0000-000000000001\"]",
+          "applyPolicies" : "[\"owner-policy\"]"
+        }
+      }, {
+        "id" : "d1000001-0000-0000-0000-000000000012",
+        "name" : "owner-write-permission",
+        "type" : "scope",
+        "logic" : "POSITIVE",
+        "decisionStrategy" : "UNANIMOUS",
+        "config" : {
+          "resources" : "[\"c1000001-0000-0000-0000-000000000001\"]",
+          "scopes" : "[\"d1000001-0000-0000-0000-000000000002\"]",
+          "applyPolicies" : "[\"owner-policy\"]"
+        }
+      } ],
+      "scopes" : [ {
+        "id" : "d1000001-0000-0000-0000-000000000001",
+        "name" : "read"
+      }, {
+        "id" : "d1000001-0000-0000-0000-000000000002",
+        "name" : "write"
+      } ],
+      "decisionStrategy" : "AFFIRMATIVE"
+    }
+  }, {
+    "id" : "a1000001-0000-0000-0000-000000000002",
+    "clientId" : "uma-client-app",
+    "name" : "UMA Client App",
+    "description" : "Blazor Server web app for UMA resource sharing",
+    "enabled" : true,
+    "clientAuthenticatorType" : "client-secret",
+    "secret" : "uma-client-app-secret",
+    "redirectUris" : [ "*" ],
+    "webOrigins" : [ "*" ],
+    "bearerOnly" : false,
+    "consentRequired" : false,
+    "standardFlowEnabled" : true,
+    "implicitFlowEnabled" : false,
+    "directAccessGrantsEnabled" : true,
+    "serviceAccountsEnabled" : false,
+    "authorizationServicesEnabled" : false,
+    "publicClient" : false,
+    "frontchannelLogout" : true,
+    "protocol" : "openid-connect",
+    "attributes" : {
+      "oidc.ciba.grant.enabled" : "false",
+      "backchannel.logout.session.required" : "true",
+      "oauth2.device.authorization.grant.enabled" : "false",
+      "display.on.consent.screen" : "false",
+      "backchannel.logout.revoke.offline.tokens" : "false"
+    },
+    "fullScopeAllowed" : true,
+    "nodeReRegistrationTimeout" : -1,
+    "protocolMappers" : [ {
+      "id" : "b1000002-0000-0000-0000-000000000001",
+      "name" : "audience",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-audience-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "included.client.audience" : "uma-resource-server",
+        "id.token.claim" : "false",
+        "lightweight.claim" : "false",
+        "introspection.token.claim" : "true",
+        "access.token.claim" : "true"
+      }
+    }, {
+      "id" : "b1000002-0000-0000-0000-000000000002",
+      "name" : "subject",
+      "protocol" : "openid-connect",
+      "protocolMapper" : "oidc-sub-mapper",
+      "consentRequired" : false,
+      "config" : {
+        "introspection.token.claim" : "true",
+        "access.token.claim" : "true"
+      }
+    } ],
+    "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email", "basic" ],
+    "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
+  } ]
+}

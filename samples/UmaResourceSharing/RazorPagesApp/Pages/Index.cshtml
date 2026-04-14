@@ -1,0 +1,64 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "UMA Resource Sharing";
+}
+
+<h2>UMA Resource Sharing Demo — Razor Pages</h2>
+
+<p class="lead">
+    This sample demonstrates the UMA 2.0 (User-Managed Access) async approval flow
+    using Keycloak Authorization Services. Unlike the Blazor sample, this app acts as
+    <strong>both the resource server and the client</strong> — no separate API project.
+</p>
+
+<div class="card mb-4">
+    <div class="card-header"><strong>How it works</strong></div>
+    <div class="card-body">
+        <ol>
+            <li>A protected resource (<code>shared-document</code>) is registered in Keycloak with <code>ownerManagedAccess = true</code></li>
+            <li>Pages protected with <code>RequireProtectedResource</code> trigger the UMA authorization middleware</li>
+            <li>When denied, the middleware creates a permission ticket and returns <strong>401 + UMA challenge</strong></li>
+            <li>Users can request access — the resource owner approves or denies via the Permissions page</li>
+            <li>After approval, accessing the document succeeds because Keycloak grants the RPT</li>
+        </ol>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header"><strong>Key Difference from Blazor Sample</strong></div>
+    <div class="card-body">
+        <p>
+            In the Blazor sample, the <code>UmaTokenHandler</code> (a <code>DelegatingHandler</code>) transparently
+            intercepts HTTP 401 + UMA challenges between the Blazor client and a separate Resource Server API.
+        </p>
+        <p>
+            In this Razor Pages app, the app <strong>is</strong> the resource server. The
+            <code>UmaAuthorizationMiddlewareResultHandler</code> handles the authorization failure inline —
+            creating the permission ticket and returning the UMA challenge. The permission management
+            (request, approve, deny) is done directly via the Protection API.
+        </p>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header"><strong>Test Users</strong></div>
+    <div class="card-body">
+        <table class="table table-sm">
+            <thead><tr><th>Username</th><th>Password</th><th>Role</th></tr></thead>
+            <tbody>
+                <tr><td><span class="badge bg-primary">alice</span></td><td><code>alice</code></td><td>Resource Owner</td></tr>
+                <tr><td><span class="badge bg-secondary">bob</span></td><td><code>bob</code></td><td>Requesting Party</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <a asp-page="/Documents/Index" class="btn btn-primary">Go to Documents &rarr;</a>
+}
+else
+{
+    <a href="/authentication/login" class="btn btn-primary">Login to Get Started &rarr;</a>
+}

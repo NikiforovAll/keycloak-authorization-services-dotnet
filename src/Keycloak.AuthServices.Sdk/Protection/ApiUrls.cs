@@ -28,6 +28,17 @@ internal static class ApiUrls
 
     internal const string DeletePolicy = $"{GetPolicies}/{{id}}";
     #endregion
+
+    #region Permission
+    internal const string CreatePermissionTicket = "realms/{realm}/authz/protection/permission";
+
+    internal const string GetPermissionTickets =
+        "realms/{realm}/authz/protection/permission/ticket";
+
+    internal const string UpdatePermissionTicket = GetPermissionTickets;
+
+    internal const string DeletePermissionTicket = $"{GetPermissionTickets}/{{id}}";
+    #endregion
     public static string WithRealm(this string path, string realm) =>
         path.Replace("{realm}", realm);
 }

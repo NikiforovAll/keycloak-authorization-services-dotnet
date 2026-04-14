@@ -741,6 +741,20 @@
           "name" : "workspace:read"
         } ],
         "icon_uri" : ""
+      }, {
+        "name" : "uma-document",
+        "type" : "urn:documents",
+        "ownerManagedAccess" : true,
+        "displayName" : "UMA Document",
+        "attributes" : { },
+        "_id" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "uris" : [ ],
+        "scopes" : [ {
+          "name" : "read"
+        }, {
+          "name" : "write"
+        } ],
+        "icon_uri" : ""
       } ],
       "policies" : [ {
         "id" : "04034aae-7d80-4ad4-902f-c8e57211b4c7",
@@ -805,6 +819,14 @@
       }, {
         "id" : "032c731c-c2db-4de4-89a3-b1a93bda51c7",
         "name" : "workspace:delete",
+        "iconUri" : ""
+      }, {
+        "id" : "d1e2f3a4-b5c6-7890-1234-567890abcdef",
+        "name" : "read",
+        "iconUri" : ""
+      }, {
+        "id" : "e2f3a4b5-c6d7-8901-2345-67890abcdef0",
+        "name" : "write",
         "iconUri" : ""
       } ],
       "decisionStrategy" : "UNANIMOUS"

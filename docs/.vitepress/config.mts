@@ -101,6 +101,7 @@ export default withMermaid({
                     collapsed: true,
                     items: [
                         { text: 'Introduction', link: '/protection-api/protection-api' },
+                        { text: 'UMA 2.0', link: '/protection-api/uma' },
                         {
                             text: 'Protection API Reference', link: '/protection-api/protection-api-reference',
                             items: [
@@ -148,6 +149,7 @@ export default withMermaid({
                         { text: 'Organization Authorization', link: '/examples/organization-authorization' },
                         { text: 'Token Introspection', link: '/examples/token-introspection' },
                         { text: 'Client Secret JWT', link: '/examples/client-secret-jwt' },
+                        { text: 'UMA Resource Sharing', link: '/examples/uma-resource-sharing' },
                     ]
                 }
             ]

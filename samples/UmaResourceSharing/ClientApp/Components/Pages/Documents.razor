@@ -1,0 +1,431 @@
+@page "/documents"
+@attribute [Authorize]
+@inject IHttpClientFactory HttpClientFactory
+@inject ILogger<Documents> Logger
+
+<PageTitle>Documents</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
+    <MudText Typo="Typo.h4" GutterBottom="true">Protected Documents</MudText>
+
+    <MudText Typo="Typo.body1" Class="mb-4">
+        Try accessing the UMA-protected document. The UMA token handler will automatically
+        handle the permission ticket challenge flow.
+    </MudText>
+
+    <MudCard Class="mb-4">
+        <MudCardHeader>
+            <MudText Typo="Typo.h6">shared-document</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Typo="Typo.body2" Class="mb-2">
+                <MudChip T="string" Size="Size.Small" Color="Color.Info">ownerManagedAccess</MudChip>
+                Scopes: <code>read</code>, <code>write</code>
+            </MudText>
+
+            <MudText Typo="Typo.subtitle2" Class="mb-2">Access (regular UMA challenge)</MudText>
+            <MudStack Row="true" Spacing="2" Class="mb-4">
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           OnClick="@(() => AccessDocument("read"))"
+                           Disabled="@loading">
+                    @if (loading && currentAction == "read")
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    }
+                    Access (read)
+                </MudButton>
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Secondary"
+                           OnClick="@(() => AccessDocument("write"))"
+                           Disabled="@loading">
+                    @if (loading && currentAction == "write")
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    }
+                    Access (write)
+                </MudButton>
+            </MudStack>
+
+            <MudText Typo="Typo.subtitle2" Class="mb-2">Request Access (submit for owner approval)</MudText>
+            <MudStack Row="true" Spacing="2" Class="mb-4">
+                <MudButton Variant="Variant.Outlined"
+                           Color="Color.Tertiary"
+                           OnClick="@(() => RequestAccess("read"))"
+                           Disabled="@requestLoading">
+                    @if (requestLoading && requestScope == "read")
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    }
+                    Request Access (read)
+                </MudButton>
+                <MudButton Variant="Variant.Outlined"
+                           Color="Color.Tertiary"
+                           OnClick="@(() => RequestAccess("write"))"
+                           Disabled="@requestLoading">
+                    @if (requestLoading && requestScope == "write")
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    }
+                    Request Access (write)
+                </MudButton>
+            </MudStack>
+
+            @if (flowSteps.Count > 0)
+            {
+                <MudText Typo="Typo.h6" Class="mb-2">UMA Flow</MudText>
+                <MudTimeline TimelinePosition="TimelinePosition.Start">
+                    @foreach (var step in flowSteps)
+                    {
+                        <MudTimelineItem Color="@step.Color" Size="Size.Small">
+                            <MudText Typo="Typo.body2">
+                                <strong>@step.Title</strong>
+                            </MudText>
+                            <MudText Typo="Typo.caption">@step.Description</MudText>
+                        </MudTimelineItem>
+                    }
+                </MudTimeline>
+            }
+
+            @if (result is not null)
+            {
+                <MudAlert Severity="@resultSeverity" Class="mt-4">@result</MudAlert>
+            }
+        </MudCardContent>
+    </MudCard>
+
+    <MudCard Class="mb-4">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Pending Permission Requests</MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Refresh"
+                               Color="Color.Default"
+                               OnClick="LoadPendingPermissions"
+                               Disabled="@pendingLoading" />
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Typo="Typo.body2" Class="mb-3">
+                As a resource owner, review and approve/deny access requests from other users.
+            </MudText>
+
+            @if (pendingLoading)
+            {
+                <MudProgressLinear Indeterminate="true" Color="Color.Primary" />
+            }
+            else if (pendingError is not null)
+            {
+                <MudAlert Severity="Severity.Error">@pendingError</MudAlert>
+            }
+            else if (pendingPermissions.Count == 0)
+            {
+                <MudAlert Severity="Severity.Info">No pending permission requests.</MudAlert>
+            }
+            else
+            {
+                <MudSimpleTable Elevation="0" Dense="true">
+                    <thead>
+                        <tr>
+                            <th>Requester</th>
+                            <th>Resource</th>
+                            <th>Scope</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var ticket in pendingPermissions)
+                        {
+                            <tr>
+                                <td>
+                                    <MudChip T="string" Size="Size.Small" Color="Color.Secondary">
+                                        @(ticket.RequesterName ?? ticket.Requester)
+                                    </MudChip>
+                                </td>
+                                <td>@(ticket.ResourceName ?? ticket.Resource)</td>
+                                <td><code>@(ticket.ScopeName ?? ticket.Scope)</code></td>
+                                <td>
+                                    <MudStack Row="true" Spacing="1">
+                                        <MudButton Variant="Variant.Filled"
+                                                   Color="Color.Success"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => ApprovePermission(ticket.Id!))"
+                                                   Disabled="@pendingActionId.Contains(ticket.Id!)">
+                                            Approve
+                                        </MudButton>
+                                        <MudButton Variant="Variant.Filled"
+                                                   Color="Color.Error"
+                                                   Size="Size.Small"
+                                                   OnClick="@(() => DenyPermission(ticket.Id!))"
+                                                   Disabled="@pendingActionId.Contains(ticket.Id!)">
+                                            Deny
+                                        </MudButton>
+                                    </MudStack>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </MudSimpleTable>
+            }
+
+            @if (pendingActionResult is not null)
+            {
+                <MudAlert Severity="@pendingActionSeverity" Class="mt-3">@pendingActionResult</MudAlert>
+            }
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private bool loading;
+    private string? currentAction;
+    private string? result;
+    private Severity resultSeverity;
+    private List<FlowStep> flowSteps = new();
+
+    private bool requestLoading;
+    private string? requestScope;
+
+    private bool pendingLoading;
+    private string? pendingError;
+    private List<PermissionTicketDto> pendingPermissions = new();
+    private HashSet<string> pendingActionId = new();
+    private string? pendingActionResult;
+    private Severity pendingActionSeverity;
+
+    private async Task AccessDocument(string scope)
+    {
+        loading = true;
+        currentAction = scope;
+        flowSteps.Clear();
+        result = null;
+        StateHasChanged();
+
+        try
+        {
+            var endpoint = scope == "write"
+                ? "/documents/shared-document/details"
+                : "/documents/shared-document";
+
+            flowSteps.Add(new("Request Sent", $"GET {endpoint}", Color.Info));
+            StateHasChanged();
+
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.GetAsync(endpoint);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                flowSteps.Add(new("UMA Challenge", "401 → Ticket Exchange → RPT obtained", Color.Warning));
+                flowSteps.Add(new("Access Granted", $"200 OK - {content}", Color.Success));
+                result = $"Document accessed successfully with '{scope}' scope.";
+                resultSeverity = Severity.Success;
+            }
+            else
+            {
+                var wwwAuth = response.Headers.WwwAuthenticate.ToString();
+                if (wwwAuth.Contains("UMA"))
+                {
+                    flowSteps.Add(new("UMA Challenge",
+                        $"401 Unauthorized - WWW-Authenticate: {wwwAuth[..Math.Min(wwwAuth.Length, 80)]}...",
+                        Color.Warning));
+                    flowSteps.Add(new("Ticket Exchange", "Exchanging permission ticket for RPT", Color.Info));
+                    flowSteps.Add(new("Access Denied",
+                        "RPT exchange failed - no permission granted for this resource",
+                        Color.Error));
+                }
+                else
+                {
+                    flowSteps.Add(new("Failed", $"{(int)response.StatusCode} {response.ReasonPhrase}", Color.Error));
+                }
+
+                result = $"Access denied ({(int)response.StatusCode}). The UMA handler attempted ticket exchange but the user lacks permission.";
+                resultSeverity = Severity.Error;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error accessing document");
+            flowSteps.Add(new("Error", ex.Message, Color.Error));
+            result = $"Error: {ex.Message}";
+            resultSeverity = Severity.Error;
+        }
+        finally
+        {
+            loading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task RequestAccess(string scope)
+    {
+        requestLoading = true;
+        requestScope = scope;
+        flowSteps.Clear();
+        result = null;
+        StateHasChanged();
+
+        try
+        {
+            flowSteps.Add(new("Request Access", $"POST /permissions/request (scope: {scope})", Color.Info));
+            StateHasChanged();
+
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.PostAsJsonAsync(
+                "/permissions/request",
+                new { Resource = "shared-document", Scopes = new[] { scope } }
+            );
+
+            if (response.IsSuccessStatusCode)
+            {
+                flowSteps.Add(new("Request Submitted",
+                    "Permission ticket created — waiting for owner approval",
+                    Color.Warning));
+                result = "Access request submitted. The resource owner will review your request.";
+                resultSeverity = Severity.Info;
+            }
+            else
+            {
+                var body = await response.Content.ReadAsStringAsync();
+                flowSteps.Add(new("Failed", $"{(int)response.StatusCode}: {body}", Color.Error));
+                result = $"Failed to submit request ({(int)response.StatusCode})";
+                resultSeverity = Severity.Error;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error requesting access");
+            flowSteps.Add(new("Error", ex.Message, Color.Error));
+            result = $"Error: {ex.Message}";
+            resultSeverity = Severity.Error;
+        }
+        finally
+        {
+            requestLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadPendingPermissions()
+    {
+        pendingLoading = true;
+        pendingError = null;
+        pendingActionResult = null;
+        StateHasChanged();
+
+        try
+        {
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.GetAsync("/permissions/pending");
+
+            if (response.IsSuccessStatusCode)
+            {
+                pendingPermissions = await response.Content
+                    .ReadFromJsonAsync<List<PermissionTicketDto>>() ?? new();
+            }
+            else
+            {
+                pendingError = $"Failed to load pending requests ({(int)response.StatusCode})";
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error loading pending permissions");
+            pendingError = $"Error: {ex.Message}";
+        }
+        finally
+        {
+            pendingLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task ApprovePermission(string ticketId)
+    {
+        pendingActionId.Add(ticketId);
+        pendingActionResult = null;
+        StateHasChanged();
+
+        try
+        {
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.PutAsync($"/permissions/{ticketId}/approve", null);
+
+            if (response.IsSuccessStatusCode)
+            {
+                pendingActionResult = "Permission approved successfully.";
+                pendingActionSeverity = Severity.Success;
+                await LoadPendingPermissions();
+            }
+            else
+            {
+                pendingActionResult = $"Failed to approve ({(int)response.StatusCode})";
+                pendingActionSeverity = Severity.Error;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error approving permission");
+            pendingActionResult = $"Error: {ex.Message}";
+            pendingActionSeverity = Severity.Error;
+        }
+        finally
+        {
+            pendingActionId.Remove(ticketId);
+            StateHasChanged();
+        }
+    }
+
+    private async Task DenyPermission(string ticketId)
+    {
+        pendingActionId.Add(ticketId);
+        pendingActionResult = null;
+        StateHasChanged();
+
+        try
+        {
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.DeleteAsync($"/permissions/{ticketId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                pendingActionResult = "Permission request denied.";
+                pendingActionSeverity = Severity.Warning;
+                await LoadPendingPermissions();
+            }
+            else
+            {
+                pendingActionResult = $"Failed to deny ({(int)response.StatusCode})";
+                pendingActionSeverity = Severity.Error;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error denying permission");
+            pendingActionResult = $"Error: {ex.Message}";
+            pendingActionSeverity = Severity.Error;
+        }
+        finally
+        {
+            pendingActionId.Remove(ticketId);
+            StateHasChanged();
+        }
+    }
+
+    private record FlowStep(string Title, string Description, Color Color);
+
+    private class PermissionTicketDto
+    {
+        public string? Id { get; set; }
+        public string? Owner { get; set; }
+        public string? Resource { get; set; }
+        public string? Scope { get; set; }
+        public bool? Granted { get; set; }
+        public string? Requester { get; set; }
+        public string? ScopeName { get; set; }
+        public string? ResourceName { get; set; }
+        public string? OwnerName { get; set; }
+        public string? RequesterName { get; set; }
+    }
+}

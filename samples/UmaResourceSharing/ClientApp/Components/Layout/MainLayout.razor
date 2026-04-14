@@ -1,0 +1,43 @@
+@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudText Typo="Typo.h5" Class="ml-3">UMA Resource Sharing</MudText>
+        <AuthorizeView>
+            <Authorized>
+                <MudButton Href="/documents" Color="Color.Inherit" Variant="Variant.Text" Class="ml-4">Documents</MudButton>
+            </Authorized>
+        </AuthorizeView>
+        <MudSpacer />
+        <AuthorizeView>
+            <Authorized>
+                <MudText Class="mr-3">Welcome, @context.User.Identity?.Name</MudText>
+                <form method="post" action="/authentication/logout">
+                    <MudButton ButtonType="ButtonType.Submit"
+                               Variant="Variant.Outlined"
+                               Color="Color.Inherit"
+                               Size="Size.Small">
+                        Logout
+                    </MudButton>
+                </form>
+            </Authorized>
+            <NotAuthorized>
+                <MudButton Href="/authentication/login"
+                           Variant="Variant.Outlined"
+                           Color="Color.Inherit"
+                           Size="Size.Small">
+                    Login
+                </MudButton>
+            </NotAuthorized>
+        </AuthorizeView>
+    </MudAppBar>
+
+    <MudMainContent Class="pt-16 pa-4">
+        @Body
+    </MudMainContent>
+</MudLayout>

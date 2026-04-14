@@ -34,6 +34,7 @@
         <Project Path="src/Keycloak.AuthServices.Aspire.Hosting/Keycloak.AuthServices.Aspire.Hosting.csproj" />
         <Project Path="src/Keycloak.AuthServices.Authentication/Keycloak.AuthServices.Authentication.csproj" />
         <Project Path="src/Keycloak.AuthServices.Authorization.TokenIntrospection/Keycloak.AuthServices.Authorization.TokenIntrospection.csproj" />
+        <Project Path="src/Keycloak.AuthServices.Authorization.Uma/Keycloak.AuthServices.Authorization.Uma.csproj" />
         <Project Path="src/Keycloak.AuthServices.Authorization/Keycloak.AuthServices.Authorization.csproj" />
         <Project Path="src/Keycloak.AuthServices.Common/Keycloak.AuthServices.Common.csproj" />
         <Project Path="src/Keycloak.AuthServices.OpenTelemetry/Keycloak.AuthServices.OpenTelemetry.csproj" />
