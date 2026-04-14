@@ -24,7 +24,8 @@ public class KeycloakGroupClientTests
     {
         var groupId = Guid.NewGuid();
 
-        handler.Expect(HttpMethod.Delete, $"/admin/realms/master/groups/{groupId}")
+        handler
+            .Expect(HttpMethod.Delete, $"/admin/realms/master/groups/{groupId}")
             .Respond(HttpStatusCode.NoContent);
 
         await keycloakGroupClient.DeleteGroupAsync("master", groupId.ToString());
@@ -39,7 +40,8 @@ public class KeycloakGroupClientTests
         const string errorMessage = /*lang=json,strict*/
             "{\"errorMessage\":\"Group name is missing\"}";
 
-        handler.Expect(HttpMethod.Delete, $"/admin/realms/master/groups/{groupId}")
+        handler
+            .Expect(HttpMethod.Delete, $"/admin/realms/master/groups/{groupId}")
             .Respond(HttpStatusCode.NotFound, MediaType, errorMessage);
 
         var exception = await FluentActions

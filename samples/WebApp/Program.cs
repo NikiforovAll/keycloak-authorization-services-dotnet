@@ -29,7 +29,7 @@ builder
                     context.HandleResponse();
 
                     return Task.CompletedTask;
-                }
+                },
             };
         }
     );
@@ -44,8 +44,8 @@ builder
 // - Otherwise → HttpContextAccessTokenProvider (for Web APIs with Bearer tokens)
 // UseProtectedResourcePolicyProvider enables dynamic [ProtectedResource] policy resolution.
 builder.Services.AddAuthorizationServer(builder.Configuration);
-builder.Services.Configure<KeycloakAuthorizationServerOptions>(
-    options => options.UseProtectedResourcePolicyProvider = true
+builder.Services.Configure<KeycloakAuthorizationServerOptions>(options =>
+    options.UseProtectedResourcePolicyProvider = true
 );
 
 builder.Services.AddControllersWithViews(options => options.AddProtectedResources());

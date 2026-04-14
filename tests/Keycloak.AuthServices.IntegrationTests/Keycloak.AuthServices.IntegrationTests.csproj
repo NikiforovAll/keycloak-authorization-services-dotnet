@@ -35,5 +35,4 @@
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk.Kiota\Keycloak.AuthServices.Sdk.Kiota.csproj" />
     <ProjectReference Include="..\TestWebApiWithControllers\TestWebApiWithControllers.csproj" />
   </ItemGroup>
-
 </Project>

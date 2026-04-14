@@ -31,7 +31,7 @@ public static class HostBuilderExtensions
                 {
                     Path = fileName,
                     Optional = false,
-                    ConfigurationPrefix = section
+                    ConfigurationPrefix = section,
                 };
                 builder.Sources.Insert(0, source);
             }

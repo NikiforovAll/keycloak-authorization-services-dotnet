@@ -2,8 +2,6 @@ namespace Keycloak.AuthServices.Authorization.Tests;
 
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.DependencyInjection;
 
 public class AuthorizationServerRegistrationTests
@@ -72,8 +70,11 @@ public class AuthorizationServerRegistrationTests
         using var scope = sp.CreateScope();
 
         var provider = scope.ServiceProvider.GetService<IKeycloakAccessTokenProvider>();
-        provider.Should().BeOfType<CookieAccessTokenProvider>()
-            .Which.CookieScheme.Should().Be("MyCookies");
+        provider
+            .Should()
+            .BeOfType<CookieAccessTokenProvider>()
+            .Which.CookieScheme.Should()
+            .Be("MyCookies");
     }
 
     [Fact]

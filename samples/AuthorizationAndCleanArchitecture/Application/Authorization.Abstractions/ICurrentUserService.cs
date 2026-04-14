@@ -4,9 +4,9 @@ using System.Security.Claims;
 
 public interface ICurrentUserService
 {
-    string? UserId { get; }
+    public string? UserId { get; }
 
-    string? UserName { get; }
+    public string? UserName { get; }
 
-    ClaimsPrincipal? Principal { get; }
+    public ClaimsPrincipal? Principal { get; }
 }

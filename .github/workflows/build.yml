@@ -13,7 +13,7 @@ on:
 env:
   # Disable the .NET logo in the console output.
   DOTNET_NOLOGO: true
-  # Disable the .NET first time experience to skip caching NuGet packages and speed up the build.
+  # Disable the .NET first time experience to speed up the build.
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   # Disable sending .NET CLI telemetry to Microsoft.
   DOTNET_CLI_TELEMETRY_OPTOUT: true
@@ -61,6 +61,8 @@ jobs:
         uses: actions/setup-dotnet@v4.1.0
         with:
           dotnet-version: 10.0.x
+          cache: true
+          cache-dependency-path: "**/Directory.Packages.props"
       - name: "Dotnet Tool Restore"
         run: dotnet tool restore
         shell: pwsh
@@ -99,6 +101,8 @@ jobs:
         uses: actions/setup-dotnet@v4.1.0
         with:
           dotnet-version: 10.0.x
+          cache: true
+          cache-dependency-path: "**/Directory.Packages.props"
       - name: "Dotnet Tool Restore"
         run: dotnet tool restore
         shell: pwsh

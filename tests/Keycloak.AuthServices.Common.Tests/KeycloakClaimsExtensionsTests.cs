@@ -53,7 +53,7 @@ public class KeycloakClaimsExtensionsTests
                 KeycloakConstants.ResourceAccessClaimType,
                 jsonResourceAccessCollection,
                 KeycloakClaimsExtensions.JsonClaimValueType
-            )
+            ),
         ];
 
         // Act
@@ -75,7 +75,7 @@ public class KeycloakClaimsExtensionsTests
                 KeycloakConstants.RealmAccessClaimType,
                 jsonResourceAccess,
                 KeycloakClaimsExtensions.JsonClaimValueType
-            )
+            ),
         ];
 
         // Act

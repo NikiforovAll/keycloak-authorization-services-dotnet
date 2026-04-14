@@ -34,8 +34,12 @@ public class KeycloakWebAppAuthenticationBuilder : KeycloakBaseAuthenticationBui
         this.configureOpenIdConnectOptions = configureOpenIdConnectOptions;
         ArgumentNullException.ThrowIfNull(configureKeycloakOptions);
 
-        this.Services.AddSingleton<IConfigureOptions<KeycloakAuthenticationOptions>>(serviceProvider =>
-            new ConfigureNamedOptions<KeycloakAuthenticationOptions>(openIdConnectScheme, options => configureKeycloakOptions(options, serviceProvider)));
+        this.Services.AddSingleton<IConfigureOptions<KeycloakAuthenticationOptions>>(
+            serviceProvider => new ConfigureNamedOptions<KeycloakAuthenticationOptions>(
+                openIdConnectScheme,
+                options => configureKeycloakOptions(options, serviceProvider)
+            )
+        );
     }
 
     /// <summary>

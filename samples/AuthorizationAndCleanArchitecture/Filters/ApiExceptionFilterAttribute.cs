@@ -6,7 +6,6 @@ namespace Api.Filters
 
     public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {
-
         private readonly IDictionary<Type, Action<ExceptionContext>> exceptionHandlers;
 
         public ApiExceptionFilterAttribute()
@@ -64,13 +63,14 @@ namespace Api.Filters
         {
             var details = new ValidationProblemDetails(context.ModelState)
             {
-                Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1"
+                Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
             };
 
             context.Result = new BadRequestObjectResult(details);
 
             context.ExceptionHandled = true;
         }
+
         //
         // private void HandleNotFoundException(ExceptionContext context)
         // {
@@ -94,12 +94,12 @@ namespace Api.Filters
             {
                 Status = StatusCodes.Status401Unauthorized,
                 Title = "Unauthorized",
-                Type = "https://tools.ietf.org/html/rfc7235#section-3.1"
+                Type = "https://tools.ietf.org/html/rfc7235#section-3.1",
             };
 
             context.Result = new ObjectResult(details)
             {
-                StatusCode = StatusCodes.Status401Unauthorized
+                StatusCode = StatusCodes.Status401Unauthorized,
             };
 
             context.ExceptionHandled = true;
@@ -111,12 +111,12 @@ namespace Api.Filters
             {
                 Status = StatusCodes.Status403Forbidden,
                 Title = "Forbidden",
-                Type = "https://tools.ietf.org/html/rfc7231#section-6.5.3"
+                Type = "https://tools.ietf.org/html/rfc7231#section-6.5.3",
             };
 
             context.Result = new ObjectResult(details)
             {
-                StatusCode = StatusCodes.Status403Forbidden
+                StatusCode = StatusCodes.Status403Forbidden,
             };
 
             context.ExceptionHandled = true;
@@ -128,12 +128,12 @@ namespace Api.Filters
             {
                 Status = StatusCodes.Status500InternalServerError,
                 Title = "An error occurred while processing your request.",
-                Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1"
+                Type = "https://tools.ietf.org/html/rfc7231#section-6.6.1",
             };
 
             context.Result = new ObjectResult(details)
             {
-                StatusCode = StatusCodes.Status500InternalServerError
+                StatusCode = StatusCodes.Status500InternalServerError,
             };
 
             context.ExceptionHandled = true;

@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup Label="Build">
     <PackageType>Template</PackageType>
     <TargetFrameworks>net10.0</TargetFrameworks>
@@ -22,7 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.TemplateEngine.Tasks" Version="*" PrivateAssets="all" IsImplicitlyDefined="true"/>
+    <PackageReference
+      Include="Microsoft.TemplateEngine.Tasks"
+      Version="*"
+      PrivateAssets="all"
+      IsImplicitlyDefined="true"
+    />
   </ItemGroup>
-
 </Project>

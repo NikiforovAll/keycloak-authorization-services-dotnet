@@ -1,9 +1,9 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
+using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
 /// Extension for IServiceCollection for startup initialization of web APIs.

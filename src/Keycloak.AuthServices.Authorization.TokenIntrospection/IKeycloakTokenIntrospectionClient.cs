@@ -14,7 +14,7 @@ public interface IKeycloakTokenIntrospectionClient
     /// <param name="token">The access token to introspect.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>The introspection response, or null if the request failed.</returns>
-    Task<TokenIntrospectionResponse?> IntrospectTokenAsync(
+    public Task<TokenIntrospectionResponse?> IntrospectTokenAsync(
         string token,
         CancellationToken cancellationToken = default
     );

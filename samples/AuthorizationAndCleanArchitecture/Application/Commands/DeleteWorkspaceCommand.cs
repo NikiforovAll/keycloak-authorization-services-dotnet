@@ -2,9 +2,9 @@ namespace Api.Application.Commands;
 
 using System.Threading;
 using System.Threading.Tasks;
-using Authorization;
-using Authorization.Abstractions;
-using Data;
+using Api.Application.Authorization;
+using Api.Application.Authorization.Abstractions;
+using Api.Data;
 using Keycloak.AuthServices.Authorization;
 using MediatR;
 
@@ -21,12 +21,11 @@ public class DeleteWorkspaceCommandHandler : IRequestHandler<DeleteWorkspaceComm
         this.identityService = identityService;
     }
 
-    public async Task Handle(
-        DeleteWorkspaceCommand request,
-        CancellationToken cancellationToken)
+    public async Task Handle(DeleteWorkspaceCommand request, CancellationToken cancellationToken)
     {
         var authorized = await this.identityService.AuthorizeAsync(
-            ProtectedResourcePolicy.From("workspaces", request.Id.ToString(), "read"));
+            ProtectedResourcePolicy.From("workspaces", request.Id.ToString(), "read")
+        );
 
         if (!authorized)
         {

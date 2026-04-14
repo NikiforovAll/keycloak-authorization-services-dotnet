@@ -19,6 +19,5 @@ public static class MeterProviderBuilderExtensions
     }
 
     internal static MeterProviderBuilder ConfigureMeters(this MeterProviderBuilder builder) =>
-        builder
-            .AddMeter("Keycloak.AuthServices.Authorization");
+        builder.AddMeter("Keycloak.AuthServices.Authorization");
 }

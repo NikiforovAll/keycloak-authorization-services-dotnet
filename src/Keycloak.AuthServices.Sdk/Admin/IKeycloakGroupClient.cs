@@ -16,7 +16,7 @@ public interface IKeycloakGroupClient
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     // [Get(KeycloakClientApiConstants.GetGroups)]
-    Task<HttpResponseMessage> GetGroupsWithResponseAsync(
+    public Task<HttpResponseMessage> GetGroupsWithResponseAsync(
         string realm,
         GetGroupsRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -29,7 +29,7 @@ public interface IKeycloakGroupClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
-    async Task<IEnumerable<GroupRepresentation>> GetGroupsAsync(
+    public async Task<IEnumerable<GroupRepresentation>> GetGroupsAsync(
         string realm,
         GetGroupsRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -49,7 +49,7 @@ public interface IKeycloakGroupClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> GetSubGroupsWithResponseAsync(
+    public Task<HttpResponseMessage> GetSubGroupsWithResponseAsync(
         string realm,
         string parentGroupId,
         GetGroupsRequestParameters? parameters = null,
@@ -63,14 +63,19 @@ public interface IKeycloakGroupClient
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
-    async Task<IEnumerable<GroupRepresentation>> GetSubGroupsAsync(
+    public async Task<IEnumerable<GroupRepresentation>> GetSubGroupsAsync(
         string realm,
         string parentGroupId,
         GetGroupsRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
     )
     {
-        var response = await this.GetSubGroupsWithResponseAsync(realm, parentGroupId, parameters, cancellationToken);
+        var response = await this.GetSubGroupsWithResponseAsync(
+            realm,
+            parentGroupId,
+            parameters,
+            cancellationToken
+        );
 
         return await response.GetResponseAsync<IEnumerable<GroupRepresentation>>(cancellationToken)
             ?? Enumerable.Empty<GroupRepresentation>();
@@ -83,7 +88,7 @@ public interface IKeycloakGroupClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The group representation.</returns>
-    Task<HttpResponseMessage> GetGroupWithResponseAsync(
+    public Task<HttpResponseMessage> GetGroupWithResponseAsync(
         string realm,
         string groupId,
         CancellationToken cancellationToken = default
@@ -96,7 +101,7 @@ public interface IKeycloakGroupClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The group representation.</returns>
-    async Task<GroupRepresentation> GetGroupAsync(
+    public async Task<GroupRepresentation> GetGroupAsync(
         string realm,
         string groupId,
         CancellationToken cancellationToken = default
@@ -117,7 +122,7 @@ public interface IKeycloakGroupClient
     /// <param name="group">Group representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> CreateGroupWithResponseAsync(
+    public Task<HttpResponseMessage> CreateGroupWithResponseAsync(
         string realm,
         GroupRepresentation group,
         CancellationToken cancellationToken = default
@@ -133,7 +138,7 @@ public interface IKeycloakGroupClient
     /// <param name="group">Group representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task CreateGroupAsync(
+    public async Task CreateGroupAsync(
         string realm,
         GroupRepresentation group,
         CancellationToken cancellationToken = default
@@ -152,7 +157,7 @@ public interface IKeycloakGroupClient
     /// <param name="group">Group representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> UpdateGroupWithResponseAsync(
+    public Task<HttpResponseMessage> UpdateGroupWithResponseAsync(
         string realm,
         string groupId,
         GroupRepresentation group,
@@ -167,7 +172,7 @@ public interface IKeycloakGroupClient
     /// <param name="group">Group representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task UpdateGroupAsync(
+    public async Task UpdateGroupAsync(
         string realm,
         string groupId,
         GroupRepresentation group,
@@ -195,7 +200,7 @@ public interface IKeycloakGroupClient
     /// <param name="group">Group representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> CreateChildGroupWithResponseAsync(
+    public Task<HttpResponseMessage> CreateChildGroupWithResponseAsync(
         string realm,
         string groupId,
         GroupRepresentation group,
@@ -213,7 +218,7 @@ public interface IKeycloakGroupClient
     /// <param name="group">Group representation.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task CreateChildGroupAsync(
+    public async Task CreateChildGroupAsync(
         string realm,
         string groupId,
         GroupRepresentation group,
@@ -237,7 +242,7 @@ public interface IKeycloakGroupClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> DeleteGroupWithResponseAsync(
+    public Task<HttpResponseMessage> DeleteGroupWithResponseAsync(
         string realm,
         string groupId,
         CancellationToken cancellationToken = default
@@ -250,7 +255,7 @@ public interface IKeycloakGroupClient
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task DeleteGroupAsync(
+    public async Task DeleteGroupAsync(
         string realm,
         string groupId,
         CancellationToken cancellationToken = default
@@ -260,5 +265,4 @@ public interface IKeycloakGroupClient
 
         await response.EnsureResponseAsync(cancellationToken);
     }
-
 }

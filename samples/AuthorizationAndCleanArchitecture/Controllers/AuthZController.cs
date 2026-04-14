@@ -15,10 +15,14 @@ public class KeycloakAuthZController : ApiControllerBase
     public async Task<IActionResult> VerifyAccess(
         [FromQuery] string? resource,
         [FromQuery] string? scope,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken
+    )
     {
-        var verified = await this.protectionClient
-            .VerifyAccessToResource(resource ?? "workspaces", scope ?? "workspaces:read", cancellationToken);
+        var verified = await this.protectionClient.VerifyAccessToResource(
+            resource ?? "workspaces",
+            scope ?? "workspaces:read",
+            cancellationToken
+        );
 
         return this.Ok(verified);
     }

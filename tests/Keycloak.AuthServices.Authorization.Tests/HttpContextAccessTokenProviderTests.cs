@@ -28,7 +28,10 @@ public class HttpContextAccessTokenProviderTests
         {
             SourceAuthenticationScheme = "Bearer",
         };
-        var (provider, _) = CreateProvider(options, BuildHttpContext("Bearer", "access_token", TestToken));
+        var (provider, _) = CreateProvider(
+            options,
+            BuildHttpContext("Bearer", "access_token", TestToken)
+        );
 
         var token = await provider.GetAccessTokenAsync();
 
@@ -43,7 +46,10 @@ public class HttpContextAccessTokenProviderTests
             SourceAuthenticationScheme = "Bearer",
         };
         // Token stored under "Cookies" but provider looks under "Bearer"
-        var (provider, _) = CreateProvider(options, BuildHttpContext("Cookies", "access_token", TestToken));
+        var (provider, _) = CreateProvider(
+            options,
+            BuildHttpContext("Cookies", "access_token", TestToken)
+        );
 
         var token = await provider.GetAccessTokenAsync();
 
@@ -57,7 +63,10 @@ public class HttpContextAccessTokenProviderTests
         {
             SourceAuthenticationScheme = "CustomScheme",
         };
-        var (provider, _) = CreateProvider(options, BuildHttpContext("CustomScheme", "access_token", TestToken));
+        var (provider, _) = CreateProvider(
+            options,
+            BuildHttpContext("CustomScheme", "access_token", TestToken)
+        );
 
         var token = await provider.GetAccessTokenAsync();
 
@@ -101,41 +110,83 @@ public class HttpContextAccessTokenProviderTests
         public HttpContext? HttpContext { get; set; } = context;
     }
 
-    private sealed class FakeAuthenticationService(
-        string expectedScheme,
-        AuthenticateResult result
-    ) : IAuthenticationService
+    private sealed class FakeAuthenticationService(string expectedScheme, AuthenticateResult result)
+        : IAuthenticationService
     {
         public Task<AuthenticateResult> AuthenticateAsync(HttpContext context, string? scheme) =>
             Task.FromResult(scheme == expectedScheme ? result : AuthenticateResult.NoResult());
 
-        public Task ChallengeAsync(HttpContext context, string? scheme, AuthenticationProperties? properties) => Task.CompletedTask;
-        public Task ForbidAsync(HttpContext context, string? scheme, AuthenticationProperties? properties) => Task.CompletedTask;
-        public Task SignInAsync(HttpContext context, string? scheme, System.Security.Claims.ClaimsPrincipal principal, AuthenticationProperties? properties) => Task.CompletedTask;
-        public Task SignOutAsync(HttpContext context, string? scheme, AuthenticationProperties? properties) => Task.CompletedTask;
+        public Task ChallengeAsync(
+            HttpContext context,
+            string? scheme,
+            AuthenticationProperties? properties
+        ) => Task.CompletedTask;
+
+        public Task ForbidAsync(
+            HttpContext context,
+            string? scheme,
+            AuthenticationProperties? properties
+        ) => Task.CompletedTask;
+
+        public Task SignInAsync(
+            HttpContext context,
+            string? scheme,
+            System.Security.Claims.ClaimsPrincipal principal,
+            AuthenticationProperties? properties
+        ) => Task.CompletedTask;
+
+        public Task SignOutAsync(
+            HttpContext context,
+            string? scheme,
+            AuthenticationProperties? properties
+        ) => Task.CompletedTask;
     }
 
     private sealed class FakeSchemeProvider(string defaultScheme) : IAuthenticationSchemeProvider
     {
         public void AddScheme(AuthenticationScheme scheme) { }
-        public Task<IEnumerable<AuthenticationScheme>> GetAllSchemesAsync() => Task.FromResult<IEnumerable<AuthenticationScheme>>([]);
+
+        public Task<IEnumerable<AuthenticationScheme>> GetAllSchemesAsync() =>
+            Task.FromResult<IEnumerable<AuthenticationScheme>>([]);
+
         public Task<AuthenticationScheme?> GetDefaultAuthenticateSchemeAsync() =>
-            Task.FromResult<AuthenticationScheme?>(new AuthenticationScheme(defaultScheme, null, typeof(FakeHandler)));
-        public Task<AuthenticationScheme?> GetDefaultChallengeSchemeAsync() => Task.FromResult<AuthenticationScheme?>(null);
-        public Task<AuthenticationScheme?> GetDefaultForbidSchemeAsync() => Task.FromResult<AuthenticationScheme?>(null);
-        public Task<AuthenticationScheme?> GetDefaultSignInSchemeAsync() => Task.FromResult<AuthenticationScheme?>(null);
-        public Task<AuthenticationScheme?> GetDefaultSignOutSchemeAsync() => Task.FromResult<AuthenticationScheme?>(null);
-        public Task<IEnumerable<AuthenticationScheme>> GetRequestHandlerSchemesAsync() => Task.FromResult<IEnumerable<AuthenticationScheme>>([]);
+            Task.FromResult<AuthenticationScheme?>(
+                new AuthenticationScheme(defaultScheme, null, typeof(FakeHandler))
+            );
+
+        public Task<AuthenticationScheme?> GetDefaultChallengeSchemeAsync() =>
+            Task.FromResult<AuthenticationScheme?>(null);
+
+        public Task<AuthenticationScheme?> GetDefaultForbidSchemeAsync() =>
+            Task.FromResult<AuthenticationScheme?>(null);
+
+        public Task<AuthenticationScheme?> GetDefaultSignInSchemeAsync() =>
+            Task.FromResult<AuthenticationScheme?>(null);
+
+        public Task<AuthenticationScheme?> GetDefaultSignOutSchemeAsync() =>
+            Task.FromResult<AuthenticationScheme?>(null);
+
+        public Task<IEnumerable<AuthenticationScheme>> GetRequestHandlerSchemesAsync() =>
+            Task.FromResult<IEnumerable<AuthenticationScheme>>([]);
+
         public Task<AuthenticationScheme?> GetSchemeAsync(string name) =>
-            Task.FromResult<AuthenticationScheme?>(new AuthenticationScheme(name, null, typeof(FakeHandler)));
+            Task.FromResult<AuthenticationScheme?>(
+                new AuthenticationScheme(name, null, typeof(FakeHandler))
+            );
+
         public void RemoveScheme(string name) { }
     }
 
     private sealed class FakeHandler : IAuthenticationHandler
     {
-        public Task<AuthenticateResult> AuthenticateAsync() => Task.FromResult(AuthenticateResult.NoResult());
+        public Task<AuthenticateResult> AuthenticateAsync() =>
+            Task.FromResult(AuthenticateResult.NoResult());
+
         public Task ChallengeAsync(AuthenticationProperties? properties) => Task.CompletedTask;
+
         public Task ForbidAsync(AuthenticationProperties? properties) => Task.CompletedTask;
-        public Task InitializeAsync(AuthenticationScheme scheme, HttpContext context) => Task.CompletedTask;
+
+        public Task InitializeAsync(AuthenticationScheme scheme, HttpContext context) =>
+            Task.CompletedTask;
     }
 }

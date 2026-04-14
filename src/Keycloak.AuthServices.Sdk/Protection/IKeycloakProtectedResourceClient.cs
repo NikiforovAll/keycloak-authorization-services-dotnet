@@ -15,7 +15,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="parameters">Optional query parameters</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> GetResourcesIdsWithResponseAsync(
+    public Task<HttpResponseMessage> GetResourcesIdsWithResponseAsync(
         string realm,
         GetResourcesRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -28,7 +28,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="parameters">Optional query parameters</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task<IList<string>> GetResourcesIdsAsync(
+    public async Task<IList<string>> GetResourcesIdsAsync(
         string realm,
         GetResourcesRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -51,7 +51,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="parameters">Optional query parameters</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> GetResourcesWithResponseAsync(
+    public Task<HttpResponseMessage> GetResourcesWithResponseAsync(
         string realm,
         GetResourcesRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -64,7 +64,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="parameters">Optional query parameters</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task<IList<ResourceResponse>> GetResourcesAsync(
+    public async Task<IList<ResourceResponse>> GetResourcesAsync(
         string realm,
         GetResourcesRequestParameters? parameters = default,
         CancellationToken cancellationToken = default
@@ -87,7 +87,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resourceId">Resource ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> GetResourceWithResponseAsync(
+    public Task<HttpResponseMessage> GetResourceWithResponseAsync(
         string realm,
         string resourceId,
         CancellationToken cancellationToken = default
@@ -100,7 +100,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resourceId">Resource ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task<ResourceResponse> GetResourceAsync(
+    public async Task<ResourceResponse> GetResourceAsync(
         string realm,
         string resourceId,
         CancellationToken cancellationToken = default
@@ -122,7 +122,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resource"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> CreateResourceWithResponseAsync(
+    public Task<HttpResponseMessage> CreateResourceWithResponseAsync(
         string realm,
         Resource resource,
         CancellationToken cancellationToken = default
@@ -135,7 +135,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resource"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task<ResourceResponse> CreateResourceAsync(
+    public async Task<ResourceResponse> CreateResourceAsync(
         string realm,
         Resource resource,
         CancellationToken cancellationToken = default
@@ -161,7 +161,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resource"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> UpdateResourceWithResponseAsync(
+    public Task<HttpResponseMessage> UpdateResourceWithResponseAsync(
         string realm,
         string resourceId,
         Resource resource,
@@ -179,7 +179,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resource"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task UpdateResourceAsync(
+    public async Task UpdateResourceAsync(
         string realm,
         string resourceId,
         Resource resource,
@@ -203,7 +203,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resourceId">Resource ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    Task<HttpResponseMessage> DeleteResourceWithResponseAsync(
+    public Task<HttpResponseMessage> DeleteResourceWithResponseAsync(
         string realm,
         string resourceId,
         CancellationToken cancellationToken = default
@@ -216,7 +216,7 @@ public interface IKeycloakProtectedResourceClient
     /// <param name="resourceId">Resource ID.</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    async Task DeleteResourceAsync(
+    public async Task DeleteResourceAsync(
         string realm,
         string resourceId,
         CancellationToken cancellationToken = default

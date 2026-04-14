@@ -83,7 +83,7 @@ public class KeycloakClient : IKeycloakClient
                 new("max", parameters.Max?.ToString()),
                 new("q", parameters.Query),
                 new("search", parameters.Search),
-                new("username", parameters.Username)
+                new("username", parameters.Username),
             };
 #pragma warning restore CA1305 // Specify IFormatProvider
 
@@ -119,7 +119,7 @@ public class KeycloakClient : IKeycloakClient
                 new("lastName", parameters.LastName),
                 new("q", parameters.Query),
                 new("search", parameters.Search),
-                new("username", parameters.Username)
+                new("username", parameters.Username),
             };
 
             query = new QueryBuilder(queryParameters.Where(q => q.Value is not null)!)
@@ -501,11 +501,16 @@ public class KeycloakClient : IKeycloakClient
         string realm,
         string userId,
         CredentialRepresentation credential,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default
+    )
     {
         var path = ApiUrls.ResetPassword.WithRealm(realm).Replace("{id}", userId);
 
-        var responseMessage = await this.httpClient.PutAsJsonAsync(path, credential, cancellationToken);
+        var responseMessage = await this.httpClient.PutAsJsonAsync(
+            path,
+            credential,
+            cancellationToken
+        );
 
         return responseMessage;
     }
@@ -515,9 +520,13 @@ public class KeycloakClient : IKeycloakClient
         string realm,
         string userId,
         string credentialId,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default
+    )
     {
-        var path = ApiUrls.DeleteCredential.WithRealm(realm).Replace("{id}", userId).Replace("{credentialId}", credentialId);
+        var path = ApiUrls
+            .DeleteCredential.WithRealm(realm)
+            .Replace("{id}", userId)
+            .Replace("{credentialId}", credentialId);
 
         var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
 
@@ -528,7 +537,8 @@ public class KeycloakClient : IKeycloakClient
     public async Task<HttpResponseMessage> GetCredentialsWithResponseAsync(
         string realm,
         string userId,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default
+    )
     {
         var path = ApiUrls.GetCredentials.WithRealm(realm).Replace("{id}", userId);
 

@@ -65,7 +65,6 @@ public class KeycloakMetrics
             new KeyValuePair<string, object?>("requirement", requirement)
         );
 
-
     /// <summary>
     /// Records an skipped requirement.
     /// </summary>

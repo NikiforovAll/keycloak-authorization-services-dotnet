@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" />
     <PackageReference Include="Serilog.Extensions.Hosting" />
@@ -11,5 +10,4 @@
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Authorization\Keycloak.AuthServices.Authorization.csproj" />
     <ProjectReference Include="..\..\src\Keycloak.AuthServices.Sdk\Keycloak.AuthServices.Sdk.csproj" />
   </ItemGroup>
-
 </Project>

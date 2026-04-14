@@ -14,5 +14,9 @@ public interface IParameterResolver
     /// <param name="httpContext">The current HTTP context.</param>
     /// <param name="serviceProvider">The request-scoped service provider.</param>
     /// <returns>The resolved parameter value, or <c>null</c> if the parameter could not be resolved.</returns>
-    public string? Resolve(string parameter, HttpContext httpContext, IServiceProvider serviceProvider);
+    public string? Resolve(
+        string parameter,
+        HttpContext httpContext,
+        IServiceProvider serviceProvider
+    );
 }

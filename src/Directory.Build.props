@@ -1,5 +1,4 @@
 <Project>
-
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -27,16 +26,15 @@
 
   <ItemGroup>
     <!-- Include README.md to NuGet package -->
-    <None Include="../../README.md" Pack="true" PackagePath="\"/>
+    <None Include="../../README.md" Pack="true" PackagePath="\" />
     <!-- Include icon.png to NuGet package -->
-    <None Include="../../docs/public/icon.png" Pack="true" PackagePath="\"/>
+    <None Include="../../docs/public/icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <PropertyGroup Label="Build">
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-
   </PropertyGroup>
 
   <PropertyGroup Label="Source Link">
@@ -49,7 +47,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Package References">
-    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
     <PackageReference Include="MinVer">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -59,7 +57,7 @@
   <!-- Include dependent packages, see PrivateAssets="All" -->
   <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
     <ItemGroup>
-      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))"/>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
     </ItemGroup>
   </Target>
 

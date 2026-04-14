@@ -56,7 +56,7 @@ public class KeycloakPolicyClientTests
             First = 0,
             Max = 1,
             PermissionName = "my_permission_name",
-            Scope = "my_scope"
+            Scope = "my_scope",
         };
 
         var url = $"/realms/{CurrentRealm}/authz/protection/uma-policy";
@@ -66,7 +66,7 @@ public class KeycloakPolicyClientTests
             { "resource", "my_id" },
             { "scope", "my_scope" },
             { "first", "0" },
-            { "max", "1" }
+            { "max", "1" },
         };
 
         var response =
@@ -137,9 +137,8 @@ public class KeycloakPolicyClientTests
             )
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () =>
-                this.keycloakPolicyClient.CreatePolicyAsync(CurrentRealm, resourceId, new Policy())
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakPolicyClient.CreatePolicyAsync(CurrentRealm, resourceId, new Policy())
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.BadRequest);
@@ -180,13 +179,12 @@ public class KeycloakPolicyClientTests
             )
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () =>
-                this.keycloakPolicyClient.UpdatePolicyAsync(
-                    CurrentRealm,
-                    policyId.ToString(),
-                    new Policy()
-                )
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakPolicyClient.UpdatePolicyAsync(
+                CurrentRealm,
+                policyId.ToString(),
+                new Policy()
+            )
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
@@ -223,8 +221,8 @@ public class KeycloakPolicyClientTests
             )
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () => this.keycloakPolicyClient.DeletePolicyAsync(CurrentRealm, policyId.ToString())
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakPolicyClient.DeletePolicyAsync(CurrentRealm, policyId.ToString())
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.NotFound);

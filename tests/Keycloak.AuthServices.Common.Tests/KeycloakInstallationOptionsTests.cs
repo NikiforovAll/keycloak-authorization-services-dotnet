@@ -4,16 +4,15 @@ using Microsoft.Extensions.Configuration;
 
 public class KeycloakInstallationOptionsTests
 {
-    private static readonly KeycloakInstallationOptions Expected =
-        new()
-        {
-            Realm = "Test",
-            AuthServerUrl = "http://localhost:8080/",
-            SslRequired = "none",
-            Resource = "test-client",
-            VerifyTokenAudience = true,
-            Credentials = new() { Secret = "secret" },
-        };
+    private static readonly KeycloakInstallationOptions Expected = new()
+    {
+        Realm = "Test",
+        AuthServerUrl = "http://localhost:8080/",
+        SslRequired = "none",
+        Resource = "test-client",
+        VerifyTokenAudience = true,
+        Credentials = new() { Secret = "secret" },
+    };
 
     [Fact]
     public void TestKebabCaseNotation()

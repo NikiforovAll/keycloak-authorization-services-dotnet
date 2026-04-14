@@ -14,5 +14,4 @@
   <ItemGroup>
     <InternalsVisibleTo Include="Keycloak.AuthServices.IntegrationTests" />
   </ItemGroup>
-
 </Project>

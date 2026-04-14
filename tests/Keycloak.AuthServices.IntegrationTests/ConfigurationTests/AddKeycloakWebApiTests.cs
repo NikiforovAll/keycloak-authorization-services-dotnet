@@ -12,14 +12,13 @@ public class AddKeycloakWebApiTests : AuthenticationScenarioNoKeycloak
 {
     private const string Endpoint1 = "/endpoints/1";
     private static readonly string AppSettings = "appsettings.json";
-    private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions =
-        new()
-        {
-            Authority = "http://localhost:8080/realms/Test/",
-            Audience = "test-client",
-            RequireHttpsMetadata = false,
-            TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
-        };
+    private static readonly JwtBearerOptions ExpectedAppSettingsJwtBearerOptions = new()
+    {
+        Authority = "http://localhost:8080/realms/Test/",
+        Audience = "test-client",
+        RequireHttpsMetadata = false,
+        TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
+    };
 
     [Fact]
     public async Task AddKeycloakWebApi_FromConfiguration_Unauthorized()

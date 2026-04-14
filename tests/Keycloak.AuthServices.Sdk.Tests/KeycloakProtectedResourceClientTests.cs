@@ -55,7 +55,7 @@ public class KeycloakProtectedResourceClientTests
             Scope = "scope",
             Owner = "owner",
             ResourceType = "resource_type",
-            Uri = "/my/uri"
+            Uri = "/my/uri",
         };
 
         var url = $"/realms/master/authz/protection/resource_set";
@@ -66,7 +66,7 @@ public class KeycloakProtectedResourceClientTests
             { "scope", getResourcesRequestParameters.Scope },
             { "owner", getResourcesRequestParameters.Owner },
             { "type", getResourcesRequestParameters.ResourceType },
-            { "uri", getResourcesRequestParameters.Uri }
+            { "uri", getResourcesRequestParameters.Uri },
         };
 
         var resources = Enumerable
@@ -105,12 +105,8 @@ public class KeycloakProtectedResourceClientTests
             )
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () =>
-                this.keycloakProtectedResourceClient.GetResourceAsync(
-                    "master",
-                    resourceId.ToString()
-                )
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakProtectedResourceClient.GetResourceAsync("master", resourceId.ToString())
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
@@ -165,12 +161,11 @@ public class KeycloakProtectedResourceClientTests
         this.handler.Expect(HttpMethod.Post, $"/realms/master/authz/protection/resource_set")
             .Respond(HttpStatusCode.BadRequest, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () =>
-                this.keycloakProtectedResourceClient.CreateResourceAsync(
-                    "master",
-                    GetResource(resourceId)
-                )
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakProtectedResourceClient.CreateResourceAsync(
+                "master",
+                GetResource(resourceId)
+            )
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.BadRequest);
@@ -211,13 +206,12 @@ public class KeycloakProtectedResourceClientTests
             )
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () =>
-                this.keycloakProtectedResourceClient.UpdateResourceAsync(
-                    "master",
-                    resourceId.ToString(),
-                    GetResource(resourceId)
-                )
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakProtectedResourceClient.UpdateResourceAsync(
+                "master",
+                resourceId.ToString(),
+                GetResource(resourceId)
+            )
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
@@ -257,12 +251,11 @@ public class KeycloakProtectedResourceClientTests
             )
             .Respond(HttpStatusCode.NotFound, "application/json", errorMessage);
 
-        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(
-            () =>
-                this.keycloakProtectedResourceClient.DeleteResourceAsync(
-                    "master",
-                    resourceId.ToString()
-                )
+        var exception = await Assert.ThrowsAsync<KeycloakHttpClientException>(() =>
+            this.keycloakProtectedResourceClient.DeleteResourceAsync(
+                "master",
+                resourceId.ToString()
+            )
         );
 
         exception.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
@@ -307,6 +300,6 @@ public class KeycloakProtectedResourceClientTests
         {
             DisplayName = "display_name",
             Type = "http://www.example.com/rsrcs/socialstream/140-compatible",
-            Attributes = { { "my_custom_attribute_key", "my_custom_attribute_value" } }
+            Attributes = { { "my_custom_attribute_key", "my_custom_attribute_value" } },
         };
 }

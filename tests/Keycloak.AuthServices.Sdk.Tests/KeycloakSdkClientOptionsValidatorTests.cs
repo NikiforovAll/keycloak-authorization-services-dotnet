@@ -1,7 +1,5 @@
 namespace Keycloak.AuthServices.Sdk.Tests;
 
-using Microsoft.Extensions.Options;
-
 public class KeycloakAdminClientOptionsValidatorTests
 {
     private readonly KeycloakAdminClientOptionsValidator sut = new();

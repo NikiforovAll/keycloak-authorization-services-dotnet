@@ -1,5 +1,4 @@
 using System.Security.Claims;
-using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Authorization;
 using Keycloak.AuthServices.Authorization.Requirements;
 using Keycloak.AuthServices.Common.Claims;

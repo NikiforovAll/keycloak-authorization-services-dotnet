@@ -30,12 +30,10 @@ public class WorkspacesController : ApiControllerBase
     /// }
     /// </remarks>
     [HttpPost]
-    public async Task Create(CreateWorkspaceCommand command) =>
-        await this.Mediator.Send(command);
+    public async Task Create(CreateWorkspaceCommand command) => await this.Mediator.Send(command);
 
     [HttpDelete("{id:guid}")]
-    public async Task Delete(Guid id) =>
-        await this.Mediator.Send(new DeleteWorkspaceCommand(id));
+    public async Task Delete(Guid id) => await this.Mediator.Send(new DeleteWorkspaceCommand(id));
 
     [HttpDelete("{id:guid}/v2")]
     public async Task DeleteAOP(Guid id) =>

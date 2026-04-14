@@ -2,11 +2,9 @@ namespace Api.Data;
 
 using Microsoft.EntityFrameworkCore;
 
-public class ApplicationDbContext : DbContext, IApplicationDbContext
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+    : DbContext(options),
+        IApplicationDbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-    {
-    }
-
     public DbSet<Workspace> Workspaces { get; set; } = default!;
 }

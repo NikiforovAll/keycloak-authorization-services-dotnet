@@ -15,5 +15,5 @@ public interface IKeycloakAccessTokenProvider
     /// </summary>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>The access token, or <c>null</c> if no token is available.</returns>
-    Task<string?> GetAccessTokenAsync(CancellationToken cancellationToken = default);
+    public Task<string?> GetAccessTokenAsync(CancellationToken cancellationToken = default);
 }

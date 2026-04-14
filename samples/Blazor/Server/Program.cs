@@ -1,5 +1,4 @@
 using System.Globalization;
-using Keycloak.AuthServices.Authentication;
 using Microsoft.OpenApi;
 using Serilog;
 using Serilog.Events;

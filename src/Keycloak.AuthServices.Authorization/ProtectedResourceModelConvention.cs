@@ -1,4 +1,5 @@
 namespace Keycloak.AuthServices.Authorization;
+
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 /// <summary>

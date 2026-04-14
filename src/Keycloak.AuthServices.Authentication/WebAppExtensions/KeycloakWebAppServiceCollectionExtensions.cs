@@ -1,9 +1,9 @@
-﻿namespace Keycloak.AuthServices.Authentication;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
+using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
 /// Extension for IServiceCollection for startup initialization.
@@ -26,7 +26,6 @@ public static partial class KeycloakWebAppServiceCollectionExtensions
     /// (by default CookieAuthenticationDefaults.AuthenticationScheme).</param>
     /// <param name="displayName">A display name for the authentication handler.</param>
     /// <returns>The authentication builder to chain extension methods.</returns>
-
     public static KeycloakWebAppAuthenticationBuilder AddKeycloakWebAppAuthentication(
         this IServiceCollection services,
         IConfiguration configuration,

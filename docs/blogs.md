@@ -1,10 +1,16 @@
 # Blog
 
 ## V2.X.X
-* [Integrating Keycloak with Aspire - Part 1](https://apps-on-azure.net/dotnet/2024/2024-09-26-aspire-keycloak-part1.html) - by @adrianhall
+
+* [What's new in Keycloak.AuthServices v2.9.0](https://nikiforovall.github.io/dotnet/keycloak/2026/03/27/keycloak-authservices-2026.html)
 * [Using Keycloak in .NET Aspire projects](https://nikiforovall.github.io/dotnet/keycloak/2024/06/02/aspire-support-for-keycloak.html)
 * [Announcement - Keycloak.AuthServices v2.3.0 is out 🎉!](https://nikiforovall.github.io/dotnet/keycloak/2024/05/10/keycloak-v2-3-0.html)
 * [Announcement - Keycloak.AuthServices v2.0.0 is out 🎉!](https://nikiforovall.github.io/dotnet/keycloak/2024/05/05/keycloak-v2-0-0.html)
+
+## Talks & Videos
+
+* [Secrets, Security, and Keycloak in .NET Aspire](https://learn.microsoft.com/en-us/shows/dotnet-aspire-developers-day-2024/secrets-security-and-keycloak-in-dotnet-aspire) - .NET Aspire Developers Day 2024
+
 
 ## V1.0.0
 

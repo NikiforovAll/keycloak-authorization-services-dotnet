@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 public interface IApplicationDbContext
 {
-    DbSet<Workspace> Workspaces { get; set; }
+    public DbSet<Workspace> Workspaces { get; set; }
 
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+    public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 }

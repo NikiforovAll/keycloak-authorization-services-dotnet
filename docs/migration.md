@@ -1,5 +1,44 @@
 # Migration Guide
 
+## Key Changes in 3.0.0
+
+### Removed deprecated `AddKeycloakAuthentication` methods
+
+The `AddKeycloakAuthentication` extension methods (deprecated in 2.0.0) have been removed. Use `AddKeycloakWebApiAuthentication` instead.
+
+```csharp
+// Before (removed)
+services.AddKeycloakAuthentication(configuration);
+
+// After
+services.AddKeycloakWebApiAuthentication(configuration);
+```
+
+### Namespace changes for better discoverability
+
+Several extension method classes have been moved to standard namespaces following ASP.NET Core conventions. This means you may no longer need explicit `using` directives for these methods — they are automatically available via implicit usings in Web projects.
+
+| Extension Methods | Old Namespace | New Namespace |
+|---|---|---|
+| `AddKeycloakWebApiAuthentication` | `Keycloak.AuthServices.Authentication` | `Microsoft.Extensions.DependencyInjection` |
+| `AddKeycloakWebAppAuthentication` | `Keycloak.AuthServices.Authentication` | `Microsoft.Extensions.DependencyInjection` |
+| `AddKeycloakTokenIntrospection` | `Keycloak.AuthServices.Authorization.TokenIntrospection` | `Microsoft.Extensions.DependencyInjection` |
+
+**Action required**: Remove explicit `using` directives that are no longer needed:
+
+```csharp
+// Before
+using Keycloak.AuthServices.Authentication; // [!code --]
+services.AddKeycloakWebApiAuthentication(configuration);
+
+// After — just works, no using needed
+services.AddKeycloakWebApiAuthentication(configuration);
+```
+
+::: tip
+If you reference types directly (e.g., `KeycloakAuthenticationOptions`, `KeycloakRolesClaimsTransformation`), you still need the original `using` directive.
+:::
+
 ## Key Changes in 2.0.0
 
 * Breaking change 💥: Lot's of changes `Keycloak.AuthServices.Sdk` - API has changed, no backward compatibility.

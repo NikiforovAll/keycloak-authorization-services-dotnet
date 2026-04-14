@@ -16,14 +16,11 @@ Install **Keycloak.AuthServices.Authentication** by running:
 
 ```bash
 dotnet add package Keycloak.AuthServices.Authentication
-dotnet add package Keycloak.AuthServices.Common
 ```
 
 Replace the content of **Program.cs** with:
 
 ```csharp
-using Keycloak.AuthServices.Authentication; // [!code focus]
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration); // [!code focus]

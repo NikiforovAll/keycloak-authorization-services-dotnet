@@ -2,6 +2,7 @@
 
 using Keycloak.AuthServices.Authorization.AuthorizationServer;
 using Keycloak.AuthServices.Authorization.Claims;
+using Keycloak.AuthServices.Authorization.Requirements;
 using Keycloak.AuthServices.Authorization.TokenIntrospection;
 using Keycloak.AuthServices.Common;
 using Microsoft.AspNetCore.Authentication;
@@ -13,7 +14,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Requirements;
 
 /// <summary>
 /// Add Keycloak authorization services
@@ -330,8 +330,10 @@ public static class ServiceCollectionExtensions
                 .CreateLogger(typeof(ServiceCollectionExtensions).FullName!);
 
             var authOptions = sp.GetService<IOptionsMonitor<AuthenticationOptions>>();
-            var cookieScheme = authOptions?.CurrentValue.Schemes
-                .FirstOrDefault(s => s.HandlerType == typeof(CookieAuthenticationHandler))
+            var cookieScheme = authOptions
+                ?.CurrentValue.Schemes.FirstOrDefault(s =>
+                    s.HandlerType == typeof(CookieAuthenticationHandler)
+                )
                 ?.Name;
 
             if (cookieScheme is not null)

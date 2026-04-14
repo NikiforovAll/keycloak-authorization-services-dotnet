@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup Label="Package">
     <Product>Keycloak.AuthServices.OpenTelemetry</Product>
     <Description>Instrumentation for OpenTelemetry .NET</Description>
@@ -11,5 +10,4 @@
   <ItemGroup>
     <PackageReference Include="OpenTelemetry" />
   </ItemGroup>
-
 </Project>

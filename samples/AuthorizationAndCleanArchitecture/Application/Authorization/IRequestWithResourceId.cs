@@ -4,5 +4,5 @@ using MediatR;
 
 public interface IRequestWithResourceId : IRequest
 {
-    string ResourceId { get; }
+    public string ResourceId { get; }
 }

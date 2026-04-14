@@ -16,5 +16,5 @@ public interface IProtectedResourcePolicyBuilder
     /// </summary>
     /// <param name="policyName">The policy name in the format <c>resource#scope</c>.</param>
     /// <returns>The built <see cref="AuthorizationPolicy"/>, or <c>null</c> if the name is not valid.</returns>
-    AuthorizationPolicy? Build(string policyName);
+    public AuthorizationPolicy? Build(string policyName);
 }

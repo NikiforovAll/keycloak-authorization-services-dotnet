@@ -7,11 +7,9 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-public class AccountController : Controller
+public class AccountController(ILogger<AccountController> logger) : Controller
 {
-    private readonly ILogger<AccountController> logger;
-
-    public AccountController(ILogger<AccountController> logger) => this.logger = logger;
+    private readonly ILogger<AccountController> logger = logger;
 
     [AllowAnonymous]
     public IActionResult SignIn()
@@ -48,7 +46,7 @@ public class AccountController : Controller
             new AuthenticationProperties
             {
                 RedirectUri = "/",
-                Items = { { "id_token_hint", idToken } }
+                Items = { { "id_token_hint", idToken } },
             },
             CookieAuthenticationDefaults.AuthenticationScheme,
             OpenIdConnectDefaults.AuthenticationScheme

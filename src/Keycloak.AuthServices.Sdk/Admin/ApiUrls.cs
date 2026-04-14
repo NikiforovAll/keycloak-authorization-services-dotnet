@@ -38,7 +38,8 @@ internal static class ApiUrls
 
     internal const string ResetPassword = $"{GetRealm}/users/{{id}}/reset-password";
 
-    internal const string DeleteCredential = $"{GetRealm}/users/{{id}}/credentials/{{credentialId}}";
+    internal const string DeleteCredential =
+        $"{GetRealm}/users/{{id}}/credentials/{{credentialId}}";
 
     internal const string GetCredentials = $"{GetRealm}/users/{{id}}/credentials";
 
