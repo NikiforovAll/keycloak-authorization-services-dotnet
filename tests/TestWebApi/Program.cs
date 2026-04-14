@@ -61,6 +61,9 @@ SingleDynamicResourceSingleScopeSingleEndpoint(
     protectedResources,
     nameof(SingleDynamicResourceSingleScopeSingleEndpoint)
 );
+
+app.MapGet("/uma/protected", () => new { Success = true }).RequireAuthorization("UmaProtected");
+
 app.Run();
 
 static async Task<IResult> AuthorizeAsync(

@@ -1,0 +1,12 @@
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+            <NotAuthorized>
+                <MudAlert Severity="Severity.Warning" Class="ma-4">
+                    You are not authorized. Please <MudLink Href="/authentication/login">log in</MudLink>.
+                </MudAlert>
+            </NotAuthorized>
+        </AuthorizeRouteView>
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+</Router>

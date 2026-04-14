@@ -8,4 +8,5 @@
 /// </remarks>
 public interface IKeycloakProtectionClient
     : IKeycloakProtectedResourceClient,
-        IKeycloakPolicyClient { }
+        IKeycloakPolicyClient,
+        IKeycloakPermissionClient { }

@@ -1,0 +1,6 @@
+<Solution>
+    <Project Path="AppHost/AppHost.csproj" />
+    <Project Path="ResourceServer/ResourceServer.csproj" />
+    <Project Path="ClientApp/ClientApp.csproj" />
+    <Project Path="ServiceDefaults/ServiceDefaults.csproj" />
+</Solution>

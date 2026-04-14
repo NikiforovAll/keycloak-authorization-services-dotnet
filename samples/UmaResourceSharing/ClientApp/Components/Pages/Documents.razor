@@ -1,0 +1,231 @@
+@page "/documents"
+@attribute [Authorize]
+@inject IHttpClientFactory HttpClientFactory
+@inject ILogger<Documents> Logger
+
+<PageTitle>Documents</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
+    <MudText Typo="Typo.h4" GutterBottom="true">Protected Documents</MudText>
+
+    <MudText Typo="Typo.body1" Class="mb-4">
+        Try accessing the UMA-protected document. The UMA token handler will automatically
+        handle the permission ticket challenge flow.
+    </MudText>
+
+    <MudCard Class="mb-4">
+        <MudCardHeader>
+            <MudText Typo="Typo.h6">shared-document</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudText Typo="Typo.body2" Class="mb-2">
+                <MudChip T="string" Size="Size.Small" Color="Color.Info">ownerManagedAccess</MudChip>
+                Scopes: <code>read</code>, <code>write</code>
+            </MudText>
+
+            <MudStack Row="true" Spacing="2" Class="mb-4">
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           OnClick="@(() => AccessDocument("read"))"
+                           Disabled="@loading">
+                    @if (loading && currentAction == "read")
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    }
+                    Access (read)
+                </MudButton>
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Secondary"
+                           OnClick="@(() => AccessDocument("write"))"
+                           Disabled="@loading">
+                    @if (loading && currentAction == "write")
+                    {
+                        <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                    }
+                    Access (write)
+                </MudButton>
+            </MudStack>
+
+            @if (flowSteps.Count > 0)
+            {
+                <MudText Typo="Typo.h6" Class="mb-2">UMA Flow</MudText>
+                <MudTimeline TimelinePosition="TimelinePosition.Start">
+                    @foreach (var step in flowSteps)
+                    {
+                        <MudTimelineItem Color="@step.Color" Size="Size.Small">
+                            <MudText Typo="Typo.body2">
+                                <strong>@step.Title</strong>
+                            </MudText>
+                            <MudText Typo="Typo.caption">@step.Description</MudText>
+                        </MudTimelineItem>
+                    }
+                </MudTimeline>
+            }
+
+            @if (result is not null)
+            {
+                <MudAlert Severity="@resultSeverity" Class="mt-4">@result</MudAlert>
+            }
+        </MudCardContent>
+    </MudCard>
+
+    <MudExpansionPanels Class="mb-4">
+        <MudExpansionPanel Text="Share this document">
+            <MudText Typo="Typo.body2" Class="mb-3">
+                Grant another user access to <code>shared-document</code> by creating a UMA policy.
+                Only the resource owner can share.
+            </MudText>
+
+            <MudTextField @bind-Value="shareUsername"
+                          Label="Username"
+                          Placeholder="e.g. bob"
+                          Variant="Variant.Outlined"
+                          Class="mb-3" />
+
+            <MudText Typo="Typo.subtitle2" Class="mb-2">Scopes to grant</MudText>
+            <MudStack Row="true" Spacing="2" Class="mb-3">
+                <MudCheckBox @bind-Value="grantRead" Label="read" Color="Color.Primary" />
+                <MudCheckBox @bind-Value="grantWrite" Label="write" Color="Color.Secondary" />
+            </MudStack>
+
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Tertiary"
+                       OnClick="ShareDocument"
+                       Disabled="@(shareLoading || string.IsNullOrWhiteSpace(shareUsername) || (!grantRead && !grantWrite))">
+                @if (shareLoading)
+                {
+                    <MudProgressCircular Class="mr-2" Size="Size.Small" Indeterminate="true" />
+                }
+                Grant Access
+            </MudButton>
+
+            @if (shareResult is not null)
+            {
+                <MudAlert Severity="@shareSeverity" Class="mt-3">@shareResult</MudAlert>
+            }
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+</MudContainer>
+
+@code {
+    private bool loading;
+    private string? currentAction;
+    private string? result;
+    private Severity resultSeverity;
+    private List<FlowStep> flowSteps = new();
+
+    private string? shareUsername;
+    private bool grantRead = true;
+    private bool grantWrite;
+    private bool shareLoading;
+    private string? shareResult;
+    private Severity shareSeverity;
+
+    private async Task AccessDocument(string scope)
+    {
+        loading = true;
+        currentAction = scope;
+        flowSteps.Clear();
+        result = null;
+        StateHasChanged();
+
+        try
+        {
+            var endpoint = scope == "write"
+                ? "/documents/shared-document/details"
+                : "/documents/shared-document";
+
+            flowSteps.Add(new("Request Sent", $"GET {endpoint}", Color.Info));
+            StateHasChanged();
+
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.GetAsync(endpoint);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                flowSteps.Add(new("Access Granted", $"200 OK - {content}", Color.Success));
+                result = $"Document accessed successfully with '{scope}' scope.";
+                resultSeverity = Severity.Success;
+            }
+            else
+            {
+                var wwwAuth = response.Headers.WwwAuthenticate.ToString();
+                if (wwwAuth.Contains("UMA"))
+                {
+                    flowSteps.Add(new("UMA Challenge",
+                        $"401 Unauthorized - WWW-Authenticate: {wwwAuth[..Math.Min(wwwAuth.Length, 80)]}...",
+                        Color.Warning));
+                    flowSteps.Add(new("Ticket Exchange", "Exchanging permission ticket for RPT", Color.Info));
+                    flowSteps.Add(new("Access Denied",
+                        "RPT exchange failed - no permission granted for this resource",
+                        Color.Error));
+                }
+                else
+                {
+                    flowSteps.Add(new("Failed", $"{(int)response.StatusCode} {response.ReasonPhrase}", Color.Error));
+                }
+
+                result = $"Access denied ({(int)response.StatusCode}). The UMA handler attempted ticket exchange but the user lacks permission.";
+                resultSeverity = Severity.Error;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error accessing document");
+            flowSteps.Add(new("Error", ex.Message, Color.Error));
+            result = $"Error: {ex.Message}";
+            resultSeverity = Severity.Error;
+        }
+        finally
+        {
+            loading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task ShareDocument()
+    {
+        shareLoading = true;
+        shareResult = null;
+        StateHasChanged();
+
+        try
+        {
+            var scopes = new List<string>();
+            if (grantRead) scopes.Add("read");
+            if (grantWrite) scopes.Add("write");
+
+            var client = HttpClientFactory.CreateClient("ResourceServer");
+            var response = await client.PostAsJsonAsync(
+                "/documents/shared-document/share",
+                new { Username = shareUsername, Scopes = scopes }
+            );
+
+            if (response.IsSuccessStatusCode)
+            {
+                shareResult = $"Access granted! User '{shareUsername}' now has [{string.Join(", ", scopes)}] access.";
+                shareSeverity = Severity.Success;
+            }
+            else
+            {
+                var body = await response.Content.ReadAsStringAsync();
+                shareResult = $"Failed ({(int)response.StatusCode}): {body}";
+                shareSeverity = Severity.Error;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error sharing document");
+            shareResult = $"Error: {ex.Message}";
+            shareSeverity = Severity.Error;
+        }
+        finally
+        {
+            shareLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private record FlowStep(string Title, string Description, Color Color);
+}

@@ -1,0 +1,41 @@
+{
+  "realm" : "Test",
+  "users" : [ {
+    "id" : "e1000001-0000-0000-0000-000000000001",
+    "username" : "alice",
+    "firstName" : "Alice",
+    "lastName" : "Owner",
+    "email" : "alice@test.com",
+    "emailVerified" : true,
+    "enabled" : true,
+    "credentials" : [ {
+      "type" : "password",
+      "value" : "alice"
+    } ],
+    "realmRoles" : [ "default-roles-test" ]
+  }, {
+    "id" : "e1000001-0000-0000-0000-000000000002",
+    "username" : "bob",
+    "firstName" : "Bob",
+    "lastName" : "Requester",
+    "email" : "bob@test.com",
+    "emailVerified" : true,
+    "enabled" : true,
+    "credentials" : [ {
+      "type" : "password",
+      "value" : "bob"
+    } ],
+    "realmRoles" : [ "default-roles-test" ]
+  }, {
+    "id" : "e1000001-0000-0000-0000-000000000003",
+    "username" : "service-account-uma-resource-server",
+    "emailVerified" : false,
+    "enabled" : true,
+    "serviceAccountClientId" : "uma-resource-server",
+    "credentials" : [ ],
+    "realmRoles" : [ "default-roles-test" ],
+    "clientRoles" : {
+      "uma-resource-server" : [ "uma_protection" ]
+    }
+  } ]
+}

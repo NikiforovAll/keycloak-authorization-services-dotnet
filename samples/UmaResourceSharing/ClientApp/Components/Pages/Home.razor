@@ -1,0 +1,85 @@
+@page "/"
+
+<PageTitle>UMA Resource Sharing</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
+    <MudText Typo="Typo.h3" GutterBottom="true">UMA Resource Sharing Demo</MudText>
+
+    <MudText Typo="Typo.body1" Class="mb-4">
+        This sample demonstrates the UMA (User-Managed Access) permission ticket flow
+        using Keycloak Authorization Services.
+    </MudText>
+
+    <MudCard Class="mb-4">
+        <MudCardHeader>
+            <MudText Typo="Typo.h6">How it works</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudList T="string">
+                <MudListItem Icon="@Icons.Material.Filled.LooksOne">
+                    A protected resource (<code>shared-document</code>) is registered in Keycloak with
+                    <code>ownerManagedAccess = true</code>
+                </MudListItem>
+                <MudListItem Icon="@Icons.Material.Filled.LooksTwo">
+                    When a user without permission tries to access it, the Resource Server returns
+                    <strong>401</strong> with a <code>WWW-Authenticate: UMA</code> header containing a permission ticket
+                </MudListItem>
+                <MudListItem Icon="@Icons.Material.Filled.Looks3">
+                    The Client App intercepts the 401, extracts the ticket, and exchanges it for an
+                    <strong>RPT</strong> (Requesting Party Token) at the Keycloak token endpoint
+                </MudListItem>
+                <MudListItem Icon="@Icons.Material.Filled.Looks4">
+                    If the user has been granted access, the RPT is used to retry the request successfully
+                </MudListItem>
+            </MudList>
+        </MudCardContent>
+    </MudCard>
+
+    <MudCard Class="mb-4">
+        <MudCardHeader>
+            <MudText Typo="Typo.h6">Test Users</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudSimpleTable Elevation="0">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><MudChip T="string" Size="Size.Small" Color="Color.Primary">alice</MudChip></td>
+                        <td><code>alice</code></td>
+                        <td>Resource Owner</td>
+                    </tr>
+                    <tr>
+                        <td><MudChip T="string" Size="Size.Small" Color="Color.Secondary">bob</MudChip></td>
+                        <td><code>bob</code></td>
+                        <td>Requesting Party</td>
+                    </tr>
+                </tbody>
+            </MudSimpleTable>
+        </MudCardContent>
+    </MudCard>
+
+    <AuthorizeView>
+        <Authorized>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Href="/documents"
+                       EndIcon="@Icons.Material.Filled.ArrowForward">
+                Go to Documents
+            </MudButton>
+        </Authorized>
+        <NotAuthorized>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Href="/authentication/login"
+                       EndIcon="@Icons.Material.Filled.Login">
+                Login to Get Started
+            </MudButton>
+        </NotAuthorized>
+    </AuthorizeView>
+</MudContainer>

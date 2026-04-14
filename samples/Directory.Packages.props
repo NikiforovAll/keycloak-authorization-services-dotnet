@@ -31,6 +31,9 @@
     <PackageVersion Include="Serilog.Sinks.SpectreConsole" Version="0.3.3" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
+  <ItemGroup Label="MudBlazor">
+    <PackageVersion Include="MudBlazor" Version="8.6.0" />
+  </ItemGroup>
   <ItemGroup Label="Aspire">
     <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.2.2" />
     <PackageVersion Include="Aspire.Hosting" Version="13.2.2" />
