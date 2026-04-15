@@ -134,7 +134,7 @@ public class DecisionRequirementHandler(
             nameof(DecisionRequirement),
             requirement.ScopesValidationMode,
             requirement.Audience,
-            CancellationToken.None
+            this.httpContextAccessor.HttpContext?.RequestAborted ?? CancellationToken.None
         );
 
         activity?.AddTag(Tags.Outcome, success);

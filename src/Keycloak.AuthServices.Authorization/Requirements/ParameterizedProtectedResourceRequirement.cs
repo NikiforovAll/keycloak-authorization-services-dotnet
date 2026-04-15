@@ -97,7 +97,8 @@ public class ParameterizedProtectedResourceRequirementHandler(
                 scopes,
                 nameof(ParameterizedProtectedResourceRequirement),
                 audience: entry.Audience,
-                cancellationToken: CancellationToken.None
+                cancellationToken: this.httpContextAccessor.HttpContext?.RequestAborted
+                    ?? CancellationToken.None
             );
             verificationPlan.Complete(entry.Resource, success);
 
