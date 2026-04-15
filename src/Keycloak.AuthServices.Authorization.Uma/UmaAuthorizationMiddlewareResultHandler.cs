@@ -66,7 +66,10 @@ public class UmaAuthorizationMiddlewareResultHandler(
 
         try
         {
-            var ticket = await this.CreatePermissionTicketAsync(resourceData);
+            var ticket = await this.CreatePermissionTicketAsync(
+                resourceData,
+                context.RequestAborted
+            );
 
             if (ticket is not null)
             {
@@ -82,7 +85,7 @@ public class UmaAuthorizationMiddlewareResultHandler(
                 return;
             }
         }
-        catch (Exception ex)
+        catch (Exception ex) when (ex is not OperationCanceledException)
         {
             logger.LogUmaChallengeError(resourceData.Resource, ex);
         }
@@ -139,13 +142,17 @@ public class UmaAuthorizationMiddlewareResultHandler(
         return endpoint?.Metadata.GetOrderedMetadata<IProtectedResourceData>().FirstOrDefault();
     }
 
-    private async Task<string?> CreatePermissionTicketAsync(IProtectedResourceData resourceData)
+    private async Task<string?> CreatePermissionTicketAsync(
+        IProtectedResourceData resourceData,
+        CancellationToken cancellationToken = default
+    )
     {
         var realm = options.Value.Realm;
 
         var resourceIds = await protectionClient.GetResourcesIdsAsync(
             realm,
-            new GetResourcesRequestParameters { Name = resourceData.Resource, ExactName = true }
+            new GetResourcesRequestParameters { Name = resourceData.Resource, ExactName = true },
+            cancellationToken
         );
 
         if (resourceIds.Count == 0)
@@ -170,7 +177,11 @@ public class UmaAuthorizationMiddlewareResultHandler(
 
         try
         {
-            var result = await protectionClient.CreatePermissionTicketAsync(realm, permissions);
+            var result = await protectionClient.CreatePermissionTicketAsync(
+                realm,
+                permissions,
+                cancellationToken
+            );
             return result.Ticket;
         }
         catch (KeycloakHttpClientException ex)

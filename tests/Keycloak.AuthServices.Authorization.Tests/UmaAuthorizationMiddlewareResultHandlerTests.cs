@@ -191,6 +191,33 @@ public class UmaAuthorizationMiddlewareResultHandlerTests
         this.mockHttp.VerifyNoOutstandingExpectation();
     }
 
+    [Fact]
+    public async Task HandleAsync_WhenRequestCancelled_ThrowsOperationCanceledException()
+    {
+        using var cts = new CancellationTokenSource();
+        cts.Cancel();
+
+        var trackingHandler = new MockHttpMessageHandler();
+        trackingHandler
+            .Expect(HttpMethod.Get, $"{AuthServerUrl}realms/{Realm}/authz/protection/resource_set*")
+            .Respond(HttpStatusCode.OK, "application/json", """["res-id-001"]""");
+
+        var handler = this.CreateHandler(trackingHandler);
+        var httpContext = CreateHttpContextWithServices();
+        httpContext.RequestAborted = cts.Token;
+
+        var requirement = new DecisionRequirement("workspaces", "read");
+        var failure = AuthorizationFailure.Failed(new[] { requirement });
+        var authorizeResult = PolicyAuthorizationResult.Forbid(failure);
+        var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+
+        // A pre-cancelled token should propagate as OperationCanceledException rather than
+        // gracefully degrading to the default handler (which would do unnecessary work).
+        await Assert.ThrowsAnyAsync<OperationCanceledException>(() =>
+            handler.HandleAsync(_ => Task.CompletedTask, httpContext, policy, authorizeResult)
+        );
+    }
+
     private static DefaultHttpContext CreateHttpContextWithServices()
     {
         var services = new ServiceCollection();
