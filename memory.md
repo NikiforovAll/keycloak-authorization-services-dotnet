@@ -1,32 +1,28 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-14
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24426268577
-- Tasks: Task 2 (Issue Comment), Task 6 (Maintain KeyBot PRs), Task 11 (Monthly Summary)
-- Status: SUCCESS — safeoutputs MCP accessed via direct HTTP POST
-
-## Previous Run
-- Date: 2026-04-13
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24370283905
-- Status: INFRASTRUCTURE FAILURE — safeoutputs blocked by MCP registry 401
+- Date: 2026-04-15
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24481756062
+- Tasks: Task 2 (Issue Comment), Task 3 (Issue Investigation and Fix), Task 11 (Monthly Summary)
+- Status: SUCCESS
 
 ## Monthly Summary Issue
 - Issue #234: "[KeyBot] Monthly Activity 2026-04" - OPEN, updated this run
 
 ## PRs Open (KeyBot)
-- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - REBASED onto 3.0.0-rc.1
-- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - REBASED onto 3.0.0-rc.1
-- NEW (this run): fix: propagate HttpContext.RequestAborted in authorization handlers (draft)
-  - Branch: keybot/fix-cancellation-token-propagation-20260414
-  - Files: DecisionRequirement.cs, ParameterizedProtectedResourceRequirement.cs
-  - Tests: 146 pass
+- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft
+- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft
+- NEW (this run): fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler (draft)
+  - Branch: keybot/fix-uma-cancellation-token-20260415
+  - Changes: UmaAuthorizationMiddlewareResultHandler - pass context.RequestAborted to protection client calls; re-throw OperationCanceledException
+  - Tests: 147 Authorization tests pass, 75 SDK tests pass
 
 ## Recently Merged
-- #248: UMA Support (merged) - closes #96 
+- #249: fix: propagate HttpContext.RequestAborted in authorization handlers (2026-04-15)
+- #248: UMA Support (merged) - closes #96
 - #247: 3.0.0 release preparation (merged) - major breaking changes
 - #244: fix: handle non-JSON error bodies in EnsureResponseAsync (merged)
-- Current main: tag 3.0.0-rc.1
+- Current main: 1 commit past tag 3.0.0-rc.1
 
 ## Issues Commented On
 - #96: UMA Support (multiple times — now CLOSED by #248)
@@ -37,19 +33,18 @@
 - #174: Signed JWT client auth (2026-04-05, 2026-04-12 - IClientAssertionService workaround documented)
 - #196: Organization-scoped token exchange (2026-04-08)
 - #198: DPoP support (2026-04-01)
-- #242: KeyBot infrastructure failure (2026-04-14 — acknowledged in this run ✓)
+- #242: KeyBot infrastructure failure (2026-04-14, 2026-04-15 — noted as resolved)
 
 ## Technical Notes
 - KeycloakUrlRealm includes trailing slash
 - JwtBearerOptions.Authority = KeycloakUrlRealm (with trailing slash)
-- safeoutputs MCP: blocked by registry 401 when agent token lacks mcp_registry scope
-- safeoutputs MCP: workaround — direct HTTP POST to http://host.docker.internal:80/mcp/safeoutputs with auth from /home/runner/.copilot/mcp-config.json
-- safeoutputs MCP: must POST initialize first to get Mcp-Session-Id, then use for all subsequent calls
-- dotnet csharpier: target specific files to avoid reformatting all 777 files
+- safeoutputs MCP: direct HTTP POST to http://host.docker.internal:80/mcp/safeoutputs
+- safeoutputs MCP: must POST initialize first to get Mcp-Session-Id
+- dotnet csharpier: use `dotnet csharpier format <file>` (not positional args)
 - dotnet cake Test: only runs Authorization.Tests; SDK tests need separate dotnet test call
 - 3.0.0 breaking changes: removed AddKeycloakAuthentication, moved extension namespaces
 
 ## Backlog
-- UMA Phase 1: IKeycloakProtectionClient.CreatePermissionTicketAsync (nice to have post-3.0)
 - private_key_jwt support (issue #174)
-- Testing improvements for authorization handlers (add cancellation token tests)
+- Testing improvements for UMA authorization handlers (add cancellation token tests — partially done this run)
+- UMA Phase 1: IKeycloakProtectionClient.CreatePermissionTicketAsync convenience helpers
