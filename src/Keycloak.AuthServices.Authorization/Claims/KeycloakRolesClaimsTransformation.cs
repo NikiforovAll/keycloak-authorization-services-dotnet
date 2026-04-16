@@ -80,41 +80,29 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
 
         var result = principal.Clone();
 
+        var existingRoles = new HashSet<string>(
+            identity
+                .Claims.Where(c =>
+                    c.Type.Equals(this.roleClaimType, StringComparison.InvariantCultureIgnoreCase)
+                )
+                .Select(c => c.Value),
+            StringComparer.InvariantCultureIgnoreCase
+        );
+
         if (this.roleSource.HasFlag(RolesClaimTransformationSource.ResourceAccess))
         {
             var resourceAccessValue = principal.FindFirst("resource_access")?.Value;
             if (!string.IsNullOrWhiteSpace(resourceAccessValue))
             {
                 using var resourceAccess = JsonDocument.Parse(resourceAccessValue);
-                var containsAudienceRoles = resourceAccess.RootElement.TryGetProperty(
-                    this.audience,
-                    out var rolesElement
-                );
-
-                if (containsAudienceRoles)
+                if (
+                    resourceAccess.RootElement.TryGetProperty(
+                        this.audience,
+                        out var audienceElement
+                    ) && audienceElement.TryGetProperty("roles", out var clientRoles)
+                )
                 {
-                    var clientRoles = rolesElement.GetProperty("roles");
-
-                    foreach (var role in clientRoles.EnumerateArray())
-                    {
-                        var value = role.GetString();
-
-                        var matchingClaim = identity.Claims.FirstOrDefault(claim =>
-                            claim.Type.Equals(
-                                this.roleClaimType,
-                                StringComparison.InvariantCultureIgnoreCase
-                            )
-                            && claim.Value.Equals(
-                                value,
-                                StringComparison.InvariantCultureIgnoreCase
-                            )
-                        );
-
-                        if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
-                        {
-                            identity.AddClaim(new Claim(this.roleClaimType, value));
-                        }
-                    }
+                    this.AddRolesFromJsonElement(identity, clientRoles, existingRoles);
                 }
             }
             else if (!this.tokenIntrospectionEnabled)
@@ -129,34 +117,9 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
             if (!string.IsNullOrWhiteSpace(realmAccessValue))
             {
                 using var realmAccess = JsonDocument.Parse(realmAccessValue);
-
-                var containsRoles = realmAccess.RootElement.TryGetProperty(
-                    "roles",
-                    out var rolesElement
-                );
-
-                if (containsRoles)
+                if (realmAccess.RootElement.TryGetProperty("roles", out var realmRoles))
                 {
-                    foreach (var role in rolesElement.EnumerateArray())
-                    {
-                        var value = role.GetString();
-
-                        var matchingClaim = identity.Claims.FirstOrDefault(claim =>
-                            claim.Type.Equals(
-                                this.roleClaimType,
-                                StringComparison.InvariantCultureIgnoreCase
-                            )
-                            && claim.Value.Equals(
-                                value,
-                                StringComparison.InvariantCultureIgnoreCase
-                            )
-                        );
-
-                        if (matchingClaim is null && !string.IsNullOrWhiteSpace(value))
-                        {
-                            identity.AddClaim(new Claim(this.roleClaimType, value));
-                        }
-                    }
+                    this.AddRolesFromJsonElement(identity, realmRoles, existingRoles);
                 }
             }
             else if (!this.tokenIntrospectionEnabled)
@@ -166,5 +129,21 @@ public class KeycloakRolesClaimsTransformation : IClaimsTransformation
         }
 
         return Task.FromResult(result);
+    }
+
+    private void AddRolesFromJsonElement(
+        ClaimsIdentity identity,
+        JsonElement rolesElement,
+        HashSet<string> existingRoles
+    )
+    {
+        foreach (var role in rolesElement.EnumerateArray())
+        {
+            var value = role.GetString();
+            if (!string.IsNullOrWhiteSpace(value) && existingRoles.Add(value))
+            {
+                identity.AddClaim(new Claim(this.roleClaimType, value));
+            }
+        }
     }
 }
