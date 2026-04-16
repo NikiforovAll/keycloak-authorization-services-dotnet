@@ -166,6 +166,70 @@ public static class KeycloakBuilderExtensions
 
         return builder;
     }
+
+    /// <summary>
+    /// Configures the Keycloak container to connect to an external database using the provided adapter.
+    /// </summary>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    /// <param name="adapter">
+    /// The <see cref="IKeycloakDbAdapter"/> that provides the JDBC URL, username,
+    /// password, and database vendor for Keycloak.
+    /// </param>
+    /// <returns>The <see cref="IResourceBuilder{T}"/> for chaining.</returns>
+    /// <remarks>
+    /// <para>
+    /// This method sets the following Keycloak environment variables via the adapter:
+    /// <list type="bullet">
+    /// <item><c>KC_DB</c> — the database vendor (e.g., <c>postgres</c>, <c>mysql</c>).</item>
+    /// <item><c>KC_DB_URL</c> — the full JDBC connection URL.</item>
+    /// <item><c>KC_DB_USERNAME</c> — the database user (omitted when <c>null</c>).</item>
+    /// <item><c>KC_DB_PASSWORD</c> — the database password (omitted when <c>null</c>).</item>
+    /// </list>
+    /// </para>
+    /// <para>
+    /// To ensure the database is ready before Keycloak starts, call <c>WaitFor</c>
+    /// on the Keycloak builder before calling this method:
+    /// </para>
+    /// <code>
+    /// var pg = builder.AddPostgres("postgres").AddDatabase("keycloak");
+    /// var keycloak = builder
+    ///     .AddKeycloakContainer("keycloak")
+    ///     .WaitFor(pg)
+    ///     .WithDatabase(new MyPostgresKeycloakAdapter(pg));
+    /// </code>
+    /// <para>
+    /// Implement <see cref="IKeycloakDbAdapter"/> for your database technology.
+    /// See <see cref="IKeycloakDbAdapter"/> for a complete PostgreSQL example.
+    /// </para>
+    /// </remarks>
+    public static IResourceBuilder<KeycloakResource> WithDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IKeycloakDbAdapter adapter
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(adapter);
+
+        return builder.WithEnvironment(async ctx =>
+        {
+            ctx.EnvironmentVariables["KC_DB"] = adapter.DbVendor;
+            ctx.EnvironmentVariables["KC_DB_URL"] = await adapter.GetDbUrlAsync(
+                ctx.CancellationToken
+            );
+
+            var username = await adapter.GetDbUsernameAsync(ctx.CancellationToken);
+            if (username is not null)
+            {
+                ctx.EnvironmentVariables["KC_DB_USERNAME"] = username;
+            }
+
+            var password = await adapter.GetDbPasswordAsync(ctx.CancellationToken);
+            if (password is not null)
+            {
+                ctx.EnvironmentVariables["KC_DB_PASSWORD"] = password;
+            }
+        });
+    }
 }
 
 internal static class KeycloakContainerImageTags
