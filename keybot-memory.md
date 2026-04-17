@@ -1,28 +1,32 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-16
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24537350549
-- Tasks: Task 2 (Issue Comment), Task 5 (Coding Improvements), Task 11 (Monthly Summary)
+- Date: 2026-04-17
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24589475233
+- Tasks: Task 3 (Fix), Task 2 (Issue Comment — skipped, no new human activity), Task 11 (Monthly Summary)
 - Status: SUCCESS
 
 ## Monthly Summary Issue
 - Issue #234: "[KeyBot] Monthly Activity 2026-04" - OPEN, updated this run
 
 ## PRs Open (KeyBot)
+- #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft
 - #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft
 - #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft
 - #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft
-- NEW (this run): improve: refactor KeycloakRolesClaimsTransformation to reduce duplication and use O(1) dedup
-  - Branch: keybot/improve-roles-transformation-dedup-20260416
-  - Changes: extract AddRolesFromJsonElement helper, replace FirstOrDefault dedup with HashSet
+- NEW (this run): fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync
+  - Branch: keybot/fix-uma-token-handler-cancellation-20260417
+  - Fix: ReadAsByteArrayAsync now receives cancellationToken in CloneRequestAsync
+  - Tests: 8 new unit tests in UmaTokenHandlerTests.cs
 
 ## Recently Merged
 - #249: fix: propagate HttpContext.RequestAborted in authorization handlers (2026-04-15)
+- #244: fix: handle non-JSON error bodies in EnsureResponseAsync (2026-04-12)
+- #241: fix: correct nameof() in DecisionRequirementHandler (2026-04-10)
+- #228: fix: correct nameof() in requirement handler log messages (2026-04-02)
 - #248: UMA Support (merged)
-- #247: 3.0.0 release preparation (merged) - major breaking changes
+- #247: 3.0.0 release preparation (merged)
 - #245: feat: add client_secret_jwt sample (merged, closes #174)
-- #244: fix: handle non-JSON error bodies in EnsureResponseAsync (merged)
 - Current main: 1 commit past tag 3.0.0-rc.1
 
 ## Issues Commented On
@@ -42,13 +46,15 @@
 - safeoutputs MCP: direct HTTP POST to http://host.docker.internal:80/mcp/safeoutputs
 - safeoutputs MCP: must POST initialize first to get Mcp-Session-Id
 - safeoutputs MCP: auth token in /home/runner/.copilot/mcp-config.json
-- dotnet csharpier: use `dotnet csharpier format <file>` (not positional args)
+- dotnet csharpier: use `dotnet tool restore` first, then `dotnet csharpier format <file>`
 - dotnet cake Test: only runs Authorization.Tests; SDK tests need separate dotnet test call
 - 3.0.0 breaking changes: removed AddKeycloakAuthentication, moved extension namespaces
 - ClaimsPrincipal.Clone() in .NET shares ClaimsIdentity references (not deep copy)
+- DefaultHttpContext needs RequestServices with FakeAuthenticationService for GetTokenAsync in tests
+- UmaTokenHandler tests: use FakeAuthenticationService (implements IAuthenticationService) to mock GetTokenAsync
 
 ## Backlog
 - private_key_jwt native support (issue #174 closed with sample - native impl is future)
-- DPoP support (issue #198)
+- DPoP support (issue #198) - Phase 1 (client-side) actionable
 - UMA Phase 1: IKeycloakProtectionClient.CreatePermissionTicketAsync convenience helpers
 - Organization-scoped token exchange (issue #196) - tracking Keycloak upstream
