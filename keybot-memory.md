@@ -1,23 +1,20 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-17
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24589475233
-- Tasks: Task 3 (Fix), Task 2 (Issue Comment — skipped, no new human activity), Task 11 (Monthly Summary)
+- Date: 2026-04-18
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24615338196
+- Tasks: Task 6 (Maintain PRs — rebased #230 and #224), Task 2 (skipped, no new human activity), Task 11 (Monthly Summary)
 - Status: SUCCESS
 
 ## Monthly Summary Issue
 - Issue #234: "[KeyBot] Monthly Activity 2026-04" - OPEN, updated this run
 
 ## PRs Open (KeyBot)
+- #252: fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync - OPEN draft
 - #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft
 - #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft
-- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft
-- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft
-- NEW (this run): fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync
-  - Branch: keybot/fix-uma-token-handler-cancellation-20260417
-  - Fix: ReadAsByteArrayAsync now receives cancellationToken in CloneRequestAsync
-  - Tests: 8 new unit tests in UmaTokenHandlerTests.cs
+- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft (rebased this run)
+- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft (rebased this run)
 
 ## Recently Merged
 - #249: fix: propagate HttpContext.RequestAborted in authorization handlers (2026-04-15)
@@ -27,7 +24,6 @@
 - #248: UMA Support (merged)
 - #247: 3.0.0 release preparation (merged)
 - #245: feat: add client_secret_jwt sample (merged, closes #174)
-- Current main: 1 commit past tag 3.0.0-rc.1
 
 ## Issues Commented On
 - #96: UMA Support (multiple times — now CLOSED by #248)
@@ -52,6 +48,7 @@
 - ClaimsPrincipal.Clone() in .NET shares ClaimsIdentity references (not deep copy)
 - DefaultHttpContext needs RequestServices with FakeAuthenticationService for GetTokenAsync in tests
 - UmaTokenHandler tests: use FakeAuthenticationService (implements IAuthenticationService) to mock GetTokenAsync
+- push_to_pull_request_branch: requires message, branch, pull_request_number, force params
 
 ## Backlog
 - private_key_jwt native support (issue #174 closed with sample - native impl is future)
