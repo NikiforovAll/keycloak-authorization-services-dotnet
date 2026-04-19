@@ -1,18 +1,18 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-18
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24615338196
-- Tasks: Task 6 (Maintain PRs — rebased #230 and #224), Task 2 (skipped, no new human activity), Task 11 (Monthly Summary)
+- Date: 2026-04-19
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24640693422
+- Tasks: Task 6 (Rebased #230 and #224 — 20 commits behind main), Task 2 (skipped, no new human activity), Task 11 (Monthly Summary updated)
 - Status: SUCCESS
 
 ## Monthly Summary Issue
 - Issue #234: "[KeyBot] Monthly Activity 2026-04" - OPEN, updated this run
 
 ## PRs Open (KeyBot)
-- #252: fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync - OPEN draft
-- #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft
-- #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft
+- #252: fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync - OPEN draft (0 behind main)
+- #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft (0 behind main)
+- #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft (0 behind main)
 - #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft (rebased this run)
 - #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft (rebased this run)
 
@@ -34,13 +34,13 @@
 - #174: Signed JWT client auth (2026-04-05, 2026-04-12, 2026-04-15 - now CLOSED, PR #245 merged)
 - #196: Organization-scoped token exchange (2026-04-08)
 - #198: DPoP support (2026-04-01)
-- #242: KeyBot infrastructure failure (2026-04-14, 2026-04-15 — noted as resolved)
+- #242: KeyBot infrastructure failure (2026-04-14, 2026-04-15 — noted as resolved; still getting automated failure logs for protected file pushes)
 
 ## Technical Notes
 - KeycloakUrlRealm includes trailing slash
 - JwtBearerOptions.Authority = KeycloakUrlRealm (with trailing slash)
 - safeoutputs MCP: direct HTTP POST to http://host.docker.internal:80/mcp/safeoutputs
-- safeoutputs MCP: must POST initialize first to get Mcp-Session-Id
+- safeoutputs MCP: must POST initialize first to get Mcp-Session-Id from response headers
 - safeoutputs MCP: auth token in /home/runner/.copilot/mcp-config.json
 - dotnet csharpier: use `dotnet tool restore` first, then `dotnet csharpier format <file>`
 - dotnet cake Test: only runs Authorization.Tests; SDK tests need separate dotnet test call
@@ -48,7 +48,8 @@
 - ClaimsPrincipal.Clone() in .NET shares ClaimsIdentity references (not deep copy)
 - DefaultHttpContext needs RequestServices with FakeAuthenticationService for GetTokenAsync in tests
 - UmaTokenHandler tests: use FakeAuthenticationService (implements IAuthenticationService) to mock GetTokenAsync
-- push_to_pull_request_branch: requires message, branch, pull_request_number, force params
+- push_to_pull_request_branch: local branch must match exact remote branch name (full name with hash suffix)
+- push_to_pull_request_branch: requires message, branch (full name), pull_request_number, force params
 
 ## Backlog
 - private_key_jwt native support (issue #174 closed with sample - native impl is future)
