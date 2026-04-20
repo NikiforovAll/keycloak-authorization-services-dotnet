@@ -1,9 +1,9 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-19
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24640693422
-- Tasks: Task 6 (Rebased #230 and #224 — 20 commits behind main), Task 2 (skipped, no new human activity), Task 11 (Monthly Summary updated)
+- Date: 2026-04-20
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/24693706291
+- Tasks: Task 6 (Rebased PR #230 and #224 onto main — both were 20 commits behind), Task 2 (skipped, no new human activity), Task 11 (Monthly Summary updated)
 - Status: SUCCESS
 
 ## Monthly Summary Issue
@@ -13,8 +13,8 @@
 - #252: fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync - OPEN draft (0 behind main)
 - #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft (0 behind main)
 - #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft (0 behind main)
-- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft (rebased this run)
-- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft (rebased this run)
+- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft (rebased this run, 0 behind main)
+- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft (rebased this run, 0 behind main)
 
 ## Recently Merged
 - #249: fix: propagate HttpContext.RequestAborted in authorization handlers (2026-04-15)
@@ -26,33 +26,26 @@
 - #245: feat: add client_secret_jwt sample (merged, closes #174)
 
 ## Issues Commented On
-- #96: UMA Support (multiple times — now CLOSED by #248)
-- #104: Deep-dive + fix PR #223 (MERGED)
-- #113: WithDatabase for Keycloak Aspire (2026-04-16 - status update pointing to PR #230)
-- #115: Docker issuer mismatch (2026-03-30)
-- #135: Multi-client guidance (2026-03-29)
-- #174: Signed JWT client auth (2026-04-05, 2026-04-12, 2026-04-15 - now CLOSED, PR #245 merged)
-- #196: Organization-scoped token exchange (2026-04-08)
-- #198: DPoP support (2026-04-01)
-- #242: KeyBot infrastructure failure (2026-04-14, 2026-04-15 — noted as resolved; still getting automated failure logs for protected file pushes)
+- #198: DPoP support (2026-04-01 - no new activity since)
+- #196: Organization-scoped token exchange (2026-04-08 - no new activity since)
+- #113: WithDatabase for Keycloak Aspire (2026-04-16 - no new activity since; PR #230 rebased)
+- #115: Docker issuer mismatch (2026-03-30 - no new activity since; PR #224 rebased)
+- #242: KeyBot infrastructure failure (automated issue, do not comment again)
 
 ## Technical Notes
 - KeycloakUrlRealm includes trailing slash
 - JwtBearerOptions.Authority = KeycloakUrlRealm (with trailing slash)
 - safeoutputs MCP: direct HTTP POST to http://host.docker.internal:80/mcp/safeoutputs
+- safeoutputs MCP: Authorization header is the raw token (not Bearer prefix)
 - safeoutputs MCP: must POST initialize first to get Mcp-Session-Id from response headers
-- safeoutputs MCP: auth token in /home/runner/.copilot/mcp-config.json
+- github MCP: same auth pattern as safeoutputs
 - dotnet csharpier: use `dotnet tool restore` first, then `dotnet csharpier format <file>`
 - dotnet cake Test: only runs Authorization.Tests; SDK tests need separate dotnet test call
 - 3.0.0 breaking changes: removed AddKeycloakAuthentication, moved extension namespaces
 - ClaimsPrincipal.Clone() in .NET shares ClaimsIdentity references (not deep copy)
-- DefaultHttpContext needs RequestServices with FakeAuthenticationService for GetTokenAsync in tests
-- UmaTokenHandler tests: use FakeAuthenticationService (implements IAuthenticationService) to mock GetTokenAsync
-- push_to_pull_request_branch: local branch must match exact remote branch name (full name with hash suffix)
-- push_to_pull_request_branch: requires message, branch (full name), pull_request_number, force params
+- push_to_pull_request_branch: branch param = full local branch name, pull_request_number = PR number
 
 ## Backlog
-- private_key_jwt native support (issue #174 closed with sample - native impl is future)
 - DPoP support (issue #198) - Phase 1 (client-side) actionable
-- UMA Phase 1: IKeycloakProtectionClient.CreatePermissionTicketAsync convenience helpers
 - Organization-scoped token exchange (issue #196) - tracking Keycloak upstream
+- UMA Phase 1: IKeycloakProtectionClient.CreatePermissionTicketAsync convenience helpers
