@@ -1,9 +1,9 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-04-27
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/25023168225
-- Tasks: Task 6 (rebased and pushed PRs #224 and #230 onto main — SUCCESS), Task 2 (added enhancement labels to #196 and #198), Task 11 (updated #234 — SUCCESS)
+- Date: 2026-04-28
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/25082440170
+- Tasks: Task 6 (rebased and pushed PRs #224 and #230 onto main — SUCCESS), Task 2 (no new human activity on issues), Task 11 (updated #234 — SUCCESS)
 - Status: SUCCESS
 
 ## MCP Access Pattern (WORKING)
@@ -13,17 +13,20 @@
 - GitHub MCP (read-only): POST http://host.docker.internal:80/mcp/github — use issue_read (with method param), list_issues, list_pull_requests, pull_request_read (with method param)
 - pull_request_read: uses "pullNumber" param (not pull_request_number)
 - issue_read requires: owner, repo, issue_number, method ("get", "get_comments", etc.)
-- list_issues: response wraps issues in content[].text as JSON string (parse twice)
+- list_issues: response content[0].text is JSON string; items are dicts; labels is list of strings (NOT list of dicts)
+- list_pull_requests: response is SSE "data: {...}" format; parse with grep "^data: " | sed
+- issue_read get_comments: outer is list; each item has "content" key with nested text containing JSON list of comments
 
 ## Monthly Summary Issue
-- Issue #234: "[KeyBot] Monthly Activity 2026-04" - OPEN, updated 2026-04-27
+- Issue #234: "[KeyBot] Monthly Activity 2026-04" - OPEN, updated 2026-04-28
+- Body cleaned up (removed duplicate sections from previous runs)
 
 ## PRs Open (KeyBot)
-- #252: fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync - OPEN draft (up to date)
-- #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft (up to date)
-- #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft (up to date)
-- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft (REBASED and pushed 2026-04-27)
-- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft (REBASED and pushed 2026-04-27)
+- #252: fix: propagate CancellationToken in UmaTokenHandler.CloneRequestAsync - OPEN draft (up to date, 0 behind main)
+- #251: improve: refactor KeycloakRolesClaimsTransformation to reduce duplication - OPEN draft (up to date, 0 behind main)
+- #250: fix: propagate RequestAborted in UmaAuthorizationMiddlewareResultHandler - OPEN draft (up to date, 0 behind main)
+- #230: feat(aspire): add IKeycloakDbAdapter and WithDatabase extension - closes #113 - OPEN draft (REBASED and pushed 2026-04-28)
+- #224: docs: add recipe for connecting containerized API to Keycloak - closes #115 - OPEN draft (REBASED and pushed 2026-04-28)
 
 ## Recently Merged
 - #249: fix: propagate HttpContext.RequestAborted in authorization handlers (2026-04-15)
@@ -34,10 +37,10 @@
 - #247: 3.0.0 release preparation (merged)
 
 ## Issues Commented On
-- #198: DPoP support (2026-04-01 - no new activity; enhancement label added 2026-04-27)
-- #196: Organization-scoped token exchange (2026-04-08 - no new activity; enhancement label added 2026-04-27)
-- #113: WithDatabase for Keycloak Aspire (2026-04-16 - no new activity; PR #230 rebased 2026-04-27)
-- #115: Docker issuer mismatch (2026-03-30 - no new activity; PR #224 rebased 2026-04-27)
+- #198: DPoP support (2026-04-01 - no new activity since)
+- #196: Organization-scoped token exchange (2026-04-08 - no new activity since)
+- #113: WithDatabase for Keycloak Aspire (2026-04-16 - no new activity since; PR #230 open)
+- #115: Docker issuer mismatch (2026-03-30 - no new activity since; PR #224 open)
 - #242: KeyBot infrastructure failure (do not comment again)
 
 ## Technical Notes
@@ -51,8 +54,9 @@
 - ClaimsPrincipal.Clone() in .NET shares ClaimsIdentity references (not deep copy)
 - push_to_pull_request_branch: branch param = EXACT local branch name; requires "message" param
 - push_to_pull_request_branch: tool fetches origin/<branch> to compute incremental patch
-- PR branches #224 and #230 keep rebasing 20 commits behind — need rebase every run while main advances
-- list_issues response: content[].text is a JSON string — parse twice; issues and PRs mixed (filter by absence of 'pull_request' key)
+- PR branches #224 and #230 keep needing rebase every run while main advances
+- list_issues labels: returns plain strings NOT dicts (e.g. ['enhancement', 'bug'])
+- issue_read get_comments: outer list items have 'content' key, not direct comment fields
 
 ## Backlog
 - DPoP support (issue #198) - Phase 1 (client-side) actionable
