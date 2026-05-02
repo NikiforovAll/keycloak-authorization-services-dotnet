@@ -214,32 +214,42 @@ public static class KeycloakBuilderExtensions
 
         builder.WaitFor(database);
 
-        return builder.WithEnvironment(async ctx =>
+        var settings = KeycloakDbReferenceBuilder.Build(vendor, database.Resource);
+
+        builder.WithEnvironment("KC_DB", settings.KcDb);
+        builder.WithEnvironment("KC_DB_URL", settings.JdbcUrl);
+        if (settings.Username is not null)
         {
-            var connectionString = await database.Resource.GetConnectionStringAsync(
-                ctx.CancellationToken
-            );
+            builder.WithEnvironment("KC_DB_USERNAME", settings.Username);
+        }
+        if (settings.Password is not null)
+        {
+            builder.WithEnvironment("KC_DB_PASSWORD", settings.Password);
+        }
 
-            if (string.IsNullOrWhiteSpace(connectionString))
-            {
-                throw new InvalidOperationException(
-                    $"Database resource '{database.Resource.Name}' did not provide a connection string."
-                );
-            }
+        return builder;
+    }
 
-            var settings = KeycloakDbConnectionStringTranslator.Translate(vendor, connectionString);
+    /// <summary>
+    /// Enables the Keycloak <c>opentelemetry</c> feature and configures the OTLP exporter so the
+    /// container forwards traces, metrics, and logs to the Aspire dashboard (or any OTLP collector
+    /// reachable via <c>OTEL_EXPORTER_OTLP_ENDPOINT</c>).
+    /// </summary>
+    /// <remarks>
+    /// Mirrors the official <c>Aspire.Hosting.Keycloak</c> behavior: sets <c>KC_FEATURES=opentelemetry</c>
+    /// and delegates to <see cref="OtlpConfigurationExtensions.WithOtlpExporter{T}(IResourceBuilder{T})"/>.
+    /// Requires Keycloak 25+ where the <c>opentelemetry</c> preview feature is available.
+    /// </remarks>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    public static IResourceBuilder<KeycloakResource> WithOtlpExporter(
+        this IResourceBuilder<KeycloakResource> builder
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
 
-            ctx.EnvironmentVariables["KC_DB"] = settings.KcDb;
-            ctx.EnvironmentVariables["KC_DB_URL"] = settings.JdbcUrl;
-            if (settings.Username is not null)
-            {
-                ctx.EnvironmentVariables["KC_DB_USERNAME"] = settings.Username;
-            }
-            if (settings.Password is not null)
-            {
-                ctx.EnvironmentVariables["KC_DB_PASSWORD"] = settings.Password;
-            }
-        });
+        builder.WithEnvironment("KC_FEATURES", "opentelemetry");
+
+        return builder.WithOtlpExporter<KeycloakResource>();
     }
 
     /// <summary>

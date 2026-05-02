@@ -5,7 +5,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
-    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="NSwag.AspNetCore" />
   </ItemGroup>
 
   <ItemGroup>
