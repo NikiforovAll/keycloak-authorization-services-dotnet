@@ -71,19 +71,22 @@ public class UmaTokenHandler(
 
         logger.LogRetryingWithRpt();
 
-        using var retryRequest = await CloneRequestAsync(request);
+        using var retryRequest = await CloneRequestAsync(request, cancellationToken);
         retryRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", rpt);
 
         return await base.SendAsync(retryRequest, cancellationToken);
     }
 
-    private static async Task<HttpRequestMessage> CloneRequestAsync(HttpRequestMessage request)
+    private static async Task<HttpRequestMessage> CloneRequestAsync(
+        HttpRequestMessage request,
+        CancellationToken cancellationToken = default
+    )
     {
         var clone = new HttpRequestMessage(request.Method, request.RequestUri);
 
         if (request.Content is not null)
         {
-            var content = await request.Content.ReadAsByteArrayAsync();
+            var content = await request.Content.ReadAsByteArrayAsync(cancellationToken);
             clone.Content = new ByteArrayContent(content);
             if (request.Content.Headers.ContentType is not null)
             {
