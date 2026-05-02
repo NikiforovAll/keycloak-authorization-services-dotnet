@@ -13,7 +13,7 @@ description: |
   Always polite, constructive, and mindful of the project's goals.
 
 on:
-  schedule: daily
+  schedule: "0 2 */2 * *"
   workflow_dispatch:
   slash_command:
     name: keybot
@@ -55,6 +55,7 @@ safe-outputs:
   push-to-pull-request-branch:
     target: "*"
     title-prefix: "[KeyBot] "
+    protected-files: fallback-to-issue
     max: 4
   create-issue:
     title-prefix: "[KeyBot] "
