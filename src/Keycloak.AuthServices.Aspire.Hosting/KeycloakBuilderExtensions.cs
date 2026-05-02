@@ -140,6 +140,109 @@ public static class KeycloakBuilderExtensions
     }
 
     /// <summary>
+    /// Pins the Keycloak server hostname so issued tokens contain a stable <c>iss</c> claim,
+    /// regardless of which network identity (e.g. <c>localhost</c> vs. <c>host.docker.internal</c>)
+    /// the Keycloak container is reached on.
+    /// </summary>
+    /// <remarks>
+    /// Sets the <c>KC_HOSTNAME</c> environment variable. Use this when API consumers run inside
+    /// containers and need the issuer to match a single, fixed URL.
+    /// </remarks>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    /// <param name="hostnameUrl">The hostname URL Keycloak should advertise (e.g. <c>http://localhost:8080/</c>).</param>
+    public static IResourceBuilder<KeycloakResource> WithHostname(
+        this IResourceBuilder<KeycloakResource> builder,
+        string hostnameUrl
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentException.ThrowIfNullOrWhiteSpace(hostnameUrl);
+
+        return builder.WithEnvironment("KC_HOSTNAME", hostnameUrl);
+    }
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external PostgreSQL database for persistence.
+    /// </summary>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    /// <param name="database">An Aspire database resource exposing a PostgreSQL connection string.</param>
+    public static IResourceBuilder<KeycloakResource> WithPostgresDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.Postgres);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external MySQL database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithMySqlDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.MySql);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external MariaDB database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithMariaDbDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.MariaDb);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external Microsoft SQL Server database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithMsSqlDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.MsSql);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external Oracle database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithOracleDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.Oracle);
+
+    private static IResourceBuilder<KeycloakResource> WithDatabaseCore(
+        IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database,
+        KeycloakDbVendor vendor
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(database);
+
+        builder.WaitFor(database);
+
+        return builder.WithEnvironment(async ctx =>
+        {
+            var connectionString = await database.Resource.GetConnectionStringAsync(
+                ctx.CancellationToken
+            );
+
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                throw new InvalidOperationException(
+                    $"Database resource '{database.Resource.Name}' did not provide a connection string."
+                );
+            }
+
+            var settings = KeycloakDbConnectionStringTranslator.Translate(vendor, connectionString);
+
+            ctx.EnvironmentVariables["KC_DB"] = settings.KcDb;
+            ctx.EnvironmentVariables["KC_DB_URL"] = settings.JdbcUrl;
+            if (settings.Username is not null)
+            {
+                ctx.EnvironmentVariables["KC_DB_USERNAME"] = settings.Username;
+            }
+            if (settings.Password is not null)
+            {
+                ctx.EnvironmentVariables["KC_DB_PASSWORD"] = settings.Password;
+            }
+        });
+    }
+
+    /// <summary>
     /// Adds a reference to a Keycloak resource to the specified resource builder.
     /// </summary>
     /// <typeparam name="TResource">The type of the resource builder.</typeparam>
@@ -172,5 +275,5 @@ internal static class KeycloakContainerImageTags
 {
     public const string Registry = "quay.io";
     public const string Image = "keycloak/keycloak";
-    public const string Tag = "26.3.3";
+    public const string Tag = "26.6.1";
 }
