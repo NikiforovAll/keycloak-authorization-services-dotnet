@@ -1,6 +1,8 @@
+using System.Security.Claims;
 using Keycloak.AuthServices.Authentication;
 using Keycloak.AuthServices.Common;
 using Microsoft.OpenApi;
+using NSwag.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -8,29 +10,49 @@ var configuration = builder.Configuration;
 
 builder.AddServiceDefaults();
 
-var clientName = "workspaces-client";
+const string clientName = "workspaces-client";
+const string schemeName = "oauth2";
 
-services.AddEndpointsApiExplorer();
-services.AddSwaggerGen(c =>
+var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
+var realmUrl = keycloakOptions.KeycloakUrlRealm.TrimEnd('/') + "/";
+
+services.AddOpenApi(options =>
 {
-    var keycloakOptions = configuration.GetKeycloakOptions<KeycloakAuthenticationOptions>()!;
-
-    c.AddSecurityDefinition(
-        "oidc",
-        new OpenApiSecurityScheme
+    options.AddDocumentTransformer(
+        (document, _, _) =>
         {
-            Name = "oauth2",
-            Type = SecuritySchemeType.OpenIdConnect,
-            OpenIdConnectUrl = new Uri(keycloakOptions.OpenIdConnectUrl!),
+            document.Components ??= new OpenApiComponents();
+            document.Components.SecuritySchemes ??=
+                new Dictionary<string, IOpenApiSecurityScheme>();
+            document.Components.SecuritySchemes[schemeName] = new OpenApiSecurityScheme
+            {
+                Type = SecuritySchemeType.OAuth2,
+                Flows = new OpenApiOAuthFlows
+                {
+                    AuthorizationCode = new OpenApiOAuthFlow
+                    {
+                        AuthorizationUrl = new Uri($"{realmUrl}protocol/openid-connect/auth"),
+                        TokenUrl = new Uri($"{realmUrl}protocol/openid-connect/token"),
+                        Scopes = new Dictionary<string, string>
+                        {
+                            ["openid"] = "OpenID",
+                            ["profile"] = "Profile",
+                        },
+                    },
+                },
+            };
+
+            document.Security =
+            [
+                new OpenApiSecurityRequirement
+                {
+                    [new OpenApiSecuritySchemeReference(schemeName, document)] = [],
+                },
+            ];
+
+            return Task.CompletedTask;
         }
     );
-
-    c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
-    {
-        [new OpenApiSecuritySchemeReference("oidc", document)] = [],
-    });
-
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API (v1)", Version = "v1" });
 });
 
 services.AddKeycloakWebApiAuthentication(
@@ -45,11 +67,18 @@ services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseSwagger();
-app.UseSwaggerUI(options =>
+app.MapOpenApi();
+app.UseSwaggerUi(options =>
 {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
+    options.DocumentPath = "/openapi/v1.json";
+    options.Path = string.Empty;
+    options.OAuth2Client = new OAuth2ClientSettings
+    {
+        ClientId = clientName,
+        AppName = clientName,
+        UsePkceWithAuthorizationCodeGrant = true,
+        Scopes = { "openid", "profile" },
+    };
 });
 
 app.UseHttpsRedirection();
@@ -57,6 +86,23 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapGet("/hello", () => "Hello World!").RequireAuthorization();
+app.MapGet(
+        "/hello",
+        (ClaimsPrincipal user) =>
+            new
+            {
+                message = "Hello World!",
+                name = user.Identity?.Name,
+                authenticationType = user.Identity?.AuthenticationType,
+                isAuthenticated = user.Identity?.IsAuthenticated ?? false,
+                claims = user.Claims.Select(c => new
+                {
+                    c.Type,
+                    c.Value,
+                    c.Issuer,
+                }),
+            }
+    )
+    .RequireAuthorization();
 
 app.Run();

@@ -140,6 +140,119 @@ public static class KeycloakBuilderExtensions
     }
 
     /// <summary>
+    /// Pins the Keycloak server hostname so issued tokens contain a stable <c>iss</c> claim,
+    /// regardless of which network identity (e.g. <c>localhost</c> vs. <c>host.docker.internal</c>)
+    /// the Keycloak container is reached on.
+    /// </summary>
+    /// <remarks>
+    /// Sets the <c>KC_HOSTNAME</c> environment variable. Use this when API consumers run inside
+    /// containers and need the issuer to match a single, fixed URL.
+    /// </remarks>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    /// <param name="hostnameUrl">The hostname URL Keycloak should advertise (e.g. <c>http://localhost:8080/</c>).</param>
+    public static IResourceBuilder<KeycloakResource> WithHostname(
+        this IResourceBuilder<KeycloakResource> builder,
+        string hostnameUrl
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentException.ThrowIfNullOrWhiteSpace(hostnameUrl);
+
+        return builder.WithEnvironment("KC_HOSTNAME", hostnameUrl);
+    }
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external PostgreSQL database for persistence.
+    /// </summary>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    /// <param name="database">An Aspire database resource exposing a PostgreSQL connection string.</param>
+    public static IResourceBuilder<KeycloakResource> WithPostgresDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.Postgres);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external MySQL database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithMySqlDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.MySql);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external MariaDB database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithMariaDbDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.MariaDb);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external Microsoft SQL Server database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithMsSqlDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.MsSql);
+
+    /// <summary>
+    /// Configures the Keycloak container to use an external Oracle database for persistence.
+    /// </summary>
+    public static IResourceBuilder<KeycloakResource> WithOracleDatabase(
+        this IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database
+    ) => WithDatabaseCore(builder, database, KeycloakDbVendor.Oracle);
+
+    private static IResourceBuilder<KeycloakResource> WithDatabaseCore(
+        IResourceBuilder<KeycloakResource> builder,
+        IResourceBuilder<IResourceWithConnectionString> database,
+        KeycloakDbVendor vendor
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+        ArgumentNullException.ThrowIfNull(database);
+
+        builder.WaitFor(database);
+
+        var settings = KeycloakDbReferenceBuilder.Build(vendor, database.Resource);
+
+        builder.WithEnvironment("KC_DB", settings.KcDb);
+        builder.WithEnvironment("KC_DB_URL", settings.JdbcUrl);
+        if (settings.Username is not null)
+        {
+            builder.WithEnvironment("KC_DB_USERNAME", settings.Username);
+        }
+        if (settings.Password is not null)
+        {
+            builder.WithEnvironment("KC_DB_PASSWORD", settings.Password);
+        }
+
+        return builder;
+    }
+
+    /// <summary>
+    /// Enables the Keycloak <c>opentelemetry</c> feature and configures the OTLP exporter so the
+    /// container forwards traces, metrics, and logs to the Aspire dashboard (or any OTLP collector
+    /// reachable via <c>OTEL_EXPORTER_OTLP_ENDPOINT</c>).
+    /// </summary>
+    /// <remarks>
+    /// Mirrors the official <c>Aspire.Hosting.Keycloak</c> behavior: sets <c>KC_FEATURES=opentelemetry</c>
+    /// and delegates to <see cref="OtlpConfigurationExtensions.WithOtlpExporter{T}(IResourceBuilder{T})"/>.
+    /// Requires Keycloak 25+ where the <c>opentelemetry</c> preview feature is available.
+    /// </remarks>
+    /// <param name="builder">The Keycloak resource builder.</param>
+    public static IResourceBuilder<KeycloakResource> WithOtlpExporter(
+        this IResourceBuilder<KeycloakResource> builder
+    )
+    {
+        ArgumentNullException.ThrowIfNull(builder);
+
+        builder.WithEnvironment("KC_FEATURES", "opentelemetry");
+
+        return builder.WithOtlpExporter<KeycloakResource>();
+    }
+
+    /// <summary>
     /// Adds a reference to a Keycloak resource to the specified resource builder.
     /// </summary>
     /// <typeparam name="TResource">The type of the resource builder.</typeparam>
@@ -172,5 +285,5 @@ internal static class KeycloakContainerImageTags
 {
     public const string Registry = "quay.io";
     public const string Image = "keycloak/keycloak";
-    public const string Tag = "26.3.3";
+    public const string Tag = "26.6.1";
 }

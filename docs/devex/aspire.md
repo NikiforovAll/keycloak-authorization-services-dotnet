@@ -103,6 +103,53 @@ Inside docker container run:
 /opt/keycloak/bin/kc.sh export --dir /opt/keycloak/data/import --realm Test
 ```
 
+## Use an external database
+
+By default the Keycloak container uses the embedded H2 database, which is not suitable for anything beyond local exploration. Wire an external database via one of the typed extensions:
+
+```csharp
+var postgres = builder
+    .AddPostgres("postgres")
+    .WithDataVolume()
+    .AddDatabase("keycloak-db", databaseName: "keycloak");
+
+var keycloak = builder
+    .AddKeycloakContainer("keycloak")
+    .WithPostgresDatabase(postgres);
+```
+
+The extension reads the resolved Aspire connection string at deploy time, translates it to JDBC, and sets `KC_DB`, `KC_DB_URL`, `KC_DB_USERNAME`, and `KC_DB_PASSWORD` on the Keycloak container. It also applies `WaitFor(database)`, so Keycloak only starts after the database is ready.
+
+Available overloads — one per Keycloak-supported vendor:
+
+| Extension | `KC_DB` |
+|---|---|
+| `WithPostgresDatabase` | `postgres` |
+| `WithMySqlDatabase` | `mysql` |
+| `WithMariaDbDatabase` | `mariadb` |
+| `WithMsSqlDatabase` | `mssql` |
+| `WithOracleDatabase` | `oracle` |
+
+Each takes any `IResourceBuilder<IResourceWithConnectionString>`, so you can also point Keycloak at a managed database resource (e.g. an Aspire connection-string-only reference for a hosted Postgres).
+
+## Pin the issuer hostname
+
+Keycloak in development mode derives the `iss` claim from whichever URL it is reached on. When API consumers run inside containers (e.g. `host.docker.internal`) but tokens were obtained via `localhost`, you'll see:
+
+```
+WWW-Authenticate: Bearer error="invalid_token", error_description="The issuer 'http://localhost:8080/realms/...' is invalid"
+```
+
+Pin the hostname so every issued token uses the same `iss` regardless of how the container is reached:
+
+```csharp
+var keycloak = builder
+    .AddKeycloakContainer("keycloak")
+    .WithHostname("http://localhost:8080/");
+```
+
+This sets `KC_HOSTNAME` on the container. For non-Aspire scenarios see the [containerized API recipe](/qa/recipes#how-to-connect-a-containerized-api-to-keycloak).
+
 ## Start from Template
 
 You can use [Keycloak.AuthServices.Templates](https://www.nuget.org/packages/Keycloak.AuthServices.Templates) to scaffold the new Aspire Project that has `Keycloak.AuthServices` integration configured.
