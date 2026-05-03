@@ -1,27 +1,27 @@
 <Project>
   <ItemGroup Label="Core">
-    <PackageVersion Include="Aspire.Hosting" Version="13.2.2" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.17.0" />
+    <PackageVersion Include="Aspire.Hosting" Version="13.2.4" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.18.0" />
     <PackageVersion
       Include="Microsoft.Extensions.DependencyInjection.Abstractions"
-      Version="10.0.5"
+      Version="10.0.7"
     />
-    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="10.0.5" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.5" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authorization" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="10.0.7" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="10.0.7" />
     <PackageVersion Include="Microsoft.Kiota.Bundle" Version="1.22.1" />
-    <PackageVersion Include="OpenTelemetry" Version="1.15.2" />
-    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.4.0" />
-    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.5" />
+    <PackageVersion Include="OpenTelemetry" Version="1.15.3" />
+    <PackageVersion Include="Microsoft.Extensions.Caching.Hybrid" Version="10.5.0" />
+    <PackageVersion Include="System.Diagnostics.DiagnosticSource" Version="10.0.7" />
   </ItemGroup>
   <ItemGroup Label="Release">
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.201" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.203" />
     <PackageVersion Include="MinVer" Version="7.0.0" />
   </ItemGroup>
 </Project>
