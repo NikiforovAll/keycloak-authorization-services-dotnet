@@ -1,20 +1,20 @@
 # KeyBot Memory
 
 ## Last Run
-- Date: 2026-05-05
-- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/25358570202
-- Tasks: Task 10 (UmaTicketExchangeClient tests PR), Task 3 (no fixable issues found), Task 11 (updated May summary)
+- Date: 2026-05-11
+- Run: https://github.com/NikiforovAll/keycloak-authorization-services-dotnet/actions/runs/25652805130
+- Tasks: Task 5 (coding improvements: argument guards), Task 6 (PR #256 — no CI failures), Task 11 (updated May summary)
 - Status: SUCCESS
 
 ## Monthly Summary Issue
 - Issue #255: "[KeyBot] Monthly Activity 2026-05" - OPEN, updated this run
 
 ## PRs Open (KeyBot)
-- (this run): test: add unit tests for UmaTicketExchangeClient — branch keybot/test-uma-ticket-exchange-client-20260505 — OPEN draft
+- (new this run): improve: standardize argument guards in Authorization ServiceCollectionExtensions
+- #256: test: add unit tests for UmaTicketExchangeClient — OPEN draft
 - #254: chore: update NuGet packages (May 2026) — OPEN
 
 ## Recently Merged / Closed
-- #252, #251, #250, #230, #224: status unknown (need to check)
 - #249: fix: propagate HttpContext.RequestAborted (2026-04-15)
 - #248: UMA Support (merged)
 - #247: 3.0.0 release preparation (merged)
@@ -50,4 +50,4 @@
 ## Backlog
 - DPoP support (issue #198) - Phase 1 (client-side) actionable
 - Organization-scoped token exchange (issue #196) - tracking Keycloak upstream
-- Add tests for KeycloakTokenIntrospectionClient (no tests for the HTTP client itself, only transformation)
+- Add tests for KeycloakTokenIntrospectionClient (no tests for the HTTP client itself)
