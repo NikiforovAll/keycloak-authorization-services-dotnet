@@ -23,7 +23,7 @@ services
 ## Apply `ProtectedResourceAttribute`
 
 > [!IMPORTANT]
-> Make sure that the 'roles' scope under Clients > 'ClientId' > Client Scopes is set to Default else you will receive a Not Authorized Error.
+> Make sure that the 'roles' scope under Clients > 'ClientId' > Client Scopes is set to Default else you will receive a Not Authorized Error. Alternatively requesting the 'roles' scope will also work.
 
 
 <<< @/../tests/TestWebApiWithControllers/Controllers/WorkspacesController.cs#WorkspaceAPI{3,7,11,15,19 cs:line-numbers}
