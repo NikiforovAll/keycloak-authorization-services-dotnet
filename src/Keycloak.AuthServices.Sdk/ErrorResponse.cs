@@ -11,11 +11,11 @@ public sealed record ErrorResponse
     /// Gets or sets the error code.
     /// </summary>
     [JsonPropertyName("error")]
-    public string Error { get; init; } = default!;
+    public string Error { get; init; } = null!;
 
     /// <summary>
     /// Gets or sets the error description.
     /// </summary>
     [JsonPropertyName("error_description")]
-    public string ErrorDescription { get; init; } = default!;
+    public string ErrorDescription { get; init; } = null!;
 }

@@ -2,9 +2,9 @@
 
 using System.Globalization;
 using System.Net.Http.Json;
-using Keycloak.AuthServices.Sdk.Protection.Models;
-using Keycloak.AuthServices.Sdk.Protection.Requests;
-using Keycloak.AuthServices.Sdk.Utils;
+using Models;
+using Requests;
+using Utils;
 
 /// <summary>
 /// Represents a client for interacting with Keycloak Protection API services.

@@ -1,8 +1,9 @@
+// ReSharper disable MemberCanBePrivate.Global
 namespace Keycloak.AuthServices.Sdk;
 
-using Keycloak.AuthServices.Common;
-using Keycloak.AuthServices.Sdk.Admin;
-using Keycloak.AuthServices.Sdk.Protection;
+using Common;
+using Admin;
+using Protection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -23,7 +24,7 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<HttpClient>? configureClient = default,
+        Action<HttpClient>? configureClient = null,
         string keycloakClientSectionName = KeycloakAdminClientOptions.Section
     ) =>
         services.AddKeycloakAdminHttpClient(
@@ -41,10 +42,10 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         IConfigurationSection configurationSection,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     ) =>
         services.AddKeycloakAdminHttpClient(
-            options => configurationSection.BindKeycloakOptions(options),
+            configurationSection.BindKeycloakOptions,
             configureClient
         );
 
@@ -58,7 +59,7 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         Action<KeycloakAdminClientOptions> configureKeycloakOptions,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     )
     {
         services
@@ -101,10 +102,12 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakAdminHttpClient(
         this IServiceCollection services,
         KeycloakAdminClientOptions keycloakOptions,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     )
     {
-        void configureKeycloakOptions(KeycloakAdminClientOptions options)
+        return services.AddKeycloakAdminHttpClient(ConfigureKeycloakOptions, configureClient);
+
+        void ConfigureKeycloakOptions(KeycloakAdminClientOptions options)
         {
             options.Realm = keycloakOptions.Realm;
             options.AuthServerUrl = keycloakOptions.AuthServerUrl;
@@ -115,8 +118,6 @@ public static class ServiceCollectionExtensions
             options.VerifyTokenAudience = keycloakOptions.VerifyTokenAudience;
             options.TokenClockSkew = keycloakOptions.TokenClockSkew;
         }
-
-        return services.AddKeycloakAdminHttpClient(configureKeycloakOptions, configureClient);
     }
 
     /// <summary>
@@ -130,7 +131,7 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<HttpClient>? configureClient = default,
+        Action<HttpClient>? configureClient = null,
         string keycloakClientSectionName = KeycloakProtectionClientOptions.Section
     ) =>
         services.AddKeycloakProtectionHttpClient(
@@ -148,10 +149,10 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         IConfigurationSection configurationSection,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     ) =>
         services.AddKeycloakProtectionHttpClient(
-            options => configurationSection.BindKeycloakOptions(options),
+            configurationSection.BindKeycloakOptions,
             configureClient
         );
 
@@ -165,7 +166,7 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         Action<KeycloakProtectionClientOptions> configureKeycloakOptions,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     )
     {
         services
@@ -211,10 +212,12 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakProtectionHttpClient(
         this IServiceCollection services,
         KeycloakProtectionClientOptions keycloakOptions,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     )
     {
-        void configureKeycloakOptions(KeycloakProtectionClientOptions options)
+        return services.AddKeycloakProtectionHttpClient(ConfigureKeycloakOptions, configureClient);
+
+        void ConfigureKeycloakOptions(KeycloakProtectionClientOptions options)
         {
             options.Realm = keycloakOptions.Realm;
             options.AuthServerUrl = keycloakOptions.AuthServerUrl;
@@ -225,8 +228,6 @@ public static class ServiceCollectionExtensions
             options.VerifyTokenAudience = keycloakOptions.VerifyTokenAudience;
             options.TokenClockSkew = keycloakOptions.TokenClockSkew;
         }
-
-        return services.AddKeycloakProtectionHttpClient(configureKeycloakOptions, configureClient);
     }
 
     /// <summary>
@@ -240,7 +241,7 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakUmaTicketExchangeHttpClient(
         this IServiceCollection services,
         IConfiguration configuration,
-        Action<HttpClient>? configureClient = default,
+        Action<HttpClient>? configureClient = null,
         string keycloakClientSectionName = KeycloakProtectionClientOptions.Section
     ) =>
         services.AddKeycloakUmaTicketExchangeHttpClient(
@@ -258,10 +259,10 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakUmaTicketExchangeHttpClient(
         this IServiceCollection services,
         IConfigurationSection configurationSection,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     ) =>
         services.AddKeycloakUmaTicketExchangeHttpClient(
-            options => configurationSection.BindKeycloakOptions(options),
+            configurationSection.BindKeycloakOptions,
             configureClient
         );
 
@@ -275,7 +276,7 @@ public static class ServiceCollectionExtensions
     public static IHttpClientBuilder AddKeycloakUmaTicketExchangeHttpClient(
         this IServiceCollection services,
         Action<KeycloakProtectionClientOptions> configureKeycloakOptions,
-        Action<HttpClient>? configureClient = default
+        Action<HttpClient>? configureClient = null
     )
     {
         services
@@ -291,7 +292,7 @@ public static class ServiceCollectionExtensions
         return services
             .AddHttpClient(
                 "keycloak_uma_ticket_exchange",
-                (sp, http) =>
+                (_, http) =>
                 {
                     configureClient?.Invoke(http);
                 }

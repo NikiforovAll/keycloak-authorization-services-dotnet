@@ -1,3 +1,4 @@
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 
 /// <summary>
@@ -35,7 +36,7 @@ public class GetUserGroupsRequestParameters
 
     /// <summary>
     /// Search for a string contained in Username, FirstName,
-    /// LastName or Email.
+    /// LastName, or Email.
     /// </summary>
     public string? Search { get; init; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
-using Keycloak.AuthServices.Sdk;
-using Keycloak.AuthServices.Sdk.Admin.Models;
+using Sdk;
+using Models;
 
 /// <summary>
 /// Realm management

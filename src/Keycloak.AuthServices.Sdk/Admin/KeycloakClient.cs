@@ -3,15 +3,15 @@ namespace Keycloak.AuthServices.Sdk.Admin;
 using System;
 using System.Globalization;
 using System.Net.Http.Json;
-using Keycloak.AuthServices.Sdk.Admin.Models;
-using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
-using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
-using Keycloak.AuthServices.Sdk.Utils;
+using Models;
+using Requests.Groups;
+using Requests.Users;
+using Utils;
 
 /// <summary>
 /// Represents a client for interacting with the Keycloak Admin API.
 /// </summary>
-public class KeycloakClient : IKeycloakClient
+internal sealed class KeycloakClient : IKeycloakClient
 {
     private readonly HttpClient httpClient;
 
@@ -35,7 +35,7 @@ public class KeycloakClient : IKeycloakClient
             cancellationToken: cancellationToken
         );
 
-        return responseMessage!;
+        return responseMessage;
     }
     #endregion
 
@@ -51,7 +51,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.PostAsJsonAsync(path, user, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     /// <inheritdoc/>
@@ -100,7 +100,7 @@ public class KeycloakClient : IKeycloakClient
     /// <inheritdoc/>
     public async Task<HttpResponseMessage> GetUserCountWithResponseAsync(
         string realm,
-        GetUserCountRequestParameters? parameters = default,
+        GetUserCountRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -151,7 +151,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.GetAsync(path + query, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -166,7 +166,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.PutAsJsonAsync(path, user, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -180,7 +180,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -211,7 +211,7 @@ public class KeycloakClient : IKeycloakClient
         using var content = new StringContent(string.Empty);
         var responseMessage = await this.httpClient.PutAsync(url, content, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -251,14 +251,14 @@ public class KeycloakClient : IKeycloakClient
             cancellationToken
         );
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
     public async Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
         string realm,
         string userId,
-        GetUserGroupsRequestParameters? parameters = default,
+        GetUserGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -286,7 +286,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     /// <inheritdoc/>
@@ -305,7 +305,7 @@ public class KeycloakClient : IKeycloakClient
         using var content = new StringContent(string.Empty);
         var responseMessage = await this.httpClient.PutAsync(path, content, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -323,7 +323,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
     #endregion
 
@@ -332,7 +332,7 @@ public class KeycloakClient : IKeycloakClient
     ///<inheritdoc/>
     public async Task<HttpResponseMessage> GetGroupsWithResponseAsync(
         string realm,
-        GetGroupsRequestParameters? parameters = default,
+        GetGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -366,21 +366,21 @@ public class KeycloakClient : IKeycloakClient
 
         if (parameters.Search is not null)
         {
-            queryBuilder.Add("search", parameters.Search.ToString()!);
+            queryBuilder.Add("search", parameters.Search!);
         }
 
         var url = path + queryBuilder.ToQueryString();
 
         var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
     public async Task<HttpResponseMessage> GetSubGroupsWithResponseAsync(
         string realm,
         string parentGroupId,
-        GetGroupsRequestParameters? parameters = default,
+        GetGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -414,14 +414,14 @@ public class KeycloakClient : IKeycloakClient
 
         if (parameters.Search is not null)
         {
-            queryBuilder.Add("search", parameters.Search.ToString()!);
+            queryBuilder.Add("search", parameters.Search!);
         }
 
         var url = path + queryBuilder.ToQueryString();
 
         var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -435,7 +435,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -449,7 +449,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.PostAsJsonAsync(path, group, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -464,7 +464,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.PutAsJsonAsync(path, group, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -479,7 +479,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.PostAsJsonAsync(path, group, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -493,7 +493,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -530,7 +530,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     ///<inheritdoc/>
@@ -544,7 +544,7 @@ public class KeycloakClient : IKeycloakClient
 
         var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
 
-        return responseMessage!;
+        return responseMessage;
     }
 
     #endregion

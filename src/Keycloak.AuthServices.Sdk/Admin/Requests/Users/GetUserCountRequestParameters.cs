@@ -14,7 +14,7 @@ namespace Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 ///         <description>
 ///             If <see cref="Search"/> is specified, other criteria such as <see cref="LastName"/> will be ignored
 ///             even though you set them. The <see cref="Search"/> string will be matched against the first and last
-///             name, the username and the email of a user.
+///             name, the username, and the email of a user.
 ///         </description>
 ///     </item>
 ///     <item>
@@ -60,7 +60,7 @@ public class GetUserCountRequestParameters
 
     /// <summary>
     /// An optional search string for all the fields of a user.
-    /// Default search behavior is prefix-based (e.g., foo or foo*). Use foo for infix search and "foo" for exact search.
+    /// The default search behavior is prefix-based (e.g., foo or foo*). Use foo for infix search and "foo" for exact search.
     /// </summary>
     public string? Search { get; init; }
 
