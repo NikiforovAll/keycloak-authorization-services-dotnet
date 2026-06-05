@@ -1,26 +1,27 @@
+// ReSharper disable MemberCanBePrivate.Global
 namespace Keycloak.AuthServices.Sdk;
 
 using System.Globalization;
 
 /// <summary>
-/// Represents an exception that is thrown when an HTTP request to the Keycloak fails.
+/// Represents an exception thrown when an HTTP request to the Keycloak fails.
 /// </summary>
-public partial class KeycloakHttpClientException : Exception
+public class KeycloakHttpClientException : Exception
 {
     /// <summary>
     /// Gets the status code of the HTTP response.
     /// </summary>
-    public int StatusCode { get; private set; }
+    public int StatusCode { get; }
 
     /// <summary>
     /// Gets the raw HTTP response.
     /// </summary>
-    public string HttpResponse { get; private set; }
+    public string HttpResponse { get; }
 
     /// <summary>
     /// Gets the deserialized error response from the Keycloak server.
     /// </summary>
-    public ErrorResponse Response { get; private set; }
+    public ErrorResponse Response { get; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="KeycloakHttpClientException"/> class with the specified parameters.
@@ -29,7 +30,7 @@ public partial class KeycloakHttpClientException : Exception
     /// <param name="statusCode">The status code of the HTTP response.</param>
     /// <param name="httpResponse">The raw HTTP response.</param>
     /// <param name="response">The deserialized error response from the Keycloak server.</param>
-    /// <param name="innerException">The inner exception that caused this exception, or <c>null</c> if no inner exception is specified.</param>
+    /// <param name="innerException">The inner exception that caused this exception or <c>null</c> if no inner exception is specified.</param>
     public KeycloakHttpClientException(
         string message,
         int statusCode,

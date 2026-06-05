@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 
-using Keycloak.AuthServices.Sdk.Admin;
-using Keycloak.AuthServices.Sdk.Admin.Models;
+using Admin;
+using Models;
 
 /// <summary>
 /// Optional request parameters for the <see cref="IKeycloakUserClient.GetUsersAsync"/> endpoint.

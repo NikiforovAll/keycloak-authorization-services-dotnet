@@ -61,8 +61,8 @@ public static class HttpResponseExtensions
                 }
                 catch (JsonException)
                 {
-                    // Body is not valid JSON (e.g. HTML error page from a proxy).
-                    // Surface the raw body as the error description so callers still
+                    // Body is not valid JSON (e.g., HTML error page from a proxy).
+                    // Surface the raw body as the error description, so callers still
                     // receive a KeycloakHttpClientException rather than a JsonException.
                     error = new ErrorResponse
                     {

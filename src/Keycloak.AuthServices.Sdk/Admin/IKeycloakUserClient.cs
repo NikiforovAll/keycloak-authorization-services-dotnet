@@ -1,7 +1,7 @@
 ﻿namespace Keycloak.AuthServices.Sdk.Admin;
 
-using Keycloak.AuthServices.Sdk.Admin.Models;
-using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
+using Models;
+using Requests.Users;
 
 /// <summary>
 /// User management
@@ -17,7 +17,7 @@ public interface IKeycloakUserClient
     /// <returns>A stream of users, filtered according to query parameters.</returns>
     public Task<HttpResponseMessage> GetUsersWithResponseAsync(
         string realm,
-        GetUsersRequestParameters? parameters = default,
+        GetUsersRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     );
 
@@ -30,7 +30,7 @@ public interface IKeycloakUserClient
     /// <returns>A stream of users, filtered according to query parameters.</returns>
     public async Task<IEnumerable<UserRepresentation>> GetUsersAsync(
         string realm,
-        GetUsersRequestParameters? parameters = default,
+        GetUsersRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -41,30 +41,30 @@ public interface IKeycloakUserClient
     }
 
     /// <summary>
-    /// Get the integer amount of users on the realm that match the provided <see cref="GetUserCountRequestParameters"/>.
+    /// Get the integer number of users on the realm that match the provided <see cref="GetUserCountRequestParameters"/>.
     ///
     /// Note that the response is not JSON, but simply the integer value as a string.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
-    /// <returns>An integer amount of users</returns>
+    /// <returns>An integer number of users</returns>
     public Task<HttpResponseMessage> GetUserCountWithResponseAsync(
         string realm,
-        GetUserCountRequestParameters? parameters = default,
+        GetUserCountRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     );
 
     /// <summary>
-    /// Get the integer amount of users on the realm that match the provided <see cref="GetUserCountRequestParameters"/>.
+    /// Get the integer number of users on the realm that match the provided <see cref="GetUserCountRequestParameters"/>.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
-    /// <returns>An integer amount of users</returns>
+    /// <returns>An integer number of users</returns>
     public async Task<int> GetUserCountAsync(
         string realm,
-        GetUserCountRequestParameters? parameters = default,
+        GetUserCountRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -241,8 +241,8 @@ public interface IKeycloakUserClient
     public Task<HttpResponseMessage> SendVerifyEmailWithResponseAsync(
         string realm,
         string userId,
-        string? clientId = default,
-        string? redirectUri = default,
+        string? clientId = null,
+        string? redirectUri = null,
         CancellationToken cancellationToken = default
     );
 
@@ -260,8 +260,8 @@ public interface IKeycloakUserClient
     public async Task SendVerifyEmailAsync(
         string realm,
         string userId,
-        string? clientId = default,
-        string? redirectUri = default,
+        string? clientId = null,
+        string? redirectUri = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -277,7 +277,7 @@ public interface IKeycloakUserClient
     }
 
     /// <summary>
-    /// Execute actions email for the user.
+    /// Execute action email for the user.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
@@ -291,7 +291,7 @@ public interface IKeycloakUserClient
     );
 
     /// <summary>
-    /// Execute actions email for the user.
+    /// Execute action email for the user.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
@@ -315,7 +315,7 @@ public interface IKeycloakUserClient
     }
 
     /// <summary>
-    /// Get a users's groups.
+    /// Get a user's groups.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
@@ -325,12 +325,12 @@ public interface IKeycloakUserClient
     public Task<HttpResponseMessage> GetUserGroupsWithResponseAsync(
         string realm,
         string userId,
-        GetUserGroupsRequestParameters? parameters = default,
+        GetUserGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     );
 
     /// <summary>
-    /// Get a users's groups.
+    /// Get a user's groups.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
@@ -340,7 +340,7 @@ public interface IKeycloakUserClient
     public async Task<IEnumerable<GroupRepresentation>> GetUserGroupsAsync(
         string realm,
         string userId,
-        GetUserGroupsRequestParameters? parameters = default,
+        GetUserGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -358,7 +358,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Join a group
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
@@ -373,7 +373,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Join a group
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
@@ -398,7 +398,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Leave a group
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
@@ -413,7 +413,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Leave a group
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="groupId">Group ID.</param>
     /// <param name="cancellationToken"></param>
@@ -438,7 +438,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Set up a new password for the user
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="credential">Credential representation.</param>
     /// <param name="cancellationToken"></param>
@@ -453,7 +453,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Set up a new password for the user
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID.</param>
     /// <param name="credential">Credential representation.</param>
     /// <param name="cancellationToken"></param>
@@ -478,7 +478,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Remove a credential for a user
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID</param>
     /// <param name="credentialId">Credential ID</param>
     /// <param name="cancellationToken"></param>
@@ -493,7 +493,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Remove a credential for a user
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID</param>
     /// <param name="credentialId">Credential ID</param>
     /// <param name="cancellationToken"></param>
@@ -518,7 +518,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Get a user's credentials.
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
@@ -531,7 +531,7 @@ public interface IKeycloakUserClient
     /// <summary>
     /// Get a user's credentials.
     /// </summary>
-    /// <param name="realm">Realm name(not ID).</param>
+    /// <param name="realm">Realm name (not ID).</param>
     /// <param name="userId">User ID</param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>

@@ -1,6 +1,7 @@
+// ReSharper disable UnusedAutoPropertyAccessor.Global
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 
-using Keycloak.AuthServices.Sdk.Admin.Models;
+using Models;
 
 /// <summary>
 /// Optional parameters for the <see cref="IKeycloakGroupClient.GetGroupsAsync"/> endpoint.

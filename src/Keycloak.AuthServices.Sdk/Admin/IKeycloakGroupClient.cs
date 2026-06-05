@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Admin;
 
-using Keycloak.AuthServices.Sdk.Admin.Models;
-using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
+using Models;
+using Requests.Groups;
 
 /// <summary>
 /// Group management
@@ -18,7 +18,7 @@ public interface IKeycloakGroupClient
     // [Get(KeycloakClientApiConstants.GetGroups)]
     public Task<HttpResponseMessage> GetGroupsWithResponseAsync(
         string realm,
-        GetGroupsRequestParameters? parameters = default,
+        GetGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     );
 
@@ -31,7 +31,7 @@ public interface IKeycloakGroupClient
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     public async Task<IEnumerable<GroupRepresentation>> GetGroupsAsync(
         string realm,
-        GetGroupsRequestParameters? parameters = default,
+        GetGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -42,7 +42,7 @@ public interface IKeycloakGroupClient
     }
 
     /// <summary>
-    /// Get a collection of sub groups by parent's id on the realm.
+    /// Get a collection of subgroups by parent's id on the realm.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
     /// <param name="parentGroupId">Parent Group ID.</param>
@@ -60,13 +60,14 @@ public interface IKeycloakGroupClient
     /// Get group hierarchy. Only name and ids are returned.
     /// </summary>
     /// <param name="realm">Realm name (not ID).</param>
+    /// <param name="parentGroupId">Parent Group ID</param>
     /// <param name="parameters">Optional query parameters.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>A stream of groups, filtered according to query parameters.</returns>
     public async Task<IEnumerable<GroupRepresentation>> GetSubGroupsAsync(
         string realm,
         string parentGroupId,
-        GetGroupsRequestParameters? parameters = default,
+        GetGroupsRequestParameters? parameters = null,
         CancellationToken cancellationToken = default
     )
     {
@@ -113,7 +114,7 @@ public interface IKeycloakGroupClient
     }
 
     /// <summary>
-    /// Create or add a top level realm groupSet or create child.
+    /// Create or add a top level realm groupSet or create a child.
     /// </summary>
     /// <remarks>
     /// This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
@@ -129,7 +130,7 @@ public interface IKeycloakGroupClient
     );
 
     /// <summary>
-    /// Create or add a top level realm groupSet or create child.
+    /// Create or add a top level realm groupSet or create a child.
     /// </summary>
     /// <remarks>
     /// This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
@@ -190,7 +191,7 @@ public interface IKeycloakGroupClient
     }
 
     /// <summary>
-    /// Set or create child.
+    /// Set or create a child.
     /// </summary>
     /// <remarks>
     /// This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.
@@ -208,7 +209,7 @@ public interface IKeycloakGroupClient
     );
 
     /// <summary>
-    /// Set or create child.
+    /// Set or create a child.
     /// </summary>
     /// <remarks>
     /// This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.

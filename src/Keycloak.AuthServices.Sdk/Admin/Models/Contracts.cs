@@ -11,7 +11,7 @@
 
 namespace Keycloak.AuthServices.Sdk.Admin.Models;
 
-using System = global::System;
+using System = System;
 
 [System.CodeDom.Compiler.GeneratedCode(
     "NJsonSchema",
@@ -47,19 +47,19 @@ public partial class AbstractPolicyRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Policies { get; set; } = default!;
+    public ICollection<string>? Policies { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("resources")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Resources { get; set; } = default!;
+    public ICollection<string>? Resources { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("logic")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -89,26 +89,26 @@ public partial class AbstractPolicyRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ResourceRepresentation>? ResourcesData { get; set; } =
+    public ICollection<ResourceRepresentation>? ResourcesData { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopesData")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? ScopesData { get; set; } =
+    public ICollection<ScopeRepresentation>? ScopesData { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -128,7 +128,7 @@ public partial class Access
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Roles { get; set; } = default!;
+    public ICollection<string>? Roles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("verify_caller")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -136,16 +136,16 @@ public partial class Access
     )]
     public bool? Verify_caller { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -213,7 +213,7 @@ public partial class AccessToken
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? OtherClaims { get; set; } =
+    public IDictionary<string, object>? OtherClaims { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("nonce")]
@@ -382,7 +382,7 @@ public partial class AccessToken
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public int? AuthTime { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("sid")]
@@ -395,13 +395,13 @@ public partial class AccessToken
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? TrustedCerts { get; set; } = default!;
+    public ICollection<string>? TrustedCerts { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("allowed-origins")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? AllowedOrigins { get; set; } = default!;
+    public ICollection<string>? AllowedOrigins { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("realm_access")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -413,7 +413,7 @@ public partial class AccessToken
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, Access>? Resource_access { get; set; } =
+    public IDictionary<string, Access>? Resource_access { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authorization")]
@@ -434,16 +434,16 @@ public partial class AccessToken
     )]
     public string? Scope { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -495,16 +495,16 @@ public partial class AddressClaimSet
     )]
     public string? Country { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -568,16 +568,16 @@ public partial class AdminEventRepresentation
     )]
     public string? Error { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -591,7 +591,7 @@ public partial class AdminEventRepresentation
     "NJsonSchema",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-[System.Obsolete]
+[Obsolete]
 public partial class ApplicationRepresentation
 {
     [System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -670,20 +670,20 @@ public partial class ApplicationRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<string>? DefaultRoles { get; set; } = default!;
+    [Obsolete]
+    public ICollection<string>? DefaultRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("redirectUris")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RedirectUris { get; set; } = default!;
+    public ICollection<string>? RedirectUris { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webOrigins")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebOrigins { get; set; } = default!;
+    public ICollection<string>? WebOrigins { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("notBefore")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -737,7 +737,7 @@ public partial class ApplicationRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? DirectGrantsOnly { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("publicClient")]
@@ -762,14 +762,14 @@ public partial class ApplicationRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Attributes { get; set; } =
+    public IDictionary<string, string>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authenticationFlowBindingOverrides")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
         string
     >? AuthenticationFlowBindingOverrides { get; set; } = default!;
@@ -790,56 +790,56 @@ public partial class ApplicationRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, int>? RegisteredNodes { get; set; } =
+    public IDictionary<string, int>? RegisteredNodes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("protocolMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
+    public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientTemplate")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? ClientTemplate { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateConfig")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateConfig { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateScope")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateScope { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateMappers { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DefaultClientScopes { get; set; } =
+    public ICollection<string>? DefaultClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("optionalClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? OptionalClientScopes { get; set; } =
+    public ICollection<string>? OptionalClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authorizationSettings")]
@@ -852,7 +852,7 @@ public partial class ApplicationRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, bool>? Access { get; set; } = default!;
+    public IDictionary<string, bool>? Access { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("origin")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -870,19 +870,19 @@ public partial class ApplicationRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public Claims? Claims { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -922,16 +922,16 @@ public partial class AuthDetailsRepresentation
     )]
     public string? IpAddress { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -981,7 +981,7 @@ public partial class AuthenticationExecutionExportRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? AutheticatorFlow { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("flowAlias")]
@@ -996,16 +996,16 @@ public partial class AuthenticationExecutionExportRepresentation
     )]
     public bool? UserSetupAllowed { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1055,7 +1055,7 @@ public partial class AuthenticationExecutionInfoRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RequirementChoices { get; set; } =
+    public ICollection<string>? RequirementChoices { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("configurable")]
@@ -1100,16 +1100,16 @@ public partial class AuthenticationExecutionInfoRepresentation
     )]
     public int? Index { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1159,7 +1159,7 @@ public partial class AuthenticationExecutionRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? AutheticatorFlow { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -1180,16 +1180,16 @@ public partial class AuthenticationExecutionRepresentation
     )]
     public string? ParentFlow { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1245,19 +1245,19 @@ public partial class AuthenticationFlowRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<AuthenticationExecutionExportRepresentation>? AuthenticationExecutions { get; set; } =
+    public ICollection<AuthenticationExecutionExportRepresentation>? AuthenticationExecutions { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1295,19 +1295,19 @@ public partial class AuthenticatorConfigInfoRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ConfigPropertyRepresentation>? Properties { get; set; } =
+    public ICollection<ConfigPropertyRepresentation>? Properties { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1339,18 +1339,18 @@ public partial class AuthenticatorConfigRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1370,18 +1370,18 @@ public partial class Authorization
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<Permission>? Permissions { get; set; } = default!;
+    public ICollection<Permission>? Permissions { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1421,16 +1421,16 @@ public partial class CertificateRepresentation
     )]
     public string? Kid { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1506,16 +1506,16 @@ public partial class ClaimRepresentation
     )]
     public bool? Phone { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1543,16 +1543,16 @@ public partial class ClientInitialAccessCreatePresentation
     )]
     public int? Count { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1604,16 +1604,16 @@ public partial class ClientInitialAccessPresentation
     )]
     public int? RemainingCount { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1645,19 +1645,19 @@ public partial class ClientMappingsRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<RoleRepresentation>? Mappings { get; set; } =
+    public ICollection<RoleRepresentation>? Mappings { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1677,19 +1677,19 @@ public partial class ClientPoliciesRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientPolicyRepresentation>? Policies { get; set; } =
+    public ICollection<ClientPolicyRepresentation>? Policies { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1715,18 +1715,18 @@ public partial class ClientPolicyConditionRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<object>? Configuration { get; set; } = default!;
+    public ICollection<object>? Configuration { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1752,18 +1752,18 @@ public partial class ClientPolicyExecutorRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<object>? Configuration { get; set; } = default!;
+    public ICollection<object>? Configuration { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1801,25 +1801,25 @@ public partial class ClientPolicyRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientPolicyConditionRepresentation>? Conditions { get; set; } =
+    public ICollection<ClientPolicyConditionRepresentation>? Conditions { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("profiles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Profiles { get; set; } = default!;
+    public ICollection<string>? Profiles { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1851,19 +1851,19 @@ public partial class ClientProfileRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientPolicyExecutorRepresentation>? Executors { get; set; } =
+    public ICollection<ClientPolicyExecutorRepresentation>? Executors { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -1883,26 +1883,26 @@ public partial class ClientProfilesRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientProfileRepresentation>? Profiles { get; set; } =
+    public ICollection<ClientProfileRepresentation>? Profiles { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("globalProfiles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientProfileRepresentation>? GlobalProfiles { get; set; } =
+    public ICollection<ClientProfileRepresentation>? GlobalProfiles { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2000,20 +2000,20 @@ public partial class ClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<string>? DefaultRoles { get; set; } = default!;
+    [Obsolete]
+    public ICollection<string>? DefaultRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("redirectUris")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RedirectUris { get; set; } = default!;
+    public ICollection<string>? RedirectUris { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webOrigins")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebOrigins { get; set; } = default!;
+    public ICollection<string>? WebOrigins { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("notBefore")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -2067,7 +2067,7 @@ public partial class ClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? DirectGrantsOnly { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("publicClient")]
@@ -2092,14 +2092,14 @@ public partial class ClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Attributes { get; set; } =
+    public IDictionary<string, string>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authenticationFlowBindingOverrides")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
         string
     >? AuthenticationFlowBindingOverrides { get; set; } = default!;
@@ -2120,56 +2120,56 @@ public partial class ClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, int>? RegisteredNodes { get; set; } =
+    public IDictionary<string, int>? RegisteredNodes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("protocolMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
+    public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientTemplate")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? ClientTemplate { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateConfig")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateConfig { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateScope")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateScope { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateMappers { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DefaultClientScopes { get; set; } =
+    public ICollection<string>? DefaultClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("optionalClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? OptionalClientScopes { get; set; } =
+    public ICollection<string>? OptionalClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authorizationSettings")]
@@ -2182,7 +2182,7 @@ public partial class ClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, bool>? Access { get; set; } = default!;
+    public IDictionary<string, bool>? Access { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("origin")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -2190,16 +2190,16 @@ public partial class ClientRepresentation
     )]
     public string? Origin { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2243,26 +2243,26 @@ public partial class ClientScopeRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Attributes { get; set; } =
+    public IDictionary<string, string>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("protocolMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
+    public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2276,7 +2276,7 @@ public partial class ClientScopeRepresentation
     "NJsonSchema",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-[System.Obsolete]
+[Obsolete]
 public partial class ClientTemplateRepresentation
 {
     [System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -2361,26 +2361,26 @@ public partial class ClientTemplateRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Attributes { get; set; } =
+    public IDictionary<string, string>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("protocolMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
+    public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2433,16 +2433,16 @@ public partial class ComponentExportRepresentation
     )]
     public MultivaluedHashMapStringString? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2500,16 +2500,16 @@ public partial class ComponentRepresentation
     )]
     public MultivaluedHashMapStringString? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2541,26 +2541,26 @@ public partial class ComponentTypeRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ConfigPropertyRepresentation>? Properties { get; set; } =
+    public ICollection<ConfigPropertyRepresentation>? Properties { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("metadata")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Metadata { get; set; } =
+    public IDictionary<string, object>? Metadata { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2580,37 +2580,37 @@ public partial class Composites
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Realm { get; set; } = default!;
+    public ICollection<string>? Realm { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("client")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Client { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("application")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.IDictionary<
+    [Obsolete]
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Application { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2660,7 +2660,7 @@ public partial class ConfigPropertyRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Options { get; set; } = default!;
+    public ICollection<string>? Options { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("secret")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -2680,16 +2680,16 @@ public partial class ConfigPropertyRepresentation
     )]
     public bool? ReadOnly { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2717,16 +2717,16 @@ public partial class Confirmation
     )]
     public string? Jkt { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2800,75 +2800,75 @@ public partial class CredentialRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? Device { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("hashedSaltedValue")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? HashedSaltedValue { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("salt")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? Salt { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("hashIterations")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public int? HashIterations { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("counter")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public int? Counter { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("algorithm")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? Algorithm { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("digits")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public int? Digits { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("period")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public int? Period { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("config")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public Config? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -2939,14 +2939,14 @@ public partial class EvaluationResultRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? Scopes { get; set; } =
+    public ICollection<ScopeRepresentation>? Scopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("policies")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<PolicyResultRepresentation>? Policies { get; set; } =
+    public ICollection<PolicyResultRepresentation>? Policies { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -2962,19 +2962,19 @@ public partial class EvaluationResultRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? AllowedScopes { get; set; } =
+    public ICollection<ScopeRepresentation>? AllowedScopes { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3042,18 +3042,18 @@ public partial class EventRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Details { get; set; } = default!;
+    public IDictionary<string, string>? Details { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3087,16 +3087,16 @@ public partial class FederatedIdentityRepresentation
     )]
     public string? UserName { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3116,24 +3116,24 @@ public partial class GlobalRequestResult
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? SuccessRequests { get; set; } = default!;
+    public ICollection<string>? SuccessRequests { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("failedRequests")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? FailedRequests { get; set; } = default!;
+    public ICollection<string>? FailedRequests { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3183,49 +3183,49 @@ public partial class GroupRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<GroupRepresentation>? SubGroups { get; set; } =
+    public ICollection<GroupRepresentation>? SubGroups { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("attributes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Attributes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("realmRoles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RealmRoles { get; set; } = default!;
+    public ICollection<string>? RealmRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientRoles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? ClientRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("access")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, bool>? Access { get; set; } = default!;
+    public IDictionary<string, bool>? Access { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3293,7 +3293,7 @@ public partial class IDToken
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? OtherClaims { get; set; } =
+    public IDictionary<string, object>? OtherClaims { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("nonce")]
@@ -3462,7 +3462,7 @@ public partial class IDToken
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public int? AuthTime { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("sid")]
@@ -3471,16 +3471,16 @@ public partial class IDToken
     )]
     public string? Sid { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3524,18 +3524,18 @@ public partial class IdentityProviderMapperRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3579,19 +3579,19 @@ public partial class IdentityProviderMapperTypeRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ConfigPropertyRepresentation>? Properties { get; set; } =
+    public ICollection<ConfigPropertyRepresentation>? Properties { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3641,7 +3641,7 @@ public partial class IdentityProviderRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? UpdateProfileFirstLoginMode { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("trustEmail")]
@@ -3690,25 +3690,25 @@ public partial class IdentityProviderRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("updateProfileFirstLogin")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UpdateProfileFirstLogin { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3776,7 +3776,7 @@ public partial class InstallationAdapterConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Credentials { get; set; } =
+    public IDictionary<string, object>? Credentials { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("use-resource-role-mappings")]
@@ -3797,16 +3797,16 @@ public partial class InstallationAdapterConfig
     )]
     public PolicyEnforcerConfig? PolicyEnforcer { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3885,16 +3885,16 @@ public partial class KeyMetadataRepresentation
     )]
     public long? ValidTo { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3946,16 +3946,16 @@ public partial class KeyStoreConfig
     )]
     public string? Format { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -3988,25 +3988,25 @@ public partial class KeysMetadataRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Active { get; set; } = default!;
+    public IDictionary<string, string>? Active { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("keys")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<KeyMetadataRepresentation>? Keys { get; set; } =
+    public ICollection<KeyMetadataRepresentation>? Keys { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4051,19 +4051,19 @@ public partial class ManagementPermissionReference
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? ScopePermissions { get; set; } =
+    public IDictionary<string, string>? ScopePermissions { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4083,28 +4083,28 @@ public partial class MappingsRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<RoleRepresentation>? RealmMappings { get; set; } =
+    public ICollection<RoleRepresentation>? RealmMappings { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientMappings")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
         ClientMappingsRepresentation
     >? ClientMappings { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4130,7 +4130,7 @@ public partial class MethodConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes-enforcement-mode")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -4141,16 +4141,16 @@ public partial class MethodConfig
     )]
     public ScopeEnforcementMode? ScopesEnforcementMode { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4165,7 +4165,7 @@ public partial class MethodConfig
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
 public partial class MultivaluedHashMapStringComponentExportRepresentation
-    : System.Collections.Generic.Dictionary<
+    : Dictionary<
         string,
         System.Collections.ObjectModel.Collection<ComponentExportRepresentation>
     > { }
@@ -4175,7 +4175,7 @@ public partial class MultivaluedHashMapStringComponentExportRepresentation
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
 public partial class MultivaluedHashMapStringString
-    : System.Collections.Generic.Dictionary<
+    : Dictionary<
         string,
         System.Collections.ObjectModel.Collection<string>
     > { }
@@ -4185,7 +4185,7 @@ public partial class MultivaluedHashMapStringString
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
 public partial class MultivaluedMapStringString
-    : System.Collections.Generic.Dictionary<
+    : Dictionary<
         string,
         System.Collections.ObjectModel.Collection<string>
     > { }
@@ -4194,7 +4194,7 @@ public partial class MultivaluedMapStringString
     "NJsonSchema",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-[System.Obsolete]
+[Obsolete]
 public partial class OAuthClientRepresentation
 {
     [System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -4273,20 +4273,20 @@ public partial class OAuthClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<string>? DefaultRoles { get; set; } = default!;
+    [Obsolete]
+    public ICollection<string>? DefaultRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("redirectUris")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RedirectUris { get; set; } = default!;
+    public ICollection<string>? RedirectUris { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webOrigins")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebOrigins { get; set; } = default!;
+    public ICollection<string>? WebOrigins { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("notBefore")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -4340,7 +4340,7 @@ public partial class OAuthClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? DirectGrantsOnly { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("publicClient")]
@@ -4365,14 +4365,14 @@ public partial class OAuthClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Attributes { get; set; } =
+    public IDictionary<string, string>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authenticationFlowBindingOverrides")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
         string
     >? AuthenticationFlowBindingOverrides { get; set; } = default!;
@@ -4393,56 +4393,56 @@ public partial class OAuthClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, int>? RegisteredNodes { get; set; } =
+    public IDictionary<string, int>? RegisteredNodes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("protocolMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
+    public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientTemplate")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? ClientTemplate { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateConfig")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateConfig { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateScope")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateScope { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("useTemplateMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UseTemplateMappers { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DefaultClientScopes { get; set; } =
+    public ICollection<string>? DefaultClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("optionalClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? OptionalClientScopes { get; set; } =
+    public ICollection<string>? OptionalClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authorizationSettings")]
@@ -4455,7 +4455,7 @@ public partial class OAuthClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, bool>? Access { get; set; } = default!;
+    public IDictionary<string, bool>? Access { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("origin")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -4473,19 +4473,19 @@ public partial class OAuthClientRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public Claims2? Claims { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4513,16 +4513,16 @@ public partial class PathCacheConfig
     )]
     public long? Lifespan { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4560,13 +4560,13 @@ public partial class PathConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<MethodConfig>? Methods { get; set; } = default!;
+    public ICollection<MethodConfig>? Methods { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("id")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -4587,9 +4587,9 @@ public partial class PathConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.IDictionary<string, object>
+        IDictionary<string, object>
     >? ClaimInformationPoint { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("invalidated")]
@@ -4610,16 +4610,16 @@ public partial class PathConfig
     )]
     public bool? Static { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4647,16 +4647,16 @@ public partial class PathSegment
     )]
     public MultivaluedMapStringString? MatrixParameters { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4688,27 +4688,27 @@ public partial class Permission
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("claims")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Claims { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4753,7 +4753,7 @@ public partial class PolicyEnforcerConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<PathConfig>? Paths { get; set; } = default!;
+    public ICollection<PathConfig>? Paths { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("path-cache")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -4783,9 +4783,9 @@ public partial class PolicyEnforcerConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.IDictionary<string, object>
+        IDictionary<string, object>
     >? ClaimInformationPoint { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("http-method-as-scope")]
@@ -4810,7 +4810,7 @@ public partial class PolicyEnforcerConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Credentials { get; set; } =
+    public IDictionary<string, object>? Credentials { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("resource")]
@@ -4819,16 +4819,16 @@ public partial class PolicyEnforcerConfig
     )]
     public string? Resource { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4848,16 +4848,16 @@ public partial class PolicyEvaluationRequest
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.IDictionary<string, string>
+        IDictionary<string, string>
     >? Context { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("resources")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ResourceRepresentation>? Resources { get; set; } =
+    public ICollection<ResourceRepresentation>? Resources { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientId")]
@@ -4876,7 +4876,7 @@ public partial class PolicyEvaluationRequest
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RoleIds { get; set; } = default!;
+    public ICollection<string>? RoleIds { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("entitlements")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -4884,16 +4884,16 @@ public partial class PolicyEvaluationRequest
     )]
     public bool? Entitlements { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4913,7 +4913,7 @@ public partial class PolicyEvaluationResponse
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<EvaluationResultRepresentation>? Results { get; set; } =
+    public ICollection<EvaluationResultRepresentation>? Results { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("entitlements")]
@@ -4937,16 +4937,16 @@ public partial class PolicyEvaluationResponse
     )]
     public AccessToken? Rpt { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -4980,16 +4980,16 @@ public partial class PolicyProviderRepresentation
     )]
     public string? Group { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5033,19 +5033,19 @@ public partial class PolicyRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Policies { get; set; } = default!;
+    public ICollection<string>? Policies { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("resources")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Resources { get; set; } = default!;
+    public ICollection<string>? Resources { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("logic")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -5075,32 +5075,32 @@ public partial class PolicyRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ResourceRepresentation>? ResourcesData { get; set; } =
+    public ICollection<ResourceRepresentation>? ResourcesData { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopesData")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? ScopesData { get; set; } =
+    public ICollection<ScopeRepresentation>? ScopesData { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("config")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5135,25 +5135,25 @@ public partial class PolicyResultRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<PolicyResultRepresentation>? AssociatedPolicies { get; set; } =
+    public ICollection<PolicyResultRepresentation>? AssociatedPolicies { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5205,16 +5205,16 @@ public partial class ProtocolMapperEvaluationRepresentation
     )]
     public string? ProtocolMapper { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5258,32 +5258,32 @@ public partial class ProtocolMapperRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? ConsentRequired { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("consentText")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? ConsentText { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("config")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5329,16 +5329,16 @@ public partial class PublishedRealmRepresentation
     )]
     public int? TokensNotBefore { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5370,13 +5370,13 @@ public partial class RealmEventsConfigRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? EventsListeners { get; set; } = default!;
+    public ICollection<string>? EventsListeners { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("enabledEventTypes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? EnabledEventTypes { get; set; } =
+    public ICollection<string>? EnabledEventTypes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("adminEventsEnabled")]
@@ -5391,16 +5391,16 @@ public partial class RealmEventsConfigRepresentation
     )]
     public bool? AdminEventsDetailsEnabled { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -5594,7 +5594,7 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? PasswordCredentialGrantAllowed { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("registrationAllowed")]
@@ -5649,14 +5649,14 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UserCacheEnabled { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("realmCacheEnabled")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? RealmCacheEnabled { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("bruteForceProtected")]
@@ -5717,28 +5717,28 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? PrivateKey { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("publicKey")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? PublicKey { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("certificate")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? Certificate { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("codeSecret")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? CodeSecret { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("roles")]
@@ -5751,15 +5751,15 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<GroupRepresentation>? Groups { get; set; } =
+    public ICollection<GroupRepresentation>? Groups { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultRoles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<string>? DefaultRoles { get; set; } = default!;
+    [Obsolete]
+    public ICollection<string>? DefaultRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultRole")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -5771,14 +5771,14 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DefaultGroups { get; set; } = default!;
+    public ICollection<string>? DefaultGroups { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("requiredCredentials")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<string>? RequiredCredentials { get; set; } =
+    [Obsolete]
+    public ICollection<string>? RequiredCredentials { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("passwordPolicy")]
@@ -5833,16 +5833,16 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? OtpSupportedApplications { get; set; } =
+    public ICollection<string>? OtpSupportedApplications { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("localizationTexts")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.IDictionary<string, string>
+        IDictionary<string, string>
     >? LocalizationTexts { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webAuthnPolicyRpEntityName")]
@@ -5855,7 +5855,7 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebAuthnPolicySignatureAlgorithms { get; set; } =
+    public ICollection<string>? WebAuthnPolicySignatureAlgorithms { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webAuthnPolicyRpId")]
@@ -5908,14 +5908,14 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebAuthnPolicyAcceptableAaguids { get; set; } =
+    public ICollection<string>? WebAuthnPolicyAcceptableAaguids { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webAuthnPolicyExtraOrigins")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebAuthnPolicyExtraOrigins { get; set; } =
+    public ICollection<string>? WebAuthnPolicyExtraOrigins { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webAuthnPolicyPasswordlessRpEntityName")]
@@ -5930,7 +5930,7 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebAuthnPolicyPasswordlessSignatureAlgorithms { get; set; } =
+    public ICollection<string>? WebAuthnPolicyPasswordlessSignatureAlgorithms { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webAuthnPolicyPasswordlessRpId")]
@@ -5990,14 +5990,14 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebAuthnPolicyPasswordlessAcceptableAaguids { get; set; } =
+    public ICollection<string>? WebAuthnPolicyPasswordlessAcceptableAaguids { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("webAuthnPolicyPasswordlessExtraOrigins")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? WebAuthnPolicyPasswordlessExtraOrigins { get; set; } =
+    public ICollection<string>? WebAuthnPolicyPasswordlessExtraOrigins { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientProfiles")]
@@ -6016,65 +6016,65 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserRepresentation>? Users { get; set; } =
+    public ICollection<UserRepresentation>? Users { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("federatedUsers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserRepresentation>? FederatedUsers { get; set; } =
+    public ICollection<UserRepresentation>? FederatedUsers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopeMappings")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeMappingRepresentation>? ScopeMappings { get; set; } =
+    public ICollection<ScopeMappingRepresentation>? ScopeMappings { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientScopeMappings")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<ScopeMappingRepresentation>
+        ICollection<ScopeMappingRepresentation>
     >? ClientScopeMappings { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clients")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientRepresentation>? Clients { get; set; } =
+    public ICollection<ClientRepresentation>? Clients { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ClientScopeRepresentation>? ClientScopes { get; set; } =
+    public ICollection<ClientScopeRepresentation>? ClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultDefaultClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DefaultDefaultClientScopes { get; set; } =
+    public ICollection<string>? DefaultDefaultClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultOptionalClientScopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DefaultOptionalClientScopes { get; set; } =
+    public ICollection<string>? DefaultOptionalClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("browserSecurityHeaders")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
         string
     >? BrowserSecurityHeaders { get; set; } = default!;
@@ -6083,21 +6083,21 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? SmtpServer { get; set; } =
+    public IDictionary<string, string>? SmtpServer { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("userFederationProviders")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserFederationProviderRepresentation>? UserFederationProviders { get; set; } =
+    public ICollection<UserFederationProviderRepresentation>? UserFederationProviders { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("userFederationMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserFederationMapperRepresentation>? UserFederationMappers { get; set; } =
+    public ICollection<UserFederationMapperRepresentation>? UserFederationMappers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("loginTheme")]
@@ -6140,13 +6140,13 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? EventsListeners { get; set; } = default!;
+    public ICollection<string>? EventsListeners { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("enabledEventTypes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? EnabledEventTypes { get; set; } =
+    public ICollection<string>? EnabledEventTypes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("adminEventsEnabled")]
@@ -6165,21 +6165,21 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<IdentityProviderRepresentation>? IdentityProviders { get; set; } =
+    public ICollection<IdentityProviderRepresentation>? IdentityProviders { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("identityProviderMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<IdentityProviderMapperRepresentation>? IdentityProviderMappers { get; set; } =
+    public ICollection<IdentityProviderMapperRepresentation>? IdentityProviderMappers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("protocolMappers")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
+    public ICollection<ProtocolMapperRepresentation>? ProtocolMappers { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("components")]
@@ -6199,7 +6199,7 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? SupportedLocales { get; set; } =
+    public ICollection<string>? SupportedLocales { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("defaultLocale")]
@@ -6212,21 +6212,21 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<AuthenticationFlowRepresentation>? AuthenticationFlows { get; set; } =
+    public ICollection<AuthenticationFlowRepresentation>? AuthenticationFlows { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("authenticatorConfig")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<AuthenticatorConfigRepresentation>? AuthenticatorConfig { get; set; } =
+    public ICollection<AuthenticatorConfigRepresentation>? AuthenticatorConfig { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("requiredActions")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<RequiredActionProviderRepresentation>? RequiredActions { get; set; } =
+    public ICollection<RequiredActionProviderRepresentation>? RequiredActions { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("browserFlow")]
@@ -6275,7 +6275,7 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Attributes { get; set; } =
+    public IDictionary<string, string>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("keycloakVersion")]
@@ -6294,56 +6294,56 @@ public partial class RealmRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? Social { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("updateProfileOnInitialSocialLogin")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? UpdateProfileOnInitialSocialLogin { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("socialProviders")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.IDictionary<string, string>? SocialProviders { get; set; } =
+    [Obsolete]
+    public IDictionary<string, string>? SocialProviders { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("applicationScopeMappings")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.IDictionary<
+    [Obsolete]
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<ScopeMappingRepresentation>
+        ICollection<ScopeMappingRepresentation>
     >? ApplicationScopeMappings { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("applications")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<ApplicationRepresentation>? Applications { get; set; } =
+    [Obsolete]
+    public ICollection<ApplicationRepresentation>? Applications { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("oauthClients")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<OAuthClientRepresentation>? OauthClients { get; set; } =
+    [Obsolete]
+    public ICollection<OAuthClientRepresentation>? OauthClients { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientTemplates")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<ClientTemplateRepresentation>? ClientTemplates { get; set; } =
+    [Obsolete]
+    public ICollection<ClientTemplateRepresentation>? ClientTemplates { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("oAuth2DevicePollingInterval")]
@@ -6352,16 +6352,16 @@ public partial class RealmRepresentation
     )]
     public int? OAuth2DevicePollingInterval { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6417,18 +6417,18 @@ public partial class RequiredActionProviderRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6456,16 +6456,16 @@ public partial class ResourceOwnerRepresentation
     )]
     public string? Name { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6497,7 +6497,7 @@ public partial class ResourceRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Uris { get; set; } = default!;
+    public ICollection<string>? Uris { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("type")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -6509,7 +6509,7 @@ public partial class ResourceRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? Scopes { get; set; } =
+    public ICollection<ScopeRepresentation>? Scopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("icon_uri")]
@@ -6540,35 +6540,35 @@ public partial class ResourceRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Attributes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("uri")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? Uri { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopesUma")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? ScopesUma { get; set; } =
+    public ICollection<ScopeRepresentation>? ScopesUma { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6621,21 +6621,21 @@ public partial class ResourceServerRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ResourceRepresentation>? Resources { get; set; } =
+    public ICollection<ResourceRepresentation>? Resources { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("policies")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<PolicyRepresentation>? Policies { get; set; } =
+    public ICollection<PolicyRepresentation>? Policies { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ScopeRepresentation>? Scopes { get; set; } =
+    public ICollection<ScopeRepresentation>? Scopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("decisionStrategy")]
@@ -6647,16 +6647,16 @@ public partial class ResourceServerRepresentation
     )]
     public DecisionStrategy? DecisionStrategy { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6694,7 +6694,7 @@ public partial class RoleRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public bool? ScopeParamRequired { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("composite")]
@@ -6725,21 +6725,21 @@ public partial class RoleRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Attributes { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6759,38 +6759,38 @@ public partial class RolesRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<RoleRepresentation>? Realm { get; set; } =
+    public ICollection<RoleRepresentation>? Realm { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("client")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<RoleRepresentation>
+        ICollection<RoleRepresentation>
     >? Client { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("application")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.IDictionary<
+    [Obsolete]
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<RoleRepresentation>
+        ICollection<RoleRepresentation>
     >? Application { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6838,7 +6838,7 @@ public partial class ScopeMappingRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
+    [Obsolete]
     public string? ClientTemplate { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientScope")]
@@ -6851,18 +6851,18 @@ public partial class ScopeMappingRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Roles { get; set; } = default!;
+    public ICollection<string>? Roles { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6900,14 +6900,14 @@ public partial class ScopeRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<PolicyRepresentation>? Policies { get; set; } =
+    public ICollection<PolicyRepresentation>? Policies { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("resources")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<ResourceRepresentation>? Resources { get; set; } =
+    public ICollection<ResourceRepresentation>? Resources { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("displayName")]
@@ -6916,16 +6916,16 @@ public partial class ScopeRepresentation
     )]
     public string? DisplayName { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -6959,16 +6959,16 @@ public partial class SocialLinkRepresentation
     )]
     public string? SocialUsername { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7000,16 +7000,16 @@ public partial class UPAttribute
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.IDictionary<string, object>
+        IDictionary<string, object>
     >? Validations { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("annotations")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Annotations { get; set; } =
+    public IDictionary<string, object>? Annotations { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("required")]
@@ -7042,16 +7042,16 @@ public partial class UPAttribute
     )]
     public bool? Multivalued { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7071,24 +7071,24 @@ public partial class UPAttributePermissions
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? View { get; set; } = default!;
+    public ICollection<string>? View { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("edit")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Edit { get; set; } = default!;
+    public ICollection<string>? Edit { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7108,24 +7108,24 @@ public partial class UPAttributeRequired
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Roles { get; set; } = default!;
+    public ICollection<string>? Roles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("scopes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7145,18 +7145,18 @@ public partial class UPAttributeSelector
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Scopes { get; set; } = default!;
+    public ICollection<string>? Scopes { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7176,13 +7176,13 @@ public partial class UPConfig
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UPAttribute>? Attributes { get; set; } = default!;
+    public ICollection<UPAttribute>? Attributes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("groups")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UPGroup>? Groups { get; set; } = default!;
+    public ICollection<UPGroup>? Groups { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("unmanagedAttributePolicy")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -7193,16 +7193,16 @@ public partial class UPConfig
     )]
     public UnmanagedAttributePolicy? UnmanagedAttributePolicy { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7240,19 +7240,19 @@ public partial class UPGroup
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Annotations { get; set; } =
+    public IDictionary<string, object>? Annotations { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7294,7 +7294,7 @@ public partial class UserConsentRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? GrantedClientScopes { get; set; } =
+    public ICollection<string>? GrantedClientScopes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("createdDate")]
@@ -7313,20 +7313,20 @@ public partial class UserConsentRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<string>? GrantedRealmRoles { get; set; } =
+    [Obsolete]
+    public ICollection<string>? GrantedRealmRoles { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7370,18 +7370,18 @@ public partial class UserFederationMapperRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7419,7 +7419,7 @@ public partial class UserFederationProviderRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Config { get; set; } = default!;
+    public IDictionary<string, string>? Config { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("priority")]
     [System.Text.Json.Serialization.JsonIgnore(
@@ -7445,16 +7445,16 @@ public partial class UserFederationProviderRepresentation
     )]
     public int? LastSync { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7470,16 +7470,16 @@ public partial class UserFederationProviderRepresentation
 )]
 public partial class UserManagedAccessConfig
 {
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7517,19 +7517,19 @@ public partial class UserProfileAttributeGroupMetadata
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Annotations { get; set; } =
+    public IDictionary<string, object>? Annotations { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7573,16 +7573,16 @@ public partial class UserProfileAttributeMetadata
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, object>? Annotations { get; set; } =
+    public IDictionary<string, object>? Annotations { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("validators")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.IDictionary<string, object>
+        IDictionary<string, object>
     >? Validators { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("group")]
@@ -7597,16 +7597,16 @@ public partial class UserProfileAttributeMetadata
     )]
     public bool? Multivalued { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7626,26 +7626,26 @@ public partial class UserProfileMetadata
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserProfileAttributeMetadata>? Attributes { get; set; } =
+    public ICollection<UserProfileAttributeMetadata>? Attributes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("groups")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserProfileAttributeGroupMetadata>? Groups { get; set; } =
+    public ICollection<UserProfileAttributeGroupMetadata>? Groups { get; set; } =
         default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7701,9 +7701,9 @@ public partial class UserRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? Attributes { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("userProfileMetadata")]
@@ -7758,49 +7758,49 @@ public partial class UserRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<CredentialRepresentation>? Credentials { get; set; } =
+    public ICollection<CredentialRepresentation>? Credentials { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("disableableCredentialTypes")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? DisableableCredentialTypes { get; set; } =
+    public ICollection<string>? DisableableCredentialTypes { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("requiredActions")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RequiredActions { get; set; } = default!;
+    public ICollection<string>? RequiredActions { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("federatedIdentities")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<FederatedIdentityRepresentation>? FederatedIdentities { get; set; } =
+    public ICollection<FederatedIdentityRepresentation>? FederatedIdentities { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("realmRoles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? RealmRoles { get; set; } = default!;
+    public ICollection<string>? RealmRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientRoles")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? ClientRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("clientConsents")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<UserConsentRepresentation>? ClientConsents { get; set; } =
+    public ICollection<UserConsentRepresentation>? ClientConsents { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("notBefore")]
@@ -7813,42 +7813,42 @@ public partial class UserRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.IDictionary<
+    [Obsolete]
+    public IDictionary<
         string,
-        System.Collections.Generic.ICollection<string>
+        ICollection<string>
     >? ApplicationRoles { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("socialLinks")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    [System.Obsolete]
-    public System.Collections.Generic.ICollection<SocialLinkRepresentation>? SocialLinks { get; set; } =
+    [Obsolete]
+    public ICollection<SocialLinkRepresentation>? SocialLinks { get; set; } =
         default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("groups")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.ICollection<string>? Groups { get; set; } = default!;
+    public ICollection<string>? Groups { get; set; } = default!;
 
     [System.Text.Json.Serialization.JsonPropertyName("access")]
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, bool>? Access { get; set; } = default!;
+    public IDictionary<string, bool>? Access { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7910,18 +7910,18 @@ public partial class UserSessionRepresentation
     [System.Text.Json.Serialization.JsonIgnore(
         Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault
     )]
-    public System.Collections.Generic.IDictionary<string, string>? Clients { get; set; } = default!;
+    public IDictionary<string, string>? Clients { get; set; } = default!;
 
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7935,30 +7935,30 @@ public partial class UserSessionRepresentation
     "NJsonSchema",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-[System.Obsolete]
+[Obsolete]
 public partial class Claims : ClaimRepresentation { }
 
 [System.CodeDom.Compiler.GeneratedCode(
     "NJsonSchema",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-[System.Obsolete]
+[Obsolete]
 public partial class Config
-    : System.Collections.Generic.Dictionary<
+    : Dictionary<
         string,
         System.Collections.ObjectModel.Collection<string>
     >
 {
-    private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+    private IDictionary<string, object>? _additionalProperties;
 
     [System.Text.Json.Serialization.JsonExtensionData]
-    public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+    public IDictionary<string, object> AdditionalProperties
     {
         get
         {
             return _additionalProperties
                 ?? (
-                    _additionalProperties = new System.Collections.Generic.Dictionary<
+                    _additionalProperties = new Dictionary<
                         string,
                         object
                     >()
@@ -7972,7 +7972,7 @@ public partial class Config
     "NJsonSchema",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-[System.Obsolete]
+[Obsolete]
 public partial class Claims2 : ClaimRepresentation { }
 
 [System.CodeDom.Compiler.GeneratedCode(
@@ -7987,20 +7987,20 @@ public partial class Owner : ResourceOwnerRepresentation { }
 )]
 public partial class FileParameter
 {
-    public FileParameter(System.IO.Stream data)
+    public FileParameter(Stream data)
         : this(data, null, null) { }
 
-    public FileParameter(System.IO.Stream data, string? fileName)
+    public FileParameter(Stream data, string? fileName)
         : this(data, fileName, null) { }
 
-    public FileParameter(System.IO.Stream data, string? fileName, string? contentType)
+    public FileParameter(Stream data, string? fileName, string? contentType)
     {
         Data = data;
         FileName = fileName;
         ContentType = contentType;
     }
 
-    public System.IO.Stream Data { get; private set; }
+    public Stream Data { get; private set; }
 
     public string? FileName { get; private set; }
 
@@ -8011,19 +8011,19 @@ public partial class FileParameter
     "NSwag",
     "13.20.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))"
 )]
-public partial class FileResponse : System.IDisposable
+public partial class FileResponse : IDisposable
 {
-    private System.IDisposable? _client;
-    private System.IDisposable? _response;
+    private IDisposable? _client;
+    private IDisposable? _response;
 
     public int StatusCode { get; private set; }
 
-    public System.Collections.Generic.IReadOnlyDictionary<
+    public IReadOnlyDictionary<
         string,
-        System.Collections.Generic.IEnumerable<string>
+        IEnumerable<string>
     > Headers { get; private set; }
 
-    public System.IO.Stream Stream { get; private set; }
+    public Stream Stream { get; private set; }
 
     public bool IsPartial
     {
@@ -8032,13 +8032,13 @@ public partial class FileResponse : System.IDisposable
 
     public FileResponse(
         int statusCode,
-        System.Collections.Generic.IReadOnlyDictionary<
+        IReadOnlyDictionary<
             string,
-            System.Collections.Generic.IEnumerable<string>
+            IEnumerable<string>
         > headers,
-        System.IO.Stream stream,
-        System.IDisposable? client,
-        System.IDisposable? response
+        Stream stream,
+        IDisposable? client,
+        IDisposable? response
     )
     {
         StatusCode = statusCode;

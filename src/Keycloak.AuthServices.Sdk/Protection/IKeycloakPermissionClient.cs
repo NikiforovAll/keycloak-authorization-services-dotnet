@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Protection;
 
-using Keycloak.AuthServices.Sdk.Protection.Models;
-using Keycloak.AuthServices.Sdk.Protection.Requests;
+using Models;
+using Requests;
 
 /// <summary>
 /// UMA Permission API — creates permission tickets and queries existing ones.

@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 
 /// <summary>
-/// Send an email to the user with a link they can click to execute particular actions.
+/// Email the user with a link they can click to execute particular actions.
 /// </summary>
 public class ExecuteActionsEmailRequest
 {

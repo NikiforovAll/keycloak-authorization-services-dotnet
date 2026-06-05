@@ -1,7 +1,7 @@
 namespace Keycloak.AuthServices.Sdk.Protection;
 
-using Keycloak.AuthServices.Sdk.Protection.Models;
-using Keycloak.AuthServices.Sdk.Protection.Requests;
+using Models;
+using Requests;
 
 /// <summary>
 /// Must be used by the owner of the resource for whom the policy is being created.
