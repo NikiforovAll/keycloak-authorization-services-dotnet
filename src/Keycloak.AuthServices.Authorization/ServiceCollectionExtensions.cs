@@ -35,14 +35,7 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services);
         ArgumentNullException.ThrowIfNull(configuration);
-
-        if (string.IsNullOrEmpty(configSectionName))
-        {
-            throw new ArgumentException(
-                $"'{nameof(configSectionName)}' cannot be null or empty.",
-                nameof(configSectionName)
-            );
-        }
+        ArgumentException.ThrowIfNullOrEmpty(configSectionName);
 
         var configurationSection = configuration.GetSection(configSectionName);
 
@@ -60,15 +53,8 @@ public static class ServiceCollectionExtensions
         IConfigurationSection configurationSection
     )
     {
-        if (services is null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
-
-        if (configurationSection is null)
-        {
-            throw new ArgumentNullException(nameof(configurationSection));
-        }
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configurationSection);
 
         return services.AddKeycloakAuthorization(options =>
             configurationSection.BindKeycloakOptions(options)
@@ -85,10 +71,7 @@ public static class ServiceCollectionExtensions
         Action<KeycloakAuthorizationOptions>? configureKeycloakAuthorizationOptions = null
     )
     {
-        if (services is null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
+        ArgumentNullException.ThrowIfNull(services);
 
         configureKeycloakAuthorizationOptions ??= _ => { };
         services.Configure(configureKeycloakAuthorizationOptions);
@@ -218,23 +201,9 @@ public static class ServiceCollectionExtensions
         string configSectionName = KeycloakAuthorizationServerOptions.Section
     )
     {
-        if (services is null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
-
-        if (configuration is null)
-        {
-            throw new ArgumentNullException(nameof(configuration));
-        }
-
-        if (string.IsNullOrEmpty(configSectionName))
-        {
-            throw new ArgumentException(
-                $"'{nameof(configSectionName)}' cannot be null or empty.",
-                nameof(configSectionName)
-            );
-        }
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configuration);
+        ArgumentException.ThrowIfNullOrEmpty(configSectionName);
 
         return services.AddAuthorizationServer(
             configuration.GetSection(configSectionName),
@@ -255,15 +224,8 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
-        if (services is null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
-
-        if (configurationSection is null)
-        {
-            throw new ArgumentNullException(nameof(configurationSection));
-        }
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configurationSection);
 
         return services.AddAuthorizationServer(
             options => configurationSection.BindKeycloakOptions(options),
@@ -284,10 +246,7 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
-        if (services is null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
+        ArgumentNullException.ThrowIfNull(services);
 
         services.Configure(configureKeycloakOptions);
 
@@ -375,10 +334,7 @@ public static class ServiceCollectionExtensions
         Action<HttpClient>? configureClient = default
     )
     {
-        if (services is null)
-        {
-            throw new ArgumentNullException(nameof(services));
-        }
+        ArgumentNullException.ThrowIfNull(services);
 
         return services
             .AddHttpClient<IAuthorizationServerClient, AuthorizationServerClient>()
