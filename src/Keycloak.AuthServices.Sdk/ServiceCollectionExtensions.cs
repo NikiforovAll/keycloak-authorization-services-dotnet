@@ -13,7 +13,7 @@ using Microsoft.Extensions.Options;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/> HTTP clients for Keycloak Admin API.
+    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/>, <see cref="IKeycloakOrganizationClient"/> HTTP clients for Keycloak Admin API.
     /// </summary>
     /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
     /// <param name="configuration">The IConfiguration instance to bind the Keycloak options from.</param>
@@ -32,7 +32,7 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/> HTTP clients for Keycloak Admin API.
+    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/>, <see cref="IKeycloakOrganizationClient"/> HTTP clients for Keycloak Admin API.
     /// </summary>
     /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
     /// <param name="configurationSection">The IConfigurationSection to bind the Keycloak options from.</param>
@@ -49,7 +49,7 @@ public static class ServiceCollectionExtensions
         );
 
     /// <summary>
-    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/> for Keycloak Admin API.
+    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/>, <see cref="IKeycloakOrganizationClient"/> for Keycloak Admin API.
     /// </summary>
     /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
     /// <param name="configureKeycloakOptions">An action to configure the Keycloak client options.</param>
@@ -74,6 +74,7 @@ public static class ServiceCollectionExtensions
         services.AddTransient<IKeycloakRealmClient>(sp => sp.GetRequiredService<IKeycloakClient>());
         services.AddTransient<IKeycloakUserClient>(sp => sp.GetRequiredService<IKeycloakClient>());
         services.AddTransient<IKeycloakGroupClient>(sp => sp.GetRequiredService<IKeycloakClient>());
+        services.AddTransient<IKeycloakOrganizationClient>(sp => sp.GetRequiredService<IKeycloakClient>());
 
         return services
             .AddHttpClient(
@@ -92,7 +93,7 @@ public static class ServiceCollectionExtensions
     }
 
     /// <summary>
-    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/> HTTP clients for Keycloak Admin API.
+    /// Adds <see cref="IKeycloakClient"/>, <see cref="IKeycloakRealmClient"/>, <see cref="IKeycloakUserClient"/>, <see cref="IKeycloakGroupClient"/>, <see cref="IKeycloakOrganizationClient"/> HTTP clients for Keycloak Admin API.
     /// </summary>
     /// <param name="services">The IServiceCollection to add the HttpClient to.</param>
     /// <param name="keycloakOptions">The Keycloak client options.</param>
