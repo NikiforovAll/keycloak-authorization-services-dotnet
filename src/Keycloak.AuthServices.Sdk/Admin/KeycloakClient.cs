@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http.Json;
 using Keycloak.AuthServices.Sdk.Admin.Models;
+using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Organizations;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 using Keycloak.AuthServices.Sdk.Utils;
@@ -793,3 +794,4 @@ public class KeycloakClient : IKeycloakClient
     }
 
     #endregion
+}

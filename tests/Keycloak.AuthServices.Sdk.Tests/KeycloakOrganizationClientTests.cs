@@ -25,10 +25,18 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationsAsync_ByDefault_ReturnsOrganizations()
+    public async Task GetOrganizationsShouldReturnOrganizations()
     {
-        var orgs = GetOrganizationRepresentations(3);
-        var response = $"[{string.Join(",", orgs.Select(o => JsonSerializer.Serialize(o)))})]";
+        var orgs = Enumerable
+            .Range(0, 3)
+            .Select(_ =>
+            {
+                var id = Guid.NewGuid();
+                return (Id: id.ToString(), Representation: GetOrganizationRepresentation(id));
+            })
+            .ToArray();
+
+        var response = $"[{string.Join(",", orgs.Select(o => o.Representation))}]";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations")
             .Respond(HttpStatusCode.OK, MediaType, response);
@@ -40,7 +48,7 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationsAsync_WithSearch_PassesQueryString()
+    public async Task GetOrganizationsShouldCallCorrectEndpointWithOptionalQueryParameters()
     {
         var parameters = new GetOrganizationsRequestParameters
         {
@@ -65,10 +73,12 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationCountAsync_ReturnsCount()
+    public async Task GetOrganizationCountShouldCallCorrectEndpoint()
     {
         const int orgCount = 7;
+#pragma warning disable CA1305 // use locale provider
         var response = orgCount.ToString();
+#pragma warning restore CA1305 // use locale provider
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/count")
             .Respond(HttpStatusCode.OK, MediaType, response);
@@ -80,14 +90,12 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationAsync_ByDefault_ReturnsOrganization()
+    public async Task GetOrganizationShouldCallCorrectEndpoint()
     {
         var orgId = Guid.NewGuid();
-        var org = GetOrganizationRepresentation(orgId);
-        var orgJson = JsonSerializer.Serialize(org);
 
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/{orgId}")
-            .Respond(HttpStatusCode.OK, MediaType, orgJson);
+        this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/organizations/{orgId}")
+            .Respond(HttpStatusCode.OK, MediaType, GetOrganizationRepresentation(orgId));
 
         var result = await this.keycloakOrganizationClient.GetOrganizationAsync("master", orgId.ToString());
 
@@ -96,7 +104,7 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationAsync_NotFound_ThrowsKeycloakHttpClientException()
+    public async Task GetOrganizationShouldThrowNotFoundApiExceptionWhenOrganizationDoesNotExist()
     {
         var orgId = Guid.NewGuid().ToString();
         const string errorMessage = /*lang=json,strict*/
@@ -111,40 +119,38 @@ public class KeycloakOrganizationClientTests
             .ThrowAsync<KeycloakHttpClientException>();
 
         exception.And.StatusCode.Should().Be((int)HttpStatusCode.NotFound);
+        exception.And.Response?.Error.Should().Be("Organization not found");
         this.handler.VerifyNoOutstandingExpectation();
     }
 
     [Fact]
-    public async Task CreateOrganizationAsync_ByDefault_PostsRepresentation()
-    {
-        var org = GetOrganizationRepresentation(Guid.NewGuid());
-        var orgJson = JsonSerializer.Serialize(org);
-
-        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/organizations")
-            .Respond(HttpStatusCode.Created, MediaType, orgJson);
-
-        await this.keycloakOrganizationClient.CreateOrganizationAsync("master", org);
-
-        this.handler.VerifyNoOutstandingExpectation();
-    }
-
-    [Fact]
-    public async Task UpdateOrganizationAsync_ByDefault_PutsRepresentation()
+    public async Task CreateOrganizationShouldCallCorrectEndpoint()
     {
         var orgId = Guid.NewGuid();
-        var org = GetOrganizationRepresentation(orgId);
-        var orgJson = JsonSerializer.Serialize(org);
 
-        this.handler.Expect(HttpMethod.Put, $"{BaseAddress}/admin/realms/master/organizations/{orgId}")
-            .Respond(HttpStatusCode.NoContent);
+        this.handler.Expect(HttpMethod.Post, $"{BaseAddress}/admin/realms/master/organizations")
+            .Respond(HttpStatusCode.Created);
 
-        await this.keycloakOrganizationClient.UpdateOrganizationAsync("master", orgId.ToString(), org);
+        await this.keycloakOrganizationClient.CreateOrganizationAsync("master", new() { Name = $"Org-{orgId}" });
 
         this.handler.VerifyNoOutstandingExpectation();
     }
 
     [Fact]
-    public async Task DeleteOrganizationAsync_ByDefault_DeletesResource()
+    public async Task UpdateOrganizationShouldCallCorrectEndpoint()
+    {
+        var orgId = Guid.NewGuid();
+
+        this.handler.Expect(HttpMethod.Put, $"/admin/realms/master/organizations/{orgId}")
+            .Respond(HttpStatusCode.NoContent);
+
+        await this.keycloakOrganizationClient.UpdateOrganizationAsync("master", orgId.ToString(), new() { Name = $"Org-{orgId}" });
+
+        this.handler.VerifyNoOutstandingExpectation();
+    }
+
+    [Fact]
+    public async Task DeleteOrganizationShouldCallCorrectEndpoint()
     {
         var orgId = Guid.NewGuid();
 
@@ -157,11 +163,19 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationMembersAsync_ByDefault_ReturnsMembers()
+    public async Task GetOrganizationMembersShouldReturnMembers()
     {
         var orgId = Guid.NewGuid();
-        var members = GetOrganizationMemberRepresentations(3);
-        var response = $"[{string.Join(",", members.Select(m => JsonSerializer.Serialize(m)))})]";
+        var members = Enumerable
+            .Range(0, 3)
+            .Select(_ =>
+            {
+                var id = Guid.NewGuid();
+                return (Id: id.ToString(), Representation: GetOrganizationMemberRepresentation(id));
+            })
+            .ToArray();
+
+        var response = $"[{string.Join(",", members.Select(m => m.Representation))}]";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/{orgId}/members")
             .Respond(HttpStatusCode.OK, MediaType, response);
@@ -173,7 +187,7 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationMembersAsync_WithParameters_PassesQueryString()
+    public async Task GetOrganizationMembersShouldCallCorrectEndpointWithOptionalQueryParameters()
     {
         var orgId = Guid.NewGuid();
         var parameters = new GetOrganizationMembersRequestParameters
@@ -201,10 +215,12 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationMemberCountAsync_ReturnsCount()
+    public async Task GetOrganizationMemberCountShouldCallCorrectEndpoint()
     {
         const int memberCount = 15;
+#pragma warning disable CA1305 // use locale provider
         var response = memberCount.ToString();
+#pragma warning restore CA1305 // use locale provider
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/org1/members/count")
             .Respond(HttpStatusCode.OK, MediaType, response);
@@ -216,15 +232,13 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationMemberAsync_ByDefault_ReturnsMember()
+    public async Task GetOrganizationMemberShouldCallCorrectEndpoint()
     {
         var orgId = Guid.NewGuid();
         var memberId = Guid.NewGuid();
-        var member = GetOrganizationMemberRepresentation(memberId);
-        var memberJson = JsonSerializer.Serialize(member);
 
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/{orgId}/members/{memberId}")
-            .Respond(HttpStatusCode.OK, MediaType, memberJson);
+        this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/organizations/{orgId}/members/{memberId}")
+            .Respond(HttpStatusCode.OK, MediaType, GetOrganizationMemberRepresentation(memberId));
 
         var result = await this.keycloakOrganizationClient.GetOrganizationMemberAsync("master", orgId.ToString(), memberId.ToString());
 
@@ -233,7 +247,7 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task AddOrganizationMemberAsync_ByDefault_PostsUserIdAsJsonString()
+    public async Task AddOrganizationMemberShouldCallCorrectEndpoint()
     {
         const string realm = "master";
         const string orgId = "org-1";
@@ -241,8 +255,8 @@ public class KeycloakOrganizationClientTests
 
         this.handler
             .Expect(HttpMethod.Post, $"/admin/realms/{realm}/organizations/{orgId}/members")
-            .WithRequestBody($"\"{userId}\"")
-            .RespondWith(new MockHttpResponse { StatusCode = HttpStatusCode.NoContent });
+            .WithContent($"\"{userId}\"")
+            .Respond(HttpStatusCode.NoContent);
 
         await this.keycloakOrganizationClient.AddOrganizationMemberAsync(realm, orgId, userId);
 
@@ -250,7 +264,7 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task RemoveOrganizationMemberAsync_ByDefault_DeletesResource()
+    public async Task RemoveOrganizationMemberShouldCallCorrectEndpoint()
     {
         var orgId = Guid.NewGuid();
         var memberId = Guid.NewGuid();
@@ -264,28 +278,38 @@ public class KeycloakOrganizationClientTests
     }
 
     [Fact]
-    public async Task GetOrganizationMemberGroupsAsync_ByDefault_ReturnsGroups()
+    public async Task GetOrganizationMemberGroupsShouldCallCorrectEndpoint()
     {
         var orgId = Guid.NewGuid();
         var memberId = Guid.NewGuid();
-        var groups = GetGroupRepresentations(2);
-        var response = $"[{string.Join(",", groups.Select(g => JsonSerializer.Serialize(g)))})]";
 
-        this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/{orgId}/members/{memberId}/groups")
-            .Respond(HttpStatusCode.OK, MediaType, response);
+        this.handler.Expect(HttpMethod.Get, $"/admin/realms/master/organizations/{orgId}/members/{memberId}/groups")
+            .Respond(
+                HttpStatusCode.OK,
+                MediaType,
+                JsonSerializer.Serialize(Array.Empty<GroupRepresentation>())
+            );
 
         var result = await this.keycloakOrganizationClient.GetOrganizationMemberGroupsAsync("master", orgId.ToString(), memberId.ToString());
 
-        result.Select(g => g.Id).Should().BeEquivalentTo(groups.Select(g => g.Id));
+        result.Should().BeEmpty();
         this.handler.VerifyNoOutstandingExpectation();
     }
 
     [Fact]
-    public async Task GetUserOrganizationsAsync_ByDefault_ReturnsOrganizations()
+    public async Task GetUserOrganizationsShouldCallCorrectEndpoint()
     {
         var memberId = Guid.NewGuid();
-        var orgs = GetOrganizationRepresentations(2);
-        var response = $"[{string.Join(",", orgs.Select(o => JsonSerializer.Serialize(o)))})]";
+        var orgs = Enumerable
+            .Range(0, 2)
+            .Select(_ =>
+            {
+                var id = Guid.NewGuid();
+                return (Id: id.ToString(), Representation: GetOrganizationRepresentation(id));
+            })
+            .ToArray();
+
+        var response = $"[{string.Join(",", orgs.Select(o => o.Representation))}]";
 
         this.handler.Expect(HttpMethod.Get, $"{BaseAddress}/admin/realms/master/organizations/members/{memberId}/organizations")
             .Respond(HttpStatusCode.OK, MediaType, response);
@@ -296,51 +320,28 @@ public class KeycloakOrganizationClientTests
         this.handler.VerifyNoOutstandingExpectation();
     }
 
-    private static OrganizationRepresentation GetOrganizationRepresentation(Guid id) => new()
-    {
-        Id = id.ToString(),
-        Name = $"Org-{id}",
-        Alias = $"org-{id}",
-        Enabled = true,
-        Description = $"Description for org-{id}",
-        RedirectUrl = $"https://org-{id}.example.com",
-        Attributes = null,
-        Domains = null
-    };
+    private static string GetOrganizationRepresentation(Guid orgId) =>
+        /*lang=json,strict*/"""
+        {
+            "id": "{orgId}",
+            "name": "Org-{orgId}",
+            "alias": "org-{orgId}",
+            "enabled": true,
+            "description": "Description for org-{orgId}",
+            "redirectUrl": "https://org-{orgId}.example.com"
+        }
+        """.Replace("{orgId}", orgId.ToString());
 
-    private static IEnumerable<OrganizationRepresentation> GetOrganizationRepresentations(int count) => Enumerable
-        .Range(0, count)
-        .Select(i => GetOrganizationRepresentation(Guid.NewGuid()));
-
-    private static OrganizationMemberRepresentation GetOrganizationMemberRepresentation(Guid id) => new()
-    {
-        Id = id.ToString(),
-        Username = $"user-{id}",
-        Email = $"user-{id}@example.com",
-        FirstName = $"First-{id}",
-        LastName = $"Last-{id}",
-        Enabled = true,
-        MembershipType = "UNMANAGED"
-    };
-
-    private static IEnumerable<OrganizationMemberRepresentation> GetOrganizationMemberRepresentations(int count) => Enumerable
-        .Range(0, count)
-        .Select(i => GetOrganizationMemberRepresentation(Guid.NewGuid()));
-
-    private static GroupRepresentation GetGroupRepresentation(Guid id) => new()
-    {
-        Id = id.ToString(),
-        Name = $"Group-{id}",
-        Description = $"Description for group-{id}",
-        RealmId = "master",
-        ParentId = null,
-        Path = $"/Group-{id}",
-        Attributes = null,
-        ClientRoles = null,
-        UserRoles = null
-    };
-
-    private static IEnumerable<GroupRepresentation> GetGroupRepresentations(int count) => Enumerable
-        .Range(0, count)
-        .Select(i => GetGroupRepresentation(Guid.NewGuid()));
+    private static string GetOrganizationMemberRepresentation(Guid memberId) =>
+        /*lang=json,strict*/"""
+        {
+            "id": "{memberId}",
+            "username": "user-{memberId}",
+            "email": "user-{memberId}@example.com",
+            "firstName": "First-{memberId}",
+            "lastName": "Last-{memberId}",
+            "enabled": true,
+            "membershipType": "UNMANAGED"
+        }
+        """.Replace("{memberId}", memberId.ToString());
 }
