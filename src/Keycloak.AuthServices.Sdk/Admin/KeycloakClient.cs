@@ -1,10 +1,11 @@
 namespace Keycloak.AuthServices.Sdk.Admin;
 
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Net.Http.Json;
 using Keycloak.AuthServices.Sdk.Admin.Models;
-using Keycloak.AuthServices.Sdk.Admin.Requests.Groups;
+using Keycloak.AuthServices.Sdk.Admin.Requests.Organizations;
 using Keycloak.AuthServices.Sdk.Admin.Requests.Users;
 using Keycloak.AuthServices.Sdk.Utils;
 
@@ -548,4 +549,247 @@ public class KeycloakClient : IKeycloakClient
     }
 
     #endregion
-}
+
+    #region OrganizationRegion
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationsWithResponseAsync(
+        string realm,
+        GetOrganizationsRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var path = ApiUrls.GetOrganizations.WithRealm(realm);
+
+        var queryBuilder = new QueryBuilder();
+
+        parameters ??= new();
+        if (parameters.BriefRepresentation.HasValue)
+        {
+            queryBuilder.Add("briefRepresentation", parameters.BriefRepresentation?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Exact.HasValue)
+        {
+            queryBuilder.Add("exact", parameters.Exact?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.First.HasValue)
+        {
+            queryBuilder.Add("first", parameters.First?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Max.HasValue)
+        {
+            queryBuilder.Add("max", parameters.Max?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Query is not null)
+        {
+            queryBuilder.Add("q", parameters.Query.ToString()!);
+        }
+
+        if (parameters.Search is not null)
+        {
+            queryBuilder.Add("search", parameters.Search.ToString()!);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationCountWithResponseAsync(
+        string realm,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetOrganizationCount.WithRealm(realm);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationWithResponseAsync(
+        string realm,
+        string orgId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetOrganization.WithRealm(realm).Replace("{id}", orgId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> CreateOrganizationWithResponseAsync(
+        string realm,
+        OrganizationRepresentation organization,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.CreateOrganization.WithRealm(realm);
+
+        var responseMessage = await this.httpClient.PostAsJsonAsync(path, organization, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> UpdateOrganizationWithResponseAsync(
+        string realm,
+        string orgId,
+        OrganizationRepresentation organization,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.UpdateOrganization.WithRealm(realm).Replace("{id}", orgId);
+
+        var responseMessage = await this.httpClient.PutAsJsonAsync(path, organization, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> DeleteOrganizationWithResponseAsync(
+        string realm,
+        string orgId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.DeleteOrganization.WithRealm(realm).Replace("{id}", orgId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationMembersWithResponseAsync(
+        string realm,
+        string orgId,
+        GetOrganizationMembersRequestParameters? parameters = default,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetOrganizationMembers.WithRealm(realm).Replace("{id}", orgId);
+
+        var queryBuilder = new QueryBuilder();
+
+        parameters ??= new();
+        if (parameters.Exact.HasValue)
+        {
+            queryBuilder.Add("exact", parameters.Exact?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.First.HasValue)
+        {
+            queryBuilder.Add("first", parameters.First?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.Max.HasValue)
+        {
+            queryBuilder.Add("max", parameters.Max?.ToString(CultureInfo.InvariantCulture)!);
+        }
+
+        if (parameters.MembershipType is not null)
+        {
+            queryBuilder.Add("membershipType", parameters.MembershipType.ToString()!);
+        }
+
+        if (parameters.Search is not null)
+        {
+            queryBuilder.Add("search", parameters.Search.ToString()!);
+        }
+
+        var url = path + queryBuilder.ToQueryString();
+
+        var responseMessage = await this.httpClient.GetAsync(url, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationMemberCountWithResponseAsync(
+        string realm,
+        string orgId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetOrganizationMemberCount.WithRealm(realm).Replace("{id}", orgId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationMemberWithResponseAsync(
+        string realm,
+        string orgId,
+        string memberId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetOrganizationMember.WithRealm(realm).Replace("{id}", orgId).Replace("{memberId}", memberId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> AddOrganizationMemberWithResponseAsync(
+        string realm,
+        string orgId,
+        string userId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.AddOrganizationMember.WithRealm(realm).Replace("{id}", orgId);
+
+        var responseMessage = await this.httpClient.PostAsJsonAsync(path, userId, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> RemoveOrganizationMemberWithResponseAsync(
+        string realm,
+        string orgId,
+        string memberId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.RemoveOrganizationMember.WithRealm(realm).Replace("{id}", orgId).Replace("{memberId}", memberId);
+
+        var responseMessage = await this.httpClient.DeleteAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetOrganizationMemberGroupsWithResponseAsync(
+        string realm,
+        string orgId,
+        string memberId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetOrganizationMemberGroups.WithRealm(realm).Replace("{id}", orgId).Replace("{memberId}", memberId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    /// <inheritdoc/>
+    public async Task<HttpResponseMessage> GetUserOrganizationsWithResponseAsync(
+        string realm,
+        string memberId,
+        CancellationToken cancellationToken = default)
+    {
+        var path = ApiUrls.GetUserOrganizations.WithRealm(realm).Replace("{memberId}", memberId);
+
+        var responseMessage = await this.httpClient.GetAsync(path, cancellationToken);
+
+        return responseMessage!;
+    }
+
+    #endregion

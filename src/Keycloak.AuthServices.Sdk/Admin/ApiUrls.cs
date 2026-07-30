@@ -63,6 +63,36 @@ internal static class ApiUrls
 
     #endregion
 
+    #region Organization API
+
+    internal const string GetOrganizations = $"{GetRealm}/organizations";
+
+    internal const string CreateOrganization = $"{GetRealm}/organizations";
+
+    internal const string GetOrganizationCount = $"{GetRealm}/organizations/count";
+
+    internal const string GetOrganization = $"{GetRealm}/organizations/{{id}}";
+
+    internal const string UpdateOrganization = $"{GetRealm}/organizations/{{id}}";
+
+    internal const string DeleteOrganization = $"{GetRealm}/organizations/{{id}}";
+
+    internal const string GetOrganizationMembers = $"{GetRealm}/organizations/{{id}}/members";
+
+    internal const string AddOrganizationMember = $"{GetRealm}/organizations/{{id}}/members";
+
+    internal const string GetOrganizationMemberCount = $"{GetRealm}/organizations/{{id}}/members/count";
+
+    internal const string GetOrganizationMember = $"{GetRealm}/organizations/{{id}}/members/{{memberId}}";
+
+    internal const string RemoveOrganizationMember = $"{GetRealm}/organizations/{{id}}/members/{{memberId}}";
+
+    internal const string GetOrganizationMemberGroups = $"{GetRealm}/organizations/{{id}}/members/{{memberId}}/groups";
+
+    internal const string GetUserOrganizations = $"{GetRealm}/organizations/members/{{memberId}}/organizations";
+
+    #endregion
+
     public static string WithRealm(this string path, string realm) =>
         path.Replace(RealmParam, realm);
 }
