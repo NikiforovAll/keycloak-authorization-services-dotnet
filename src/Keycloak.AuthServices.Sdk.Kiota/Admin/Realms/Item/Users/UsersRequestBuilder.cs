@@ -47,7 +47,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users{?briefRepresentation*,email*,emailVerified*,enabled*,exact*,first*,firstName*,idpAlias*,idpUserId*,lastName*,max*,q*,search*,username*}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users{?briefRepresentation*,createdAfter*,createdBefore*,email*,emailVerified*,enabled*,exact*,first*,firstName*,idpAlias*,idpUserId*,lastName*,max*,q*,search*,username*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,11 +55,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users{?briefRepresentation*,email*,emailVerified*,enabled*,exact*,first*,firstName*,idpAlias*,idpUserId*,lastName*,max*,q*,search*,username*}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/users{?briefRepresentation*,createdAfter*,createdBefore*,email*,emailVerified*,enabled*,exact*,first*,firstName*,idpAlias*,idpUserId*,lastName*,max*,q*,search*,username*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get users Returns a stream of users, filtered according to query parameters.
+        /// Returns a stream of users. Note that the &apos;credentials&apos; field in the returned UserRepresentation objects is typically not populated for performance reasons. If specific credential metadata is required, use the dedicated &apos;GET /admin/realms/{realm}/users/{user-id}/credentials&apos; endpoint.
         /// </summary>
         /// <returns>A List&lt;global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +97,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get users Returns a stream of users, filtered according to query parameters.
+        /// Returns a stream of users. Note that the &apos;credentials&apos; field in the returned UserRepresentation objects is typically not populated for performance reasons. If specific credential metadata is required, use the dedicated &apos;GET /admin/realms/{realm}/users/{user-id}/credentials&apos; endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
             return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get users Returns a stream of users, filtered according to query parameters.
+        /// Returns a stream of users. Note that the &apos;credentials&apos; field in the returned UserRepresentation objects is typically not populated for performance reasons. If specific credential metadata is required, use the dedicated &apos;GET /admin/realms/{realm}/users/{user-id}/credentials&apos; endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
@@ -154,6 +154,26 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users
             /// <summary>Boolean which defines whether brief representations are returned (default: false)</summary>
             [QueryParameter("briefRepresentation")]
             public bool? BriefRepresentation { get; set; }
+            /// <summary>Only return users created after (inclusive) the given date, in ISO-8601 format (yyyy-MM-dd) or epoch milliseconds</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("createdAfter")]
+            public string? CreatedAfter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("createdAfter")]
+            public string CreatedAfter { get; set; }
+#endif
+            /// <summary>Only return users created before (inclusive) the given date, in ISO-8601 format (yyyy-MM-dd) or epoch milliseconds</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("createdBefore")]
+            public string? CreatedBefore { get; set; }
+#nullable restore
+#else
+            [QueryParameter("createdBefore")]
+            public string CreatedBefore { get; set; }
+#endif
             /// <summary>A String contained in email, or the complete email, if param &quot;exact&quot; is true</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

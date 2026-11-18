@@ -139,8 +139,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RealmsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("briefRepresentation")]
             public bool? BriefRepresentation { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

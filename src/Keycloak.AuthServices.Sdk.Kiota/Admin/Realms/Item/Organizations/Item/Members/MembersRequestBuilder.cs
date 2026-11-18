@@ -53,7 +53,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/{org%2Did}/members{?exact*,first*,max*,membershipType*,search*}", pathParameters)
+        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/{org%2Did}/members{?briefRepresentation*,exact*,first*,max*,membershipType*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/{org%2Did}/members{?exact*,first*,max*,membershipType*,search*}", rawUrl)
+        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/{org%2Did}/members{?briefRepresentation*,exact*,first*,max*,membershipType*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -157,6 +157,9 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 
         {
+            /// <summary>Boolean to return either a brief or a full user representation. If not specified, the brief representation is returned by default.</summary>
+            [QueryParameter("briefRepresentation")]
+            public bool? BriefRepresentation { get; set; }
             /// <summary>Boolean which defines whether the param &apos;search&apos; must match exactly or not</summary>
             [QueryParameter("exact")]
             public bool? Exact { get; set; }

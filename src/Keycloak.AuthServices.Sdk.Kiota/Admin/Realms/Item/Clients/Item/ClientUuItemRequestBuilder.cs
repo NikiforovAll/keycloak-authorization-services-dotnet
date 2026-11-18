@@ -113,6 +113,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.RolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scopeMappings property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.ScopeMappingsRequestBuilder ScopeMappings
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.ScopeMappingsRequestBuilder(PathParameters, RequestAdapter);

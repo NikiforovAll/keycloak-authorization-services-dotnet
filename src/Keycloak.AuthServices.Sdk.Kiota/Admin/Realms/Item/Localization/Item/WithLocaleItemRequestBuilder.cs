@@ -160,8 +160,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Localization.I
         #pragma warning restore CS1591
         {
             [Obsolete("")]
+            #pragma warning disable CS1591
             [QueryParameter("useRealmDefaultLocaleFallback")]
             public bool? UseRealmDefaultLocaleFallback { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

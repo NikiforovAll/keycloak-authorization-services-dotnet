@@ -23,21 +23,25 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.C
     public partial class WithAttrItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The download property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Download.DownloadRequestBuilder Download
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generate property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Generate.GenerateRequestBuilder Generate
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Generate.GenerateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateAndDownload property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.GenerateAndDownload.GenerateAndDownloadRequestBuilder GenerateAndDownload
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.GenerateAndDownload.GenerateAndDownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The upload property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Upload.UploadRequestBuilder Upload
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Certificates.Item.Upload.UploadRequestBuilder(PathParameters, RequestAdapter);

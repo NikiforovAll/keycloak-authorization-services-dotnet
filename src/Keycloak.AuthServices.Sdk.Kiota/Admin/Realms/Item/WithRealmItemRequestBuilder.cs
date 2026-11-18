@@ -208,6 +208,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The testSMTPConnection property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection.TestSMTPConnectionRequestBuilder TestSMTPConnection
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.TestSMTPConnection.TestSMTPConnectionRequestBuilder(PathParameters, RequestAdapter);

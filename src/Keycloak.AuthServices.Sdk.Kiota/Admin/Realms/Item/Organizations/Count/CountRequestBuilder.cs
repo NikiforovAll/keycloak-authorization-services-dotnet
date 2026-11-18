@@ -21,7 +21,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/count{?exact*,q*,search*}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/count{?exact*,identityProvider*,q*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/count{?exact*,q*,search*}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/count{?exact*,identityProvider*,q*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -87,6 +87,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.
             /// <summary>Boolean which defines whether the param &apos;search&apos; must match exactly or not</summary>
             [QueryParameter("exact")]
             public bool? Exact { get; set; }
+            /// <summary>The alias of an identity provider, to only count the organizations linked to it. Cannot be combined with &apos;q&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("identityProvider")]
+            public string? IdentityProvider { get; set; }
+#nullable restore
+#else
+            [QueryParameter("identityProvider")]
+            public string IdentityProvider { get; set; }
+#endif
             /// <summary>A query to search for custom attributes, in the format &apos;key1:value2 key2:value2&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

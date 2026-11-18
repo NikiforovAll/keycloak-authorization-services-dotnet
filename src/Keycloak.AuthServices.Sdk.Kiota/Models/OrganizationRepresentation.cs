@@ -48,6 +48,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
+        /// <summary>The groups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>? Groups { get; set; }
+#nullable restore
+#else
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation> Groups { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "domains", n => { Domains = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationDomainRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationDomainRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -137,6 +146,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationDomainRepresentation>("domains", Domains);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>("groups", Groups);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IdentityProviderRepresentation>("identityProviders", IdentityProviders);
             writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MemberRepresentation>("members", Members);

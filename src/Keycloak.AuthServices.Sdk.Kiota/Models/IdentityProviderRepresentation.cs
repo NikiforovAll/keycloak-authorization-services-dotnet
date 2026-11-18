@@ -65,12 +65,21 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         /// <summary>The linkOnly property</summary>
         public bool? LinkOnly { get; set; }
         /// <summary>The organizationId property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }
 #nullable restore
 #else
         public string OrganizationId { get; set; }
+#endif
+        /// <summary>The organizationLinks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationIdentityProviderLinkRepresentation>? OrganizationLinks { get; set; }
+#nullable restore
+#else
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationIdentityProviderLinkRepresentation> OrganizationLinks { get; set; }
 #endif
         /// <summary>The postBrokerLoginFlowAlias property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,6 +157,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "internalId", n => { InternalId = n.GetStringValue(); } },
                 { "linkOnly", n => { LinkOnly = n.GetBoolValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
+                { "organizationLinks", n => { OrganizationLinks = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationIdentityProviderLinkRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationIdentityProviderLinkRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "postBrokerLoginFlowAlias", n => { PostBrokerLoginFlowAlias = n.GetStringValue(); } },
                 { "providerId", n => { ProviderId = n.GetStringValue(); } },
                 { "storeToken", n => { StoreToken = n.GetBoolValue(); } },
@@ -175,6 +185,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteStringValue("internalId", InternalId);
             writer.WriteBoolValue("linkOnly", LinkOnly);
             writer.WriteStringValue("organizationId", OrganizationId);
+            writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.OrganizationIdentityProviderLinkRepresentation>("organizationLinks", OrganizationLinks);
             writer.WriteStringValue("postBrokerLoginFlowAlias", PostBrokerLoginFlowAlias);
             writer.WriteStringValue("providerId", ProviderId);
             writer.WriteBoolValue("storeToken", StoreToken);

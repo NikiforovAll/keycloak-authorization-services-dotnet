@@ -125,6 +125,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The issuedVerifiableCredentials property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IssuedVerifiableCredentialRepresentation>? IssuedVerifiableCredentials { get; set; }
+#nullable restore
+#else
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IssuedVerifiableCredentialRepresentation> IssuedVerifiableCredentials { get; set; }
+#endif
         /// <summary>The lastName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,6 +210,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata UserProfileMetadata { get; set; }
 #endif
+        /// <summary>The verifiableCredentials property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserVerifiableCredentialRepresentation>? VerifiableCredentials { get; set; }
+#nullable restore
+#else
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserVerifiableCredentialRepresentation> VerifiableCredentials { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation"/> and sets the default values.
         /// </summary>
@@ -243,6 +259,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "issuedVerifiableCredentials", n => { IssuedVerifiableCredentials = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IssuedVerifiableCredentialRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IssuedVerifiableCredentialRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "notBefore", n => { NotBefore = n.GetIntValue(); } },
                 { "origin", n => { Origin = n.GetStringValue(); } },
@@ -254,6 +271,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "totp", n => { Totp = n.GetBoolValue(); } },
                 { "userProfileMetadata", n => { UserProfileMetadata = n.GetObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata.CreateFromDiscriminatorValue); } },
                 { "username", n => { Username = n.GetStringValue(); } },
+                { "verifiableCredentials", n => { VerifiableCredentials = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserVerifiableCredentialRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserVerifiableCredentialRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -279,6 +297,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteCollectionOfPrimitiveValues<string>("groups", Groups);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.IssuedVerifiableCredentialRepresentation>("issuedVerifiableCredentials", IssuedVerifiableCredentials);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteIntValue("notBefore", NotBefore);
             writer.WriteStringValue("origin", Origin);
@@ -290,6 +309,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteBoolValue("totp", Totp);
             writer.WriteStringValue("username", Username);
             writer.WriteObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserProfileMetadata>("userProfileMetadata", UserProfileMetadata);
+            writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserVerifiableCredentialRepresentation>("verifiableCredentials", VerifiableCredentials);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

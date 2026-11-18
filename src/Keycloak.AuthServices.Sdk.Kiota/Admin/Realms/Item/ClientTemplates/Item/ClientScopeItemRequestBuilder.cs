@@ -25,6 +25,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplate
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ProtocolMappers.ProtocolMappersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scopeMappings property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.ScopeMappingsRequestBuilder ScopeMappings
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientTemplates.Item.ScopeMappings.ScopeMappingsRequestBuilder(PathParameters, RequestAdapter);

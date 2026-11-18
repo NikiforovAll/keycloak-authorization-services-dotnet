@@ -12,7 +12,7 @@ public class KeycloakFixture : IAsyncLifetime
 
     public KeycloakContainer Keycloak { get; } =
         new KeycloakBuilder()
-            .WithImage("quay.io/keycloak/keycloak:26.5.6")
+            .WithImage("quay.io/keycloak/keycloak:26.8.2")
             .WithBindMount(
                 Path.Combine(Directory.GetCurrentDirectory(), "KeycloakConfiguration"),
                 "/opt/keycloak/data/import/"
@@ -48,6 +48,30 @@ public class KeycloakFixture : IAsyncLifetime
         );
         var adminRoleId = await this.GetAdminRoleIdAsync(httpClient);
         await this.AssignAdminRoleAsync(httpClient, serviceAccountUserId, adminRoleId);
+        await this.AssignAdminApiClientScopeAsync(httpClient, clientInternalId);
+    }
+
+    /// <summary>
+    /// Since Keycloak 26.8.2 the Admin REST API rejects tokens (401) that do not carry
+    /// the <c>kc-admin-api</c> client scope. Built-in clients get it automatically, custom ones do not.
+    /// </summary>
+    private async Task AssignAdminApiClientScopeAsync(
+        HttpClient httpClient,
+        string clientInternalId
+    )
+    {
+        var scopes = await httpClient.GetFromJsonAsync<ClientScopeResponse[]>(
+            "/admin/realms/master/client-scopes"
+        );
+        var scopeId =
+            scopes?.SingleOrDefault(s => s.Name == "kc-admin-api")?.Id
+            ?? throw new InvalidOperationException("Client scope 'kc-admin-api' not found");
+
+        var response = await httpClient.PutAsync(
+            $"/admin/realms/master/clients/{clientInternalId}/default-client-scopes/{scopeId}",
+            null
+        );
+        response.EnsureSuccessStatusCode();
     }
 
     private async Task<string> GetAdminTokenAsync(HttpClient httpClient)
@@ -143,6 +167,11 @@ public class KeycloakFixture : IAsyncLifetime
     private sealed record UserResponse([property: JsonPropertyName("id")] string Id);
 
     private sealed record RoleResponse([property: JsonPropertyName("id")] string Id);
+
+    private sealed record ClientScopeResponse(
+        [property: JsonPropertyName("id")] string Id,
+        [property: JsonPropertyName("name")] string Name
+    );
 }
 
 [CollectionDefinition(nameof(AuthenticationCollection))]

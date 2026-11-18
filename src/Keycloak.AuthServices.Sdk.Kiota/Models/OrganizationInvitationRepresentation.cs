@@ -41,6 +41,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         public string Id { get; set; }
 #endif
         /// <summary>The inviteLink property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InviteLink { get; set; }

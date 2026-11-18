@@ -20,13 +20,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.S
     public partial class ScopeMappingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The clients property</summary>
-        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.ClientsRequestBuilder Clients
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Clients.ClientsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The realm property</summary>
-        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.RealmRequestBuilder Realm
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.ScopeMappings.Realm.RealmRequestBuilder(PathParameters, RequestAdapter);
