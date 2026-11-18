@@ -180,7 +180,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Events
             [QueryParameter("ipAddress")]
             public string IpAddress { get; set; }
 #endif
-            /// <summary>Maximum results size (defaults to 100)</summary>
+            /// <summary>Maximum results size</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }
             /// <summary>The types of events to return</summary>

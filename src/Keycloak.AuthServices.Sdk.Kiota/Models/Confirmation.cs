@@ -22,6 +22,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public string Jkt { get; set; }
 #endif
+        /// <summary>The kcJktType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? KcJktType { get; set; }
+#nullable restore
+#else
+        public string KcJktType { get; set; }
+#endif
         /// <summary>The x5tS256 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "jkt", n => { Jkt = n.GetStringValue(); } },
+                { "kc-jkt-type", n => { KcJktType = n.GetStringValue(); } },
                 { "x5t#S256", n => { X5tS256 = n.GetStringValue(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("jkt", Jkt);
+            writer.WriteStringValue("kc-jkt-type", KcJktType);
             writer.WriteStringValue("x5t#S256", X5tS256);
             writer.WriteAdditionalData(AdditionalData);
         }

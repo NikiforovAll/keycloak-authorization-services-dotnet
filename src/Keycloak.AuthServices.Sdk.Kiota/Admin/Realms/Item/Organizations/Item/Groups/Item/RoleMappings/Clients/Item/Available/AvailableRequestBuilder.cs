@@ -9,32 +9,32 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item
+namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.Item.Groups.Item.RoleMappings.Clients.Item.Available
 {
     /// <summary>
-    /// Builds and executes requests for operations under \admin\realms\{realm}\roles\{role-name}\composites\clients\{client-uuid}
+    /// Builds and executes requests for operations under \admin\realms\{realm}\organizations\{org-id}\groups\{group-id}\role-mappings\clients\{client-id}\available
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ClientUuItemRequestBuilder : BaseRequestBuilder
+    public partial class AvailableRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientUuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles/{role%2Dname}/composites/clients/{client%2Duuid}", pathParameters)
+        public AvailableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/{org%2Did}/groups/{group%2Did}/role-mappings/clients/{client%2Did}/available", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClientUuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/roles/{role%2Dname}/composites/clients/{client%2Duuid}", rawUrl)
+        public AvailableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations/{org%2Did}/groups/{group%2Did}/role-mappings/clients/{client%2Did}/available", rawUrl)
         {
         }
         /// <summary>
-        /// Get client-level roles for the client that are in the role&apos;s composite
+        /// Get available client-level roles that can be mapped to the user or group
         /// </summary>
         /// <returns>A List&lt;global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RoleRepresentation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Com
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get client-level roles for the client that are in the role&apos;s composite
+        /// Get available client-level roles that can be mapped to the user or group
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,11 +74,11 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Com
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder WithUrl(string rawUrl)
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations.Item.Groups.Item.RoleMappings.Clients.Item.Available.AvailableRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

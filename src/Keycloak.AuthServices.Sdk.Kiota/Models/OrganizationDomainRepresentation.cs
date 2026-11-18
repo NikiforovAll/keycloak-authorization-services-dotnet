@@ -14,6 +14,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The autoRedirect property</summary>
+        public bool? AutoRedirect { get; set; }
+        /// <summary>The identityProviderAlias property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityProviderAlias { get; set; }
+#nullable restore
+#else
+        public string IdentityProviderAlias { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +59,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autoRedirect", n => { AutoRedirect = n.GetBoolValue(); } },
+                { "identityProviderAlias", n => { IdentityProviderAlias = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
             };
@@ -60,6 +72,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("autoRedirect", AutoRedirect);
+            writer.WriteStringValue("identityProviderAlias", IdentityProviderAlias);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("verified", Verified);
             writer.WriteAdditionalData(AdditionalData);

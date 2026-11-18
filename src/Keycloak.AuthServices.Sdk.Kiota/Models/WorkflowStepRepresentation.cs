@@ -40,6 +40,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #endif
         /// <summary>The scheduledAt property</summary>
         public long? ScheduledAt { get; set; }
+        /// <summary>The status property</summary>
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.StepExecutionStatus? Status { get; set; }
         /// <summary>The uses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +79,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "config", n => { Config = n.GetObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringString>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringString.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "scheduled-at", n => { ScheduledAt = n.GetLongValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.StepExecutionStatus>(); } },
                 { "uses", n => { Uses = n.GetStringValue(); } },
             };
         }
@@ -91,6 +94,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.MultivaluedHashMapStringString>("config", Config);
             writer.WriteStringValue("id", Id);
             writer.WriteLongValue("scheduled-at", ScheduledAt);
+            writer.WriteEnumValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.StepExecutionStatus>("status", Status);
             writer.WriteStringValue("uses", Uses);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -89,6 +89,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPassword.ResetPasswordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resetPasswordEmail property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPasswordEmail.ResetPasswordEmailRequestBuilder ResetPasswordEmail
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Users.Item.ResetPasswordEmail.ResetPasswordEmailRequestBuilder(PathParameters, RequestAdapter);

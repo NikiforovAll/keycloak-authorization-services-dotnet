@@ -32,6 +32,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
+        /// <summary>The mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Mode { get; set; }
+#nullable restore
+#else
+        public string Mode { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "mode", n => { Mode = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "profiles", n => { Profiles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -90,6 +99,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ClientPolicyConditionRepresentation>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("mode", Mode);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("profiles", Profiles);
             writer.WriteAdditionalData(AdditionalData);

@@ -47,7 +47,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations{?briefRepresentation*,exact*,first*,max*,q*,search*}", pathParameters)
+        public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations{?briefRepresentation*,exact*,first*,identityProvider*,max*,q*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations{?briefRepresentation*,exact*,first*,max*,q*,search*}", rawUrl)
+        public OrganizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/realms/{realm}/organizations{?briefRepresentation*,exact*,first*,identityProvider*,max*,q*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -160,6 +160,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Organizations
             /// <summary>The position of the first result to be processed (pagination offset)</summary>
             [QueryParameter("first")]
             public int? First { get; set; }
+            /// <summary>The alias of an identity provider, to only return the organizations linked to it. Cannot be combined with &apos;q&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("identityProvider")]
+            public string? IdentityProvider { get; set; }
+#nullable restore
+#else
+            [QueryParameter("identityProvider")]
+            public string IdentityProvider { get; set; }
+#endif
             /// <summary>The maximum number of results to be returned - defaults to 10</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }

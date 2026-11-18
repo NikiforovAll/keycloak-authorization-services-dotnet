@@ -172,7 +172,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Workflows.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkflowsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Indicates whether the workflow id should be included in the representation or not - defaults to true</summary>
+            /// <summary>Indicates whether the workflow and step ids should be included in the representation or not - defaults to true</summary>
             [QueryParameter("includeId")]
             public bool? IncludeId { get; set; }
         }

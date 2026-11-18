@@ -113,8 +113,10 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.ClientPolicies
         public partial class ProfilesRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591
         {
+            #pragma warning disable CS1591
             [QueryParameter("include%2Dglobal%2Dprofiles")]
             public bool? IncludeGlobalProfiles { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

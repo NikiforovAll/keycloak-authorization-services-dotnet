@@ -37,6 +37,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.ClientAuthenticatorProviders.ClientAuthenticatorProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The config property</summary>
+        [Obsolete("")]
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.ConfigRequestBuilder Config
         {
             get => new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Authentication.Config.ConfigRequestBuilder(PathParameters, RequestAdapter);

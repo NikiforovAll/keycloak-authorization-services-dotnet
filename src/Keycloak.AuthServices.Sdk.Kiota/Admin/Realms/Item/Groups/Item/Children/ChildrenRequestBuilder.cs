@@ -138,7 +138,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Ch
             /// <summary>The maximum number of results that are to be returned. Defaults to 10</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }
-            /// <summary>A String representing either an exact group name or a partial name</summary>
+            /// <summary>A String representing either an exact group name or a partial name, defaults to prefix search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -148,7 +148,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Groups.Item.Ch
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Boolean which defines whether to return the count of subgroups for each subgroup of this group (default: true</summary>
+            /// <summary>Boolean which defines whether to return the count of subgroups for each subgroup of this group (default: true)</summary>
             [QueryParameter("subGroupsCount")]
             public bool? SubGroupsCount { get; set; }
         }

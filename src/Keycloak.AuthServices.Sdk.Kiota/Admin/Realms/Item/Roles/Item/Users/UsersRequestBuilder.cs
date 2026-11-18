@@ -92,7 +92,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Use
             /// <summary>first result to return. Ignored if negative or {@code null}.</summary>
             [QueryParameter("first")]
             public int? First { get; set; }
-            /// <summary>maximum number of results to return. Ignored if negative or {@code null}.</summary>
+            /// <summary>Maximum number of results to return. Unbounded if negative.</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }
         }

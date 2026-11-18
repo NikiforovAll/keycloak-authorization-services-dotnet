@@ -46,6 +46,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization Authorization { get; set; }
 #endif
+        /// <summary>The authorization_details property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthorizationDetailsJSONRepresentation>? AuthorizationDetails { get; set; }
+#nullable restore
+#else
+        public List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthorizationDetailsJSONRepresentation> AuthorizationDetails { get; set; }
+#endif
         /// <summary>The auth_time property</summary>
         public long? AuthTime { get; set; }
         /// <summary>The azp property</summary>
@@ -338,6 +346,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "at_hash", n => { AtHash = n.GetStringValue(); } },
                 { "auth_time", n => { AuthTime = n.GetLongValue(); } },
                 { "authorization", n => { Authorization = n.GetObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization.CreateFromDiscriminatorValue); } },
+                { "authorization_details", n => { AuthorizationDetails = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthorizationDetailsJSONRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthorizationDetailsJSONRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "azp", n => { Azp = n.GetStringValue(); } },
                 { "birthdate", n => { Birthdate = n.GetStringValue(); } },
                 { "c_hash", n => { CHash = n.GetStringValue(); } },
@@ -388,6 +397,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowed-origins", AllowedOrigins);
             writer.WriteStringValue("at_hash", AtHash);
             writer.WriteObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.Authorization>("authorization", Authorization);
+            writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.AuthorizationDetailsJSONRepresentation>("authorization_details", AuthorizationDetails);
             writer.WriteLongValue("auth_time", AuthTime);
             writer.WriteStringValue("azp", Azp);
             writer.WriteStringValue("birthdate", Birthdate);

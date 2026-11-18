@@ -34,7 +34,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.O
         {
         }
         /// <summary>
-        /// Get offline sessions for client Returns a list of offline user sessions associated with this client
+        /// Get offline sessions for client. Returns a list of offline user sessions associated with this client
         /// </summary>
         /// <returns>A List&lt;global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserSessionRepresentation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.O
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Get offline sessions for client Returns a list of offline user sessions associated with this client
+        /// Get offline sessions for client. Returns a list of offline user sessions associated with this client
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.O
             return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.OfflineSessions.OfflineSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get offline sessions for client Returns a list of offline user sessions associated with this client
+        /// Get offline sessions for client. Returns a list of offline user sessions associated with this client
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OfflineSessionsRequestBuilderGetQueryParameters 
@@ -89,7 +89,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.O
             /// <summary>Paging offset</summary>
             [QueryParameter("first")]
             public int? First { get; set; }
-            /// <summary>Maximum results size (defaults to 100)</summary>
+            /// <summary>Maximum results size.</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }
         }

@@ -416,6 +416,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
         public int? MaxDeltaTimeSeconds { get; set; }
         /// <summary>The maxFailureWaitSeconds property</summary>
         public int? MaxFailureWaitSeconds { get; set; }
+        /// <summary>The maxSecondaryAuthFailures property</summary>
+        public int? MaxSecondaryAuthFailures { get; set; }
         /// <summary>The maxTemporaryLockouts property</summary>
         public int? MaxTemporaryLockouts { get; set; }
         /// <summary>The minimumQuickLoginWaitSeconds property</summary>
@@ -590,6 +592,8 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation Roles { get; set; }
 #endif
+        /// <summary>The scimApiEnabled property</summary>
+        public bool? ScimApiEnabled { get; set; }
         /// <summary>The scopeMappings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -752,6 +756,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #else
         public List<string> WebAuthnPolicyPasswordlessExtraOrigins { get; set; }
 #endif
+        /// <summary>The webAuthnPolicyPasswordlessMediation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebAuthnPolicyPasswordlessMediation { get; set; }
+#nullable restore
+#else
+        public string WebAuthnPolicyPasswordlessMediation { get; set; }
+#endif
         /// <summary>The webAuthnPolicyPasswordlessPasskeysEnabled property</summary>
         public bool? WebAuthnPolicyPasswordlessPasskeysEnabled { get; set; }
         /// <summary>The webAuthnPolicyPasswordlessRequireResidentKey property</summary>
@@ -761,6 +773,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #nullable restore
 #else
         public string WebAuthnPolicyPasswordlessRequireResidentKey { get; set; }
+#endif
+        /// <summary>The webAuthnPolicyPasswordlessResidentKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebAuthnPolicyPasswordlessResidentKey { get; set; }
+#nullable restore
+#else
+        public string WebAuthnPolicyPasswordlessResidentKey { get; set; }
 #endif
         /// <summary>The webAuthnPolicyPasswordlessRpEntityName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -801,6 +821,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
 #nullable restore
 #else
         public string WebAuthnPolicyRequireResidentKey { get; set; }
+#endif
+        /// <summary>The webAuthnPolicyResidentKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebAuthnPolicyResidentKey { get; set; }
+#nullable restore
+#else
+        public string WebAuthnPolicyResidentKey { get; set; }
 #endif
         /// <summary>The webAuthnPolicyRpEntityName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -928,6 +956,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "loginWithEmailAllowed", n => { LoginWithEmailAllowed = n.GetBoolValue(); } },
                 { "maxDeltaTimeSeconds", n => { MaxDeltaTimeSeconds = n.GetIntValue(); } },
                 { "maxFailureWaitSeconds", n => { MaxFailureWaitSeconds = n.GetIntValue(); } },
+                { "maxSecondaryAuthFailures", n => { MaxSecondaryAuthFailures = n.GetIntValue(); } },
                 { "maxTemporaryLockouts", n => { MaxTemporaryLockouts = n.GetIntValue(); } },
                 { "minimumQuickLoginWaitSeconds", n => { MinimumQuickLoginWaitSeconds = n.GetIntValue(); } },
                 { "notBefore", n => { NotBefore = n.GetIntValue(); } },
@@ -967,6 +996,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "resetPasswordAllowed", n => { ResetPasswordAllowed = n.GetBoolValue(); } },
                 { "revokeRefreshToken", n => { RevokeRefreshToken = n.GetBoolValue(); } },
                 { "roles", n => { Roles = n.GetObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation.CreateFromDiscriminatorValue); } },
+                { "scimApiEnabled", n => { ScimApiEnabled = n.GetBoolValue(); } },
                 { "scopeMappings", n => { ScopeMappings = n.GetCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "smtpServer", n => { SmtpServer = n.GetObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer>(global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer.CreateFromDiscriminatorValue); } },
                 { "social", n => { Social = n.GetBoolValue(); } },
@@ -998,13 +1028,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
                 { "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister", n => { WebAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister = n.GetBoolValue(); } },
                 { "webAuthnPolicyPasswordlessCreateTimeout", n => { WebAuthnPolicyPasswordlessCreateTimeout = n.GetIntValue(); } },
                 { "webAuthnPolicyPasswordlessExtraOrigins", n => { WebAuthnPolicyPasswordlessExtraOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "webAuthnPolicyPasswordlessMediation", n => { WebAuthnPolicyPasswordlessMediation = n.GetStringValue(); } },
                 { "webAuthnPolicyPasswordlessPasskeysEnabled", n => { WebAuthnPolicyPasswordlessPasskeysEnabled = n.GetBoolValue(); } },
                 { "webAuthnPolicyPasswordlessRequireResidentKey", n => { WebAuthnPolicyPasswordlessRequireResidentKey = n.GetStringValue(); } },
+                { "webAuthnPolicyPasswordlessResidentKey", n => { WebAuthnPolicyPasswordlessResidentKey = n.GetStringValue(); } },
                 { "webAuthnPolicyPasswordlessRpEntityName", n => { WebAuthnPolicyPasswordlessRpEntityName = n.GetStringValue(); } },
                 { "webAuthnPolicyPasswordlessRpId", n => { WebAuthnPolicyPasswordlessRpId = n.GetStringValue(); } },
                 { "webAuthnPolicyPasswordlessSignatureAlgorithms", n => { WebAuthnPolicyPasswordlessSignatureAlgorithms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webAuthnPolicyPasswordlessUserVerificationRequirement", n => { WebAuthnPolicyPasswordlessUserVerificationRequirement = n.GetStringValue(); } },
                 { "webAuthnPolicyRequireResidentKey", n => { WebAuthnPolicyRequireResidentKey = n.GetStringValue(); } },
+                { "webAuthnPolicyResidentKey", n => { WebAuthnPolicyResidentKey = n.GetStringValue(); } },
                 { "webAuthnPolicyRpEntityName", n => { WebAuthnPolicyRpEntityName = n.GetStringValue(); } },
                 { "webAuthnPolicyRpId", n => { WebAuthnPolicyRpId = n.GetStringValue(); } },
                 { "webAuthnPolicySignatureAlgorithms", n => { WebAuthnPolicySignatureAlgorithms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -1087,6 +1120,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteBoolValue("loginWithEmailAllowed", LoginWithEmailAllowed);
             writer.WriteIntValue("maxDeltaTimeSeconds", MaxDeltaTimeSeconds);
             writer.WriteIntValue("maxFailureWaitSeconds", MaxFailureWaitSeconds);
+            writer.WriteIntValue("maxSecondaryAuthFailures", MaxSecondaryAuthFailures);
             writer.WriteIntValue("maxTemporaryLockouts", MaxTemporaryLockouts);
             writer.WriteIntValue("minimumQuickLoginWaitSeconds", MinimumQuickLoginWaitSeconds);
             writer.WriteIntValue("notBefore", NotBefore);
@@ -1126,6 +1160,7 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteBoolValue("resetPasswordAllowed", ResetPasswordAllowed);
             writer.WriteBoolValue("revokeRefreshToken", RevokeRefreshToken);
             writer.WriteObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RolesRepresentation>("roles", Roles);
+            writer.WriteBoolValue("scimApiEnabled", ScimApiEnabled);
             writer.WriteCollectionOfObjectValues<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.ScopeMappingRepresentation>("scopeMappings", ScopeMappings);
             writer.WriteObjectValue<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.RealmRepresentation_smtpServer>("smtpServer", SmtpServer);
             writer.WriteBoolValue("social", Social);
@@ -1157,13 +1192,16 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Models
             writer.WriteBoolValue("webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister", WebAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister);
             writer.WriteIntValue("webAuthnPolicyPasswordlessCreateTimeout", WebAuthnPolicyPasswordlessCreateTimeout);
             writer.WriteCollectionOfPrimitiveValues<string>("webAuthnPolicyPasswordlessExtraOrigins", WebAuthnPolicyPasswordlessExtraOrigins);
+            writer.WriteStringValue("webAuthnPolicyPasswordlessMediation", WebAuthnPolicyPasswordlessMediation);
             writer.WriteBoolValue("webAuthnPolicyPasswordlessPasskeysEnabled", WebAuthnPolicyPasswordlessPasskeysEnabled);
             writer.WriteStringValue("webAuthnPolicyPasswordlessRequireResidentKey", WebAuthnPolicyPasswordlessRequireResidentKey);
+            writer.WriteStringValue("webAuthnPolicyPasswordlessResidentKey", WebAuthnPolicyPasswordlessResidentKey);
             writer.WriteStringValue("webAuthnPolicyPasswordlessRpEntityName", WebAuthnPolicyPasswordlessRpEntityName);
             writer.WriteStringValue("webAuthnPolicyPasswordlessRpId", WebAuthnPolicyPasswordlessRpId);
             writer.WriteCollectionOfPrimitiveValues<string>("webAuthnPolicyPasswordlessSignatureAlgorithms", WebAuthnPolicyPasswordlessSignatureAlgorithms);
             writer.WriteStringValue("webAuthnPolicyPasswordlessUserVerificationRequirement", WebAuthnPolicyPasswordlessUserVerificationRequirement);
             writer.WriteStringValue("webAuthnPolicyRequireResidentKey", WebAuthnPolicyRequireResidentKey);
+            writer.WriteStringValue("webAuthnPolicyResidentKey", WebAuthnPolicyResidentKey);
             writer.WriteStringValue("webAuthnPolicyRpEntityName", WebAuthnPolicyRpEntityName);
             writer.WriteStringValue("webAuthnPolicyRpId", WebAuthnPolicyRpId);
             writer.WriteCollectionOfPrimitiveValues<string>("webAuthnPolicySignatureAlgorithms", WebAuthnPolicySignatureAlgorithms);

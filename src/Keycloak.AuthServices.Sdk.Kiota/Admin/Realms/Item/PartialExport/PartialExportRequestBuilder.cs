@@ -85,10 +85,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.PartialExport
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PartialExportRequestBuilderPostQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("exportClients")]
             public bool? ExportClients { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("exportGroupsAndRoles")]
             public bool? ExportGroupsAndRoles { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

@@ -36,20 +36,20 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         /// <summary>
         /// Returns a stream of groups that have the specified role name
         /// </summary>
-        /// <returns>A List&lt;global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation&gt;</returns>
+        /// <returns>A List&lt;global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>?> GetAsync(Action<RequestConfiguration<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>?> GetAsync(Action<RequestConfiguration<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>> GetAsync(Action<RequestConfiguration<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>> GetAsync(Action<RequestConfiguration<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.Roles.Item.Groups.GroupsRequestBuilder.GroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation>(requestInfo, global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.UserRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation>(requestInfo, global::Keycloak.AuthServices.Sdk.Kiota.Admin.Models.GroupRepresentation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -86,13 +86,13 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Clients.Item.R
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupsRequestBuilderGetQueryParameters 
         {
-            /// <summary>if false, return a full representation of the {@code GroupRepresentation} objects.</summary>
+            /// <summary>If false, return a full representation of the {@code GroupRepresentation} objects.</summary>
             [QueryParameter("briefRepresentation")]
             public bool? BriefRepresentation { get; set; }
-            /// <summary>first result to return. Ignored if negative or {@code null}.</summary>
+            /// <summary>First result to return. Ignored if negative or {@code null}.</summary>
             [QueryParameter("first")]
             public int? First { get; set; }
-            /// <summary>maximum number of results to return. Ignored if negative or {@code null}.</summary>
+            /// <summary>Maximum number of results to return. Unbounded if negative.</summary>
             [QueryParameter("max")]
             public int? Max { get; set; }
         }

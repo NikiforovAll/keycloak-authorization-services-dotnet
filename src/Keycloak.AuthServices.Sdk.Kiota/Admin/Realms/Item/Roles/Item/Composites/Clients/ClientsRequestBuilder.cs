@@ -17,14 +17,14 @@ namespace Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Com
     {
         /// <summary>Gets an item from the Keycloak.AuthServices.Sdk.Kiota.Admin.admin.realms.item.roles.item.composites.clients.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder"/></returns>
-        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.WithTargetClientUuItemRequestBuilder"/></returns>
+        public global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.WithTargetClientUuItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("client%2Duuid", position);
-                return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.ClientUuItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("targetClientUuid", position);
+                return new global::Keycloak.AuthServices.Sdk.Kiota.Admin.Admin.Realms.Item.Roles.Item.Composites.Clients.Item.WithTargetClientUuItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
